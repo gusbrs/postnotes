@@ -1,0 +1,99 @@
+%% chapter{Initial setup}
+
+\ProvidesExplPackage {zref-endnotes} {2022-03-24} {0.1.0}
+  {Endnotes for LaTeX based on zref}
+
+%% section{Dependencies}
+
+\RequirePackage { zref-base }
+\RequirePackage { zref-abspage }
+
+\bool_new:N \g_zen_hyperref_bool
+\AddToHook{begindocument}
+  {
+    \IfPackageLoadedTF { hyperref }
+      { \bool_gset_true:N \g_zen_hyperref_bool }
+      {}
+  }
+
+%% section{zref setup}
+
+\zref@newlist { zennote }
+
+\zref@newprop { zen@mark } { \l__zen_mark_tl }
+\zref@addprop { zennote } { zen@mark }
+
+\zref@newprop { zen@chap } { \thechapter }
+\zref@addprop { zennote } { zen@chap }
+
+\int_new:N \g__zen_abschap_int
+\AddToHook { cmd / chapter / before }
+  { \int_gincr:N \g__zen_abschap_int }
+\zref@newprop { zen@abschap } [0] { \int_use:N \g__zen_abschap_int }
+\zref@addprop { zennote } { zen@abschap }
+
+\zref@addprop { zennote } { page }
+
+
+\zref@newlist { zentext }
+
+\zref@addprop { zentext } { abspage }
+
+
+%% chapter{endnote}
+
+
+\newcounter { zen@endnote } [ chapter ]
+\int_new:N \g__zen_absen_int
+
+\tl_new:N \l__zen_mark_tl
+
+\cs_new:Npn \__zen_en_text:n #1
+  { g__zen_endnote_text_ #1 _tl }
+\cs_generate_variant:Nn \__zen_en_text:n {e}
+
+\NewDocumentCommand \endnote { O { } m }
+  { \zen_endnote:nn {#1} {#2} }
+
+\cs_new_protected:Npn \zen_endnote:nn #1#2
+  {
+    \group_begin:
+    \int_gincr:N \g__zen_absen_int
+    \stepcounter { zen@endnote }
+    \tl_if_empty:nTF {#1}
+      { \tl_set:Nx \l__zen_mark_tl { \thezen@endnote } }
+      { \tl_set:Nn \l__zen_mark_tl {#1} }
+    \exp_args:Nx
+      \zref@labelbylist { zen@ \int_use:N \g__zen_absen_int } { zennote }
+    \__zen_endnote_mark:xV { \int_use:N \g__zen_absen_int } \l__zen_mark_tl
+    \tl_gset:cn
+      { \__zen_en_text:e { \int_use:N \g__zen_absen_int } }
+      {#2}
+    \group_end:
+  }
+
+\tl_new:N \l__zen_saved_spacefactor_tl
+\cs_new:Npn \__zen_endnote_mark:nn #1#2
+  {
+    \mode_leave_vertical:
+    \if_mode_horizontal:
+    \tl_set:Nx \l__zen_saved_spacefactor_tl { \the\spacefactor }
+    \fi:
+    \bool_if:NTF \g_zen_hyperref_bool
+      {
+        \hypertarget { zen. #1 .backref }
+          { \hyperlink { zen. #1 } { \__zen_make_endnote_mark:n {#2} } }
+      }
+      { \__zen_make_endnote_mark:n {#2} }
+    \if_mode_horizontal:
+    \spacefactor \l__zen_saved_spacefactor_tl
+    \fi:
+  }
+\cs_generate_variant:Nn \__zen_endnote_mark:nn {xV}
+\cs_new:Npn \__zen_make_endnote_mark:n #1
+  { \hbox:n { \@textsuperscript { \normalfont #1 } } }
+
+%% chapter{printendnotes}
+
+\NewDocumentCommand \printendnotes { O { } }
+  {}
