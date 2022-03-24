@@ -1,0 +1,9 @@
+*.aux
+*.log
+*.out
+*.pdf
+*.synctex.gz
+*.toc
+.auctex/
+
+zen-tests.tex
