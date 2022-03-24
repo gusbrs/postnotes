@@ -15,6 +15,13 @@
       { \bool_gset_true:N \g_zen_hyperref_bool }
       {}
   }
+\bool_new:N \g_zen_biblatex_bool
+\AddToHook{begindocument}
+  {
+    \IfPackageLoadedTF { biblatex }
+      { \bool_gset_true:N \g_zen_biblatex_bool }
+      {}
+  }
 
 %% section{zref setup}
 
@@ -59,16 +66,16 @@
   {
     \group_begin:
     \int_gincr:N \g__zen_absen_int
-    \stepcounter { zen@endnote }
     \tl_if_empty:nTF {#1}
-      { \tl_set:Nx \l__zen_mark_tl { \thezen@endnote } }
-      { \tl_set:Nn \l__zen_mark_tl {#1} }
-    \exp_args:Nx
-      \zref@labelbylist { zen@ \int_use:N \g__zen_absen_int } { zennote }
+      {
+        \stepcounter { zen@endnote }
+        \tl_set:Nx \l__zen_mark_tl { \thezen@endnote }
+      }
+      { \tl_set:Nx \l__zen_mark_tl {#1} }
+    \exp_args:Nx \zref@labelbylist
+      { zen@ \int_use:N \g__zen_absen_int } { zennote }
     \__zen_endnote_mark:xV { \int_use:N \g__zen_absen_int } \l__zen_mark_tl
-    \tl_gset:cn
-      { \__zen_en_text:e { \int_use:N \g__zen_absen_int } }
-      {#2}
+    \tl_gset:cn { \__zen_en_text:e { \int_use:N \g__zen_absen_int } } {#2}
     \group_end:
   }
 
@@ -78,22 +85,66 @@
     \mode_leave_vertical:
     \if_mode_horizontal:
     \tl_set:Nx \l__zen_saved_spacefactor_tl { \the\spacefactor }
+    \nobreak
     \fi:
     \bool_if:NTF \g_zen_hyperref_bool
       {
-        \hypertarget { zen. #1 .backref }
-          { \hyperlink { zen. #1 } { \__zen_make_endnote_mark:n {#2} } }
+        \Hy@raisedlink { \hypertarget { zen. #1 .backref } { } }
+        \hyperlink { zen. #1 } { \__zen_make_endnote_mark:n {#2} }
       }
       { \__zen_make_endnote_mark:n {#2} }
     \if_mode_horizontal:
     \spacefactor \l__zen_saved_spacefactor_tl
     \fi:
+    \scan_stop:
   }
 \cs_generate_variant:Nn \__zen_endnote_mark:nn {xV}
 \cs_new:Npn \__zen_make_endnote_mark:n #1
   { \hbox:n { \@textsuperscript { \normalfont #1 } } }
 
+
 %% chapter{printendnotes}
 
 \NewDocumentCommand \printendnotes { O { } }
-  {}
+  { \zen_print_endnotes:n {#1} }
+
+\int_new:N \l__zen_en_text_int
+\tl_new:N \l__zen_text_mark_tl
+
+\cs_new_protected:Npn \zen_print_endnotes:n #1
+  {
+    \group_begin:
+    % Keep biblatex happy.
+    \bool_if:NT \g_zen_biblatex_bool
+      { \toggletrue{blx@footnote} }
+    \int_set:Nn \l__zen_en_text_int {1}
+    \chapter{Notes}
+    \begin{enumerate}
+      \int_until_do:nNnn { \l__zen_en_text_int } > { \g__zen_absen_int }
+        {
+          \zref@def@extract { \l__zen_text_mark_tl }
+            { zen@ \int_use:N \l__zen_en_text_int } { zen@mark }
+          \item
+            [
+              \__zen_text_mark:xV
+                { \int_use:N \l__zen_en_text_int }
+                \l__zen_text_mark_tl
+            ]
+          \tl_use:c { \__zen_en_text:e { \int_use:N \l__zen_en_text_int } }
+          \int_incr:N \l__zen_en_text_int
+        }
+    \end{enumerate}
+    \group_end:
+  }
+
+\cs_new:Npn \zen_text_mark_format:n #1 { #1 . }
+\cs_new:Npn \__zen_text_mark:nn #1#2
+  {
+    \bool_if:NTF \g_zen_hyperref_bool
+      {
+        \Hy@raisedlink { \hypertarget { zen. #1 } { } }
+        \hyperlink { zen. #1 .backref } { \zen_text_mark_format:n {#2} }
+      }
+      { \zen_text_mark_format:n {#2} }
+  }
+\cs_generate_variant:Nn \__zen_text_mark:nn {xV}
