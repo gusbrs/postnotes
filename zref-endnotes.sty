@@ -27,6 +27,9 @@
 
 \zref@newlist { zen@note }
 
+\zref@newprop { zen@type } [ ] { \l__zen_en_type_tl }
+\zref@addprop { zen@note } { zen@type }
+
 \zref@newprop { zen@mark } { \l__zen_mark_tl }
 \zref@addprop { zen@note } { zen@mark }
 
@@ -44,7 +47,6 @@
 
 \zref@newlist { zen@psect }
 
-\zref@newprop { zen@type } [ ] { \l__zen_en_type_tl }
 \zref@addprop { zen@psect } { zen@type }
 
 \zref@addprop { zen@psect } { zen@psectid }
@@ -84,13 +86,15 @@
     \int_gincr:N \g__zen_en_id_int
     \tl_if_empty:nTF {#1}
       {
-        \stepcounter { zen@endnote }
+        \refstepcounter { zen@endnote }
         \tl_set:Nx \l__zen_mark_tl { \thezen@endnote }
       }
       { \tl_set:Nx \l__zen_mark_tl {#1} }
+    \tl_set:Nn \l__zen_en_type_tl { note }
     \exp_args:Nx \zref@labelbylist
       { zen@ \int_use:N \g__zen_en_id_int } { zen@note }
     \__zen_endnote_mark:xV { \int_use:N \g__zen_en_id_int } \l__zen_mark_tl
+    \tl_new:c { \__zen_en_text:e { \int_use:N \g__zen_en_id_int } }
     \tl_gset:cn { \__zen_en_text:e { \int_use:N \g__zen_en_id_int } } {#2}
     \group_end:
   }
@@ -136,6 +140,7 @@
     \tl_set:Nn \l__zen_en_type_tl { section }
     \exp_args:Nx \zref@labelbylist
       { zen@ \int_use:N \g__zen_en_id_int } { zen@psect }
+    \tl_new:c { \__zen_en_text:e { \int_use:N \g__zen_en_id_int } }
     \tl_gset:cn { \__zen_en_text:e { \int_use:N \g__zen_en_id_int } } {#2}
     \group_end:
   }
@@ -147,16 +152,15 @@
   { \zen_print_notes:n {#1} }
 
 \int_new:N \g__zen_en_print_int
-\int_gset:Nn \g__zen_en_print_int {1}
 \tl_new:N \l__zen_text_mark_tl
 \tl_new:N \l__zen_en_curr_type_tl
 \tl_new:N \l__zen_en_next_type_tl
+\tl_new:N \l__zen_psectid_tl
+\tl_new:N \zenthechapter
+\tl_new:N \zenthesection
 
 \newcounter { zen@endnote@text }
 \newcounter { zen@psectid }
-
-\cs_new:Npn \zenthechapter {}
-\cs_new:Npn \zenthesection {}
 
 \cs_new_protected:Npn \__zen_def_extract_default:Nnnn #1#2#3#4
   {
@@ -178,16 +182,17 @@
     % Keep biblatex happy.
     \bool_if:NT \g_zen_biblatex_bool
       { \toggletrue { blx@footnote } }
-    \int_until_do:nNnn { \g__zen_en_print_int } > { \g__zen_en_id_int }
+    \int_until_do:nNnn { \g__zen_en_print_int } = { \g__zen_en_id_int }
       {
+        \int_gincr:N \g__zen_en_print_int
         \__zen_def_extract_default:Nxnn \l__zen_en_curr_type_tl
-          { zen@ \int_use:N \g__zen_en_print_int } { zen@type } { note }
+          { zen@ \int_use:N \g__zen_en_print_int } { zen@type } { undef }
         \int_compare:nNnTF { \g__zen_en_print_int } = { \g__zen_en_id_int }
           { \tl_set:Nn \l__zen_en_next_type_tl { close } }
           {
             \__zen_def_extract_default:Nxnn \l__zen_en_next_type_tl
               { zen@ \int_eval:n { \g__zen_en_print_int + 1 } }
-              { zen@type } { note }
+              { zen@type } { undef }
           }
         \tl_if_eq:NnTF \l__zen_en_curr_type_tl { section }
           {
@@ -203,40 +208,54 @@
                 \tl_use:c
                   { \__zen_en_text:e { \int_use:N \g__zen_en_print_int } }
                 \group_end:
-                \stepcounter { zen@psectid }
+                \__zen_def_extract:Nxn \l__zen_psectid_tl
+                  { zen@ \int_use:N \g__zen_en_print_int } { zen@psectid }
+                \exp_args:Nnx \setcounter
+                  { zen@psectid } { \int_eval:n { \l__zen_psectid_tl } }
                 \exp_args:Nx \begin { \l__zen_list_env_tl }
                 \l__zen_print_format_tl
               }
           }
-          { % curr_type = note
-            \tl_if_eq:NNF \@currenvir \l__zen_list_env_tl
-              { \exp_args:Nx \begin { \l__zen_list_env_tl } }
-            \__zen_def_extract_default:Nxnn \l__zen_text_mark_tl
-              { zen@ \int_use:N \g__zen_en_print_int } { zen@mark }
-              { \exp_not:n { \zref@default } }
-            \item
-              [
-                \__zen_text_mark:eV
-                  { \int_use:N \g__zen_en_print_int }
-                  \l__zen_text_mark_tl
-              ]
-            \group_begin:
-            \refstepcounter { zen@endnote@text }
-            \cs_set:Npn \@currentcounter { zen@endnote }
-            \cs_set:Npx \@currentlabel { \p@zen@endnote \l__zen_text_mark_tl }
-            \tl_use:c { \__zen_en_text:e { \int_use:N \g__zen_en_print_int } }
-            \group_end:
-            \tl_if_eq:NnF \l__zen_en_next_type_tl { note }
+          {
+            \tl_if_eq:NnT \l__zen_en_curr_type_tl { note }
               {
-                \tl_if_eq:NNT \@currenvir \l__zen_list_env_tl
-                  { \exp_args:Nx \end { \l__zen_list_env_tl } }
+                \tl_if_eq:NNF \@currenvir \l__zen_list_env_tl
+                  {
+                    \exp_args:Nx \begin { \l__zen_list_env_tl }
+                    \l__zen_print_format_tl
+                  }
+                \__zen_def_extract_default:Nxnn \l__zen_text_mark_tl
+                  { zen@ \int_use:N \g__zen_en_print_int } { zen@mark }
+                  { \exp_not:n { \zref@default } }
+                \item
+                  [
+                    \__zen_text_mark:eV
+                      { \int_use:N \g__zen_en_print_int }
+                      \l__zen_text_mark_tl
+                  ]
+                \group_begin:
+                \refstepcounter { zen@endnote@text }
+                \cs_set:Npn \@currentcounter { zen@endnote }
+                \cs_set:Npx \@currentlabel
+                  { \p@zen@endnote \l__zen_text_mark_tl }
+                \tl_use:c
+                  { \__zen_en_text:e { \int_use:N \g__zen_en_print_int } }
+                \group_end:
+                \tl_if_eq:NnF \l__zen_en_next_type_tl { note }
+                  {
+                    \tl_if_eq:NNT \@currenvir \l__zen_list_env_tl
+                      { \exp_args:Nx \end { \l__zen_list_env_tl } }
+                  }
               }
           }
         % I don't know if clearing the variable represents any kind of gain,
         % but we don't need it anymore.  So, just in case.
         \tl_gclear:c { \__zen_en_text:e { \int_use:N \g__zen_en_print_int } }
-        \int_gincr:N \g__zen_en_print_int
       }
+    % Make sure that, even in transitory states of the label set, we don't
+    % leave an unclosed environment.
+    \tl_if_eq:NNT \@currenvir \l__zen_list_env_tl
+      { \exp_args:Nx \end { \l__zen_list_env_tl } }
     \group_end:
   }
 
