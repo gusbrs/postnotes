@@ -7,11 +7,11 @@
 
 % Have \GetFileInfo pick up date and version data and used in the
 % documentation.
-\usepackage{zref-endnotes}
+\usepackage{postnotes}
 
 \begin{document}
 
-\DocInput{zref-endnotes.dtx}
+\DocInput{postnotes.dtx}
 
 \end{document}
 %</driver>
@@ -29,10 +29,10 @@
 % }
 %
 %
-% \GetFileInfo{zref-endnotes.sty}
+% \GetFileInfo{postnotes.sty}
 %
 % \title{^^A
-%   The \pkg{zref-endnotes} package^^A
+%   The \pkg{postnotes} package^^A
 %   \thanks{This file describes \fileversion, released \filedate.}^^A
 %   \texorpdfstring{\\{}\medskip{}}{ - }^^A
 %   Code documentation^^A
@@ -41,7 +41,7 @@
 %
 % \author{^^A
 %   Gustavo Barros^^A
-%   \thanks{\url{https://github.com/gusbrs/zref-endnotes}}^^A
+%   \thanks{\url{https://github.com/gusbrs/postnotes}}^^A
 % }
 %
 % \date{\filedate}
@@ -60,13 +60,13 @@
 %
 % Identify the internal prefix (\LaTeX3 \pkg{DocStrip} convention).
 %    \begin{macrocode}
-%<@@=zen>
+%<@@=postnote>
 %    \end{macrocode}
 %
 %
 %    \begin{macrocode}
-\ProvidesExplPackage {zref-endnotes} {2022-03-24} {0.1.0}
-  {Endnotes for LaTeX based on zref}
+\ProvidesExplPackage {postnotes} {2022-03-24} {0.1.0}
+  {Endnotes for LaTeX}
 %    \end{macrocode}
 %
 %
@@ -78,7 +78,10 @@
 \AddToHook{begindocument}
   {
     \IfPackageLoadedTF { hyperref }
-      { \bool_gset_true:N \g_@@_hyperref_bool }
+      {
+        \bool_gset_true:N \g_@@_hyperref_bool
+        \cs_new:Npn \theHpostnote { \int_use:N \g_@@_id_int }
+      }
       {}
   }
 \bool_new:N \g_@@_biblatex_bool
@@ -113,7 +116,7 @@
     \prop_gput:cnx { \@@_data_name:e {#1} } { chapter } { \thechapter }
     \prop_gput:cnx { \@@_data_name:e {#1} } { section } { \thesection }
     \prop_gput:cnx { \@@_data_name:e {#1} }
-      { psectid } { \int_use:N \g_@@_print_sect_id_int }
+      { psectid } { \int_use:N \g_@@_sectid_int }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
   }
 
@@ -125,7 +128,7 @@
     \prop_gput:cnx { \@@_data_name:e {#1} } { chapter } { \thechapter }
     \prop_gput:cnx { \@@_data_name:e {#1} } { section } { \thesection }
     \prop_gput:cnx { \@@_data_name:e {#1} }
-      { psectid } { \int_use:N \g_@@_print_sect_id_int }
+      { psectid } { \int_use:N \g_@@_sectid_int }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
   }
 
@@ -139,37 +142,45 @@
 \tl_set:Nn \l_@@_list_env_tl {enumerate}
 
 \tl_new:N \l_@@_print_format_tl
-\tl_set:Nn \l_@@_print_format_tl {\small}
+\tl_set:Nn \l_@@_print_format_tl { \small }
 %    \end{macrocode}
 %
 %
-% \section{zendnote}
+% \section{postnote}
 %
 %    \begin{macrocode}
-\newcounter { zen@endnote }
+\newcounter { postnote }
 
 \tl_new:N \l_@@_mark_tl
 
-\NewDocumentCommand \zendnote { O { } m }
-  { \zen_endnote:nn {#1} {#2} }
+\NewDocumentCommand \postnote { O { } m }
+  { \@@_note:nn {#1} {#2} }
 
-\cs_new_protected:Npn \zen_endnote:nn #1#2
+\cs_new_protected:Npn \@@_note:nn #1#2
   {
     \group_begin:
-    \int_gincr:N \g_@@_id_int
-    \tl_if_empty:nTF {#1}
-      {
-        \refstepcounter { zen@endnote }
-        \tl_set:Nx \l_@@_mark_tl { \thezen@endnote }
-      }
-      { \tl_set:Nx \l_@@_mark_tl {#1} }
-    \@@_endnote_mark:xV { \g_@@_theid_tl } \l_@@_mark_tl
-    \@@_store:nn { \g_@@_theid_tl } {#2}
+    \@@_mark:nn {#1}
+    \@@_text:n {#2}
     \group_end:
   }
 
+\cs_new_protected:Npn \@@_mark:n #1
+  {
+    \int_gincr:N \g_@@_id_int
+    \tl_if_empty:nTF {#1}
+      {
+        \stepcounter { postnote }
+        \tl_set:Nx \l_@@_mark_tl { \thepostnote }
+      }
+      { \tl_set:Nx \l_@@_mark_tl {#1} }
+    \@@_typeset_mark:xV { \g_@@_theid_tl } \l_@@_mark_tl
+  }
+
+\cs_new_protected:Npn \@@_text:n #1
+  { \@@_store:nn { \g_@@_theid_tl } {#1} }
+
 \tl_new:N \l_@@_saved_spacefactor_tl
-\cs_new:Npn \@@_endnote_mark:nn #1#2
+\cs_new_protected:Npn \@@_typeset_mark:nn #1#2
   {
     \mode_leave_vertical:
     \if_mode_horizontal:
@@ -179,45 +190,43 @@
     \bool_if:NTF \g_@@_hyperref_bool
       {
         \Hy@raisedlink
-          { \hyper@anchorstart { zen. #1 .backref } \hyper@anchorend }
-        \hyperlink { zen. #1 } { \@@_make_endnote_mark:n {#2} }
+          { \hyper@anchorstart { postnote. #1 .backref } \hyper@anchorend }
+        \hyperlink { postnote. #1 } { \@@_mark_format:n {#2} }
       }
-      { \@@_make_endnote_mark:n {#2} }
+      { \@@_mark_format:n {#2} }
     \if_mode_horizontal:
     \spacefactor \l_@@_saved_spacefactor_tl
     \fi:
     \scan_stop:
   }
-\cs_generate_variant:Nn \@@_endnote_mark:nn {xV}
-\cs_new:Npn \@@_make_endnote_mark:n #1
+\cs_generate_variant:Nn \@@_typeset_mark:nn {xV}
+\cs_new_protected:Npn \@@_mark_format:n #1
   { \hbox:n { \@textsuperscript { \normalfont #1 } } }
 %    \end{macrocode}
 %
 %
-% \section{zensection}
+% \section{postnotesection}
 %
 %    \begin{macrocode}
-\int_new:N \g_@@_print_sect_id_int
+\int_new:N \g_@@_sectid_int
 \tl_new:N \l_@@_en_type_tl
 
-\NewDocumentCommand \zensection { O { } m }
-  { \zen_section:nn {#1} {#2} }
+\NewDocumentCommand \postnotesection { O { } m }
+  { \@@_section:nn {#1} {#2} }
 
-\cs_new_protected:Npn \zen_section:nn #1#2
+\cs_new_protected:Npn \@@_section:nn #1#2
   {
-    \group_begin:
     \int_gincr:N \g_@@_id_int
-    \int_gincr:N \g_@@_print_sect_id_int
+    \int_gincr:N \g_@@_sectid_int
     \@@_section_store:nn { \g_@@_theid_tl } {#2}
-    \group_end:
   }
 %    \end{macrocode}
 %
 %
-% \section{zenprintnotes}
+% \section{printpostnotes}
 %
 %    \begin{macrocode}
-\NewDocumentCommand \zenprintnotes { O { } }
+\NewDocumentCommand \printpostnotes { O { } }
   { \@@_print_notes:n {#1} }
 
 \int_new:N \g_@@_printid_int
@@ -228,11 +237,11 @@
 \tl_new:N \l_@@_en_curr_type_tl
 \tl_new:N \l_@@_en_next_type_tl
 \tl_new:N \l_@@_psectid_tl
-\tl_new:N \zenthechapter
-\tl_new:N \zenthesection
+\tl_new:N \pnthechapter
+\tl_new:N \pnthesection
 
-\newcounter { zen@endnote@text }
-\newcounter { zen@psectid }
+\newcounter { postnote@text }
+\newcounter { postnote@psectid }
 
 % <theid><prop><tl var>
 \cs_new_protected:Npn \@@_prop_get:nnN #1#2#3
@@ -264,13 +273,11 @@
           {
             \tl_if_eq:NnT \l_@@_en_next_type_tl { note }
               {
-                \tl_if_eq:NNT \@currenvir \l_@@_list_env_tl
-                  { \exp_args:Nx \end { \l_@@_list_env_tl } }
                 \group_begin:
                 \@@_prop_get:nnN { \g_@@_theprintid_tl }
-                  { chapter } \zenthechapter
+                  { chapter } \pnthechapter
                 \@@_prop_get:nnN { \g_@@_theprintid_tl }
-                  { section } \zenthesection
+                  { section } \pnthesection
                 \@@_prop_get:nnN { \g_@@_theprintid_tl }
                   { content } \l_@@_content_tl
                 \l_@@_content_tl
@@ -278,7 +285,7 @@
                 \@@_prop_get:nnN { \g_@@_theprintid_tl }
                   { psectid } \l_@@_psectid_tl
                 \exp_args:Nnx \setcounter
-                  { zen@psectid } { \int_eval:n { \l_@@_psectid_tl } }
+                  { postnote@psectid } { \int_eval:n { \l_@@_psectid_tl } }
                 \exp_args:Nx \begin { \l_@@_list_env_tl }
                 \l_@@_print_format_tl
               }
@@ -293,15 +300,15 @@
               { mark } \l_@@_text_mark_tl
             \item
               [
-                \@@_text_mark:eV
+                \@@_text_typeset_mark:eV
                   { \g_@@_theprintid_tl }
                   \l_@@_text_mark_tl
               ]
             \group_begin:
-            \refstepcounter { zen@endnote@text }
-            \cs_set:Npn \@currentcounter { zen@endnote }
+            \refstepcounter { postnote@text }
+            \cs_set:Npn \@currentcounter { postnote }
             \cs_set:Npx \@currentlabel
-              { \p@zen@endnote \l_@@_text_mark_tl }
+              { \p@postnote \l_@@_text_mark_tl }
             \@@_prop_get:nnN { \g_@@_theprintid_tl }
               { content } \l_@@_content_tl
             \l_@@_content_tl
@@ -320,17 +327,17 @@
     \group_end:
   }
 
-\cs_new:Npn \zen_text_mark_format:n #1 { #1 . }
-\cs_new:Npn \@@_text_mark:nn #1#2
+\cs_new:Npn \@@_text_mark_format:n #1 { #1 . }
+\cs_new:Npn \@@_text_typeset_mark:nn #1#2
   {
     \bool_if:NTF \g_@@_hyperref_bool
       {
-        \Hy@raisedlink { \hyper@anchorstart { zen. #1 } \hyper@anchorend }
-        \hyperlink { zen. #1 .backref } { \zen_text_mark_format:n {#2} }
+        \Hy@raisedlink { \hyper@anchorstart { postnote. #1 } \hyper@anchorend }
+        \hyperlink { postnote. #1 .backref } { \@@_text_mark_format:n {#2} }
       }
-      { \zen_text_mark_format:n {#2} }
+      { \@@_text_mark_format:n {#2} }
   }
-\cs_generate_variant:Nn \@@_text_mark:nn {eV}
+\cs_generate_variant:Nn \@@_text_typeset_mark:nn {eV}
 %    \end{macrocode}
 %
 %
