@@ -29,7 +29,7 @@
 % }
 %
 %
-% \GetFileInfo{zref-clever.sty}
+% \GetFileInfo{zref-endnotes.sty}
 %
 % \title{^^A
 %   The \pkg{zref-endnotes} package^^A
@@ -74,71 +74,72 @@
 %
 %
 %    \begin{macrocode}
-\RequirePackage { zref-base }
-\RequirePackage { zref-abspage }
-
-\bool_new:N \g_zen_hyperref_bool
+\bool_new:N \g_@@_hyperref_bool
 \AddToHook{begindocument}
   {
     \IfPackageLoadedTF { hyperref }
-      { \bool_gset_true:N \g_zen_hyperref_bool }
+      { \bool_gset_true:N \g_@@_hyperref_bool }
       {}
   }
-\bool_new:N \g_zen_biblatex_bool
+\bool_new:N \g_@@_biblatex_bool
 \AddToHook{begindocument}
   {
     \IfPackageLoadedTF { biblatex }
-      { \bool_gset_true:N \g_zen_biblatex_bool }
+      { \bool_gset_true:N \g_@@_biblatex_bool }
       {}
   }
 %    \end{macrocode}
 %
 %
-% \subsection{zref setup}
+% \section{data}
 %
 %    \begin{macrocode}
-\zref@newlist { zen@note }
-
-\zref@newprop { zen@type } [ ] { \l__zen_en_type_tl }
-\zref@addprop { zen@note } { zen@type }
-
-\zref@newprop { zen@mark } { \l__zen_mark_tl }
-\zref@addprop { zen@note } { zen@mark }
-
-\zref@newprop { zen@thechap } { \thechapter }
-\zref@addprop { zen@note } { zen@thechap } % CHECK ?
-
-\zref@newprop { zen@thesect } { \thesection }
-\zref@addprop { zen@note } { zen@thesect } % CHECK ?
-
-\zref@newprop { zen@psectid } [0] { \int_use:N \g__zen_print_sect_id_int }
-\zref@addprop { zen@note } { zen@psectid }
-
-\zref@addprop { zen@note } { page }
+\int_new:N \g_@@_id_int
+\tl_new:N \g_@@_theid_tl
+\tl_gset:Nn \g_@@_theid_tl { \int_use:N \g_@@_id_int }
 
 
-\zref@newlist { zen@psect }
+% <note theid>
+\cs_new:Npn \@@_data_name:n #1
+  { g_@@_ #1 _data_prop }
+\cs_generate_variant:Nn \@@_data_name:n { e }
 
-\zref@addprop { zen@psect } { zen@type }
+% <note theid><note content>
+\cs_new_protected:Npn \@@_store:nn #1#2
+  {
+    \prop_new:c { \@@_data_name:e {#1} }
+    \prop_gput:cnn { \@@_data_name:e {#1} } { type } { note }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { mark } { \l_@@_mark_tl }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { chapter } { \thechapter }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { section } { \thesection }
+    \prop_gput:cnx { \@@_data_name:e {#1} }
+      { psectid } { \int_use:N \g_@@_print_sect_id_int }
+    \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
+  }
 
-\zref@addprop { zen@psect } { zen@psectid }
-\zref@addprop { zen@psect } { zen@thechap }
-\zref@addprop { zen@psect } { zen@thesect }
+% <note theid><note content>
+\cs_new_protected:Npn \@@_section_store:nn #1#2
+  {
+    \prop_new:c { \@@_data_name:e {#1} }
+    \prop_gput:cnn { \@@_data_name:e {#1} } { type } { section }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { chapter } { \thechapter }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { section } { \thesection }
+    \prop_gput:cnx { \@@_data_name:e {#1} }
+      { psectid } { \int_use:N \g_@@_print_sect_id_int }
+    \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
+  }
 
-\zref@newlist { zen@text }
-
-\zref@addprop { zen@text } { abspage }
 %    \end{macrocode}
 %
 %
 % \section{options}
 %
 %    \begin{macrocode}
-\tl_new:N \l__zen_list_env_tl
-\tl_set:Nn \l__zen_list_env_tl {enumerate}
+\tl_new:N \l_@@_list_env_tl
+\tl_set:Nn \l_@@_list_env_tl {enumerate}
 
-\tl_new:N \l__zen_print_format_tl
-\tl_set:Nn \l__zen_print_format_tl {\small}
+\tl_new:N \l_@@_print_format_tl
+\tl_set:Nn \l_@@_print_format_tl {\small}
 %    \end{macrocode}
 %
 %
@@ -146,13 +147,8 @@
 %
 %    \begin{macrocode}
 \newcounter { zen@endnote }
-\int_new:N \g__zen_en_id_int
 
-\tl_new:N \l__zen_mark_tl
-
-\cs_new:Npn \__zen_en_text:n #1
-  { g__zen_endnote_text_ #1 _tl }
-\cs_generate_variant:Nn \__zen_en_text:n {e}
+\tl_new:N \l_@@_mark_tl
 
 \NewDocumentCommand \zendnote { O { } m }
   { \zen_endnote:nn {#1} {#2} }
@@ -160,44 +156,40 @@
 \cs_new_protected:Npn \zen_endnote:nn #1#2
   {
     \group_begin:
-    \int_gincr:N \g__zen_en_id_int
+    \int_gincr:N \g_@@_id_int
     \tl_if_empty:nTF {#1}
       {
         \refstepcounter { zen@endnote }
-        \tl_set:Nx \l__zen_mark_tl { \thezen@endnote }
+        \tl_set:Nx \l_@@_mark_tl { \thezen@endnote }
       }
-      { \tl_set:Nx \l__zen_mark_tl {#1} }
-    \tl_set:Nn \l__zen_en_type_tl { note }
-    \exp_args:Nx \zref@labelbylist
-      { zen@ \int_use:N \g__zen_en_id_int } { zen@note }
-    \__zen_endnote_mark:xV { \int_use:N \g__zen_en_id_int } \l__zen_mark_tl
-    \tl_new:c { \__zen_en_text:e { \int_use:N \g__zen_en_id_int } }
-    \tl_gset:cn { \__zen_en_text:e { \int_use:N \g__zen_en_id_int } } {#2}
+      { \tl_set:Nx \l_@@_mark_tl {#1} }
+    \@@_endnote_mark:xV { \g_@@_theid_tl } \l_@@_mark_tl
+    \@@_store:nn { \g_@@_theid_tl } {#2}
     \group_end:
   }
 
-\tl_new:N \l__zen_saved_spacefactor_tl
-\cs_new:Npn \__zen_endnote_mark:nn #1#2
+\tl_new:N \l_@@_saved_spacefactor_tl
+\cs_new:Npn \@@_endnote_mark:nn #1#2
   {
     \mode_leave_vertical:
     \if_mode_horizontal:
-    \tl_set:Nx \l__zen_saved_spacefactor_tl { \the\spacefactor }
+    \tl_set:Nx \l_@@_saved_spacefactor_tl { \the\spacefactor }
     \nobreak
     \fi:
-    \bool_if:NTF \g_zen_hyperref_bool
+    \bool_if:NTF \g_@@_hyperref_bool
       {
         \Hy@raisedlink
           { \hyper@anchorstart { zen. #1 .backref } \hyper@anchorend }
-        \hyperlink { zen. #1 } { \__zen_make_endnote_mark:n {#2} }
+        \hyperlink { zen. #1 } { \@@_make_endnote_mark:n {#2} }
       }
-      { \__zen_make_endnote_mark:n {#2} }
+      { \@@_make_endnote_mark:n {#2} }
     \if_mode_horizontal:
-    \spacefactor \l__zen_saved_spacefactor_tl
+    \spacefactor \l_@@_saved_spacefactor_tl
     \fi:
     \scan_stop:
   }
-\cs_generate_variant:Nn \__zen_endnote_mark:nn {xV}
-\cs_new:Npn \__zen_make_endnote_mark:n #1
+\cs_generate_variant:Nn \@@_endnote_mark:nn {xV}
+\cs_new:Npn \@@_make_endnote_mark:n #1
   { \hbox:n { \@textsuperscript { \normalfont #1 } } }
 %    \end{macrocode}
 %
@@ -205,8 +197,8 @@
 % \section{zensection}
 %
 %    \begin{macrocode}
-\int_new:N \g__zen_print_sect_id_int
-\tl_new:N \l__zen_en_type_tl
+\int_new:N \g_@@_print_sect_id_int
+\tl_new:N \l_@@_en_type_tl
 
 \NewDocumentCommand \zensection { O { } m }
   { \zen_section:nn {#1} {#2} }
@@ -214,13 +206,9 @@
 \cs_new_protected:Npn \zen_section:nn #1#2
   {
     \group_begin:
-    \int_gincr:N \g__zen_en_id_int
-    \int_gincr:N \g__zen_print_sect_id_int
-    \tl_set:Nn \l__zen_en_type_tl { section }
-    \exp_args:Nx \zref@labelbylist
-      { zen@ \int_use:N \g__zen_en_id_int } { zen@psect }
-    \tl_new:c { \__zen_en_text:e { \int_use:N \g__zen_en_id_int } }
-    \tl_gset:cn { \__zen_en_text:e { \int_use:N \g__zen_en_id_int } } {#2}
+    \int_gincr:N \g_@@_id_int
+    \int_gincr:N \g_@@_print_sect_id_int
+    \@@_section_store:nn { \g_@@_theid_tl } {#2}
     \group_end:
   }
 %    \end{macrocode}
@@ -230,127 +218,119 @@
 %
 %    \begin{macrocode}
 \NewDocumentCommand \zenprintnotes { O { } }
-  { \zen_print_notes:n {#1} }
+  { \@@_print_notes:n {#1} }
 
-\int_new:N \g__zen_en_print_int
-\tl_new:N \l__zen_text_mark_tl
-\tl_new:N \l__zen_en_curr_type_tl
-\tl_new:N \l__zen_en_next_type_tl
-\tl_new:N \l__zen_psectid_tl
+\int_new:N \g_@@_printid_int
+\tl_new:N \g_@@_theprintid_tl
+\tl_gset:Nn \g_@@_theprintid_tl { \int_use:N \g_@@_printid_int }
+\tl_new:N \l_@@_text_mark_tl
+\tl_new:N \l_@@_content_tl
+\tl_new:N \l_@@_en_curr_type_tl
+\tl_new:N \l_@@_en_next_type_tl
+\tl_new:N \l_@@_psectid_tl
 \tl_new:N \zenthechapter
 \tl_new:N \zenthesection
 
 \newcounter { zen@endnote@text }
 \newcounter { zen@psectid }
 
-\cs_new_protected:Npn \__zen_def_extract_default:Nnnn #1#2#3#4
+% <theid><prop><tl var>
+\cs_new_protected:Npn \@@_prop_get:nnN #1#2#3
   {
-    \exp_args:NNNo \exp_args:NNo \tl_set:Nn #1
-      { \zref@extractdefault {#2} {#3} {#4} }
+    \prop_get:cnNF { \@@_data_name:e {#1} } {#2} #3
+      { \tl_clear:N #3 }
   }
-\cs_new_protected:Npn \__zen_def_extract:Nnn #1#2#3
-  {
-    \exp_args:NNNo \exp_args:NNo \tl_set:Nn #1
-      { \zref@extract {#2} {#3} }
-  }
-\cs_generate_variant:Nn \__zen_def_extract_default:Nnnn { Nxnn }
-\cs_generate_variant:Nn \__zen_def_extract:Nnn { Nxn }
 
-\cs_new_protected:Npn \zen_print_notes:n #1
+\cs_new_protected:Npn \@@_print_notes:n #1
   {
     \group_begin:
     \chapter{Notes}
     % Keep biblatex happy.
-    \bool_if:NT \g_zen_biblatex_bool
+    \bool_if:NT \g_@@_biblatex_bool
       { \toggletrue { blx@footnote } }
-    \int_until_do:nNnn { \g__zen_en_print_int } = { \g__zen_en_id_int }
+    \int_until_do:nNnn { \g_@@_printid_int } = { \g_@@_id_int }
       {
-        \int_gincr:N \g__zen_en_print_int
-        \__zen_def_extract_default:Nxnn \l__zen_en_curr_type_tl
-          { zen@ \int_use:N \g__zen_en_print_int } { zen@type } { undef }
-        \int_compare:nNnTF { \g__zen_en_print_int } = { \g__zen_en_id_int }
-          { \tl_set:Nn \l__zen_en_next_type_tl { close } }
+        \int_gincr:N \g_@@_printid_int
+        \@@_prop_get:nnN { \g_@@_theprintid_tl }
+          { type } \l_@@_en_curr_type_tl
+        \int_compare:nNnTF { \g_@@_printid_int } = { \g_@@_id_int }
+          { \tl_set:Nn \l_@@_en_next_type_tl { close } }
           {
-            \__zen_def_extract_default:Nxnn \l__zen_en_next_type_tl
-              { zen@ \int_eval:n { \g__zen_en_print_int + 1 } }
-              { zen@type } { undef }
+            \@@_prop_get:nnN
+              { \int_eval:n { \g_@@_printid_int + 1 } }
+              { type } \l_@@_en_next_type_tl
           }
-        \tl_if_eq:NnTF \l__zen_en_curr_type_tl { section }
+        \tl_if_eq:NnTF \l_@@_en_curr_type_tl { section }
           {
-            \tl_if_eq:NnT \l__zen_en_next_type_tl { note }
+            \tl_if_eq:NnT \l_@@_en_next_type_tl { note }
               {
-                \tl_if_eq:NNT \@currenvir \l__zen_list_env_tl
-                  { \exp_args:Nx \end { \l__zen_list_env_tl } }
+                \tl_if_eq:NNT \@currenvir \l_@@_list_env_tl
+                  { \exp_args:Nx \end { \l_@@_list_env_tl } }
                 \group_begin:
-                \__zen_def_extract:Nxn \zenthechapter
-                  { zen@ \int_use:N \g__zen_en_print_int } { zen@thechap }
-                \__zen_def_extract:Nxn \zenthesection
-                  { zen@ \int_use:N \g__zen_en_print_int } { zen@thesect }
-                \tl_use:c
-                  { \__zen_en_text:e { \int_use:N \g__zen_en_print_int } }
+                \@@_prop_get:nnN { \g_@@_theprintid_tl }
+                  { chapter } \zenthechapter
+                \@@_prop_get:nnN { \g_@@_theprintid_tl }
+                  { section } \zenthesection
+                \@@_prop_get:nnN { \g_@@_theprintid_tl }
+                  { content } \l_@@_content_tl
+                \l_@@_content_tl
                 \group_end:
-                \__zen_def_extract:Nxn \l__zen_psectid_tl
-                  { zen@ \int_use:N \g__zen_en_print_int } { zen@psectid }
+                \@@_prop_get:nnN { \g_@@_theprintid_tl }
+                  { psectid } \l_@@_psectid_tl
                 \exp_args:Nnx \setcounter
-                  { zen@psectid } { \int_eval:n { \l__zen_psectid_tl } }
-                \exp_args:Nx \begin { \l__zen_list_env_tl }
-                \l__zen_print_format_tl
+                  { zen@psectid } { \int_eval:n { \l_@@_psectid_tl } }
+                \exp_args:Nx \begin { \l_@@_list_env_tl }
+                \l_@@_print_format_tl
               }
           }
-          {
-            \tl_if_eq:NnT \l__zen_en_curr_type_tl { note }
+          { % curr_type = 'note'
+            \tl_if_eq:NNF \@currenvir \l_@@_list_env_tl
               {
-                \tl_if_eq:NNF \@currenvir \l__zen_list_env_tl
-                  {
-                    \exp_args:Nx \begin { \l__zen_list_env_tl }
-                    \l__zen_print_format_tl
-                  }
-                \__zen_def_extract_default:Nxnn \l__zen_text_mark_tl
-                  { zen@ \int_use:N \g__zen_en_print_int } { zen@mark }
-                  { \exp_not:n { \zref@default } }
-                \item
-                  [
-                    \__zen_text_mark:eV
-                      { \int_use:N \g__zen_en_print_int }
-                      \l__zen_text_mark_tl
-                  ]
-                \group_begin:
-                \refstepcounter { zen@endnote@text }
-                \cs_set:Npn \@currentcounter { zen@endnote }
-                \cs_set:Npx \@currentlabel
-                  { \p@zen@endnote \l__zen_text_mark_tl }
-                \tl_use:c
-                  { \__zen_en_text:e { \int_use:N \g__zen_en_print_int } }
-                \group_end:
-                \tl_if_eq:NnF \l__zen_en_next_type_tl { note }
-                  {
-                    \tl_if_eq:NNT \@currenvir \l__zen_list_env_tl
-                      { \exp_args:Nx \end { \l__zen_list_env_tl } }
-                  }
+                \exp_args:Nx \begin { \l_@@_list_env_tl }
+                \l_@@_print_format_tl
               }
+            \@@_prop_get:nnN { \g_@@_theprintid_tl }
+              { mark } \l_@@_text_mark_tl
+            \item
+              [
+                \@@_text_mark:eV
+                  { \g_@@_theprintid_tl }
+                  \l_@@_text_mark_tl
+              ]
+            \group_begin:
+            \refstepcounter { zen@endnote@text }
+            \cs_set:Npn \@currentcounter { zen@endnote }
+            \cs_set:Npx \@currentlabel
+              { \p@zen@endnote \l_@@_text_mark_tl }
+            \@@_prop_get:nnN { \g_@@_theprintid_tl }
+              { content } \l_@@_content_tl
+            \l_@@_content_tl
+            \group_end:
+            \tl_if_eq:NnF \l_@@_en_next_type_tl { note }
+              { \exp_args:Nx \end { \l_@@_list_env_tl } }
           }
         % I don't know if clearing the variable represents any kind of gain,
         % but we don't need it anymore.  So, just in case.
-        \tl_gclear:c { \__zen_en_text:e { \int_use:N \g__zen_en_print_int } }
+        \prop_gclear:c { \@@_data_name:e { \g_@@_theprintid_tl } }
       }
     % Make sure that, even in transitory states of the label set, we don't
     % leave an unclosed environment.
-    \tl_if_eq:NNT \@currenvir \l__zen_list_env_tl
-      { \exp_args:Nx \end { \l__zen_list_env_tl } }
+    \tl_if_eq:NNT \@currenvir \l_@@_list_env_tl
+      { \exp_args:Nx \end { \l_@@_list_env_tl } }
     \group_end:
   }
 
 \cs_new:Npn \zen_text_mark_format:n #1 { #1 . }
-\cs_new:Npn \__zen_text_mark:nn #1#2
+\cs_new:Npn \@@_text_mark:nn #1#2
   {
-    \bool_if:NTF \g_zen_hyperref_bool
+    \bool_if:NTF \g_@@_hyperref_bool
       {
         \Hy@raisedlink { \hyper@anchorstart { zen. #1 } \hyper@anchorend }
         \hyperlink { zen. #1 .backref } { \zen_text_mark_format:n {#2} }
       }
       { \zen_text_mark_format:n {#2} }
   }
-\cs_generate_variant:Nn \__zen_text_mark:nn {eV}
+\cs_generate_variant:Nn \@@_text_mark:nn {eV}
 %    \end{macrocode}
 %
 %
