@@ -1,10 +1,79 @@
-%% chapter{Initial setup}
+% \iffalse meta-comment
+% \fi
+%
+% \iffalse
+%<*driver>
+\documentclass{l3doc}
 
+% Have \GetFileInfo pick up date and version data and used in the
+% documentation.
+\usepackage{zref-endnotes}
+
+\begin{document}
+
+\DocInput{zref-endnotes.dtx}
+
+\end{document}
+%</driver>
+%
+% \fi
+% ^^A Have the Index at 'section' level rather than 'part'.  Otherwise it is
+% ^^A just the same definition from 'l3doc.cls'.
+% \IndexPrologue{^^A
+%   \section*{Index}
+%   \markboth{Index}{Index}
+%   \addcontentsline{toc}{section}{Index}
+%   The italic numbers denote the pages where the corresponding entry is
+%   described, numbers underlined point to the definition, all others indicate
+%   the places where it is used.^^A
+% }
+%
+%
+% \GetFileInfo{zref-clever.sty}
+%
+% \title{^^A
+%   The \pkg{zref-endnotes} package^^A
+%   \thanks{This file describes \fileversion, released \filedate.}^^A
+%   \texorpdfstring{\\{}\medskip{}}{ - }^^A
+%   Code documentation^^A
+%   \texorpdfstring{\medskip{}}{}^^A
+% }
+%
+% \author{^^A
+%   Gustavo Barros^^A
+%   \thanks{\url{https://github.com/gusbrs/zref-endnotes}}^^A
+% }
+%
+% \date{\filedate}
+%
+% \maketitle
+%
+%
+% \tableofcontents
+%
+%
+% \section{Initial setup}
+% Start the \pkg{DocStrip} guards.
+%    \begin{macrocode}
+%<*package>
+%    \end{macrocode}
+%
+% Identify the internal prefix (\LaTeX3 \pkg{DocStrip} convention).
+%    \begin{macrocode}
+%<@@=zen>
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
 \ProvidesExplPackage {zref-endnotes} {2022-03-24} {0.1.0}
   {Endnotes for LaTeX based on zref}
-
-%% section{Dependencies}
-
+%    \end{macrocode}
+%
+%
+% \subsection{Dependencies}
+%
+%
+%    \begin{macrocode}
 \RequirePackage { zref-base }
 \RequirePackage { zref-abspage }
 
@@ -22,9 +91,12 @@
       { \bool_gset_true:N \g_zen_biblatex_bool }
       {}
   }
-
-%% section{zref setup}
-
+%    \end{macrocode}
+%
+%
+% \subsection{zref setup}
+%
+%    \begin{macrocode}
 \zref@newlist { zen@note }
 
 \zref@newprop { zen@type } [ ] { \l__zen_en_type_tl }
@@ -56,18 +128,23 @@
 \zref@newlist { zen@text }
 
 \zref@addprop { zen@text } { abspage }
-
-
-%% chapter{options}
-
+%    \end{macrocode}
+%
+%
+% \section{options}
+%
+%    \begin{macrocode}
 \tl_new:N \l__zen_list_env_tl
 \tl_set:Nn \l__zen_list_env_tl {enumerate}
 
 \tl_new:N \l__zen_print_format_tl
 \tl_set:Nn \l__zen_print_format_tl {\small}
-
-%% chapter{zendnote}
-
+%    \end{macrocode}
+%
+%
+% \section{zendnote}
+%
+%    \begin{macrocode}
 \newcounter { zen@endnote }
 \int_new:N \g__zen_en_id_int
 
@@ -122,10 +199,12 @@
 \cs_generate_variant:Nn \__zen_endnote_mark:nn {xV}
 \cs_new:Npn \__zen_make_endnote_mark:n #1
   { \hbox:n { \@textsuperscript { \normalfont #1 } } }
-
-
-%% chapter{zensection}
-
+%    \end{macrocode}
+%
+%
+% \section{zensection}
+%
+%    \begin{macrocode}
 \int_new:N \g__zen_print_sect_id_int
 \tl_new:N \l__zen_en_type_tl
 
@@ -144,10 +223,12 @@
     \tl_gset:cn { \__zen_en_text:e { \int_use:N \g__zen_en_id_int } } {#2}
     \group_end:
   }
-
-
-%% chapter{zenprintnotes}
-
+%    \end{macrocode}
+%
+%
+% \section{zenprintnotes}
+%
+%    \begin{macrocode}
 \NewDocumentCommand \zenprintnotes { O { } }
   { \zen_print_notes:n {#1} }
 
@@ -270,3 +351,14 @@
       { \zen_text_mark_format:n {#2} }
   }
 \cs_generate_variant:Nn \__zen_text_mark:nn {eV}
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+%</package>
+%    \end{macrocode}
+%
+%
+% \PrintIndex
+%
+%
