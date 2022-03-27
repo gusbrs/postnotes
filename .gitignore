@@ -1,9 +1,5 @@
-*.aux
-*.log
-*.out
-*.pdf
-*.synctex.gz
-*.toc
+build/
+aux/
 .auctex/
-
-zen-tests.tex
+*.pdf
+*.zip
