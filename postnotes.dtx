@@ -112,7 +112,7 @@
   {
     \prop_new:c { \@@_data_name:e {#1} }
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { note }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { mark } { \l_@@_mark_tl }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { mark } { \thepostnote }
     \prop_gput:cnx { \@@_data_name:e {#1} } { chapter } { \thechapter }
     \prop_gput:cnx { \@@_data_name:e {#1} } { section } { \thesection }
     \prop_gput:cnx { \@@_data_name:e {#1} }
@@ -148,38 +148,83 @@
 %
 % \section{postnote}
 %
+% Different from the traditional \cs{footnotemark} / \cs{footnotetext} system,
+% in the context of endnotes, the functionality which corresponds to
+% \cs{footnotetext} is simply to store the data to be typeset later.  Hence,
+% some of the problems that afflict footnotes do not apply to endnotes.
+% Namely, they can be used in ``inner paragraph mode'' (\cs{mbox} etc.), and
+% if the ``text'' will be typeset in the same page as the ``mark'' is of
+% little concern.
+%
+% Therefore, both the separation between ``mark'' and ``text'' and the ability
+% to set an arbitrary ``mark'' value are of little use for endnotes.  And,
+% since they introduce their own set of problems, and quite ponderous ones, we
+% are better without them.
+%
+% One issue that does potentially require some manual adjustment, just as they
+% do for \cs{footnotes}, are floats and their ability to wreak havoc in an
+% otherwise so well behaved order of counters.  If we received an arbitrary
+% value, as the kernel functionality for footnotes and other endnotes packages
+% do, this value is expected to the printed as such, hence it must correspond
+% to the \texttt{postnote} counter.  But this counter is in the hands of the
+% user, and can be reset along the document, thus its uniqueness cannot be
+% ensured.  But, for handling case of floats, we don't need the ability to set
+% arbitrary values of the mark, we can receive instead an ``offset'', relative
+% to the current value of the main counters.  With an offset of this kind we
+% can adjust both \texttt{postnote} and \cs{g_@@_id_int}, and also calculate
+% an appropriate value for the \pkg{hyperref} anchor.  As a companion to this
+% offset optional argument, \cs{pnaddtocounter} is provided, to allow users to
+% manually correct the counter sequence, disrupted by a previously issued
+% offset, in the proper place.
+%
+% We don't offer \cs{footnotetext} at all.  But, we offer a stripped down
+% version of \cs{footnotemark}, to enable users to have multiple marks for the
+% same note.  It receives only an optional argument which is a counter offset,
+% as the one of \cs{postnote}.
+%
+% Note that the offset feature is meant for short range localized adjustments.
+% It cannot handle arbitrarily large offsets.  In particular, the offset must
+% not cross a postnote section boundary or a boundary across a reset of the
+% \texttt{postnote} counter.  Either of these may result in a wrong mark, an
+% incorrect or missing pkg{hyperref} anchor, or worse.  This stems from the
+% fundamental fact that the \texttt{postnote} counter and \cs{g_@@_id_int} do
+% not always walk in tandem.  If they did, we wouldn't need the two of them.
+% And at postnote sections or at counter resets, they do deviate, and there's
+% not much we can do about it.
+%
+%
+
 %    \begin{macrocode}
 \newcounter { postnote }
-
-\tl_new:N \l_@@_mark_tl
 
 \NewDocumentCommand \postnote { O { } m }
   { \@@_note:nn {#1} {#2} }
 
+% <counter offset><note content>
 \cs_new_protected:Npn \@@_note:nn #1#2
   {
     \group_begin:
-    \@@_mark:nn {#1}
-    \@@_text:n {#2}
+    \tl_if_empty:nF {#1}
+      {
+        \addtocounter { postnote } { #1 }
+        \int_gadd:Nn \g_@@_id_int {#1}
+      }
+    \int_gincr:N \g_@@_id_int
+    \stepcounter { postnote }
+    \@@_typeset_mark:xV { \g_@@_theid_tl } \thepostnote
+    \@@_store:nn { \g_@@_theid_tl } {#2}
+    \tl_if_empty:nF {#1}
+      {
+        \exp_args:Nnx
+          \addtocounter { postnote } { \int_eval:n { - #1 - 1 } }
+        \int_gadd:Nn \g_@@_id_int { - #1 - 1 }
+      }
     \group_end:
   }
 
-\cs_new_protected:Npn \@@_mark:n #1
-  {
-    \int_gincr:N \g_@@_id_int
-    \tl_if_empty:nTF {#1}
-      {
-        \stepcounter { postnote }
-        \tl_set:Nx \l_@@_mark_tl { \thepostnote }
-      }
-      { \tl_set:Nx \l_@@_mark_tl {#1} }
-    \@@_typeset_mark:xV { \g_@@_theid_tl } \l_@@_mark_tl
-  }
-
-\cs_new_protected:Npn \@@_text:n #1
-  { \@@_store:nn { \g_@@_theid_tl } {#1} }
-
 \tl_new:N \l_@@_saved_spacefactor_tl
+\bool_new:N \l_@@_manual_mark_bool
+% <theid><mark>
 \cs_new_protected:Npn \@@_typeset_mark:nn #1#2
   {
     \mode_leave_vertical:
@@ -189,8 +234,11 @@
     \fi:
     \bool_if:NTF \g_@@_hyperref_bool
       {
-        \Hy@raisedlink
-          { \hyper@anchorstart { postnote. #1 .backref } \hyper@anchorend }
+        \bool_if:NF \l_@@_manual_mark_bool
+          {
+            \Hy@raisedlink
+              { \hyper@anchorstart { postnote. #1 .backref } \hyper@anchorend }
+          }
         \hyperlink { postnote. #1 } { \@@_mark_format:n {#2} }
       }
       { \@@_mark_format:n {#2} }
@@ -199,9 +247,40 @@
     \fi:
     \scan_stop:
   }
-\cs_generate_variant:Nn \@@_typeset_mark:nn {xV}
+\cs_generate_variant:Nn \@@_typeset_mark:nn { xV }
 \cs_new_protected:Npn \@@_mark_format:n #1
   { \hbox:n { \@textsuperscript { \normalfont #1 } } }
+
+
+\NewDocumentCommand \postnotemark { O { } }
+  { \@@_mark:n {#1}  }
+% <counter offset>
+\cs_new_protected:Npn \@@_mark:n #1
+  {
+    \group_begin:
+    \bool_set_true:N \l_@@_manual_mark_bool
+    \tl_if_empty:nF {#1}
+      {
+        \addtocounter { postnote } { #1 }
+        \int_gadd:Nn \g_@@_id_int {#1}
+      }
+    \@@_typeset_mark:xV { \g_@@_theid_tl } \thepostnote
+    \tl_if_empty:nF {#1}
+      {
+        \addtocounter { postnote } { - #1 }
+        \int_gadd:Nn \g_@@_id_int { - #1 }
+      }
+    \group_end:
+  }
+
+\NewDocumentCommand \pnaddtocounter { m }
+  { \@@_add_to_counter:n {#1} }
+% <number>
+\cs_new_protected:Npn \@@_add_to_counter:n #1
+  {
+    \addtocounter { postnote } {#1}
+    \int_gadd:Nn \g_@@_id_int {#1}
+  }
 %    \end{macrocode}
 %
 %
@@ -234,8 +313,8 @@
 \tl_gset:Nn \g_@@_theprintid_tl { \int_use:N \g_@@_printid_int }
 \tl_new:N \l_@@_text_mark_tl
 \tl_new:N \l_@@_content_tl
-\tl_new:N \l_@@_en_curr_type_tl
-\tl_new:N \l_@@_en_next_type_tl
+\tl_new:N \l_@@_curr_type_tl
+\tl_new:N \l_@@_next_type_tl
 \tl_new:N \l_@@_psectid_tl
 \tl_new:N \pnthechapter
 \tl_new:N \pnthesection
@@ -261,17 +340,17 @@
       {
         \int_gincr:N \g_@@_printid_int
         \@@_prop_get:nnN { \g_@@_theprintid_tl }
-          { type } \l_@@_en_curr_type_tl
+          { type } \l_@@_curr_type_tl
         \int_compare:nNnTF { \g_@@_printid_int } = { \g_@@_id_int }
-          { \tl_set:Nn \l_@@_en_next_type_tl { close } }
+          { \tl_set:Nn \l_@@_next_type_tl { close } }
           {
             \@@_prop_get:nnN
               { \int_eval:n { \g_@@_printid_int + 1 } }
-              { type } \l_@@_en_next_type_tl
+              { type } \l_@@_next_type_tl
           }
-        \tl_if_eq:NnTF \l_@@_en_curr_type_tl { section }
+        \tl_if_eq:NnTF \l_@@_curr_type_tl { section }
           {
-            \tl_if_eq:NnT \l_@@_en_next_type_tl { note }
+            \tl_if_eq:NnT \l_@@_next_type_tl { note }
               {
                 \group_begin:
                 \@@_prop_get:nnN { \g_@@_theprintid_tl }
@@ -313,7 +392,7 @@
               { content } \l_@@_content_tl
             \l_@@_content_tl
             \group_end:
-            \tl_if_eq:NnF \l_@@_en_next_type_tl { note }
+            \tl_if_eq:NnF \l_@@_next_type_tl { note }
               { \exp_args:Nx \end { \l_@@_list_env_tl } }
           }
         % I don't know if clearing the variable represents any kind of gain,
