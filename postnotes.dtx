@@ -124,6 +124,30 @@
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
   }
 
+
+\int_new:N \g_@@_abspage_int
+\AddToHook { shipout/before } { \int_gincr:N \g_@@_abspage_int }
+
+\tl_const:Nn \c_@@_ref_prefix_tl { postnote@r }
+\cs_new_protected:Npx \post@note
+  { \exp_not:N \@newl@bel { \c_@@_ref_prefix_tl } }
+
+\cs_new:Npn \@@_set_mark_label:n #1
+  { \iow_shipout_x:Nn \@auxout { \post@note { mark@ #1} { \thepage } } }
+\cs_generate_variant:Nn \@@_set_mark_label:n {x}
+\cs_new:Npn \@@_set_text_label:n #1
+  {
+    \iow_shipout_x:Nn \@auxout
+      { \post@note { text@ #1} { \int_use:N \g_@@_abspage_int } }
+  }
+
+\cs_new:Npn \@@_get_text_pageref:n #1
+  {
+    \cs_if_exist:cTF { \c_@@_ref_prefix_tl @ #1 }
+      { \exp_not:v { \c_@@_ref_prefix_tl @ #1 } }
+      { \c_max_int }
+  }
+\cs_generate_variant:Nn \@@_get_text_pageref:n {e}
 %    \end{macrocode}
 %
 %
@@ -203,6 +227,7 @@
         \stepcounter { postnote }
         \tl_set:Nx \l_@@_mark_tl { \thepostnote }
       }
+    \@@_set_mark_label:x { \g_@@_theid_tl }
     \@@_typeset_mark:xV { \g_@@_theid_tl } \l_@@_mark_tl
     \@@_store:nn { \g_@@_theid_tl } {#2}
     \group_end:
@@ -441,6 +466,7 @@
         \hyperlink { postnote. #1 .mark } { \@@_print_mark_format:n {#2} }
       }
       { \@@_print_mark_format:n {#2} }
+    \@@_set_text_label:n {#1}
   }
 \cs_generate_variant:Nn \@@_print_mark:nn {eV}
 %    \end{macrocode}
