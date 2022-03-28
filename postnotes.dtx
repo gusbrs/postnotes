@@ -100,7 +100,7 @@
 \int_new:N \g_@@_id_int
 \tl_new:N \g_@@_theid_tl
 \tl_gset:Nn \g_@@_theid_tl { \int_use:N \g_@@_id_int }
-
+\seq_new:N \g_@@_queue_seq
 
 % <note theid>
 \cs_new:Npn \@@_data_name:n #1
@@ -112,12 +112,19 @@
   {
     \prop_new:c { \@@_data_name:e {#1} }
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { note }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { mark } { \thepostnote }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { chapter } { \thechapter }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { section } { \thesection }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { mark } { \l_@@_mark_tl }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { sort }
+      {
+        \bool_if:NTF \l_@@_manual_sort_bool
+          { \fp_use:N \l_@@_sort_fp }
+          { \int_use:N \c@postnote }
+      }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { thechapter } { \thechapter }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { thesection } { \thesection }
     \prop_gput:cnx { \@@_data_name:e {#1} }
-      { psectid } { \int_use:N \g_@@_sectid_int }
+      { pnsectid } { \int_use:N \g_@@_sectid_int }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
+    \prop_show:c { \@@_data_name:e {#1} }
   }
 
 % <note theid><note content>
@@ -125,10 +132,10 @@
   {
     \prop_new:c { \@@_data_name:e {#1} }
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { section }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { chapter } { \thechapter }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { section } { \thesection }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { thechapter } { \thechapter }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { thesection } { \thesection }
     \prop_gput:cnx { \@@_data_name:e {#1} }
-      { psectid } { \int_use:N \g_@@_sectid_int }
+      { pnsectid } { \int_use:N \g_@@_sectid_int }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
   }
 
@@ -139,7 +146,7 @@
 %
 %    \begin{macrocode}
 \tl_new:N \l_@@_list_env_tl
-\tl_set:Nn \l_@@_list_env_tl {enumerate}
+\tl_set:Nn \l_@@_list_env_tl { enumerate }
 
 \tl_new:N \l_@@_print_format_tl
 \tl_set:Nn \l_@@_print_format_tl { \small }
@@ -156,41 +163,40 @@
 % if the ``text'' will be typeset in the same page as the ``mark'' is of
 % little concern.
 %
-% Therefore, both the separation between ``mark'' and ``text'' and the ability
-% to set an arbitrary ``mark'' value are of little use for endnotes.  And,
-% since they introduce their own set of problems, and quite ponderous ones, we
-% are better without them.
+% Therefore, the separation between ``mark'' and ``text'' is of little use for
+% endnotes and, that given, the ability to set an arbitrary ``mark'' value is
+% less important, even if it has a place.  And, since they introduce their own
+% set of problems, and quite ponderous ones, we are better off curbing some of
+% this heritage.
 %
-% One issue that does potentially require some manual adjustment, just as they
-% do for \cs{footnotes}, are floats and their ability to wreak havoc in an
-% otherwise so well behaved order of counters.  If we received an arbitrary
-% value, as the kernel functionality for footnotes and other endnotes packages
-% do, this value is expected to the printed as such, hence it must correspond
-% to the \texttt{postnote} counter.  But this counter is in the hands of the
-% user, and can be reset along the document, thus its uniqueness cannot be
-% ensured.  But, for handling case of floats, we don't need the ability to set
-% arbitrary values of the mark, we can receive instead an ``offset'', relative
-% to the current value of the main counters.  With an offset of this kind we
-% can adjust both \texttt{postnote} and \cs{g_@@_id_int}, and also calculate
-% an appropriate value for the \pkg{hyperref} anchor.  As a companion to this
-% offset optional argument, \cs{pnaddtocounter} is provided, to allow users to
-% manually correct the counter sequence, disrupted by a previously issued
-% offset, in the proper place.
+% One relevant issue that potentially requires some manual adjustment, just as
+% they do for \cs{footnotes}, are floats and their ability to wreak havoc in
+% an otherwise so well behaved order of counters.  If we received an arbitrary
+% number, as the kernel functionality for footnotes and other endnotes
+% packages do, this value is expected to the printed as such, hence it must
+% correspond to the \texttt{postnote} counter.  But this counter is in the
+% hands of the user, and can be reset along the document, thus its uniqueness
+% cannot be ensured.  Besides, there might be a need for a mark to be an
+% arbitrary token list, rather than a number.  For example, a critical edition
+% where the original order of notes cannot be disturbed, and editor notes have
+% to be intercalated among the original ones.  The kernel footnote structure
+% does not support this (the optional argument must be a number), but it would
+% be interesting if we could.  The best idea I came up with is to enjoy
+% ``modernity'' and leverage a keyval set of options: \opt{mark}, receiving an
+% arbitrary token list, and \opt{sort}, receiving a floating point number.
+% The pair makes for well defined mark and print order.  And it also covers
+% the case of floats, even if they might also need an ocasional
+% \texttt{\cs{addtocounter}\{postnote\}}.
 %
 % We don't offer \cs{footnotetext} at all.  But, we offer a stripped down
 % version of \cs{footnotemark}, to enable users to have multiple marks for the
-% same note.  It receives only an optional argument which is a counter offset,
-% as the one of \cs{postnote}.
+% same note.  It receives only an optional argument which is a note offset,
+% and can only receive non-negative values and refer to previously added
+% notes.
 %
-% Note that the offset feature is meant for short range localized adjustments.
-% It cannot handle arbitrarily large offsets.  In particular, the offset must
-% not cross a postnote section boundary or a boundary across a reset of the
-% \texttt{postnote} counter.  Either of these may result in a wrong mark, an
-% incorrect or missing pkg{hyperref} anchor, or worse.  This stems from the
-% fundamental fact that the \texttt{postnote} counter and \cs{g_@@_id_int} do
-% not always walk in tandem.  If they did, we wouldn't need the two of them.
-% And at postnote sections or at counter resets, they do deviate, and there's
-% not much we can do about it.
+% David Carlisle and Ulrike Fischer shared some thoughts on the matter on the
+% TeX.SX chat:
+% \url{https://chat.stackexchange.com/transcript/message/60754383#60754383}.
 %
 %
 
@@ -200,26 +206,37 @@
 \NewDocumentCommand \postnote { O { } m }
   { \@@_note:nn {#1} {#2} }
 
-% <counter offset><note content>
+% <options (currently just the mark)><note content>
 \cs_new_protected:Npn \@@_note:nn #1#2
   {
     \group_begin:
-    \tl_if_empty:nF {#1}
-      {
-        \addtocounter { postnote } { #1 }
-        \int_gadd:Nn \g_@@_id_int {#1}
-      }
+    \keys_set:nn { postnotes/note } {#1}
     \int_gincr:N \g_@@_id_int
-    \stepcounter { postnote }
-    \@@_typeset_mark:xV { \g_@@_theid_tl } \thepostnote
-    \@@_store:nn { \g_@@_theid_tl } {#2}
-    \tl_if_empty:nF {#1}
+    \seq_gput_right:Nx \g_@@_queue_seq { \g_@@_theid_tl }
+    \tl_if_empty:NT \l_@@_mark_tl
       {
-        \exp_args:Nnx
-          \addtocounter { postnote } { \int_eval:n { - #1 - 1 } }
-        \int_gadd:Nn \g_@@_id_int { - #1 - 1 }
+        \stepcounter { postnote }
+        \tl_set:Nx \l_@@_mark_tl { \thepostnote }
       }
+    \@@_typeset_mark:xV { \g_@@_theid_tl } \l_@@_mark_tl
+    \@@_store:nn { \g_@@_theid_tl } {#2}
     \group_end:
+  }
+
+\tl_new:N \l_@@_mark_tl
+\tl_new:N \l_@@_addtocounter_tl
+\fp_new:N \l_@@_sort_fp
+\bool_new:N \l_@@_manual_sort_bool
+\keys_define:nn { postnotes/note }
+  {
+    mark .tl_set:N = \l_@@_mark_tl ,
+    mark .value_required:n = true ,
+    sort .code:n =
+      {
+        \fp_set:Nn \l_@@_sort_fp {#1}
+        \bool_set_true:N \l_@@_manual_sort_bool
+      } ,
+    sort .value_required:n = true ,
   }
 
 \tl_new:N \l_@@_saved_spacefactor_tl
@@ -237,9 +254,9 @@
         \bool_if:NF \l_@@_manual_mark_bool
           {
             \Hy@raisedlink
-              { \hyper@anchorstart { postnote. #1 .backref } \hyper@anchorend }
+              { \hyper@anchorstart { postnote. #1 .mark } \hyper@anchorend }
           }
-        \hyperlink { postnote. #1 } { \@@_mark_format:n {#2} }
+        \hyperlink { postnote. #1 .text } { \@@_mark_format:n {#2} }
       }
       { \@@_mark_format:n {#2} }
     \if_mode_horizontal:
@@ -252,34 +269,43 @@
   { \hbox:n { \@textsuperscript { \normalfont #1 } } }
 
 
-\NewDocumentCommand \postnotemark { O { } }
+\NewDocumentCommand \postnotemark { O { 0 } }
   { \@@_mark:n {#1}  }
-% <counter offset>
+% <number>
 \cs_new_protected:Npn \@@_mark:n #1
   {
     \group_begin:
     \bool_set_true:N \l_@@_manual_mark_bool
-    \tl_if_empty:nF {#1}
+    \int_compare:nNnTF {#1} < { 0 }
       {
-        \addtocounter { postnote } { #1 }
-        \int_gadd:Nn \g_@@_id_int {#1}
+        % TODO warn: must be positive, using 0
+        \int_zero:N \l_tmpa_int
       }
-    \@@_typeset_mark:xV { \g_@@_theid_tl } \thepostnote
-    \tl_if_empty:nF {#1}
+      { \int_set:Nn \l_tmpa_int {#1} }
+    \int_compare:nNnT { \g_@@_id_int } > { 0 }
       {
-        \addtocounter { postnote } { - #1 }
-        \int_gadd:Nn \g_@@_id_int { - #1 }
+        \int_set_eq:NN \l_tmpb_int \g_@@_id_int
+        \int_until_do:nNnn { \l_tmpa_int } = { 0 }
+          {
+            \int_decr:N \l_tmpb_int
+            \@@_prop_get:nnN { \int_use:N \l_tmpb_int } { type } \l_tmpa_tl
+            \tl_if_eq:NnT \l_tmpa_tl { note }
+              {
+                \int_decr:N \l_tmpa_int
+                \tl_set:Nx \l_tmpb_tl { \int_use:N \l_tmpb_int }
+              }
+            \int_compare:nNnT { \l_tmpb_int } < { 1 }
+              {
+                \int_zero:N \l_tmpa_int
+                \int_set:Nn \l_tmpb_int { \l_tmpb_tl }
+                % TODO warn: not enough notes for this number, using last
+                % available.
+              }
+          }
       }
+    \@@_prop_get:nnN { \int_use:N \l_tmpb_int } { mark } \l_@@_mark_tl
+    \@@_typeset_mark:xV { \int_use:N \l_tmpb_int } \l_@@_mark_tl
     \group_end:
-  }
-
-\NewDocumentCommand \pnaddtocounter { m }
-  { \@@_add_to_counter:n {#1} }
-% <number>
-\cs_new_protected:Npn \@@_add_to_counter:n #1
-  {
-    \addtocounter { postnote } {#1}
-    \int_gadd:Nn \g_@@_id_int {#1}
   }
 %    \end{macrocode}
 %
@@ -296,6 +322,7 @@
 \cs_new_protected:Npn \@@_section:nn #1#2
   {
     \int_gincr:N \g_@@_id_int
+    \seq_gput_right:Nx \g_@@_queue_seq { \g_@@_theid_tl }
     \int_gincr:N \g_@@_sectid_int
     \@@_section_store:nn { \g_@@_theid_tl } {#2}
   }
@@ -308,19 +335,17 @@
 \NewDocumentCommand \printpostnotes { O { } }
   { \@@_print_notes:n {#1} }
 
-\int_new:N \g_@@_printid_int
-\tl_new:N \g_@@_theprintid_tl
-\tl_gset:Nn \g_@@_theprintid_tl { \int_use:N \g_@@_printid_int }
+\tl_new:N \l_@@_theprintid_tl
 \tl_new:N \l_@@_text_mark_tl
 \tl_new:N \l_@@_content_tl
 \tl_new:N \l_@@_curr_type_tl
 \tl_new:N \l_@@_next_type_tl
-\tl_new:N \l_@@_psectid_tl
+\tl_new:N \l_@@_pnsectid_tl
 \tl_new:N \pnthechapter
 \tl_new:N \pnthesection
 
 \newcounter { postnote@text }
-\newcounter { postnote@psectid }
+\newcounter { postnote@sectid }
 
 % <theid><prop><tl var>
 \cs_new_protected:Npn \@@_prop_get:nnN #1#2#3
@@ -336,16 +361,41 @@
     % Keep biblatex happy.
     \bool_if:NT \g_@@_biblatex_bool
       { \toggletrue { blx@footnote } }
-    \int_until_do:nNnn { \g_@@_printid_int } = { \g_@@_id_int }
+    \seq_if_empty:NF \g_@@_queue_seq
       {
-        \int_gincr:N \g_@@_printid_int
-        \@@_prop_get:nnN { \g_@@_theprintid_tl }
+        \seq_gsort:Nn \g_@@_queue_seq
+          {
+            \@@_prop_get:nnN {##1} { pnsectid } \l_tmpa_tl
+            \@@_prop_get:nnN {##2} { pnsectid } \l_tmpb_tl
+            \tl_if_eq:NNTF \l_tmpa_tl \l_tmpb_tl
+              {
+                \@@_prop_get:nnN {##1} { type } \l_tmpa_tl
+                \@@_prop_get:nnN {##2} { type } \l_tmpb_tl
+                \bool_lazy_and:nnTF
+                  { \str_if_eq_p:Vn \l_tmpa_tl { note } }
+                  { \str_if_eq_p:Vn \l_tmpb_tl { note } }
+                  {
+                    \@@_prop_get:nnN {##1} { sort } \l_tmpa_tl
+                    \@@_prop_get:nnN {##2} { sort } \l_tmpb_tl
+                    \fp_compare:nNnTF { \l_tmpa_tl } > { \l_tmpb_tl }
+                      { \sort_return_swapped: }
+                      { \sort_return_same:    }
+                  }
+                  { \sort_return_same: }
+              }
+              { \sort_return_same: }
+          }
+      }
+    \bool_until_do:nn { \seq_if_empty_p:N \g_@@_queue_seq }
+      {
+        \seq_gpop_left:NN \g_@@_queue_seq \l_@@_theprintid_tl
+        \@@_prop_get:nnN { \l_@@_theprintid_tl }
           { type } \l_@@_curr_type_tl
-        \int_compare:nNnTF { \g_@@_printid_int } = { \g_@@_id_int }
+        \int_compare:nNnTF { \l_@@_theprintid_tl } = { \g_@@_id_int }
           { \tl_set:Nn \l_@@_next_type_tl { close } }
           {
             \@@_prop_get:nnN
-              { \int_eval:n { \g_@@_printid_int + 1 } }
+              { \int_eval:n { \l_@@_theprintid_tl + 1 } }
               { type } \l_@@_next_type_tl
           }
         \tl_if_eq:NnTF \l_@@_curr_type_tl { section }
@@ -353,18 +403,18 @@
             \tl_if_eq:NnT \l_@@_next_type_tl { note }
               {
                 \group_begin:
-                \@@_prop_get:nnN { \g_@@_theprintid_tl }
-                  { chapter } \pnthechapter
-                \@@_prop_get:nnN { \g_@@_theprintid_tl }
-                  { section } \pnthesection
-                \@@_prop_get:nnN { \g_@@_theprintid_tl }
+                \@@_prop_get:nnN { \l_@@_theprintid_tl }
+                  { thechapter } \pnthechapter
+                \@@_prop_get:nnN { \l_@@_theprintid_tl }
+                  { thesection } \pnthesection
+                \@@_prop_get:nnN { \l_@@_theprintid_tl }
                   { content } \l_@@_content_tl
                 \l_@@_content_tl
                 \group_end:
-                \@@_prop_get:nnN { \g_@@_theprintid_tl }
-                  { psectid } \l_@@_psectid_tl
+                \@@_prop_get:nnN { \l_@@_theprintid_tl }
+                  { pnsectid } \l_@@_pnsectid_tl
                 \exp_args:Nnx \setcounter
-                  { postnote@psectid } { \int_eval:n { \l_@@_psectid_tl } }
+                  { postnote@sectid } { \int_eval:n { \l_@@_pnsectid_tl } }
                 \exp_args:Nx \begin { \l_@@_list_env_tl }
                 \l_@@_print_format_tl
               }
@@ -375,12 +425,12 @@
                 \exp_args:Nx \begin { \l_@@_list_env_tl }
                 \l_@@_print_format_tl
               }
-            \@@_prop_get:nnN { \g_@@_theprintid_tl }
+            \@@_prop_get:nnN { \l_@@_theprintid_tl }
               { mark } \l_@@_text_mark_tl
             \item
               [
                 \@@_text_typeset_mark:eV
-                  { \g_@@_theprintid_tl }
+                  { \l_@@_theprintid_tl }
                   \l_@@_text_mark_tl
               ]
             \group_begin:
@@ -388,16 +438,13 @@
             \cs_set:Npn \@currentcounter { postnote }
             \cs_set:Npx \@currentlabel
               { \p@postnote \l_@@_text_mark_tl }
-            \@@_prop_get:nnN { \g_@@_theprintid_tl }
+            \@@_prop_get:nnN { \l_@@_theprintid_tl }
               { content } \l_@@_content_tl
             \l_@@_content_tl
             \group_end:
             \tl_if_eq:NnF \l_@@_next_type_tl { note }
               { \exp_args:Nx \end { \l_@@_list_env_tl } }
           }
-        % I don't know if clearing the variable represents any kind of gain,
-        % but we don't need it anymore.  So, just in case.
-        \prop_gclear:c { \@@_data_name:e { \g_@@_theprintid_tl } }
       }
     % Make sure that, even in transitory states of the label set, we don't
     % leave an unclosed environment.
@@ -411,8 +458,8 @@
   {
     \bool_if:NTF \g_@@_hyperref_bool
       {
-        \Hy@raisedlink { \hyper@anchorstart { postnote. #1 } \hyper@anchorend }
-        \hyperlink { postnote. #1 .backref } { \@@_text_mark_format:n {#2} }
+        \Hy@raisedlink { \hyper@anchorstart { postnote. #1 .text } \hyper@anchorend }
+        \hyperlink { postnote. #1 .mark } { \@@_text_mark_format:n {#2} }
       }
       { \@@_text_mark_format:n {#2} }
   }
