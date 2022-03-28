@@ -17,6 +17,15 @@
 %</driver>
 %
 % \fi
+%
+%
+% \NewDocumentCommand\opt{m}{\texttt{#1}}
+%
+% \pdfstringdefDisableCommands{^^A
+%   \def\opt#1{#1}
+% }
+%
+%
 % ^^A Have the Index at 'section' level rather than 'part'.  Otherwise it is
 % ^^A just the same definition from 'l3doc.cls'.
 % \IndexPrologue{^^A
@@ -60,7 +69,7 @@
 %
 % Identify the internal prefix (\LaTeX3 \pkg{DocStrip} convention).
 %    \begin{macrocode}
-%<@@=postnote>
+%<@@=postnotes>
 %    \end{macrocode}
 %
 %
@@ -70,31 +79,7 @@
 %    \end{macrocode}
 %
 %
-% \subsection{Dependencies}
-%
-%
-%    \begin{macrocode}
-\bool_new:N \g_@@_hyperref_bool
-\AddToHook{begindocument}
-  {
-    \IfPackageLoadedTF { hyperref }
-      {
-        \bool_gset_true:N \g_@@_hyperref_bool
-        \cs_new:Npn \theHpostnote { \int_use:N \g_@@_id_int }
-      }
-      {}
-  }
-\bool_new:N \g_@@_biblatex_bool
-\AddToHook{begindocument}
-  {
-    \IfPackageLoadedTF { biblatex }
-      { \bool_gset_true:N \g_@@_biblatex_bool }
-      {}
-  }
-%    \end{macrocode}
-%
-%
-% \section{data}
+% \section{Data}
 %
 %    \begin{macrocode}
 \int_new:N \g_@@_id_int
@@ -142,7 +127,7 @@
 %    \end{macrocode}
 %
 %
-% \section{options}
+% \section{Options}
 %
 %    \begin{macrocode}
 \tl_new:N \l_@@_list_env_tl
@@ -153,7 +138,7 @@
 %    \end{macrocode}
 %
 %
-% \section{postnote}
+% \section{\cs{postnote}}
 %
 % Different from the traditional \cs{footnotemark} / \cs{footnotetext} system,
 % in the context of endnotes, the functionality which corresponds to
@@ -224,7 +209,6 @@
   }
 
 \tl_new:N \l_@@_mark_tl
-\tl_new:N \l_@@_addtocounter_tl
 \fp_new:N \l_@@_sort_fp
 \bool_new:N \l_@@_manual_sort_bool
 \keys_define:nn { postnotes/note }
@@ -310,11 +294,10 @@
 %    \end{macrocode}
 %
 %
-% \section{postnotesection}
+% \section{\cs{postnotesection}}
 %
 %    \begin{macrocode}
 \int_new:N \g_@@_sectid_int
-\tl_new:N \l_@@_en_type_tl
 
 \NewDocumentCommand \postnotesection { O { } m }
   { \@@_section:nn {#1} {#2} }
@@ -329,18 +312,18 @@
 %    \end{macrocode}
 %
 %
-% \section{printpostnotes}
+% \section{\cs{printpostnotes}}
 %
 %    \begin{macrocode}
 \NewDocumentCommand \printpostnotes { O { } }
   { \@@_print_notes:n {#1} }
 
-\tl_new:N \l_@@_theprintid_tl
-\tl_new:N \l_@@_text_mark_tl
-\tl_new:N \l_@@_content_tl
+\tl_new:N \l_@@_print_theid_tl
+\tl_new:N \l_@@_print_mark_tl
+\tl_new:N \l_@@_print_sectid_tl
 \tl_new:N \l_@@_curr_type_tl
 \tl_new:N \l_@@_next_type_tl
-\tl_new:N \l_@@_pnsectid_tl
+\tl_new:N \l_@@_content_tl
 \tl_new:N \pnthechapter
 \tl_new:N \pnthesection
 
@@ -357,12 +340,12 @@
 \cs_new_protected:Npn \@@_print_notes:n #1
   {
     \group_begin:
-    \chapter{Notes}
-    % Keep biblatex happy.
-    \bool_if:NT \g_@@_biblatex_bool
-      { \toggletrue { blx@footnote } }
     \seq_if_empty:NF \g_@@_queue_seq
       {
+        \chapter{Notes}
+        % Keep biblatex happy.
+        \bool_if:NT \g_@@_biblatex_bool
+          { \toggletrue { blx@footnote } }
         \seq_gsort:Nn \g_@@_queue_seq
           {
             \@@_prop_get:nnN {##1} { pnsectid } \l_tmpa_tl
@@ -388,14 +371,14 @@
       }
     \bool_until_do:nn { \seq_if_empty_p:N \g_@@_queue_seq }
       {
-        \seq_gpop_left:NN \g_@@_queue_seq \l_@@_theprintid_tl
-        \@@_prop_get:nnN { \l_@@_theprintid_tl }
+        \seq_gpop_left:NN \g_@@_queue_seq \l_@@_print_theid_tl
+        \@@_prop_get:nnN { \l_@@_print_theid_tl }
           { type } \l_@@_curr_type_tl
-        \int_compare:nNnTF { \l_@@_theprintid_tl } = { \g_@@_id_int }
+        \int_compare:nNnTF { \l_@@_print_theid_tl } = { \g_@@_id_int }
           { \tl_set:Nn \l_@@_next_type_tl { close } }
           {
             \@@_prop_get:nnN
-              { \int_eval:n { \l_@@_theprintid_tl + 1 } }
+              { \int_eval:n { \l_@@_print_theid_tl + 1 } }
               { type } \l_@@_next_type_tl
           }
         \tl_if_eq:NnTF \l_@@_curr_type_tl { section }
@@ -403,18 +386,18 @@
             \tl_if_eq:NnT \l_@@_next_type_tl { note }
               {
                 \group_begin:
-                \@@_prop_get:nnN { \l_@@_theprintid_tl }
+                \@@_prop_get:nnN { \l_@@_print_theid_tl }
                   { thechapter } \pnthechapter
-                \@@_prop_get:nnN { \l_@@_theprintid_tl }
+                \@@_prop_get:nnN { \l_@@_print_theid_tl }
                   { thesection } \pnthesection
-                \@@_prop_get:nnN { \l_@@_theprintid_tl }
+                \@@_prop_get:nnN { \l_@@_print_theid_tl }
                   { content } \l_@@_content_tl
                 \l_@@_content_tl
                 \group_end:
-                \@@_prop_get:nnN { \l_@@_theprintid_tl }
-                  { pnsectid } \l_@@_pnsectid_tl
+                \@@_prop_get:nnN { \l_@@_print_theid_tl }
+                  { pnsectid } \l_@@_print_sectid_tl
                 \exp_args:Nnx \setcounter
-                  { postnote@sectid } { \int_eval:n { \l_@@_pnsectid_tl } }
+                  { postnote@sectid } { \int_eval:n { \l_@@_print_sectid_tl } }
                 \exp_args:Nx \begin { \l_@@_list_env_tl }
                 \l_@@_print_format_tl
               }
@@ -425,20 +408,20 @@
                 \exp_args:Nx \begin { \l_@@_list_env_tl }
                 \l_@@_print_format_tl
               }
-            \@@_prop_get:nnN { \l_@@_theprintid_tl }
-              { mark } \l_@@_text_mark_tl
+            \@@_prop_get:nnN { \l_@@_print_theid_tl }
+              { mark } \l_@@_print_mark_tl
             \item
               [
-                \@@_text_typeset_mark:eV
-                  { \l_@@_theprintid_tl }
-                  \l_@@_text_mark_tl
+                \@@_print_mark:eV
+                  { \l_@@_print_theid_tl }
+                  \l_@@_print_mark_tl
               ]
             \group_begin:
             \refstepcounter { postnote@text }
             \cs_set:Npn \@currentcounter { postnote }
             \cs_set:Npx \@currentlabel
-              { \p@postnote \l_@@_text_mark_tl }
-            \@@_prop_get:nnN { \l_@@_theprintid_tl }
+              { \p@postnote \l_@@_print_mark_tl }
+            \@@_prop_get:nnN { \l_@@_print_theid_tl }
               { content } \l_@@_content_tl
             \l_@@_content_tl
             \group_end:
@@ -446,24 +429,44 @@
               { \exp_args:Nx \end { \l_@@_list_env_tl } }
           }
       }
-    % Make sure that, even in transitory states of the label set, we don't
-    % leave an unclosed environment.
-    \tl_if_eq:NNT \@currenvir \l_@@_list_env_tl
-      { \exp_args:Nx \end { \l_@@_list_env_tl } }
     \group_end:
   }
 
-\cs_new:Npn \@@_text_mark_format:n #1 { #1 . }
-\cs_new:Npn \@@_text_typeset_mark:nn #1#2
+\cs_new:Npn \@@_print_mark_format:n #1 { #1 . }
+\cs_new:Npn \@@_print_mark:nn #1#2
   {
     \bool_if:NTF \g_@@_hyperref_bool
       {
         \Hy@raisedlink { \hyper@anchorstart { postnote. #1 .text } \hyper@anchorend }
-        \hyperlink { postnote. #1 .mark } { \@@_text_mark_format:n {#2} }
+        \hyperlink { postnote. #1 .mark } { \@@_print_mark_format:n {#2} }
       }
-      { \@@_text_mark_format:n {#2} }
+      { \@@_print_mark_format:n {#2} }
   }
-\cs_generate_variant:Nn \@@_text_typeset_mark:nn {eV}
+\cs_generate_variant:Nn \@@_print_mark:nn {eV}
+%    \end{macrocode}
+%
+%
+% \section{Compatibility}
+%
+%
+%    \begin{macrocode}
+\bool_new:N \g_@@_hyperref_bool
+\AddToHook{begindocument}
+  {
+    \IfPackageLoadedTF { hyperref }
+      {
+        \bool_gset_true:N \g_@@_hyperref_bool
+        \cs_set:Npn \theHpostnote { \int_use:N \g_@@_id_int }
+      }
+      {}
+  }
+\bool_new:N \g_@@_biblatex_bool
+\AddToHook{begindocument}
+  {
+    \IfPackageLoadedTF { biblatex }
+      { \bool_gset_true:N \g_@@_biblatex_bool }
+      {}
+  }
 %    \end{macrocode}
 %
 %
