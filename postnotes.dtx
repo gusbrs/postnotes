@@ -109,7 +109,6 @@
     \prop_gput:cnx { \@@_data_name:e {#1} }
       { pnsectid } { \int_use:N \g_@@_sectid_int }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
-    \prop_show:c { \@@_data_name:e {#1} }
   }
 
 % <note theid><note content>
@@ -125,29 +124,52 @@
   }
 
 
-\int_new:N \g_@@_abspage_int
-\AddToHook { shipout/before } { \int_gincr:N \g_@@_abspage_int }
+% <theid><prop><tl var>
+\cs_new_protected:Npn \@@_prop_get:nnN #1#2#3
+  {
+    \prop_get:cnNF { \@@_data_name:e {#1} } {#2} #3
+      { \tl_clear:N #3 }
+  }
+% <theid><prop>
+\cs_new:Npn \@@_prop_item:nn #1#2
+  { \prop_item:cn { \@@_data_name:e {#1} } {#2} }
+
 
 \tl_const:Nn \c_@@_ref_prefix_tl { postnote@r }
 \cs_new_protected:Npx \post@note
   { \exp_not:N \@newl@bel { \c_@@_ref_prefix_tl } }
 
-\cs_new:Npn \@@_set_mark_label:n #1
-  { \iow_shipout_x:Nn \@auxout { \post@note { mark@ #1} { \thepage } } }
-\cs_generate_variant:Nn \@@_set_mark_label:n {x}
-\cs_new:Npn \@@_set_text_label:n #1
+\cs_new_protected:Npn \@@_set_mark_label:n #1
   {
     \iow_shipout_x:Nn \@auxout
-      { \post@note { text@ #1} { \int_use:N \g_@@_abspage_int } }
+      { \post@note { mark@ #1 } { \thepage } }
   }
+\cs_generate_variant:Nn \@@_set_mark_label:n { x }
+\cs_new_protected:Npn \@@_set_text_label:n #1
+  {
+    \iow_shipout_x:Nn \@auxout
+      { \post@note { text@ #1 } { \int_use:N \c@page } }
+  }
+\cs_new_protected:Npn \@@_set_print_label:n #1
+  {
+    \iow_shipout_x:Nn \@auxout
+      { \post@note { print@ #1 } { \int_use:N \c@page } }
+  }
+\cs_generate_variant:Nn \@@_set_print_label:n { x }
 
-\cs_new:Npn \@@_get_text_pageref:n #1
+\cs_new_protected:Npn \@@_get_pageref:Nn #1#2
+  {
+    \cs_if_exist:cTF { \c_@@_ref_prefix_tl @ #2 }
+      { \tl_set:Nv #1 { \c_@@_ref_prefix_tl @ #2 } }
+      { \tl_clear:N #1 }
+  }
+\cs_new:Npn \@@_extract_pageref:n #1
   {
     \cs_if_exist:cTF { \c_@@_ref_prefix_tl @ #1 }
       { \exp_not:v { \c_@@_ref_prefix_tl @ #1 } }
-      { \c_max_int }
+      { \c_empty_tl }
   }
-\cs_generate_variant:Nn \@@_get_text_pageref:n {e}
+\cs_generate_variant:Nn \@@_extract_pageref:n {e}
 %    \end{macrocode}
 %
 %
@@ -278,10 +300,25 @@
   { \hbox:n { \@textsuperscript { \normalfont #1 } } }
 
 
-\NewDocumentCommand \postnotemark { O { 0 } }
+\NewDocumentCommand \postnotemark { m }
   { \@@_mark:n {#1}  }
-% <number>
+
 \cs_new_protected:Npn \@@_mark:n #1
+  {
+    % TODO this must be a "dumb" one, just typeset the argument
+  }
+
+% TODO Provide a `\postnotemarkref' to typeset the mark from a given label.
+
+% NOTE This ``offset'' version is very neat, with correct hyperlink and all,
+% it is unfortunately very fragile because, if the document changes, who
+% guarantees the offset will still be correct?  If anyone had thought of
+% labels before...  However, a label/ref structure would not be able to give
+% us the id, which would be required for hyperlinking (certainly not for the
+% standard referencing system, and with zref would still require special
+% infrastructure).
+% <number (optional, defaulting to 0)>
+\cs_new_protected:Npn \@@_mark_with_offset:n #1
   {
     \group_begin:
     \bool_set_true:N \l_@@_manual_mark_bool
@@ -343,6 +380,7 @@
 \NewDocumentCommand \printpostnotes { O { } }
   { \@@_print_notes:n {#1} }
 
+\int_new:N \g_@@_print_postnotes_int
 \tl_new:N \l_@@_print_theid_tl
 \tl_new:N \l_@@_print_mark_tl
 \tl_new:N \l_@@_print_sectid_tl
@@ -355,19 +393,19 @@
 \newcounter { postnote@text }
 \newcounter { postnote@sectid }
 
-% <theid><prop><tl var>
-\cs_new_protected:Npn \@@_prop_get:nnN #1#2#3
-  {
-    \prop_get:cnNF { \@@_data_name:e {#1} } {#2} #3
-      { \tl_clear:N #3 }
-  }
-
 \cs_new_protected:Npn \@@_print_notes:n #1
   {
     \group_begin:
+    \int_gincr:N \g_@@_print_postnotes_int
     \seq_if_empty:NF \g_@@_queue_seq
       {
+        \cleardoublepage{}
+        \markright{\pnHeaderChapsPages}
         \chapter{Notes}
+        \markboth{\pnHeaderChapsPages}{\pnHeaderChapsPages}
+        \thispagestyle{headings}
+        \AddToHook { shipout/before } [ postnotes/header ]
+          { \@@_set_headers_vars_next: }
         % Keep biblatex happy.
         \bool_if:NT \g_@@_biblatex_bool
           { \toggletrue { blx@footnote } }
@@ -393,6 +431,8 @@
               }
               { \sort_return_same: }
           }
+        \@@_get_headers_data:N \g_@@_queue_seq
+        \@@_set_headers_vars_first:
       }
     \bool_until_do:nn { \seq_if_empty_p:N \g_@@_queue_seq }
       {
@@ -454,6 +494,8 @@
               { \exp_args:Nx \end { \l_@@_list_env_tl } }
           }
       }
+    \AddToHookNext { shipout/after }
+      { \RemoveFromHook { shipout/before } [ postnotes/header ] }
     \group_end:
   }
 
@@ -469,6 +511,151 @@
     \@@_set_text_label:n {#1}
   }
 \cs_generate_variant:Nn \@@_print_mark:nn {eV}
+%    \end{macrocode}
+%
+%
+% \section{Headers}
+%
+%    \begin{macrocode}
+\prop_new:N \g_@@_header_page_first_prop
+\prop_new:N \g_@@_header_page_last_prop
+\prop_new:N \g_@@_header_chap_first_prop
+\prop_new:N \g_@@_header_chap_last_prop
+\tl_new:N \l_@@_prev_text_page_tl
+\tl_new:N \l_@@_curr_text_page_tl
+\tl_new:N \l_@@_prev_mark_page_tl
+\tl_new:N \l_@@_prev_mark_chap_tl
+\cs_new_protected:Npn \@@_get_headers_data:N #1 % \g_@@_queue_seq
+  {
+    \group_begin:
+    \tl_gclear:N \pnhdpagefirst
+    \tl_gclear:N \pnhdpagelast
+    \tl_gclear:N \pnhdchapfirst
+    \tl_gclear:N \pnhdchaplast
+    \tl_clear:N \l_@@_prev_text_page_tl
+    \tl_clear:N \l_@@_prev_mark_page_tl
+    \tl_gclear:N \g_@@_header_prev_last_page_tl
+    \tl_gclear:N \g_@@_header_prev_last_chap_tl
+    \prop_gclear:N \g_@@_header_page_first_prop
+    \prop_gclear:N \g_@@_header_page_last_prop
+    \prop_gclear:N \g_@@_header_chap_first_prop
+    \prop_gclear:N \g_@@_header_chap_last_prop
+    \seq_map_inline:Nn #1
+      {
+        \exp_args:Nx \tl_if_eq:nnT
+          { \@@_prop_item:nn {##1} { type } } { note }
+          {
+            \@@_get_pageref:Nn \l_@@_curr_text_page_tl { text@ ##1 }
+            \tl_if_empty:NF \l_@@_curr_text_page_tl
+              {
+                \tl_if_eq:NNTF
+                  \l_@@_prev_text_page_tl
+                  \l_@@_curr_text_page_tl
+                  {
+                    \@@_get_pageref:Nn
+                      \l_@@_prev_mark_page_tl { mark@ ##1 }
+                    \@@_prop_get:nnN {##1} { thechapter }
+                      \l_@@_prev_mark_chap_tl
+                  }
+                  {
+                    \prop_gput:Nxx \g_@@_header_page_first_prop
+                      { \l_@@_curr_text_page_tl }
+                      { \@@_extract_pageref:n { mark@ ##1 } }
+                    \prop_gput:Nxx \g_@@_header_chap_first_prop
+                      { \l_@@_curr_text_page_tl }
+                      { \@@_prop_item:nn {##1} { thechapter } }
+                    \tl_if_empty:NF \l_@@_prev_text_page_tl
+                      {
+                        \prop_gput:Nxx \g_@@_header_page_last_prop
+                          { \l_@@_prev_text_page_tl }
+                          { \l_@@_prev_mark_page_tl }
+                        \prop_gput:Nxx \g_@@_header_chap_last_prop
+                          { \l_@@_prev_text_page_tl }
+                          { \l_@@_prev_mark_chap_tl }
+                      }
+                    \tl_set:NV \l_@@_prev_text_page_tl
+                      \l_@@_curr_text_page_tl
+                  }
+              }
+          }
+      }
+    \tl_if_empty:NF \l_@@_prev_text_page_tl
+      {
+        \prop_gput:Nxx \g_@@_header_page_last_prop
+          { \l_@@_prev_text_page_tl }
+          { \l_@@_prev_mark_page_tl }
+        \prop_gput:Nxx \g_@@_header_chap_last_prop
+          { \l_@@_prev_text_page_tl }
+          { \l_@@_prev_mark_chap_tl }
+      }
+    \group_end:
+  }
+
+\tl_new:N \pnhdpagefirst
+\tl_new:N \pnhdpagelast
+\tl_new:N \pnhdchapfirst
+\tl_new:N \pnhdchaplast
+\tl_new:N \g_@@_header_prev_last_page_tl
+\tl_new:N \g_@@_header_prev_last_chap_tl
+\cs_new_protected:Npn \@@_set_headers_vars:n #1
+  {
+    \prop_get:NnNTF \g_@@_header_page_first_prop
+      {#1} \l_tmpa_tl
+      { \tl_gset:NV \pnhdpagefirst \l_tmpa_tl }
+      { \tl_gset:NV \pnhdpagefirst \g_@@_header_prev_last_page_tl }
+    \prop_get:NnNTF \g_@@_header_page_last_prop
+      {#1} \l_tmpa_tl
+      {
+        \tl_gset:NV \pnhdpagelast \l_tmpa_tl
+        \tl_gset:NV \g_@@_header_prev_last_page_tl \l_tmpa_tl
+      }
+      { \tl_gset:NV \pnhdpagelast \g_@@_header_prev_last_page_tl }
+    \prop_get:NnNTF \g_@@_header_chap_first_prop
+      {#1} \l_tmpa_tl
+      { \tl_gset:NV \pnhdchapfirst \l_tmpa_tl }
+      { \tl_gset:NV \pnhdchapfirst \g_@@_header_prev_last_chap_tl }
+    \prop_get:NnNTF \g_@@_header_chap_last_prop
+      {#1} \l_tmpa_tl
+      {
+        \tl_gset:NV \pnhdchaplast \l_tmpa_tl
+        \tl_gset:NV \g_@@_header_prev_last_chap_tl \l_tmpa_tl
+      }
+      { \tl_gset:NV \pnhdchaplast \g_@@_header_prev_last_chap_tl }
+  }
+\cs_generate_variant:Nn \@@_set_headers_vars:n { x }
+
+\cs_new_protected:Npn \@@_set_headers_vars_next:
+  { \@@_set_headers_vars:x { \int_eval:n { \c@page + 1 } } }
+
+\cs_new_protected:Npn \@@_set_headers_vars_first:
+  {
+    \@@_set_print_label:x { \int_use:N \g_@@_print_postnotes_int }
+    \@@_set_headers_vars:x
+      {
+        \@@_extract_pageref:e
+          { print@ \int_use:N \g_@@_print_postnotes_int }
+      }
+  }
+
+% FIXME Header functions: provisional form
+\cs_new_protected:Npn \@@_header_pages:
+  {
+    \tl_if_eq:NNTF \pnhdpagefirst \pnhdpagelast
+      { Notes~for~page~\pnhdpagefirst }
+      { Notes~for~pages~\pnhdpagefirst -- \pnhdpagelast }
+  }
+\NewDocumentCommand \pnHeaderPages {} { \@@_header_pages: }
+
+\cs_new_protected:Npn \@@_header_chaps_pages:
+  {
+    \tl_if_eq:NNTF \pnhdchapfirst \pnhdchaplast
+      { Notes~for~chapter~\pnhdchapfirst,~ }
+      { Notes~for~chapters~\pnhdchapfirst -- \pnhdchaplast,~ }
+    \tl_if_eq:NNTF \pnhdpagefirst \pnhdpagelast
+      { page~\pnhdpagefirst }
+      { pages~\pnhdpagefirst -- \pnhdpagelast }
+  }
+\NewDocumentCommand \pnHeaderChapsPages {} { \@@_header_chaps_pages: }
 %    \end{macrocode}
 %
 %
