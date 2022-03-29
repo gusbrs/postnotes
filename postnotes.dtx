@@ -529,10 +529,16 @@
 % \section{Headers}
 %
 %    \begin{macrocode}
+\tl_new:N \pnhdpagefirst
+\tl_new:N \pnhdpagelast
+\tl_new:N \pnhdchapfirst
+\tl_new:N \pnhdchaplast
 \prop_new:N \g_@@_header_page_first_prop
 \prop_new:N \g_@@_header_page_last_prop
 \prop_new:N \g_@@_header_chap_first_prop
 \prop_new:N \g_@@_header_chap_last_prop
+\tl_new:N \g_@@_header_prev_last_page_tl
+\tl_new:N \g_@@_header_prev_last_chap_tl
 \tl_new:N \l_@@_prev_text_page_tl
 \tl_new:N \l_@@_curr_text_page_tl
 \tl_new:N \l_@@_prev_mark_page_tl
@@ -544,18 +550,21 @@
     \tl_gclear:N \pnhdpagelast
     \tl_gclear:N \pnhdchapfirst
     \tl_gclear:N \pnhdchaplast
-    \tl_clear:N \l_@@_prev_text_page_tl
-    \tl_clear:N \l_@@_prev_mark_page_tl
-    \tl_gclear:N \g_@@_header_prev_last_page_tl
-    \tl_gclear:N \g_@@_header_prev_last_chap_tl
     \prop_gclear:N \g_@@_header_page_first_prop
     \prop_gclear:N \g_@@_header_page_last_prop
     \prop_gclear:N \g_@@_header_chap_first_prop
     \prop_gclear:N \g_@@_header_chap_last_prop
+    \tl_gclear:N \g_@@_header_prev_last_page_tl
+    \tl_gclear:N \g_@@_header_prev_last_chap_tl
+    \tl_clear:N \l_@@_prev_text_page_tl
+    \tl_clear:N \l_@@_curr_text_page_tl
+    \tl_clear:N \l_@@_prev_mark_page_tl
+    \tl_clear:N \l_@@_prev_mark_chap_tl
     \seq_map_inline:Nn #1
       {
         \exp_args:Nx \tl_if_eq:nnT
-          { \@@_prop_item:nn {##1} { type } } { note }
+          { \@@_prop_item:nn {##1} { type } }
+          { note }
           {
             \@@_get_pageref:Nn \l_@@_curr_text_page_tl { text@ ##1 }
             \tl_if_empty:NF \l_@@_curr_text_page_tl
@@ -564,18 +573,32 @@
                   \l_@@_prev_text_page_tl
                   \l_@@_curr_text_page_tl
                   {
+                    % we are in the same page as the previous note, just store
+                    % the 'prev_mark' data.
                     \@@_get_pageref:Nn
                       \l_@@_prev_mark_page_tl { mark@ ##1 }
                     \@@_prop_get:nnN {##1} { thechapter }
                       \l_@@_prev_mark_chap_tl
                   }
                   {
+                    % We are in the transition of pages (or in the very first
+                    % note, given \l_@@_prev_text_page_tl is initialized to
+                    % empty).
+
+                    % Set 'first' values for current page, based on the
+                    % current note id.
                     \prop_gput:Nxx \g_@@_header_page_first_prop
                       { \l_@@_curr_text_page_tl }
                       { \@@_extract_pageref:n { mark@ ##1 } }
                     \prop_gput:Nxx \g_@@_header_chap_first_prop
                       { \l_@@_curr_text_page_tl }
                       { \@@_prop_item:nn {##1} { thechapter } }
+
+                    % Set 'last' values for previous page, based on the stored
+                    % above (on the T branch).  There is no previous page to
+                    % the first one of \printpostnotes (so we don't set 'last'
+                    % values for it, conditioning on \l_@@_prev_text_page_tl
+                    % being empty, which only occurs on the first note).
                     \tl_if_empty:NF \l_@@_prev_text_page_tl
                       {
                         \prop_gput:Nxx \g_@@_header_page_last_prop
@@ -585,12 +608,21 @@
                           { \l_@@_prev_text_page_tl }
                           { \l_@@_prev_mark_chap_tl }
                       }
+
+                    % Set \l_@@_prev_text_page_tl for the next iteration
+                    % (\l_@@_curr_text_page_tl is never empty at this point,
+                    % since we conditioned to it).
                     \tl_set:NV \l_@@_prev_text_page_tl
                       \l_@@_curr_text_page_tl
                   }
               }
           }
       }
+
+    % We can't catch the transition from the last page of \printpostnotes to
+    % the following one through the mapping above, but the 'prev_mark' values
+    % of the last note in the loop are the ones we want, so we set 'last'
+    % values for the last page based on them.
     \tl_if_empty:NF \l_@@_prev_text_page_tl
       {
         \prop_gput:Nxx \g_@@_header_page_last_prop
@@ -603,12 +635,16 @@
     \group_end:
   }
 
-\tl_new:N \pnhdpagefirst
-\tl_new:N \pnhdpagelast
-\tl_new:N \pnhdchapfirst
-\tl_new:N \pnhdchaplast
-\tl_new:N \g_@@_header_prev_last_page_tl
-\tl_new:N \g_@@_header_prev_last_chap_tl
+% The sequence of pages processed in \cs{@@_get_headers_data:N} is not ensured
+% to be continuous, since not every page of \cs{printpostnotes} starts a
+% note.  There may be notes that fill whole pages, or the last page of the
+% notes may end with a note that started on the penultimate page.  We must
+% handle this case at this point.  For every page for which there is
+% information provided by \cs{@@_get_headers_data:N} we store a
+% 'header_prev_last' (the last value of the previous header) for each of the
+% variables of interest.  If the next page is skipped in the sequence (no
+% notes starting on it), we can use these stored values to set both 'first'
+% and 'last' variables based on them for that page.
 \cs_new_protected:Npn \@@_set_headers_vars:n #1
   {
     \group_begin:
