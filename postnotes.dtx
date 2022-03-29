@@ -409,28 +409,7 @@
         % Keep biblatex happy.
         \bool_if:NT \g_@@_biblatex_bool
           { \toggletrue { blx@footnote } }
-        \seq_gsort:Nn \g_@@_queue_seq
-          {
-            \@@_prop_get:nnN {##1} { pnsectid } \l_tmpa_tl
-            \@@_prop_get:nnN {##2} { pnsectid } \l_tmpb_tl
-            \tl_if_eq:NNTF \l_tmpa_tl \l_tmpb_tl
-              {
-                \@@_prop_get:nnN {##1} { type } \l_tmpa_tl
-                \@@_prop_get:nnN {##2} { type } \l_tmpb_tl
-                \bool_lazy_and:nnTF
-                  { \str_if_eq_p:Vn \l_tmpa_tl { note } }
-                  { \str_if_eq_p:Vn \l_tmpb_tl { note } }
-                  {
-                    \@@_prop_get:nnN {##1} { sort } \l_tmpa_tl
-                    \@@_prop_get:nnN {##2} { sort } \l_tmpb_tl
-                    \fp_compare:nNnTF { \l_tmpa_tl } > { \l_tmpb_tl }
-                      { \sort_return_swapped: }
-                      { \sort_return_same:    }
-                  }
-                  { \sort_return_same: }
-              }
-              { \sort_return_same: }
-          }
+        \@@_sort_queue:N \g_@@_queue_seq
         \@@_get_headers_data:N \g_@@_queue_seq
         \@@_set_headers_vars_first:
       }
@@ -511,6 +490,39 @@
     \@@_set_text_label:n {#1}
   }
 \cs_generate_variant:Nn \@@_print_mark:nn {eV}
+%    \end{macrocode}
+%
+%
+% \section{Sorting}
+%
+%    \begin{macrocode}
+\cs_new_protected:Npn \@@_sort_queue:N #1 % \g_@@_queue_seq
+  {
+    \group_begin:
+    \seq_gsort:Nn #1
+      {
+        \@@_prop_get:nnN {##1} { pnsectid } \l_tmpa_tl
+        \@@_prop_get:nnN {##2} { pnsectid } \l_tmpb_tl
+        \tl_if_eq:NNTF \l_tmpa_tl \l_tmpb_tl
+          {
+            \@@_prop_get:nnN {##1} { type } \l_tmpa_tl
+            \@@_prop_get:nnN {##2} { type } \l_tmpb_tl
+            \bool_lazy_and:nnTF
+              { \str_if_eq_p:Vn \l_tmpa_tl { note } }
+              { \str_if_eq_p:Vn \l_tmpb_tl { note } }
+              {
+                \@@_prop_get:nnN {##1} { sort } \l_tmpa_tl
+                \@@_prop_get:nnN {##2} { sort } \l_tmpb_tl
+                \fp_compare:nNnTF { \l_tmpa_tl } > { \l_tmpb_tl }
+                  { \sort_return_swapped: }
+                  { \sort_return_same:    }
+              }
+              { \sort_return_same: }
+          }
+          { \sort_return_same: }
+      }
+    \group_end:
+  }
 %    \end{macrocode}
 %
 %
