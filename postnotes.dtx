@@ -611,6 +611,7 @@
 \tl_new:N \g_@@_header_prev_last_chap_tl
 \cs_new_protected:Npn \@@_set_headers_vars:n #1
   {
+    \group_begin:
     \prop_get:NnNTF \g_@@_header_page_first_prop
       {#1} \l_tmpa_tl
       { \tl_gset:NV \pnhdpagefirst \l_tmpa_tl }
@@ -633,6 +634,7 @@
         \tl_gset:NV \g_@@_header_prev_last_chap_tl \l_tmpa_tl
       }
       { \tl_gset:NV \pnhdchaplast \g_@@_header_prev_last_chap_tl }
+    \group_end:
   }
 \cs_generate_variant:Nn \@@_set_headers_vars:n { x }
 
