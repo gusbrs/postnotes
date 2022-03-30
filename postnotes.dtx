@@ -79,6 +79,21 @@
 %    \end{macrocode}
 %
 %
+% \section{Plumbing}
+%
+%
+% \subsection{Auxiliary}
+%
+%
+% \begin{macro}{\@@_if_package_loaded:n}
+%   Just a convenience, since frequently we just need one of the branches.
+%    \begin{macrocode}
+\prg_new_conditional:Npnn \@@_if_package_loaded:n #1 { T , F , TF }
+  { \IfPackageLoadedTF {#1} { \prg_return_true: } { \prg_return_false: } }
+%    \end{macrocode}
+% \end{macro}
+%
+%
 % \section{Data}
 %
 %    \begin{macrocode}
@@ -191,7 +206,6 @@
 %    \begin{macrocode}
 \bool_new:N \l_@@_hyperlink_bool
 \bool_new:N \l_@@_hyperref_warn_bool
-\bool_new:N \l_@@_hyperref_loaded_bool
 \bool_new:N \l_@@_backref_bool
 \keys_define:nn { postnotes/setup }
   {
@@ -226,8 +240,7 @@
   { Missing~'hyperref'~package.~Setting~'hyperref=false'. }
 \AddToHook { begindocument }
   {
-    \IfPackageLoadedTF { hyperref }
-      { \bool_set_true:N \l_@@_hyperref_loaded_bool }
+    \@@_if_package_loaded:nF { hyperref }
       {
         \bool_if:NT \l_@@_hyperref_warn_bool
           { \msg_warning:nn { postnotes } { missing-hyperref } }
@@ -420,7 +433,7 @@
         \bool_if:NTF \l_@@_hyperlink_bool
           { \hyperref [#1] { \@@_make_mark:n { \ref*{#1} } } }
           {
-            \bool_if:NTF \l_@@_hyperref_loaded_bool
+            \@@_if_package_loaded:nT { hyperref }
               { \@@_make_mark:n { \ref*{#1} } }
               { \@@_make_mark:n { \ref{#1} } }
           }
@@ -481,7 +494,7 @@
         \AddToHook { shipout/before } [ postnotes/header ]
           { \@@_set_headers_vars_next: }
         % Keep biblatex happy.
-        \bool_if:NT \g_@@_biblatex_bool
+        \@@_if_package_loaded:nT { biblatex }
           { \toggletrue { blx@footnote } }
         \@@_sort_queue:N \g_@@_queue_seq
         \@@_get_headers_data:N \g_@@_queue_seq
@@ -791,13 +804,6 @@
 %
 %
 %    \begin{macrocode}
-\bool_new:N \g_@@_biblatex_bool
-\AddToHook{begindocument}
-  {
-    \IfPackageLoadedTF { biblatex }
-      { \bool_gset_true:N \g_@@_biblatex_bool }
-      {}
-  }
 %    \end{macrocode}
 %
 %
