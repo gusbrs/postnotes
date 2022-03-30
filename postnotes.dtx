@@ -190,6 +190,7 @@
 %    \begin{macrocode}
 \bool_new:N \l_@@_hyperlink_bool
 \bool_new:N \l_@@_hyperref_warn_bool
+\bool_new:N \l_@@_hyperref_loaded_bool
 \bool_new:N \l_@@_backref_bool
 \keys_define:nn { postnotes/setup }
   {
@@ -225,7 +226,7 @@
 \AddToHook { begindocument }
   {
     \IfPackageLoadedTF { hyperref }
-      { }
+      { \bool_set_true:N \l_@@_hyperref_loaded_bool }
       {
         \bool_if:NT \l_@@_hyperref_warn_bool
           { \msg_warning:nn { postnotes } { missing-hyperref } }
@@ -391,6 +392,33 @@
 \cs_generate_variant:Nn \@@_typeset_mark:nn { xV }
 \cs_new_protected:Npn \@@_make_mark:n #1
   { \hbox:n { \@textsuperscript { \normalfont #1 } } }
+
+
+
+\NewDocumentCommand \postnotemarkref { m }
+  { \@@_mark_ref:n {#1} }
+
+\cs_new_protected:Npn \@@_mark_ref:n #1
+  {
+    \group_begin:
+    \mode_leave_vertical:
+    \if_mode_horizontal:
+    \tl_set:Nx \l_@@_saved_spacefactor_tl { \the\spacefactor }
+    \nobreak
+    \fi:
+    \bool_if:NTF \l_@@_hyperlink_bool
+      { \hyperref [#1] { \@@_make_mark:n { \ref*{#1} } } }
+      {
+        \bool_if:NTF \l_@@_hyperref_loaded_bool
+          { \@@_make_mark:n { \ref*{#1} } }
+          { \@@_make_mark:n { \ref{#1} } }
+      }
+    \if_mode_horizontal:
+    \spacefactor \l_@@_saved_spacefactor_tl
+    \fi:
+    \scan_stop:
+    \group_end:
+  }
 
 
 \NewDocumentCommand \postnotemark { m }
