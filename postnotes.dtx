@@ -365,59 +365,66 @@
     sort .value_required:n = true ,
   }
 
-\tl_new:N \l_@@_saved_spacefactor_tl
-\bool_new:N \l_@@_manual_mark_bool
+
 % <theid><mark>
 \cs_new_protected:Npn \@@_typeset_mark:nn #1#2
+  {
+    \@@_typeset_mark_wrapper:n
+      {
+        \bool_if:NTF \l_@@_hyperlink_bool
+          {
+            \bool_if:NT \l_@@_backref_bool
+              {
+                \Hy@raisedlink
+                  { \hyper@anchorstart { postnote. #1 .mark } \hyper@anchorend }
+              }
+            \hyperlink { postnote. #1 .text } { \@@_make_mark:n {#2} }
+          }
+          { \@@_make_mark:n {#2} }
+      }
+  }
+\cs_generate_variant:Nn \@@_typeset_mark:nn { xV }
+
+
+% From the definition of \cs{@footnotemark} in the kernel.
+\tl_new:N \l_@@_saved_spacefactor_tl
+% <mark>
+\cs_new_protected:Npn \@@_typeset_mark_wrapper:n #1
   {
     \mode_leave_vertical:
     \if_mode_horizontal:
     \tl_set:Nx \l_@@_saved_spacefactor_tl { \the\spacefactor }
     \nobreak
     \fi:
-    \bool_if:NTF \l_@@_hyperlink_bool
-      {
-        \bool_if:NT \l_@@_backref_bool
-          {
-            \Hy@raisedlink
-              { \hyper@anchorstart { postnote. #1 .mark } \hyper@anchorend }
-          }
-        \hyperlink { postnote. #1 .text } { \@@_make_mark:n {#2} }
-      }
-      { \@@_make_mark:n {#2} }
+    #1
     \if_mode_horizontal:
     \spacefactor \l_@@_saved_spacefactor_tl
     \fi:
     \scan_stop:
   }
-\cs_generate_variant:Nn \@@_typeset_mark:nn { xV }
+% From the default definition of \cs{@makefnmark} in the kernel.
 \cs_new_protected:Npn \@@_make_mark:n #1
   { \hbox:n { \@textsuperscript { \normalfont #1 } } }
 
 
 
+% TODO Provide '\zpostnotemarkref'.
 \NewDocumentCommand \postnotemarkref { m }
   { \@@_mark_ref:n {#1} }
 
 \cs_new_protected:Npn \@@_mark_ref:n #1
   {
     \group_begin:
-    \mode_leave_vertical:
-    \if_mode_horizontal:
-    \tl_set:Nx \l_@@_saved_spacefactor_tl { \the\spacefactor }
-    \nobreak
-    \fi:
-    \bool_if:NTF \l_@@_hyperlink_bool
-      { \hyperref [#1] { \@@_make_mark:n { \ref*{#1} } } }
+    \@@_typeset_mark_wrapper:n
       {
-        \bool_if:NTF \l_@@_hyperref_loaded_bool
-          { \@@_make_mark:n { \ref*{#1} } }
-          { \@@_make_mark:n { \ref{#1} } }
+        \bool_if:NTF \l_@@_hyperlink_bool
+          { \hyperref [#1] { \@@_make_mark:n { \ref*{#1} } } }
+          {
+            \bool_if:NTF \l_@@_hyperref_loaded_bool
+              { \@@_make_mark:n { \ref*{#1} } }
+              { \@@_make_mark:n { \ref{#1} } }
+          }
       }
-    \if_mode_horizontal:
-    \spacefactor \l_@@_saved_spacefactor_tl
-    \fi:
-    \scan_stop:
     \group_end:
   }
 %    \end{macrocode}
