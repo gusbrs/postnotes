@@ -418,7 +418,7 @@
         \seq_gpop_left:NN \g_@@_queue_seq \l_@@_print_theid_tl
         \@@_prop_get:nnN { \l_@@_print_theid_tl }
           { type } \l_@@_curr_type_tl
-        \int_compare:nNnTF { \l_@@_print_theid_tl } = { \g_@@_id_int }
+        \seq_if_empty:NTF \g_@@_queue_seq
           { \tl_set:Nn \l_@@_next_type_tl { close } }
           {
             \@@_prop_get:nnN
@@ -446,7 +446,8 @@
                 \l_@@_print_format_tl
               }
           }
-          { % curr_type = 'note'
+          {
+            % curr_type = 'note'
             \tl_if_eq:NNF \@currenvir \l_@@_list_env_tl
               {
                 \exp_args:Nx \begin { \l_@@_list_env_tl }
