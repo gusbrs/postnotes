@@ -567,7 +567,6 @@
 \tl_new:N \pnthechapter
 \tl_new:N \pnthesection
 
-\newcounter { postnote@text }
 \newcounter { postnote@sectid }
 
 \cs_new_protected:Npn \@@_print_notes:n #1
@@ -637,10 +636,11 @@
                   \l_@@_print_mark_tl
               ]
             \group_begin:
-            \refstepcounter { postnote@text }
             \cs_set:Npn \@currentcounter { postnote }
             \cs_set:Npx \@currentlabel
               { \p@postnote \l_@@_print_mark_tl }
+            \cs_set:Npx \@currentHref
+              { postnote. \l_@@_print_theid_tl .text }
             \@@_prop_get:nnN { \l_@@_print_theid_tl }
               { content } \l_@@_content_tl
             \l_@@_content_tl
