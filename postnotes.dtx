@@ -287,16 +287,16 @@
             \Hy@raisedlink
               { \hyper@anchorstart { postnote. #1 .mark } \hyper@anchorend }
           }
-        \hyperlink { postnote. #1 .text } { \@@_mark_format:n {#2} }
+        \hyperlink { postnote. #1 .text } { \@@_make_mark:n {#2} }
       }
-      { \@@_mark_format:n {#2} }
+      { \@@_make_mark:n {#2} }
     \if_mode_horizontal:
     \spacefactor \l_@@_saved_spacefactor_tl
     \fi:
     \scan_stop:
   }
 \cs_generate_variant:Nn \@@_typeset_mark:nn { xV }
-\cs_new_protected:Npn \@@_mark_format:n #1
+\cs_new_protected:Npn \@@_make_mark:n #1
   { \hbox:n { \@textsuperscript { \normalfont #1 } } }
 
 
@@ -456,7 +456,7 @@
               { mark } \l_@@_print_mark_tl
             \item
               [
-                \@@_print_mark:eV
+                \@@_typeset_text_mark:eV
                   { \l_@@_print_theid_tl }
                   \l_@@_print_mark_tl
               ]
@@ -478,18 +478,18 @@
     \group_end:
   }
 
-\cs_new:Npn \@@_print_mark_format:n #1 { #1 . }
-\cs_new:Npn \@@_print_mark:nn #1#2
+\cs_new:Npn \@@_make_text_mark:n #1 { #1 . }
+\cs_new:Npn \@@_typeset_text_mark:nn #1#2
   {
     \bool_if:NTF \g_@@_hyperref_bool
       {
         \Hy@raisedlink { \hyper@anchorstart { postnote. #1 .text } \hyper@anchorend }
-        \hyperlink { postnote. #1 .mark } { \@@_print_mark_format:n {#2} }
+        \hyperlink { postnote. #1 .mark } { \@@_make_text_mark:n {#2} }
       }
-      { \@@_print_mark_format:n {#2} }
+      { \@@_make_text_mark:n {#2} }
     \@@_set_text_label:n {#1}
   }
-\cs_generate_variant:Nn \@@_print_mark:nn {eV}
+\cs_generate_variant:Nn \@@_typeset_text_mark:nn {eV}
 %    \end{macrocode}
 %
 %
