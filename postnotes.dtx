@@ -175,6 +175,8 @@
 %
 % \section{Options}
 %
+% \subsection{TODO}
+%
 %    \begin{macrocode}
 \tl_new:N \l_@@_list_env_tl
 \tl_set:Nn \l_@@_list_env_tl { enumerate }
@@ -182,6 +184,97 @@
 \tl_new:N \l_@@_print_format_tl
 \tl_set:Nn \l_@@_print_format_tl { \small }
 %    \end{macrocode}
+%
+% \subsection*{\opt{hyperref} and \opt{backref} option}
+%
+%    \begin{macrocode}
+\bool_new:N \l_@@_hyperlink_bool
+\bool_new:N \l_@@_hyperref_warn_bool
+\bool_new:N \l_@@_backref_bool
+\keys_define:nn { postnotes/setup }
+  {
+    hyperref .choice: ,
+    hyperref / auto .code:n =
+      {
+        \bool_set_true:N \l_@@_hyperlink_bool
+        \bool_set_false:N \l_@@_hyperref_warn_bool
+      } ,
+    hyperref / true .code:n =
+      {
+        \bool_set_true:N \l_@@_hyperlink_bool
+        \bool_set_true:N \l_@@_hyperref_warn_bool
+      } ,
+    hyperref / false .code:n =
+      {
+        \bool_set_false:N \l_@@_hyperlink_bool
+        \bool_set_false:N \l_@@_hyperref_warn_bool
+      } ,
+    hyperref .initial:n = auto ,
+    hyperref .default:n = true ,
+    backref .bool_set:N = \l_@@_backref_bool ,
+    backref .initial = true ,
+    backref .default = true ,
+  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\msg_new:nnn { postnotes } { option-preamble-only }
+  { Option~'#1'~only~available~in~the~preamble~\msg_line_context:. }
+\msg_new:nnn { postnotes } { missing-hyperref }
+  { Missing~'hyperref'~package.~Setting~'hyperref=false'. }
+\AddToHook { begindocument }
+  {
+    \IfPackageLoadedTF { hyperref }
+      { }
+      {
+        \bool_if:NT \l_@@_hyperref_warn_bool
+          { \msg_warning:nn { postnotes } { missing-hyperref } }
+        \bool_set_false:N \l_@@_hyperlink_bool
+      }
+    \keys_define:nn { postnotes/setup }
+      {
+        hyperref .code:n =
+          {
+            \msg_warning:nnn { postnotes }
+              { option-preamble-only } { hyperref }
+          } ,
+        backref .code:n =
+          {
+            \msg_warning:nnn { postnotes }
+              { option-preamble-only } { backref }
+          } ,
+      }
+  }
+%    \end{macrocode}
+%
+%
+%
+%
+% \subsection{\cs{postnotesetup}}
+%
+%
+% \begin{macro}[int]{\postnotesetup}
+%   Provide \cs{postnotesetup}.
+%   \begin{syntax}
+%     \cs{postnotesetup}\marg{options}
+%   \end{syntax}
+%    \begin{macrocode}
+\NewDocumentCommand \postnotesetup { m }
+  { \@@_setup:n {#1} }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_setup:n}
+%   A version of \cs{postnotesetup} for internal use.
+%   \begin{syntax}
+%     \cs{@@_setup:n}\marg{options}
+%   \end{syntax}
+%    \begin{macrocode}
+\cs_new_protected:Npn \@@_setup:n #1
+  { \keys_set:nn { postnotes/setup } {#1} }
+%    \end{macrocode}
+% \end{macro}
+%
 %
 %
 % \section{\cs{postnote}}
@@ -280,9 +373,9 @@
     \tl_set:Nx \l_@@_saved_spacefactor_tl { \the\spacefactor }
     \nobreak
     \fi:
-    \bool_if:NTF \g_@@_hyperref_bool
+    \bool_if:NTF \l_@@_hyperlink_bool
       {
-        \bool_if:NF \l_@@_manual_mark_bool
+        \bool_if:NT \l_@@_backref_bool
           {
             \Hy@raisedlink
               { \hyper@anchorstart { postnote. #1 .mark } \hyper@anchorend }
@@ -483,10 +576,13 @@
 \cs_new:Npn \@@_make_text_mark:n #1 { #1 . }
 \cs_new:Npn \@@_typeset_text_mark:nn #1#2
   {
-    \bool_if:NTF \g_@@_hyperref_bool
+    \bool_if:NTF \l_@@_hyperlink_bool
       {
-        \Hy@raisedlink { \hyper@anchorstart { postnote. #1 .text } \hyper@anchorend }
-        \hyperlink { postnote. #1 .mark } { \@@_make_text_mark:n {#2} }
+        \Hy@raisedlink
+          { \hyper@anchorstart { postnote. #1 .text } \hyper@anchorend }
+        \bool_if:NTF \g_@@_backref_bool
+          { \hyperlink { postnote. #1 .mark } { \@@_make_text_mark:n {#2} } }
+          { \@@_make_text_mark:n {#2} }
       }
       { \@@_make_text_mark:n {#2} }
   }
@@ -714,16 +810,6 @@
 %
 %
 %    \begin{macrocode}
-\bool_new:N \g_@@_hyperref_bool
-\AddToHook{begindocument}
-  {
-    \IfPackageLoadedTF { hyperref }
-      {
-        \bool_gset_true:N \g_@@_hyperref_bool
-        \cs_set:Npn \theHpostnote { \int_use:N \g_@@_id_int }
-      }
-      {}
-  }
 \bool_new:N \g_@@_biblatex_bool
 \AddToHook{begindocument}
   {
