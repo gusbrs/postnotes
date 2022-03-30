@@ -116,7 +116,7 @@
     \prop_gput:cnx { \@@_data_name:e {#1} } { sort }
       {
         \bool_if:NTF \l_@@_manual_sort_bool
-          { \fp_use:N \l_@@_sort_fp }
+          { \fp_use:N \l_@@_sort_num_fp }
           { \int_use:N \c@postnote }
       }
     \prop_gput:cnx { \@@_data_name:e {#1} } { thechapter } { \thechapter }
@@ -201,13 +201,81 @@
 \tl_set:Nn \l_@@_print_format_tl { \small }
 %    \end{macrocode}
 %
-% \subsection*{\opt{hyperref} and \opt{backref} option}
+% \subsection*{\opt{heading} option}
+%
+%    \begin{macrocode}
+\keys_define:nn { postnotes/print }
+  {
+    heading .cs_set_protected:Np = \pnheading ,
+    heading .value_required:n = true ,
+  }
+\cs_if_exist:cTF { chapter }
+  {
+    \cs_new_protected:Npn \pnheading
+      {
+        % TODO This value is just for testing, set better default later.
+        \cleardoublepage{}
+        % \markright{\pnHeaderChapsPages}
+        \markright{\pnheaderdefault}
+        \chapter{\pntitle}
+        % \@mkboth{\pnHeaderChapsPages}{\pnHeaderChapsPages}
+        \@mkboth{\pnheaderdefault}{\pnheaderdefault}
+        % \markboth{\pnHeaderChapsPages}{\pnHeaderChapsPages}
+        \thispagestyle{headings}
+      }
+  }
+  {
+    \cs_new_protected:Npn \pnheading
+      {
+        \section*{\pntitle}
+        \@mkboth{\pnheaderdefault}{\pnheaderdefault}
+      }
+  }
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+\tl_new:N \pntitle
+\tl_new:N \pnhdnotes
+\tl_new:N \pnhdtopage
+\tl_new:N \pnhdtopages
+\tl_set:Nn \pntitle     { Notes }
+\tl_set:Nn \pnhdnotes   { Notes }
+\tl_set:Nn \pnhdtopage  { to~page }
+\tl_set:Nn \pnhdtopages { to~pages }
+\AddToHook { package/babel/after }
+  {
+    \cs_if_exist:cT { extrasenglish }
+      {
+        \addto \extrasenglish
+          {
+            \tl_set:Nn \pntitle     { Notes }
+            \tl_set:Nn \pnhdnotes   { Notes }
+            \tl_set:Nn \pnhdtopage  { to~page }
+            \tl_set:Nn \pnhdtopages { to~pages }
+          }
+      }
+    \cs_if_exist:cT { extrasbrazilian }
+      {
+        \addto \extrasbrazilian
+          {
+            \tl_set:Nn \pntitle     { Notas }
+            \tl_set:Nn \pnhdnotes   { Notas }
+            \tl_set:Nn \pnhdtopage  { da~página }
+            \tl_set:Nn \pnhdtopages { das~páginas }
+          }
+      }
+  }
+%    \end{macrocode}
+%
+%
+% \subsection*{\opt{hyperref} and \opt{backref} options}
 %
 %    \begin{macrocode}
 \bool_new:N \l_@@_hyperlink_bool
 \bool_new:N \l_@@_hyperref_warn_bool
 \bool_new:N \l_@@_backref_bool
-\keys_define:nn { postnotes/setup }
+\keys_define:nn { postnotes/preamble }
   {
     hyperref .choice: ,
     hyperref / auto .code:n =
@@ -266,12 +334,12 @@
 % \subsection*{\opt{sort} option}
 %
 %    \begin{macrocode}
-\bool_new:N \l_@@_print_sort_bool
-\keys_define:nn { postnotes/setup }
+\bool_new:N \l_@@_sort_bool
+\keys_define:nn { postnotes/print }
   {
-    printsort .bool_set:N = \l_@@_print_sort_bool ,
-    printsort .initial:n = true ,
-    printsort .default:n = true ,
+    sort .bool_set:N = \l_@@_sort_bool ,
+    sort .initial:n = true ,
+    sort .default:n = true ,
   }
 %    \end{macrocode}
 %
@@ -301,7 +369,18 @@
 %    \end{macrocode}
 % \end{macro}
 %
+% \subsubsection*{Package options}
 %
+%    \begin{macrocode}
+\keys_define:nn { }
+  {
+    postnotes/setup .inherit:n =
+      {
+        postnotes/preamble ,
+        postnotes/print ,
+      }
+  }
+%    \end{macrocode}
 %
 % \section{\cs{postnote}}
 %
@@ -375,18 +454,18 @@
   }
 
 \tl_new:N \l_@@_mark_tl
-\fp_new:N \l_@@_sort_fp
+\fp_new:N \l_@@_sort_num_fp
 \bool_new:N \l_@@_manual_sort_bool
 \keys_define:nn { postnotes/note }
   {
     mark .tl_set:N = \l_@@_mark_tl ,
     mark .value_required:n = true ,
-    sort .code:n =
+    sortnum .code:n =
       {
-        \fp_set:Nn \l_@@_sort_fp {#1}
+        \fp_set:Nn \l_@@_sort_num_fp {#1}
         \bool_set_true:N \l_@@_manual_sort_bool
       } ,
-    sort .value_required:n = true ,
+    sortnum .value_required:n = true ,
   }
 
 
@@ -497,17 +576,13 @@
     \int_gincr:N \g_@@_print_postnotes_int
     \seq_if_empty:NF \g_@@_queue_seq
       {
-        \cleardoublepage{}
-        \markright{\pnHeaderChapsPages}
-        \chapter{Notes}
-        \markboth{\pnHeaderChapsPages}{\pnHeaderChapsPages}
-        \thispagestyle{headings}
+        \pnheading
         \AddToHook { shipout/before } [ postnotes/header ]
           { \@@_set_headers_vars_next: }
         % Let biblatex know we are in a 'notes' context.
         \@@_if_package_loaded:nT { biblatex }
           { \toggletrue { blx@footnote } }
-        \bool_if:NT \l_@@_print_sort_bool
+        \bool_if:NT \l_@@_sort_bool
           { \@@_sort_queue:N \g_@@_queue_seq }
         \@@_get_headers_data:N \g_@@_queue_seq
         \@@_set_headers_vars_first:
@@ -789,20 +864,29 @@
       }
   }
 
+\cs_new_protected:Npn \@@_header_default:
+  {
+    \tl_if_eq:NNTF \pnhdpagefirst \pnhdpagelast
+      { \pnhdnotes{} ~ \pnhdtopage{} ~ \pnhdpagefirst }
+      { \pnhdnotes{} ~ \pnhdtopages{} ~ \pnhdpagefirst -- \pnhdpagelast }
+  }
+\NewDocumentCommand \pnheaderdefault {} { \@@_header_default: }
+
+
 % FIXME Header functions: provisional form
 \cs_new_protected:Npn \@@_header_pages:
   {
     \tl_if_eq:NNTF \pnhdpagefirst \pnhdpagelast
-      { Notes~for~page~\pnhdpagefirst }
-      { Notes~for~pages~\pnhdpagefirst -- \pnhdpagelast }
+      { Notes~to~page~\pnhdpagefirst }
+      { Notes~to~pages~\pnhdpagefirst -- \pnhdpagelast }
   }
 \NewDocumentCommand \pnHeaderPages {} { \@@_header_pages: }
 
 \cs_new_protected:Npn \@@_header_chaps_pages:
   {
     \tl_if_eq:NNTF \pnhdchapfirst \pnhdchaplast
-      { Notes~for~chapter~\pnhdchapfirst,~ }
-      { Notes~for~chapters~\pnhdchapfirst -- \pnhdchaplast,~ }
+      { Notes~to~chapter~\pnhdchapfirst,~ }
+      { Notes~to~chapters~\pnhdchapfirst -- \pnhdchaplast,~ }
     \tl_if_eq:NNTF \pnhdpagefirst \pnhdpagelast
       { page~\pnhdpagefirst }
       { pages~\pnhdpagefirst -- \pnhdpagelast }
