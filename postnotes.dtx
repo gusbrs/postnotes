@@ -457,6 +457,7 @@
               { mark } \l_@@_print_mark_tl
             \item
               [
+                \@@_set_text_label:n {#1}
                 \@@_typeset_text_mark:eV
                   { \l_@@_print_theid_tl }
                   \l_@@_print_mark_tl
@@ -488,7 +489,6 @@
         \hyperlink { postnote. #1 .mark } { \@@_make_text_mark:n {#2} }
       }
       { \@@_make_text_mark:n {#2} }
-    \@@_set_text_label:n {#1}
   }
 \cs_generate_variant:Nn \@@_typeset_text_mark:nn {eV}
 %    \end{macrocode}
