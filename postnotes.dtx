@@ -150,6 +150,7 @@
     \iow_shipout_x:Nn \@auxout
       { \post@note { text@ #1 } { \int_use:N \c@page } }
   }
+\cs_generate_variant:Nn \@@_set_text_label:n { x }
 \cs_new_protected:Npn \@@_set_print_label:n #1
   {
     \iow_shipout_x:Nn \@auxout
@@ -213,8 +214,8 @@
     hyperref .initial:n = auto ,
     hyperref .default:n = true ,
     backref .bool_set:N = \l_@@_backref_bool ,
-    backref .initial = true ,
-    backref .default = true ,
+    backref .initial:n = true ,
+    backref .default:n = true ,
   }
 %    \end{macrocode}
 %
@@ -523,7 +524,7 @@
               { mark } \l_@@_print_mark_tl
             \item
               [
-                \@@_set_text_label:n {#1}
+                \@@_set_text_label:x { \l_@@_print_theid_tl }
                 \@@_typeset_text_mark:eV
                   { \l_@@_print_theid_tl }
                   \l_@@_print_mark_tl
@@ -553,7 +554,7 @@
       {
         \Hy@raisedlink
           { \hyper@anchorstart { postnote. #1 .text } \hyper@anchorend }
-        \bool_if:NTF \g_@@_backref_bool
+        \bool_if:NTF \l_@@_backref_bool
           { \hyperlink { postnote. #1 .mark } { \@@_make_text_mark:n {#2} } }
           { \@@_make_text_mark:n {#2} }
       }
