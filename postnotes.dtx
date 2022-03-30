@@ -263,6 +263,17 @@
 %    \end{macrocode}
 %
 %
+% \subsection*{\opt{sort} option}
+%
+%    \begin{macrocode}
+\bool_new:N \l_@@_print_sort_bool
+\keys_define:nn { postnotes/setup }
+  {
+    printsort .bool_set:N = \l_@@_print_sort_bool ,
+    printsort .initial:n = true ,
+    printsort .default:n = true ,
+  }
+%    \end{macrocode}
 %
 %
 % \subsection{\cs{postnotesetup}}
@@ -493,10 +504,11 @@
         \thispagestyle{headings}
         \AddToHook { shipout/before } [ postnotes/header ]
           { \@@_set_headers_vars_next: }
-        % Keep biblatex happy.
+        % Let biblatex know we are in a 'notes' context.
         \@@_if_package_loaded:nT { biblatex }
           { \toggletrue { blx@footnote } }
-        \@@_sort_queue:N \g_@@_queue_seq
+        \bool_if:NT \l_@@_print_sort_bool
+          { \@@_sort_queue:N \g_@@_queue_seq }
         \@@_get_headers_data:N \g_@@_queue_seq
         \@@_set_headers_vars_first:
       }
