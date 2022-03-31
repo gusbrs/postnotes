@@ -431,6 +431,13 @@
 
 %    \begin{macrocode}
 \newcounter { postnote }
+\cs_set_nopar:Npn \theHpostnote { \g_@@_theid_tl .mark }
+% Note that there's a bug in \pkg{hyperref}'s redefinition of
+% \cs{@addtoreset}, which overwrites
+% \texttt{\textbackslash{}the\meta{counter}} (see
+% https://github.com/latex3/hyperref/issues/230).  Workaround for it is
+% to set \cs{counterwithin} before \pkg{hyperref}.
+
 
 \NewDocumentCommand \postnote { O { } m }
   { \@@_note:nn {#1} {#2} }
@@ -444,7 +451,7 @@
     \seq_gput_right:Nx \g_@@_queue_seq { \g_@@_theid_tl }
     \tl_if_empty:NT \l_@@_mark_tl
       {
-        \stepcounter { postnote }
+        \refstepcounter { postnote }
         \tl_set:Nx \l_@@_mark_tl { \thepostnote }
       }
     \@@_set_mark_label:x { \g_@@_theid_tl }
@@ -475,18 +482,11 @@
     \@@_typeset_mark_wrapper:n
       {
         \bool_if:NTF \l_@@_hyperlink_bool
-          {
-            \bool_if:NT \l_@@_backref_bool
-              { \@@_set_hyper_anchor:n { postnote. #1 .mark } }
-            \hyperlink { postnote. #1 .text } { \@@_make_mark:n {#2} }
-          }
+          { \hyperlink { postnote. #1 .text } { \@@_make_mark:n {#2} } }
           { \@@_make_mark:n {#2} }
       }
   }
 \cs_generate_variant:Nn \@@_typeset_mark:nn { xV }
-
-\cs_new_protected:Npn \@@_set_hyper_anchor:n #1
-  { \Hy@raisedlink { \hyper@anchor {#1} } }
 
 
 % From the definition of \cs{@footnotemark} in the kernel.
@@ -567,7 +567,7 @@
 \tl_new:N \pnthechapter
 \tl_new:N \pnthesection
 
-\newcounter { postnote@sectid }
+\newcounter { postnotesection }
 
 \cs_new_protected:Npn \@@_print_notes:n #1
   {
@@ -613,8 +613,8 @@
                 \group_end:
                 \@@_prop_get:nnN { \l_@@_print_theid_tl }
                   { pnsectid } \l_@@_print_sectid_tl
-                \exp_args:Nnx \setcounter
-                  { postnote@sectid } { \int_eval:n { \l_@@_print_sectid_tl } }
+                \exp_args:Nnx \setcounter { postnotesection }
+                  { \int_eval:n { \l_@@_print_sectid_tl } }
                 \exp_args:Nx \begin { \l_@@_list_env_tl }
                 \l_@@_print_format_tl
               }
@@ -655,6 +655,8 @@
   }
 
 \cs_new:Npn \@@_make_text_mark:n #1 { #1 . }
+\cs_new_protected:Npn \@@_set_hyper_anchor:n #1
+  { \Hy@raisedlink { \hyper@anchor {#1} } }
 \cs_new:Npn \@@_typeset_text_mark:nn #1#2
   {
     \bool_if:NTF \l_@@_hyperlink_bool
