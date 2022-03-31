@@ -963,27 +963,6 @@
       { \pnhdnotes{} ~ \pnhdtopages{} ~ \pnhdpagefirst -- \pnhdpagelast }
   }
 \NewDocumentCommand \pnheaderdefault {} { \@@_header_default: }
-
-
-% FIXME Header functions: provisional form
-\cs_new_protected:Npn \@@_header_pages:
-  {
-    \tl_if_eq:NNTF \pnhdpagefirst \pnhdpagelast
-      { Notes~to~page~\pnhdpagefirst }
-      { Notes~to~pages~\pnhdpagefirst -- \pnhdpagelast }
-  }
-\NewDocumentCommand \pnHeaderPages {} { \@@_header_pages: }
-
-\cs_new_protected:Npn \@@_header_chaps_pages:
-  {
-    \tl_if_eq:NNTF \pnhdchapfirst \pnhdchaplast
-      { Notes~to~chapter~\pnhdchapfirst,~ }
-      { Notes~to~chapters~\pnhdchapfirst -- \pnhdchaplast,~ }
-    \tl_if_eq:NNTF \pnhdpagefirst \pnhdpagelast
-      { page~\pnhdpagefirst }
-      { pages~\pnhdpagefirst -- \pnhdpagelast }
-  }
-\NewDocumentCommand \pnHeaderChapsPages {} { \@@_header_chaps_pages: }
 %    \end{macrocode}
 %
 %
