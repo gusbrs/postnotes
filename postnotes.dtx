@@ -243,29 +243,6 @@
 \tl_set:Nn \pnhdnotes   { Notes }
 \tl_set:Nn \pnhdtopage  { to~page }
 \tl_set:Nn \pnhdtopages { to~pages }
-\AddToHook { package/babel/after }
-  {
-    \cs_if_exist:cT { extrasenglish }
-      {
-        \addto \extrasenglish
-          {
-            \tl_set:Nn \pntitle     { Notes }
-            \tl_set:Nn \pnhdnotes   { Notes }
-            \tl_set:Nn \pnhdtopage  { to~page }
-            \tl_set:Nn \pnhdtopages { to~pages }
-          }
-      }
-    \cs_if_exist:cT { extrasbrazilian }
-      {
-        \addto \extrasbrazilian
-          {
-            \tl_set:Nn \pntitle     { Notas }
-            \tl_set:Nn \pnhdnotes   { Notas }
-            \tl_set:Nn \pnhdtopage  { da~página }
-            \tl_set:Nn \pnhdtopages { das~páginas }
-          }
-      }
-  }
 %    \end{macrocode}
 %
 %
@@ -534,7 +511,7 @@
     \group_end:
   }
 
-\AddToHook{package/zref-user/after}
+\AddToHook { package/zref-user/after }
   {
     \NewDocumentCommand \postnotezrefmark { m }
       { \@@_zref_mark:n {#1} }
@@ -914,6 +891,93 @@
       { pages~\pnhdpagefirst -- \pnhdpagelast }
   }
 \NewDocumentCommand \pnHeaderChapsPages {} { \@@_header_chaps_pages: }
+%    \end{macrocode}
+%
+%
+% \section{Languages}
+%
+%
+%    \begin{macrocode}
+% <postnote language><extras>
+\cs_new_protected:Npn \@@_define_language:nn #1#2
+  {
+    \tl_new:c { l_@@_language_extras_ #1 _tl }
+    \tl_set:cn { l_@@_language_extras_ #1 _tl } {#2}
+  }
+
+% <babel language><postnote language>
+\cs_new_protected:Npn \@@_set_babel_language:nn #1#2
+  {
+    \AddToHook { package/babel/after }
+      {
+        % I'm using `\tl_gput_right:' here since there seems to exist some
+        % qualms about `babel's '\addto'.  A number of packages define their
+        % own versions of it: varioref (probably the original), backref,
+        % cleveref.  The latter comments that `\addto` is "flawed". 'babel'
+        % itself comments the definition recognizing that there is an
+        % "inconsistency", depending on the case, the operation will be either
+        % local or global.  Polyglossia recommends `etoolbox's `\gappto'.  All
+        % in all, let's rely on `expl3'.
+        \tl_if_exist:cTF { extras #1 }
+          {
+            \exp_args:Nnv \tl_gput_right:cn { extras #1 }
+              { l_@@_language_extras_ #2 _tl }
+          }
+          {
+            \tl_new:c { extras #1 }
+            \tl_gset:cv { extras #1 }
+              { l_@@_language_extras_ #2 _tl }
+          }
+      }
+  }
+% <polyglossia language><postnote language>
+\cs_new_protected:Npn \@@_set_polyglossia_language:nn #1#2
+  {
+    \AddToHook { package/polyglossia/after }
+      {
+        \exp_args:Ncv \gappto { blockextras@ #1 }
+          { l_@@_language_extras_ #2 _tl }
+      }
+  }
+% <babel name of polyglossia variant><postnote language>
+\cs_new_protected:Npn \@@_set_polyglossia_variant:nn #1#2
+  {
+    \AddToHook { package/polyglossia/after }
+      {
+        \exp_args:Ncv \gappto { blockextras@bbl@ #1 }
+          { l_@@_language_extras_ #2 _tl }
+      }
+  }
+
+\@@_define_language:nn { english }
+  {
+    \tl_set:Nn \pntitle     { Notes }
+    \tl_set:Nn \pnhdnotes   { Notes }
+    \tl_set:Nn \pnhdtopage  { to~page }
+    \tl_set:Nn \pnhdtopages { to~pages }
+  }
+\@@_set_babel_language:nn { english }    { english }
+\@@_set_babel_language:nn { american }   { english }
+\@@_set_babel_language:nn { australian } { english }
+\@@_set_babel_language:nn { british }    { english }
+\@@_set_babel_language:nn { canadian }   { english }
+\@@_set_babel_language:nn { newzealand } { english }
+\@@_set_babel_language:nn { UKenglish }  { english }
+\@@_set_babel_language:nn { USenglish }  { english }
+\@@_set_polyglossia_language:nn { english } { english }
+
+\@@_define_language:nn { portuguese }
+  {
+    \tl_set:Nn \pntitle     { Notas }
+    \tl_set:Nn \pnhdnotes   { Notas }
+    \tl_set:Nn \pnhdtopage  { da~página }
+    \tl_set:Nn \pnhdtopages { das~páginas }
+  }
+\@@_set_babel_language:nn { portuguese } { portuguese }
+\@@_set_babel_language:nn { brazilian }  { portuguese }
+\@@_set_babel_language:nn { portuges }   { portuguese }
+\@@_set_babel_language:nn { brazil }     { portuguese }
+\@@_set_polyglossia_language:nn { portuguese } { portuguese }
 %    \end{macrocode}
 %
 %
