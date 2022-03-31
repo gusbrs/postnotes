@@ -431,12 +431,6 @@
 
 %    \begin{macrocode}
 \newcounter { postnote }
-\cs_set_nopar:Npn \theHpostnote { \g_@@_theid_tl .mark }
-% Note that there's a bug in \pkg{hyperref}'s redefinition of
-% \cs{@addtoreset}, which overwrites
-% \texttt{\textbackslash{}the\meta{counter}} (see
-% https://github.com/latex3/hyperref/issues/230).  Workaround for it is
-% to set \cs{counterwithin} before \pkg{hyperref}.
 
 
 \NewDocumentCommand \postnote { O { } m }
@@ -451,6 +445,17 @@
     \seq_gput_right:Nx \g_@@_queue_seq { \g_@@_theid_tl }
     \tl_if_empty:NT \l_@@_mark_tl
       {
+        % For why I'm setting \theHpostnote locally instead of globally, see
+        % https://github.com/latex3/hyperref/issues/230, thanks Ulrike
+        % Fischer.  The alternative would be to not use \refstepcounter, set
+        % the anchor manually in \@@_typeset_mark:nn, and define
+        % \@currentlabel and \@currentcounter manually.  I don't see how I
+        % could apply the first two of Ulrike's suggestions here, the third
+        % would cost storing an additional variable and added complexity.  I
+        % have the ID and want to retrieve a reliable destination name on the
+        % other side.  And it is '\theH<counter>' which \refstepcounter uses
+        % to define the anchor, so I set it directly.
+        \cs_set:Npx \theHpostnote { \g_@@_theid_tl .mark }
         \refstepcounter { postnote }
         \tl_set:Nx \l_@@_mark_tl { \thepostnote }
       }
