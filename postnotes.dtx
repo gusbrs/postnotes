@@ -515,12 +515,11 @@
   { \hbox:n { \@textsuperscript { \normalfont #1 } } }
 
 
+\NewDocumentCommand \postnoterefmark { m }
+  { \@@_ref_mark:n {#1} }
 
 % TODO Provide '\zpostnotemarkref'.
-\NewDocumentCommand \postnotemarkref { m }
-  { \@@_mark_ref:n {#1} }
-
-\cs_new_protected:Npn \@@_mark_ref:n #1
+\cs_new_protected:Npn \@@_ref_mark:n #1
   {
     \group_begin:
     \@@_typeset_mark_wrapper:n
