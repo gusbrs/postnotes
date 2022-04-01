@@ -79,12 +79,6 @@
 %    \end{macrocode}
 %
 %
-% \section{Plumbing}
-%
-%    \begin{macrocode}
-%    \end{macrocode}
-%
-%
 % \section{Data}
 %
 %    \begin{macrocode}
@@ -187,12 +181,6 @@
 %
 % \section{Options}
 %
-% \subsection{TODO}
-%
-%    \begin{macrocode}
-\tl_new:N \l_@@_list_env_tl
-\tl_set:Nn \l_@@_list_env_tl { enumerate }
-%    \end{macrocode}
 %
 % \subsection*{\opt{heading} option}
 %
@@ -263,6 +251,82 @@
     format .initial:n = { \small } ,
     format .value_required:n = true ,
   }
+%    \end{macrocode}
+%
+%
+% \subsection*{\opt{listenv} option}
+%
+%    \begin{macrocode}
+\tl_new:N \l_@@_print_env_tl
+\bool_new:N \l_@@_print_as_list_bool
+\keys_define:nn { postnotes/print }
+  {
+    listenv .code:n =
+      {
+        \tl_if_eq:nnTF {#1} { none }
+          {
+            \bool_set_false:N \l_@@_print_as_list_bool
+            % A sensible default just in case.  It should not get to be used
+            % though.
+            \tl_set:Nn \l_@@_print_env_tl { itemize }
+          }
+          {
+            \bool_set_true:N \l_@@_print_as_list_bool
+            \tl_set:Nn \l_@@_print_env_tl {#1}
+          }
+      } ,
+    listenv .initial:n = { postnoteslist } ,
+    listenv .value_required:n = true ,
+  }
+
+
+
+% The horizontal setup of the label in these lists is based on the
+% \texttt{description} environment of the standard classes (see the \emph{The
+% \LaTeX{} Companion}).
+
+\NewDocumentEnvironment { postnoteslist } { }
+  {
+    \begin{list} { }
+      {
+        % horizontal
+        \setlength { \leftmargin }    { 0pt }
+        \setlength { \labelwidth }    { 0pt }
+        \setlength { \itemindent }    { .5\parindent }
+        \cs_set_eq:NN \makelabel \@@_list_makelabel:n
+        \setlength { \rightmargin }   { 0pt }
+        \setlength { \listparindent } { \parindent }
+        % vertical
+        \setlength { \parsep }    { \parskip }
+        \setlength { \itemsep }   { 0pt }
+        \setlength { \topsep }    { .5\topsep }
+        \setlength { \partopsep } { .5\partopsep }
+      }
+  }
+  { \end{list} }
+
+\cs_new:Npn \@@_list_makelabel:n #1
+  { \hspace { \labelsep } \normalfont ~ #1 }
+
+\NewDocumentEnvironment { postnoteslisthang } { }
+  {
+    \begin{list} { }
+      {
+        % horizontal
+        \setlength { \leftmargin }    { 1em }
+        \setlength { \labelwidth }    { -\leftmargin }
+        \setlength { \itemindent }    { -2\leftmargin }
+        \cs_set_eq:NN \makelabel \@@_list_makelabel:n
+        \setlength { \rightmargin }   { 0pt }
+        \setlength { \listparindent } { \parindent }
+        % vertical
+        \setlength { \parsep }    { \parskip }
+        \setlength { \itemsep }   { 0pt }
+        \setlength { \topsep }    { .5\topsep }
+        \setlength { \partopsep } { .5\partopsep }
+      }
+  }
+  { \end{list} }
 %    \end{macrocode}
 %
 %
@@ -666,7 +730,8 @@
             % type_curr = 'note'
             \tl_if_eq:NnF \l_@@_print_type_prev_tl { note }
               {
-                \exp_args:Nx \begin { \l_@@_list_env_tl }
+                \bool_if:NT \l_@@_print_as_list_bool
+                  { \exp_args:Nx \begin { \l_@@_print_env_tl } }
                 \l_@@_print_format_tl
               }
             \group_begin:
@@ -681,28 +746,39 @@
               { \p@postnote \l_@@_print_mark_tl }
             \@@_hyperref_make_currentHref:n
               { postnote. \l_@@_print_theid_tl .text }
-            \item
-              [
+            \@@_text_mark_wrapper:n
+              {
                 \@@_set_text_page_label:x { \l_@@_print_theid_tl }
                 \@@_typeset_text_mark:eV
                   { \l_@@_print_theid_tl }
                   \l_@@_print_mark_tl
-              ]
+              }
             \l_@@_print_content_tl
             \group_end:
-            \tl_if_eq:NnF \l_@@_print_type_next_tl { note }
-              { \exp_args:Nx \end { \l_@@_list_env_tl } }
+            \bool_if:NTF \l_@@_print_as_list_bool
+              {
+                \tl_if_eq:NnF \l_@@_print_type_next_tl { note }
+                  { \exp_args:Nx \end { \l_@@_print_env_tl } }
+              }
+              { \par }
             % Set type_prev for the next iteration.
             \tl_set:NV \l_@@_print_type_prev_tl
               \l_@@_print_type_curr_tl
           }
         % I'm not sure there's much gain in clearing the variable, but we
-        % won't use it anymore, so it doesn't harm to spare some bits/cycles.
+        % won't use it anymore, so it doesn't harm to spare some bits.
         \@@_prop_gclear:n { \l_@@_print_theid_tl }
       }
     \AddToHookNext { shipout/after }
       { \RemoveFromHook { shipout/before } [ postnotes/header ] }
     \group_end:
+  }
+
+\cs_new:Npn \@@_text_mark_wrapper:n #1
+  {
+    \bool_if:NTF \l_@@_print_as_list_bool
+      { \item [ #1 ] }
+      { #1 }
   }
 
 \cs_new:Npn \@@_make_text_mark:n #1 { #1 . }
