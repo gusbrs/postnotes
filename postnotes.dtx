@@ -81,17 +81,8 @@
 %
 % \section{Plumbing}
 %
-%
-% \subsection{Auxiliary}
-%
-%
-% \begin{macro}{\@@_if_package_loaded:n}
-%   Just a convenience, since frequently we just need one of the branches.
 %    \begin{macrocode}
-\prg_new_conditional:Npnn \@@_if_package_loaded:n #1 { T , F , TF }
-  { \IfPackageLoadedTF {#1} { \prg_return_true: } { \prg_return_false: } }
 %    \end{macrocode}
-% \end{macro}
 %
 %
 % \section{Data}
@@ -256,6 +247,7 @@
 %    \begin{macrocode}
 \bool_new:N \l_@@_hyperlink_bool
 \bool_new:N \l_@@_hyperref_warn_bool
+\bool_new:N \g_@@_hyperref_loaded_bool
 \bool_new:N \l_@@_backref_bool
 \keys_define:nn { postnotes/preamble }
   {
@@ -290,7 +282,8 @@
   { Missing~'hyperref'~package.~Setting~'hyperref=false'. }
 \AddToHook { begindocument }
   {
-    \@@_if_package_loaded:nF { hyperref }
+    \IfPackageLoadedTF { hyperref }
+      { \bool_gset_true:N \g_@@_hyperref_loaded_bool }
       {
         \bool_if:NT \l_@@_hyperref_warn_bool
           { \msg_warning:nn { postnotes } { missing-hyperref } }
@@ -508,7 +501,7 @@
         \bool_if:NTF \l_@@_hyperlink_bool
           { \hyperref [#1] { \@@_make_mark:n { \ref*{#1} } } }
           {
-            \@@_if_package_loaded:nT { hyperref }
+            \bool_if:NTF \g_@@_hyperref_loaded_bool
               { \@@_make_mark:n { \ref*{#1} } }
               { \@@_make_mark:n { \ref{#1} } }
           }
@@ -597,7 +590,7 @@
         \AddToHook { shipout/before } [ postnotes/header ]
           { \@@_set_headers_vars_next: }
         % Let biblatex know we are in a 'notes' context.
-        \@@_if_package_loaded:nT { biblatex }
+        \bool_if:NT \g_@@_biblatex_loaded_bool
           { \toggletrue { blx@footnote } }
         \bool_if:NT \l_@@_sort_bool
           { \@@_sort_queue:N \g_@@_queue_seq }
@@ -981,6 +974,16 @@
 %    \end{macrocode}
 %
 %
+% \section{Compatibility}
+%
+%
+%    \begin{macrocode}
+\bool_new:N \g_@@_biblatex_loaded_bool
+\AddToHook { package/biblatex/after }
+  { \bool_gset_true:N \g_@@_biblatex_loaded_bool }
+%    \end{macrocode}
+%
+%
 % \section{Languages}
 %
 %
@@ -1065,13 +1068,6 @@
 \@@_set_babel_language:nn { portuges }   { portuguese }
 \@@_set_babel_language:nn { brazil }     { portuguese }
 \@@_set_polyglossia_language:nn { portuguese } { portuguese }
-%    \end{macrocode}
-%
-%
-% \section{Compatibility}
-%
-%
-%    \begin{macrocode}
 %    \end{macrocode}
 %
 %
