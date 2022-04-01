@@ -262,7 +262,7 @@
 \bool_new:N \l_@@_hyperlink_bool
 \bool_new:N \l_@@_hyperref_warn_bool
 \bool_new:N \l_@@_backref_bool
-\keys_define:nn { postnotes/preamble }
+\keys_define:nn { postnotes/package }
   {
     hyperref .choice: ,
     hyperref / auto .code:n =
@@ -365,7 +365,7 @@
   {
     postnotes/setup .inherit:n =
       {
-        postnotes/preamble ,
+        postnotes/package ,
         postnotes/print ,
       }
   }
@@ -433,7 +433,8 @@
 
 %    \begin{macrocode}
 \newcounter { postnote }
-\NewHook { postnotes/user/note }
+\NewHook { postnotes/note }
+
 
 \NewDocumentCommand \postnote { O { } m }
   { \@@_note:nn {#1} {#2} }
@@ -445,7 +446,7 @@
     \int_gincr:N \g_@@_id_int
     \seq_gput_right:Nx \g_@@_queue_seq { \g_@@_theid_tl }
     \keys_set:nn { postnotes/note } {#1}
-    \UseHook { postnotes/user/note }
+    \UseHook { postnotes/note }
     \tl_if_empty:NT \l_@@_mark_tl
       {
         \stepcounter { postnote }
@@ -596,13 +597,16 @@
 \tl_new:N \pnthechapternextnote
 \tl_new:N \pnthesectionnextnote
 
+\NewHook { postnotes/print }
+
 \newcounter { postnotesection }
 
 \cs_new_protected:Npn \@@_print_notes:n #1
   {
     \group_begin:
-    \keys_set:nn { postnotes/print } {#1}
     \int_gincr:N \g_@@_print_postnotes_int
+    \keys_set:nn { postnotes/print } {#1}
+    \UseHook { postnotes/print }
     \tl_set:Nn \l_@@_print_type_prev_tl { open }
     \seq_if_empty:NF \g_@@_queue_seq
       {
