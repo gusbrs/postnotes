@@ -353,22 +353,9 @@
 %   \end{syntax}
 %    \begin{macrocode}
 \NewDocumentCommand \postnotesetup { m }
-  { \@@_setup:n {#1} }
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\@@_setup:n}
-%   A version of \cs{postnotesetup} for internal use.
-%   \begin{syntax}
-%     \cs{@@_setup:n}\marg{options}
-%   \end{syntax}
-%    \begin{macrocode}
-\cs_new_protected:Npn \@@_setup:n #1
   { \keys_set:nn { postnotes/setup } {#1} }
 %    \end{macrocode}
 % \end{macro}
-%
-% \subsubsection*{Package options}
 %
 %    \begin{macrocode}
 \keys_define:nn { }
