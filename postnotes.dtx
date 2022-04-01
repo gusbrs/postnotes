@@ -449,6 +449,7 @@
         \tl_set:Nx \l_@@_mark_tl { \thepostnote }
       }
     \@@_set_mark_page_label:x { \g_@@_theid_tl }
+    \@@_set_user_labels:
     \@@_typeset_mark:xV { \g_@@_theid_tl } \l_@@_mark_tl
     \@@_store:nn { \g_@@_theid_tl } {#2}
     \group_end:
@@ -456,6 +457,7 @@
 
 \tl_new:N \l_@@_mark_tl
 \fp_new:N \l_@@_sort_num_fp
+\tl_new:N \l_@@_note_label_tl
 \bool_new:N \l_@@_manual_sortnum_bool
 \keys_define:nn { postnotes/note }
   {
@@ -467,6 +469,8 @@
         \bool_set_true:N \l_@@_manual_sortnum_bool
       } ,
     sortnum .value_required:n = true ,
+    label .tl_set:N = \l_@@_note_label_tl ,
+    label .value_required:n = true ,
   }
 
 
@@ -504,6 +508,17 @@
   { \hbox:n { \@textsuperscript { \normalfont #1 } } }
 
 
+\cs_new_protected:Npn \@@_set_user_labels:
+  {
+    \tl_if_empty:NF \l_@@_note_label_tl
+      { \exp_args:NV \label \l_@@_note_label_tl }
+    \bool_lazy_and:nnT
+      { \g_@@_zrefuser_loaded_bool }
+      { ! \tl_if_empty_p:N \l_@@_note_zlabel_tl }
+      { \exp_args:NV \zlabel \l_@@_note_zlabel_tl }
+  }
+
+
 \NewDocumentCommand \postnoterefmark { m }
   { \@@_ref_mark:n {#1} }
 
@@ -521,23 +536,6 @@
           }
       }
     \group_end:
-  }
-
-\AddToHook { package/zref-user/after }
-  {
-    \NewDocumentCommand \postnotezrefmark { m }
-      { \@@_zref_mark:n {#1} }
-    \cs_new_protected:Npn \@@_zref_mark:n #1
-      {
-        \group_begin:
-        \@@_typeset_mark_wrapper:n
-          {
-            \bool_if:NTF \l_@@_hyperlink_bool
-              { \hyperref [#1] { \@@_make_mark:n { \zref{#1} } } }
-              { \@@_make_mark:n { \zref{#1} } }
-          }
-        \group_end:
-      }
   }
 %    \end{macrocode}
 %
@@ -996,6 +994,33 @@
 \bool_new:N \g_@@_biblatex_loaded_bool
 \AddToHook { package/biblatex/after }
   { \bool_gset_true:N \g_@@_biblatex_loaded_bool }
+
+
+\tl_new:N \l_@@_note_zlabel_tl
+\bool_new:N \g_@@_zrefuser_loaded_bool
+\AddToHook { package/zref-user/after }
+  {
+    \bool_gset_true:N \g_@@_zrefuser_loaded_bool
+    \keys_define:nn { postnotes/note }
+      {
+        zlabel .tl_set:N = \l_@@_note_zlabel_tl ,
+        zlabel .value_required:n = true ,
+      }
+    \NewDocumentCommand \postnotezrefmark { m }
+      { \@@_zref_mark:n {#1} }
+    \cs_new_protected:Npn \@@_zref_mark:n #1
+      {
+        \group_begin:
+        \@@_typeset_mark_wrapper:n
+          {
+            \bool_if:NTF \l_@@_hyperlink_bool
+              { \hyperref [#1] { \@@_make_mark:n { \zref{#1} } } }
+              { \@@_make_mark:n { \zref{#1} } }
+          }
+        \group_end:
+      }
+  }
+
 %    \end{macrocode}
 %
 %
