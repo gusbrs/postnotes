@@ -150,7 +150,9 @@
 % <theid><prop>
 \cs_new:Npn \@@_prop_item:nn #1#2
   { \prop_item:cn { \@@_data_name:e {#1} } {#2} }
-
+% <theid>
+\cs_new_protected:Npn \@@_prop_gclear:n #1
+  { \prop_gclear:c { \@@_data_name:e {#1} } }
 
 \tl_const:Nn \c_@@_ref_prefix_tl { postnote@r }
 \cs_new_protected:Npx \post@note
@@ -569,11 +571,13 @@
 
 \int_new:N \g_@@_print_postnotes_int
 \tl_new:N \l_@@_print_theid_tl
+\tl_new:N \l_@@_print_theid_next_tl
 \tl_new:N \l_@@_print_mark_tl
 \tl_new:N \l_@@_print_sectid_tl
-\tl_new:N \l_@@_curr_type_tl
-\tl_new:N \l_@@_next_type_tl
-\tl_new:N \l_@@_content_tl
+\tl_new:N \l_@@_print_type_curr_tl
+\tl_new:N \l_@@_print_type_next_tl
+\tl_new:N \l_@@_print_type_prev_tl
+\tl_new:N \l_@@_print_content_tl
 \tl_new:N \pnthechapter
 \tl_new:N \pnthesection
 \tl_new:N \pnthepage
@@ -586,6 +590,7 @@
   {
     \group_begin:
     \int_gincr:N \g_@@_print_postnotes_int
+    \tl_set:Nn \l_@@_print_type_prev_tl { open }
     \seq_if_empty:NF \g_@@_queue_seq
       {
         \pnheading
@@ -603,45 +608,49 @@
       {
         \seq_gpop_left:NN \g_@@_queue_seq \l_@@_print_theid_tl
         \@@_prop_get:nnN { \l_@@_print_theid_tl }
-          { type } \l_@@_curr_type_tl
+          { type } \l_@@_print_type_curr_tl
         \seq_if_empty:NTF \g_@@_queue_seq
-          { \tl_set:Nn \l_@@_next_type_tl { close } }
           {
-            \@@_prop_get:nnN
-              { \int_eval:n { \l_@@_print_theid_tl + 1 } }
-              { type } \l_@@_next_type_tl
+            \tl_set:Nn \l_@@_print_theid_next_tl { noid }
+            \tl_set:Nn \l_@@_print_type_next_tl { close }
           }
-        \tl_if_eq:NnTF \l_@@_curr_type_tl { section }
           {
-            % curr_type = 'section'
-            \tl_if_eq:NnT \l_@@_next_type_tl { note }
+            \seq_get_left:NN \g_@@_queue_seq \l_@@_print_theid_next_tl
+            \@@_prop_get:nnN { \l_@@_print_theid_next_tl }
+              { type } \l_@@_print_type_next_tl
+          }
+        \tl_if_eq:NnTF \l_@@_print_type_curr_tl { section }
+          {
+            % type_curr = 'section'
+            % We only process the entry if type_next is 'note': here are
+            % skipped empty sections.
+            \tl_if_eq:NnT \l_@@_print_type_next_tl { note }
               {
                 \group_begin:
                 \@@_prop_get:nnN { \l_@@_print_theid_tl }
                   { thechapter } \pnthechapter
                 \@@_prop_get:nnN { \l_@@_print_theid_tl }
                   { thesection } \pnthesection
-                \@@_prop_get:nnN
-                  { \int_eval:n { \l_@@_print_theid_tl + 1 } }
+                \@@_prop_get:nnN { \l_@@_print_theid_next_tl }
                   { thechapter } \pnthechapternextnote
-                \@@_prop_get:nnN
-                  { \int_eval:n { \l_@@_print_theid_tl + 1 } }
+                \@@_prop_get:nnN { \l_@@_print_theid_next_tl }
                   { thesection } \pnthesectionnextnote
                 \@@_prop_get:nnN { \l_@@_print_theid_tl }
                   { pnsectid } \l_@@_print_sectid_tl
                 \exp_args:Nnx \setcounter { postnotesection }
                   { \int_eval:n { \l_@@_print_sectid_tl } }
                 \@@_prop_get:nnN { \l_@@_print_theid_tl }
-                  { content } \l_@@_content_tl
-                \l_@@_content_tl
+                  { content } \l_@@_print_content_tl
+                \l_@@_print_content_tl
                 \group_end:
-                \exp_args:Nx \begin { \l_@@_list_env_tl }
-                \l_@@_print_format_tl
+                % Set type_prev for the next iteration.
+                \tl_set:NV \l_@@_print_type_prev_tl
+                  \l_@@_print_type_curr_tl
               }
           }
           {
-            % curr_type = 'note'
-            \tl_if_eq:NNF \@currenvir \l_@@_list_env_tl
+            % type_curr = 'note'
+            \tl_if_eq:NnF \l_@@_print_type_prev_tl { note }
               {
                 \exp_args:Nx \begin { \l_@@_list_env_tl }
                 \l_@@_print_format_tl
@@ -652,7 +661,7 @@
             \@@_prop_get:nnN { \l_@@_print_theid_tl }
               { mark } \l_@@_print_mark_tl
             \@@_prop_get:nnN { \l_@@_print_theid_tl }
-              { content } \l_@@_content_tl
+              { content } \l_@@_print_content_tl
             \cs_set:Npn \@currentcounter { postnote }
             \cs_set:Npx \@currentlabel
               { \p@postnote \l_@@_print_mark_tl }
@@ -665,11 +674,17 @@
                   { \l_@@_print_theid_tl }
                   \l_@@_print_mark_tl
               ]
-            \l_@@_content_tl
+            \l_@@_print_content_tl
             \group_end:
-            \tl_if_eq:NnF \l_@@_next_type_tl { note }
+            \tl_if_eq:NnF \l_@@_print_type_next_tl { note }
               { \exp_args:Nx \end { \l_@@_list_env_tl } }
+            % Set type_prev for the next iteration.
+            \tl_set:NV \l_@@_print_type_prev_tl
+              \l_@@_print_type_curr_tl
           }
+        % I'm not sure there's much gain in clearing the variable, but we
+        % won't use it anymore, so it doesn't harm to spare some bits/cycles.
+        \@@_prop_gclear:n { \l_@@_print_theid_tl }
       }
     \AddToHookNext { shipout/after }
       { \RemoveFromHook { shipout/before } [ postnotes/header ] }
