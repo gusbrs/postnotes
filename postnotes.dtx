@@ -192,9 +192,6 @@
 %    \begin{macrocode}
 \tl_new:N \l_@@_list_env_tl
 \tl_set:Nn \l_@@_list_env_tl { enumerate }
-
-\tl_new:N \l_@@_print_format_tl
-\tl_set:Nn \l_@@_print_format_tl { \small }
 %    \end{macrocode}
 %
 % \subsection*{\opt{heading} option}
@@ -252,6 +249,19 @@
     header-topages .tl_set:N = \pnhdtopages ,
     header-topages .initial:n = { to~pages } ,
     header-topages .value_required:n = true ,
+  }
+%    \end{macrocode}
+%
+%
+% \subsection*{\opt{format} option}
+%
+%    \begin{macrocode}
+\tl_new:N \l_@@_print_format_tl
+\keys_define:nn { postnotes/print }
+  {
+    format .tl_set:N = \l_@@_print_format_tl ,
+    format .initial:n = { \small } ,
+    format .value_required:n = true ,
   }
 %    \end{macrocode}
 %
