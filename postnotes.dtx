@@ -497,7 +497,7 @@
 \NewHook { postnotes/note }
 
 
-\NewDocumentCommand \postnote { O { } m }
+\NewDocumentCommand \postnote { O { } +m }
   { \@@_note:nn {#1} {#2} }
 
 % <options><note content>
@@ -612,7 +612,7 @@
 %    \begin{macrocode}
 \int_new:N \g_@@_sectid_int
 
-\NewDocumentCommand \postnotesection { O { } m }
+\NewDocumentCommand \postnotesection { O { } +m }
   { \@@_section:nn {#1} {#2} }
 
 \cs_new_protected:Npn \@@_section:nn #1#2
