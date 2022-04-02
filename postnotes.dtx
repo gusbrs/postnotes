@@ -745,8 +745,15 @@
             % type_curr = 'note'
             \tl_if_eq:NnF \l_@@_print_type_prev_tl { note }
               {
-                \bool_if:NT \l_@@_print_as_list_bool
+                \bool_if:NTF \l_@@_print_as_list_bool
                   { \exp_args:Nx \begin { \l_@@_print_env_tl } }
+                  {
+                    % Ensure the first note after a heading has paragraph
+                    % indentation.  This is done by 'endnotes', and the change
+                    % and technique were suggested by FMi.
+                    \mode_leave_vertical: \hbox:n { } \par
+                    \skip_vertical:n { -\baselineskip }
+                  }
                 \l_@@_print_format_tl
               }
             \group_begin:
