@@ -1168,8 +1168,9 @@
 % recognizing that there is an "inconsistency", depending on the case, the
 % operation will be either local or global.  This is documented in the manual,
 % which explains this inconsistent behavior is preserved for backward
-% compatibility, and recommends 'etoolbox' if available.  Polyglossia too
-% recommends `etoolbox's `\gappto'.  All in all, let's rely on `expl3'.
+% compatibility, and recommends 'etoolbox's facilities if available.
+% Polyglossia also recommends `etoolbox's `\gappto'.  All in all, let's rely
+% on `expl3'.
 \cs_new_protected:Npn \@@_appto_language:Nn #1#2
   {
     \tl_if_exist:NTF #1
