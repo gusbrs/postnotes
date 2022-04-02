@@ -120,8 +120,6 @@
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { section }
     \prop_gput:cnx { \@@_data_name:e {#1} } { thechapter } { \thechapter }
     \prop_gput:cnx { \@@_data_name:e {#1} } { thesection } { \thesection }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { pnsectid }
-      { \int_use:N \g_@@_sectid_int }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
   }
 
@@ -662,7 +660,6 @@
 \tl_new:N \l_@@_print_theid_tl
 \tl_new:N \l_@@_print_theid_next_tl
 \tl_new:N \l_@@_print_mark_tl
-\tl_new:N \l_@@_print_sectid_tl
 \tl_new:N \l_@@_print_type_curr_tl
 \tl_new:N \l_@@_print_type_next_tl
 \tl_new:N \l_@@_print_type_prev_tl
@@ -719,6 +716,7 @@
             % skipped empty sections.
             \tl_if_eq:NnT \l_@@_print_type_next_tl { note }
               {
+                \stepcounter { postnotesection }
                 \group_begin:
                 \@@_prop_get:nnN { \l_@@_print_theid_tl }
                   { thechapter } \pnthechapter
@@ -728,10 +726,6 @@
                   { thechapter } \pnthechapternextnote
                 \@@_prop_get:nnN { \l_@@_print_theid_next_tl }
                   { thesection } \pnthesectionnextnote
-                \@@_prop_get:nnN { \l_@@_print_theid_tl }
-                  { pnsectid } \l_@@_print_sectid_tl
-                \exp_args:Nnx \setcounter { postnotesection }
-                  { \int_eval:n { \l_@@_print_sectid_tl } }
                 \@@_prop_get:nnN { \l_@@_print_theid_tl }
                   { content } \l_@@_print_content_tl
                 \l_@@_print_content_tl
@@ -787,8 +781,7 @@
             \tl_set:NV \l_@@_print_type_prev_tl
               \l_@@_print_type_curr_tl
           }
-        % I'm not sure there's much gain in clearing the variable, but we
-        % won't use it anymore, so it doesn't harm to spare some bits.
+        % We won't use the variable anymore, clear it to reduce memory usage.
         \@@_prop_gclear:n { \l_@@_print_theid_tl }
       }
     \AddToHookNext { shipout/after }
