@@ -686,9 +686,6 @@
         \pnheading
         \AddToHook { shipout/before } [ postnotes/header ]
           { \@@_set_headers_vars_next: }
-        % Let biblatex know we are in a 'notes' context.
-        \bool_if:NT \g_@@_biblatex_loaded_bool
-          { \toggletrue { blx@footnote } }
         \bool_if:NT \l_@@_sort_bool
           { \@@_sort_queue:N \g_@@_queue_seq }
         \@@_get_headers_data:N \g_@@_queue_seq
@@ -1109,9 +1106,12 @@
       { \ref{#1} }
   }
 
-\bool_new:N \g_@@_biblatex_loaded_bool
 \AddToHook { package/biblatex/after }
-  { \bool_gset_true:N \g_@@_biblatex_loaded_bool }
+  {
+    % Let biblatex know we are in a 'notes' context.
+    \AddToHook { postnotes/print } [ postnotes ]
+      { \toggletrue { blx@footnote } }
+  }
 
 
 \tl_new:N \l_@@_note_zlabel_tl
