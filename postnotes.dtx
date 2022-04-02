@@ -1135,52 +1135,50 @@
 % <postnote language><extras>
 \cs_new_protected:Npn \@@_define_language:nn #1#2
   {
-    \tl_new:c { l_@@_language_extras_ #1 _tl }
-    \tl_set:cn { l_@@_language_extras_ #1 _tl } {#2}
+    \tl_new:c { g_@@_language_extras_ #1 _tl }
+    \tl_gset:cn { g_@@_language_extras_ #1 _tl } {#2}
   }
+
+% I'm using `\tl_gput_right:cn' here since there seems to exist some qualms
+% about `babel's '\addto'.  A number of packages define their own versions of
+% it: varioref (probably the original), backref, cleveref.  The latter
+% comments that `\addto` is "flawed". 'babel' itself comments the definition
+% recognizing that there is an "inconsistency", depending on the case, the
+% operation will be either local or global.  This is documented in the manual,
+% which explains this inconsistent behavior is preserved for backward
+% compatibility, and recommends 'etoolbox' if available.  Polyglossia too
+% recommends `etoolbox's `\gappto'.  All in all, let's rely on `expl3'.
+\cs_new_protected:Npn \@@_appto_language:Nn #1#2
+  {
+    \tl_if_exist:NTF #1
+      {
+        \exp_args:NNv \tl_gput_right:Nn #1
+          { g_@@_language_extras_ #2 _tl }
+      }
+      {
+        \tl_new:N #1
+        \tl_gset:Nv #1 { g_@@_language_extras_ #2 _tl }
+      }
+  }
+\cs_generate_variant:Nn \@@_appto_language:Nn { cn }
 
 % <babel language><postnote language>
 \cs_new_protected:Npn \@@_set_babel_language:nn #1#2
   {
     \AddToHook { package/babel/after }
-      {
-        % I'm using `\tl_gput_right:cn' here since there seems to exist some
-        % qualms about `babel's '\addto'.  A number of packages define their
-        % own versions of it: varioref (probably the original), backref,
-        % cleveref.  The latter comments that `\addto` is "flawed". 'babel'
-        % itself comments the definition recognizing that there is an
-        % "inconsistency", depending on the case, the operation will be either
-        % local or global.  Polyglossia recommends `etoolbox's `\gappto'.  All
-        % in all, let's rely on `expl3'.
-        \tl_if_exist:cTF { extras #1 }
-          {
-            \exp_args:Nnv \tl_gput_right:cn { extras #1 }
-              { l_@@_language_extras_ #2 _tl }
-          }
-          {
-            \tl_new:c { extras #1 }
-            \tl_gset:cv { extras #1 }
-              { l_@@_language_extras_ #2 _tl }
-          }
-      }
+      { \@@_appto_language:cn { extras #1 } {#2} }
   }
 % <polyglossia language><postnote language>
 \cs_new_protected:Npn \@@_set_polyglossia_language:nn #1#2
   {
     \AddToHook { package/polyglossia/after }
-      {
-        \exp_args:Ncv \gappto { blockextras@ #1 }
-          { l_@@_language_extras_ #2 _tl }
-      }
+      { \@@_appto_language:cn { blockextras@ #1 } {#2} }
   }
 % <babel name of polyglossia variant><postnote language>
 \cs_new_protected:Npn \@@_set_polyglossia_variant:nn #1#2
   {
     \AddToHook { package/polyglossia/after }
-      {
-        \exp_args:Ncv \gappto { blockextras@bbl@ #1 }
-          { l_@@_language_extras_ #2 _tl }
-      }
+      { \@@_appto_language:cn { blockextras@bbl@ #1 } {#2} }
   }
 
 \@@_define_language:nn { english }
