@@ -1139,6 +1139,14 @@
       }
   }
 
+\AddToHook { package/zref-clever/after }
+  {
+    \zcsetup { countertype = { postnote = endnote } }
+    \AddToHook { postnotes/print } [ postnotes ]
+      { \zcsetup { counterresetby = { postnote = postnotesection } } }
+  }
+
+
 %    \end{macrocode}
 %
 %
