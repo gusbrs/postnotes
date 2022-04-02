@@ -330,6 +330,24 @@
 %    \end{macrocode}
 %
 %
+% \subsection*{\opt{makemark} and \opt{maketextmark} options}
+%
+%    \begin{macrocode}
+\keys_define:nn { postnotes/package }
+  {
+    makemark .code:n =
+      { \cs_set_nopar:Npn \@@_make_mark:n ##1 {#1} } ,
+    makemark .value_required:n = true ,
+    % From the default definition of \cs{@makefnmark} in the kernel.
+    makemark .initial:n =
+      { \hbox:n { \@textsuperscript { \normalfont #1 } } } ,
+    maketextmark .code:n =
+      { \cs_set_nopar:Npn \@@_make_text_mark:n ##1 {#1} } ,
+    maketextmark .value_required:n = true ,
+    maketextmark .initial:n = { #1 . } ,
+  }
+%    \enc{macrocode}
+
 % \subsection*{\opt{hyperref} and \opt{backref} options}
 %
 %    \begin{macrocode}
@@ -574,9 +592,6 @@
     \fi:
     \scan_stop:
   }
-% From the default definition of \cs{@makefnmark} in the kernel.
-\cs_new_protected:Npn \@@_make_mark:n #1
-  { \hbox:n { \@textsuperscript { \normalfont #1 } } }
 
 
 \cs_new_protected:Npn \@@_set_user_labels:
@@ -781,7 +796,6 @@
       { #1 }
   }
 
-\cs_new:Npn \@@_make_text_mark:n #1 { #1 . }
 \cs_new:Npn \@@_typeset_text_mark:nn #1#2
   {
     \bool_if:NTF \l_@@_hyperlink_bool
