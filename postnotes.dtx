@@ -104,7 +104,11 @@
           { \fp_use:N \l_@@_sort_num_fp }
           { \int_use:N \c@postnote }
       }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { thechapter } { \thechapter }
+    \cs_if_exist:cT { chapter }
+      {
+        \prop_gput:cnx { \@@_data_name:e {#1} }
+          { thechapter } { \thechapter }
+      }
     \prop_gput:cnx { \@@_data_name:e {#1} } { thesection } { \thesection }
     \prop_gput:cnx { \@@_data_name:e {#1} } { pnsectlabel }
       { \g_@@_section_label_tl }
@@ -118,7 +122,11 @@
   {
     \prop_new:c { \@@_data_name:e {#1} }
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { section }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { thechapter } { \thechapter }
+    \cs_if_exist:cT { chapter }
+      {
+        \prop_gput:cnx { \@@_data_name:e {#1} }
+          { thechapter } { \thechapter }
+      }
     \prop_gput:cnx { \@@_data_name:e {#1} } { thesection } { \thesection }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
   }
