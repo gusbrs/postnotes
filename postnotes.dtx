@@ -475,6 +475,13 @@
 % TeX.SX chat:
 % \url{https://chat.stackexchange.com/transcript/message/60754383#60754383}.
 %
+% And I eventually found a class of cases for which the separation between
+% ``mark'' and ``text'' is really needed: content with multiple typesetting
+% passes.  And there's plenty of if: captions, \pkg{amsmath} environments,
+% \pkg{tabularx}, \pkg{tabularray}, and certainly more.  For the consequences
+% to footnotes and endnotes see \url{https://tex.stackexchange.com/a/43794}
+% and \url{https://tex.stackexchange.com/a/358207}.
+%
 %
 %
 % For the \pkg{hyperref} support for cross-references in \cs{postnote}, I've
@@ -497,14 +504,16 @@
 
 \NewDocumentCommand \postnote { O { } +m }
   { \@@_note:nn {#1} {#2} }
+\NewDocumentCommand \postnotetext { O { } +m }
+  { \@@_note_text:nn {#1} {#2} }
 
-% <options><note content>
-\cs_new_protected:Npn \@@_note:nn #1#2
+% <mark bool><options><note content>
+\cs_new_protected:Npn \@@_note_mark_text:nnn #1#2#3
   {
     \group_begin:
     \int_gincr:N \g_@@_id_int
     \seq_gput_right:Nx \g_@@_queue_seq { \g_@@_theid_tl }
-    \keys_set:nn { postnotes/note } {#1}
+    \keys_set:nn { postnotes/note } {#2}
     \UseHook { postnotes/note }
     \tl_if_empty:NT \l_@@_mark_tl
       {
@@ -516,10 +525,17 @@
     \@@_hyperref_make_currentHref:n { postnote. \g_@@_theid_tl .mark }
     \@@_set_mark_page_label:x { \g_@@_theid_tl }
     \@@_set_user_labels:
-    \@@_typeset_mark:xV { \g_@@_theid_tl } \l_@@_mark_tl
-    \@@_store:nn { \g_@@_theid_tl } {#2}
+    \bool_if:nT {#1}
+      { \@@_typeset_mark:xV { \g_@@_theid_tl } \l_@@_mark_tl }
+    \@@_store:nn { \g_@@_theid_tl } {#3}
     \group_end:
   }
+% <options><note content>
+\cs_new_protected:Npn \@@_note:nn #1#2
+  { \@@_note_mark_text:nnn { \c_true_bool } {#1} {#2} }
+\cs_new_protected:Npn \@@_note_text:nn #1#2
+  { \@@_note_mark_text:nnn { \c_false_bool } {#1} {#2} }
+
 
 \tl_new:N \l_@@_mark_tl
 \fp_new:N \l_@@_sort_num_fp
