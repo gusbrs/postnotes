@@ -562,14 +562,14 @@
 \cs_new_protected:Npn \@@_typeset_mark_wrapper:n #1
   {
     \mode_leave_vertical:
-    \if_mode_horizontal:
-    \tl_set:Nx \l_@@_saved_spacefactor_tl { \the\spacefactor }
-    \nobreak
-    \fi:
+    \mode_if_horizontal:T
+      {
+        \tl_set:Nx \l_@@_saved_spacefactor_tl { \the\spacefactor }
+        \nobreak
+      }
     #1
-    \if_mode_horizontal:
-    \spacefactor \l_@@_saved_spacefactor_tl
-    \fi:
+    \mode_if_horizontal:T
+      { \spacefactor \l_@@_saved_spacefactor_tl }
     \scan_stop:
   }
 
