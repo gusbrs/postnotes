@@ -1128,13 +1128,10 @@
 %
 %
 %    \begin{macrocode}
-
-
 \tl_new:N \pntitle
 \tl_new:N \pnhdnotes
 \tl_new:N \pnhdtopage
 \tl_new:N \pnhdtopages
-
 \tl_set:Nn \pntitle { Notes }
 \tl_set:Nn \pnhdnotes { Notes }
 \tl_set:Nn \pnhdtopage { to~page }
@@ -1144,11 +1141,28 @@
 % <postnote language><extras>
 \cs_new_protected:Npn \@@_define_language:nn #1#2
   {
-    \tl_new:c { g_@@_language_extras_ #1 _tl }
-    \tl_gset:cn { g_@@_language_extras_ #1 _tl } {#2}
+    \tl_new:c { g_@@_language_ #1 _tl }
+    \tl_gset:cn { g_@@_language_ #1 _tl } {#2}
   }
 
-% I'm using `\tl_gput_right:cn' here since there seems to exist some qualms
+
+% For \pkg{babel} we use the new hook system, it's clean, and avoids
+% the \cs{addto} pitfalls.  The hook is \texttt{babel/\meta{language}/beforeextras} so that users
+% can override it with a traditional
+% \texttt{\textbackslash{}addto\textbackslash{}extras\meta{language}}.
+
+% Note that, for \pkg{babel}, the captions are currently handled in two different ways --
+% the ``old way'' and the ``new way'' -- and which of them is used depends on
+% the language.  Most still use the ``old way'', but the problem is that it is
+% not universal.  And the ``new way'' uses a different naming scheme --
+% \texttt{\textbackslash{}\meta{language}\meta{caption}}, which is meant to be
+% set with \cs{setlocalecaption}, and not suitable for our needs.  The
+% \texttt{\textbackslash{}extras\meta{language}} macros are meant for
+% ``arbitrary'' code to be run when the language is selected, which is what we
+% want.  The captions used to work in the same way, but no longer for
+% languages which use the ``new way''.
+
+% Note also that there seems to exist some qualms
 % about `babel's '\addto'.  A number of packages define their own versions of
 % it: varioref (probably the original), backref, cleveref.  The latter
 % comments that `\addto` is "flawed". 'babel' itself comments the definition
@@ -1156,40 +1170,43 @@
 % operation will be either local or global.  This is documented in the manual,
 % which explains this inconsistent behavior is preserved for backward
 % compatibility, and recommends 'etoolbox's facilities if available.
-% Polyglossia also recommends `etoolbox's `\gappto'.  All in all, let's rely
-% on `expl3'.
-\cs_new_protected:Npn \@@_appto_language:Nn #1#2
-  {
-    \tl_if_exist:NTF #1
-      {
-        \exp_args:NNv \tl_gput_right:Nn #1
-          { g_@@_language_extras_ #2 _tl }
-      }
-      {
-        \tl_new:N #1
-        \tl_gset:Nv #1 { g_@@_language_extras_ #2 _tl }
-      }
-  }
-\cs_generate_variant:Nn \@@_appto_language:Nn { cn }
+% Polyglossia also recommends `etoolbox's `\gappto'.  All in all, if there's
+% need to use the traditional way instead of the new hooks, just rely
+% on `expl3' and use `\tl_gput_right:Nn'.
 
 % <babel language><postnote language>
 \cs_new_protected:Npn \@@_set_babel_language:nn #1#2
   {
-    \AddToHook { package/babel/after }
-      { \@@_appto_language:cn { extras #1 } {#2} }
+    \ActivateGenericHook { babel/#1/beforeextras }
+    \exp_args:Nnv \AddToHook { babel/#1/beforeextras }
+      { g_@@_language_ #2 _tl }
   }
+
+
+% \pkg{polyglossia} uses a similar set of macros for setting up languages as
+% \pkg{babel} does.
+% However, the \texttt{\textbackslash{}blockextras@\meta{language}} macros are
+% unfortunately internal (despite what the manual says, that's what the code
+% does), thus requiring \cs{makeatletter}/\cs{makeatother} for user
+% configuration, which would be an inconvenience.  On the other hand,
+% \pkg{polyglossia}'s \texttt{\textbackslash{}captions\meta{language}} works
+% as \pkg{babel}'s ``old way'', meaning it is just a ``hook'' to which we can
+% append some code.  So we use
+% \texttt{\textbackslash{}captions\meta{language}} for \pkg{polyglossia}.
+% Things may complicate here if there's need to set up different values for
+% different language variants, since the hooks available are all necessarily
+% internal, but I doubt we'll ever need variants for these simple strings.
+
 % <polyglossia language><postnote language>
 \cs_new_protected:Npn \@@_set_polyglossia_language:nn #1#2
   {
     \AddToHook { package/polyglossia/after }
-      { \@@_appto_language:cn { blockextras@ #1 } {#2} }
+      {
+        \exp_args:Nnv \csgappto { captions #1 }
+          { g_@@_language_ #2 _tl }
+      }
   }
-% <babel name of polyglossia variant><postnote language>
-\cs_new_protected:Npn \@@_set_polyglossia_variant:nn #1#2
-  {
-    \AddToHook { package/polyglossia/after }
-      { \@@_appto_language:cn { blockextras@bbl@ #1 } {#2} }
-  }
+
 
 \@@_define_language:nn { english }
   {
