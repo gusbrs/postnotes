@@ -213,32 +213,6 @@
 %    \end{macrocode}
 %
 %
-%
-% \subsection*{\opt{title} \& Co. options}
-%
-%    \begin{macrocode}
-\tl_new:N \pntitle
-\tl_new:N \pnhdnotes
-\tl_new:N \pnhdtopage
-\tl_new:N \pnhdtopages
-\keys_define:nn { postnotes/print }
-  {
-    title .tl_set:N = \pntitle ,
-    title .initial:n = { Notes } ,
-    title .value_required:n = true ,
-    header-notes .tl_set:N = \pnhdnotes ,
-    header-notes .initial:n = { Notes } ,
-    header-notes .value_required:n = true ,
-    header-topage .tl_set:N = \pnhdtopage ,
-    header-topage .initial:n = { to~page } ,
-    header-topage .value_required:n = true ,
-    header-topages .tl_set:N = \pnhdtopages ,
-    header-topages .initial:n = { to~pages } ,
-    header-topages .value_required:n = true ,
-  }
-%    \end{macrocode}
-%
-%
 % \subsection*{\opt{format} option}
 %
 %    \begin{macrocode}
@@ -1154,6 +1128,19 @@
 %
 %
 %    \begin{macrocode}
+
+
+\tl_new:N \pntitle
+\tl_new:N \pnhdnotes
+\tl_new:N \pnhdtopage
+\tl_new:N \pnhdtopages
+
+\tl_set:Nn \pntitle { Notes }
+\tl_set:Nn \pnhdnotes { Notes }
+\tl_set:Nn \pnhdtopage { to~page }
+\tl_set:Nn \pnhdtopages { to~pages }
+
+
 % <postnote language><extras>
 \cs_new_protected:Npn \@@_define_language:nn #1#2
   {
