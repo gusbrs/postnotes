@@ -1090,7 +1090,8 @@
 
 \AddToHook { package/biblatex/after }
   {
-    % Let biblatex know we are in a 'notes' context.
+    % Let biblatex know we are in a 'notes' context.  See
+    % https://tex.stackexchange.com/a/304464, including comments.
     \AddToHook { postnotes/print } [ postnotes ]
       { \toggletrue { blx@footnote } }
   }
