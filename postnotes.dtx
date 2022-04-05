@@ -712,9 +712,13 @@
             % though, in criticizing it at
             % https://tex.stackexchange.com/q/575905#comment1450213_575915,
             % and suggests the use of '\@afterindenttrue', which is the same
-            % thing that 'indentfirst' uses, thanks Enrico Gregorio.
+            % thing that 'indentfirst' uses (we just do it locally), thanks
+            % Enrico Gregorio.
             \bool_if:NF \l_@@_print_as_list_bool
-              { \@afterindenttrue }
+              {
+                \cs_set_eq:NN \@afterindentfalse \@afterindenttrue
+                \@afterindenttrue
+              }
             \tl_if_eq:NnTF \l_@@_print_type_curr_tl { section }
               {
                 % type_curr = 'section'
