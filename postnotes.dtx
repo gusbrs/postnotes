@@ -599,10 +599,10 @@
   }
 
 
-\NewDocumentCommand \postnoterefmark { m }
-  { \@@_ref_mark:n {#1} }
+\NewDocumentCommand \postnoteref { m }
+  { \@@_note_ref:n {#1} }
 
-\cs_new_protected:Npn \@@_ref_mark:n #1
+\cs_new_protected:Npn \@@_note_ref:n #1
   {
     \group_begin:
     \@@_typeset_mark_wrapper:n
