@@ -679,7 +679,10 @@
     \keys_set:nn { postnotes/print } {#1}
     \UseHook { postnotes/print }
     \tl_set:Nn \l_@@_print_type_prev_tl { open }
-    \seq_if_empty:NF \g_@@_queue_seq
+    \seq_if_empty:NTF \g_@@_queue_seq
+      {
+        % TODO warn
+      }
       {
         \pnheading
         \AddToHook { shipout/before } [ postnotes/header ]
@@ -688,98 +691,99 @@
           { \@@_sort_queue:N \g_@@_queue_seq }
         \@@_get_headers_data:N \g_@@_queue_seq
         \@@_set_headers_vars_first:
-      }
-    \bool_until_do:nn { \seq_if_empty_p:N \g_@@_queue_seq }
-      {
-        \seq_gpop_left:NN \g_@@_queue_seq \l_@@_print_theid_tl
-        \@@_prop_get:nnN { \l_@@_print_theid_tl }
-          { type } \l_@@_print_type_curr_tl
-        \seq_if_empty:NTF \g_@@_queue_seq
+        \bool_until_do:nn { \seq_if_empty_p:N \g_@@_queue_seq }
           {
-            \tl_set:Nn \l_@@_print_theid_next_tl { noid }
-            \tl_set:Nn \l_@@_print_type_next_tl { close }
-          }
-          {
-            \seq_get_left:NN \g_@@_queue_seq \l_@@_print_theid_next_tl
-            \@@_prop_get:nnN { \l_@@_print_theid_next_tl }
-              { type } \l_@@_print_type_next_tl
-          }
-        % Ensure the first note after a heading has paragraph indentation.
-        % 'endnotes' uses a workaroundish solution in '\enoteheading' setting
-        % a box and then skipping back a line.  @egreg is correct though, in
-        % criticizing it at
-        % https://tex.stackexchange.com/q/575905#comment1450213_575915, and
-        % suggests the use of '\@afterindenttrue', which is the same thing
-        % that 'indentfirst' uses, thanks Enrico Gregorio.
-        \bool_if:NF \l_@@_print_as_list_bool
-          { \@afterindenttrue }
-        \tl_if_eq:NnTF \l_@@_print_type_curr_tl { section }
-          {
-            % type_curr = 'section'
-            % We only process the entry if type_next is 'note': here are
-            % skipped empty sections.
-            \tl_if_eq:NnT \l_@@_print_type_next_tl { note }
+            \seq_gpop_left:NN \g_@@_queue_seq \l_@@_print_theid_tl
+            \@@_prop_get:nnN { \l_@@_print_theid_tl }
+              { type } \l_@@_print_type_curr_tl
+            \seq_if_empty:NTF \g_@@_queue_seq
               {
-                \stepcounter { postnotesection }
+                \tl_set:Nn \l_@@_print_theid_next_tl { noid }
+                \tl_set:Nn \l_@@_print_type_next_tl { close }
+              }
+              {
+                \seq_get_left:NN \g_@@_queue_seq \l_@@_print_theid_next_tl
+                \@@_prop_get:nnN { \l_@@_print_theid_next_tl }
+                  { type } \l_@@_print_type_next_tl
+              }
+            % Ensure the first note after a heading has paragraph indentation.
+            % 'endnotes' uses a workaroundish solution in '\enoteheading'
+            % setting a box and then skipping back a line.  @egreg is correct
+            % though, in criticizing it at
+            % https://tex.stackexchange.com/q/575905#comment1450213_575915,
+            % and suggests the use of '\@afterindenttrue', which is the same
+            % thing that 'indentfirst' uses, thanks Enrico Gregorio.
+            \bool_if:NF \l_@@_print_as_list_bool
+              { \@afterindenttrue }
+            \tl_if_eq:NnTF \l_@@_print_type_curr_tl { section }
+              {
+                % type_curr = 'section'
+                % We only process the entry if type_next is 'note': here are
+                % skipped empty sections.
+                \tl_if_eq:NnT \l_@@_print_type_next_tl { note }
+                  {
+                    \stepcounter { postnotesection }
+                    \group_begin:
+                    \@@_prop_get:nnN { \l_@@_print_theid_tl }
+                      { thechapter } \pnthechapter
+                    \@@_prop_get:nnN { \l_@@_print_theid_tl }
+                      { thesection } \pnthesection
+                    \@@_prop_get:nnN { \l_@@_print_theid_next_tl }
+                      { thechapter } \pnthechapternextnote
+                    \@@_prop_get:nnN { \l_@@_print_theid_next_tl }
+                      { thesection } \pnthesectionnextnote
+                    \@@_prop_get:nnN { \l_@@_print_theid_tl }
+                      { content } \l_@@_print_content_tl
+                    \l_@@_print_content_tl
+                    \group_end:
+                    % Set type_prev for the next iteration.
+                    \tl_set:NV \l_@@_print_type_prev_tl
+                      \l_@@_print_type_curr_tl
+                  }
+              }
+              {
+                % type_curr = 'note'
+                \tl_if_eq:NnF \l_@@_print_type_prev_tl { note }
+                  {
+                    \bool_if:NT \l_@@_print_as_list_bool
+                      { \exp_args:Nx \begin { \l_@@_print_env_tl } }
+                    \l_@@_print_format_tl
+                  }
                 \group_begin:
+                \@@_get_pageref:Nx \pnthepage
+                  { mark@ \l_@@_print_theid_tl }
                 \@@_prop_get:nnN { \l_@@_print_theid_tl }
-                  { thechapter } \pnthechapter
-                \@@_prop_get:nnN { \l_@@_print_theid_tl }
-                  { thesection } \pnthesection
-                \@@_prop_get:nnN { \l_@@_print_theid_next_tl }
-                  { thechapter } \pnthechapternextnote
-                \@@_prop_get:nnN { \l_@@_print_theid_next_tl }
-                  { thesection } \pnthesectionnextnote
+                  { mark } \l_@@_print_mark_tl
                 \@@_prop_get:nnN { \l_@@_print_theid_tl }
                   { content } \l_@@_print_content_tl
+                \cs_set:Npn \@currentcounter { postnote }
+                \cs_set:Npx \@currentlabel
+                  { \p@postnote \l_@@_print_mark_tl }
+                \@@_hyperref_make_currentHref:n
+                  { postnote. \l_@@_print_theid_tl .text }
+                \@@_text_mark_wrapper:n
+                  {
+                    \@@_set_text_page_label:x { \l_@@_print_theid_tl }
+                    \@@_typeset_text_mark:eV
+                      { \l_@@_print_theid_tl }
+                      \l_@@_print_mark_tl
+                  }
                 \l_@@_print_content_tl
                 \group_end:
+                \bool_if:NTF \l_@@_print_as_list_bool
+                  {
+                    \tl_if_eq:NnF \l_@@_print_type_next_tl { note }
+                      { \exp_args:Nx \end { \l_@@_print_env_tl } }
+                  }
+                  { \par }
                 % Set type_prev for the next iteration.
                 \tl_set:NV \l_@@_print_type_prev_tl
                   \l_@@_print_type_curr_tl
               }
+            % We won't use the variable anymore, clear it to reduce memory
+            % usage.
+            \@@_prop_gclear:n { \l_@@_print_theid_tl }
           }
-          {
-            % type_curr = 'note'
-            \tl_if_eq:NnF \l_@@_print_type_prev_tl { note }
-              {
-                \bool_if:NT \l_@@_print_as_list_bool
-                  { \exp_args:Nx \begin { \l_@@_print_env_tl } }
-                \l_@@_print_format_tl
-              }
-            \group_begin:
-            \@@_get_pageref:Nx \pnthepage
-              { mark@ \l_@@_print_theid_tl }
-            \@@_prop_get:nnN { \l_@@_print_theid_tl }
-              { mark } \l_@@_print_mark_tl
-            \@@_prop_get:nnN { \l_@@_print_theid_tl }
-              { content } \l_@@_print_content_tl
-            \cs_set:Npn \@currentcounter { postnote }
-            \cs_set:Npx \@currentlabel
-              { \p@postnote \l_@@_print_mark_tl }
-            \@@_hyperref_make_currentHref:n
-              { postnote. \l_@@_print_theid_tl .text }
-            \@@_text_mark_wrapper:n
-              {
-                \@@_set_text_page_label:x { \l_@@_print_theid_tl }
-                \@@_typeset_text_mark:eV
-                  { \l_@@_print_theid_tl }
-                  \l_@@_print_mark_tl
-              }
-            \l_@@_print_content_tl
-            \group_end:
-            \bool_if:NTF \l_@@_print_as_list_bool
-              {
-                \tl_if_eq:NnF \l_@@_print_type_next_tl { note }
-                  { \exp_args:Nx \end { \l_@@_print_env_tl } }
-              }
-              { \par }
-            % Set type_prev for the next iteration.
-            \tl_set:NV \l_@@_print_type_prev_tl
-              \l_@@_print_type_curr_tl
-          }
-        % We won't use the variable anymore, clear it to reduce memory usage.
-        \@@_prop_gclear:n { \l_@@_print_theid_tl }
       }
     \AddToHookNext { shipout/after }
       { \RemoveFromHook { shipout/before } [ postnotes/header ] }
