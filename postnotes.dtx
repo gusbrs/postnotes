@@ -704,6 +704,15 @@
             \@@_prop_get:nnN { \l_@@_print_theid_next_tl }
               { type } \l_@@_print_type_next_tl
           }
+        % Ensure the first note after a heading has paragraph indentation.
+        % 'endnotes' uses a workaroundish solution in '\enoteheading' setting
+        % a box and then skipping back a line.  @egreg is correct though, in
+        % criticizing it at
+        % https://tex.stackexchange.com/q/575905#comment1450213_575915, and
+        % suggests the use of '\@afterindenttrue', which is the same thing
+        % that 'indentfirst' uses, thanks Enrico Gregorio.
+        \bool_if:NF \l_@@_print_as_list_bool
+          { \@afterindenttrue }
         \tl_if_eq:NnTF \l_@@_print_type_curr_tl { section }
           {
             % type_curr = 'section'
@@ -734,15 +743,8 @@
             % type_curr = 'note'
             \tl_if_eq:NnF \l_@@_print_type_prev_tl { note }
               {
-                \bool_if:NTF \l_@@_print_as_list_bool
+                \bool_if:NT \l_@@_print_as_list_bool
                   { \exp_args:Nx \begin { \l_@@_print_env_tl } }
-                  {
-                    % Ensure the first note after a heading has paragraph
-                    % indentation.  This is done by 'endnotes', and the change
-                    % and technique were suggested by FMi.
-                    \mode_leave_vertical: \hbox:n { } \par
-                    \skip_vertical:n { -\baselineskip }
-                  }
                 \l_@@_print_format_tl
               }
             \group_begin:
