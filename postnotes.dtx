@@ -594,9 +594,7 @@
   {
     \tl_if_empty:NF \l_@@_note_label_tl
       { \exp_args:NV \label \l_@@_note_label_tl }
-    \bool_lazy_and:nnT
-      { \g_@@_zrefuser_loaded_bool }
-      { ! \tl_if_empty_p:N \l_@@_note_zlabel_tl }
+   \tl_if_empty:NF \l_@@_note_zlabel_tl
       { \exp_args:NV \zlabel \l_@@_note_zlabel_tl }
   }
 
@@ -1124,10 +1122,8 @@
 
 
 \tl_new:N \l_@@_note_zlabel_tl
-\bool_new:N \g_@@_zrefuser_loaded_bool
 \AddToHook { package/zref-user/after }
   {
-    \bool_gset_true:N \g_@@_zrefuser_loaded_bool
     \keys_define:nn { postnotes/note }
       {
         zlabel .tl_set:N = \l_@@_note_zlabel_tl ,
