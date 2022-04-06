@@ -662,6 +662,7 @@
 \tl_new:N \l_@@_print_type_next_tl
 \tl_new:N \l_@@_print_type_prev_tl
 \tl_new:N \l_@@_print_content_tl
+\seq_new:N \l_@@_clear_queue_seq
 \tl_new:N \pnthechapter
 \tl_new:N \pnthesection
 \tl_new:N \pnthepage
@@ -694,6 +695,7 @@
         \bool_until_do:nn { \seq_if_empty_p:N \g_@@_queue_seq }
           {
             \seq_gpop_left:NN \g_@@_queue_seq \l_@@_print_theid_tl
+            \seq_push:NV \l_@@_clear_queue_seq \l_@@_print_theid_tl
             \@@_prop_get:nnN { \l_@@_print_theid_tl }
               { type } \l_@@_print_type_curr_tl
             \seq_if_empty:NTF \g_@@_queue_seq
@@ -784,10 +786,10 @@
                 \tl_set:NV \l_@@_print_type_prev_tl
                   \l_@@_print_type_curr_tl
               }
-            % We won't use the variable anymore, clear it to reduce memory
-            % usage.
-            \@@_prop_gclear:n { \l_@@_print_theid_tl }
           }
+        % We won't use the variables anymore, clear it to reduce memory usage.
+        \seq_map_inline:Nn \l_@@_clear_queue_seq
+          { \@@_prop_gclear:n { #1 } }
       }
     \AddToHookNext { shipout/after }
       { \RemoveFromHook { shipout/before } [ postnotes/header ] }
