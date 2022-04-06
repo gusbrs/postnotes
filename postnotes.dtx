@@ -433,9 +433,9 @@
 % in the context of end notes, the functionality which corresponds to
 % \cs{footnotetext} is simply to store the data to be typeset later.  Hence,
 % some of the problems that afflict footnotes do not apply to end notes.
-% Namely, they can be used in ``inner horizontal mode'' (\cs{mbox} etc.), and
-% if the ``text'' will be typeset in the same page as the ``mark'' is of
-% little concern.
+% Namely, and as far as I can tell, they can be used in ``inner horizontal
+% mode'' (\cs{mbox} etc.), and in math mode, and if the ``text'' will be
+% typeset in the same page as the ``mark'' is of little concern.
 %
 % However, the separation between ``mark'' and ``text'' is still useful in
 % other contexts: floats and contexts where multiple typesetting passes are
@@ -539,9 +539,12 @@
 % placement of \cs{postnote} would be important, and results sensitive to it.
 % All the metadata is collected at the point of \cs{postnote}, anchor
 % included, not at the point of \cs{postnoteref}.  So the consequences are a
-% slightly off backref, possibly imprecise metadata, etc.
+% slightly off backref, possibly imprecise metadata, etc.  Considering
+% \pkg{hyperref} itself shies away completely from linking \cs{footnotemark}
+% with an argument, I'd say there's some gain.
 %
-% So we're between a rock and a hard place.  Still, all in all, my judgment is
+% So the truth is we're between a rock and a hard place.  There's no ``ideal''
+% solution (or I can't find it\dots{}).  Still, all in all, my judgment is
 % that the unique ID counter is worth more than the inconveniences of the last
 % resort \opt{nomark} \cs{postnote} and \cs{postnoteref}.  So, for the time
 % being, until something else shakes this balance, I won't be offering
