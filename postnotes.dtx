@@ -583,14 +583,13 @@
 
 \NewDocumentCommand \postnote { O { } +m }
   { \@@_note:nn {#1} {#2} }
-\NewDocumentCommand \postnotetext { O { } +m }
-  { \@@_note_text:nn {#1} {#2} }
 
-% <mark bool><options><note content>
-\cs_new_protected:Npn \@@_note_mark_text:nnn #1#2#3
+% <options><note content>
+\cs_new_protected:Npn \@@_note:nn #1#2
   {
     \group_begin:
     \stepcounter { postnote@id }
+    % CHECK think this better again.
     % If \l_@@_note_id_tl is already in \g_@@_queue_seq, this means we are in
     % some "multiple pass" context, which restores counters values (this
     % presumes the user has not tampered with this counter, which they
@@ -599,7 +598,7 @@
     % from the "last pass".
     \seq_if_in:NxF \g_@@_queue_seq { \l_@@_note_id_tl }
       { \seq_gput_right:Nx \g_@@_queue_seq { \l_@@_note_id_tl } }
-    \keys_set:nn { postnotes/note } {#2}
+    \keys_set:nn { postnotes/note } {#1}
     \UseHook { postnotes/note }
     \tl_if_empty:NT \l_@@_mark_tl
       {
@@ -611,19 +610,22 @@
     \@@_hyperref_make_currentHref:n { postnote. \l_@@_note_id_tl .mark }
     \@@_set_mark_page_label:x { \l_@@_note_id_tl }
     \@@_set_user_labels:
-    \bool_if:nT {#1}
+    \bool_if:NTF \l_@@_nomark_bool
+      {
+        \bool_if:NT \l_@@_hyperlink_bool
+          {
+            \@@_hyperref_set_anchor:n
+              { postnote. \l_@@_note_id_tl .mark }
+          }
+      }
       { \@@_typeset_mark:xV { \l_@@_note_id_tl } \l_@@_mark_tl }
-    \@@_store:nn { \l_@@_note_id_tl } {#3}
+    \@@_store:nn { \l_@@_note_id_tl } {#2}
     \group_end:
   }
-% <options><note content>
-\cs_new_protected:Npn \@@_note:nn #1#2
-  { \@@_note_mark_text:nnn { \c_true_bool } {#1} {#2} }
-\cs_new_protected:Npn \@@_note_text:nn #1#2
-  { \@@_note_mark_text:nnn { \c_false_bool } {#1} {#2} }
 
 
 \tl_new:N \l_@@_mark_tl
+\bool_new:N \l_@@_nomark_bool
 \fp_new:N \l_@@_sort_num_fp
 \tl_new:N \l_@@_note_label_tl
 \bool_new:N \l_@@_manual_sortnum_bool
@@ -631,6 +633,8 @@
   {
     mark .tl_set:N = \l_@@_mark_tl ,
     mark .value_required:n = true ,
+    nomark .bool_set:N = \l_@@_nomark_bool ,
+    nomark .default:n = true ,
     sortnum .code:n =
       {
         \fp_set:Nn \l_@@_sort_num_fp {#1}
