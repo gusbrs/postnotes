@@ -82,10 +82,6 @@
 % \section{Data}
 %
 %    \begin{macrocode}
-\int_new:N \g_@@_id_int
-\tl_new:N \g_@@_theid_tl
-\tl_gset:Nn \g_@@_theid_tl { \int_use:N \g_@@_id_int }
-\seq_new:N \g_@@_queue_seq
 
 % <note theid>
 \cs_new:Npn \@@_data_name:n #1
@@ -95,7 +91,8 @@
 % <note theid><note content>
 \cs_new_protected:Npn \@@_store:nn #1#2
   {
-    \prop_new:c { \@@_data_name:e {#1} }
+    \prop_if_exist:cF { \@@_data_name:e {#1} }
+      { \prop_new:c { \@@_data_name:e {#1} } }
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { note }
     \prop_gput:cnx { \@@_data_name:e {#1} } { mark } { \l_@@_mark_tl }
     \prop_gput:cnx { \@@_data_name:e {#1} } { sortnum }
@@ -496,8 +493,22 @@
 % just calling \cs{stepcounter}, setting the relevant cross-reference
 % variables once and setting the anchor manually.
 
+% We use a standard \LaTeXe{} counter for \texttt{postnoteid}, even if it's
+% more ``internal'' than \texttt{postnote}.  First, there might be need for
+% user intervention there, though hopefully that would be exceptional.
+% Second, some packages that do multiple passes on content, handle counters
+% created with \cs{newcounter}, and restore their values as due.  Here at
+% least \pkg{tabularx}, \pkg{csquotes}'s blockquotes, and \pkg{tabularray} do
+% this.  This doesn't solve all problems with multiple passes, but is one
+% problem less.
+
+
 
 %    \begin{macrocode}
+\newcounter { postnoteid }
+\tl_new:N \g_@@_theid_tl
+\tl_gset:Nn \g_@@_theid_tl { \int_use:N \c@postnoteid }
+\seq_new:N \g_@@_queue_seq
 \newcounter { postnote }
 \NewHook { postnotes/note }
 
@@ -511,7 +522,7 @@
 \cs_new_protected:Npn \@@_note_mark_text:nnn #1#2#3
   {
     \group_begin:
-    \int_gincr:N \g_@@_id_int
+    \stepcounter { postnoteid }
     \seq_gput_right:Nx \g_@@_queue_seq { \g_@@_theid_tl }
     \keys_set:nn { postnotes/note } {#2}
     \UseHook { postnotes/note }
@@ -629,7 +640,7 @@
 \cs_new_protected:Npn \@@_section:nn #1#2
   {
     \group_begin:
-    \int_gincr:N \g_@@_id_int
+    \stepcounter { postnoteid }
     \int_gincr:N \g_@@_sectid_int
     \seq_gput_right:Nx \g_@@_queue_seq { \g_@@_theid_tl }
     \tl_gclear:N \g_@@_section_label_tl
