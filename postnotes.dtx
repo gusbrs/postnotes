@@ -430,54 +430,122 @@
 % \section{\cs{postnote}}
 %
 % Different from the traditional \cs{footnotemark} / \cs{footnotetext} system,
-% in the context of endnotes, the functionality which corresponds to
+% in the context of end notes, the functionality which corresponds to
 % \cs{footnotetext} is simply to store the data to be typeset later.  Hence,
-% some of the problems that afflict footnotes do not apply to endnotes.
-% Namely, they can be used in ``inner paragraph mode'' (\cs{mbox} etc.), and
+% some of the problems that afflict footnotes do not apply to end notes.
+% Namely, they can be used in ``inner horizontal mode'' (\cs{mbox} etc.), and
 % if the ``text'' will be typeset in the same page as the ``mark'' is of
 % little concern.
 %
-% Therefore, the separation between ``mark'' and ``text'' is of little use for
-% endnotes and, that given, the ability to set an arbitrary ``mark'' value is
-% less important, even if it has a place.  And, since they introduce their own
-% set of problems, and quite ponderous ones, we are better off curbing some of
-% this heritage.
+% However, the separation between ``mark'' and ``text'' is still useful in
+% other contexts: floats and contexts where multiple typesetting passes are
+% performed.  The questions are: if they are replaceable in their roles in
+% these contexts and if how much would we lose by providing them.
 %
-% One relevant issue that potentially requires some manual adjustment, just as
-% they do for \cs{footnotes}, are floats and their ability to wreak havoc in
-% an otherwise so well behaved order of counters.  If we received an arbitrary
-% number, as the kernel functionality for footnotes and other endnotes
-% packages do, this value is expected to the printed as such, hence it must
-% correspond to the \texttt{postnote} counter.  But this counter is in the
-% hands of the user, and can be reset along the document, thus its uniqueness
-% cannot be ensured.  Besides, there might be a need for a mark to be an
-% arbitrary token list, rather than a number.  For example, a critical edition
-% where the original order of notes cannot be disturbed, and editor notes have
-% to be intercalated among the original ones.  The kernel footnote structure
-% does not support this (the optional argument must be a number), but it would
-% be interesting if we could.  The best idea I came up with is to enjoy
-% ``modernity'' and leverage a keyval set of options: \opt{mark}, receiving an
-% arbitrary token list, and \opt{sortnum}, receiving a floating point number.
-% The pair makes for well defined mark and print order.  And it also covers
-% the case of floats, even if they might also need an ocasional
-% \texttt{\cs{addtocounter}\{postnote\}}.
+% In analyzing this, we have to distinguish two situations: when
+% \cs{footnotemark} is called with no argument (and thus steps the counter),
+% and when it is called with the optional argument (and thus refrains from
+% stepping the counter).
 %
-% We don't offer \cs{footnotetext} at all.  But, we offer a stripped down
-% version of \cs{footnotemark}, to enable users to have multiple marks for the
-% same note.  It receives only an optional argument which is a note offset,
-% and can only receive non-negative values and refer to previously added
-% notes.
+% For floats, the problem they pose is that they may disturb the
+% \emph{ordering} of the notes.  This particular issue can be solved by using
+% \cs{footnotemark} without argument, and manually adjusting the counter on
+% subsequent calls to \cs{footnotetext}.  A good example of the technique:
+% \url{https://tex.stackexchange.com/a/43694}.  True, a user may wish to
+% specify the mark explicitly, but doesn't necessarily need to do it to solve
+% the ordering issue.
+%
+% Multiple typesetting passes of content are much harder.  And they abound:
+% the standard classes' \cs{caption} typesets the caption once, if it is
+% short, but twice if it is longer than a line; \pkg{amsmath}'s math
+% environments perform a measuring pass before actually typesetting the
+% equations; \pkg{tabularx} and \pkg{tabularray} do similarly with their
+% tables; so does \pkg{csquotes}' blockquotes; and certainly more that I'm
+% unaware.  A number of these places offer some one or another way to mitigate
+% the issue: \pkg{tabularx}, \pkg{csquotes} and (optionally) \pkg{tabularray}
+% restore counter values after measuring steps; \pkg{csquotes} offers further
+% handles.  But the standard \cs{caption} offers none, and there's really no
+% way around it.  Well, the pkg{caption} package has this possibility as an
+% option, but it is not reasonable to require it for our purposes, so we must
+% assume the worst case.
+%
+% Enrico Gregorio is categorical in stating that \cs{endnotemark} and
+% \cs{endnotetext} are required for \pkg{enotez} to handle \cs{caption}, which
+% apparently it didn't offer them originally: ``The package should implement
+% \cs{endnotemark} and \cs{endnotetext} for this case.  According to the
+% documentation, the author deems them to not be needed: he's wrong.''
+% (\url{https://tex.stackexchange.com/a/314937}).  See also
+% \url{https://tex.stackexchange.com/a/43794} and
+% \url{https://tex.stackexchange.com/a/358207}.
 %
 % David Carlisle and Ulrike Fischer shared some thoughts on the matter on the
 % TeX.SX chat:
 % \url{https://chat.stackexchange.com/transcript/message/60754383#60754383}.
 %
-% And I eventually found a class of cases for which the separation between
-% ``mark'' and ``text'' is really needed: content with multiple typesetting
-% passes.  And there's plenty of if: captions, \pkg{amsmath} environments,
-% \pkg{tabularx}, \pkg{tabularray}, and certainly more.  For the consequences
-% to footnotes and endnotes see \url{https://tex.stackexchange.com/a/43794}
-% and \url{https://tex.stackexchange.com/a/358207}.
+% In this scenario, when there's no way around the multiple passes,
+% \cs{footnotemark} can only handle the case if used with an argument,
+% precisely because it inhibits the stepping of the counter.  Otherwise the
+% counter is stepped multiple times, and we'd get the wrong number (and mark).
+% So, if \emph{not stepping the counter} is what's needed to get a
+% corresponding \cs{postenotemark} to handle this case, is it viable to do so?
+% What would we loose in so doing?
+%
+% Receiving an arbitrary number as argument, as the kernel functionality for
+% footnotes and other endnotes packages do, this value is expected to the
+% printed as such, hence it must correspond to the \texttt{postnote} counter.
+% But this counter is in the hands of the user, and can be reset along the
+% document, thus its uniqueness cannot be ensured.  But not stepping
+% \texttt{postnote} is perfectly viable, as it just aims at storing how the mark
+% is to be typeset.  However, not stepping the ID counter complicates things
+% considerably.  Not doing so implies we'd lose the connection we have between
+% the ``mark'' and the corresponding ``text''.  We might add the ``text'' to
+% the queue, but all the metadata would be lost, including the \pkg{hyperref}
+% anchor, but really the set of data without which the kind of functionality
+% offered would be nonviable, or severely hampered.  Not stepping
+% \texttt{postnote} but stepping the ID counter also is not sufficient,
+% because we'd get a note in duplicity.  We could naively think that a gap in
+% the ID is not a problem, and just not add the duplicate to the queue.  But
+% how could we tell the difference between a legitimate and an illegitimate
+% step of the ID counter?
+%
+% I have not been able to devise a way to ``reconnect'' these two in the
+% absence of the unique ID counter.  The most promising idea was to have
+% mandatory arguments to \cs{postnotemark} and \cs{postnotetext} receiving a
+% \meta{label} which we could use to identify their counterparts, but I was
+% not able to go through with this, and the attempts all increased complexity
+% considerably.  It is not just a label/ref system, there's got to be a
+% one-to-one correspondence between the sets, uniqueness has to be ensured on
+% both sides, and there cannot be ``lone'' marks or texts (a bijection).
+% Besides, this label based system of identification would have to live
+% side-by-side with the one based on the counter.  So, even if we'd have
+% unique IDs, we wouldn't know beforehand in what form it comes.  Considering
+% the ID is used to build the variable name in which we store the note's
+% information, this also complicates things.
+%
+% Besides, there are ways to get things working with multiple passes, even if
+% sub-optimally, without the ``mark''/''text'' partition.  Hopefully we can
+% offer support for cases which offer some kind of ``handle'' or way to
+% identify the multiple passes.  \pkg{csquotes} has a dedicated hook that can
+% be used.  We could probably leverage the across the board restoring of
+% counters by \pkg{tabularx} and \pkg{tabularray} to know if we could refrain
+% from adding a note in duplicity to the queue (to be verified).
+% \pkg{amsmath} sets the \texttt{measuring@} boolean (which \pkg{hyperref}
+% also defines).  So, not all cases are as bad as \cs{caption}.  Still, even
+% where they are, we can have a \opt{nomark} option to \cs{postnote} to place
+% a note, but typeset no mark. Than we can typeset a mark with
+% \cs{postnoteref} referring to a \cs{label} in the note of interest.  This
+% would result in a correct mark without duplicity, and in a correct link from
+% there to the note's text at \cs{printpostnotes}.  The drawback is that the
+% placement of \cs{postnote} would be important, and results sensitive to it.
+% All the metadata is collected at the point of \cs{postnote}, anchor
+% included, not at the point of \cs{postnoteref}.  So the consequences are a
+% slightly off backref, possibly imprecise metadata, etc.
+%
+% So we're between a rock and a hard place.  Still, all in all, my judgment is
+% that the unique ID counter is worth more than the inconveniences of the last
+% resort \opt{nomark} \cs{postnote} and \cs{postnoteref}.  So, for the time
+% being, until something else shakes this balance, I won't be offering
+% \cs{postnotemark} and \cs{postnotetext}.
 %
 %
 %
@@ -492,7 +560,8 @@
 % setup things manually, in case of a manually supplied mark.  All in all, I'm
 % just calling \cs{stepcounter}, setting the relevant cross-reference
 % variables once and setting the anchor manually.
-
+%
+%
 % We use a standard \LaTeXe{} counter for \texttt{postnote@id} even if,
 % differently from \texttt{postnote}, it's an internal counter.  This because
 % some packages that do multiple passes on content, handle counters created
