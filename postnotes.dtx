@@ -83,12 +83,12 @@
 %
 %    \begin{macrocode}
 
-% <note theid>
+% <note id>
 \cs_new:Npn \@@_data_name:n #1
   { g_@@_ #1 _data_prop }
 \cs_generate_variant:Nn \@@_data_name:n { e }
 
-% <note theid><note content>
+% <note id><note content>
 \cs_new_protected:Npn \@@_store:nn #1#2
   {
     \prop_if_exist:cF { \@@_data_name:e {#1} }
@@ -114,8 +114,8 @@
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
   }
 
-% <note theid><note content>
-\cs_new_protected:Npn \@@_section_store:nn #1#2
+% <note id><note content>
+\cs_new_protected:Npn \@@_store_section:nn #1#2
   {
     \prop_new:c { \@@_data_name:e {#1} }
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { section }
@@ -129,16 +129,16 @@
   }
 
 
-% <theid><prop><tl var>
+% <note id><prop><tl var>
 \cs_new_protected:Npn \@@_prop_get:nnN #1#2#3
   {
     \prop_get:cnNF { \@@_data_name:e {#1} } {#2} #3
       { \tl_clear:N #3 }
   }
-% <theid><prop>
+% <note id><prop>
 \cs_new:Npn \@@_prop_item:nn #1#2
   { \prop_item:cn { \@@_data_name:e {#1} } {#2} }
-% <theid>
+% <note id>
 \cs_new_protected:Npn \@@_prop_gclear:n #1
   { \prop_gclear:c { \@@_data_name:e {#1} } }
 
@@ -493,21 +493,20 @@
 % just calling \cs{stepcounter}, setting the relevant cross-reference
 % variables once and setting the anchor manually.
 
-% We use a standard \LaTeXe{} counter for \texttt{postnoteid}, even if it's
-% more ``internal'' than \texttt{postnote}.  First, there might be need for
-% user intervention there, though hopefully that would be exceptional.
-% Second, some packages that do multiple passes on content, handle counters
-% created with \cs{newcounter}, and restore their values as due.  Here at
-% least \pkg{tabularx}, \pkg{csquotes}'s blockquotes, and \pkg{tabularray} do
-% this.  This doesn't solve all problems with multiple passes, but is one
-% problem less.
+% We use a standard \LaTeXe{} counter for \texttt{postnote@id} even if,
+% differently from \texttt{postnote}, it's an internal counter.  This because
+% some packages that do multiple passes on content, handle counters created
+% with \cs{newcounter}, and restore their values as due.  Here at least
+% \pkg{tabularx}, \pkg{csquotes}'s blockquotes, and \pkg{tabularray} do this.
+% This doesn't solve all problems with multiple passes, but is one problem
+% less.
 
 
 
 %    \begin{macrocode}
-\newcounter { postnoteid }
-\tl_new:N \g_@@_theid_tl
-\tl_gset:Nn \g_@@_theid_tl { \int_use:N \c@postnoteid }
+\newcounter { postnote@id }
+\tl_new:N \l_@@_note_id_tl
+\tl_set:Nn \l_@@_note_id_tl { \int_use:N \c@postnote@id }
 \seq_new:N \g_@@_queue_seq
 \newcounter { postnote }
 \NewHook { postnotes/note }
@@ -522,8 +521,15 @@
 \cs_new_protected:Npn \@@_note_mark_text:nnn #1#2#3
   {
     \group_begin:
-    \stepcounter { postnoteid }
-    \seq_gput_right:Nx \g_@@_queue_seq { \g_@@_theid_tl }
+    \stepcounter { postnote@id }
+    % If \l_@@_note_id_tl is already in \g_@@_queue_seq, this means we are in
+    % some "multiple pass" context, which restores counters values (this
+    % presumes the user has not tampered with this counter, which they
+    % shouldn't).  So we refrain from adding the ID to the queue in duplicity.
+    % But we want to repeat the rest of the operation, so as to get values
+    % from the "last pass".
+    \seq_if_in:NxF \g_@@_queue_seq { \l_@@_note_id_tl }
+      { \seq_gput_right:Nx \g_@@_queue_seq { \l_@@_note_id_tl } }
     \keys_set:nn { postnotes/note } {#2}
     \UseHook { postnotes/note }
     \tl_if_empty:NT \l_@@_mark_tl
@@ -533,12 +539,12 @@
       }
     \cs_set:Npn \@currentcounter { postnote }
     \cs_set:Npx \@currentlabel { \p@postnote \l_@@_mark_tl }
-    \@@_hyperref_make_currentHref:n { postnote. \g_@@_theid_tl .mark }
-    \@@_set_mark_page_label:x { \g_@@_theid_tl }
+    \@@_hyperref_make_currentHref:n { postnote. \l_@@_note_id_tl .mark }
+    \@@_set_mark_page_label:x { \l_@@_note_id_tl }
     \@@_set_user_labels:
     \bool_if:nT {#1}
-      { \@@_typeset_mark:xV { \g_@@_theid_tl } \l_@@_mark_tl }
-    \@@_store:nn { \g_@@_theid_tl } {#3}
+      { \@@_typeset_mark:xV { \l_@@_note_id_tl } \l_@@_mark_tl }
+    \@@_store:nn { \l_@@_note_id_tl } {#3}
     \group_end:
   }
 % <options><note content>
@@ -567,7 +573,7 @@
   }
 
 
-% <theid><mark>
+% <note id><mark>
 \cs_new_protected:Npn \@@_typeset_mark:nn #1#2
   {
     \@@_typeset_mark_wrapper:n
@@ -640,12 +646,12 @@
 \cs_new_protected:Npn \@@_section:nn #1#2
   {
     \group_begin:
-    \stepcounter { postnoteid }
+    \stepcounter { postnote@id }
     \int_gincr:N \g_@@_sectid_int
-    \seq_gput_right:Nx \g_@@_queue_seq { \g_@@_theid_tl }
+    \seq_gput_right:Nx \g_@@_queue_seq { \l_@@_note_id_tl }
     \tl_gclear:N \g_@@_section_label_tl
     \keys_set:nn { postnotes/section } {#1}
-    \@@_section_store:nn { \g_@@_theid_tl } {#2}
+    \@@_store_section:nn { \l_@@_note_id_tl } {#2}
     \group_end:
   }
 
@@ -666,8 +672,8 @@
   { \@@_print_notes:n {#1} }
 
 \int_new:N \g_@@_print_postnotes_int
-\tl_new:N \l_@@_print_theid_tl
-\tl_new:N \l_@@_print_theid_next_tl
+\tl_new:N \l_@@_print_note_id_tl
+\tl_new:N \l_@@_print_note_id_next_tl
 \tl_new:N \l_@@_print_mark_tl
 \tl_new:N \l_@@_print_type_curr_tl
 \tl_new:N \l_@@_print_type_next_tl
@@ -705,18 +711,18 @@
         \@@_set_headers_vars_first:
         \bool_until_do:nn { \seq_if_empty_p:N \g_@@_queue_seq }
           {
-            \seq_gpop_left:NN \g_@@_queue_seq \l_@@_print_theid_tl
-            \seq_push:NV \l_@@_clear_queue_seq \l_@@_print_theid_tl
-            \@@_prop_get:nnN { \l_@@_print_theid_tl }
+            \seq_gpop_left:NN \g_@@_queue_seq \l_@@_print_note_id_tl
+            \seq_push:NV \l_@@_clear_queue_seq \l_@@_print_note_id_tl
+            \@@_prop_get:nnN { \l_@@_print_note_id_tl }
               { type } \l_@@_print_type_curr_tl
             \seq_if_empty:NTF \g_@@_queue_seq
               {
-                \tl_set:Nn \l_@@_print_theid_next_tl { noid }
+                \tl_set:Nn \l_@@_print_note_id_next_tl { noid }
                 \tl_set:Nn \l_@@_print_type_next_tl { close }
               }
               {
-                \seq_get_left:NN \g_@@_queue_seq \l_@@_print_theid_next_tl
-                \@@_prop_get:nnN { \l_@@_print_theid_next_tl }
+                \seq_get_left:NN \g_@@_queue_seq \l_@@_print_note_id_next_tl
+                \@@_prop_get:nnN { \l_@@_print_note_id_next_tl }
                   { type } \l_@@_print_type_next_tl
               }
             % Ensure the first note after a heading has paragraph indentation.
@@ -741,15 +747,15 @@
                   {
                     \stepcounter { postnotesection }
                     \group_begin:
-                    \@@_prop_get:nnN { \l_@@_print_theid_tl }
+                    \@@_prop_get:nnN { \l_@@_print_note_id_tl }
                       { thechapter } \pnthechapter
-                    \@@_prop_get:nnN { \l_@@_print_theid_tl }
+                    \@@_prop_get:nnN { \l_@@_print_note_id_tl }
                       { thesection } \pnthesection
-                    \@@_prop_get:nnN { \l_@@_print_theid_next_tl }
+                    \@@_prop_get:nnN { \l_@@_print_note_id_next_tl }
                       { thechapter } \pnthechapternextnote
-                    \@@_prop_get:nnN { \l_@@_print_theid_next_tl }
+                    \@@_prop_get:nnN { \l_@@_print_note_id_next_tl }
                       { thesection } \pnthesectionnextnote
-                    \@@_prop_get:nnN { \l_@@_print_theid_tl }
+                    \@@_prop_get:nnN { \l_@@_print_note_id_tl }
                       { content } \l_@@_print_content_tl
                     \l_@@_print_content_tl
                     \group_end:
@@ -768,21 +774,21 @@
                   }
                 \group_begin:
                 \@@_get_pageref:Nx \pnthepage
-                  { mark@ \l_@@_print_theid_tl }
-                \@@_prop_get:nnN { \l_@@_print_theid_tl }
+                  { mark@ \l_@@_print_note_id_tl }
+                \@@_prop_get:nnN { \l_@@_print_note_id_tl }
                   { mark } \l_@@_print_mark_tl
-                \@@_prop_get:nnN { \l_@@_print_theid_tl }
+                \@@_prop_get:nnN { \l_@@_print_note_id_tl }
                   { content } \l_@@_print_content_tl
                 \cs_set:Npn \@currentcounter { postnote }
                 \cs_set:Npx \@currentlabel
                   { \p@postnote \l_@@_print_mark_tl }
                 \@@_hyperref_make_currentHref:n
-                  { postnote. \l_@@_print_theid_tl .text }
+                  { postnote. \l_@@_print_note_id_tl .text }
                 \@@_text_mark_wrapper:n
                   {
-                    \@@_set_text_page_label:x { \l_@@_print_theid_tl }
+                    \@@_set_text_page_label:x { \l_@@_print_note_id_tl }
                     \@@_typeset_text_mark:eV
-                      { \l_@@_print_theid_tl }
+                      { \l_@@_print_note_id_tl }
                       \l_@@_print_mark_tl
                   }
                 \l_@@_print_content_tl
