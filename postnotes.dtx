@@ -602,19 +602,8 @@
   {
     \group_begin:
     \stepcounter { postnote@id }
-    % If \l_@@_note_id_tl is equal to the first item in \g_@@_queue_seq, this
-    % means we are in some "multiple pass" context, which restores counters
-    % values (this presumes the user has not tampered with this counter, which
-    % they shouldn't).  So we refrain from adding the ID to the queue in
-    % duplicity.  But we want to repeat the rest of the operation, so as to
-    % get values from the "last pass".
-    % NOTE Consider checking if the values of #1 and #2 are also equal to the
-    % last ones.  That would add an extra layer of security, but only needed
-    % if we presume tampering with the internal counter may occur.
-    \exp_args:Nxx \tl_if_eq:nnF
-      { \seq_item:Nn \g_@@_queue_seq { 1 } }
-      { \l_@@_note_id_tl }
-      { \seq_gput_right:Nx \g_@@_queue_seq { \l_@@_note_id_tl } }
+    \@@_add_to_queue:Nnnn \g_@@_queue_seq
+      { \l_@@_note_id_tl } {#1} {#2}
     \keys_set:nn { postnotes/note } {#1}
     \UseHook { postnotes/note }
     \tl_if_empty:NT \l_@@_mark_tl
@@ -640,6 +629,44 @@
     \group_end:
   }
 
+
+\tl_new:N \g_@@_note_last_options_tl
+\tl_new:N \g_@@_note_last_content_tl
+\bool_new:N \l_@@_same_note_bool
+% <\g_@@_queue_seq><note id><options><note content>
+\cs_new_protected:Npn \@@_add_to_queue:Nnnn #1#2#3#4
+  {
+    % If \l_@@_note_id_tl is equal to the last item in \g_@@_queue_seq, this
+    % means we are in some "multiple pass" context, which restores counters
+    % values (this presumes the user has not tampered with this counter, which
+    % they shouldn't).  So we refrain from adding the ID to the queue in
+    % duplicity.  But we want to repeat the rest of the operation, so as to
+    % get values from the "last pass".  And the remaining things won't result
+    % in duplication either, they are either setting again the property list
+    % values, or setting labels, which are typically rendered no opt in such
+    % contexts (with \let\label\@gobble, the same for \zlabel). (This last
+    % statement needs some experience to judge better, with regard to the
+    % internal labels and the nomark anchor, but I haven't observed any side
+    % effects of repetition).  To be extra careful, we check if the values of
+    % the options and the contents are equal to their last corresponding ones.
+    % And only refrain from adding the note to the queue if ID, options and
+    % content are identical.
+    \bool_set_false:N \l_@@_same_note_bool
+    \exp_args:Nxx \tl_if_eq:nnT
+      { \seq_item:Nn #1 { -1 } }
+      { #2 }
+      {
+        \tl_if_eq:NnT \g_@@_note_last_options_tl {#3}
+          {
+            \tl_if_eq:NnT \g_@@_note_last_content_tl {#4}
+              { \bool_set_true:N \l_@@_same_note_bool }
+          }
+      }
+    \bool_if:NF \l_@@_same_note_bool
+      { \seq_gput_right:Nx \g_@@_queue_seq { \l_@@_note_id_tl } }
+    \tl_gset:Nn \g_@@_note_last_options_tl {#3}
+    \tl_gset:Nn \g_@@_note_last_content_tl {#4}
+  }
 
 \tl_new:N \l_@@_mark_tl
 \bool_new:N \l_@@_nomark_bool
