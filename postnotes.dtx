@@ -1335,6 +1335,21 @@
       }
   }
 
+\AddToHook { package/csquotes/after }
+  {
+    \bool_new:N \l_@@_csquotes_measuring_bool
+    \BlockquoteDisable
+      { \bool_set_true:N \l_@@_csquotes_measuring_bool }
+    \AddToHook { postnotes/note/inhibit } [ postnotes ]
+      {
+        \bool_if:NT \l_@@_csquotes_measuring_bool
+          {
+            \bool_set_true:N \l_@@_inhibit_note_bool
+            \bool_set_true:N \l_@@_print_plain_mark_bool
+          }
+      }
+  }
+
 
 %    \end{macrocode}
 %
