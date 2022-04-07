@@ -814,6 +814,7 @@
     \keys_set:nn { postnotes/print } {#1}
     \UseHook { postnotes/print }
     \tl_set:Nn \l_@@_print_type_prev_tl { open }
+    \tl_gclear:N \g_@@_section_label_tl
     \seq_if_empty:NTF \g_@@_queue_seq
       {
         % TODO warn
