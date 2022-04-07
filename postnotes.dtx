@@ -601,71 +601,79 @@
 \cs_new_protected:Npn \@@_note:nn #1#2
   {
     \group_begin:
-    \stepcounter { postnote@id }
-    \@@_add_to_queue:Nnnn \g_@@_queue_seq
-      { \l_@@_note_id_tl } {#1} {#2}
     \keys_set:nn { postnotes/note } {#1}
-    \UseHook { postnotes/note }
-    \tl_if_empty:NT \l_@@_mark_tl
+    \@@_inhibit_note:F
       {
-        \stepcounter { postnote }
-        \tl_set:Nx \l_@@_mark_tl { \thepostnote }
-      }
-    \cs_set:Npn \@currentcounter { postnote }
-    \cs_set:Npx \@currentlabel { \p@postnote \l_@@_mark_tl }
-    \@@_hyperref_make_currentHref:n { postnote. \l_@@_note_id_tl .mark }
-    \@@_set_mark_page_label:x { \l_@@_note_id_tl }
-    \@@_set_user_labels:
-    \bool_if:NTF \l_@@_nomark_bool
-      {
-        \bool_if:NT \l_@@_hyperlink_bool
+        \stepcounter { postnote@id }
+        \tl_if_empty:NT \l_@@_mark_tl
           {
-            \@@_hyperref_set_anchor:n
-              { postnote. \l_@@_note_id_tl .mark }
+            \stepcounter { postnote }
+            \tl_set:Nx \l_@@_mark_tl { \thepostnote }
           }
+        \@@_add_to_queue:Nnnn \g_@@_queue_seq
+          { \l_@@_note_id_tl } {#1} {#2}
+        \UseHook { postnotes/note }
+        \cs_set:Npn \@currentcounter { postnote }
+        \cs_set:Npx \@currentlabel { \p@postnote \l_@@_mark_tl }
+        \@@_hyperref_make_currentHref:n { postnote. \l_@@_note_id_tl .mark }
+        \@@_set_mark_page_label:x { \l_@@_note_id_tl }
+        \@@_set_user_labels:
+        \bool_if:NTF \l_@@_nomark_bool
+          {
+            \bool_if:NT \l_@@_hyperlink_bool
+              {
+                \@@_hyperref_set_anchor:n
+                  { postnote. \l_@@_note_id_tl .mark }
+              }
+          }
+          { \@@_typeset_mark:xV { \l_@@_note_id_tl } \l_@@_mark_tl }
+        \@@_store:nn { \l_@@_note_id_tl } {#2}
       }
-      { \@@_typeset_mark:xV { \l_@@_note_id_tl } \l_@@_mark_tl }
-    \@@_store:nn { \l_@@_note_id_tl } {#2}
     \group_end:
   }
 
 
-\tl_new:N \g_@@_note_last_options_tl
-\tl_new:N \g_@@_note_last_content_tl
+\bool_new:N \l_@@_inhibit_note_bool
+\bool_new:N \l_@@_print_plain_mark_bool
+\NewHook { postnotes/note/inhibit }
+\prg_new_protected_conditional:Npnn \@@_inhibit_note: { F }
+  {
+    \bool_set_false:N \l_@@_inhibit_note_bool
+    \bool_set_false:N \l_@@_print_plain_mark_bool
+    \UseHook { postnotes/note/inhibit }
+    % Printing a "dumb" mark here is needed because, if we are inhibiting the
+    % note at a "measuring context" and omit it completely, the measuring
+    % being performed will be off by the size of the mark.  So, to ensure the
+    % measuring is performed correctly, we place the mark.  The increment to
+    % \c@postnote is done locally and grouped and \thepostnote is smuggled out
+    % of the group.
+    \bool_if:NT \l_@@_print_plain_mark_bool
+      {
+        \tl_if_empty:NT \l_@@_mark_tl
+          {
+            \group_begin:
+            \int_incr:N \c@postnote
+            \exp_args:NNNx
+              \group_end:
+              \tl_set:Nn \l_@@_mark_tl { \thepostnote }
+          }
+        \@@_typeset_mark_wrapper:n
+          { \@@_make_mark:n { \l_@@_mark_tl } }
+      }
+    \bool_if:NTF \l_@@_inhibit_note_bool
+      { \prg_return_true:  }
+      { \prg_return_false: }
+  }
+
 \bool_new:N \l_@@_same_note_bool
+\NewHook { postnotes/note/addtoqueue }
 % <\g_@@_queue_seq><note id><options><note content>
 \cs_new_protected:Npn \@@_add_to_queue:Nnnn #1#2#3#4
   {
-    % If \l_@@_note_id_tl is equal to the last item in \g_@@_queue_seq, this
-    % means we are in some "multiple pass" context, which restores counters
-    % values (this presumes the user has not tampered with this counter, which
-    % they shouldn't).  So we refrain from adding the ID to the queue in
-    % duplicity.  But we want to repeat the rest of the operation, so as to
-    % get values from the "last pass".  And the remaining things won't result
-    % in duplication either, they are either setting again the property list
-    % values, or setting labels, which are typically rendered no opt in such
-    % contexts (with \let\label\@gobble, the same for \zlabel). (This last
-    % statement needs some experience to judge better, with regard to the
-    % internal labels and the nomark anchor, but I haven't observed any side
-    % effects of repetition).  To be extra careful, we check if the values of
-    % the options and the contents are equal to their last corresponding ones.
-    % And only refrain from adding the note to the queue if ID, options and
-    % content are identical.
     \bool_set_false:N \l_@@_same_note_bool
-    \exp_args:Nxx \tl_if_eq:nnT
-      { \seq_item:Nn #1 { -1 } }
-      { #2 }
-      {
-        \tl_if_eq:NnT \g_@@_note_last_options_tl {#3}
-          {
-            \tl_if_eq:NnT \g_@@_note_last_content_tl {#4}
-              { \bool_set_true:N \l_@@_same_note_bool }
-          }
-      }
+    \UseHook { postnotes/note/addtoqueue }
     \bool_if:NF \l_@@_same_note_bool
       { \seq_gput_right:Nx \g_@@_queue_seq { \l_@@_note_id_tl } }
-    \tl_gset:Nn \g_@@_note_last_options_tl {#3}
-    \tl_gset:Nn \g_@@_note_last_content_tl {#4}
   }
 
 \tl_new:N \l_@@_mark_tl
@@ -1232,7 +1240,6 @@
 \bool_new:N \g_@@_hyperref_loaded_bool
 \AddToHook { package/hyperref/after }
   { \bool_gset_true:N \g_@@_hyperref_loaded_bool }
-
 
 \cs_new_protected:Npn \@@_hyperref_make_currentHref:n #1
   {
