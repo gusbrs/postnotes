@@ -91,6 +91,8 @@
 % <note id><note content>
 \cs_new_protected:Npn \@@_store:nn #1#2
   {
+    % We check for existence before creating, because in case of multiple pass
+    % contexts, \@@_store:nn may be called with the same ID more than once.
     \prop_if_exist:cF { \@@_data_name:e {#1} }
       { \prop_new:c { \@@_data_name:e {#1} } }
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { note }
@@ -462,12 +464,12 @@
 % equations; \pkg{tabularx} and \pkg{tabularray} do similarly with their
 % tables; so does \pkg{csquotes}' blockquotes; and certainly more that I'm
 % unaware.  A number of these places offer some one or another way to mitigate
-% the issue: \pkg{tabularx}, \pkg{csquotes} and (optionally) \pkg{tabularray}
-% restore counter values after measuring steps; \pkg{csquotes} offers further
-% handles.  But the standard \cs{caption} offers none, and there's really no
-% way around it.  Well, the pkg{caption} package has this possibility as an
-% option, but it is not reasonable to require it for our purposes, so we must
-% assume the worst case.
+% the issue: \pkg{amsmath}, \pkg{tabularx}, \pkg{csquotes} and (optionally)
+% \pkg{tabularray} restore counter values after measuring steps;
+% \pkg{csquotes} offers further handles.  But the standard \cs{caption} offers
+% none, and there's really no way around it.  Well, the pkg{caption} package
+% has this possibility as an option, but it is not reasonable to require it
+% for our purposes, so we must assume the worst case.
 %
 % Enrico Gregorio is categorical in stating that \cs{endnotemark} and
 % \cs{endnotetext} are required for \pkg{enotez} to handle \cs{caption}, which
@@ -527,21 +529,21 @@
 % offer support for cases which offer some kind of ``handle'' or way to
 % identify the multiple passes.  \pkg{csquotes} has a dedicated hook that can
 % be used.  We could probably leverage the across the board restoring of
-% counters by \pkg{tabularx} and \pkg{tabularray} to know if we could refrain
-% from adding a note in duplicity to the queue (to be verified).
-% \pkg{amsmath} sets the \texttt{measuring@} boolean (which \pkg{hyperref}
-% also defines).  So, not all cases are as bad as \cs{caption}.  Still, even
-% where they are, we can have a \opt{nomark} option to \cs{postnote} to place
-% a note, but typeset no mark. Than we can typeset a mark with
-% \cs{postnoteref} referring to a \cs{label} in the note of interest.  This
-% would result in a correct mark without duplicity, and in a correct link from
-% there to the note's text at \cs{printpostnotes}.  The drawback is that the
-% placement of \cs{postnote} would be important, and results sensitive to it.
-% All the metadata is collected at the point of \cs{postnote}, anchor
-% included, not at the point of \cs{postnoteref}.  So the consequences are a
-% slightly off backref, possibly imprecise metadata, etc.  Considering
-% \pkg{hyperref} itself shies away completely from linking \cs{footnotemark}
-% with an argument, I'd say there's some gain.
+% counters by \pkg{amsmath}, \pkg{tabularx} and \pkg{tabularray} to know if we
+% could refrain from adding a note in duplicity to the queue (to be
+% verified). \pkg{amsmath} sets the \texttt{measuring@} boolean (which
+% \pkg{hyperref} also defines).  So, not all cases are as bad as \cs{caption}.
+% Still, even where they are, we can have a \opt{nomark} option to
+% \cs{postnote} to place a note, but typeset no mark. Than we can typeset a
+% mark with \cs{postnoteref} referring to a \cs{label} in the note of
+% interest.  This would result in a correct mark without duplicity, and in a
+% correct link from there to the note's text at \cs{printpostnotes}.  The
+% drawback is that the placement of \cs{postnote} would be important, and
+% results sensitive to it.  All the metadata is collected at the point of
+% \cs{postnote}, anchor included, not at the point of \cs{postnoteref}.  So
+% the consequences are a slightly off backref, possibly imprecise metadata,
+% etc.  Considering \pkg{hyperref} itself shies away completely from linking
+% \cs{footnotemark} with an argument, I'd say there's some gain.
 %
 % So the truth is we're between a rock and a hard place.  There's no ``ideal''
 % solution (or I can't find it\dots{}).  Still, all in all, my judgment is
@@ -569,13 +571,21 @@
 % differently from \texttt{postnote}, it's an internal counter.  This because
 % some packages that do multiple passes on content, handle counters created
 % with \cs{newcounter}, and restore their values as due.  Here at least
-% \pkg{tabularx}, \pkg{csquotes}'s blockquotes, and \pkg{tabularray} do this.
-% This doesn't solve all problems with multiple passes, but is one problem
-% less.
+% \pkg{amsmath}, \pkg{tabularx}, \pkg{csquotes}'s blockquotes, and
+% \pkg{tabularray} do this.  This doesn't solve all problems with multiple
+% passes, but is one problem less.
 
 
 
 %    \begin{macrocode}
+% The \texttt{postnote} counter is public, and can be set and reset by the
+% user as needed along the document to adjust how the notes' marks are
+% typeset.  The \texttt{postnote@id} is internal, it is actually only a
+% \LaTeXe{} standard counter for technical reasons.  It must not be tampered
+% with by the user, since loosing a note may result from it (given that we
+% prevent adding the note to the queue in case two notes with the same ID
+% occur in sequence in \cs{@@_note:nn} to handle cases of multiple pass
+% contexts).
 \newcounter { postnote@id }
 \tl_new:N \l_@@_note_id_tl
 \tl_set:Nn \l_@@_note_id_tl { \int_use:N \c@postnote@id }
@@ -592,14 +602,18 @@
   {
     \group_begin:
     \stepcounter { postnote@id }
-    % CHECK think this better again.
-    % If \l_@@_note_id_tl is already in \g_@@_queue_seq, this means we are in
-    % some "multiple pass" context, which restores counters values (this
-    % presumes the user has not tampered with this counter, which they
-    % shouldn't).  So we refrain from adding the ID to the queue in duplicity.
-    % But we want to repeat the rest of the operation, so as to get values
-    % from the "last pass".
-    \seq_if_in:NxF \g_@@_queue_seq { \l_@@_note_id_tl }
+    % If \l_@@_note_id_tl is equal to the first item in \g_@@_queue_seq, this
+    % means we are in some "multiple pass" context, which restores counters
+    % values (this presumes the user has not tampered with this counter, which
+    % they shouldn't).  So we refrain from adding the ID to the queue in
+    % duplicity.  But we want to repeat the rest of the operation, so as to
+    % get values from the "last pass".
+    % NOTE Consider checking if the values of #1 and #2 are also equal to the
+    % last ones.  That would add an extra layer of security, but only needed
+    % if we presume tampering with the internal counter may occur.
+    \exp_args:Nxx \tl_if_eq:nnF
+      { \seq_item:Nn \g_@@_queue_seq { 1 } }
+      { \l_@@_note_id_tl }
       { \seq_gput_right:Nx \g_@@_queue_seq { \l_@@_note_id_tl } }
     \keys_set:nn { postnotes/note } {#1}
     \UseHook { postnotes/note }
