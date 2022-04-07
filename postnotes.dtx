@@ -1322,7 +1322,11 @@
     % that, if we have more than one \postnote inside a \text and it is not in
     % displaystyle, the counter won't be stepped, and we have a duplicate
     % ID and mark.  So, there are limits: at most one \postnote inside a given
-    % \text, if not in displaystyle...
+    % \text, if not in displaystyle...  The same is true of other font
+    % commands (\textnormal, \textup, etc., but not with font switches,
+    % \normalfont, etc.) when used in math mode with amsmath loaded (and I
+    % have no idea how this occurs).  To be fair, not even \footnote works
+    % there.  If need be 'nomark' with \postnoteref can be of use here.
     \AddToHook { postnotes/note/addtoqueue } [ postnotes ]
       {
         \legacy_if:nF { firstchoice@ }
