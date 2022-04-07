@@ -1350,6 +1350,23 @@
       }
   }
 
+\AddToHook { package/tabularx/after }
+  {
+    \bool_new:N \l_@@_tabularx_inside_env_bool
+    \AddToHook { env/tabularx/begin } [ postnotes ]
+      { \bool_set_true:N \l_@@_tabularx_inside_env_bool }
+    \AddToHook { postnotes/note/inhibit } [ postnotes ]
+      {
+        \bool_lazy_and:nnT
+          { \l_@@_tabularx_inside_env_bool }
+          { ! \cs_if_eq_p:NN \@footnotetext \TX@ftntext }
+          {
+            \bool_set_true:N \l_@@_inhibit_note_bool
+            \bool_set_true:N \l_@@_print_plain_mark_bool
+          }
+      }
+  }
+
 
 %    \end{macrocode}
 %
