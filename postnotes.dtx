@@ -1299,6 +1299,42 @@
       { \zcsetup { counterresetby = { postnote = postnotesection } } }
   }
 
+\AddToHook { package/amsmath/after }
+  {
+    \AddToHook { postnotes/note/inhibit } [ postnotes ]
+      {
+        \legacy_if:nT { measuring@ }
+          {
+            \bool_set_true:N \l_@@_inhibit_note_bool
+            \bool_set_true:N \l_@@_print_plain_mark_bool
+          }
+      }
+    % Testing for \cs{ifmeasuring@} is sufficient to get things right for
+    % 'amstmath' in almost all cases.  It is sufficient to get the measuring
+    % passes in math environments.  The only case I've found which still lacks
+    % is the '\text' macro, defined by 'amstext.sty' (required by amsmath),
+    % and which passes its argument through '\mathchoice' four times.
+    % We cannot guard the test by checking '\mode_if_math:T', because
+    % '\textdef@' calls '\hbox' to switch back to text mode
+    % (https://tex.stackexchange.com/a/148774/105447).
+    % However, '\text' poses yet other problems...  It redefines \stepcounter
+    % and \addtocounter to be no-ops when \firstchoice@false, which means
+    % that, if we have more than one \postnote inside a \text and it is not in
+    % displaystyle, the counter won't be stepped, and we have a duplicate
+    % ID and mark.  So, there are limits: at most one \postnote inside a given
+    % \text, if not in displaystyle...
+    \AddToHook { postnotes/note/addtoqueue } [ postnotes ]
+      {
+        \legacy_if:nF { firstchoice@ }
+          {
+            \exp_args:Nxx \tl_if_eq:nnT
+              { \seq_item:Nn \g_@@_queue_seq { -1 } }
+              { \l_@@_note_id_tl }
+              { \bool_set_true:N \l_@@_same_note_bool }
+          }
+      }
+  }
+
 
 %    \end{macrocode}
 %
