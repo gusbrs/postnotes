@@ -921,12 +921,12 @@
                   \l_@@_print_type_curr_tl
               }
           }
+        \AddToHookNext { shipout/after }
+          { \RemoveFromHook { shipout/before } [ postnotes/header ] }
         % We won't use the variables anymore, clear it to reduce memory usage.
         \seq_map_inline:Nn \l_@@_clear_queue_seq
           { \@@_prop_gclear:n { #1 } }
       }
-    \AddToHookNext { shipout/after }
-      { \RemoveFromHook { shipout/before } [ postnotes/header ] }
     \group_end:
   }
 
