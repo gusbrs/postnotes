@@ -1358,12 +1358,22 @@
   {
     \bool_new:N \l_@@_tabularx_inside_env_bool
     \AddToHook { env/tabularx/begin } [ postnotes ]
-      { \bool_set_true:N \l_@@_tabularx_inside_env_bool }
+      {
+        \bool_set_true:N \l_@@_tabularx_inside_env_bool
+        \cs_set_eq:NN \@@_tabularx_saved_write:Nn \write
+      }
     \AddToHook { postnotes/note/inhibit } [ postnotes ]
       {
         \bool_lazy_and:nnT
           { \l_@@_tabularx_inside_env_bool }
-          { ! \cs_if_eq_p:NN \@footnotetext \TX@ftntext }
+          {
+            % For the identification of the trial passes here, see
+            % https://tex.stackexchange.com/a/640035 (including discussion in
+            % the comments, thanks David Carlisle), and also
+            % https://tex.stackexchange.com/a/227155 and
+            % https://tex.stackexchange.com/a/352134.
+            ! \cs_if_eq_p:NN \write \@@_tabularx_saved_write:Nn
+          }
           {
             \bool_set_true:N \l_@@_inhibit_note_bool
             \bool_set_true:N \l_@@_print_plain_mark_bool
