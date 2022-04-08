@@ -591,8 +591,7 @@
             \stepcounter { postnote }
             \tl_set:Nx \l_@@_mark_tl { \thepostnote }
           }
-        \@@_add_to_queue:Nnnn \g_@@_queue_seq
-          { \l_@@_note_id_tl } {#1} {#2}
+        \seq_gput_right:Nx \g_@@_queue_seq { \l_@@_note_id_tl }
         \UseHook { postnotes/note }
         \cs_set:Npn \@currentcounter { postnote }
         \cs_set:Npx \@currentlabel { \p@postnote \l_@@_mark_tl }
@@ -644,17 +643,6 @@
     \bool_if:NTF \l_@@_inhibit_note_bool
       { \prg_return_true:  }
       { \prg_return_false: }
-  }
-
-\bool_new:N \l_@@_same_note_bool
-\NewHook { postnotes/note/addtoqueue }
-% <\g_@@_queue_seq><note id><options><note content>
-\cs_new_protected:Npn \@@_add_to_queue:Nnnn #1#2#3#4
-  {
-    \bool_set_false:N \l_@@_same_note_bool
-    \UseHook { postnotes/note/addtoqueue }
-    \bool_if:NF \l_@@_same_note_bool
-      { \seq_gput_right:Nx \g_@@_queue_seq { \l_@@_note_id_tl } }
   }
 
 \tl_new:N \l_@@_mark_tl
