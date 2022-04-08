@@ -113,6 +113,8 @@
       { \g_@@_section_label_tl }
     \prop_gput:cnx { \@@_data_name:e {#1} } { pnsectid }
       { \int_use:N \g_@@_sectid_int }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { multibool }
+      { \bool_to_str:N \l_@@_maybe_multi_bool }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
   }
 
@@ -831,6 +833,7 @@
         \pnheading
         \AddToHook { shipout/before } [ postnotes/header ]
           { \@@_set_headers_vars_next: }
+        \@@_verify_multipass:N \g_@@_queue_seq
         \bool_if:NT \l_@@_sort_bool
           { \@@_sort_queue:N \g_@@_queue_seq }
         \@@_get_headers_data:N \g_@@_queue_seq
@@ -957,7 +960,43 @@
       }
       { \@@_make_text_mark:n {#2} }
   }
-\cs_generate_variant:Nn \@@_typeset_text_mark:nn {eV}
+\cs_generate_variant:Nn \@@_typeset_text_mark:nn { eV }
+
+
+% This is a general attempt at a ``last resort'' for handling cases of
+% multiple passes of content.  Ideally, the job should be done at
+% \cs{@@_inhibit_note:F} if at all possible.  But, failing that, we can rely
+% on the fact that \cs{postnote}s of measuring/trial passes don't end up being
+% output and hence don't generate labels in the \texttt{.aux} file.
+% However, and despite this being a general test, and a reasonable one, I'd
+% like to restrain it's use to the minimum possible.  First, doing so across
+% the board would result in large swings and numerous warnings in an initial
+% compilation.  Second, and most importantly, there's some risk in dropping
+% notes, so we only consider the possibility where it is unavoidable.  For
+% signaling the ``eligibility'' for this check, the note must have been stored
+% with the \cs{l_@@_maybe_multi_bool} boolean set to \texttt{true}, which is
+% then saved in the \texttt{multibool} property.
+\bool_new:N \l_@@_maybe_multi_bool
+\cs_new_protected:Npn \@@_verify_multipass:N #1 % \g_@@_queue_seq
+  {
+    \group_begin:
+    \seq_clear:N \l_tmpa_seq
+    \seq_map_inline:Nn #1
+      {
+        \@@_prop_get:nnN {##1} { multibool } \l_tmpa_tl
+        \tl_if_eq:NnTF \l_tmpa_tl { true }
+          {
+            \cs_if_exist:cT
+              { \c_@@_ref_prefix_tl @ mark@ ##1 }
+              { \seq_put_right:Nn \l_tmpa_seq {##1} }
+          }
+          { \seq_put_right:Nn \l_tmpa_seq {##1} }
+      }
+    \seq_gset_eq:NN #1 \l_tmpa_seq
+    \group_end:
+  }
+
+
 %    \end{macrocode}
 %
 %
