@@ -780,6 +780,9 @@
 \tl_new:N \pnthechapternextnote
 \tl_new:N \pnthesectionnextnote
 
+\AddToHook { shipout/before } [ postnotes/header ]
+  { \@@_set_headers_vars_next: }
+
 \NewHook { postnotes/print }
 
 \newcounter { postnotesection }
@@ -796,8 +799,7 @@
       { \msg_warning:nn { postnotes } { empty-printpostnotes } }
       {
         \pnheading
-        \AddToHook { shipout/before } [ postnotes/header ]
-          { \@@_set_headers_vars_next: }
+        \bool_gset_true:N \g_@@_header_vars_next_enabled_bool
         \@@_verify_multipass:N \g_@@_queue_seq
         \bool_if:NT \l_@@_sort_bool
           { \@@_sort_queue:N \g_@@_queue_seq }
@@ -899,7 +901,7 @@
               }
           }
         \AddToHookNext { shipout/after }
-          { \RemoveFromHook { shipout/before } [ postnotes/header ] }
+          { \bool_gset_false:N \g_@@_header_vars_next_enabled_bool }
         % We won't use the variables anymore, clear it to reduce memory usage.
         \seq_map_inline:Nn \l_@@_clear_queue_seq
           { \@@_prop_gclear:n { #1 } }
@@ -1218,8 +1220,12 @@
   }
 \cs_generate_variant:Nn \@@_set_headers_vars:n { x }
 
+\bool_new:N \g_@@_header_vars_next_enabled_bool
 \cs_new_protected:Npn \@@_set_headers_vars_next:
-  { \@@_set_headers_vars:x { \int_eval:n { \c@page + 1 } } }
+  {
+    \bool_if:NT \g_@@_header_vars_next_enabled_bool
+      { \@@_set_headers_vars:x { \int_eval:n { \c@page + 1 } } }
+  }
 
 \cs_new_protected:Npn \@@_set_headers_vars_first:
   {
