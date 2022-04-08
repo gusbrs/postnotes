@@ -200,12 +200,9 @@
       {
         % TODO This value is just for testing, set better default later.
         \cleardoublepage{}
-        % \markright{\pnHeaderChapsPages}
         \markright{\pnheaderdefault}
         \chapter{\pntitle}
-        % \@mkboth{\pnHeaderChapsPages}{\pnHeaderChapsPages}
         \@mkboth{\pnheaderdefault}{\pnheaderdefault}
-        % \markboth{\pnHeaderChapsPages}{\pnHeaderChapsPages}
         \thispagestyle{headings}
       }
   }
@@ -213,7 +210,7 @@
     \cs_new_protected:Npn \pnheading
       {
         \section*{\pntitle}
-        \@mkboth{\pnheaderdefault}{\pnheaderdefault}
+        \markright{\pnheaderdefault}
       }
   }
 %    \end{macrocode}
