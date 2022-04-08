@@ -1319,6 +1319,8 @@
 
 \AddToHook { package/amsmath/after }
   {
+    % Testing for \cs{ifmeasuring@} is sufficient to get things right for
+    % the measuring passes in math environments.
     \AddToHook { postnotes/note/inhibit } [ postnotes ]
       {
         \legacy_if:nT { measuring@ }
@@ -1327,33 +1329,20 @@
             \bool_set_true:N \l_@@_print_plain_mark_bool
           }
       }
-    % Testing for \cs{ifmeasuring@} is sufficient to get things right for
-    % 'amstmath' in almost all cases.  It is sufficient to get the measuring
-    % passes in math environments.  The only case I've found which still lacks
-    % is the '\text' macro, defined by 'amstext.sty' (required by amsmath),
-    % and which passes its argument through '\mathchoice' four times.
-    % We cannot guard the test by checking '\mode_if_math:T', because
-    % '\textdef@' calls '\hbox' to switch back to text mode
-    % (https://tex.stackexchange.com/a/148774/105447).
-    % However, '\text' poses yet other problems...  It redefines \stepcounter
-    % and \addtocounter to be no-ops when \firstchoice@false, which means
-    % that, if we have more than one \postnote inside a \text and it is not in
-    % displaystyle, the counter won't be stepped, and we have a duplicate
-    % ID and mark.  So, there are limits: at most one \postnote inside a given
-    % \text, if not in displaystyle...  The same is true of other font
-    % commands (\textnormal, \textup, etc., but not with font switches,
-    % \normalfont, etc.) when used in math mode with amsmath loaded (and I
-    % have no idea how this occurs).  To be fair, not even \footnote works
-    % there.  If need be 'nomark' with \postnoteref can be of use here.
-    \AddToHook { postnotes/note/addtoqueue } [ postnotes ]
+    % However, the '\text' macro, defined by 'amstext.sty' (required by
+    % amsmath), poses problems if its own.  Despite my best efforts, I could
+    % not salvage things from the use of '\mathchoice' and the redefinitions
+    % of '\setcounter' and '\addtocounter' performed by 'amstext'.  Setting
+    % \l_@@_maybe_multi_bool when firstchoice@ is false grants us a working
+    % situation for display style.  But the use of '\postnote' inside '\text'
+    % (and, if amsmath is loaded, \textnormal, \textup, etc.) in inline math
+    % environments is not supported.  If a note really needs to be there, one
+    % can use 'nomark' and '\postnoteref'.  Things should work in text mode
+    % and in display style.
+    \AddToHook { postnotes/note } [ postnotes ]
       {
         \legacy_if:nF { firstchoice@ }
-          {
-            \exp_args:Nxx \tl_if_eq:nnT
-              { \seq_item:Nn \g_@@_queue_seq { -1 } }
-              { \l_@@_note_id_tl }
-              { \bool_set_true:N \l_@@_same_note_bool }
-          }
+          { \bool_set_true:N \l_@@_maybe_multi_bool }
       }
   }
 
