@@ -91,10 +91,7 @@
 % <note id><note content>
 \cs_new_protected:Npn \@@_store:nn #1#2
   {
-    % We check for existence before creating, because in case of multiple pass
-    % contexts, \@@_store:nn may be called with the same ID more than once.
-    \prop_if_exist:cF { \@@_data_name:e {#1} }
-      { \prop_new:c { \@@_data_name:e {#1} } }
+    \prop_new:c { \@@_data_name:e {#1} }
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { note }
     \prop_gput:cnx { \@@_data_name:e {#1} } { mark } { \l_@@_mark_tl }
     \prop_gput:cnx { \@@_data_name:e {#1} } { sortnum }
@@ -567,30 +564,12 @@
 % setup things manually, in case of a manually supplied mark.  All in all, I'm
 % just calling \cs{stepcounter}, setting the relevant cross-reference
 % variables once and setting the anchor manually.
-%
-%
-% We use a standard \LaTeXe{} counter for \texttt{postnote@id} even if,
-% differently from \texttt{postnote}, it's an internal counter.  This because
-% some packages that do multiple passes on content, handle counters created
-% with \cs{newcounter}, and restore their values as due.  Here at least
-% \pkg{amsmath}, \pkg{tabularx}, \pkg{csquotes}'s blockquotes, and
-% \pkg{tabularray} do this.  This doesn't solve all problems with multiple
-% passes, but is one problem less.
-
 
 
 %    \begin{macrocode}
-% The \texttt{postnote} counter is public, and can be set and reset by the
-% user as needed along the document to adjust how the notes' marks are
-% typeset.  The \texttt{postnote@id} is internal, it is actually only a
-% \LaTeXe{} standard counter for technical reasons.  It must not be tampered
-% with by the user, since loosing a note may result from it (given that we
-% prevent adding the note to the queue in case two notes with the same ID
-% occur in sequence in \cs{@@_note:nn} to handle cases of multiple pass
-% contexts).
-\newcounter { postnote@id }
+\int_new:N \g_@@_note_id_int
 \tl_new:N \l_@@_note_id_tl
-\tl_set:Nn \l_@@_note_id_tl { \int_use:N \c@postnote@id }
+\tl_set:Nn \l_@@_note_id_tl { \int_use:N \g_@@_note_id_int }
 \seq_new:N \g_@@_queue_seq
 \newcounter { postnote }
 \NewHook { postnotes/note }
@@ -606,7 +585,7 @@
     \keys_set:nn { postnotes/note } {#1}
     \@@_inhibit_note:F
       {
-        \stepcounter { postnote@id }
+        \int_gincr:N \g_@@_note_id_int
         \tl_if_empty:NT \l_@@_mark_tl
           {
             \stepcounter { postnote }
@@ -773,7 +752,7 @@
 \cs_new_protected:Npn \@@_section:nn #1#2
   {
     \group_begin:
-    \stepcounter { postnote@id }
+    \int_gincr:N \g_@@_note_id_int
     \int_gincr:N \g_@@_sectid_int
     \seq_gput_right:Nx \g_@@_queue_seq { \l_@@_note_id_tl }
     \tl_gclear:N \g_@@_section_label_tl
