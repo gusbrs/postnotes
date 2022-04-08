@@ -647,6 +647,7 @@
 \fp_new:N \l_@@_sort_num_fp
 \tl_new:N \l_@@_note_label_tl
 \bool_new:N \l_@@_manual_sortnum_bool
+\bool_new:N \l_@@_maybe_multi_bool
 \keys_define:nn { postnotes/note }
   {
     mark .tl_set:N = \l_@@_mark_tl ,
@@ -661,6 +662,8 @@
     sortnum .value_required:n = true ,
     label .tl_set:N = \l_@@_note_label_tl ,
     label .value_required:n = true ,
+    multipass .bool_set:N = \l_@@_maybe_multi_bool ,
+    multipass .default:n = true ,
   }
 
 
@@ -944,7 +947,6 @@
 % signaling the ``eligibility'' for this check, the note must have been stored
 % with the \cs{l_@@_maybe_multi_bool} boolean set to \texttt{true}, which is
 % then saved in the \texttt{multibool} property.
-\bool_new:N \l_@@_maybe_multi_bool
 \cs_new_protected:Npn \@@_verify_multipass:N #1 % \g_@@_queue_seq
   {
     \group_begin:
