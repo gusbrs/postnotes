@@ -88,6 +88,8 @@
   { g_@@_ #1 _data_prop }
 \cs_generate_variant:Nn \@@_data_name:n { e }
 
+\NewHook { postnotes/store/note }
+
 % <note id><note content>
 \cs_new_protected:Npn \@@_store:nn #1#2
   {
@@ -113,6 +115,7 @@
     \prop_gput:cnx { \@@_data_name:e {#1} } { multibool }
       { \bool_to_str:N \l_@@_maybe_multi_bool }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
+    \UseHook { postnotes/store/note }
   }
 
 % <note id><note content>
@@ -784,6 +787,7 @@
   { \@@_set_headers_vars_next: }
 
 \NewHook { postnotes/print }
+\NewHook { postnotes/print/beginnote }
 
 \newcounter { postnotesection }
 
@@ -869,6 +873,7 @@
                     \l_@@_print_format_tl
                   }
                 \group_begin:
+                \UseHook { postnotes/print/beginnote }
                 \@@_get_pageref:Nx \pnthepage
                   { mark@ \l_@@_print_note_id_tl }
                 \@@_prop_get:nnN { \l_@@_print_note_id_tl }
