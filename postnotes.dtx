@@ -793,9 +793,7 @@
     \tl_set:Nn \l_@@_print_type_prev_tl { open }
     \tl_gclear:N \g_@@_section_label_tl
     \seq_if_empty:NTF \g_@@_queue_seq
-      {
-        % TODO warn
-      }
+      { \msg_warning:nn { postnotes } { empty-printpostnotes } }
       {
         \pnheading
         \AddToHook { shipout/before } [ postnotes/header ]
@@ -928,6 +926,10 @@
       { \@@_make_text_mark:n {#2} }
   }
 \cs_generate_variant:Nn \@@_typeset_text_mark:nn { eV }
+
+
+\msg_new:nnn { postnotes } { empty-printpostnotes }
+  { Empty~'\iow_char:N\\printpostnotes'~\msg_line_context:. }
 
 
 % This is a general attempt at a ``last resort'' for handling cases of
