@@ -1420,7 +1420,18 @@
       }
   }
 
-
+\AddToHook { package/tabularray/after }
+  {
+    % I've tried, but I could not find any "handle" to distinguisg in
+    % 'tabularray' a trial/measure pass from the final one.  So we use
+    % \@@_verify_multipass:N for it.
+    \clist_map_inline:nn
+      { tblr , longtblr , talltblr , booktabs , longtabs , talltabs , +array }
+      {
+        \AddToHook { env/#1/begin } [ postnotes ]
+          { \bool_set_true:N \l_@@_maybe_multi_bool }
+      }
+  }
 %    \end{macrocode}
 %
 %
