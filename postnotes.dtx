@@ -621,8 +621,8 @@
     \bool_set_false:N \l_@@_inhibit_note_bool
     \bool_set_false:N \l_@@_print_plain_mark_bool
     \UseHook { postnotes/note/inhibit }
-    % Printing a "dumb" mark here is needed because, if we are inhibiting the
-    % note at a "measuring context" and omit it completely, the measuring
+    % Printing a "dumb" mark here may be needed because, if we are inhibiting
+    % the note at a "measuring context" and omit it completely, the measuring
     % being performed will be off by the size of the mark.  So, to ensure the
     % measuring is performed correctly, we place the mark.  The increment to
     % \c@postnote is done locally and grouped and \thepostnote is smuggled out
@@ -1378,7 +1378,7 @@
 
 \AddToHook { package/tabularray/after }
   {
-    % I've tried, but I could not find any "handle" to distinguisg in
+    % I've tried, but I could not find any "handle" to distinguish in
     % 'tabularray' a trial/measure pass from the final one.  So we use
     % \@@_verify_multipass:N for it.
     \clist_map_inline:nn
