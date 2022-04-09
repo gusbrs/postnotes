@@ -939,19 +939,24 @@
   { Empty~'\iow_char:N\\printpostnotes'~\msg_line_context:. }
 
 
-% This is a general attempt at a ``last resort'' for handling cases of
-% multiple passes of content.  Ideally, the job should be done at
-% \cs{@@_inhibit_note:F} if at all possible.  But, failing that, we can rely
-% on the fact that \cs{postnote}s of measuring/trial passes don't end up being
-% output and hence don't generate labels in the \texttt{.aux} file.
-% However, and despite this being a general test, and a reasonable one, I'd
-% like to restrain it's use to the minimum possible.  First, doing so across
-% the board would result in large swings and numerous warnings in an initial
-% compilation.  Second, and most importantly, there's some risk in dropping
-% notes, so we only consider the possibility where it is unavoidable.  For
-% signaling the ``eligibility'' for this check, the note must have been stored
-% with the \cs{l_@@_maybe_multi_bool} boolean set to \texttt{true}, which is
-% then saved in the \texttt{multibool} property.
+% This is a general procedure for handling cases of multiple passes of
+% content.  Ideally, the job should be done at \cs{@@_inhibit_note:F} if at
+% all possible.  But, failing that, we can rely on the fact that
+% \cs{postnote}s of measuring/trial passes don't end up being output and hence
+% don't generate labels in the \texttt{.aux} file.  This is the equivalent for
+% \pkg{postnotes} to the effect of write restrictions for the packages based
+% on external files.  However, and despite this being a general test, and a
+% reasonable one, I'd like to restrain it's use to the minimum possible.
+% First, doing so across the board would result in large swings and numerous
+% spurious warnings in an initial compilation since the labels are not
+% available on the first run.  Second, I'd prefer not to interfere with the
+% queue, unless we really need to.  For signaling the ``eligibility'' for this
+% check, the note must have been stored with the \cs{l_@@_maybe_multi_bool}
+% boolean set to \texttt{true}, which is then saved in the \texttt{multibool}
+% property.  One implication of this procedure is that, if there are any new
+% notes marked as multibool, (at least) three rounds of compilation will be
+% needed, since the labels of the printed notes will be written only on the
+% second run and will thus require a third one to stabilize.
 \cs_new_protected:Npn \@@_verify_multipass:N #1 % \g_@@_queue_seq
   {
     \group_begin:
