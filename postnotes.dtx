@@ -665,8 +665,6 @@
     sortnum .value_required:n = true ,
     label .tl_set:N = \l_@@_note_label_tl ,
     label .value_required:n = true ,
-    multipass .bool_set:N = \l_@@_maybe_multi_bool ,
-    multipass .default:n = true ,
   }
 
 
@@ -1260,6 +1258,17 @@
 %
 %
 %    \begin{macrocode}
+
+% For captions' possible two passes.  This catches more than just captions,
+% but is not overkill.
+\AddToHook { postnotes/note } [ postnotes ]
+  {
+    \cs_if_exist:NT \@captype
+      { \bool_set_true:N \l_@@_maybe_multi_bool }
+  }
+
+
+
 \bool_new:N \g_@@_hyperref_loaded_bool
 \AddToHook { package/hyperref/after }
   { \bool_gset_true:N \g_@@_hyperref_loaded_bool }
