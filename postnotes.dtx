@@ -793,7 +793,7 @@
   { \@@_set_headers_vars_next: }
 
 \NewHook { postnotes/print }
-\NewHook { postnotes/print/beginnote }
+\NewHook { postnotes/print/notevars }
 
 \newcounter { postnotesection }
 
@@ -879,7 +879,7 @@
                     \l_@@_print_format_tl
                   }
                 \group_begin:
-                \UseHook { postnotes/print/beginnote }
+                \UseHook { postnotes/print/notevars }
                 \@@_get_pageref:Nx \pnthepage
                   { mark@ \l_@@_print_note_id_tl }
                 \@@_prop_get:nnN { \l_@@_print_note_id_tl }
@@ -1300,10 +1300,120 @@
 
 \AddToHook { package/biblatex/after }
   {
-    % Let biblatex know we are in a 'notes' context.  See
-    % https://tex.stackexchange.com/a/304464, including comments.
+    % Thanks \contributor{Moritz Wemheuer}:
+    % https://tex.stackexchange.com/q/597359#comment1594585_597389
+    \AddToHook { postnotes/store/note } [ postnotes ]
+      {
+        \prop_gput:cnx { \@@_data_name:e { \l_@@_note_id_tl } }
+          { biblatex@refsection } { \int_use:N \c@refsection }
+        \prop_gput:cnx { \@@_data_name:e { \l_@@_note_id_tl } }
+          { biblatex@refsegment } { \int_use:N \c@refsegment }
+        \prop_gput:cnx { \@@_data_name:e { \l_@@_note_id_tl } }
+          { biblatex@refcontextbool }
+          { \iftoggle { blx@refcontext } { true } { false } }
+        \prop_gput:cnV { \@@_data_name:e { \l_@@_note_id_tl } }
+          { biblatex@refcontext } \blx@refcontext@context
+      }
+    % Replicate the job of \endrefcontext, but with local effects, restrained
+    % to the group of \printposnotes.
+    \cs_new_protected:Npn \@@_biblatex_endrefcontext_local:
+      {
+        \togglefalse { blx@refcontext }
+        \tl_set_eq:NN \blx@refcontext@labelprefix \c_empty_tl
+        \tl_set_eq:NN \blx@refcontext@labelprefix@real \c_empty_tl
+        \tl_set:Nx \blx@refcontext@sortingtemplatename { \blx@sorting }
+        \tl_set:Nn \blx@refcontext@sortingnamekeytemplatename { global }
+        \tl_set:Nn \blx@refcontext@uniquenametemplatename { global }
+        \tl_set:Nn \blx@refcontext@labelalphanametemplatename { global }
+        \blx@edef@refcontext
+          {
+            \blx@refcontext@sortingtemplatename /
+            \blx@refcontext@sortingnamekeytemplatename /
+            /
+            \blx@refcontext@uniquenametemplatename /
+            \blx@refcontext@labelalphanametemplatename
+          }
+      }
+    % Replicate the job of \citereset, but with local effects, restrained
+    % to the group of \printposnotes.  Also reset "seen" entries for all
+    % refsections.  This actually poses some potential problems.  While
+    % resetting this here seems the right thing to do, since we restore the
+    % refsection for each entry, this means that the citations of different
+    % refsections will get printed together, and it is not necessarily obvious
+    % that the trackers should behave "per section" in this context.  However,
+    % since refsections have other implications than just the citetracker, we
+    % cannot do otherwise.  The matter will probably be one of "which biblatex
+    % sets of options" make sense for end notes.  But, as far as I can tell,
+    % things should behave as expected for most use cases.
+    \cs_new_protected:Npn \@@_biblatex_citereset_local:
+      {
+        % \global\cslet{blx@bsee@\the\c@refsection}\@empty
+        % \global\cslet{blx@fsee@\the\c@refsection}\@empty
+        \int_set:Nn \l_tmpa_int { -1 }
+        \int_while_do:nNnn { \l_tmpa_int } < { \c@blx@maxsection }
+          {
+            \int_incr:N \l_tmpa_int
+            \tl_set_eq:cN { blx@bsee@ \int_use:N \l_tmpa_int } \c_empty_tl
+            \tl_set_eq:cN { blx@fsee@ \int_use:N \l_tmpa_int } \c_empty_tl
+          }
+        % \blx@ibidreset@force
+        \undef\blx@lastkey@text
+        \undef\blx@lastkey@foot
+        % \blx@idemreset@force
+        \undef\blx@lasthash@text
+        \undef\blx@lasthash@foot
+        % \blx@opcitreset@force
+        \clist_map_inline:Nn \blx@trackhash@text
+          { \csundef { blx@lastkey@text@ ##1 } }
+        \tl_set_eq:NN \blx@trackhash@text \c_empty_tl
+        \clist_map_inline:Nn \blx@trackhash@foot
+          { \csundef { blx@lastkey@foot@ ##1 } }
+        \tl_set_eq:NN \blx@trackhash@foot \c_empty_tl
+        % \blx@loccitreset@force
+        \clist_map_inline:Nn \blx@trackkeys@text
+          { \csundef { blx@lastnote@text@ ##1 } }
+        \tl_set_eq:NN \blx@trackkeys@text \c_empty_tl
+        \clist_map_inline:Nn \blx@trackkeys@foot
+          { \csundef { blx@lastnote@foot@ ##1 } }
+        \tl_set_eq:NN \blx@trackkeys@foot \c_empty_tl
+        % and all of them do:
+        \cs_set_eq:NN \blx@lastmpfn \z@
+      }
     \AddToHook { postnotes/print } [ postnotes ]
-      { \toggletrue { blx@footnote } }
+      {
+        \@@_biblatex_endrefcontext_local:
+        \@@_biblatex_citereset_local:
+        % Let biblatex know we are in a 'notes' context.  See
+        % https://tex.stackexchange.com/a/304464, including comments.
+        \toggletrue { blx@footnote }
+      }
+    \tl_new:N \l_@@_biblatex_restore_tl
+    \AddToHook { postnotes/print/notevars } [ postnotes ]
+      {
+        \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+          { biblatex@refsection } \l_@@_biblatex_restore_tl
+        \int_set:Nn \c@refsection { \l_@@_biblatex_restore_tl }
+        \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+          { biblatex@refsegment } \l_@@_biblatex_restore_tl
+        \int_set:Nn \c@refsegment { \l_@@_biblatex_restore_tl }
+        \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+          { biblatex@refcontextbool } \l_@@_biblatex_restore_tl
+        \use:c { toggle \l_@@_biblatex_restore_tl } { blx@refcontext }
+        \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+          { biblatex@refcontext } \l_@@_biblatex_restore_tl
+        \blx@edef@refcontext { \l_@@_biblatex_restore_tl }
+      }
+    % Have biblatex's \mkbibendnote use \postnote.  This is very likely
+    % desired in most cases, but may occasionally not be, so we add it to an
+    % individually labeled hook, which can be disabled with
+    % \RemoveFromHook{begindocument/before}[postnotes/mkbibendnote] in the
+    % preamble.
+    \AddToHook { begindocument/before } [ postnotes/mkbibendnote ]
+      {
+        \cs_set_nopar:Npn \blx@theendnote { \postnote }
+        \cs_set_nopar:Npn \blx@theendnotetext
+          { \blx@err@endnote \footnotetext }
+      }
   }
 
 
