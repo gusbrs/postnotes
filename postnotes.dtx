@@ -18,12 +18,26 @@
 %
 % \fi
 %
+% \DoNotIndex{\\}
+%
+% \NewDocumentCommand\githubissue{m}{^^A
+%   issue~\href{https://github.com/gusbrs/postnotes/issues/#1}{\##1}}
+%
+% \NewDocumentCommand\githubPR{m}{^^A
+%   PR~\href{https://github.com/gusbrs/postnotes/pull/#1}{\##1}}
+%
+% ^^A Currently just for keeping semantic markup on this.
+% \NewDocumentCommand\contributor{m}{#1}
 %
 % \NewDocumentCommand\opt{m}{\texttt{#1}}
 %
 % \pdfstringdefDisableCommands{^^A
 %   \def\opt#1{#1}
 % }
+%
+% \AddToHook{env/macro/after}{\medskip{}}
+% \AddToHook{env/variable/after}{\medskip{}}
+% \AddToHook{env/function/after}{\medskip{}}
 %
 %
 % ^^A Have the Index at 'section' level rather than 'part'.  Otherwise it is
@@ -61,6 +75,8 @@
 % \tableofcontents
 %
 %
+% \clearpage{}
+%
 % \section{Initial setup}
 % Start the \pkg{DocStrip} guards.
 %    \begin{macrocode}
@@ -73,6 +89,24 @@
 %    \end{macrocode}
 %
 %
+% Require the new syntax for file/package hooks (\texttt{ltnews34},
+% \texttt{ltfilehook}).
+%
+%    \begin{macrocode}
+\providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
+\IfFormatAtLeastTF{2021-11-15}
+  {}
+  {%
+    \PackageError{postnotes}{LaTeX kernel too old}
+      {%
+        'postnotes' requires a LaTeX kernel 2021-11-15 or newer.%
+        \MessageBreak Loading will abort!%
+      }%
+    \endinput
+  }%
+%    \end{macrocode}
+%
+%
 %    \begin{macrocode}
 \ProvidesExplPackage {postnotes} {2022-03-24} {0.1.0}
   {Endnotes for LaTeX}
@@ -81,21 +115,37 @@
 %
 % \section{Data}
 %
+%
+% \begin{macro}[EXP]{\@@_data_name:n}
+%   Returns the name of the property list variable which stores the data of
+%   the \cs{postnote} with \meta{note id} number.
+%     \begin{syntax}
+%       \cs{@@_data_name:n} \Arg{note id}
+%     \end{syntax}
 %    \begin{macrocode}
-
-% <note id>
 \cs_new:Npn \@@_data_name:n #1
   { g_@@_ #1 _data_prop }
 \cs_generate_variant:Nn \@@_data_name:n { e }
-
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}{\@@_store:nn}
+%   Stores the metadata and \meta{note content} of \cs{postnote} with ID
+%   \meta{note id}, from where it is called.  The
+%   \texttt{postnotes/store/note} hook is intended to add further data to the
+%   note, when required to support packages with specific needs.
+%     \begin{syntax}
+%       \cs{@@_store:nn} \Arg{note id} \Arg{note content}
+%     \end{syntax}
+%    \begin{macrocode}
 \NewHook { postnotes/store/note }
-
-% <note id><note content>
 \cs_new_protected:Npn \@@_store:nn #1#2
   {
     \prop_new:c { \@@_data_name:e {#1} }
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { note }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { mark } { \l_@@_mark_tl }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { mark }
+      { \l_@@_mark_tl }
     \prop_gput:cnx { \@@_data_name:e {#1} } { sortnum }
       {
         \bool_if:NTF \l_@@_manual_sortnum_bool
@@ -107,9 +157,10 @@
         \prop_gput:cnx { \@@_data_name:e {#1} }
           { thechapter } { \thechapter }
       }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { thesection } { \thesection }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { pnsectlabel }
-      { \g_@@_section_label_tl }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { thesection }
+      { \thesection }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { pnsectname }
+      { \g_@@_section_name_tl }
     \prop_gput:cnx { \@@_data_name:e {#1} } { pnsectid }
       { \int_use:N \g_@@_sectid_int }
     \prop_gput:cnx { \@@_data_name:e {#1} } { multibool }
@@ -117,8 +168,17 @@
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
     \UseHook { postnotes/store/note }
   }
-
-% <note id><note content>
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}{\@@_store_section:nn}
+%   Stores the metadata and \meta{note content} of \cs{postnotesection} with
+%   ID \meta{note id}, from where it is called.
+%     \begin{syntax}
+%       \cs{@@_store_section:nn} \Arg{note id} \Arg{note content}
+%     \end{syntax}
+%    \begin{macrocode}
 \cs_new_protected:Npn \@@_store_section:nn #1#2
   {
     \prop_new:c { \@@_data_name:e {#1} }
@@ -128,28 +188,74 @@
         \prop_gput:cnx { \@@_data_name:e {#1} }
           { thechapter } { \thechapter }
       }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { thesection } { \thesection }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { thesection }
+      { \thesection }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
   }
-
-
-% <note id><prop><tl var>
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}
+%   {
+%     \@@_prop_get:nnN ,
+%     \@@_prop_item:nn ,
+%     \@@_prop_gclear:n ,
+%   }
+%   Convenience functions to retrieve and clear data from a note based on the
+%   ID number.
+%     \begin{syntax}
+%       \cs{@@_prop_get:nnN} \Arg{note id} \Arg{property} \Arg{tl var to set}
+%       \cs{@@_prop_item:nn} \Arg{note id} \Arg{property}
+%       \cs{@@_prop_gclear:n} \Arg{note id}
+%     \end{syntax}
+%    \begin{macrocode}
 \cs_new_protected:Npn \@@_prop_get:nnN #1#2#3
   {
     \prop_get:cnNF { \@@_data_name:e {#1} } {#2} #3
       { \tl_clear:N #3 }
   }
-% <note id><prop>
 \cs_new:Npn \@@_prop_item:nn #1#2
   { \prop_item:cn { \@@_data_name:e {#1} } {#2} }
-% <note id>
 \cs_new_protected:Npn \@@_prop_gclear:n #1
   { \prop_gclear:c { \@@_data_name:e {#1} } }
-
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}[int]{\post@note}
+%   The \cs{newlabel} equivalent for \pkg{postnotes}.  Based on the kernel's
+%   \cs{@newl@bel} so that we get \LaTeX{} checks for multiple and changed
+%   references for free (procedure learnt from \pkg{zref}).  \cs{post@note},
+%   when the \file{.aux} file is read, defines macros named
+%   \texttt{\textbackslash{}postnote@r@\meta{label name}}, according to the
+%   prefix set by \cs{c_@@_ref_prefix_tl}.
+%     \begin{syntax}
+%       \cs{post@note} \Arg{label name} \Arg{label content}
+%     \end{syntax}
+%    \begin{macrocode}
 \tl_const:Nn \c_@@_ref_prefix_tl { postnote@r }
-\cs_new_protected:Npx \post@note
-  { \exp_not:N \@newl@bel { \c_@@_ref_prefix_tl } }
-
+\cs_new_protected:Npx \post@note #1#2
+  { \exp_not:N \@newl@bel { \c_@@_ref_prefix_tl } {#1} {#2} }
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}
+%   {
+%     \@@_set_mark_page_label:n ,
+%     \@@_set_text_page_label:n ,
+%     \@@_set_print_page_label:n ,
+%   }
+%   Label setting functions for each pertinent context.  They must use
+%   \cs{iow_shipout_x:Nn}, since the main information we are interested in is
+%   the \texttt{page}.
+%     \begin{syntax}
+%       \cs{@@_set_mark_page_label:n} \Arg{label name}
+%       \cs{@@_set_text_page_label:n} \Arg{label name}
+%       \cs{@@_set_print_page_label:n} \Arg{label name}
+%     \end{syntax}
+%    \begin{macrocode}
 \cs_new_protected:Npn \@@_set_mark_page_label:n #1
   {
     \iow_shipout_x:Nn \@auxout
@@ -168,7 +274,21 @@
       { \post@note { print@ #1 } { \int_use:N \c@page } }
   }
 \cs_generate_variant:Nn \@@_set_print_page_label:n { x }
-
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}
+%   {
+%     \@@_get_pageref:Nn ,
+%     \@@_extract_pageref:n ,
+%   }
+%   Reference data extraction functions.
+%     \begin{syntax}
+%       \cs{@@_get_pageref:Nn} \Arg{tl var to set} \Arg{label name}
+%       \cs{@@_extract_pageref:n} \Arg{label name}
+%     \end{syntax}
+%    \begin{macrocode}
 \cs_new_protected:Npn \@@_get_pageref:Nn #1#2
   {
     \cs_if_exist:cTF { \c_@@_ref_prefix_tl @ #2 }
@@ -184,10 +304,10 @@
   }
 \cs_generate_variant:Nn \@@_extract_pageref:n { e }
 %    \end{macrocode}
+% \end{macro}
 %
 %
 % \section{Options}
-%
 %
 % \subsection*{\opt{heading} option}
 %
@@ -197,16 +317,17 @@
     heading .cs_set_protected:Np = \pnheading ,
     heading .value_required:n = true ,
   }
+%    \end{macrocode}
+%
+% \begin{macro}[int]{\pnheading}
+%   Provide default value for \cs{pnheading}.
+%    \begin{macrocode}
 \cs_if_exist:cTF { chapter }
   {
     \cs_new_protected:Npn \pnheading
       {
-        % TODO This value is just for testing, set better default later.
-        \cleardoublepage{}
-        \markright{\pnheaderdefault}
-        \chapter{\pntitle}
+        \chapter*{\pntitle}
         \@mkboth{\pnheaderdefault}{\pnheaderdefault}
-        \thispagestyle{headings}
       }
   }
   {
@@ -217,6 +338,7 @@
       }
   }
 %    \end{macrocode}
+% \end{macro}
 %
 %
 % \subsection*{\opt{format} option}
@@ -244,8 +366,9 @@
         \tl_if_eq:nnTF {#1} { none }
           {
             \bool_set_false:N \l_@@_print_as_list_bool
-            % A sensible default just in case.  It should not get to be used
-            % though.
+%    \end{macrocode}
+% A sensible default just in case.  It should not get to be used though.
+%    \begin{macrocode}
             \tl_set:Nn \l_@@_print_env_tl { itemize }
           }
           {
@@ -256,25 +379,25 @@
     listenv .initial:n = { postnoteslist } ,
     listenv .value_required:n = true ,
   }
-
-
-
-% The horizontal setup of the label in these lists is based on the
-% \texttt{description} environment of the standard classes (see the \emph{The
-% \LaTeX{} Companion}).
-
+%    \end{macrocode}
+%
+%
+% A couple of built-in list environments provided for convenience, and
+% \texttt{postnoteslist} as default.  The horizontal setup of the label in
+% these lists is based on the \texttt{description} environment of the standard
+% classes (see the \emph{The \LaTeX{} Companion}).
+%
+%    \begin{macrocode}
 \NewDocumentEnvironment { postnoteslist } { }
   {
     \begin{list} { }
       {
-        % horizontal
         \setlength { \leftmargin }    { 0pt }
         \setlength { \labelwidth }    { 0pt }
         \setlength { \itemindent }    { .5\parindent }
         \cs_set_eq:NN \makelabel \@@_list_makelabel:n
         \setlength { \rightmargin }   { 0pt }
         \setlength { \listparindent } { \parindent }
-        % vertical
         \setlength { \parsep }    { \parskip }
         \setlength { \itemsep }   { 0pt }
         \setlength { \topsep }    { .5\topsep }
@@ -282,22 +405,16 @@
       }
   }
   { \end{list} }
-
-\cs_new:Npn \@@_list_makelabel:n #1
-  { \hspace { \labelsep } \normalfont ~ #1 }
-
 \NewDocumentEnvironment { postnoteslisthang } { }
   {
     \begin{list} { }
       {
-        % horizontal
         \setlength { \leftmargin }    { 1em }
         \setlength { \labelwidth }    { -\leftmargin }
         \setlength { \itemindent }    { -2\leftmargin }
         \cs_set_eq:NN \makelabel \@@_list_makelabel:n
         \setlength { \rightmargin }   { 0pt }
         \setlength { \listparindent } { \parindent }
-        % vertical
         \setlength { \parsep }    { \parskip }
         \setlength { \itemsep }   { 0pt }
         \setlength { \topsep }    { .5\topsep }
@@ -305,6 +422,8 @@
       }
   }
   { \end{list} }
+\cs_new:Npn \@@_list_makelabel:n #1
+  { \hspace { \labelsep } \normalfont ~ #1 }
 %    \end{macrocode}
 %
 %
@@ -316,7 +435,9 @@
     makemark .code:n =
       { \cs_set_nopar:Npn \@@_make_mark:n ##1 {#1} } ,
     makemark .value_required:n = true ,
-    % From the default definition of \cs{@makefnmark} in the kernel.
+%    \end{macrocode}
+% From the default kernel definition of \cs{@makefnmark}.
+%    \begin{macrocode}
     makemark .initial:n =
       { \hbox:n { \@textsuperscript { \normalfont #1 } } } ,
     maketextmark .code:n =
@@ -324,8 +445,9 @@
     maketextmark .value_required:n = true ,
     maketextmark .initial:n = { #1 . } ,
   }
-%    \enc{macrocode}
-
+%    \end{macrocode}
+%
+%
 % \subsection*{\opt{hyperref} and \opt{backref} options}
 %
 %    \begin{macrocode}
@@ -359,10 +481,6 @@
 %    \end{macrocode}
 %
 %    \begin{macrocode}
-\msg_new:nnn { postnotes } { option-preamble-only }
-  { Option~'#1'~only~available~in~the~preamble~\msg_line_context:. }
-\msg_new:nnn { postnotes } { missing-hyperref }
-  { Missing~'hyperref'~package.~Setting~'hyperref=false'. }
 \AddToHook { begindocument }
   {
     \IfPackageLoadedTF { hyperref }
@@ -372,7 +490,7 @@
           { \msg_warning:nn { postnotes } { missing-hyperref } }
         \bool_set_false:N \l_@@_hyperlink_bool
       }
-    \keys_define:nn { postnotes/setup }
+    \keys_define:nn { postnotes/package }
       {
         hyperref .code:n =
           {
@@ -386,7 +504,10 @@
           } ,
       }
   }
-
+\msg_new:nnn { postnotes } { option-preamble-only }
+  { Option~'#1'~only~available~in~the~preamble~\msg_line_context:. }
+\msg_new:nnn { postnotes } { missing-hyperref }
+  { Missing~'hyperref'~package.~Setting~'hyperref=false'. }
 %    \end{macrocode}
 %
 %
@@ -403,7 +524,7 @@
 %    \end{macrocode}
 %
 %
-% \subsection{\cs{postnotesetup}}
+% \subsection*{\cs{postnotesetup}}
 %
 %
 % \begin{macro}[int]{\postnotesetup}
@@ -428,6 +549,7 @@
   }
 %    \end{macrocode}
 %
+%
 % \section{\cs{postnote}}
 %
 % Different from the traditional \cs{footnotemark} / \cs{footnotetext} system,
@@ -440,10 +562,13 @@
 %
 % However, the separation between ``mark'' and ``text'' is still useful in
 % other contexts: floats and contexts where multiple typesetting passes are
-% performed.  The questions are: if they are replaceable in their roles in
-% these contexts and if how much would we lose by providing them.
+% performed.  \contributor{David Carlisle} and \contributor{Ulrike Fischer}
+% shared some thoughts on the matter at the TeX.SX chat:
+% \url{https://chat.stackexchange.com/transcript/message/60754383#60754383}.
 %
-% In analyzing this, we have to distinguish two situations: when
+% The interesting questions here are: if they are replaceable in their roles
+% in these contexts and how much would we lose by providing them.  In
+% analyzing this, we have to distinguish two situations: when
 % \cs{footnotemark} is called with no argument (and thus steps the counter),
 % and when it is called with the optional argument (and thus refrains from
 % stepping the counter).
@@ -451,7 +576,7 @@
 % For floats, the problem they pose is that they may disturb the
 % \emph{ordering} of the notes.  This particular issue can be solved by using
 % \cs{footnotemark} without argument, and manually adjusting the counter on
-% subsequent calls to \cs{footnotetext}.  A good example of the technique:
+% subsequent calls to \cs{footnotetext}.  A good example of the technique is
 % \url{https://tex.stackexchange.com/a/43694}.  True, a user may wish to
 % specify the mark explicitly, but doesn't necessarily need to do it to solve
 % the ordering issue.
@@ -460,28 +585,28 @@
 % the standard classes' \cs{caption} typesets the caption once, if it is
 % short, but twice if it is longer than a line; \pkg{amsmath}'s math
 % environments perform a measuring pass before actually typesetting the
-% equations; \pkg{tabularx} and \pkg{tabularray} do similarly with their
+% equations; \pkg{amsmath}'s \cs{text} macro runs the contents through
+% \cs{mathchoice} (which typesets the contents four times) when in math mode;
+% \pkg{tabularx} and \pkg{tabularray} also perform measuring passes of their
 % tables; so does \pkg{csquotes}' blockquotes; and certainly more that I'm
 % unaware.  A number of these places offer some one or another way to mitigate
 % the issue: \pkg{amsmath}, \pkg{tabularx}, \pkg{csquotes} and (optionally)
-% \pkg{tabularray} restore counter values after measuring steps;
-% \pkg{csquotes} offers further handles.  But the standard \cs{caption} offers
-% none.  Well, the pkg{caption} package has this possibility as an option, but
-% it is not reasonable to require it for our purposes, so we must assume the
-% worst case.
+% \pkg{tabularray} restore counter values after measuring steps; \pkg{amsmath}
+% offers a boolean to indicate when it is a measuring pass; \pkg{csquotes}
+% offers further handles.  But the standard \cs{caption} offers none, and
+% neither does \pkg{amsmath}'s \cs{text} macro.  Well, the pkg{caption}
+% package has can disable the multiple passes for \cs{caption} with the option
+% \opt{singlelinecheck}, but it is not reasonable to require it for our
+% purposes, so we must assume the worst case.
 %
 % Enrico Gregorio is categorical in stating that \cs{endnotemark} and
 % \cs{endnotetext} are required for \pkg{enotez} to handle \cs{caption}, which
-% apparently it didn't offer them originally: ``The package should implement
+% apparently it didn't offer originally: ``The package should implement
 % \cs{endnotemark} and \cs{endnotetext} for this case.  According to the
 % documentation, the author deems them to not be needed: he's wrong.''
 % (\url{https://tex.stackexchange.com/a/314937}).  See also
 % \url{https://tex.stackexchange.com/a/43794} and
 % \url{https://tex.stackexchange.com/a/358207}.
-%
-% David Carlisle and Ulrike Fischer shared some thoughts on the matter on the
-% TeX.SX chat:
-% \url{https://chat.stackexchange.com/transcript/message/60754383#60754383}.
 %
 % In this scenario, when there's no way around the multiple passes,
 % \cs{footnotemark} can only handle the general case if used with an argument,
@@ -495,62 +620,62 @@
 % way, and doesn't need the separation between ``mark'' and ``text''.  So,
 % what is distinctive of the kernel's footnote apparatus, which allows it as
 % much flexibility as one would like, is receiving an arbitrary number as
-% argument and \emph{not stepping the counter}.  If this is what is needed to
-% handle the general case, is it viable to do so? What would we loose in so
-% doing?  Of course, even if \cs{footnote} can receive the same optional
-% argument, the point of it is really to ``manually establish a relation''
-% between a \cs{footnotemark} and its corresponding \cs{footnotetext}.
+% argument and not stepping the counter.  And as far as \cs{footnotemark} and
+% \cs{footnotetext}) are concerned, the main point of the optional argument is
+% really to ``manually establish the relation'' between the two of them.  So,
+% if \emph{not stepping the counter} is what is needed to handle the general
+% case, is it viable to do so? What would we loose in so doing?
 %
-% Receiving an arbitrary number as argument, as the kernel functionality for
-% footnotes and other endnotes packages do, this value is expected to the
-% printed as such, hence it must correspond to the \texttt{postnote} counter.
-% But this counter is in the hands of the user, and can be reset along the
-% document, thus its uniqueness cannot be ensured.  But not stepping
-% \texttt{postnote} is perfectly viable, as it just aims at storing how the
-% mark is to be typeset.  However, not stepping the ID counter complicates
-% things considerably.  Not doing so implies we'd lose the connection we have
-% between the ``mark'' and the corresponding ``text''.  We might add the
-% ``text'' to the queue, but all the metadata would be lost, including the
-% \pkg{hyperref} anchor, but really the set of data without which the kind of
-% functionality offered would be nonviable, or severely hampered.  Not
-% stepping \texttt{postnote} but stepping the ID counter also is not
-% sufficient, because we'd get a note in duplicity.  We could naively think
-% that a gap in the ID is not a problem, and just not add the duplicate to the
-% queue.  But how could we tell the difference between a legitimate and an
-% illegitimate step of the ID counter?
+% When receiving an arbitrary number as argument, as the kernel functionality
+% for footnotes and other endnotes packages do, this value is expected to the
+% printed as such, hence it must correspond to the \texttt{postnote} counter
+% (in our case).  But this counter is in the hands of the user, and can be
+% reset along the document, thus its uniqueness cannot be ensured.  But not
+% stepping \texttt{postnote} is perfectly viable, as it just aims at storing
+% how the mark is to be typeset.  However, not stepping the ID counter would
+% complicate things considerably.  Not doing so implies we'd lose the
+% connection we have between the ``mark'' and the corresponding ``text''.  We
+% might add the ``text'' to the queue, but all the metadata would be lost,
+% including the \pkg{hyperref} anchor, but really the set of data without
+% which the kind of functionality offered would be nonviable, or severely
+% hampered.  Not stepping \texttt{postnote} but stepping the ID counter also
+% is not sufficient, because we'd get a note in duplicity.  We could naively
+% think that a gap in the ID is not a problem, and just not add the duplicate
+% to the queue.  But how could we tell the difference between a legitimate and
+% an illegitimate step of the ID counter?
 %
-% I have not been able to devise a way to ``reconnect'' these two in the
-% absence of the unique ID counter.  The most promising idea was to have
-% mandatory arguments to \cs{postnotemark} and \cs{postnotetext} receiving a
-% \meta{label} which we could use to identify their counterparts, but I was
-% not able to go through with this, and the attempts all increased complexity
-% considerably.  It is not just a label/ref system, there's got to be a
-% one-to-one correspondence between the sets, uniqueness has to be ensured on
-% both sides, and there cannot be ``lone'' marks or texts (a bijection).
-% Besides, this label based system of identification would have to live
-% side-by-side with the one based on the counter.  So, even if we'd have
-% unique IDs, we wouldn't know beforehand in what form it comes.  Considering
-% the ID is used to build the variable name in which we store the note's
-% information, this also complicates things.
+% I have not been able to devise a way to ``reconnect'' ``text'' and ``mark''
+% in the absence of the unique ID counter.  The most promising idea was to
+% have mandatory arguments to \cs{postnotemark} and \cs{postnotetext}
+% receiving a \meta{label} which we could use to identify their counterparts,
+% but I was not able to go through with this, and the attempts all increased
+% complexity considerably.  It is not just a label/ref system, there's got to
+% be a one-to-one correspondence between the sets, uniqueness has to be
+% ensured on both sides, and there cannot be ``lone'' marks or texts (a
+% bijection).  Besides, this label based system of identification would have
+% to live side-by-side with the one based on the counter.  So, even if we'd
+% have unique IDs, we wouldn't know beforehand in what form it comes.
+% Considering the ID is used to build the variable name in which we store the
+% note's information, this would also complicate things.
 %
 % Besides, there are ways to get things working with multiple passes without
 % the ``mark''/``text'' partition.  As mentioned, there are a number of cases
-% which offer some kind of  ``handle'' or way to identify the multiple passes.
-% \pkg{csquotes} has a dedicated hook that can be used.   \pkg{amsmath} sets
+% which offer some kind of ``handle'' or way to identify the multiple passes.
+% \pkg{csquotes} has a dedicated hook that can be used.  \pkg{amsmath} sets
 % the \texttt{measuring@} boolean (which \pkg{hyperref} also defines).  So,
-% not all cases are as tricky as \cs{caption}, and even that can be decently
-% dealt with without a separation between ``mark'' and ``text''.  And, in
-% difficult cases, the package offers a \opt{nomark} option to \cs{postnote}
-% to place a note, but typeset no mark. Than we can typeset a mark with
-% \cs{postnoteref} referring to a \cs{label} in the note of interest.  This
-% would result in a correct mark without duplicity, and in a correct link from
-% there to the note's text at \cs{printpostnotes}.  The drawback is that the
-% placement of \cs{postnote} would be important, and results sensitive to it.
-% All the metadata is collected at the point of \cs{postnote}, anchor
-% included, not at the point of \cs{postnoteref}.  So the consequences are a
-% slightly off backref, possibly imprecise metadata, etc.  Considering
-% \pkg{hyperref} itself shies away completely from linking \cs{footnotemark}
-% with an argument, I'd say there's some gain.
+% not all cases are as tricky as \cs{caption} or \cs{text}, and even that can
+% be decently dealt with without a separation between ``mark'' and ``text''.
+% Besides, in difficult cases, the package offers a \opt{nomark} option to
+% \cs{postnote} to place a note, but typeset no mark. Than we can typeset a
+% mark with \cs{postnoteref} referring to a \cs{label} in the note of
+% interest.  This would result in a correct mark without duplicity, and in a
+% correct link from there to the note's text at \cs{printpostnotes}.  The
+% drawback is that the placement of \cs{postnote} would be important, and
+% results sensitive to it.  All the metadata is collected at the point of
+% \cs{postnote}, anchor included, not at the point of \cs{postnoteref}.  So
+% the consequences are a slightly off backref, possibly imprecise metadata,
+% etc.  Considering \pkg{hyperref} itself shies away completely from linking
+% \cs{footnotemark} with an argument, I'd say there's some gain.
 %
 % The truth is there are some trade-offs, there's no ``ideal'' solution.
 % Still, all in all, my judgment is that the unique ID counter is worth more
@@ -559,7 +684,7 @@
 % So, for the time being, until something else shakes this balance, I won't be
 % offering \cs{postnotemark} and \cs{postnotetext}.
 %
-%
+% \bigskip{}
 %
 % For the \pkg{hyperref} support for cross-references in \cs{postnote}, I've
 % moved back and forth quite a lot.  One of the ideas I fancied was using
@@ -572,21 +697,64 @@
 % setup things manually, in case of a manually supplied mark.  All in all, I'm
 % just calling \cs{stepcounter}, setting the relevant cross-reference
 % variables once and setting the anchor manually.
-
-
+%
+%
+% \bigskip{}
+%
+% \texttt{postnote} is the public, user facing, counter for \cs{postnote}.  It
+% determines how the note's mark gets to be typeset.  It can be reset, set,
+% and have its printed representation changed.  Of course, whether those are
+% meaningful is up to the user.
+%
+%    \begin{macrocode}
+\newcounter { postnote }
+%    \end{macrocode}
+%
+% \begin{macro}
+%   {
+%     \g_@@_note_id_int ,
+%     \l_@@_note_id_tl ,
+%     \g_@@_queue_seq ,
+%   }
+%   \cs{g_@@_note_id_int} is the internal, unique counter which provides the
+%   ID number of each note.  It ties ``mark'' and ``text'' together, is also
+%   the connection between each note and its data, including the content,
+%   which is stored in a property list named according to \cs{@@_data_name:n}
+%   and the ID number.  \cs{l_@@_note_id_tl} is a convenience variable storing
+%   the counter's value.  \cs{g_@@_queue_seq} stores the sequence of notes'
+%   IDs that to be processed by the next call of \cs{printpostnotes}.
 %    \begin{macrocode}
 \int_new:N \g_@@_note_id_int
 \tl_new:N \l_@@_note_id_tl
 \tl_set:Nn \l_@@_note_id_tl { \int_use:N \g_@@_note_id_int }
 \seq_new:N \g_@@_queue_seq
-\newcounter { postnote }
-\NewHook { postnotes/note }
-
-
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}[int]{\postnote}
+%   Provide \cs{postnote}.
+%   \begin{syntax}
+%     \cs{postnote} \oarg{options} \marg{note text}
+%   \end{syntax}
+%    \begin{macrocode}
 \NewDocumentCommand \postnote { O { } +m }
   { \@@_note:nn {#1} {#2} }
-
-% <options><note content>
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}{\@@_note:nn}
+%   The internal version of \cs{postnote}.  The \texttt{postnotes/note} hook
+%   is meant to provide a place from where some additional setup for the note
+%   can be performed.  This is being used for adding support for some
+%   features/packages, but can also be used, for example, to add an extra
+%   local property for \pkg{zref}.
+%   \begin{syntax}
+%     \cs{@@_note:nn}\oarg{options}\marg{note content}
+%   \end{syntax}
+%    \begin{macrocode}
+\NewHook { postnotes/note }
 \cs_new_protected:Npn \@@_note:nn #1#2
   {
     \group_begin:
@@ -599,11 +767,13 @@
             \stepcounter { postnote }
             \tl_set:Nx \l_@@_mark_tl { \thepostnote }
           }
-        \seq_gput_right:Nx \g_@@_queue_seq { \l_@@_note_id_tl }
+        \seq_gput_right:Nx \g_@@_queue_seq
+          { \l_@@_note_id_tl }
         \UseHook { postnotes/note }
         \cs_set:Npn \@currentcounter { postnote }
         \cs_set:Npx \@currentlabel { \p@postnote \l_@@_mark_tl }
-        \@@_hyperref_make_currentHref:n { postnote. \l_@@_note_id_tl .mark }
+        \@@_hyperref_make_currentHref:n
+          { postnote. \l_@@_note_id_tl .mark }
         \@@_set_mark_page_label:x { \l_@@_note_id_tl }
         \@@_set_user_labels:
         \bool_if:NTF \l_@@_nomark_bool
@@ -614,45 +784,21 @@
                   { postnote. \l_@@_note_id_tl .mark }
               }
           }
-          { \@@_typeset_mark:xV { \l_@@_note_id_tl } \l_@@_mark_tl }
+          {
+            \@@_typeset_mark:xV
+              { \l_@@_note_id_tl } \l_@@_mark_tl
+          }
         \@@_store:nn { \l_@@_note_id_tl } {#2}
       }
     \group_end:
   }
-
-
-\bool_new:N \l_@@_inhibit_note_bool
-\bool_new:N \l_@@_print_plain_mark_bool
-\NewHook { postnotes/note/inhibit }
-\prg_new_protected_conditional:Npnn \@@_inhibit_note: { F }
-  {
-    \bool_set_false:N \l_@@_inhibit_note_bool
-    \bool_set_false:N \l_@@_print_plain_mark_bool
-    \UseHook { postnotes/note/inhibit }
-    % Printing a "dumb" mark here may be needed because, if we are inhibiting
-    % the note at a "measuring context" and omit it completely, the measuring
-    % being performed will be off by the size of the mark.  So, to ensure the
-    % measuring is performed correctly, we place the mark.  The increment to
-    % \c@postnote is done locally and grouped and \thepostnote is smuggled out
-    % of the group.
-    \bool_if:NT \l_@@_print_plain_mark_bool
-      {
-        \tl_if_empty:NT \l_@@_mark_tl
-          {
-            \group_begin:
-            \int_incr:N \c@postnote
-            \exp_args:NNNx
-              \group_end:
-              \tl_set:Nn \l_@@_mark_tl { \thepostnote }
-          }
-        \@@_typeset_mark_wrapper:n
-          { \@@_make_mark:n { \l_@@_mark_tl } }
-      }
-    \bool_if:NTF \l_@@_inhibit_note_bool
-      { \prg_return_true:  }
-      { \prg_return_false: }
-  }
-
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% Options for \cs{postnote}.
+%
+%    \begin{macrocode}
 \tl_new:N \l_@@_mark_tl
 \bool_new:N \l_@@_nomark_bool
 \fp_new:N \l_@@_sort_num_fp
@@ -674,9 +820,70 @@
     label .tl_set:N = \l_@@_note_label_tl ,
     label .value_required:n = true ,
   }
-
-
-% <note id><mark>
+%    \end{macrocode}
+%
+%
+% \begin{macro}{\@@_inhibit_note:TF}
+%   In contexts of multiple passes of content, it may be needed, or preferred,
+%   to inhibit the note altogether to avoid side effects and duplicity.  This
+%   conditional, obviously, will always return the true branch unless
+%   something is done in the \texttt{postnotes/note/inhibit} hook.  This hook
+%   is meant to handle support for packages or features which may justify note
+%   inhibition, and the code there should set \cs{l_@@_inhibit_note_bool} and
+%   \cs{l_@@_print_plain_mark_bool} as appropriate to the case.
+%    \begin{macrocode}
+\bool_new:N \l_@@_inhibit_note_bool
+\bool_new:N \l_@@_print_plain_mark_bool
+\NewHook { postnotes/note/inhibit }
+\prg_new_protected_conditional:Npnn \@@_inhibit_note: { F }
+  {
+    \bool_set_false:N \l_@@_inhibit_note_bool
+    \bool_set_false:N \l_@@_print_plain_mark_bool
+    \UseHook { postnotes/note/inhibit }
+%    \end{macrocode}
+% Printing a plain mark here may be needed because, if we are inhibiting the
+% note in a ``measuring context'' and omit it completely, the measuring being
+% performed will be off by the size of the mark.  So, to ensure the measuring
+% can be done correctly, we place the mark.  Since we'd only print this mark
+% in case of inhibition, when we don't actually step the counter, to typeset
+% correctly the mark that would be printed if the counter had been stepped, we
+% increment \cs{c@postnote} locally and grouped, and smuggle \cs{thepostnote}
+% out of the group.
+%    \begin{macrocode}
+    \bool_if:NT \l_@@_print_plain_mark_bool
+      {
+        \tl_if_empty:NT \l_@@_mark_tl
+          {
+            \group_begin:
+            \int_incr:N \c@postnote
+            \exp_args:NNNx
+              \group_end:
+              \tl_set:Nn \l_@@_mark_tl { \thepostnote }
+          }
+        \@@_typeset_mark_wrapper:n
+          { \@@_make_mark:n { \l_@@_mark_tl } }
+      }
+    \bool_if:NTF \l_@@_inhibit_note_bool
+      { \prg_return_true:  }
+      { \prg_return_false: }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}
+%   {
+%     \@@_typeset_mark:nn ,
+%     \@@_typeset_mark_wrapper:n ,
+%   }
+%   Auxiliary functions for mark typesetting in \cs{@@_note:nn}.
+%   \cs{@@_typeset_mark_wrapper:n} is based on the definition of
+%   \cs{@footnotemark} in the kernel.
+%   \begin{syntax}
+%     \cs{@@_typeset_mark:nn} \Arg{note id} \Arg{mark}
+%     \cs{@@_typeset_mark_wrapper:n} \Arg{mark}
+%   \end{syntax}
+%    \begin{macrocode}
 \cs_new_protected:Npn \@@_typeset_mark:nn #1#2
   {
     \@@_typeset_mark_wrapper:n
@@ -684,17 +891,14 @@
         \bool_if:NTF \l_@@_hyperlink_bool
           {
             \@@_hyperref_set_anchor:n { postnote. #1 .mark }
-            \hyperlink { postnote. #1 .text } { \@@_make_mark:n {#2} }
+            \hyperlink { postnote. #1 .text }
+              { \@@_make_mark:n {#2} }
           }
           { \@@_make_mark:n {#2} }
       }
   }
 \cs_generate_variant:Nn \@@_typeset_mark:nn { xV }
-
-
-% From the definition of \cs{@footnotemark} in the kernel.
 \tl_new:N \l_@@_saved_spacefactor_tl
-% <mark>
 \cs_new_protected:Npn \@@_typeset_mark_wrapper:n #1
   {
     \mode_leave_vertical:
@@ -708,8 +912,14 @@
       { \spacefactor \l_@@_saved_spacefactor_tl }
     \scan_stop:
   }
-
-
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}{\@@_set_user_labels:}
+%   Auxiliary function for user label setting in \cs{@@_note:nn}.  Supports
+%   the \opt{label} and \opt{zlabel} options of \cs{postnote}.
+%    \begin{macrocode}
 \cs_new_protected:Npn \@@_set_user_labels:
   {
     \tl_if_empty:NF \l_@@_note_label_tl
@@ -717,11 +927,29 @@
    \tl_if_empty:NF \l_@@_note_zlabel_tl
       { \exp_args:NV \zlabel \l_@@_note_zlabel_tl }
   }
-
-
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \section{\cs{postnoteref}}
+%
+% \begin{macro}[int]{\postnoteref}
+%   Provide \cs{postnoteref}.
+%   \begin{syntax}
+%     \cs{postnoteref}\meta{*}\marg{label}
+%   \end{syntax}
+%    \begin{macrocode}
 \NewDocumentCommand \postnoteref { s m }
   { \@@_note_ref:nn {#1} {#2} }
-
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_note_ref:nn}
+%   The internal version of \cs{postnoteref}.
+%   \begin{syntax}
+%     \cs{@@_note_ref:nn} \Arg{star bool} \Arg{label}
+%   \end{syntax}
+%    \begin{macrocode}
 \cs_new_protected:Npn \@@_note_ref:nn #1#2
   {
     \group_begin:
@@ -736,44 +964,105 @@
     \group_end:
   }
 %    \end{macrocode}
+% \end{macro}
 %
 %
 % \section{\cs{postnotesection}}
 %
+% \begin{macro}[int]{\postnotesection}
+%   Provide \cs{postnotesection}.
+%   \begin{syntax}
+%     \cs{postnotesection}\oarg{options}\marg{section content}
+%   \end{syntax}
 %    \begin{macrocode}
-\int_new:N \g_@@_sectid_int
-
 \NewDocumentCommand \postnotesection { O { } +m }
   { \@@_section:nn {#1} {#2} }
-
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_section:nn}
+%   The internal version of \cs{postnotesection}.
+%   \begin{syntax}
+%     \cs{@@_section:nn} \Arg{options} \Arg{content}
+%   \end{syntax}
+%    \begin{macrocode}
+\int_new:N \g_@@_sectid_int
 \cs_new_protected:Npn \@@_section:nn #1#2
   {
     \group_begin:
-    \int_gincr:N \g_@@_note_id_int
     \int_gincr:N \g_@@_sectid_int
+    \int_gincr:N \g_@@_note_id_int
     \seq_gput_right:Nx \g_@@_queue_seq { \l_@@_note_id_tl }
-    \tl_gclear:N \g_@@_section_label_tl
+    \tl_gclear:N \g_@@_section_name_tl
     \keys_set:nn { postnotes/section } {#1}
     \@@_store_section:nn { \l_@@_note_id_tl } {#2}
     \group_end:
   }
-
-\tl_new:N \g_@@_section_label_tl
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% Options for \cs{postnotesection}.  Actually, I would have preferred to use
+% ``label'' for the \opt{name} option, but I feared I might need it further
+% down the road for the traditional meaning.
+%
+%    \begin{macrocode}
+\tl_new:N \g_@@_section_name_tl
 \keys_define:nn { postnotes/section }
   {
-    label .tl_gset:N = \g_@@_section_label_tl ,
-    label .value_required:n = true ,
+    name .tl_gset:N = \g_@@_section_name_tl ,
+    name .value_required:n = true ,
   }
-
 %    \end{macrocode}
 %
 %
 % \section{\cs{printpostnotes}}
 %
+% \begin{macro}[int]{\printpostnotes}
+%   Provide \cs{printpostnotes}.
+%   \begin{syntax}
+%     \cs{printpostnotes}\oarg{options}
+%   \end{syntax}
 %    \begin{macrocode}
 \NewDocumentCommand \printpostnotes { O { } }
   { \@@_print_notes:n {#1} }
-
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}[int]
+%   {
+%     \pnthechapter ,
+%     \pnthesection ,
+%     \pnthechapternextnote ,
+%     \pnthesectionnextnote ,
+%     \pnthepage ,
+%   }
+%   User facing variables, aimed at making available some of the notes' and
+%   sections' metadata for the user at specific contexts.
+%    \begin{macrocode}
+\tl_new:N \pnthechapter
+\tl_new:N \pnthesection
+\tl_new:N \pnthechapternextnote
+\tl_new:N \pnthesectionnextnote
+\tl_new:N \pnthepage
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}
+%   {
+%     \g_@@_print_postnotes_int ,
+%     \l_@@_print_note_id_tl ,
+%     \l_@@_print_note_id_next_tl ,
+%     \l_@@_print_mark_tl ,
+%     \l_@@_print_type_curr_tl ,
+%     \l_@@_print_type_next_tl ,
+%     \l_@@_print_type_prev_tl ,
+%     \l_@@_print_content_tl ,
+%     \l_@@_clear_queue_seq ,
+%   }
+%   Auxiliary variables for \cs{@@_print_notes:n}.
+%    \begin{macrocode}
 \int_new:N \g_@@_print_postnotes_int
 \tl_new:N \l_@@_print_note_id_tl
 \tl_new:N \l_@@_print_note_id_next_tl
@@ -783,20 +1072,49 @@
 \tl_new:N \l_@@_print_type_prev_tl
 \tl_new:N \l_@@_print_content_tl
 \seq_new:N \l_@@_clear_queue_seq
-\tl_new:N \pnthechapter
-\tl_new:N \pnthesection
-\tl_new:N \pnthepage
-\tl_new:N \pnthechapternextnote
-\tl_new:N \pnthesectionnextnote
-
-\AddToHook { shipout/before } [ postnotes/header ]
-  { \@@_set_headers_vars_next: }
-
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \cs{@@_print_notes:n} hooks.  Both meant at providing points of entry for
+% additional setup, specially to add support to packages and features which
+% require it.  The \texttt{postnotes/print} hook is run early in
+% \cs{@@_print_notes:n} and only once per call, after the user options have
+% been processed.  The \texttt{postnotes/print/notevars} hook is run once for
+% each note, at the point where environment variables are being set or
+% restored, before the typesetting of either the mark or the text, but within
+% a group of its own of each note.
+%
+%    \begin{macrocode}
 \NewHook { postnotes/print }
 \NewHook { postnotes/print/notevars }
-
+%    \end{macrocode}
+%
+%
+% The \texttt{postnotesection} is a counter which is stepped for every
+% postnote section which gets to be actually typeset.  It's aim is to provide
+% a valid ``enclosing counter'' to \texttt{postnote} in the context of
+% \cs{printpostnotes}.  Since we don't know where \texttt{postnote} may have
+% been reset along the document, in the general case, we can't rely on any
+% other preexisting counter.  This means that the particular value of
+% \texttt{postnotesection} is of little practical meaning, it really is just
+% meant to provide recognizable ``bounds'' for \texttt{postnote} along the
+% printing of the notes.  It is a \LaTeXe{} counter, since it may be required
+% externally.  It's main intended use case is to provide a counter with which
+% we can \pkg{zref-clever}'s option \opt{counterresetby} for
+% \texttt{postnote}, but in principle it can be of general use.
+%
+%    \begin{macrocode}
 \newcounter { postnotesection }
-
+%    \end{macrocode}
+%
+%
+% \begin{macro}{\@@_print_notes:n}
+%   The internal version of \cs{printpostnotes}.
+%   \begin{syntax}
+%     \cs{@@_print_notes:n} \Arg{options}
+%   \end{syntax}
+%    \begin{macrocode}
 \cs_new_protected:Npn \@@_print_notes:n #1
   {
     \group_begin:
@@ -804,12 +1122,12 @@
     \keys_set:nn { postnotes/print } {#1}
     \UseHook { postnotes/print }
     \tl_set:Nn \l_@@_print_type_prev_tl { open }
-    \tl_gclear:N \g_@@_section_label_tl
+    \tl_gclear:N \g_@@_section_name_tl
     \seq_if_empty:NTF \g_@@_queue_seq
       { \msg_warning:nn { postnotes } { empty-printpostnotes } }
       {
         \pnheading
-        \bool_gset_true:N \g_@@_header_vars_next_enabled_bool
+        \bool_gset_true:N \g_@@_header_vars_next_bool
         \@@_verify_multipass:N \g_@@_queue_seq
         \bool_if:NT \l_@@_sort_bool
           { \@@_sort_queue:N \g_@@_queue_seq }
@@ -817,8 +1135,10 @@
         \@@_set_headers_vars_first:
         \bool_until_do:nn { \seq_if_empty_p:N \g_@@_queue_seq }
           {
-            \seq_gpop_left:NN \g_@@_queue_seq \l_@@_print_note_id_tl
-            \seq_push:NV \l_@@_clear_queue_seq \l_@@_print_note_id_tl
+            \seq_gpop_left:NN \g_@@_queue_seq
+              \l_@@_print_note_id_tl
+            \seq_push:NV \l_@@_clear_queue_seq
+              \l_@@_print_note_id_tl
             \@@_prop_get:nnN { \l_@@_print_note_id_tl }
               { type } \l_@@_print_type_curr_tl
             \seq_if_empty:NTF \g_@@_queue_seq
@@ -827,51 +1147,61 @@
                 \tl_set:Nn \l_@@_print_type_next_tl { close }
               }
               {
-                \seq_get_left:NN \g_@@_queue_seq \l_@@_print_note_id_next_tl
-                \@@_prop_get:nnN { \l_@@_print_note_id_next_tl }
+                \seq_get_left:NN \g_@@_queue_seq
+                  \l_@@_print_note_id_next_tl
+                \@@_prop_get:nnN
+                  { \l_@@_print_note_id_next_tl }
                   { type } \l_@@_print_type_next_tl
               }
-            % Ensure the first note after a heading has paragraph indentation.
-            % 'endnotes' uses a workaroundish solution in '\enoteheading'
-            % setting a box and then skipping back a line.  @egreg is correct
-            % though, in criticizing it at
-            % https://tex.stackexchange.com/q/575905#comment1450213_575915,
-            % and suggests the use of '\@afterindenttrue', which is the same
-            % thing that 'indentfirst' uses (we just do it locally), thanks
-            % Enrico Gregorio.
+%    \end{macrocode}
+% Ensure the first note after a heading has paragraph indentation when
+% \opt{listenv} is \texttt{none}.  \pkg{endnotes} uses a workaroundish
+% solution in \cs{enoteheading}, setting a box and then skipping back a line.
+% Enrico Gregorio is correct, though, in criticizing it at
+% \url{https://tex.stackexchange.com/q/575905#comment1450213_575915}, and
+% suggests the use of \cs{@afterindenttrue}, which is what \pkg{indentfirst}
+% does (we do the same, just locally).
+%    \begin{macrocode}
             \bool_if:NF \l_@@_print_as_list_bool
               {
                 \cs_set_eq:NN \@afterindentfalse \@afterindenttrue
                 \@afterindenttrue
               }
             \tl_if_eq:NnTF \l_@@_print_type_curr_tl { section }
-              {
-                % type_curr = 'section'
-                % We only process the entry if type_next is 'note': here are
-                % skipped empty sections.
+              { % type_curr = `section'
+%    \end{macrocode}
+% We only process the entry if \texttt{type_next} is \texttt{note}: here are
+% skipped empty sections.
+%    \begin{macrocode}
                 \tl_if_eq:NnT \l_@@_print_type_next_tl { note }
                   {
                     \stepcounter { postnotesection }
                     \group_begin:
-                    \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+                    \@@_prop_get:nnN
+                      { \l_@@_print_note_id_tl }
                       { thechapter } \pnthechapter
-                    \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+                    \@@_prop_get:nnN
+                      { \l_@@_print_note_id_tl }
                       { thesection } \pnthesection
-                    \@@_prop_get:nnN { \l_@@_print_note_id_next_tl }
+                    \@@_prop_get:nnN
+                      { \l_@@_print_note_id_next_tl }
                       { thechapter } \pnthechapternextnote
-                    \@@_prop_get:nnN { \l_@@_print_note_id_next_tl }
+                    \@@_prop_get:nnN
+                      { \l_@@_print_note_id_next_tl }
                       { thesection } \pnthesectionnextnote
-                    \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+                    \@@_prop_get:nnN
+                      { \l_@@_print_note_id_tl }
                       { content } \l_@@_print_content_tl
                     \l_@@_print_content_tl
                     \group_end:
-                    % Set type_prev for the next iteration.
+%    \end{macrocode}
+% Set \texttt{type_prev} for the next iteration.
+%    \begin{macrocode}
                     \tl_set:NV \l_@@_print_type_prev_tl
                       \l_@@_print_type_curr_tl
                   }
               }
-              {
-                % type_curr = 'note'
+              { % type_curr = `note'
                 \tl_if_eq:NnF \l_@@_print_type_prev_tl { note }
                   {
                     \bool_if:NT \l_@@_print_as_list_bool
@@ -882,9 +1212,11 @@
                 \UseHook { postnotes/print/notevars }
                 \@@_get_pageref:Nx \pnthepage
                   { mark@ \l_@@_print_note_id_tl }
-                \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+                \@@_prop_get:nnN
+                  { \l_@@_print_note_id_tl }
                   { mark } \l_@@_print_mark_tl
-                \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+                \@@_prop_get:nnN
+                  { \l_@@_print_note_id_tl }
                   { content } \l_@@_print_content_tl
                 \cs_set:Npn \@currentcounter { postnote }
                 \cs_set:Npx \@currentlabel
@@ -893,7 +1225,8 @@
                   { postnote. \l_@@_print_note_id_tl .text }
                 \@@_text_mark_wrapper:n
                   {
-                    \@@_set_text_page_label:x { \l_@@_print_note_id_tl }
+                    \@@_set_text_page_label:x
+                      { \l_@@_print_note_id_tl }
                     \@@_typeset_text_mark:eV
                       { \l_@@_print_note_id_tl }
                       \l_@@_print_mark_tl
@@ -906,64 +1239,97 @@
                       { \exp_args:Nx \end { \l_@@_print_env_tl } }
                   }
                   { \par }
-                % Set type_prev for the next iteration.
+%    \end{macrocode}
+% Set \texttt{type_prev} for the next iteration.
+%    \begin{macrocode}
                 \tl_set:NV \l_@@_print_type_prev_tl
                   \l_@@_print_type_curr_tl
               }
           }
         \AddToHookNext { shipout/after }
-          { \bool_gset_false:N \g_@@_header_vars_next_enabled_bool }
-        % We won't use the variables anymore, clear it to reduce memory usage.
+          { \bool_gset_false:N \g_@@_header_vars_next_bool }
+%    \end{macrocode}
+% We won't use the variables anymore, clear them to reduce memory usage.
+%    \begin{macrocode}
         \seq_map_inline:Nn \l_@@_clear_queue_seq
           { \@@_prop_gclear:n { #1 } }
       }
     \group_end:
   }
-
-\cs_new:Npn \@@_text_mark_wrapper:n #1
-  {
-    \bool_if:NTF \l_@@_print_as_list_bool
-      { \item [ #1 ] }
-      { #1 }
-  }
-
-\cs_new:Npn \@@_typeset_text_mark:nn #1#2
+%    \end{macrocode}
+% \end{macro}
+%
+%    \begin{macrocode}
+\msg_new:nnn { postnotes } { empty-printpostnotes }
+  { Empty~'\iow_char:N\\printpostnotes'~\msg_line_context:. }
+%    \end{macrocode}
+%
+%
+% \begin{macro}
+%   {
+%     \@@_typeset_text_mark:nn ,
+%     \@@_text_mark_wrapper:n ,
+%   }
+%   Auxiliary functions for mark typesetting in \cs{@@_print_notes:n}.
+%   \begin{syntax}
+%     \cs{@@_typeset_text_mark:nn} \Arg{note id} \Arg{mark}
+%     \cs{@@_text_mark_wrapper:n} \Arg{mark}
+%   \end{syntax}
+%    \begin{macrocode}
+\cs_new_protected:Npn \@@_typeset_text_mark:nn #1#2
   {
     \bool_if:NTF \l_@@_hyperlink_bool
       {
         \@@_hyperref_set_anchor:n { postnote. #1 .text }
         \bool_if:NTF \l_@@_backref_bool
-          { \hyperlink { postnote. #1 .mark } { \@@_make_text_mark:n {#2} } }
+          {
+            \hyperlink { postnote. #1 .mark }
+              { \@@_make_text_mark:n {#2} }
+          }
           { \@@_make_text_mark:n {#2} }
       }
       { \@@_make_text_mark:n {#2} }
   }
 \cs_generate_variant:Nn \@@_typeset_text_mark:nn { eV }
-
-
-\msg_new:nnn { postnotes } { empty-printpostnotes }
-  { Empty~'\iow_char:N\\printpostnotes'~\msg_line_context:. }
-
-
-% This is a general procedure for handling cases of multiple passes of
-% content.  Ideally, the job should be done at \cs{@@_inhibit_note:F} if at
-% all possible.  But, failing that, we can rely on the fact that
-% \cs{postnote}s of measuring/trial passes don't end up being output and hence
-% don't generate labels in the \texttt{.aux} file.  This is the equivalent for
-% \pkg{postnotes} to the effect of write restrictions for the packages based
-% on external files.  However, and despite this being a general test, and a
-% reasonable one, I'd like to restrain it's use to the minimum possible.
-% First, doing so across the board would result in large swings and numerous
-% spurious warnings in an initial compilation since the labels are not
-% available on the first run.  Second, I'd prefer not to interfere with the
-% queue, unless we really need to.  For signaling the ``eligibility'' for this
-% check, the note must have been stored with the \cs{l_@@_maybe_multi_bool}
-% boolean set to \texttt{true}, which is then saved in the \texttt{multibool}
-% property.  One implication of this procedure is that, if there are any new
-% notes marked as multibool, (at least) three rounds of compilation will be
-% needed, since the labels of the printed notes will be written only on the
-% second run and will thus require a third one to stabilize.
-\cs_new_protected:Npn \@@_verify_multipass:N #1 % \g_@@_queue_seq
+\cs_new_protected:Npn \@@_text_mark_wrapper:n #1
+  {
+    \bool_if:NTF \l_@@_print_as_list_bool
+      { \item [ #1 ] }
+      { #1 }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \subsection*{Print auxiliary}
+%
+% \cs{@@_verify_multipass:N} provides a general procedure for handling cases
+% of multiple passes of content.  Ideally, the job should be done at
+% \cs{@@_inhibit_note:F}, if at all possible.  But, failing that, we can rely
+% on the fact that \cs{postnote}s of measuring/trial passes don't end up being
+% output and hence don't generate labels in the \file{.aux} file.  This is the
+% equivalent for \pkg{postnotes} to the effect of write restrictions for the
+% packages based on external files, which is how they actually handle these
+% cases.  However, despite this being a general test, and a reasonable one,
+% I'd like to restrain it's use to the minimum possible.  First, using this
+% criterion across the board would result in large swings on the content of
+% \cs{printpostnotes} and spurious warnings in an initial compilation since
+% the labels are not available on the first run.  Second, I'd prefer not to
+% interfere with the queue, unless we really need to.  Hence, we only apply
+% this check for ``eligible'' items.  For signaling this eligibility, the note
+% must have been stored with the \cs{l_@@_maybe_multi_bool} set to
+% \texttt{true}, which is then saved in the \texttt{multibool} property.  One
+% implication of this procedure is that, if there are any new notes marked as
+% \texttt{multibool}, (at least) three rounds of compilation will be needed,
+% since the labels of the printed notes will be written only on the second run
+% and the document will thus require a third one to stabilize.
+%
+% \begin{macro}{\@@_verify_multipass:N}
+%   \begin{syntax}
+%     \cs{@@_verify_multipass:N} \meta{\cs{g_@@_queue_seq}}
+%   \end{syntax}
+%    \begin{macrocode}
+\cs_new_protected:Npn \@@_verify_multipass:N #1
   {
     \group_begin:
     \seq_clear:N \l_tmpa_seq
@@ -972,24 +1338,27 @@
         \@@_prop_get:nnN {##1} { multibool } \l_tmpa_tl
         \tl_if_eq:NnTF \l_tmpa_tl { true }
           {
-            \cs_if_exist:cT
+            \cs_if_exist:cTF
               { \c_@@_ref_prefix_tl @ mark@ ##1 }
               { \seq_put_right:Nn \l_tmpa_seq {##1} }
+              { \seq_push:Nn \l_@@_clear_queue_seq {##1} }
           }
           { \seq_put_right:Nn \l_tmpa_seq {##1} }
       }
     \seq_gset_eq:NN #1 \l_tmpa_seq
     \group_end:
   }
-
-
 %    \end{macrocode}
+% \end{macro}
 %
 %
-% \section{Sorting}
-%
+% \begin{macro}{\@@_sort_queue:N}
+%   Sorting function for \cs{@@_print_notes:n}.
+%   \begin{syntax}
+%     \cs{@@_sort_queue:N} \meta{\cs{g_@@_queue_seq}}
+%   \end{syntax}
 %    \begin{macrocode}
-\cs_new_protected:Npn \@@_sort_queue:N #1 % \g_@@_queue_seq
+\cs_new_protected:Npn \@@_sort_queue:N #1
   {
     \group_begin:
     \seq_gsort:Nn #1
@@ -1017,10 +1386,73 @@
     \group_end:
   }
 %    \end{macrocode}
+% \end{macro}
 %
 %
 % \section{Headers}
 %
+% The headers infrastructure of \pkg{postnotes} is comprised of three basic
+% parts:
+%
+% \begin{enumerate}
+% \item For each \cs{postnote}, labels are set storing the \texttt{page} where
+%   the note occurs.  Each note actually generates a pair of such labels, once
+%   when \cs{postnote} is called (with the mark), and another where the note
+%   is printed (in \cs{printpostnotes}).  The former ones store \cs{thepage},
+%   since we want the printed representation of it for typesetting purposes,
+%   the latter ones store the value of the \texttt{page} counter, since we
+%   don't need to typeset it, but do need to perform algebraic operations with
+%   it.  These labels are set by \cs{@@_set_mark_page_label:n},
+%   \cs{@@_set_text_page_label:n}, and \cs{@@_set_print_page_label:n} at the
+%   appropriate places.  The set of these labels provides a mapping from each
+%   note's ``mark'' and ``text'' to the page where it occurs.
+% \item This information set is processed by \cs{@@_get_headers_data:N} at the
+%   beginning of \cs{@@_print_notes:n} to identify the first and last note of
+%   each page in \cs{printpostnotes}, and to generate a mapping from these
+%   first and last notes on each page to the pages where their corresponding
+%   marks occur.  We also take the opportunity to enrich this mapping with
+%   other metadata of each note.  So we get also mappings from the first and
+%   last note on each page to \cs{thechapter}, \cs{thesection}, and the
+%   \opt{name} of the section in which they occur.  These mappings are stored
+%   in property lists \cs[no-index]{g_@@_header_\meta{info}_first_prop} and
+%   \cs[no-index]{g_@@_header_\meta{info}_last_prop} where the \texttt{key} is
+%   the page in \cs{printpostnotes} where their note's content is typeset (or
+%   rather where it starts to be typeset, it is the page where the text's mark
+%   is printed).
+% \item Based on these mappings, along the span of notes section we run
+%   \cs{@@_set_headers_vars_next:} at each \texttt{shipout/before} hook to set
+%   user facing variables for the \emph{next} page, which will be available
+%   when their heading gets typeset.  Given that at \texttt{shipout} we can
+%   rely on a correct value of the \texttt{page} counter, we use it as
+%   \texttt{key} to query the property lists generated in the previous step.
+%   These user facing variables are called \cs[no-index]{pnhd\meta{info}first}
+%   and \cs[no-index]{pnhd\meta{info}last}.  Since we cannot rely on the
+%   shipout hook for the first page of \cs{printpostnotes},
+%   \cs{@@_set_headers_vars_first:} is run at its beginning to ensure correct
+%   values are in place on the first page of the notes section.
+% \end{enumerate}
+%
+% These \cs[no-index]{pnhd\meta{info}first} and
+% \cs[no-index]{pnhd\meta{info}last} variables can then be used to build
+% simple functions which can be passed to mark commands to achieve rich
+% contextual running headers.
+%
+%
+% \begin{macro}[int]
+%   {
+%     \pnhdpagefirst ,
+%     \pnhdpagelast ,
+%     \pnhdchapfirst ,
+%     \pnhdchaplast ,
+%     \pnhdsectfirst ,
+%     \pnhdsectlast ,
+%     \pnhdnamefirst ,
+%     \pnhdnamelast ,
+%   }
+%   User facing variables, aimed at making available header data for the user.
+%   Setting these variables with correct values at the moment the header gets
+%   typeset is \emph{the} objective of the whole headers infrastructure of the
+%   package.
 %    \begin{macrocode}
 \tl_new:N \pnhdpagefirst
 \tl_new:N \pnhdpagelast
@@ -1028,27 +1460,64 @@
 \tl_new:N \pnhdchaplast
 \tl_new:N \pnhdsectfirst
 \tl_new:N \pnhdsectlast
-\tl_new:N \pnhdlabelfirst
-\tl_new:N \pnhdlabellast
+\tl_new:N \pnhdnamefirst
+\tl_new:N \pnhdnamelast
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}
+%   {
+%     \g_@@_header_page_first_prop ,
+%     \g_@@_header_page_last_prop ,
+%     \g_@@_header_chap_first_prop ,
+%     \g_@@_header_chap_last_prop ,
+%     \g_@@_header_sect_first_prop ,
+%     \g_@@_header_sect_last_prop ,
+%     \g_@@_header_name_first_prop ,
+%     \g_@@_header_name_last_prop ,
+%     \g_@@_header_prev_last_page_tl ,
+%     \g_@@_header_prev_last_chap_tl ,
+%     \g_@@_header_prev_last_sect_tl ,
+%     \g_@@_header_prev_last_name_tl ,
+%     \l_@@_prev_text_page_tl ,
+%     \l_@@_curr_text_page_tl ,
+%     \l_@@_prev_mark_page_tl ,
+%     \l_@@_prev_mark_chap_tl ,
+%     \l_@@_prev_mark_sect_tl ,
+%     \l_@@_prev_mark_name_tl ,
+%   }
+%   Auxiliary variables for the headers infrastructure.
+%    \begin{macrocode}
 \prop_new:N \g_@@_header_page_first_prop
 \prop_new:N \g_@@_header_page_last_prop
 \prop_new:N \g_@@_header_chap_first_prop
 \prop_new:N \g_@@_header_chap_last_prop
 \prop_new:N \g_@@_header_sect_first_prop
 \prop_new:N \g_@@_header_sect_last_prop
-\prop_new:N \g_@@_header_label_first_prop
-\prop_new:N \g_@@_header_label_last_prop
+\prop_new:N \g_@@_header_name_first_prop
+\prop_new:N \g_@@_header_name_last_prop
 \tl_new:N \g_@@_header_prev_last_page_tl
 \tl_new:N \g_@@_header_prev_last_chap_tl
 \tl_new:N \g_@@_header_prev_last_sect_tl
-\tl_new:N \g_@@_header_prev_last_label_tl
+\tl_new:N \g_@@_header_prev_last_name_tl
 \tl_new:N \l_@@_prev_text_page_tl
 \tl_new:N \l_@@_curr_text_page_tl
 \tl_new:N \l_@@_prev_mark_page_tl
 \tl_new:N \l_@@_prev_mark_chap_tl
 \tl_new:N \l_@@_prev_mark_sect_tl
-\tl_new:N \l_@@_prev_mark_label_tl
-\cs_new_protected:Npn \@@_get_headers_data:N #1 % \g_@@_queue_seq
+\tl_new:N \l_@@_prev_mark_name_tl
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}{\@@_get_headers_data:N}
+%   Process header data for \cs{@@_set_headers_vars:n}.
+%   \begin{syntax}
+%     \cs{@@_get_headers_data:N} \meta{\cs{g_@@_queue_seq}}
+%   \end{syntax}
+%    \begin{macrocode}
+\cs_new_protected:Npn \@@_get_headers_data:N #1
   {
     \group_begin:
     \tl_gclear:N \pnhdpagefirst
@@ -1057,57 +1526,61 @@
     \tl_gclear:N \pnhdchaplast
     \tl_gclear:N \pnhdsectfirst
     \tl_gclear:N \pnhdsectlast
-    \tl_gclear:N \pnhdlabelfirst
-    \tl_gclear:N \pnhdlabellast
+    \tl_gclear:N \pnhdnamefirst
+    \tl_gclear:N \pnhdnamelast
     \prop_gclear:N \g_@@_header_page_first_prop
     \prop_gclear:N \g_@@_header_page_last_prop
     \prop_gclear:N \g_@@_header_chap_first_prop
     \prop_gclear:N \g_@@_header_chap_last_prop
     \prop_gclear:N \g_@@_header_sect_first_prop
     \prop_gclear:N \g_@@_header_sect_last_prop
-    \prop_gclear:N \g_@@_header_label_first_prop
-    \prop_gclear:N \g_@@_header_label_last_prop
+    \prop_gclear:N \g_@@_header_name_first_prop
+    \prop_gclear:N \g_@@_header_name_last_prop
     \tl_gclear:N \g_@@_header_prev_last_page_tl
     \tl_gclear:N \g_@@_header_prev_last_chap_tl
     \tl_gclear:N \g_@@_header_prev_last_sect_tl
-    \tl_gclear:N \g_@@_header_prev_last_label_tl
+    \tl_gclear:N \g_@@_header_prev_last_name_tl
     \tl_clear:N \l_@@_prev_text_page_tl
     \tl_clear:N \l_@@_curr_text_page_tl
     \tl_clear:N \l_@@_prev_mark_page_tl
     \tl_clear:N \l_@@_prev_mark_chap_tl
     \tl_clear:N \l_@@_prev_mark_sect_tl
-    \tl_clear:N \l_@@_prev_mark_label_tl
+    \tl_clear:N \l_@@_prev_mark_name_tl
     \seq_map_inline:Nn #1
       {
         \exp_args:Nx \tl_if_eq:nnT
           { \@@_prop_item:nn {##1} { type } }
           { note }
           {
-            \@@_get_pageref:Nn \l_@@_curr_text_page_tl { text@ ##1 }
+            \@@_get_pageref:Nn
+              \l_@@_curr_text_page_tl { text@ ##1 }
             \tl_if_empty:NF \l_@@_curr_text_page_tl
               {
                 \tl_if_eq:NNTF
                   \l_@@_prev_text_page_tl
                   \l_@@_curr_text_page_tl
                   {
-                    % we are in the same page as the previous note, just store
-                    % the 'prev_mark' data.
+%    \end{macrocode}
+% We are on the same page as the previous note, just store the
+% \texttt{prev_mark} data.
+%    \begin{macrocode}
                     \@@_get_pageref:Nn
                       \l_@@_prev_mark_page_tl { mark@ ##1 }
                     \@@_prop_get:nnN {##1} { thechapter }
                       \l_@@_prev_mark_chap_tl
                     \@@_prop_get:nnN {##1} { thesection }
                       \l_@@_prev_mark_sect_tl
-                    \@@_prop_get:nnN {##1} { pnsectlabel }
-                      \l_@@_prev_mark_label_tl
+                    \@@_prop_get:nnN {##1} { pnsectname }
+                      \l_@@_prev_mark_name_tl
                   }
                   {
-                    % We are in the transition of pages (or in the very first
-                    % note, given \l_@@_prev_text_page_tl is initialized to
-                    % empty).
-
-                    % Set 'first' values for current page, based on the
-                    % current note id.
+%    \end{macrocode}
+% We are on the transition between two pages, current ID is the first note of
+% the new page (or on the very first note of \cs{printpostnotes}, given
+% \cs{l_@@_prev_text_page_tl} is initialized to empty).
+%
+% Set `first' values for current page, based on the current note ID.
+%    \begin{macrocode}
                     \prop_gput:Nxx \g_@@_header_page_first_prop
                       { \l_@@_curr_text_page_tl }
                       { \@@_extract_pageref:n { mark@ ##1 } }
@@ -1117,15 +1590,17 @@
                     \prop_gput:Nxx \g_@@_header_sect_first_prop
                       { \l_@@_curr_text_page_tl }
                       { \@@_prop_item:nn {##1} { thesection } }
-                    \prop_gput:Nxx \g_@@_header_label_first_prop
+                    \prop_gput:Nxx \g_@@_header_name_first_prop
                       { \l_@@_curr_text_page_tl }
-                      { \@@_prop_item:nn {##1} { pnsectlabel } }
-
-                    % Set 'last' values for previous page, based on the stored
-                    % above (on the T branch).  There is no previous page to
-                    % the first one of \printpostnotes (so we don't set 'last'
-                    % values for it, conditioning on \l_@@_prev_text_page_tl
-                    % being empty, which only occurs on the first note).
+                      { \@@_prop_item:nn {##1} { pnsectname } }
+%    \end{macrocode}
+%
+% Set `last' values for previous page, based on the last valid
+% \texttt{prev_mark} ones stored above (on the \texttt{T} branch).  There is
+% no previous page to the first one of \cs{printpostnotes} (so we don't set
+% `last' values for it, conditioning on \cs{l_@@_prev_text_page_tl} being
+% empty, which only occurs on the first note).
+%    \begin{macrocode}
                     \tl_if_empty:NF \l_@@_prev_text_page_tl
                       {
                         \prop_gput:Nxx \g_@@_header_page_last_prop
@@ -1137,25 +1612,28 @@
                         \prop_gput:Nxx \g_@@_header_sect_last_prop
                           { \l_@@_prev_text_page_tl }
                           { \l_@@_prev_mark_sect_tl }
-                        \prop_gput:Nxx \g_@@_header_label_last_prop
+                        \prop_gput:Nxx \g_@@_header_name_last_prop
                           { \l_@@_prev_text_page_tl }
-                          { \l_@@_prev_mark_label_tl }
+                          { \l_@@_prev_mark_name_tl }
                       }
-
-                    % Set \l_@@_prev_text_page_tl for the next iteration
-                    % (\l_@@_curr_text_page_tl is never empty at this point,
-                    % since we conditioned to it).
+%    \end{macrocode}
+%
+% Set \cs{l_@@_prev_text_page_tl} for the next iteration
+% (\cs{l_@@_curr_text_page_tl} is never empty at this point, since we
+% conditioned to it).
+%    \begin{macrocode}
                     \tl_set:NV \l_@@_prev_text_page_tl
                       \l_@@_curr_text_page_tl
                   }
               }
           }
       }
-
-    % We can't catch the transition from the last page of \printpostnotes to
-    % the following one through the mapping above, but the 'prev_mark' values
-    % of the last note in the loop are the ones we want, so we set 'last'
-    % values for the last page based on them.
+%    \end{macrocode}
+% We can't catch the transition from the last page of \cs{printpostnotes} to
+% the following one through the mapping above, but the \texttt{prev_mark}
+% values of the last note in the loop are the ones we want, so we set `last'
+% values for the last page based on them.
+%    \begin{macrocode}
     \tl_if_empty:NF \l_@@_prev_text_page_tl
       {
         \prop_gput:Nxx \g_@@_header_page_last_prop
@@ -1167,23 +1645,35 @@
         \prop_gput:Nxx \g_@@_header_sect_last_prop
           { \l_@@_prev_text_page_tl }
           { \l_@@_prev_mark_sect_tl }
-        \prop_gput:Nxx \g_@@_header_label_last_prop
+        \prop_gput:Nxx \g_@@_header_name_last_prop
           { \l_@@_prev_text_page_tl }
-          { \l_@@_prev_mark_label_tl }
+          { \l_@@_prev_mark_name_tl }
       }
     \group_end:
   }
-
+%    \end{macrocode}
+% \end{macro}
+%
+%
 % The sequence of pages processed in \cs{@@_get_headers_data:N} is not ensured
-% to be continuous, since not every page of \cs{printpostnotes} starts a
-% note.  There may be notes that fill whole pages, or the last page of the
-% notes may end with a note that started on the penultimate page.  We must
-% handle this case at this point.  For every page for which there is
+% to be continuous, since not every page of \cs{printpostnotes} starts a note.
+% There may be notes that fill whole pages, or the last page of the notes may
+% end with a note that started on the penultimate page.  We must handle this
+% case at \cs{@@_set_headers_vars:n}.  For every page for which there is
 % information provided by \cs{@@_get_headers_data:N} we store a
-% 'header_prev_last' (the last value of the previous header) for each of the
-% variables of interest.  If the next page is skipped in the sequence (no
-% notes starting on it), we can use these stored values to set both 'first'
-% and 'last' variables based on them for that page.
+% \texttt{header_prev_last} (the last value of the previous header) for each
+% of the variables of interest.  If the next page is skipped in the sequence
+% (no notes starting on it), we can use these stored values to set both
+% `first' and `last' variables based on them for that page.
+%
+%
+% \begin{macro}{\@@_set_headers_vars:n}
+%   Set user facing variables based on data generated by
+%   \cs{@@_get_headers_data:N}.
+%   \begin{syntax}
+%     \cs{@@_set_headers_vars:n} \Arg{page number}
+%   \end{syntax}
+%    \begin{macrocode}
 \cs_new_protected:Npn \@@_set_headers_vars:n #1
   {
     \group_begin:
@@ -1220,67 +1710,114 @@
         \tl_gset:NV \g_@@_header_prev_last_sect_tl \l_tmpa_tl
       }
       { \tl_gset:NV \pnhdsectlast \g_@@_header_prev_last_sect_tl }
-    \prop_get:NnNTF \g_@@_header_label_first_prop
+    \prop_get:NnNTF \g_@@_header_name_first_prop
       {#1} \l_tmpa_tl
-      { \tl_gset:NV \pnhdlabelfirst \l_tmpa_tl }
-      { \tl_gset:NV \pnhdlabelfirst \g_@@_header_prev_last_label_tl }
-    \prop_get:NnNTF \g_@@_header_label_last_prop
+      { \tl_gset:NV \pnhdnamefirst \l_tmpa_tl }
+      { \tl_gset:NV \pnhdnamefirst \g_@@_header_prev_last_name_tl }
+    \prop_get:NnNTF \g_@@_header_name_last_prop
       {#1} \l_tmpa_tl
       {
-        \tl_gset:NV \pnhdlabellast \l_tmpa_tl
-        \tl_gset:NV \g_@@_header_prev_last_label_tl \l_tmpa_tl
+        \tl_gset:NV \pnhdnamelast \l_tmpa_tl
+        \tl_gset:NV \g_@@_header_prev_last_name_tl \l_tmpa_tl
       }
-      { \tl_gset:NV \pnhdlabellast \g_@@_header_prev_last_label_tl }
+      { \tl_gset:NV \pnhdnamelast \g_@@_header_prev_last_name_tl }
     \group_end:
   }
 \cs_generate_variant:Nn \@@_set_headers_vars:n { x }
-
-\bool_new:N \g_@@_header_vars_next_enabled_bool
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}
+%   {
+%     \@@_set_headers_vars_next: ,
+%     \@@_set_headers_vars_first: ,
+%   }
+%   The functions that actually call \cs{@@_set_headers_vars:n} at the
+%   appropriate contexts with appropriate page values.  Though we set
+%   \cs{@@_set_headers_vars_next:} to run at every \texttt{shipout/before}
+%   hook of the document, it is made no-op by \cs{g_@@_header_vars_next_bool}
+%   which only has a \texttt{true} value inside \cs{printpostnotes}.
+%   \cs{@@_set_headers_vars_first:} must set a label and retrieve its value to
+%   be able to have a reliable value of its own page.
+%    \begin{macrocode}
+\AddToHook { shipout/before } [ postnotes/header ]
+  { \@@_set_headers_vars_next: }
+\bool_new:N \g_@@_header_vars_next_bool
 \cs_new_protected:Npn \@@_set_headers_vars_next:
   {
-    \bool_if:NT \g_@@_header_vars_next_enabled_bool
+    \bool_if:NT \g_@@_header_vars_next_bool
       { \@@_set_headers_vars:x { \int_eval:n { \c@page + 1 } } }
   }
-
 \cs_new_protected:Npn \@@_set_headers_vars_first:
   {
-    \@@_set_print_page_label:x { \int_use:N \g_@@_print_postnotes_int }
+    \@@_set_print_page_label:x
+      { \int_use:N \g_@@_print_postnotes_int }
     \@@_set_headers_vars:x
       {
         \@@_extract_pageref:e
           { print@ \int_use:N \g_@@_print_postnotes_int }
       }
   }
-
-\cs_new_protected:Npn \@@_header_default:
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}[int]{\pnheaderdefault}
+%   A basic header function to be used as default in the \opt{heading} option.
+%   It produces a header in the form ``Notes to pages N--M'', with a text
+%   which can be localized (see Section~\ref{sec:languages}).
+%   \begin{syntax}
+%     \cs{pnheaderdefault}
+%   \end{syntax}
+%    \begin{macrocode}
+\NewDocumentCommand \pnheaderdefault {}
   {
     \tl_if_eq:NNTF \pnhdpagefirst \pnhdpagelast
       { \pnhdnotes{} ~ \pnhdtopage{} ~ \pnhdpagefirst }
       { \pnhdnotes{} ~ \pnhdtopages{} ~ \pnhdpagefirst -- \pnhdpagelast }
   }
-\NewDocumentCommand \pnheaderdefault {} { \@@_header_default: }
 %    \end{macrocode}
+% \end{macro}
 %
 %
 % \section{Compatibility}
 %
+% \subsection*{\cs{caption}}
+%
+% For \cs{caption}'s possible two passes.  This catches more than just
+% captions, of course, but is not overkill.
 %
 %    \begin{macrocode}
-
-% For captions' possible two passes.  This catches more than just captions,
-% but is not overkill.
 \AddToHook { postnotes/note } [ postnotes ]
   {
     \cs_if_exist:NT \@captype
       { \bool_set_true:N \l_@@_maybe_multi_bool }
   }
-
-
-
+%    \end{macrocode}
+%
+%
+% \subsection*{\pkg{hyperref}}
+%
+%    \begin{macrocode}
 \bool_new:N \g_@@_hyperref_loaded_bool
 \AddToHook { package/hyperref/after }
   { \bool_gset_true:N \g_@@_hyperref_loaded_bool }
-
+%    \end{macrocode}
+%
+% \begin{macro}
+%   {
+%     \@@_hyperref_make_currentHref:n ,
+%     \@@_hyperref_set_anchor:n ,
+%     \@@_ref_star:n ,
+%   }
+%   Auxiliary functions for \pkg{hyperref} support.
+%   \begin{syntax}
+%     \cs{@@_hyperref_make_currentHref:n} \Arg{anchor/destination}
+%     \cs{@@_hyperref_set_anchor:n} \Arg{anchor/destination}
+%     \cs{@@_ref_star:n} \Arg{label}
+%   \end{syntax}
+%    \begin{macrocode}
 \cs_new_protected:Npn \@@_hyperref_make_currentHref:n #1
   {
     \bool_if:NT \g_@@_hyperref_loaded_bool
@@ -1297,11 +1834,21 @@
       { \ref*{#1} }
       { \ref{#1} }
   }
-
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \subsection*{\pkg{biblatex}}
+%
+% Thanks \contributor{Moritz Wemheuer}:
+% \url{https://tex.stackexchange.com/q/597359#comment1594585_597389}.
+%
+%    \begin{macrocode}
 \AddToHook { package/biblatex/after }
   {
-    % Thanks \contributor{Moritz Wemheuer}:
-    % https://tex.stackexchange.com/q/597359#comment1594585_597389
+%    \end{macrocode}
+% Store \pkg{biblatex} variables for each note.
+%    \begin{macrocode}
     \AddToHook { postnotes/store/note } [ postnotes ]
       {
         \prop_gput:cnx { \@@_data_name:e { \l_@@_note_id_tl } }
@@ -1314,8 +1861,58 @@
         \prop_gput:cnV { \@@_data_name:e { \l_@@_note_id_tl } }
           { biblatex@refcontext } \blx@refcontext@context
       }
-    % Replicate the job of \endrefcontext, but with local effects, restrained
-    % to the group of \printposnotes.
+%    \end{macrocode}
+% Restore \pkg{biblatex} variables for each note.
+%    \begin{macrocode}
+    \tl_new:N \l_@@_biblatex_restore_tl
+    \AddToHook { postnotes/print/notevars } [ postnotes ]
+      {
+        \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+          { biblatex@refsection } \l_@@_biblatex_restore_tl
+        \int_set:Nn \c@refsection { \l_@@_biblatex_restore_tl }
+        \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+          { biblatex@refsegment } \l_@@_biblatex_restore_tl
+        \int_set:Nn \c@refsegment { \l_@@_biblatex_restore_tl }
+        \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+          { biblatex@refcontextbool } \l_@@_biblatex_restore_tl
+        \use:c { toggle \l_@@_biblatex_restore_tl } { blx@refcontext }
+        \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+          { biblatex@refcontext } \l_@@_biblatex_restore_tl
+        \blx@edef@refcontext { \l_@@_biblatex_restore_tl }
+      }
+%    \end{macrocode}
+% \pkg{biblatex} setup, once for \cs{printpostnotes} call.
+%    \begin{macrocode}
+    \AddToHook { postnotes/print } [ postnotes ]
+      {
+        \@@_biblatex_endrefcontext_local:
+        \@@_biblatex_citereset_local:
+%    \end{macrocode}
+% Let \pkg{biblatex} know we are in a ``notes'' context.  See
+% \url{https://tex.stackexchange.com/a/304464}, including comments.
+%    \begin{macrocode}
+        \toggletrue { blx@footnote }
+      }
+%    \end{macrocode}
+% Make \pkg{biblatex}'s \cs{mkbibendnote} use \cs{postnote}.  This is very
+% likely desired in most cases, but may occasionally not be, so we add it to
+% an individually labeled hook, which can be disabled with
+% \texttt{\textbackslash{}RemoveFromHook\{begindocument/before\}[postnotes/mkbibendnote]}
+% in the preamble.
+%    \begin{macrocode}
+    \AddToHook { begindocument/before } [ postnotes/mkbibendnote ]
+      {
+        \cs_set_nopar:Npn \blx@theendnote { \postnote }
+        \cs_set_nopar:Npn \blx@theendnotetext
+          { \blx@err@endnote \footnotetext }
+      }
+%    \end{macrocode}
+% Auxiliary functions.
+%
+% \begin{macro}{\@@_biblatex_endrefcontext_local:}
+%   Replicate the job of \cs{endrefcontext}, but with local effects,
+%   restrained to the group of \cs{printpostnotes}.
+%    \begin{macrocode}
     \cs_new_protected:Npn \@@_biblatex_endrefcontext_local:
       {
         \togglefalse { blx@refcontext }
@@ -1334,21 +1931,31 @@
             \blx@refcontext@labelalphanametemplatename
           }
       }
-    % Replicate the job of \citereset, but with local effects, restrained
-    % to the group of \printposnotes.  Also reset "seen" entries for all
-    % refsections.  This actually poses some potential problems.  While
-    % resetting this here seems the right thing to do, since we restore the
-    % refsection for each entry, this means that the citations of different
-    % refsections will get printed together, and it is not necessarily obvious
-    % that the trackers should behave "per section" in this context.  However,
-    % since refsections have other implications than just the citetracker, we
-    % cannot do otherwise.  The matter will probably be one of "which biblatex
-    % sets of options" make sense for end notes.  But, as far as I can tell,
-    % things should behave as expected for most use cases.
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_biblatex_citereset_local:}
+%   Replicate the job of \cs{citereset}, but with local effects, restrained to
+%   the group of \cs{printpostnotes}.  Also reset ``seen'' entries for all
+%   \texttt{refsection}s.  This actually poses some potential problems.  While
+%   resetting this here seems the right thing to do, since we restore the
+%   \texttt{refsection} for each entry, this means that the citations of
+%   different \texttt{refsection}s will get printed together, and it is not
+%   necessarily obvious that the trackers should behave ``per section'' in
+%   this context.  However, since \texttt{refsection}s have other implications
+%   than just the \texttt{citetracker}, we cannot do otherwise.  The matter
+%   will probably be one of ``which biblatex sets of options'' make sense for
+%   end notes.  But, as far as I can tell, things should behave as expected
+%   for most use cases.  And particularly so if the postnote sections bear a
+%   correspondence with the reference sections, which is to be expected.
+%    \begin{macrocode}
     \cs_new_protected:Npn \@@_biblatex_citereset_local:
       {
-        % \global\cslet{blx@bsee@\the\c@refsection}\@empty
-        % \global\cslet{blx@fsee@\the\c@refsection}\@empty
+%    \end{macrocode}
+% \noindent
+% {\em\scriptsize\verb|\global\cslet{blx@bsee@\the\c@refsection}\@empty|} \\
+% {\em\scriptsize\verb|\global\cslet{blx@fsee@\the\c@refsection}\@empty|}
+%    \begin{macrocode}
         \int_set:Nn \l_tmpa_int { -1 }
         \int_while_do:nNnn { \l_tmpa_int } < { \c@blx@maxsection }
           {
@@ -1356,77 +1963,88 @@
             \tl_set_eq:cN { blx@bsee@ \int_use:N \l_tmpa_int } \c_empty_tl
             \tl_set_eq:cN { blx@fsee@ \int_use:N \l_tmpa_int } \c_empty_tl
           }
-        % \blx@ibidreset@force
-        \undef\blx@lastkey@text
-        \undef\blx@lastkey@foot
-        % \blx@idemreset@force
-        \undef\blx@lasthash@text
-        \undef\blx@lasthash@foot
-        % \blx@opcitreset@force
+%    \end{macrocode}
+% {\em\scriptsize\verb|\blx@ibidreset@force|}
+%    \begin{macrocode}
+        \undef \blx@lastkey@text
+        \undef \blx@lastkey@foot
+%    \end{macrocode}
+% {\em\scriptsize\verb|\blx@idemreset@force|}
+%    \begin{macrocode}
+        \undef \blx@lasthash@text
+        \undef \blx@lasthash@foot
+%    \end{macrocode}
+% {\em\scriptsize\verb|\blx@opcitreset@force|}
+%    \begin{macrocode}
         \clist_map_inline:Nn \blx@trackhash@text
           { \csundef { blx@lastkey@text@ ##1 } }
         \tl_set_eq:NN \blx@trackhash@text \c_empty_tl
         \clist_map_inline:Nn \blx@trackhash@foot
           { \csundef { blx@lastkey@foot@ ##1 } }
         \tl_set_eq:NN \blx@trackhash@foot \c_empty_tl
-        % \blx@loccitreset@force
+%    \end{macrocode}
+% {\em\scriptsize\verb|\blx@loccitreset@force|}
+%    \begin{macrocode}
         \clist_map_inline:Nn \blx@trackkeys@text
           { \csundef { blx@lastnote@text@ ##1 } }
         \tl_set_eq:NN \blx@trackkeys@text \c_empty_tl
         \clist_map_inline:Nn \blx@trackkeys@foot
           { \csundef { blx@lastnote@foot@ ##1 } }
         \tl_set_eq:NN \blx@trackkeys@foot \c_empty_tl
-        % and all of them do:
+%    \end{macrocode}
+% {\em\scriptsize{}and all of them do:}
+%    \begin{macrocode}
         \cs_set_eq:NN \blx@lastmpfn \z@
       }
-    \AddToHook { postnotes/print } [ postnotes ]
-      {
-        \@@_biblatex_endrefcontext_local:
-        \@@_biblatex_citereset_local:
-        % Let biblatex know we are in a 'notes' context.  See
-        % https://tex.stackexchange.com/a/304464, including comments.
-        \toggletrue { blx@footnote }
-      }
-    \tl_new:N \l_@@_biblatex_restore_tl
-    \AddToHook { postnotes/print/notevars } [ postnotes ]
-      {
-        \@@_prop_get:nnN { \l_@@_print_note_id_tl }
-          { biblatex@refsection } \l_@@_biblatex_restore_tl
-        \int_set:Nn \c@refsection { \l_@@_biblatex_restore_tl }
-        \@@_prop_get:nnN { \l_@@_print_note_id_tl }
-          { biblatex@refsegment } \l_@@_biblatex_restore_tl
-        \int_set:Nn \c@refsegment { \l_@@_biblatex_restore_tl }
-        \@@_prop_get:nnN { \l_@@_print_note_id_tl }
-          { biblatex@refcontextbool } \l_@@_biblatex_restore_tl
-        \use:c { toggle \l_@@_biblatex_restore_tl } { blx@refcontext }
-        \@@_prop_get:nnN { \l_@@_print_note_id_tl }
-          { biblatex@refcontext } \l_@@_biblatex_restore_tl
-        \blx@edef@refcontext { \l_@@_biblatex_restore_tl }
-      }
-    % Have biblatex's \mkbibendnote use \postnote.  This is very likely
-    % desired in most cases, but may occasionally not be, so we add it to an
-    % individually labeled hook, which can be disabled with
-    % \RemoveFromHook{begindocument/before}[postnotes/mkbibendnote] in the
-    % preamble.
-    \AddToHook { begindocument/before } [ postnotes/mkbibendnote ]
-      {
-        \cs_set_nopar:Npn \blx@theendnote { \postnote }
-        \cs_set_nopar:Npn \blx@theendnotetext
-          { \blx@err@endnote \footnotetext }
-      }
+%    \end{macrocode}
+% \end{macro}
+%
+%    \begin{macrocode}
   }
-
-
+%    \end{macrocode}
+%
+%
+% \subsection*{\pkg{zref-user}}
+%
+% \begin{macro}{\l_@@_note_zlabel_tl}
+%   Even though the \opt{zlabel} option is provided only when \pkg{zref-user}
+%   is loaded, \cs{l_@@_note_zlabel_tl} must be unconditionally defined, since
+%   it is presumed to exist by \cs{@@_set_user_labels:}.
+%    \begin{macrocode}
 \tl_new:N \l_@@_note_zlabel_tl
+%    \end{macrocode}
+% \end{macro}
+%
+%    \begin{macrocode}
 \AddToHook { package/zref-user/after }
   {
+%    \end{macrocode}
+% Provide \opt{zlabel} option.
+%    \begin{macrocode}
     \keys_define:nn { postnotes/note }
       {
         zlabel .tl_set:N = \l_@@_note_zlabel_tl ,
         zlabel .value_required:n = true ,
       }
+%    \end{macrocode}
+%
+% \begin{macro}[int]{\postnotezref}
+%   Provide \cs{postnotezref}.
+%   \begin{syntax}
+%     \cs{postnotezref}\meta{*}\marg{label}
+%   \end{syntax}
+%    \begin{macrocode}
     \NewDocumentCommand \postnotezref { s m }
       { \@@_note_zref:nn {#1} {#2} }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_note_zref:nn}
+%   The internal version of \cs{postnotezref}.
+%   \begin{syntax}
+%     \cs{@@_note_zref:nn} \Arg{star bool} \Arg{label}
+%   \end{syntax}
+%    \begin{macrocode}
     \cs_new_protected:Npn \@@_note_zref:nn #1#2
       {
         \group_begin:
@@ -1440,19 +2058,35 @@
           }
         \group_end:
       }
+%    \end{macrocode}
+% \end{macro}
+%
+%    \begin{macrocode}
   }
-
+%    \end{macrocode}
+%
+%
+% \subsection*{\pkg{zref-clever}}
+%
+%    \begin{macrocode}
 \AddToHook { package/zref-clever/after }
   {
     \zcsetup { countertype = { postnote = endnote } }
     \AddToHook { postnotes/print } [ postnotes ]
       { \zcsetup { counterresetby = { postnote = postnotesection } } }
   }
-
+%    \end{macrocode}
+%
+%
+% \subsection*{\pkg{amsmath}}
+%
+%    \begin{macrocode}
 \AddToHook { package/amsmath/after }
   {
-    % Testing for \cs{ifmeasuring@} is sufficient to get things right for
-    % the measuring passes in math environments.
+%    \end{macrocode}
+% Testing for \cs{ifmeasuring@} is sufficient to get things right for the
+% measuring passes in math environments.
+%    \begin{macrocode}
     \AddToHook { postnotes/note/inhibit } [ postnotes ]
       {
         \legacy_if:nT { measuring@ }
@@ -1461,23 +2095,31 @@
             \bool_set_true:N \l_@@_print_plain_mark_bool
           }
       }
-    % However, the '\text' macro, defined by 'amstext.sty' (required by
-    % amsmath), poses problems if its own.  Despite my best efforts, I could
-    % not salvage things from the use of '\mathchoice' and the redefinitions
-    % of '\setcounter' and '\addtocounter' performed by 'amstext'.  Setting
-    % \l_@@_maybe_multi_bool when firstchoice@ is false grants us a working
-    % situation for display style.  But the use of '\postnote' inside '\text'
-    % (and, if amsmath is loaded, \textnormal, \textup, etc.) in inline math
-    % environments is not supported.  If a note really needs to be there, one
-    % can use 'nomark' and '\postnoteref'.  Things should work in text mode
-    % and in display style.
+%    \end{macrocode}
+% However, the \cs{text} macro, defined by \pkg{amstext} (required by
+% \pkg{amsmath}), poses problems if its own.  Despite my best efforts, I could
+% not salvage things from the use of \cs{mathchoice} and the redefinitions of
+% \cs{setcounter} and \cs{addtocounter} performed by \pkg{amstext}.  Setting
+% \cs{l_@@_maybe_multi_bool} when \texttt{firstchoice@} is \texttt{false}
+% grants us a working situation for display style.  But the use of
+% \cs{postnote} inside \cs{text} (and, if \pkg{amsmath} is loaded,
+% \cs{textnormal}, \cs{textup}, etc.) in inline math environments is not
+% supported.  If a note really needs to be there, one can use the \opt{nomark}
+% option and \cs{postnoteref}.  Things should work in text mode and in display
+% style.
+%    \begin{macrocode}
     \AddToHook { postnotes/note } [ postnotes ]
       {
         \legacy_if:nF { firstchoice@ }
           { \bool_set_true:N \l_@@_maybe_multi_bool }
       }
   }
-
+%    \end{macrocode}
+%
+%
+% \subsection*{\pkg{csquotes}}
+%
+%    \begin{macrocode}
 \AddToHook { package/csquotes/after }
   {
     \bool_new:N \l_@@_csquotes_measuring_bool
@@ -1492,7 +2134,18 @@
           }
       }
   }
-
+%    \end{macrocode}
+%
+%
+% \subsection*{\pkg{tabularx}}
+%
+% For the identification of the trial passes in \pkg{tabulax}, see
+% \url{https://tex.stackexchange.com/a/640035} (including discussion in the
+% comments, thanks \contributor{David Carlisle}), and also
+% \url{https://tex.stackexchange.com/a/227155} and
+% \url{https://tex.stackexchange.com/a/352134}.
+%
+%    \begin{macrocode}
 \AddToHook { package/tabularx/after }
   {
     \bool_new:N \l_@@_tabularx_inside_env_bool
@@ -1505,26 +2158,25 @@
       {
         \bool_lazy_and:nnT
           { \l_@@_tabularx_inside_env_bool }
-          {
-            % For the identification of the trial passes here, see
-            % https://tex.stackexchange.com/a/640035 (including discussion in
-            % the comments, thanks David Carlisle), and also
-            % https://tex.stackexchange.com/a/227155 and
-            % https://tex.stackexchange.com/a/352134.
-            ! \cs_if_eq_p:NN \write \@@_tabularx_saved_write:Nn
-          }
+          { ! \cs_if_eq_p:NN \write \@@_tabularx_saved_write:Nn }
           {
             \bool_set_true:N \l_@@_inhibit_note_bool
             \bool_set_true:N \l_@@_print_plain_mark_bool
           }
       }
   }
-
+%    \end{macrocode}
+%
+%
+% \subsection*{\pkg{tabularray}}
+%
+% I've tried, but I could not find any ``handle'' to distinguish in
+% \pkg{tabularray} a trial/measure pass from the final one.  So we use
+% \cs{@@_verify_multipass:N} for it.
+%
+%    \begin{macrocode}
 \AddToHook { package/tabularray/after }
   {
-    % I've tried, but I could not find any "handle" to distinguish in
-    % 'tabularray' a trial/measure pass from the final one.  So we use
-    % \@@_verify_multipass:N for it.
     \clist_map_inline:nn
       { tblr , longtblr , talltblr , booktabs , longtabs , talltabs , +array }
       {
@@ -1536,8 +2188,18 @@
 %
 %
 % \section{Languages}
+% \label{sec:languages}
 %
-%
+% \begin{macro}[int]
+%   {
+%     \pntitle ,
+%     \pnhdnotes ,
+%     \pnhdtopage ,
+%     \pnhdtopages ,
+%   }
+%   Set of language specific user variables.  They are used in the default
+%   value of the \opt{heading} option and in \cs{pnheaderdefault} which,
+%   ultimately, is also used in the same place.
 %    \begin{macrocode}
 \tl_new:N \pntitle
 \tl_new:N \pnhdnotes
@@ -1547,68 +2209,100 @@
 \tl_set:Nn \pnhdnotes { Notes }
 \tl_set:Nn \pnhdtopage { to~page }
 \tl_set:Nn \pnhdtopages { to~pages }
-
-
-% <postnote language><extras>
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}{\@@_define_language:nn}
+%   Defines language specific values for \meta{postnote language} by storing a
+%   set of assignments for the language specific variables in \meta{setup}.
+%   \meta{postnote language} is an internal name, typically the ``main'' name
+%   of the language, based on which we can set specific \pkg{babel} or
+%   \pkg{polyglossia} languages or variants.
+%     \begin{syntax}
+%       \cs{@@_define_language:nn} \Arg{postnote language} \Arg{setup}
+%     \end{syntax}
+%    \begin{macrocode}
 \cs_new_protected:Npn \@@_define_language:nn #1#2
   {
     \tl_new:c { g_@@_language_ #1 _tl }
     \tl_gset:cn { g_@@_language_ #1 _tl } {#2}
   }
-
-
-% For \pkg{babel} we use the new hook system, it's clean, and avoids
-% the \cs{addto} pitfalls.  The hook is \texttt{babel/\meta{language}/beforeextras} so that users
-% can override it with a traditional
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% For \pkg{babel} we use the new hook system, it's clean, and avoids the
+% \cs{addto} pitfalls.  The appropriate hook to use is
+% \texttt{babel/\meta{language}/beforeextras} so that users can override it
+% with a traditional
 % \texttt{\textbackslash{}addto\textbackslash{}extras\meta{language}}.
-
-% Note that, for \pkg{babel}, the captions are currently handled in two different ways --
-% the ``old way'' and the ``new way'' -- and which of them is used depends on
-% the language.  Most still use the ``old way'', but the problem is that it is
-% not universal.  And the ``new way'' uses a different naming scheme --
-% \texttt{\textbackslash{}\meta{language}\meta{caption}}, which is meant to be
-% set with \cs{setlocalecaption}, and not suitable for our needs.  The
-% \texttt{\textbackslash{}extras\meta{language}} macros are meant for
-% ``arbitrary'' code to be run when the language is selected, which is what we
-% want.  The captions used to work in the same way, but no longer for
-% languages which use the ``new way''.
-
-% Note also that there seems to exist some qualms
-% about `babel's '\addto'.  A number of packages define their own versions of
-% it: varioref (probably the original), backref, cleveref.  The latter
-% comments that `\addto` is "flawed". 'babel' itself comments the definition
-% recognizing that there is an "inconsistency", depending on the case, the
-% operation will be either local or global.  This is documented in the manual,
-% which explains this inconsistent behavior is preserved for backward
-% compatibility, and recommends 'etoolbox's facilities if available.
-% Polyglossia also recommends `etoolbox's `\gappto'.  All in all, if there's
-% need to use the traditional way instead of the new hooks, just rely
-% on `expl3' and use `\tl_gput_right:Nn'.
-
-% <babel language><postnote language>
+%
+% Note that, for \pkg{babel}, the captions are currently handled in two
+% different ways -- the ``old way'' and the ``new way'' -- and which of them
+% is used depends on the language.  Most still use the ``old way'', but the
+% problem is that it is not universal.  And the ``new way'' uses a different
+% naming scheme -- \texttt{\textbackslash{}\meta{language}\meta{caption}},
+% which is meant to be set with \cs{setlocalecaption}, and not suitable for
+% our needs.  The \texttt{\textbackslash{}extras\meta{language}} macros are
+% meant for ``arbitrary'' code to be run when the language is selected, which
+% is what we want.  The captions used to work in the same way, but no longer
+% for languages which use the ``new way''.
+%
+% Note also that there seems to exist some qualms about \pkg{babel}'s
+% \cs{addto}.  A number of packages define their own versions of it.  Do so at
+% least \pkg{varioref} (probably the original), \pkg{backref}, and
+% \pkg{cleveref}.  The latter comments that \cs{addto} is ``flawed''.
+% \pkg{babel} itself comments the definition recognizing that there is an
+% ``inconsistency'': depending on the case, the operation will be either local
+% or global.  This is documented in the manual, which explains this
+% inconsistent behavior is preserved for backward compatibility, and
+% recommends \pkg{etoolbox}'s facilities if available.  \pkg{polyglossia} also
+% recommends \pkg{etoolbox}'s \cs{gappto}.  All in all, if there's need to use
+% the traditional way instead of the new hooks, just rely on \texttt{expl3}
+% and use \cs{tl_gput_right:Nn}.
+%
+% \begin{macro}{\@@_set_babel_language:nn}
+%   Sets \meta{babel language} to execute the setup defined by
+%   \cs{@@_define_language:nn} for \meta{postnote language} at the
+%   \texttt{babel/\meta{language}/beforeextras} hook.
+%     \begin{syntax}
+%       \cs{@@_set_babel_language:nn} \Arg{babel language} \Arg{postnote language}
+%     \end{syntax}
+%    \begin{macrocode}
 \cs_new_protected:Npn \@@_set_babel_language:nn #1#2
   {
     \ActivateGenericHook { babel/#1/beforeextras }
     \exp_args:Nnv \AddToHook { babel/#1/beforeextras }
       { g_@@_language_ #2 _tl }
   }
-
-
+%    \end{macrocode}
+% \end{macro}
+%
+%
 % \pkg{polyglossia} uses a similar set of macros for setting up languages as
-% \pkg{babel} does.
-% However, the \texttt{\textbackslash{}blockextras@\meta{language}} macros are
+% \pkg{babel} does.  However, the
+% \texttt{\textbackslash{}blockextras@\meta{language}} macros are
 % unfortunately internal (despite what the manual says, that's what the code
 % does), thus requiring \cs{makeatletter}/\cs{makeatother} for user
 % configuration, which would be an inconvenience.  On the other hand,
 % \pkg{polyglossia}'s \texttt{\textbackslash{}captions\meta{language}} works
-% as \pkg{babel}'s ``old way'', meaning it is just a ``hook'' to which we can
-% append some code.  So we use
+% as in \pkg{babel}'s ``old way'', meaning it is just a ``hook'' to which we
+% can append some code.  So we use
 % \texttt{\textbackslash{}captions\meta{language}} for \pkg{polyglossia}.
 % Things may complicate here if there's need to set up different values for
 % different language variants, since the hooks available are all necessarily
 % internal, but I doubt we'll ever need variants for these simple strings.
-
-% <polyglossia language><postnote language>
+%
+% \begin{macro}{\@@_set_polyglossia_language:nn}
+%   Sets \meta{polyglossia language} to execute the setup defined by
+%   \cs{@@_define_language:nn} for \meta{postnote language} at the
+%   \pkg{polyglossia} \texttt{\textbackslash{}captions\meta{language}} hook.
+%     \begin{syntax}
+%       \cs{@@_set_polyglossia_language:nn} \Arg{polyglossia language}
+%       ~~\Arg{postnote language}
+%     \end{syntax}
+%    \begin{macrocode}
 \cs_new_protected:Npn \@@_set_polyglossia_language:nn #1#2
   {
     \AddToHook { package/polyglossia/after }
@@ -1617,8 +2311,13 @@
           { g_@@_language_ #2 _tl }
       }
   }
-
-
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \subsection*{English}
+%
+%    \begin{macrocode}
 \@@_define_language:nn { english }
   {
     \tl_set:Nn \pntitle     { Notes }
@@ -1635,7 +2334,12 @@
 \@@_set_babel_language:nn { UKenglish }  { english }
 \@@_set_babel_language:nn { USenglish }  { english }
 \@@_set_polyglossia_language:nn { english } { english }
-
+%    \end{macrocode}
+%
+%
+% \subsection*{Portuguese}
+%
+%    \begin{macrocode}
 \@@_define_language:nn { portuguese }
   {
     \tl_set:Nn \pntitle     { Notas }
