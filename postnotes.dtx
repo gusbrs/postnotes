@@ -731,11 +731,11 @@
 % have control of the anchor/destination name on both ``sides'', I'd have to
 % set \cs{theHpostnote} locally before calling \cs{refstepcounter}, otherwise
 % results might sensitive to user calls to \cs{counterwithin} (see
-% \url{https://github.com/latex3/hyperref/issues/230}, thanks Ulrike Fischer).
-% However, even if that worked well for the default case, we still had to
-% setup things manually, in case of a manually supplied mark.  All in all, I'm
-% just calling \cs{stepcounter}, setting the relevant cross-reference
-% variables once and setting the anchor manually.
+% \url{https://github.com/latex3/hyperref/issues/230}, thanks
+% \contributor{Ulrike Fischer}).  However, even if that worked well for the
+% default case, we still had to setup things manually, in case of a manually
+% supplied mark.  All in all, I'm just calling \cs{stepcounter}, setting the
+% relevant cross-reference variables once and setting the anchor manually.
 %
 %
 % \bigskip{}

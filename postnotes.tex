@@ -1,0 +1,383 @@
+% \iffalse meta-comment
+%
+% File: postnotes.tex
+%
+% This file is part of the LaTeX package "postnotes".
+%
+% Copyright (C) 2022  Gustavo Barros
+%
+% It may be distributed and/or modified under the conditions of the
+% LaTeX Project Public License (LPPL), either version 1.3c of this
+% license or (at your option) any later version.  The latest version
+% of this license is in the file:
+%
+%    https://www.latex-project.org/lppl.txt
+%
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+%
+% This work is "maintained" (as per LPPL maintenance status) by
+% Gustavo Barros.
+%
+% This work consists of the files postnotes.dtx,
+%                                 postnotes.ins,
+%                                 postnotes.tex,
+%                                 postnotes-code.tex,
+%         and the files listed in MANIFEST.md.
+%
+% The released version of this package is available from CTAN.
+%
+% -----------------------------------------------------------------------
+%
+% The development version of the package can be found at
+%
+%    https://github.com/gusbrs/postnotes
+%
+% for those people who are interested.
+%
+% -----------------------------------------------------------------------
+%
+% \fi
+
+\documentclass{l3doc}
+
+% The package itself *must* be loaded so that \GetFileInfo can pick up date
+% and version data.
+\usepackage{postnotes}
+\postnotesetup{
+  heading={
+    \section*{\pntitle}
+    \markright{\pnheaderdefault}
+    \addcontentsline{toc}{section}{\pntitle}
+  } ,
+}
+
+\usepackage[T1]{fontenc}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05}
+\usepackage[scale=.88]{tgheros} % sans
+\usepackage[varqu,scaled=1.03]{inconsolata} % tt
+\usepackage{microtype}
+
+\hypersetup{hidelinks}
+
+\usepackage{zref-clever}
+\zcsetup{
+  cap,
+  check,
+  titleref,
+  countertype = { pnexample = example } ,
+}
+
+\usepackage{listings}
+\lstdefinestyle{code}{
+  language=[LaTeX]TeX,
+  moretexcs={
+  }
+}
+\lstdefinestyle{postnotes}{
+  style=code,
+  moretexcs={
+  }
+}
+\lstset{
+  style=postnotes,
+  basicstyle=\ttfamily\small,
+  columns=fullflexible,
+  keepspaces,
+  xleftmargin=\leftmargin,
+  xrightmargin=.5\leftmargin,
+}
+% Setup inspired by https://tex.stackexchange.com/a/4068. For how to use these
+% environments in a .dtx context see https://tex.stackexchange.com/a/31026.
+\newcounter{pnexample}
+\lstnewenvironment{pnexample}[1][]{%
+  \renewcommand{\lstlistingname}{Example}%
+  \renewcommand*\theHlstlisting{ht.\thelstlisting}%
+  \lstset{#1}%
+  \setcounter{lstlisting}{\value{pnexample}}%
+}{}
+\lstnewenvironment{pnsnippet}[1][]{%
+  \renewcommand{\lstlistingname}{Example}%
+  \lstset{#1}%
+}{}
+\ExplSyntaxOn
+\makeatletter
+\lst@AddToHook { PreInit }
+  {
+    \cs_if_exist:cT { c@ \lstenv@name }
+      { \exp_args:Nx \refstepcounter { \lstenv@name } }
+  }
+\makeatother
+\ExplSyntaxOff
+
+\NewDocumentCommand\opt{m}{\texttt{#1}}
+
+\begin{document}
+
+\GetFileInfo{postnotes.sty}
+
+\title{%
+  The \pkg{postnotes} package%
+  \thanks{This file describes \fileversion, released \filedate.}%
+  \texorpdfstring{\\{}\medskip{}}{ - }%
+  User manual%
+  \texorpdfstring{\medskip{}}{}%
+}
+
+\author{%
+  Gustavo Barros%
+  \thanks{\url{https://github.com/gusbrs/postnotes}}%
+}
+
+\date{\filedate}
+
+\maketitle
+
+\begin{center}
+  {\bfseries \abstractname\vspace{-.5em}\vspace{0pt}}
+\end{center}
+
+\begin{quotation}
+  \pkg{postnotes} is an endnotes package for \LaTeX{}.  Its user interface
+  provides means to print multiple sections of notes along the document, and
+  to subdivide them either automatically -- by chapter, by section -- or at
+  manually specified places, thus being able to easily handle both numbered
+  and unnumbered headings.  The package also provides infrastructure for
+  setting up contextual running headers for printed notes.  The default is a
+  simple but useful one, in the form ``Notes to pages N--M'', but more
+  elaborate ones can be built.  \pkg{postnotes} supports \pkg{hyperref},
+  including backrefs, and \pkg{biblatex}.
+\end{quotation}
+
+\clearpage{}
+
+\tableofcontents
+
+\clearpage{}
+
+\section{Introduction}
+
+\pkg{postnotes} is an endnotes package for \LaTeX{}.  Its user interface
+provides means to print multiple sections of notes along the document, and to
+subdivide them either automatically -- by chapter, by section -- or at
+manually specified places, thus being able to easily handle both numbered and
+unnumbered headings.  The package also provides infrastructure for setting up
+contextual running headers for printed notes.  The default is a simple but
+useful one, in the form ``Notes to pages N--M'', but more elaborate ones can
+be built.  \pkg{postnotes} supports \pkg{hyperref}, including backrefs, and
+\pkg{biblatex}.
+
+Though this feature set is mostly (albeit not completely) available in one or
+another of the existing endnotes packages for \LaTeX{}, subsets of it exist in
+individual packages, not necessarily compatible with each other.\postnote{As
+  far as I know, the existing \LaTeX{} endnotes packages are: i) the solid and
+  traditional \pkg{endnotes}, which can be extended by companion packages
+  \pkg{endnotes-hy} and \pkg{endheads} to, respectively, support hyperlinking
+  of labeled endnotes (but not automatically, and no back references) and
+  contextual headers (if you are inclined to rely on \pkg{endheads}'
+  dependencies and they do not bring you any compatibility issues); ii) the
+  \pkg{pagenote} package, part of the \cls{memoir} ecosystem, with interesting
+  features and good defaults but, as far as I could tell, no support for
+  \pkg{hyperref} or running headers; the \cls{memoir} class itself,
+  ``emulates'' the \pkg{pagenote} package, but nowadays actually rather
+  re-implements it, with a number of technical differences but, in particular,
+  hyperlinking from the marks to the notes is available, and iii) the
+  \pkg{enotez} package, a more modern take on the functionality, with a rich
+  feature set, including full hyperlinking support, and an user friendly
+  interface but, at least currently, with no support for contextual headers.
+  Besides those more specific packages, \pkg{reledmac} offers extensive
+  support for endnotes, including multiple series of them but, of course,
+  \pkg{reledmac} is much broader than just endnotes.  The \pkg{parnotes} and
+  \pkg{sepfootnotes} packages, even if they have different conspicuous
+  objectives, also allow for the typesetting of endnotes.}  \pkg{postnotes}
+brings these features together in one place, with no external dependencies
+except an up-to-date kernel.
+
+On the technical side, \pkg{postnotes} is peculiar among existing \LaTeX{}
+packages in this area of functionality by the fact that it does not use an
+external file to store the notes.\postnote{The only exception I'm aware of is
+  the \pkg{parnotes} package, which does not store the notes in an external
+  file either.  But, even if it can be used to typeset endnotes too, its aims
+  are somewhat more specialized, as the package's name suggests.}  Both the
+notes' contents and its metadata are stored in variables which are later
+retrieved at the time of printing.  In particular, the content of the note is
+stored and retrieved with ``no manipulation''\postnote{As in \texttt{expl3}'s
+  \texttt{N}/\texttt{n} function signatures.} and only gets to be expanded at
+the time it is meant to be typeset.  The \file{.aux} file is leveraged to set
+page labels for the notes, since that particular information has to be
+retrieved asynchronously but, other than that, variables are employed to pass
+information around.
+
+This has some advantages.  First, as is well known, sending arbitrary content
+to a file to be read later is not a noiseless process in \LaTeX{}.  Thus, not
+doing so makes things smoother.  Second, the external file approach is
+strictly linear: the notes which were written to the file get printed as is,
+in the order they were written.  Having the notes as a set of variables, which
+also carry metadata, allows for some more malleability than
+that.\postnote{This limitation does not apply to \pkg{enotez}, since its use
+  of the external file is somewhat different from the traditional one.
+  Instead of a dedicated endnotes file, it uses the \file{.aux} file, which
+  then defines a set of variables at \texttt{begindocument}.  Therefore, the
+  same kind of possibility \pkg{postnotes} enjoys in this regard, is
+  technically also available to \pkg{enotez}.}  For example, consider a note
+that was originally placed inside a float which changed the sequence of the
+notes and required a local manual adjustment of the counter.  When one is just
+inputting the notes file there's little that can be done to avoid printing
+them out of order.  But with a set of variables in hand instead, one can
+pre-process the notes before printing and sort them, as \pkg{postnotes} does.
+Since we can sort, we can also accept a manual specification of the sort order
+for a manual mark.  The dynamic information provided by \pkg{postnotes} to
+support contextual running headers is also based on the possibility of
+pre-processing the notes set.  And so on.  Third, not being bound to the
+linear logic of reading an external file brings some extra degrees of freedom
+in storing note metadata, and in restoring part of the environment where the
+note is called (where the ``mark'' is typeset) to where the note is printed
+(where the ``text'' is typeset).  \pkg{postnotes} uses this flexibility, for
+example, to restore \pkg{biblatex}'s \texttt{refsection}, \texttt{refsegment},
+and \texttt{refcontext} information at the moment the note is printed.
+
+True, none of this means any radical change in possibilities, but it
+represents a marginal improvement nonetheless.  The only restriction resulting
+from not using an external file to store the notes is that we can only print
+notes that have been placed previously in the document, but this is not only
+sensible for the use case, but already true of almost all existing \LaTeX{}
+endnotes packages.\postnote{Again, the only exception here is the \pkg{enotez}
+  package, which stores the notes in the \file{.aux} file, making the whole
+  set of notes available at \texttt{begindocument}, and thus being able to
+  print notes even if they occur later on in the document.}
+
+\section{Loading the package}
+
+\pkg{postnotes} can be loaded with the usual:
+
+\begin{pnsnippet}
+\usepackage{postnotes}
+\end{pnsnippet}
+
+The package does not accept load-time options, package options must be set
+using \cs{postnotesetup} (see \zcref{sec:options},
+\zcref[ref=title,noname]{sec:package-options}).
+
+\section{User interface}
+
+\begin{function}{\postnote}
+  \begin{syntax}
+    \cs{postnote}\oarg{options}\marg{text}
+  \end{syntax}
+\end{function}
+Sets a postnote with content \meta{text}.  A note ``mark'' is typeset at the
+place \cs{postnote} is called, and \meta{text} is stored to be typeset later,
+on the next call to \cs{printpostnotes}.  The mark is usually determined by
+the printed representation of the main counter, \texttt{postnote}, but can be
+manually set too.  \cs{postnote} can receive a number of \meta{options}, which
+are presented in \zcref{sec:options},
+\zcref[ref=title,noname]{sec:note-options}.
+
+\begin{function}{\postnotesection}
+  \begin{syntax}
+    \cs{postnotesection}\oarg{options}\marg{text}
+  \end{syntax}
+\end{function}
+Sets a postnote section with content \meta{text}.  This is the basic interface
+for subdividing the notes when printed.  For those familiar with it, this
+command is \pkg{postnotes}'s equivalent to \pkg{endnotes}' \cs{addtoendnotes}.
+It is also intended to add text or commands along the notes' sequence at the
+point it is called, but \cs{postnotesection} behaves somewhat differently,
+prominently it is skipped at \cs{printpostnotes} if a section contains no
+notes.  In other words, if two (or more) calls of \cs{postnotesection} occur
+in immediate sequence, with no \cs{postnote} in between, the latter one takes
+precedence over the former, instead of being accumulated in the queue.  This
+is intended to facilitate the automation of the subdivision of the notes.  So,
+one can, for example, use a hook to \cs{chapter} and not have to worry if a
+chapter with no notes will generate an empty section inside
+\cs{printpostnotes}, e.g., by the call to \cs{chapter*} at the table of
+contents, and so on.  Or, one can use the heading number for the automated
+case, but be able to override it manually for an occasional unnumbered one.
+Hence, a more semantic name was chosen, instead of the generic ``add to''.
+Its \meta{options} are presented in \zcref{sec:options},
+\zcref[ref=title,noname]{sec:section-options}.
+
+\begin{function}{\printpostnotes}
+  \begin{syntax}
+    \cs{printpostnotes}\oarg{options}
+  \end{syntax}
+\end{function}
+Prints the \cs{postnotes} set since the last call of \cs{printpostnotes}, or
+since the beginning of the document. Its \meta{options} are presented in
+\zcref{sec:options}, \zcref[ref=title,noname]{sec:print-options}.
+
+\begin{function}{\postnoteref}
+  \begin{syntax}
+    \cs{printpostnotes}\meta{*}\marg{label}
+  \end{syntax}
+\end{function}
+Typesets a postnote reference to \meta{label}.  Of course, \meta{label} must
+have been set to a particular postnote, which can be done by the standard
+\cs{label} command.  The starred version of the command inhibits hyperlinking.
+When the \pkg{zref-user} package is loaded, a corresponding \cs{postnotezref}
+is also provided.
+
+
+\section{Options}
+\zlabel{sec:options}
+
+\subsection*{Package options}
+\zlabel{sec:package-options}
+
+\subsection*{Note options}
+\zlabel{sec:note-options}
+
+\subsection*{Section options}
+\zlabel{sec:section-options}
+
+\subsection*{Print options}
+\zlabel{sec:print-options}
+
+
+\section{Notes sections}
+
+
+\section{Headers}
+
+
+\section{Cross-referencing}
+
+% Basically, the difference between \label and label=.
+
+
+\section{Acknowledgments}
+
+Some people have kindly contributed to \pkg{postnotes}, whether they are aware
+of it or not.  Suggestions, ideas, solutions to problems, bug reports or even
+encouragement were generously provided by (in chronological order):
+  Ulrike Fischer,
+  % 2022-03-22: https://chat.stackexchange.com/transcript/message/60708390#60708390
+  % 2022-03-28: https://chat.stackexchange.com/transcript/message/60754383#60754383
+  % 2022-03-31: https://github.com/latex3/hyperref/issues/230
+  % 2022-04-09: https://github.com/latex3/hyperref/issues/229
+  David Carlisle,
+  % 2022-03-28: https://chat.stackexchange.com/transcript/message/60754383#60754383
+  % 2022-04-08: https://tex.stackexchange.com/a/640035 (comments)
+  and Moritz Wemheuer.
+  % 2022-04-05: https://tex.stackexchange.com/q/597359#comment1594585_597389
+
+If I have inadvertently left anyone off the list I apologize, and please let
+me know, so that I can correct the oversight.
+
+Thank you all very much!
+
+
+\section{Change history}
+
+A change log with relevant changes for each version, eventual upgrade
+instructions, and upcoming changes, is maintained in the package's repository,
+at \url{https://github.com/gusbrs/postnotes/blob/main/CHANGELOG.md}.  An
+archive of historical versions of the package is also kept at
+\url{https://github.com/gusbrs/postnotes/releases}.
+
+\printpostnotes
+
+\end{document}
