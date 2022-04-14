@@ -1243,8 +1243,9 @@
               { % type_curr = `note'
                 \tl_if_eq:NnF \l_@@_print_type_prev_tl { note }
                   {
-                    \bool_if:NT \l_@@_print_as_list_bool
+                    \bool_if:NTF \l_@@_print_as_list_bool
                       { \exp_args:Nx \begin { \l_@@_print_env_tl } }
+                      { \group_begin: }
                     \l_@@_print_format_tl
                   }
                 \group_begin:
@@ -1272,12 +1273,14 @@
                   }
                 \l_@@_print_content_tl
                 \group_end:
-                \bool_if:NTF \l_@@_print_as_list_bool
-                  {
-                    \tl_if_eq:NnF \l_@@_print_type_next_tl { note }
-                      { \exp_args:Nx \end { \l_@@_print_env_tl } }
-                  }
+                \bool_if:NF \l_@@_print_as_list_bool
                   { \par }
+                \tl_if_eq:NnF \l_@@_print_type_next_tl { note }
+                  {
+                    \bool_if:NTF \l_@@_print_as_list_bool
+                      { \exp_args:Nx \end { \l_@@_print_env_tl } }
+                      { \group_end: }
+                  }
 %    \end{macrocode}
 % Set \texttt{type_prev} for the next iteration.
 %    \begin{macrocode}
