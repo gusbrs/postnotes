@@ -487,12 +487,12 @@
 %    \end{macrocode}
 %
 %
-% \subsection*{\opt{hyperref} and \opt{backref} options}
+% \subsection*{\opt{hyperref} and \opt{backlink} options}
 %
 %    \begin{macrocode}
 \bool_new:N \l_@@_hyperlink_bool
 \bool_new:N \l_@@_hyperref_warn_bool
-\bool_new:N \l_@@_backref_bool
+\bool_new:N \l_@@_backlink_bool
 \keys_define:nn { postnotes/package }
   {
     hyperref .choice: ,
@@ -513,9 +513,9 @@
       } ,
     hyperref .initial:n = auto ,
     hyperref .default:n = true ,
-    backref .bool_set:N = \l_@@_backref_bool ,
-    backref .initial:n = true ,
-    backref .default:n = true ,
+    backlink .bool_set:N = \l_@@_backlink_bool ,
+    backlink .initial:n = true ,
+    backlink .default:n = true ,
   }
 %    \end{macrocode}
 %
@@ -1320,7 +1320,7 @@
     \bool_if:NTF \l_@@_hyperlink_bool
       {
         \@@_hyperref_set_anchor:n { postnote. #1 .text }
-        \bool_if:NTF \l_@@_backref_bool
+        \bool_if:NTF \l_@@_backlink_bool
           {
             \hyperlink { postnote. #1 .mark }
               { \@@_make_text_mark:n {#2} }
