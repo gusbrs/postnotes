@@ -1827,6 +1827,14 @@
 % For \cs{caption}'s possible two passes.  This catches more than just
 % captions, of course, but is not overkill.
 %
+% From the user's perspective, one-line captions will just work.  For two-line
+% captions, there are two alternatives: i) decrement the counter by 1
+% \texttt{\textbackslash{}addtocounter\{postnote\}\{-1\}} before the caption,
+% then call \cs{postnote} inside the caption; or ii) call
+% \texttt{\textbackslash{}postnote[nomark]\{\textbackslash{}label\{mynote\}...\}}
+% right before the caption, then use
+% \texttt{\textbackslash{}postnoteref\{mynote\}} inside the caption.
+%
 %    \begin{macrocode}
 \AddToHook { postnotes/note } [ postnotes ]
   {
