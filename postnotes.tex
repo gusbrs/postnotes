@@ -148,8 +148,8 @@
   and unnumbered headings.  The package also provides infrastructure for
   setting up contextual running headers for printed notes.  The default is a
   simple but useful one, in the form ``Notes to pages N--M'', but more
-  elaborate ones can be built.  \pkg{postnotes} supports \pkg{hyperref},
-  including backrefs, and \pkg{biblatex}.
+  elaborate ones can be built.  When \pkg{hyperref} is loaded, \pkg{postnotes}
+  provides hyperlinked notes, including back links.
 \end{quotation}
 
 \clearpage{}
@@ -167,87 +167,35 @@ manually specified places, thus being able to easily handle both numbered and
 unnumbered headings.  The package also provides infrastructure for setting up
 contextual running headers for printed notes.  The default is a simple but
 useful one, in the form ``Notes to pages N--M'', but more elaborate ones can
-be built.  \pkg{postnotes} supports \pkg{hyperref}, including backrefs, and
-\pkg{biblatex}.
+be built.  When \pkg{hyperref} is loaded, \pkg{postnotes} provides hyperlinked
+notes, including back links.
 
 Though this feature set is mostly (albeit not completely) available in one or
 another of the existing endnotes packages for \LaTeX{}, subsets of it exist in
-individual packages, not necessarily compatible with each other.\postnote{As
-  far as I know, the existing \LaTeX{} endnotes packages are: i) the solid and
-  traditional \pkg{endnotes}, which can be extended by companion packages
-  \pkg{endnotes-hy} and \pkg{endheads} to, respectively, support hyperlinking
-  of labeled endnotes (but not automatically, and no back references) and
-  contextual headers (if you are inclined to rely on \pkg{endheads}'
-  dependencies and they do not bring you any compatibility issues); ii) the
-  \pkg{pagenote} package, part of the \cls{memoir} ecosystem, with interesting
-  features and good defaults but, as far as I could tell, no support for
-  \pkg{hyperref} or running headers; the \cls{memoir} class itself,
-  ``emulates'' the \pkg{pagenote} package, but nowadays actually rather
-  re-implements it, with a number of technical differences but, in particular,
-  hyperlinking from the marks to the notes is available, and iii) the
-  \pkg{enotez} package, a more modern take on the functionality, with a rich
-  feature set, including full hyperlinking support, and an user friendly
-  interface but, at least currently, with no support for contextual headers.
-  Besides those more specific packages, \pkg{reledmac} offers extensive
-  support for endnotes, including multiple series of them but, of course,
-  \pkg{reledmac} is much broader than just endnotes.  The \pkg{parnotes} and
-  \pkg{sepfootnotes} packages, even if they have different conspicuous
-  objectives, also allow for the typesetting of endnotes.}  \pkg{postnotes}
-brings these features together in one place, with no external dependencies
-except an up-to-date kernel.
+individual packages, not necessarily compatible with each other.
+\pkg{postnotes} brings these features together in one place, with no external
+dependencies except an up-to-date kernel.
 
 On the technical side, \pkg{postnotes} is peculiar among existing \LaTeX{}
 packages in this area of functionality by the fact that it does not use an
-external file to store the notes.\postnote{The only exception I'm aware of is
-  the \pkg{parnotes} package, which does not store the notes in an external
-  file either.  But, even if it can be used to typeset endnotes too, its aims
-  are somewhat more specialized, as the package's name suggests.}  Both the
-notes' contents and its metadata are stored in variables which are later
-retrieved at the time of printing.  In particular, the content of the note is
-stored and retrieved with ``no manipulation''\postnote{As in \texttt{expl3}'s
-  \texttt{N}/\texttt{n} function signatures.} and only gets to be expanded at
-the time it is meant to be typeset.  The \file{.aux} file is leveraged to set
-page labels for the notes, since that particular information has to be
-retrieved asynchronously but, other than that, variables are employed to pass
-information around.
+external file to store the notes.  Both the notes' contents and its metadata
+are stored in variables which are later retrieved at the time of printing.  In
+particular, the content of the note is stored and retrieved with ``no
+manipulation'' (as in \texttt{expl3}'s \texttt{N}/\texttt{n} function
+signatures) and only gets to be expanded at the time it is meant to be
+typeset.  The \file{.aux} file is leveraged to set page labels for the notes,
+since that particular information has to be retrieved asynchronously but,
+other than that, variables are employed to pass information around.
 
 This has some advantages.  First, as is well known, sending arbitrary content
 to a file to be read later is not a noiseless process in \LaTeX{}.  Thus, not
 doing so makes things smoother.  Second, the external file approach is
-strictly linear: the notes which were written to the file get printed as is,
-in the order they were written.  Having the notes as a set of variables, which
-also carry metadata, allows for some more malleability than
-that.\postnote{This limitation does not apply to \pkg{enotez}, since its use
-  of the external file is somewhat different from the traditional one.
-  Instead of a dedicated endnotes file, it uses the \file{.aux} file, which
-  then defines a set of variables at \texttt{begindocument}.  Therefore, the
-  same kind of possibility \pkg{postnotes} enjoys in this regard, is
-  technically also available to \pkg{enotez}.}  For example, consider a note
-that was originally placed inside a float which changed the sequence of the
-notes and required a local manual adjustment of the counter.  When one is just
-inputting the notes file there's little that can be done to avoid printing
-them out of order.  But with a set of variables in hand instead, one can
-pre-process the notes before printing and sort them, as \pkg{postnotes} does.
-Since we can sort, we can also accept a manual specification of the sort order
-for a manual mark.  The dynamic information provided by \pkg{postnotes} to
-support contextual running headers is also based on the possibility of
-pre-processing the notes set.  And so on.  Third, not being bound to the
-linear logic of reading an external file brings some extra degrees of freedom
-in storing note metadata, and in restoring part of the environment where the
-note is called (where the ``mark'' is typeset) to where the note is printed
-(where the ``text'' is typeset).  \pkg{postnotes} uses this flexibility, for
-example, to restore \pkg{biblatex}'s \texttt{refsection}, \texttt{refsegment},
-and \texttt{refcontext} information at the moment the note is printed.
-
-True, none of this means any radical change in possibilities, but it
-represents a marginal improvement nonetheless.  The only restriction resulting
-from not using an external file to store the notes is that we can only print
-notes that have been placed previously in the document, but this is not only
-sensible for the use case, but already true of almost all existing \LaTeX{}
-endnotes packages.\postnote{Again, the only exception here is the \pkg{enotez}
-  package, which stores the notes in the \file{.aux} file, making the whole
-  set of notes available at \texttt{begindocument}, and thus being able to
-  print notes even if they occur later on in the document.}
+strictly linear: the notes which were written to the file get printed as such,
+in the order they were written.  Having the notes available as a set of
+variables allows for some more flexibility than that, through the possibility
+of pre-processing the notes before printing.  It also brings some extra
+degrees of freedom in storing note metadata, and in restoring part of the
+environment where the note is called to where the note's content is printed.
 
 \section{Loading the package}
 
@@ -378,6 +326,5 @@ at \url{https://github.com/gusbrs/postnotes/blob/main/CHANGELOG.md}.  An
 archive of historical versions of the package is also kept at
 \url{https://github.com/gusbrs/postnotes/releases}.
 
-\printpostnotes
 
 \end{document}
