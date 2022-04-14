@@ -1272,9 +1272,9 @@
                       \l_@@_print_mark_tl
                   }
                 \l_@@_print_content_tl
-                \group_end:
                 \bool_if:NF \l_@@_print_as_list_bool
                   { \par }
+                \group_end:
                 \tl_if_eq:NnF \l_@@_print_type_next_tl { note }
                   {
                     \bool_if:NTF \l_@@_print_as_list_bool
