@@ -536,10 +536,10 @@
             \msg_warning:nnn { postnotes }
               { option-preamble-only } { hyperref }
           } ,
-        backref .code:n =
+        backlink .code:n =
           {
             \msg_warning:nnn { postnotes }
-              { option-preamble-only } { backref }
+              { option-preamble-only } { backlink }
           } ,
       }
   }
@@ -712,7 +712,7 @@
 % drawback is that the placement of \cs{postnote} would be important, and
 % results sensitive to it.  All the metadata is collected at the point of
 % \cs{postnote}, anchor included, not at the point of \cs{postnoteref}.  So
-% the consequences are a slightly off backref, possibly imprecise metadata,
+% the consequences are a slightly off backlink, possibly imprecise metadata,
 % etc.  Considering \pkg{hyperref} itself shies away completely from linking
 % \cs{footnotemark} with an argument, I'd say there's some gain.
 %
