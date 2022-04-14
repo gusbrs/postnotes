@@ -478,7 +478,7 @@
 % From the default kernel definition of \cs{@makefnmark}.
 %    \begin{macrocode}
     makemark .initial:n =
-      { \hbox:n { \@textsuperscript { \normalfont #1 } } } ,
+      { \hbox { \@textsuperscript { \normalfont #1 } } } ,
     maketextmark .code:n =
       { \cs_set_nopar:Npn \@@_make_text_mark:n ##1 {#1} } ,
     maketextmark .value_required:n = true ,
