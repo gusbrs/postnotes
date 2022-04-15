@@ -410,6 +410,14 @@ ordered printed notes:
 \end{document}
 \end{pnexample}
 
+\DescribeOption{style} %
+\opt{style} is just a convenience ``meta'' option which sets a number of
+``base'' options -- such as \opt{listenv}, \opt{format}, \opt{maketextmark},
+etc.\ -- in order to emulate known styles of printing the notes.  It accepts
+the values \texttt{endnotes} or \texttt{pagenote} so that \cs{printpostnotes}
+works as its counterparts in each of these packages.
+
+
 \subsection*{Note options}
 \zlabel{sec:note-options}
 
@@ -488,8 +496,9 @@ variables, see \zcref{sec:headers}.
 \zlabel{sec:print-options}
 
 \cs{printpostnotes}\oarg{options} can receive a number of package options,
-with local effect.  Namely: \opt{heading}, \opt{format}, \opt{listenv}, and
-\opt{sort}.
+with local effect.  Namely: \opt{heading}, \opt{format}, \opt{listenv},
+\opt{sort}, and \opt{style}.
+
 
 \section{Notes sections}
 \zlabel{sec:notes-sections}

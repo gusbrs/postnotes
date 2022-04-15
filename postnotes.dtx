@@ -566,6 +566,46 @@
 %    \end{macrocode}
 %
 %
+% \subsection*{\opt{style} option}
+%
+%    \begin{macrocode}
+\keys_define:nn { postnotes/print }
+  {
+    style .choice: ,
+    style / endnotes .meta:nn =
+      { postnotes/setup }
+      {
+        listenv = none ,
+        format =
+          {
+            \footnotesize
+            \setlength { \rightskip } { 0pt   }
+            \setlength { \leftskip  } { 0pt   }
+            \setlength { \parindent } { 1.8em }
+          } ,
+%    \end{macrocode}
+% \pkg{endnotes} uses a zero width box to get the desired alignment to the
+% right, but that does not play well with the backlinks, so we have a little
+% more work to do to get this right.
+%    \begin{macrocode}
+        maketextmark =
+         {
+           \hbox_set:Nn \l_tmpa_box { \@textsuperscript { \normalfont ##1 } }
+           \skip_horizontal:n { - \box_wd:N \l_tmpa_box }
+           ##2 \box_use:N \l_tmpa_box ##3
+         } ,
+      } ,
+    style / pagenote .meta:nn =
+      { postnotes/setup }
+      {
+        listenv = none ,
+        format = { } ,
+        maketextmark = { \par\noindent\normalfont ##2 ##1 . ##3 ~ } ,
+      } ,
+  }
+%    \end{macrocode}
+%
+%
 % \subsection*{\cs{postnotesetup}}
 %
 %
