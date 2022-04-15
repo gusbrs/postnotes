@@ -468,21 +468,19 @@
 %
 % \subsection*{\opt{makemark} and \opt{maketextmark} options}
 %
+% The arguments are: \texttt{\#1} is the mark, \texttt{\#2} and \texttt{\#3}
+% are, respectively, the start and the end of the backlink.
+%
 %    \begin{macrocode}
 \keys_define:nn { postnotes/setup }
   {
-    makemark .cs_set:Np = \@@_make_mark:n #1 ,
+    makemark .cs_set:Np = \@@_make_mark:nnn #1#2#3 ,
     makemark .value_required:n = true ,
 %    \end{macrocode}
 % From the default kernel definition of \cs{@makefnmark}.
 %    \begin{macrocode}
     makemark .initial:n =
-      { \hbox { \@textsuperscript { \normalfont #1 } } } ,
-%    \end{macrocode}
-% For \opt{maketextmark}, argument \texttt{\#1} is the mark, arguments
-% \texttt{\#2} and \texttt{\#3} are, respectively, the start and the end of
-% the backlink.
-%    \begin{macrocode}
+      { #2 \hbox { \@textsuperscript { \normalfont #1 } } #3 } ,
     maketextmark .cs_set:Np = \@@_make_text_mark:nnn #1#2#3  ,
     maketextmark .value_required:n = true ,
     maketextmark .initial:n = { #2 #1 . #3 } ,
@@ -930,7 +928,7 @@
               \tl_set:Nn \l_@@_mark_tl { \thepostnote }
           }
         \@@_typeset_mark_wrapper:n
-          { \@@_make_mark:n { \l_@@_mark_tl } }
+          { \@@_make_mark:nnn { \l_@@_mark_tl } { } { } }
       }
     \bool_if:NTF \l_@@_inhibit_note_bool
       { \prg_return_true:  }
@@ -960,10 +958,11 @@
         \bool_if:NTF \l_@@_hyperlink_bool
           {
             \@@_hyperref_set_anchor:n { postnote. #1 .mark }
-            \hyperlink { postnote. #1 .text }
-              { \@@_make_mark:n {#2} }
+            \@@_make_mark:nnn {#2}
+              { \hyper@linkstart { link } { postnote. #1 .text } }
+              { \hyper@linkend }
           }
-          { \@@_make_mark:n {#2} }
+          { \@@_make_mark:nnn {#2} { } { } }
       }
   }
 \cs_generate_variant:Nn \@@_typeset_mark:nn { xV }
@@ -1027,8 +1026,8 @@
         \bool_lazy_and:nnTF
           { ! #1 }
           { \l_@@_hyperlink_bool }
-          { \hyperref [#2] { \@@_make_mark:n { \ref*{#2} } } }
-          { \@@_make_mark:n { \@@_ref_star:n {#2} } }
+          { \hyperref [#2] { \@@_make_mark:nnn { \ref*{#2} } { } { } } }
+          { \@@_make_mark:nnn { \@@_ref_star:n {#2} } { } { } }
       }
     \group_end:
   }
@@ -2131,8 +2130,8 @@
             \bool_lazy_and:nnTF
               { ! #1 }
               { \l_@@_hyperlink_bool }
-              { \hyperref [#2] { \@@_make_mark:n { \zref{#2} } } }
-              { \@@_make_mark:n { \zref{#2} } }
+              { \hyperref [#2] { \@@_make_mark:nnn { \zref{#2} } { } { } } }
+              { \@@_make_mark:nnn { \zref{#2} } { } { } }
           }
         \group_end:
       }

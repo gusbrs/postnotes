@@ -342,14 +342,12 @@ a space between the mark and the content, or to make the mark a superscript.
 \DescribeOption{\cs{pnthepage}} %
 The \opt{makemark} and \opt{maketextmark} options control how the mark is to
 be typeset, at the point \cs{postnote} is called and at the point the note's
-text is printed at \cs{printpostnotes}, respectively.  \opt{makemark} receives
-one argument, represented by the usual \texttt{\#1}, which is the mark itself.
-\opt{maketextmark} can receive three arguments: \texttt{\#1} is again the
-mark, and arguments \texttt{\#2} and \texttt{\#3} are, respectively, the start
-and the end of the backlink (hence they must be used in this order).  Their
-default values are:
+text is printed at \cs{printpostnotes}, respectively.  They both can receive
+three arguments: \texttt{\#1} is the mark itself, and arguments \texttt{\#2}
+and \texttt{\#3} are, respectively, the start and the end of the backlink
+(hence they must be used in this order).  Their default values are:
 \begin{pnsnippet}
-makemark = {\hbox{\@textsuperscript{\normalfont#1}}} ,
+makemark = {#2\hbox{\@textsuperscript{\normalfont#1}}#3} ,
 maketextmark = {#2#1.#3} ,
 \end{pnsnippet}
 At the point \opt{maketextmark} gets typeset, the \cs{pnthepage} variable
