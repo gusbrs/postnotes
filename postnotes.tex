@@ -254,16 +254,15 @@ For more details and some examples, see \zcref{sec:notes-sections}.  Its
 
 \begin{function}{\printpostnotes}
   \begin{syntax}
-    \cs{printpostnotes}\oarg{options}
+    \cs{printpostnotes}
   \end{syntax}
 \end{function}
 Prints the \cs{postnotes} set since the last call of \cs{printpostnotes}, or
-since the beginning of the document. Its \meta{options} are presented in
-\zcref{sec:options}, \zcref[ref=title,noname]{sec:print-options}.
+since the beginning of the document.
 
 \begin{function}{\postnoteref}
   \begin{syntax}
-    \cs{printpostnotes}\meta{*}\marg{label}
+    \cs{postnoteref}\meta{*}\marg{label}
   \end{syntax}
 \end{function}
 Typesets a postnote reference to \meta{label}.  Of course, \meta{label} must
@@ -371,19 +370,20 @@ available.  It is a boolean option, and is only operational if \opt{hyperref}
 is not \texttt{false}.  These are a preamble only options.
 
 \DescribeOption{sort} %
-The \opt{sort} option controls the notes queue is sorted or not at
-\cs{printpostnotes}.  In most cases, the order the notes should be printed is
-exactly the one in which the notes were placed along the document.  However,
-in cases for which some manual intervention was required, sorting the notes
-can be quite handy.  Two typical examples are: a note inside a float which
-disturbed the sequence of the \texttt{postnote} counter and a manually set
-mark, in which case \pkg{postnotes} also allows to manually set a sort value
-with the \opt{sortnum} option of \cs{postnote}.  Sorting does not cross
-boundaries of notes sections, as set by \cs{postnotesection}, in other words,
-if notes sections exist, sorting is only ever carried out within the
-boundaries of each section.  This may be a restriction for cases in which
-floats cross sections' boundaries, but it's the only reasonable thing to do.
-\opt{sort} is a boolean option, and defaults to \texttt{true}.
+The \opt{sort} option controls whether the notes queue is sorted or not at
+\cs{printpostnotes}.  Normally, the order the notes should be printed is the
+one in which the notes were placed along the document.  However, in cases
+where some manual intervention was required, sorting the notes can be quite
+useful, and difficult to handle in its absence.  Two typical examples are: a
+note inside a float which disturbed the sequence of the \texttt{postnote}
+counter and a manually set mark, in which case \pkg{postnotes} also allows to
+manually set a sort value with the \opt{sortnum} option of \cs{postnote}.
+Sorting does not cross boundaries of notes sections, as set by
+\cs{postnotesection}, in other words, if notes sections exist, sorting is only
+ever carried out within the boundaries of each section.  This may be a
+restriction for cases in which floats cross sections' boundaries, but it's the
+only reasonable thing to do.  \opt{sort} is a boolean option, and defaults to
+\texttt{true}.
 
 To appreciate the role the sorting of notes can have, consider the document in
 \zcref{ex:opt:1}, which produces correctly ordered note marks, and correctly
@@ -491,13 +491,6 @@ option has been set to it, is made available for the first and last note on a
 given page through the variables \cs{pnhdnamefirst} and \cs{pnhdnamelast} at
 the moment the header of the page is typeset.  For details on how to use these
 variables, see \zcref{sec:headers}.
-
-\subsection*{Print options}
-\zlabel{sec:print-options}
-
-\cs{printpostnotes}\oarg{options} can receive a number of package options,
-with local effect.  Namely: \opt{heading}, \opt{format}, \opt{listenv},
-\opt{sort}, and \opt{style}.
 
 
 \section{Notes sections}

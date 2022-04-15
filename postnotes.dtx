@@ -351,7 +351,7 @@
 % \subsection*{\opt{heading} option}
 %
 %    \begin{macrocode}
-\keys_define:nn { postnotes/print }
+\keys_define:nn { postnotes/setup }
   {
     heading .cs_set_protected:Np = \pnheading ,
     heading .value_required:n = true ,
@@ -384,7 +384,7 @@
 %
 %    \begin{macrocode}
 \tl_new:N \l_@@_print_format_tl
-\keys_define:nn { postnotes/print }
+\keys_define:nn { postnotes/setup }
   {
     format .tl_set:N = \l_@@_print_format_tl ,
     format .initial:n = { \small } ,
@@ -398,7 +398,7 @@
 %    \begin{macrocode}
 \tl_new:N \l_@@_print_env_tl
 \bool_new:N \l_@@_print_as_list_bool
-\keys_define:nn { postnotes/print }
+\keys_define:nn { postnotes/setup }
   {
     listenv .code:n =
       {
@@ -469,7 +469,7 @@
 % \subsection*{\opt{makemark} and \opt{maketextmark} options}
 %
 %    \begin{macrocode}
-\keys_define:nn { postnotes/package }
+\keys_define:nn { postnotes/setup }
   {
     makemark .cs_set:Np = \@@_make_mark:n #1 ,
     makemark .value_required:n = true ,
@@ -496,7 +496,7 @@
 \bool_new:N \l_@@_hyperlink_bool
 \bool_new:N \l_@@_hyperref_warn_bool
 \bool_new:N \l_@@_backlink_bool
-\keys_define:nn { postnotes/package }
+\keys_define:nn { postnotes/setup }
   {
     hyperref .choice: ,
     hyperref / auto .code:n =
@@ -532,7 +532,7 @@
           { \msg_warning:nn { postnotes } { missing-hyperref } }
         \bool_set_false:N \l_@@_hyperlink_bool
       }
-    \keys_define:nn { postnotes/package }
+    \keys_define:nn { postnotes/setup }
       {
         hyperref .code:n =
           {
@@ -557,7 +557,7 @@
 %
 %    \begin{macrocode}
 \bool_new:N \l_@@_sort_bool
-\keys_define:nn { postnotes/print }
+\keys_define:nn { postnotes/setup }
   {
     sort .bool_set:N = \l_@@_sort_bool ,
     sort .initial:n = true ,
@@ -569,11 +569,10 @@
 % \subsection*{\opt{style} option}
 %
 %    \begin{macrocode}
-\keys_define:nn { postnotes/print }
+\keys_define:nn { postnotes/setup }
   {
     style .choice: ,
-    style / endnotes .meta:nn =
-      { postnotes/setup }
+    style / endnotes .meta:n =
       {
         listenv = none ,
         format =
@@ -595,8 +594,7 @@
            ##2 \box_use:N \l_tmpa_box ##3
          } ,
       } ,
-    style / pagenote .meta:nn =
-      { postnotes/setup }
+    style / pagenote .meta:n =
       {
         listenv = none ,
         format = { } ,
@@ -619,17 +617,6 @@
   { \keys_set:nn { postnotes/setup } {#1} }
 %    \end{macrocode}
 % \end{macro}
-%
-%    \begin{macrocode}
-\keys_define:nn { }
-  {
-    postnotes/setup .inherit:n =
-      {
-        postnotes/package ,
-        postnotes/print ,
-      }
-  }
-%    \end{macrocode}
 %
 %
 % \section{\cs{postnote}}
@@ -1103,11 +1090,11 @@
 % \begin{macro}[int]{\printpostnotes}
 %   Provide \cs{printpostnotes}.
 %   \begin{syntax}
-%     \cs{printpostnotes}\oarg{options}
+%     \cs{printpostnotes}
 %   \end{syntax}
 %    \begin{macrocode}
-\NewDocumentCommand \printpostnotes { O { } }
-  { \@@_print_notes:n {#1} }
+\NewDocumentCommand \printpostnotes { }
+  { \@@_print_notes: }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1143,7 +1130,7 @@
 %     \l_@@_print_content_tl ,
 %     \l_@@_clear_queue_seq ,
 %   }
-%   Auxiliary variables for \cs{@@_print_notes:n}.
+%   Auxiliary variables for \cs{@@_print_notes:}.
 %    \begin{macrocode}
 \int_new:N \g_@@_print_postnotes_int
 \tl_new:N \l_@@_print_note_id_tl
@@ -1158,10 +1145,10 @@
 % \end{macro}
 %
 %
-% \cs{@@_print_notes:n} hooks.  Both meant at providing points of entry for
+% \cs{@@_print_notes:} hooks.  Both meant at providing points of entry for
 % additional setup, specially to add support to packages and features which
 % require it.  The \texttt{postnotes/print} hook is run early in
-% \cs{@@_print_notes:n} and only once per call, after the user options have
+% \cs{@@_print_notes:} and only once per call, after the user options have
 % been processed.  The \texttt{postnotes/print/notevars} hook is run once for
 % each note, at the point where environment variables are being set or
 % restored, before the typesetting of either the mark or the text, but within
@@ -1191,17 +1178,16 @@
 %    \end{macrocode}
 %
 %
-% \begin{macro}{\@@_print_notes:n}
+% \begin{macro}{\@@_print_notes:}
 %   The internal version of \cs{printpostnotes}.
 %   \begin{syntax}
-%     \cs{@@_print_notes:n} \Arg{options}
+%     \cs{@@_print_notes:}
 %   \end{syntax}
 %    \begin{macrocode}
-\cs_new_protected:Npn \@@_print_notes:n #1
+\cs_new_protected:Npn \@@_print_notes:
   {
     \group_begin:
     \int_gincr:N \g_@@_print_postnotes_int
-    \keys_set:nn { postnotes/print } {#1}
     \UseHook { postnotes/print }
     \tl_set:Nn \l_@@_print_type_prev_tl { open }
     \tl_gclear:N \g_@@_section_name_tl
@@ -1354,7 +1340,7 @@
 %     \@@_typeset_text_mark:nn ,
 %     \@@_text_mark_wrapper:n ,
 %   }
-%   Auxiliary functions for mark typesetting in \cs{@@_print_notes:n}.
+%   Auxiliary functions for mark typesetting in \cs{@@_print_notes:}.
 %   \begin{syntax}
 %     \cs{@@_typeset_text_mark:nn} \Arg{note id} \Arg{mark}
 %     \cs{@@_text_mark_wrapper:n} \Arg{mark}
@@ -1437,7 +1423,7 @@
 %
 %
 % \begin{macro}{\@@_sort_queue:N}
-%   Sorting function for \cs{@@_print_notes:n}.
+%   Sorting function for \cs{@@_print_notes:}.
 %   \begin{syntax}
 %     \cs{@@_sort_queue:N} \meta{\cs{g_@@_queue_seq}}
 %   \end{syntax}
@@ -1491,7 +1477,7 @@
 %   appropriate places.  The set of these labels provides a mapping from each
 %   note's ``mark'' and ``text'' to the page where it occurs.
 % \item This information set is processed by \cs{@@_get_headers_data:N} at the
-%   beginning of \cs{@@_print_notes:n} to identify the first and last note of
+%   beginning of \cs{@@_print_notes:} to identify the first and last note of
 %   each page in \cs{printpostnotes}, and to generate a mapping from these
 %   first and last notes on each page to the pages where their corresponding
 %   marks occur.  We also take the opportunity to enrich this mapping with
