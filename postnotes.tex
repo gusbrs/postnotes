@@ -322,20 +322,14 @@ printed in \cs{printpostnotes}.  This must be the name of an existing list
 environment, and \pkg{postnotes} provides two for convenience:
 \env{postnoteslist}, which is the default, and \env{postnoteslisthang} which
 typesets the notes with a hanging indent.  You can also create your own, with
-\pkg{enumitem} or otherwise, of course.  Either way, each note in the list is
-laid out in the form:
-\begin{pnsnippet}[escapeinside=`']
-\item[`\meta{mark}']`\meta{note content}'
-\end{pnsnippet}
-\opt{listenv} can also receive the special value \texttt{none}, in which case
-the notes blocks are not wrapped in a list environment, but rather typeset as
-plain paragraphs.  In this case, each note is laid out in the form:
-\begin{pnsnippet}[escapeinside=`']
-`\meta{mark}'`\meta{note content}'\par
-\end{pnsnippet}
-Note that if you use \texttt{\opt{listenv}=none}, you'll probably also want to
-set \opt{maketextmark} to a different value than the default, possibly to add
-a space between the mark and the content, or to make the mark a superscript.
+\pkg{enumitem} or otherwise, of course.  \opt{listenv} can also receive the
+special value \texttt{none}, in which case the notes blocks are not wrapped in
+a list environment, but rather typeset as plain paragraphs.
+\texttt{\opt{listenv}=none} already sets \opt{postprintnote} to \cs{par} for
+that reason, but you'll probably also want to set \opt{maketextmark},
+\opt{pretextmark}, or \opt{posttextmark} to values different than the
+defaults.
+
 
 \DescribeOption{makemark} %
 \DescribeOption{maketextmark} %
@@ -344,7 +338,7 @@ The \opt{makemark} and \opt{maketextmark} options control how the mark is to
 be typeset, at the point \cs{postnote} is called and at the point the note's
 text is printed at \cs{printpostnotes}, respectively.  They both can receive
 three arguments: \texttt{\#1} is the mark itself, and arguments \texttt{\#2}
-and \texttt{\#3} are, respectively, the start and the end of the backlink
+and \texttt{\#3} are, respectively, the start and the end of the hyperlink
 (hence they must be used in this order).  Their default values are:
 \begin{pnsnippet}
 makemark = {#2\hbox{\@textsuperscript{\normalfont#1}}#3} ,
@@ -352,6 +346,22 @@ maketextmark = {#2#1.#3} ,
 \end{pnsnippet}
 At the point \opt{maketextmark} gets typeset, the \cs{pnthepage} variable
 contains the value of \cs{thepage} where its corresponding note was set.
+
+\DescribeOption{pretextmark} %
+\DescribeOption{posttextmark} %
+\DescribeOption{postprintnote} %
+The options \opt{pretextmark}, \opt{posttextmark}, and \opt{postprintnote}
+allow to insert additional material in \cs{printpostnotes}, respectively,
+right before the mark, right after the mark, and after the note's content.
+All in all, when \opt{listenv} is not \texttt{none}, each note in the list is
+laid out in the form:
+\begin{pnsnippet}[escapeinside=`']
+\item[`\meta{pretextmark}'`\meta{mark}'`\meta{posttextmark}']`\meta{note content}'`\meta{postprintnote}'
+\end{pnsnippet}
+and when \opt{listenv} is \texttt{none}, each note is laid out in the form:
+\begin{pnsnippet}[escapeinside=`']
+`\meta{pretextmark}'`\meta{mark}'`\meta{posttextmark}'`\meta{note content}'`\meta{postprintnote=\textbackslash{}\textbf{par}}'
+\end{pnsnippet}
 
 \DescribeOption{hyperref} %
 \DescribeOption{backlink} %

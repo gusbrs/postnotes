@@ -405,6 +405,7 @@
         \tl_if_eq:nnTF {#1} { none }
           {
             \bool_set_false:N \l_@@_print_as_list_bool
+            \tl_set:Nn \l_@@_post_printnote_tl { \par }
 %    \end{macrocode}
 % A sensible default just in case.  It should not get to be used though.
 %    \begin{macrocode}
@@ -484,6 +485,24 @@
     maketextmark .cs_set:Np = \@@_make_text_mark:nnn #1#2#3  ,
     maketextmark .value_required:n = true ,
     maketextmark .initial:n = { #2 #1 . #3 } ,
+  }
+%    \end{macrocode}
+%
+%
+% \subsection*{\opt{pretextmark}, \opt{posttextmark}, \opt{postprintnote} options}
+%
+%    \begin{macrocode}
+\tl_new:N \l_@@_pre_textmark_tl
+\tl_new:N \l_@@_post_textmark_tl
+\tl_new:N \l_@@_post_printnote_tl
+\keys_define:nn { postnotes/setup }
+  {
+    pretextmark .tl_set:N = \l_@@_pre_textmark_tl ,
+    pretextmark .value_required:n = true ,
+    posttextmark .tl_set:N = \l_@@_post_textmark_tl ,
+    posttextmark .value_required:n = true ,
+    postprintnote .tl_set:N = \l_@@_post_printnote_tl ,
+    postprintnote .value_required:n = true ,
   }
 %    \end{macrocode}
 %
@@ -580,6 +599,7 @@
             \setlength { \leftskip  } { 0pt   }
             \setlength { \parindent } { 1.8em }
           } ,
+        pretextmark = { \par } ,
 %    \end{macrocode}
 % \pkg{endnotes} uses a zero width box to get the desired alignment to the
 % right, but that does not play well with the backlinks, so we have a little
@@ -596,7 +616,9 @@
       {
         listenv = none ,
         format = { } ,
-        maketextmark = { \par\noindent\normalfont ##2 ##1 . ##3 ~ } ,
+        pretextmark = { \par\noindent } ,
+        maketextmark = { { \normalfont ##2 ##1 . ##3 } } ,
+        posttextmark = { ~ } ,
       } ,
   }
 %    \end{macrocode}
@@ -1299,8 +1321,7 @@
                       \l_@@_print_mark_tl
                   }
                 \l_@@_print_content_tl
-                \bool_if:NF \l_@@_print_as_list_bool
-                  { \par }
+                \l_@@_post_printnote_tl
                 \group_end:
                 \tl_if_eq:NnF \l_@@_print_type_next_tl { note }
                   {
@@ -1364,8 +1385,11 @@
 \cs_new_protected:Npn \@@_text_mark_wrapper:n #1
   {
     \bool_if:NTF \l_@@_print_as_list_bool
-      { \item [ #1 ] }
-      { #1 }
+      {
+        \item
+          [ \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl ]
+      }
+      { \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl }
   }
 %    \end{macrocode}
 % \end{macro}
