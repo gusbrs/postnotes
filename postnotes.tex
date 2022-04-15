@@ -90,6 +90,7 @@
     \postnoteref ,
     \postnotesection ,
     \printpostnotes ,
+    \postnotesetup ,
     \pntitle ,
     \pnheaderdefault ,
     \pnthechapter ,
@@ -258,7 +259,8 @@ For more details and some examples, see \zcref{sec:notes-sections}.  Its
   \end{syntax}
 \end{function}
 Prints the \cs{postnotes} set since the last call of \cs{printpostnotes}, or
-since the beginning of the document.
+since the beginning of the document.  For two basic usage illustrations, see
+\zcref{ex:sect:basic,ex:x:multi-print}.
 
 \begin{function}{\postnoteref}
   \begin{syntax}
@@ -330,7 +332,6 @@ that reason, but you'll probably also want to set \opt{maketextmark},
 \opt{pretextmark}, or \opt{posttextmark} to values different than the
 defaults.
 
-
 \DescribeOption{makemark} %
 \DescribeOption{maketextmark} %
 \DescribeOption{\cs{pnthepage}} %
@@ -363,6 +364,13 @@ and when \opt{listenv} is \texttt{none}, each note is laid out in the form:
 `\meta{pretextmark}'`\meta{mark}'`\meta{posttextmark}'`\meta{note content}'`\meta{postprintnote=\textbackslash{}\textbf{par}}'
 \end{pnsnippet}
 
+\DescribeOption{style} %
+\opt{style} is just a convenience ``meta'' option which sets a number of
+``base'' options -- such as \opt{listenv}, \opt{format}, \opt{maketextmark},
+etc.\ -- in order to emulate known styles of printing the notes.  It accepts
+the values \texttt{endnotes} or \texttt{pagenote} so that \cs{printpostnotes}
+works as its counterparts in each of these packages.
+
 \DescribeOption{hyperref} %
 \DescribeOption{backlink} %
 The \opt{hyperref} option controls the use of \pkg{hyperref} by
@@ -384,46 +392,15 @@ one in which the notes were placed along the document.  However, in cases
 where some manual intervention was required, sorting the notes can be quite
 useful, and difficult to handle in its absence.  Two typical examples are: a
 note inside a float which disturbed the sequence of the \texttt{postnote}
-counter and a manually set mark, in which case \pkg{postnotes} also allows to
-manually set a sort value with the \opt{sortnum} option of \cs{postnote}.
-Sorting does not cross boundaries of notes sections, as set by
+counter (see \zcref{ex:x:float} at \zcref{sec:further-examples} for an
+illustration) and a manually set mark, in which case \pkg{postnotes} also
+allows to manually set a sort value with the \opt{sortnum} option of
+\cs{postnote}.  Sorting does not cross boundaries of notes sections, as set by
 \cs{postnotesection}, in other words, if notes sections exist, sorting is only
 ever carried out within the boundaries of each section.  This may be a
 restriction for cases in which floats cross sections' boundaries, but it's the
 only reasonable thing to do.  \opt{sort} is a boolean option, and defaults to
 \texttt{true}.
-
-To appreciate the role the sorting of notes can have, consider the document in
-\zcref{ex:opt:1}, which produces correctly ordered note marks, and correctly
-ordered printed notes:
-
-\begin{pnexample}[caption={Sorting and floats},label={ex:opt:1}]
-\documentclass{book}
-\usepackage{postnotes}
-\usepackage{hyperref}
-\begin{document}
-\chapter{First chapter}
-\postnote{1}
-\postnote{2}
-\begin{table}[p]
-  \caption{Table}
-  Table.\postnote[mark=5,sortnum=5]{3}
-\end{table}
-\postnote{4}
-\postnote{5}
-\stepcounter{postnote}
-\clearpage
-\postnote{6}
-\printpostnotes
-\end{document}
-\end{pnexample}
-
-\DescribeOption{style} %
-\opt{style} is just a convenience ``meta'' option which sets a number of
-``base'' options -- such as \opt{listenv}, \opt{format}, \opt{maketextmark},
-etc.\ -- in order to emulate known styles of printing the notes.  It accepts
-the values \texttt{endnotes} or \texttt{pagenote} so that \cs{printpostnotes}
-works as its counterparts in each of these packages.
 
 
 \subsection*{Note options}
@@ -560,9 +537,9 @@ is a good one for their use case, the variables just do what they say, and
 contain the values of interest for the ``next note''.
 
 This is meant to be simple.  Some examples might make things more concrete.
-At its basic, \cs{postnotesection} can just be set manually:
+At its most basic, \cs{postnotesection} can just be set manually:
 
-\begin{pnexample}[caption={Basic usage},label={ex:sect:1}]
+\begin{pnexample}[caption={Basic usage},label={ex:sect:basic}]
 \documentclass{book}
 \usepackage{postnotes}
 \usepackage{hyperref}
@@ -580,12 +557,12 @@ Boo.\postnote{Boo note.}
 \end{document}
 \end{pnexample}
 
-The document in \zcref{ex:sect:1} resets the \texttt{postnote} counter for each
+The document in \zcref{ex:sect:basic} resets the \texttt{postnote} counter for each
 chapter, and manually sets notes sections by chapter, which results in
 \cs{printpostnotes} being correspondingly subdivided.  But it is easy to make
 this automatic:
 
-\begin{pnexample}[caption={Automating notes subdivision with a hook},label={ex:sect:2}]
+\begin{pnexample}[caption={Automating notes subdivision with a hook},label={ex:sect:auto}]
 \documentclass{book}
 \usepackage{postnotes}
 \AddToHook{cmd/chapter/before}{%
@@ -604,7 +581,7 @@ Boo.\postnote{Boo note.}
 \end{document}
 \end{pnexample}
 
-\zcref{ex:sect:2} uses the \texttt{cmd/chapter/before} hook, and thus
+\zcref{ex:sect:auto} uses the \texttt{cmd/chapter/before} hook, and thus
 \cs{pnthechapternextnote} to retrieve the correct chapter number for
 \cs{postnotesection}, as explained above.  The counter is reset every chapter
 by means of \cs{counterwithin*}.  Note that the call to \cs{chapter*} inside
@@ -616,7 +593,7 @@ among mostly numbered chapters, an ocasional unnumbered one?
 immediately successive calls to \cs{postnotesection} override the previous
 ones, it is straightforward to just manually adjust the exception:
 
-\begin{pnexample}[caption={Fine-tuning automation},label={ex:sect:3}]
+\begin{pnexample}[caption={Fine-tuning automation},label={ex:sect:fine-auto}]
 \documentclass{book}
 \usepackage{postnotes}
 \AddToHook{cmd/chapter/before}{%
@@ -665,6 +642,65 @@ places, etc.
 
 \section{Localization}
 \zlabel{sec:localization}
+
+
+\section{Further examples}
+\zlabel{sec:further-examples}
+
+This section collects some further usage examples which did not fit into the
+previous sections, but might still be of interest.
+
+\bigskip{}
+
+\zcref{ex:x:multi-print} illustrates a basic procedure of how to obtain a note
+section for each chapter of a book, by calling \cs{printpostnotes} at the end
+of each chapter:
+
+\begin{pnexample}[caption={Notes for each chapter},label={ex:x:multi-print}]
+\documentclass{book}
+\usepackage{postnotes}
+\postnotesetup{heading={\section*{\pntitle}}}
+\usepackage{hyperref}
+\begin{document}
+\chapter{First chapter}
+Foo.\postnote{Foo note.}
+Bar.\postnote{Bar note.}
+\printpostnotes
+\chapter{Second chapter}
+\setcounter{postnote}{0}
+Baz.\postnote{Baz note.}
+Boo.\postnote{Boo note.}
+\printpostnotes
+\end{document}
+\end{pnexample}
+
+\zcref{ex:x:float} shows a case of a float which disturbs the order of the
+notes.  It demonstrates a (traditional) technique to deal with the situation,
+by setting a manual mark and adjusting the counter where appropriate.  It also
+illustrates the role the sorting of notes can have, by producing not only
+correctly ordered note marks (as a result of the manual adjustments), but also
+correctly ordered printed notes (as a result of sorting):
+
+\begin{pnexample}[caption={Sorting and floats},label={ex:x:float}]
+\documentclass{book}
+\usepackage{postnotes}
+\usepackage{hyperref}
+\begin{document}
+\chapter{First chapter}
+\postnote{1}
+\postnote{2}
+\begin{table}[p]
+  \caption{Table}
+  Table.\postnote[mark=5,sortnum=5]{3}
+\end{table}
+\postnote{4}
+\postnote{5}
+\stepcounter{postnote}
+\clearpage
+\postnote{6}
+\printpostnotes
+\end{document}
+\end{pnexample}
 
 \section{Acknowledgments}
 
