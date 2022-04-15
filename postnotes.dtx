@@ -1048,7 +1048,10 @@
         \bool_lazy_and:nnTF
           { ! #1 }
           { \l_@@_hyperlink_bool }
-          { \hyperref [#2] { \@@_make_mark:nnn { \ref*{#2} } { } { } } }
+          {
+            \hyperref [#2]
+              { \@@_make_mark:nnn { \ref*{#2} } { } { } }
+          }
           { \@@_make_mark:nnn { \@@_ref_star:n {#2} } { } { } }
       }
     \group_end:
@@ -2154,7 +2157,10 @@
             \bool_lazy_and:nnTF
               { ! #1 }
               { \l_@@_hyperlink_bool }
-              { \hyperref [#2] { \@@_make_mark:nnn { \zref{#2} } { } { } } }
+              {
+                \hyperref [#2]
+                  { \@@_make_mark:nnn { \zref{#2} } { } { } }
+              }
               { \@@_make_mark:nnn { \zref{#2} } { } { } }
           }
         \group_end:
@@ -2240,7 +2246,7 @@
 %
 % \subsection*{\pkg{tabularx}}
 %
-% For the identification of the trial passes in \pkg{tabulax}, see
+% For the identification of the trial passes in \pkg{tabularx}, see
 % \url{https://tex.stackexchange.com/a/640035} (including discussion in the
 % comments, thanks \contributor{David Carlisle}), and also
 % \url{https://tex.stackexchange.com/a/227155} and
