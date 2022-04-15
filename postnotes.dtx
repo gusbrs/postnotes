@@ -471,18 +471,21 @@
 %    \begin{macrocode}
 \keys_define:nn { postnotes/package }
   {
-    makemark .code:n =
-      { \cs_set_nopar:Npn \@@_make_mark:n ##1 {#1} } ,
+    makemark .cs_set:Np = \@@_make_mark:n #1 ,
     makemark .value_required:n = true ,
 %    \end{macrocode}
 % From the default kernel definition of \cs{@makefnmark}.
 %    \begin{macrocode}
     makemark .initial:n =
       { \hbox { \@textsuperscript { \normalfont #1 } } } ,
-    maketextmark .code:n =
-      { \cs_set_nopar:Npn \@@_make_text_mark:n ##1 {#1} } ,
+%    \end{macrocode}
+% For \opt{maketextmark}, argument \texttt{\#1} is the mark, arguments
+% \texttt{\#2} and \texttt{\#3} are, respectively, the start and the end of
+% the backlink.
+%    \begin{macrocode}
+    maketextmark .cs_set:Np = \@@_make_text_mark:nnn #1#2#3  ,
     maketextmark .value_required:n = true ,
-    maketextmark .initial:n = { #1 . } ,
+    maketextmark .initial:n = { #2 #1 . #3 } ,
   }
 %    \end{macrocode}
 %
@@ -1325,12 +1328,13 @@
         \@@_hyperref_set_anchor:n { postnote. #1 .text }
         \bool_if:NTF \l_@@_backlink_bool
           {
-            \hyperlink { postnote. #1 .mark }
-              { \@@_make_text_mark:n {#2} }
+            \@@_make_text_mark:nnn {#2}
+              { \hyper@linkstart { link } { postnote. #1 .mark } }
+              { \hyper@linkend }
           }
-          { \@@_make_text_mark:n {#2} }
+          { \@@_make_text_mark:nnn {#2} { } { } }
       }
-      { \@@_make_text_mark:n {#2} }
+      { \@@_make_text_mark:nnn {#2} { } { } }
   }
 \cs_generate_variant:Nn \@@_typeset_text_mark:nn { eV }
 \cs_new_protected:Npn \@@_text_mark_wrapper:n #1
