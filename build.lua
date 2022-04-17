@@ -7,10 +7,12 @@ module = "postnotes"
 -- Typeset only the .tex files
 typesetfiles = {"*.tex"}
 
--- We need at least two runs for the labels
-checkruns = 2
--- But possibly more for multipass check, biblatex, etc.
-checkconfigs = {"build","build-3runs"}
+-- We need at least two runs for the labels but, depending on the case
+-- (multipass check, biblatex, etc.), three.  I could probably separate the
+-- cases, but let's see if the test suite becomes burdensomely long before
+-- trying to optimize this.
+checkruns = 3
+-- checkconfigs = {"build","build-4runs"}
 
 -- Use dev formats for regression tests
 -- See https://tex.stackexchange.com/q/611424
@@ -24,12 +26,10 @@ specialformats.latex.xetexdev  = { binary = "xelatex-dev"  , format = "" }
 -- Run biber for biblatex related tests
 -- See https://github.com/moewew/biblatex-ext/blob/dev/build.lua
 function runtest_tasks(name, run)
-  if string.match(name, "^pn%-biblatex") then
-    if run == 1 then
-      return "biber -q " .. name
-    else
-      return ""
-    end
+  if run == 1 and string.match(name, "^pn%-biblatex") then
+    return "biber " .. name
+  else
+    return ""
   end
 end
 
