@@ -834,16 +834,16 @@
 %
 %
 % \begin{macro}{\@@_note:nn}
-%   The internal version of \cs{postnote}.  The \texttt{postnotes/note} hook
-%   is meant to provide a place from where some additional setup for the note
-%   can be performed.  This is being used for adding support for some
+%   The internal version of \cs{postnote}.  The \texttt{postnotes/note/begin}
+%   hook is meant to provide a place from where some additional setup for the
+%   note can be performed.  This is being used for adding support for some
 %   features/packages, but can also be used, for example, to add an extra
 %   local property for \pkg{zref}.
 %   \begin{syntax}
 %     \cs{@@_note:nn}\oarg{options}\marg{note content}
 %   \end{syntax}
 %    \begin{macrocode}
-\NewHook { postnotes/note }
+\NewHook { postnotes/note/begin }
 \cs_new_protected:Npn \@@_note:nn #1#2
   {
     \group_begin:
@@ -858,7 +858,7 @@
           }
         \seq_gput_right:Nx \g_@@_queue_seq
           { \l_@@_note_id_tl }
-        \UseHook { postnotes/note }
+        \UseHook { postnotes/note/begin }
         \cs_set:Npn \@currentcounter { postnote }
         \cs_set:Npx \@currentlabel { \p@postnote \l_@@_mark_tl }
         \@@_hyperref_make_currentHref:n
@@ -1171,16 +1171,16 @@
 %
 % \cs{@@_print_notes:} hooks.  Both meant at providing points of entry for
 % additional setup, specially to add support to packages and features which
-% require it.  The \texttt{postnotes/print} hook is run early in
+% require it.  The \texttt{postnotes/print/begin} hook is run early in
 % \cs{@@_print_notes:} and only once per call, after the user options have
-% been processed.  The \texttt{postnotes/print/notevars} hook is run once for
+% been processed.  The \texttt{postnotes/print/eachnote} hook is run once for
 % each note, at the point where environment variables are being set or
 % restored, before the typesetting of either the mark or the text, but within
 % a group of its own of each note.
 %
 %    \begin{macrocode}
-\NewHook { postnotes/print }
-\NewHook { postnotes/print/notevars }
+\NewHook { postnotes/print/begin }
+\NewHook { postnotes/print/eachnote }
 %    \end{macrocode}
 %
 %
@@ -1215,7 +1215,7 @@
     \seq_if_empty:NTF \g_@@_queue_seq
       { \msg_warning:nn { postnotes } { empty-printpostnotes } }
       {
-        \UseHook { postnotes/print }
+        \UseHook { postnotes/print/begin }
         \tl_set:Nn \l_@@_print_type_prev_tl { open }
         \seq_set_eq:NN \l_@@_clear_queue_seq \g_@@_queue_seq
         \pnheading
@@ -1300,7 +1300,7 @@
                     \l_@@_print_format_tl
                   }
                 \group_begin:
-                \UseHook { postnotes/print/notevars }
+                \UseHook { postnotes/print/eachnote }
                 \@@_get_pageref:Nx \pnthepage
                   { mark@ \l_@@_print_note_id_tl }
                 \@@_prop_get:nnN
@@ -1892,7 +1892,7 @@
 % \texttt{\textbackslash{}postnoteref\{mynote\}} inside the caption.
 %
 %    \begin{macrocode}
-\AddToHook { postnotes/note } [ postnotes ]
+\AddToHook { postnotes/note/begin } [ postnotes ]
   {
     \cs_if_exist:NT \@captype
       { \bool_set_true:N \l_@@_maybe_multi_bool }
@@ -1980,7 +1980,7 @@
 %    \end{macrocode}
 % \pkg{biblatex} setup, once for \cs{printpostnotes} call.
 %    \begin{macrocode}
-    \AddToHook { postnotes/print } [ postnotes ]
+    \AddToHook { postnotes/print/begin } [ postnotes ]
       {
         \@@_biblatex_endrefcontext_local:
         \@@_biblatex_citereset_local:
@@ -1994,7 +1994,7 @@
 % Restore \pkg{biblatex} variables for each note.
 %    \begin{macrocode}
     \tl_new:N \l_@@_biblatex_restore_tl
-    \AddToHook { postnotes/print/notevars } [ postnotes ]
+    \AddToHook { postnotes/print/eachnote } [ postnotes ]
       {
         \@@_prop_get:nnN { \l_@@_print_note_id_tl }
           { biblatex@refsection } \l_@@_biblatex_restore_tl
@@ -2132,14 +2132,14 @@
   {
     \tl_new:N \l_@@_biblatex_orig_refsection_tl
     \tl_new:N \g_@@_biblatex_prev_refsection_tl
-    \AddToHook { postnotes/print } [ postnotes ]
+    \AddToHook { postnotes/print/begin } [ postnotes ]
       {
         \tl_set:Nx \l_@@_biblatex_orig_refsection_tl
           { \int_use:N \c@refsection }
         \tl_gset:Nx \g_@@_biblatex_prev_refsection_tl
           \l_@@_biblatex_orig_refsection_tl
      }
-    \AddToHook { postnotes/print/notevars } [ postnotes ]
+    \AddToHook { postnotes/print/eachnote } [ postnotes ]
       {
         \@@_prop_get:nnN { \l_@@_print_note_id_tl }
           { biblatex@refsection } \l_@@_biblatex_restore_tl
@@ -2235,7 +2235,7 @@
 \AddToHook { package/zref-clever/after }
   {
     \zcsetup { countertype = { postnote = endnote } }
-    \AddToHook { postnotes/print } [ postnotes ]
+    \AddToHook { postnotes/print/begin } [ postnotes ]
       { \zcsetup { counterresetby = { postnote = postnotesection } } }
   }
 %    \end{macrocode}
@@ -2271,7 +2271,7 @@
 % option and \cs{postnoteref}.  Things should work in text mode and in display
 % style.
 %    \begin{macrocode}
-    \AddToHook { postnotes/note } [ postnotes ]
+    \AddToHook { postnotes/note/begin } [ postnotes ]
       {
         \legacy_if:nF { firstchoice@ }
           { \bool_set_true:N \l_@@_maybe_multi_bool }
