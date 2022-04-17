@@ -1946,6 +1946,19 @@
 % Thanks \contributor{Moritz Wemheuer}:
 % \url{https://tex.stackexchange.com/q/597359#comment1594585_597389}.
 %
+% We can make \pkg{biblatex}'s \texttt{refsegment}s and \texttt{refcontext}s
+% work, but \texttt{refsection}s are more complicated.  Currently,
+% \texttt{refsection}s are only supported if \cs{printpostnotes} is called
+% within each \texttt{refsection}, one cannot ``accumulate'' the notes from
+% all \texttt{refsection}s and print them at the end.  Well, one can, but they
+% will be considered part of the current \texttt{refsection} of wherever
+% \cs{printpostnotes} is placed (unless they were also cited in the original
+% \texttt{refsection} out of a \cs{postnote} which, of course, is not
+% something to rely on).
+%
+% Note that support for these features of \pkg{biblatex} is
+% \emph{experimental}.
+%
 %    \begin{macrocode}
 \AddToHook { package/biblatex/after }
   {
@@ -1965,6 +1978,19 @@
           { biblatex@refcontext } \blx@refcontext@context
       }
 %    \end{macrocode}
+% \pkg{biblatex} setup, once for \cs{printpostnotes} call.
+%    \begin{macrocode}
+    \AddToHook { postnotes/print } [ postnotes ]
+      {
+        \@@_biblatex_endrefcontext_local:
+        \@@_biblatex_citereset_local:
+%    \end{macrocode}
+% Let \pkg{biblatex} know we are in a ``notes'' context.  See
+% \url{https://tex.stackexchange.com/a/304464}, including comments.
+%    \begin{macrocode}
+        \toggletrue { blx@footnote }
+      }
+%    \end{macrocode}
 % Restore \pkg{biblatex} variables for each note.
 %    \begin{macrocode}
     \tl_new:N \l_@@_biblatex_restore_tl
@@ -1982,19 +2008,6 @@
         \@@_prop_get:nnN { \l_@@_print_note_id_tl }
           { biblatex@refcontext } \l_@@_biblatex_restore_tl
         \blx@edef@refcontext { \l_@@_biblatex_restore_tl }
-      }
-%    \end{macrocode}
-% \pkg{biblatex} setup, once for \cs{printpostnotes} call.
-%    \begin{macrocode}
-    \AddToHook { postnotes/print } [ postnotes ]
-      {
-        \@@_biblatex_endrefcontext_local:
-        \@@_biblatex_citereset_local:
-%    \end{macrocode}
-% Let \pkg{biblatex} know we are in a ``notes'' context.  See
-% \url{https://tex.stackexchange.com/a/304464}, including comments.
-%    \begin{macrocode}
-        \toggletrue { blx@footnote }
       }
 %    \end{macrocode}
 % Make \pkg{biblatex}'s \cs{mkbibendnote} use \cs{postnote}.  This is very
@@ -2019,8 +2032,8 @@
     \cs_new_protected:Npn \@@_biblatex_endrefcontext_local:
       {
         \togglefalse { blx@refcontext }
-        \tl_set_eq:NN \blx@refcontext@labelprefix \c_empty_tl
-        \tl_set_eq:NN \blx@refcontext@labelprefix@real \c_empty_tl
+        \tl_clear:N \blx@refcontext@labelprefix
+        \tl_clear:N \blx@refcontext@labelprefix@real
         \tl_set:Nx \blx@refcontext@sortingtemplatename { \blx@sorting }
         \tl_set:Nn \blx@refcontext@sortingnamekeytemplatename { global }
         \tl_set:Nn \blx@refcontext@uniquenametemplatename { global }
@@ -2039,18 +2052,7 @@
 %
 % \begin{macro}{\@@_biblatex_citereset_local:}
 %   Replicate the job of \cs{citereset}, but with local effects, restrained to
-%   the group of \cs{printpostnotes}.  Also reset ``seen'' entries for all
-%   \texttt{refsection}s.  This actually poses some potential problems.  While
-%   resetting this here seems the right thing to do, since we restore the
-%   \texttt{refsection} for each entry, this means that the citations of
-%   different \texttt{refsection}s will get printed together, and it is not
-%   necessarily obvious that the trackers should behave ``per section'' in
-%   this context.  However, since \texttt{refsection}s have other implications
-%   than just the \texttt{citetracker}, we cannot do otherwise.  The matter
-%   will probably be one of ``which biblatex sets of options'' make sense for
-%   end notes.  But, as far as I can tell, things should behave as expected
-%   for most use cases.  And particularly so if the postnote sections bear a
-%   correspondence with the reference sections, which is to be expected.
+%   the group of \cs{printpostnotes}.
 %    \begin{macrocode}
     \cs_new_protected:Npn \@@_biblatex_citereset_local:
       {
@@ -2059,13 +2061,8 @@
 % {\em\scriptsize\verb|\global\cslet{blx@bsee@\the\c@refsection}\@empty|} \\
 % {\em\scriptsize\verb|\global\cslet{blx@fsee@\the\c@refsection}\@empty|}
 %    \begin{macrocode}
-        \int_set:Nn \l_tmpa_int { -1 }
-        \int_while_do:nNnn { \l_tmpa_int } < { \c@blx@maxsection }
-          {
-            \int_incr:N \l_tmpa_int
-            \tl_set_eq:cN { blx@bsee@ \int_use:N \l_tmpa_int } \c_empty_tl
-            \tl_set_eq:cN { blx@fsee@ \int_use:N \l_tmpa_int } \c_empty_tl
-          }
+        \tl_clear:c { blx@bsee@ \int_use:N \c@refsection }
+        \tl_clear:c { blx@fsee@ \int_use:N \c@refsection }
 %    \end{macrocode}
 % {\em\scriptsize\verb|\blx@ibidreset@force|}
 %    \begin{macrocode}
@@ -2081,19 +2078,19 @@
 %    \begin{macrocode}
         \clist_map_inline:Nn \blx@trackhash@text
           { \csundef { blx@lastkey@text@ ##1 } }
-        \tl_set_eq:NN \blx@trackhash@text \c_empty_tl
+        \tl_clear:N \blx@trackhash@text
         \clist_map_inline:Nn \blx@trackhash@foot
           { \csundef { blx@lastkey@foot@ ##1 } }
-        \tl_set_eq:NN \blx@trackhash@foot \c_empty_tl
+        \tl_clear:N \blx@trackhash@foot
 %    \end{macrocode}
 % {\em\scriptsize\verb|\blx@loccitreset@force|}
 %    \begin{macrocode}
         \clist_map_inline:Nn \blx@trackkeys@text
           { \csundef { blx@lastnote@text@ ##1 } }
-        \tl_set_eq:NN \blx@trackkeys@text \c_empty_tl
+        \tl_clear:N \blx@trackkeys@text
         \clist_map_inline:Nn \blx@trackkeys@foot
           { \csundef { blx@lastnote@foot@ ##1 } }
-        \tl_set_eq:NN \blx@trackkeys@foot \c_empty_tl
+        \tl_clear:N \blx@trackkeys@foot
 %    \end{macrocode}
 % {\em\scriptsize{}and all of them do:}
 %    \begin{macrocode}
@@ -2104,6 +2101,66 @@
 %
 %    \begin{macrocode}
   }
+%    \end{macrocode}
+%
+% \pkg{biblatex}'s \texttt{refsections}, contrary to \texttt{refsegment}s and
+% \texttt{refcontext}s which are handled in the \LaTeX{} side of things (as
+% far as I can tell), need to go through \texttt{biber}, and must have correct
+% corresponding citation data written to the \file{.bcf} file.  And the way
+% \cs{refsection} is implemented presumes each section is only ever begun once
+% (fair\dots{}), thus making it difficult to ``reopen'' it, or append new
+% citations to it later on, when the notes are printed.  Given the complexity
+% of this machinery, it would be madness not to use \pkg{biblatex}'s
+% infrastructure directly, and try to ``emulate'' it.  The start of a
+% \texttt{refsection} must be registered on the \file{.bcf} file, and this is
+% done by \cs{refsection} (and its auxiliary functions).  However, a number of
+% its characteristics make things particularly difficult for the purpose at
+% hand: i) it unconditionally sets a label for the section which, of course,
+% cannot be done twice; and, critically, ii) the optional argument of the
+% environment (which receives the \meta{resources}) is used to set a local
+% assignment to \cs{blx@bibfiles}, based on which the relevant information is
+% written to the \file{.bcf} file, and when the group closes the information
+% is gone.  My best attempt is below (excluded from the package) but it is not
+% good.  It feels a wrong approach to ``go around'' the intended use of
+% \cs{refsection} so much, and it can't handle at all its optional argument,
+% for the reasons above.  It's also incomplete, since it does not handle
+% restoring \cs{l_@@_biblatex_orig_refsection_tl}.
+%
+%    \begin{macrocode}
+%<*gobble>
+\AddToHook { package/biblatex/after }
+  {
+    \tl_new:N \l_@@_biblatex_orig_refsection_tl
+    \tl_new:N \g_@@_biblatex_prev_refsection_tl
+    \AddToHook { postnotes/print } [ postnotes ]
+      {
+        \tl_set:Nx \l_@@_biblatex_orig_refsection_tl
+          { \int_use:N \c@refsection }
+        \tl_gset:Nx \g_@@_biblatex_prev_refsection_tl
+          \l_@@_biblatex_orig_refsection_tl
+     }
+    \AddToHook { postnotes/print/notevars } [ postnotes ]
+      {
+        \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+          { biblatex@refsection } \l_@@_biblatex_restore_tl
+        \tl_if_eq:NNF
+          \l_@@_biblatex_restore_tl
+          \g_@@_biblatex_prev_refsection_tl
+          {
+            \int_set:Nn \c@blx@maxsection
+              { \l_@@_biblatex_restore_tl - 1 }
+            \tl_gset_eq:NN \g_@@_biblatex_prev_refsection_tl
+              \l_@@_biblatex_restore_tl
+            \group_begin:
+            \cs_set_eq:NN \label \use_none:n
+            \cs_set_eq:NN \blx@info \use_none:n
+            \blx@endrefsection
+            \refsection
+            \group_end:
+          }
+      }
+  }
+%</gobble>
 %    \end{macrocode}
 %
 %
