@@ -1212,13 +1212,12 @@
   {
     \group_begin:
     \int_gincr:N \g_@@_print_postnotes_int
-    \UseHook { postnotes/print }
-    \tl_set:Nn \l_@@_print_type_prev_tl { open }
-    \tl_gclear:N \g_@@_section_name_tl
-    \seq_set_eq:NN \l_@@_clear_queue_seq \g_@@_queue_seq
     \seq_if_empty:NTF \g_@@_queue_seq
       { \msg_warning:nn { postnotes } { empty-printpostnotes } }
       {
+        \UseHook { postnotes/print }
+        \tl_set:Nn \l_@@_print_type_prev_tl { open }
+        \seq_set_eq:NN \l_@@_clear_queue_seq \g_@@_queue_seq
         \pnheading
         \bool_gset_true:N \g_@@_header_vars_next_bool
         \@@_verify_multipass:N \g_@@_queue_seq
