@@ -1,0 +1,209 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: Biblatex: labelprefix
+============================================================
+Completed box being shipped out [3]
+\vbox(633.0+0.0)x407.0
+.\vbox(0.0+0.0)x0.0, glue set - 14.99626fil
+..\kern 0.0
+..\kern 16.0
+..\kern -1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 60.99626fil
+...\kern 0.0
+...\kern 62.0
+...\kern -1.00374
+...\pdfdest name{page.3} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(633.0+0.0)x407.0
+..\glue 16.0
+..\vbox(617.0+0.0)x345.0, shifted 62.0
+...\vbox(12.0+0.0)x345.0, glue set 12.0fil
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x345.0
+.....\hbox(0.0+0.0)x345.0
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 481.04587fil
+....\write-{}
+....\glue(\topskip) 0.12001
+....\hbox(9.87999+0.0)x345.0, glue set 304.15167fil
+.....\hbox(0.0+0.0)x0.0
+......\glue 0.0
+.....\hbox(0.0+0.0)x0.0
+......\kern 0.0
+......\penalty 10000
+......\hbox(0.0+0.0)x0.0
+.......\hbox(0.0+0.0)x0.0, shifted -18.0
+........\pdfdest name{section*.5} xyz
+........\penalty 10000
+......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\OT1/cmr/bx/n/14.4 N
+.....\OT1/cmr/bx/n/14.4 o
+.....\OT1/cmr/bx/n/14.4 t
+.....\OT1/cmr/bx/n/14.4 e
+.....\OT1/cmr/bx/n/14.4 s
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty 10000
+....\glue 9.90276 plus 0.86108
+....\write1{\post@note {print@1}{\int_use:N \c@page }}
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.85002
+....\hbox(6.14998+0.0)x345.0, glue set 311.30293fil
+.....\hbox(5.79999+0.0)x19.6944
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.79999+0.0)x12.1944
+.......\glue 5.0
+.......\write1{\post@note {text@1}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\pdfdest name{postnote.1.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.mark}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[0 1 0]} action goto name{cite.0@aristotle:anima}
+.....\OT1/cmr/m/n/9 R
+.....\OT1/cmr/m/n/9 1
+.....\pdfendlink
+.....\OT1/cmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.85002
+....\hbox(6.14998+1.75)x345.0, glue set 267.75043fil
+.....\hbox(5.79999+0.0)x19.6944
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.79999+0.0)x12.1944
+.......\glue 5.0
+.......\write1{\post@note {text@2}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\pdfdest name{postnote.2.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.mark}
+.......\OT1/cmr/m/n/9 2
+.......\OT1/cmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[0 1 0]} action goto name{cite.0@yoon}
+.....\OT1/cmr/m/n/9 Q
+.....\OT1/cmr/m/n/9 1
+.....\pdfendlink
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[0 1 0]} action goto name{cite.0@worman}
+.....\OT1/cmr/m/n/9 3
+.....\pdfendlink
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[0 1 0]} action goto name{cite.0@piccato}
+.....\OT1/cmr/m/n/9 Q
+.....\OT1/cmr/m/n/9 2
+.....\pdfendlink
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[0 1 0]} action goto name{cite.0@nussbaum}
+.....\OT1/cmr/m/n/9 S
+.....\OT1/cmr/m/n/9 4
+.....\pdfendlink
+.....\OT1/cmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 3.10002
+....\hbox(6.14998+0.0)x345.0, glue set 311.30293fil
+.....\hbox(5.79999+0.0)x19.6944
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.79999+0.0)x12.1944
+.......\glue 5.0
+.......\write1{\post@note {text@3}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\pdfdest name{postnote.3.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.mark}
+.......\OT1/cmr/m/n/9 3
+.......\OT1/cmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[0 1 0]} action goto name{cite.0@aristotle:physics}
+.....\OT1/cmr/m/n/9 R
+.....\OT1/cmr/m/n/9 2
+.....\pdfendlink
+.....\OT1/cmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 318.1112fil
+.....\hbox(5.79999+0.0)x19.6944
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.79999+0.0)x12.1944
+.......\glue 5.0
+.......\write1{\post@note {text@4}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\pdfdest name{postnote.4.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.mark}
+.......\OT1/cmr/m/n/9 4
+.......\OT1/cmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[0 1 0]} action goto name{cite.0@nussbaum}
+.....\OT1/cmr/m/n/9 1
+.....\pdfendlink
+.....\OT1/cmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 5.0
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\glue(\baselineskip) 23.55556
+...\hbox(6.44444+0.0)x345.0
+....\hbox(6.44444+0.0)x345.0, glue set 170.0fil
+.....\glue 0.0 plus 1.0fil
+.....\OT1/cmr/m/n/10 3
+.....\glue 0.0 plus 1.0fil
+============================================================

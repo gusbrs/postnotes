@@ -1,0 +1,45 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=authoryear-ibid,backend=biber,notetype=endonly]{biblatex}
+\addbibresource{biblatex-examples.bib}
+
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\subsection*{footcite examples}
+
+This is just filler text.\footcite{companion}
+This is just filler text.\footcite{companion}
+\postnotesection{\clearpage}
+This is just filler text.\footcite[55]{companion}
+This is just filler text.\footcite[55]{companion}
+
+\clearpage
+\printbibliography
+
+\cleardoublepage{}
+
+\START
+
+\BEGINTEST{Biblatex: authoryear-ibid}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

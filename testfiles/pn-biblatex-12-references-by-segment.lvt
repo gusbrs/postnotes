@@ -1,0 +1,61 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=authoryear,backend=biber]{biblatex}
+\addbibresource{biblatex-examples.bib}
+\defbibheading{subbibliography}{%
+  \section*{%
+    Chapter \therefsegment:
+    \nameref{refsegment:\therefsection\therefsegment}}}
+
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+\AddToHook{cmd/chapter/before}{%
+  \postnotesection{\section*{Notes to chapter \pnthechapternextnote}}}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{Title of first chapter}
+\begin{refsegment}
+This is just filler text \postnote{\parencite{westfahl:space}.}
+This is just filler text \postnote{\parencite{nietzsche:ksa}.}
+\end{refsegment}
+
+\chapter{Title of second chapter}
+\begin{refsegment}
+This is just filler text \postnote{\parencite{nietzsche:historie}.}
+This is just filler text \postnote{\parencite{westfahl:frontier}.}
+\end{refsegment}
+
+\chapter{Title of third chapter}
+\begin{refsegment}
+This is just filler text \postnote{\parencite{aristotle:anima}.}
+This is just filler text \postnote{\parencite{averroes/bland}.}
+\end{refsegment}
+
+\printbibheading
+\bibbysegment[heading=subbibliography]
+
+\cleardoublepage{}
+
+\START
+
+\BEGINTEST{Biblatex: References by segment}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

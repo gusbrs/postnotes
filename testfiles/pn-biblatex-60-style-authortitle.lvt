@@ -1,0 +1,103 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=authortitle,backend=biber,notetype=endonly]{biblatex}
+\addbibresource{biblatex-examples.bib}
+
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\subsection*{cite examples}
+
+\postnote{\cite{aristotle:rhetoric}.}
+
+\postnote{\cite[59]{aristotle:rhetoric}.}
+
+\postnote{\cite[see][]{aristotle:rhetoric}.}
+
+\postnote{\cite[see][59--63]{aristotle:rhetoric}.}
+
+\subsection*{parencite examples}
+
+This is just filler text.\postnote{\parencite{aristotle:rhetoric}.}
+
+This is just filler text.\postnote{\parencite[59]{aristotle:rhetoric}.}
+
+This is just filler text.\postnote{\parencite[see][]{aristotle:rhetoric}.}
+
+This is just filler text.\postnote{\parencite[see][59--63]{aristotle:rhetoric}.}
+
+\subsection*{parencite* examples}
+
+\postnote{\citeauthor{aristotle:rhetoric} \parencite*{aristotle:rhetoric}.}
+
+\postnote{\citeauthor{aristotle:rhetoric} \parencite*[59]{aristotle:rhetoric}.}
+
+\postnote{\citeauthor{aristotle:rhetoric} \parencite*[see][]{aristotle:rhetoric}.}
+
+\postnote{\citeauthor{aristotle:rhetoric} \parencite*[see][59--63]{aristotle:rhetoric}.}
+
+\subsection*{footcite examples}
+
+This is just filler text.\footcite{aristotle:rhetoric}
+
+This is just filler text.\footcite[59]{aristotle:rhetoric}
+
+This is just filler text.\footcite[See][]{aristotle:rhetoric}
+
+This is just filler text.\footcite[See][59--63]{aristotle:rhetoric}
+
+\subsection*{textcite examples}
+
+\postnote{\textcite{aristotle:rhetoric}.}
+
+\postnote{\textcite[59]{aristotle:rhetoric}.}
+
+\postnote{\textcite[see][]{aristotle:rhetoric}.}
+
+\postnote{\textcite[see][59--63]{aristotle:rhetoric}.}
+
+\subsection*{autocite examples}
+
+This is just filler text \autocite{aristotle:rhetoric}.
+
+\subsection*{Multiple citations}
+
+\postnote{\cite{aristotle:rhetoric,aristotle:physics,aristotle:poetics}.}
+
+\subsection*{Shorthand examples}
+
+\postnote{\cite{kant:kpv,kant:ku}.}
+
+\clearpage
+
+\printshorthands
+
+\nocite{*}
+\printbibliography
+
+\cleardoublepage{}
+
+\START
+
+\BEGINTEST{Biblatex: authortitle}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

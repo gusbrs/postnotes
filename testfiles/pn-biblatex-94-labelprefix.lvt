@@ -1,0 +1,81 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=numeric,sorting=none,defernumbers=true,backend=biber,notetype=endonly]{biblatex}
+\addbibresource{biblatex-examples.bib}
+
+\DeclareBibliographyCategory{cat1}
+\addtocategory{cat1}{yoon}
+\DeclareBibliographyCategory{cat2}
+\addtocategory{cat2}{piccato}
+\assignrefcontextcats[sorting=none,labelprefix=Q]{cat2}
+\assignrefcontextentries[labelprefix=Q]{yoon}
+\assignrefcontextkeyws*[sorting=none,labelprefix=S]{secondary}
+\defbibfilter{cats}{category=cat1 or category=cat2}
+
+\DeclareRefcontext{rcone}{labelprefix=R}
+\DeclareRefcontext{rctwo}{labelprefix=T}
+\DeclareRefcontext{rcthree}{sorting=nty}
+
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+This is a publication by Aristotle:
+\footcite{aristotle:anima}
+
+These are not publications by Aristotle:
+\footcite{yoon,worman,piccato,nussbaum}
+
+This is another publication by Aristotle:
+\footcite{aristotle:physics}
+
+\begin{refcontext}{rcone}
+\printbibliography[keyword=primary, title={Aristotle Publications}]
+\end{refcontext}
+
+\newrefcontext[labelprefix=S]{rctwo}
+\printbibliography[notkeyword=primary, title={Other publications}]
+\endrefcontext
+
+\begin{refcontext}[labelprefix=Q]
+\printbibliography[filter=cats, title={Other publications}]
+\end{refcontext}
+
+\begin{refcontext}[sorting=nty]
+\printbibliography[resetnumbers, notkeyword=primary, title={More Other publications}]
+\footcite{nussbaum}
+\end{refcontext}
+
+% FIXME This test actually *fails*: refsection again.
+% \section*{New Refsection}
+% \newrefsection
+% \footcite{worman}
+% \begin{refcontext}[labelprefix=T]{rcone}
+% \printbibliography[resetnumbers, notkeyword=primary, title={More Other publications}]
+% \end{refcontext}
+
+\cleardoublepage{}
+
+\START
+
+\BEGINTEST{Biblatex: labelprefix}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

@@ -1,0 +1,98 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=numeric,backend=biber]{biblatex}
+\addbibresource{biblatex-examples.bib}
+
+% Ideally, this case would work with a single call to \printpostnotes covering
+% all chapters (and refsections).  Unfortunately this is currently
+% unsupported, since we cannot restore refsections in a meaningful way.  So we
+% test for the use which is possible: the call to \printpostnotes must be
+% inside the refsection.
+
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\START
+
+\OMIT
+
+\chapter{Title of first chapter}
+\begin{refsection}
+This is just filler text \postnote{\parencite{massa}.}
+This is just filler text \postnote{\parencite{augustine}.}
+This is just filler text \postnote{\parencite{cotton}.}
+This is just filler text \postnote{\parencite{hammond}.}
+\printbibliography[heading=subbibliography]
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Biblatex: References per section, first chapter}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{refsection}
+
+\chapter{Title of second chapter}
+\begin{refsection}
+This is just filler text \postnote{\parencite{hammond}.}
+This is just filler text \postnote{\parencite{massa}.}
+This is just filler text \postnote{\parencite{cotton}.}
+This is just filler text \postnote{\parencite{murray}.}
+\printbibliography[heading=subbibliography]
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Biblatex: References per section, second chapter}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{refsection}
+
+\chapter{Title of third chapter}
+\begin{refsection}
+This is just filler text \postnote{\parencite{murray}.}
+This is just filler text \postnote{\parencite{augustine}.}
+This is just filler text \postnote{\parencite{cotton}.}
+This is just filler text \postnote{\parencite{bertram}.}
+\printbibliography[heading=subbibliography]
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Biblatex: References per section, third chapter}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{refsection}
+
+\end{document}

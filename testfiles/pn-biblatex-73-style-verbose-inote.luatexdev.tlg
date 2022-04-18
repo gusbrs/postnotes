@@ -1,0 +1,2834 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: Biblatex: verbose-inote
+============================================================
+Completed box being shipped out [3]
+\vbox(633.0+0.22)x407.0, direction TLT
+.\vbox(0.0+0.0)x0.0, glue set - 14.99626fil, direction TLT
+..\kern0.0
+..\kern16.0
+..\kern-1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 60.99626fil, direction TLT
+...\kern0.0
+...\kern62.0
+...\kern-1.00374
+...\pdfdest name{page.3} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(633.0+0.22)x407.0, direction TLT
+..\glue 16.0
+..\vbox(617.0+0.22)x345.0, shifted 62.0, direction TLT
+...\vbox(12.0+0.0)x345.0, glue set 12.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x345.0, direction TLT
+.....\hbox(0.0+0.0)x345.0, direction TLT
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 404.04385fil, direction TLT
+....\write-{}
+....\glue(\topskip) 0.1216
+....\hbox(9.8784+0.0864)x345.0, glue set 304.13281fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\glue 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\kern0.0
+......\penalty 10000
+......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, shifted -18.0, direction TLT
+........\pdfdest name{section*.5} xyz
+........\penalty 10000
+......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\TU/lmr/bx/n/14.4 N
+.....\TU/lmr/bx/n/14.4 o
+.....\TU/lmr/bx/n/14.4 t
+.....\TU/lmr/bx/n/14.4 e
+.....\TU/lmr/bx/n/14.4 s
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty 10000
+....\glue 9.913 plus 0.86198
+....\write1{\post@note {print@1}{\int_use:N \c@page }}
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.4696
+....\hbox(6.444+1.854)x345.0, glue set 0.21417, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.0)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.0)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@1}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.1.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.mark}
+.......\TU/lmr/m/n/9 1
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{9}{\the \c@page }}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.......\pdfdest name{cite.0:aristotle:anima:9} xyz
+.......\penalty 10000
+.....\TU/lmr/m/n/9 A
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 o
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/it/9 D
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 A
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 n
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 m
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 E
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 .
+.....\penalty 50
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\TU/lmr/m/n/9 b
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 y
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 R
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 b
+.....\kern0.261 (font)
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 t
+.....\penalty 50
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 D
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 w
+.....\penalty 25
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 H
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 c
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 k
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 C
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 m
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+......= \kern-0.261 (font)
+.....\TU/lmr/m/n/9 b
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 g
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 :
+.....\glue(\spaceskip) 4.11601 plus 3.087 minus 0.5145
+.....\TU/lmr/m/n/9 C
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 m
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+......= \kern-0.261 (font)
+.....\TU/lmr/m/n/9 b
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 g
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 U
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 -
+.....\discretionary (penalty 50)
+.....\glue(\rightskip) 0.0
+....\penalty 10250
+....\glue(\baselineskip) 2.999
+....\hbox(6.147+1.845)x345.0, glue set 267.07791fil, direction TLT
+.....\TU/lmr/m/n/9 v
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 t
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 y
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 P
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 1
+.....\TU/lmr/m/n/9 9
+.....\TU/lmr/m/n/9 0
+.....\TU/lmr/m/n/9 7
+.....\write1{\newlabel{cbx@9}{{1}{\thepage }{\pntitle }{postnote.1.text}{}}}
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.711
+....\hbox(6.444+1.845)x345.0, glue set 0.2637, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.0)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.0)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@2}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.2.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.mark}
+.......\TU/lmr/m/n/9 2
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{10}{\the \c@page }}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.......\pdfdest name{cite.0:aristotle:physics:10} xyz
+.......\penalty 10000
+.....\TU/lmr/m/n/9 A
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 o
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/it/9 P
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 y
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 c
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 T
+.....\kern-0.774 (font)
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 b
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 y
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 P
+.....\kern-0.774 (font)
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\TU/lmr/m/n/9 H
+.....\TU/lmr/m/n/9 .
+.....\penalty 25
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\TU/lmr/m/n/9 W
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 c
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 k
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 d
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 d
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 F
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\TU/lmr/m/n/9 M
+.....\TU/lmr/m/n/9 .
+.....\penalty 25
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\TU/lmr/m/n/9 C
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 n
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 f
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 N
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 w
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 Y
+.....\kern-0.774 (font)
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 k
+.....\TU/lmr/m/n/9 :
+.....\glue(\rightskip) 0.0
+....\penalty 10150
+....\glue(\baselineskip) 2.81
+....\hbox(6.345+1.737)x345.0, glue set 261.65991fil, direction TLT
+.....\TU/lmr/m/n/9 G
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 P
+.....\kern-0.774 (font)
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 P
+.....\TU/lmr/m/n/9 u
+.....\TU/lmr/m/n/9 t
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 m
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 1
+.....\TU/lmr/m/n/9 9
+.....\TU/lmr/m/n/9 2
+.....\TU/lmr/m/n/9 9
+.....\write1{\newlabel{cbx@10}{{2}{\thepage }{\pntitle }{postnote.2.text}{}}}
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.819
+....\hbox(6.444+1.845)x345.0, glue set 0.06686, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@3}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.3.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.mark}
+.......\TU/lmr/m/n/9 3
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{11}{\the \c@page }}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.......\pdfdest name{cite.0:averroes/bland:11} xyz
+.......\penalty 10000
+.....\TU/lmr/m/n/9 A
+.....\kern-1.026 (font)
+.....\TU/lmr/m/n/9 v
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 o
+.....\kern0.261 (font)
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/it/9 T
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 E
+.....\TU/lmr/m/it/9 p
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 l
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 o
+.....\TU/lmr/m/it/9 n
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 P
+.....\TU/lmr/m/it/9 o
+.....\TU/lmr/m/it/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/it/9 i
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 b
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 l
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 y
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 o
+.....\TU/lmr/m/it/9 f
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 C
+.....\TU/lmr/m/it/9 o
+.....\TU/lmr/m/it/9 n
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 j
+.....\TU/lmr/m/it/9 u
+.....\TU/lmr/m/it/9 n
+.....\TU/lmr/m/it/9 c
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 o
+.....\TU/lmr/m/it/9 n
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 w
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 h
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 A
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 c
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 v
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 I
+.....\TU/lmr/m/it/9 n
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 l
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+......= \kern0.711 (font)
+.....\TU/lmr/m/it/9 l
+.....\TU/lmr/m/it/9 e
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 c
+.....\TU/lmr/m/it/9 t
+.....\glue(\rightskip) 0.0
+....\penalty 10000
+....\glue(\baselineskip) 2.81
+....\hbox(6.345+1.845)x345.0, glue set 0.11441, direction TLT
+.....\TU/lmr/m/it/9 b
+.....\TU/lmr/m/it/9 y
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 I
+.....\TU/lmr/m/it/9 b
+.....\TU/lmr/m/it/9 n
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 R
+.....\kern-0.234 (font)
+.....\TU/lmr/m/it/9 u
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 d
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 w
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 h
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 C
+.....\TU/lmr/m/it/9 o
+.....\TU/lmr/m/it/9 m
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 m
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 n
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 r
+.....\TU/lmr/m/it/9 y
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 o
+.....\TU/lmr/m/it/9 f
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 M
+.....\TU/lmr/m/it/9 o
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 s
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 N
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 r
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 b
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 o
+.....\TU/lmr/m/it/9 n
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 E
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 .
+.....\penalty 50
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 d
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 b
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 y
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 K
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 m
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 n
+.....\penalty 50
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 P
+.....\kern-0.774 (font)
+.....\TU/lmr/m/n/9 .
+.....\penalty 25
+.....\glue(\rightskip) 0.0
+....\glue(\baselineskip) 2.81
+....\hbox(6.345+1.854)x345.0, glue set 0.34457, direction TLT
+.....\TU/lmr/m/n/9 B
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 M
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 e
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 h
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 :
+.....\glue(\spaceskip) 4.11601 plus 3.087 minus 0.5145
+.....\TU/lmr/m/n/9 S
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 u
+.....\TU/lmr/m/n/9 d
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 s
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 n
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 J
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 w
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 h
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 H
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 y
+.....\kern-0.774 (font)
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 L
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 t
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 a
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 u
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 d
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 T
+.....\TU/lmr/m/n/9 h
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 u
+.....\TU/lmr/m/n/9 g
+.....\TU/lmr/m/n/9 h
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 t
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 7
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 N
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 w
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 Y
+.....\kern-0.774 (font)
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 k
+.....\TU/lmr/m/n/9 :
+.....\glue(\rightskip) 0.0
+....\penalty 150
+....\glue(\baselineskip) 2.702
+....\hbox(6.444+1.854)x345.0, glue set 153.8128fil, direction TLT
+.....\TU/lmr/m/n/9 J
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 w
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 h
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 T
+.....\TU/lmr/m/n/9 h
+.....\TU/lmr/m/n/9 e
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 o
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 g
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 i
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 c
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 l
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 S
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 m
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 i
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 y
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 f
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 A
+.....\TU/lmr/m/n/9 m
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 c
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 1
+.....\TU/lmr/m/n/9 9
+.....\TU/lmr/m/n/9 8
+.....\TU/lmr/m/n/9 2
+.....\write1{\newlabel{cbx@11}{{3}{\thepage }{\pntitle }{postnote.3.text}{}}}
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.702
+....\hbox(6.444+1.737)x345.0, glue set 204.49287fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(6.093+0.0)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(6.093+0.0)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@4}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.4.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.mark}
+.......\TU/lmr/m/n/9 4
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{12}{\the \c@page }}
+.....\TU/lmr/m/n/9 A
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 o
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/it/9 D
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 A
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 n
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 m
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.text}
+.....\TU/lmr/m/n/9 1
+.....\pdfendlink
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.819
+....\hbox(6.444+1.845)x345.0, glue set 215.61687fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@5}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.5.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.5.mark}
+.......\TU/lmr/m/n/9 5
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{13}{\the \c@page }}
+.....\TU/lmr/m/n/9 A
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 o
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/it/9 P
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 y
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 c
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.text}
+.....\TU/lmr/m/n/9 2
+.....\pdfendlink
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.711
+....\hbox(6.444+1.737)x345.0, glue set 252.1569fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@6}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.6.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.6.mark}
+.......\TU/lmr/m/n/9 6
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{14}{\the \c@page }}
+.....\TU/lmr/m/n/9 A
+.....\kern-1.026 (font)
+.....\TU/lmr/m/n/9 v
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 o
+.....\kern0.261 (font)
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.text}
+.....\TU/lmr/m/n/9 3
+.....\pdfendlink
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 5.0
+....\glue -1.737
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\glue(\baselineskip) 23.34
+...\hbox(6.66+0.22)x345.0, direction TLT
+....\hbox(6.66+0.22)x345.0, glue set 170.0fil, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\TU/lmr/m/n/10 3
+.....\glue 0.0 plus 1.0fil
+Completed box being shipped out [4]
+\vbox(633.0+0.0)x407.0, direction TLT
+.\vbox(0.0+0.0)x0.0, glue set - 14.99626fil, direction TLT
+..\kern0.0
+..\kern16.0
+..\kern-1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 60.99626fil, direction TLT
+...\kern0.0
+...\kern62.0
+...\kern-1.00374
+...\pdfdest name{page.4} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(633.0+0.0)x407.0, direction TLT
+..\glue 16.0
+..\vbox(617.0+0.0)x345.0, shifted 62.0, direction TLT
+...\vbox(12.0+0.0)x345.0, glue set 12.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x345.0, direction TLT
+.....\hbox(0.0+0.0)x345.0, direction TLT
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 501.94638fil, direction TLT
+....\write-{}
+....\glue(\topskip) 3.556
+....\hbox(6.444+1.737)x345.0, glue set 204.49287fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(6.084+0.198)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(6.084+0.198)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@8}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.8.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.8.mark}
+.......\TU/lmr/m/n/9 7
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{15}{\the \c@page }}
+.....\TU/lmr/m/n/9 A
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 o
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/it/9 D
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 A
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 n
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 m
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.text}
+.....\TU/lmr/m/n/9 1
+.....\pdfendlink
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 3.017
+....\hbox(6.246+0.198)x345.0, glue set 306.53497fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@9}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.9.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.mark}
+.......\TU/lmr/m/n/9 8
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{16}{\the \c@page }}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[0 1 0]} action goto name{cite.0:aristotle:anima:9}
+.....\TU/lmr/m/n/9 I
+.....\TU/lmr/m/n/9 b
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 .
+.....\pdfendlink
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.358
+....\hbox(6.444+1.845)x345.0, glue set 215.61687fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@10}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.10.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.10.mark}
+.......\TU/lmr/m/n/9 9
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{17}{\the \c@page }}
+.....\TU/lmr/m/n/9 A
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 o
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/it/9 P
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 y
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 c
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.text}
+.....\TU/lmr/m/n/9 2
+.....\pdfendlink
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.909
+....\hbox(6.246+0.198)x345.0, glue set 301.90894fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x24.32602, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x16.82602, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@11}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.11.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.11.mark}
+.......\TU/lmr/m/n/9 1
+.......\TU/lmr/m/n/9 0
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{18}{\the \c@page }}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[0 1 0]} action goto name{cite.0:aristotle:physics:10}
+.....\TU/lmr/m/n/9 I
+.....\TU/lmr/m/n/9 b
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 .
+.....\pdfendlink
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 5.0
+....\glue -0.198
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\glue(\baselineskip) 23.23
+...\hbox(6.77+0.0)x345.0, direction TLT
+....\hbox(6.77+0.0)x345.0, glue set 170.0fil, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\TU/lmr/m/n/10 4
+.....\glue 0.0 plus 1.0fil
+Completed box being shipped out [5]
+\vbox(633.0+0.22)x407.0, direction TLT
+.\vbox(0.0+0.0)x0.0, glue set - 14.99626fil, direction TLT
+..\kern0.0
+..\kern16.0
+..\kern-1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 60.99626fil, direction TLT
+...\kern0.0
+...\kern62.0
+...\kern-1.00374
+...\pdfdest name{page.5} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(633.0+0.22)x407.0, direction TLT
+..\glue 16.0
+..\vbox(617.0+0.22)x345.0, shifted 62.0, direction TLT
+...\vbox(12.0+0.0)x345.0, glue set 12.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x345.0, direction TLT
+.....\hbox(0.0+0.0)x345.0, direction TLT
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 523.94403fil, direction TLT
+....\write-{}
+....\glue(\topskip) 3.556
+....\hbox(6.444+1.845)x345.0, glue set 210.99086fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.0)x24.32602, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.0)x16.82602, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@13}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.13.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.13.mark}
+.......\TU/lmr/m/n/9 1
+.......\TU/lmr/m/n/9 1
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{19}{\the \c@page }}
+.....\TU/lmr/m/n/9 A
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 o
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/it/9 P
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 y
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 c
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.text}
+.....\TU/lmr/m/n/9 2
+.....\pdfendlink
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.909
+....\hbox(6.246+0.099)x345.0, glue set 301.90894fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.0)x24.32602, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.0)x16.82602, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@14}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.14.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.14.mark}
+.......\TU/lmr/m/n/9 1
+.......\TU/lmr/m/n/9 2
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{20}{\the \c@page }}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[0 1 0]} action goto name{cite.0:aristotle:physics:10}
+.....\TU/lmr/m/n/9 I
+.....\TU/lmr/m/n/9 b
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 .
+.....\pdfendlink
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 5.0
+....\glue -0.099
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\glue(\baselineskip) 23.34
+...\hbox(6.66+0.22)x345.0, direction TLT
+....\hbox(6.66+0.22)x345.0, glue set 170.0fil, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\TU/lmr/m/n/10 5
+.....\glue 0.0 plus 1.0fil
+Completed box being shipped out [6]
+\vbox(633.0+0.22)x407.0, direction TLT
+.\vbox(0.0+0.0)x0.0, glue set - 14.99626fil, direction TLT
+..\kern0.0
+..\kern16.0
+..\kern-1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 60.99626fil, direction TLT
+...\kern0.0
+...\kern62.0
+...\kern-1.00374
+...\pdfdest name{page.6} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(633.0+0.22)x407.0, direction TLT
+..\glue 16.0
+..\vbox(617.0+0.22)x345.0, shifted 62.0, direction TLT
+...\vbox(12.0+0.0)x345.0, glue set 12.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x345.0, direction TLT
+.....\hbox(0.0+0.0)x345.0, direction TLT
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 457.95108fil, direction TLT
+....\write-{}
+....\glue(\topskip) 3.556
+....\hbox(6.444+1.746)x345.0, glue set - 0.80775, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x24.32602, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x16.82602, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@16}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.16.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.16.mark}
+.......\TU/lmr/m/n/9 1
+.......\TU/lmr/m/n/9 3
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{21}{\the \c@page }}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.......\pdfdest name{cite.0:kant:kpv:21} xyz
+.......\penalty 10000
+.....\TU/lmr/m/n/9 I
+.....\TU/lmr/m/n/9 m
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 m
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 n
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 u
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 l
+.....\penalty 25
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 K
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 n
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 “
+.....\penalty 10000
+.....\glue -0.0002
+.....\glue 0.0002
+.....\TU/lmr/m/n/9 K
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 k
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 p
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 k
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 c
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 h
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 n
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 V
+.....\kern-0.774 (font)
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 n
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 u
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 f
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 .
+.....\kern-1.287 (font)
+.....\TU/lmr/m/n/9 ”
+.....\kern-0.0002
+.....\kern0.0002
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 I
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 :
+.....\glue(\spaceskip) 4.11601 plus 3.087 minus 0.5145
+.....\TU/lmr/m/it/9 K
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 n
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 s
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 W
+.....\kern-0.711 (font)
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 r
+.....\TU/lmr/m/it/9 k
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 .
+.....\glue(\spaceskip) 4.40399 plus 4.95451 minus 0.36699
+.....\TU/lmr/m/it/9 A
+.....\kern-0.234 (font)
+.....\TU/lmr/m/it/9 k
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 d
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 m
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 e
+.....\glue(\rightskip) 0.0
+....\penalty 10000
+....\glue(\baselineskip) 2.909
+....\hbox(6.345+1.845)x345.0, glue set - 0.14888, direction TLT
+.....\TU/lmr/m/it/9 T
+.....\kern-0.711 (font)
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 x
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 u
+.....\TU/lmr/m/it/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 g
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 b
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 V
+.....\kern-0.774 (font)
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 5
+.....\TU/lmr/m/n/9 :
+.....\glue(\spaceskip) 4.11601 plus 3.087 minus 0.5145
+.....\TU/lmr/m/it/9 K
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 r
+.....\TU/lmr/m/it/9 i
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 k
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 d
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 r
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 p
+.....\TU/lmr/m/it/9 r
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 k
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 c
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 n
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 V
+.....\kern-0.711 (font)
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 r
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 n
+.....\TU/lmr/m/it/9 u
+.....\TU/lmr/m/it/9 n
+.....\TU/lmr/m/it/9 f
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 .
+.....\glue(\spaceskip) 4.40399 plus 4.95451 minus 0.36699
+.....\TU/lmr/m/it/9 K
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 r
+.....\TU/lmr/m/it/9 i
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 k
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 d
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 r
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 U
+.....\TU/lmr/m/it/9 r
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 l
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/it/9 k
+.....\TU/lmr/m/it/9 r
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 f
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 B
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 :
+.....\glue(\rightskip) 0.0
+....\penalty 150
+....\glue(\baselineskip) 2.405
+....\hbox(6.75+2.241)x345.0, glue set 89.56169fil, direction TLT
+.....\TU/lmr/m/n/9 W
+.....\kern-0.774 (font)
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 l
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 G
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 u
+.....\TU/lmr/m/n/9 y
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 1
+.....\TU/lmr/m/n/9 9
+.....\TU/lmr/m/n/9 6
+.....\TU/lmr/m/n/9 8
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 p
+.....\TU/lmr/m/n/9 p
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\TU/lmr/m/n/9 1
+.....\TU/lmr/m/n/9 –
+.....\penalty 50
+.....\TU/lmr/m/n/9 1
+.....\TU/lmr/m/n/9 6
+.....\TU/lmr/m/n/9 3
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 (
+.....\TU/lmr/m/n/9 h
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 c
+.....\TU/lmr/m/n/9 e
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 f
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 h
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 c
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 d
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 s
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 K
+.....\TU/lmr/m/n/9 p
+.....\TU/lmr/m/n/9 V
+.....\TU/lmr/m/n/9 )
+.....\write1{\newlabel{cbx@21}{{13}{\thepage }{\pntitle }{postnote.16.text}{}}}
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.315
+....\hbox(6.444+0.198)x345.0, glue set 0.26286, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(6.093+0.0)x24.32602, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(6.093+0.0)x16.82602, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@17}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.17.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.17.mark}
+.......\TU/lmr/m/n/9 1
+.......\TU/lmr/m/n/9 4
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{22}{\the \c@page }}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.......\pdfdest name{cite.0:kant:ku:22} xyz
+.......\penalty 10000
+.....\TU/lmr/m/n/9 I
+.....\TU/lmr/m/n/9 m
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 m
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 n
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 u
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 l
+.....\penalty 25
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 K
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 n
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 “
+.....\penalty 10000
+.....\glue -0.0002
+.....\glue 0.0002
+.....\TU/lmr/m/n/9 K
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 k
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 U
+.....\TU/lmr/m/n/9 r
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 h
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 l
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 k
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 f
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 .
+.....\kern-1.287 (font)
+.....\TU/lmr/m/n/9 ”
+.....\kern-0.0002
+.....\kern0.0002
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 I
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 :
+.....\glue(\spaceskip) 4.11601 plus 3.087 minus 0.5145
+.....\TU/lmr/m/it/9 K
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 n
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 s
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 W
+.....\kern-0.711 (font)
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 r
+.....\TU/lmr/m/it/9 k
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 .
+.....\glue(\spaceskip) 4.40399 plus 4.95451 minus 0.36699
+.....\TU/lmr/m/it/9 A
+.....\kern-0.234 (font)
+.....\TU/lmr/m/it/9 k
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 d
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 m
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 T
+.....\kern-0.711 (font)
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 x
+.....\TU/lmr/m/it/9 -
+.....\discretionary (penalty 50)
+.....\glue(\rightskip) 0.0
+....\penalty 10100
+....\glue(\baselineskip) 4.457
+....\hbox(6.345+1.845)x345.0, glue set 0.48746, direction TLT
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 u
+.....\TU/lmr/m/it/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 g
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 b
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 V
+.....\kern-0.774 (font)
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 5
+.....\TU/lmr/m/n/9 :
+.....\glue(\spaceskip) 4.11601 plus 3.087 minus 0.5145
+.....\TU/lmr/m/it/9 K
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 r
+.....\TU/lmr/m/it/9 i
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 k
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 d
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 r
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 p
+.....\TU/lmr/m/it/9 r
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 k
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 c
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 n
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 V
+.....\kern-0.711 (font)
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 r
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 n
+.....\TU/lmr/m/it/9 u
+.....\TU/lmr/m/it/9 n
+.....\TU/lmr/m/it/9 f
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 .
+.....\glue(\spaceskip) 4.40399 plus 4.95451 minus 0.36699
+.....\TU/lmr/m/it/9 K
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 r
+.....\TU/lmr/m/it/9 i
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 k
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 d
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 r
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 U
+.....\TU/lmr/m/it/9 r
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 l
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/it/9 k
+.....\TU/lmr/m/it/9 r
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 f
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 B
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 :
+.....\glue(\rightskip) 0.0
+....\penalty 150
+....\glue(\baselineskip) 2.405
+....\hbox(6.75+2.241)x345.0, glue set 85.44868fil, direction TLT
+.....\TU/lmr/m/n/9 W
+.....\kern-0.774 (font)
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 l
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 G
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 u
+.....\TU/lmr/m/n/9 y
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 1
+.....\TU/lmr/m/n/9 9
+.....\TU/lmr/m/n/9 6
+.....\TU/lmr/m/n/9 8
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 p
+.....\TU/lmr/m/n/9 p
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\TU/lmr/m/n/9 1
+.....\TU/lmr/m/n/9 6
+.....\TU/lmr/m/n/9 5
+.....\TU/lmr/m/n/9 –
+.....\penalty 50
+.....\TU/lmr/m/n/9 4
+.....\TU/lmr/m/n/9 8
+.....\TU/lmr/m/n/9 5
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 (
+.....\TU/lmr/m/n/9 h
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 c
+.....\TU/lmr/m/n/9 e
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 f
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 h
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 c
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 d
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 s
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 K
+.....\TU/lmr/m/n/9 U
+.....\TU/lmr/m/n/9 )
+.....\write1{\newlabel{cbx@22}{{14}{\thepage }{\pntitle }{postnote.17.text}{}}}
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.612
+....\hbox(6.147+1.746)x345.0, glue set 273.11792fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x24.32602, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x16.82602, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@18}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.18.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.18.mark}
+.......\TU/lmr/m/n/9 1
+.......\TU/lmr/m/n/9 5
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{23}{\the \c@page }}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[0 1 0]} action goto name{cite.0:kant:kpv:21}
+.....\TU/lmr/m/n/9 K
+.....\TU/lmr/m/n/9 p
+.....\TU/lmr/m/n/9 V
+.....\pdfendlink
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 p
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\TU/lmr/m/n/9 2
+.....\TU/lmr/m/n/9 4
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 3.107
+....\hbox(6.147+1.746)x345.0, glue set 259.23993fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x24.32602, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x16.82602, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@19}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.19.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.19.mark}
+.......\TU/lmr/m/n/9 1
+.......\TU/lmr/m/n/9 6
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{24}{\the \c@page }}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[0 1 0]} action goto name{cite.0:kant:ku:22}
+.....\TU/lmr/m/n/9 K
+.....\TU/lmr/m/n/9 U
+.....\pdfendlink
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 p
+.....\TU/lmr/m/n/9 p
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\TU/lmr/m/n/9 5
+.....\TU/lmr/m/n/9 9
+.....\TU/lmr/m/n/9 –
+.....\penalty 50
+.....\TU/lmr/m/n/9 6
+.....\TU/lmr/m/n/9 3
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 5.0
+....\glue -1.746
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\glue(\baselineskip) 23.34
+...\hbox(6.66+0.22)x345.0, direction TLT
+....\hbox(6.66+0.22)x345.0, glue set 170.0fil, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\TU/lmr/m/n/10 6
+.....\glue 0.0 plus 1.0fil
+Completed box being shipped out [7]
+\vbox(633.0+0.22)x407.0, direction TLT
+.\vbox(0.0+0.0)x0.0, glue set - 14.99626fil, direction TLT
+..\kern0.0
+..\kern16.0
+..\kern-1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 60.99626fil, direction TLT
+...\kern0.0
+...\kern62.0
+...\kern-1.00374
+...\pdfdest name{page.7} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(633.0+0.22)x407.0, direction TLT
+..\glue 16.0
+..\vbox(617.0+0.22)x345.0, shifted 62.0, direction TLT
+...\vbox(12.0+0.0)x345.0, glue set 12.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x345.0, direction TLT
+.....\hbox(0.0+0.0)x345.0, direction TLT
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 446.95227fil, direction TLT
+....\write-{}
+....\glue(\topskip) 3.556
+....\hbox(6.444+1.845)x345.0, glue set 0.85, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(6.084+0.198)x24.32602, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(6.084+0.198)x16.82602, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@21}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.21.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.21.mark}
+.......\TU/lmr/m/n/9 1
+.......\TU/lmr/m/n/9 7
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{25}{\the \c@page }}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.......\pdfdest name{cite.0:aristotle:rhetoric:25} xyz
+.......\penalty 10000
+.....\TU/lmr/m/n/9 A
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 o
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/it/9 T
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 R
+.....\kern-0.234 (font)
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 o
+.....\TU/lmr/m/it/9 r
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 c
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 o
+.....\TU/lmr/m/it/9 f
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 A
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 r
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 o
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 l
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 w
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 h
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 a
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 c
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 o
+.....\TU/lmr/m/it/9 m
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 m
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 n
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 r
+.....\TU/lmr/m/it/9 y
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 b
+.....\TU/lmr/m/it/9 y
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 l
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 E
+.....\TU/lmr/m/it/9 d
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 w
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/it/9 r
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 d
+.....\glue(\rightskip) 0.0
+....\penalty 10000
+....\glue(\baselineskip) 2.81
+....\hbox(6.345+1.854)x345.0, glue set 0.28346, direction TLT
+.....\TU/lmr/m/it/9 M
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 r
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 e
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 d
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 h
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 C
+.....\TU/lmr/m/it/9 o
+.....\TU/lmr/m/it/9 p
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 E
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 .
+.....\penalty 50
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 d
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 c
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 m
+.....\TU/lmr/m/n/9 m
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 b
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 y
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 E
+.....\TU/lmr/m/n/9 d
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 w
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 d
+.....\penalty 50
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 M
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 d
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 h
+.....\penalty 25
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 C
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 p
+.....\kern0.261 (font)
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 4.11601 plus 4.63051 minus 0.343
+.....\TU/lmr/m/n/9 3
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 v
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 .
+.....\glue(\spaceskip) 3.087 plus 1.55275 minus 1.02286
+.....\TU/lmr/m/n/9 C
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 m
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+......= \kern-0.261 (font)
+.....\TU/lmr/m/n/9 b
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 g
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 U
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 -
+.....\discretionary (penalty 50)
+.....\glue(\rightskip) 0.0
+....\penalty 250
+....\glue(\baselineskip) 2.999
+....\hbox(6.147+1.845)x345.0, glue set 267.07791fil, direction TLT
+.....\TU/lmr/m/n/9 v
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 t
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 y
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 P
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 1
+.....\TU/lmr/m/n/9 8
+.....\TU/lmr/m/n/9 7
+.....\TU/lmr/m/n/9 7
+.....\write1{\newlabel{cbx@25}{{17}{\thepage }{\pntitle }{postnote.21.text}{}}}
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.711
+....\hbox(6.444+1.737)x345.0, glue set 247.5309fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x24.32602, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x16.82602, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@22}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.22.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.22.mark}
+.......\TU/lmr/m/n/9 1
+.......\TU/lmr/m/n/9 8
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{26}{\the \c@page }}
+.....\TU/lmr/m/n/9 A
+.....\kern-1.026 (font)
+.....\TU/lmr/m/n/9 v
+.....\kern-0.261 (font)
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 o
+.....\kern0.261 (font)
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.text}
+.....\TU/lmr/m/n/9 3
+.....\pdfendlink
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.819
+....\hbox(6.444+1.737)x345.0, glue set 202.22484fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x24.32602, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x16.82602, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@23}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.23.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.23.mark}
+.......\TU/lmr/m/n/9 1
+.......\TU/lmr/m/n/9 9
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{27}{\the \c@page }}
+.....\TU/lmr/m/n/9 A
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 o
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/it/9 R
+.....\kern-0.234 (font)
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 e
+.....\TU/lmr/m/it/9 t
+.....\TU/lmr/m/it/9 o
+.....\TU/lmr/m/it/9 r
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 c
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.21.text}
+.....\TU/lmr/m/n/9 1
+.....\TU/lmr/m/n/9 7
+.....\pdfendlink
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.819
+....\hbox(6.444+1.737)x345.0, glue set 199.86687fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x24.32602, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x16.82602, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@24}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.24.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.24.mark}
+.......\TU/lmr/m/n/9 2
+.......\TU/lmr/m/n/9 0
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{28}{\the \c@page }}
+.....\TU/lmr/m/n/9 A
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 o
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/it/9 D
+.....\TU/lmr/m/it/9 e
+.....\glue(\spaceskip) 3.303 plus 1.6515 minus 1.101
+.....\TU/lmr/m/it/9 A
+.....\kern-0.468 (font)
+.....\TU/lmr/m/it/9 n
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/it/9 -
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 m
+.....\TU/lmr/m/it/9 a
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.text}
+.....\TU/lmr/m/n/9 1
+.....\pdfendlink
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 3.017
+....\hbox(6.246+0.099)x345.0, glue set 301.90894fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.0)x24.32602, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.0)x16.82602, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@25}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.25.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.25.mark}
+.......\TU/lmr/m/n/9 2
+.......\TU/lmr/m/n/9 1
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{29}{\the \c@page }}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[0 1 0]} action goto name{cite.0:aristotle:anima:9}
+.....\TU/lmr/m/n/9 I
+.....\TU/lmr/m/n/9 b
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 .
+.....\pdfendlink
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.457
+....\hbox(6.444+1.845)x345.0, glue set 210.99086fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.0)x24.32602, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.0)x16.82602, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@26}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.26.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.26.mark}
+.......\TU/lmr/m/n/9 2
+.......\TU/lmr/m/n/9 2
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{30}{\the \c@page }}
+.....\TU/lmr/m/n/9 A
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 s
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 o
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/it/9 P
+.....\TU/lmr/m/it/9 h
+.....\TU/lmr/m/it/9 y
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/it/9 i
+.....\TU/lmr/m/it/9 c
+.....\TU/lmr/m/it/9 s
+.....\TU/lmr/m/n/9 ,
+.....\glue(\spaceskip) 3.087 plus 1.92937 minus 0.8232
+.....\TU/lmr/m/n/9 s
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 e
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 n
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\spaceskip) 3.087 plus 1.54659 minus 1.02695
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.text}
+.....\TU/lmr/m/n/9 2
+.....\pdfendlink
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.909
+....\hbox(6.246+0.198)x345.0, glue set 301.90894fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x24.32602, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x16.82602, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@27}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.27.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.27.mark}
+.......\TU/lmr/m/n/9 2
+.......\TU/lmr/m/n/9 3
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\write1{\abx@aux@fnpage{31}{\the \c@page }}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[0 1 0]} action goto name{cite.0:aristotle:physics:10}
+.....\TU/lmr/m/n/9 I
+.....\TU/lmr/m/n/9 b
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 d
+.....\TU/lmr/m/n/9 .
+.....\pdfendlink
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 5.0
+....\glue -0.198
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\glue(\baselineskip) 23.24
+...\hbox(6.76+0.22)x345.0, direction TLT
+....\hbox(6.76+0.22)x345.0, glue set 170.0fil, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\TU/lmr/m/n/10 7
+.....\glue 0.0 plus 1.0fil
+============================================================

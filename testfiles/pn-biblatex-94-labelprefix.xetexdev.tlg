@@ -1,0 +1,196 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: Biblatex: labelprefix
+============================================================
+Completed box being shipped out [3]
+\vbox(633.0+0.21999)x407.0
+.\vbox(0.0+0.0)x0.0, glue set - 14.99626fil
+..\kern 0.0
+..\kern 16.0
+..\kern -1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 60.99626fil
+...\kern 0.0
+...\kern 62.0
+...\kern -1.00374
+...\special{pdf:dest (page.3) [@thispage /XYZ @xpos @ypos null]}
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(633.0+0.21999)x407.0
+..\glue 16.0
+..\vbox(617.0+0.21999)x345.0, shifted 62.0
+...\vbox(12.0+0.0)x345.0, glue set 12.0fil
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x345.0
+.....\hbox(0.0+0.0)x345.0
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 481.03563fil
+....\write-{}
+....\glue(\topskip) 0.1216
+....\hbox(9.8784+0.08638)x345.0, glue set 304.13281fil
+.....\hbox(0.0+0.0)x0.0
+......\glue 0.0
+.....\hbox(0.0+0.0)x0.0
+......\kern 0.0
+......\penalty 10000
+......\hbox(0.0+0.0)x0.0
+.......\hbox(0.0+0.0)x0.0, shifted -18.0
+........\special{pdf:dest (section*.5) [@thispage /XYZ @xpos @ypos null]}
+........\penalty 10000
+......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\TU/lmr/bx/n/14.4 Notes
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty 10000
+....\glue 9.913 plus 0.86198
+....\write1{\post@note {print@1}{\int_use:N \c@page }}
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.76662
+....\hbox(6.147+0.19798)x345.0, glue set 311.29599fil
+.....\hbox(5.994+0.0)x19.7
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.0)x12.2
+.......\glue 5.0
+.......\write1{\post@note {text@1}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\special{pdf:dest (postnote.1.text) [@thispage /XYZ @xpos @ypos null]}
+.........\penalty 10000
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
+.......\TU/lmr/m/n/9 1.
+.......\special{pdf:eann}
+......\glue 5.0
+.....\penalty 0
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
+.....\TU/lmr/m/n/9 R1
+.....\special{pdf:eann}
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.45702
+....\hbox(6.345+1.74599)x345.0, glue set 267.71796fil
+.....\hbox(5.994+0.0)x19.7
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.0)x12.2
+.......\glue 5.0
+.......\write1{\post@note {text@2}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\special{pdf:dest (postnote.2.text) [@thispage /XYZ @xpos @ypos null]}
+.........\penalty 10000
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
+.......\TU/lmr/m/n/9 2.
+.......\special{pdf:eann}
+......\glue 5.0
+.....\penalty 0
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
+.....\TU/lmr/m/n/9 Q1
+.....\special{pdf:eann}
+.....\TU/lmr/m/n/9 ,
+.....\glue 3.087 plus 1.92937 minus 0.82318
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
+.....\TU/lmr/m/n/9 3
+.....\special{pdf:eann}
+.....\TU/lmr/m/n/9 ,
+.....\glue 3.087 plus 1.92937 minus 0.82318
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
+.....\TU/lmr/m/n/9 Q2
+.....\special{pdf:eann}
+.....\TU/lmr/m/n/9 ,
+.....\glue 3.087 plus 1.92937 minus 0.82318
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
+.....\TU/lmr/m/n/9 S4
+.....\special{pdf:eann}
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 3.10701
+....\hbox(6.147+0.19798)x345.0, glue set 311.29599fil
+.....\hbox(5.994+0.19798)x19.7
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.19798)x12.2
+.......\glue 5.0
+.......\write1{\post@note {text@3}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\special{pdf:dest (postnote.3.text) [@thispage /XYZ @xpos @ypos null]}
+.........\penalty 10000
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
+.......\TU/lmr/m/n/9 3.
+.......\special{pdf:eann}
+......\glue 5.0
+.....\penalty 0
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
+.....\TU/lmr/m/n/9 R2
+.....\special{pdf:eann}
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.70901
+....\hbox(6.093+0.0)x345.0, glue set 318.09999fil
+.....\hbox(6.093+0.0)x19.7
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(6.093+0.0)x12.2
+.......\glue 5.0
+.......\write1{\post@note {text@4}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\special{pdf:dest (postnote.4.text) [@thispage /XYZ @xpos @ypos null]}
+.........\penalty 10000
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
+.......\TU/lmr/m/n/9 4.
+.......\special{pdf:eann}
+......\glue 5.0
+.....\penalty 0
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
+.....\TU/lmr/m/n/9 1
+.....\special{pdf:eann}
+.....\TU/lmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 5.0
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\glue(\baselineskip) 23.34
+...\hbox(6.66+0.21999)x345.0
+....\hbox(6.66+0.21999)x345.0, glue set 170.0fil
+.....\glue 0.0 plus 1.0fil
+.....\TU/lmr/m/n/10 3
+.....\glue 0.0 plus 1.0fil
+============================================================

@@ -27,7 +27,7 @@ specialformats.latex.xetexdev  = { binary = "xelatex-dev"  , format = "" }
 -- See https://github.com/moewew/biblatex-ext/blob/dev/build.lua
 function runtest_tasks(name, run)
   if run == 1 and string.match(name, "^pn%-biblatex") then
-    return "biber " .. name
+    return "biber -q " .. name
   else
     return ""
   end

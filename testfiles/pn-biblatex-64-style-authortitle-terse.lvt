@@ -1,0 +1,79 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=authortitle-terse,backend=biber,notetype=endonly]{biblatex}
+\addbibresource{biblatex-examples.bib}
+
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\subsection*{cite examples}
+
+\postnote{\cite{averroes/bland}.}
+
+\postnote{\cite{aristotle:physics}.}
+
+\postnote{\cite{aristotle:rhetoric}.}
+
+\subsection*{parencite examples}
+
+This is just filler text.\postnote{\parencite{averroes/bland}.}
+
+This is just filler text.\postnote{\parencite{aristotle:rhetoric}.}
+
+\subsection*{parencite* examples}
+
+\postnote{\citeauthor{aristotle:rhetoric} \parencite*{aristotle:rhetoric}.}
+
+\subsection*{footcite examples}
+
+This is just filler text.\footcite{aristotle:rhetoric}
+
+\subsection*{textcite examples}
+
+\postnote{\textcite{aristotle:rhetoric}.}
+
+\postnote{\textcite[59]{aristotle:rhetoric}.}
+
+\postnote{\textcite[see][]{aristotle:rhetoric}.}
+
+\postnote{\textcite[see][59--63]{aristotle:rhetoric}.}
+
+\subsection*{autocite examples}
+
+This is just filler text.\postnote{\autocite{aristotle:rhetoric}.}
+
+\postnote{\citeauthor{aristotle:rhetoric} \autocite*{aristotle:rhetoric}.}
+
+\subsection*{Multiple citations}
+
+\postnote{\cite{aristotle:rhetoric,averroes/bland,aristotle:physics,aristotle:poetics}.}
+
+\clearpage
+\printbibliography
+
+\cleardoublepage{}
+
+\START
+
+\BEGINTEST{Biblatex: authortitle-terse}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

@@ -1,0 +1,44 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=authortitle-icomp,backend=biber,notetype=endonly]{biblatex}
+\addbibresource{biblatex-examples.bib}
+
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\subsection*{footcite examples}
+
+This is just filler text.\footcite{aristotle:rhetoric,averroes/bland,aristotle:physics,aristotle:poetics}
+This is just filler text.\footcite{aristotle:rhetoric}
+This is just filler text.\footcite{aristotle:rhetoric}
+
+\clearpage
+
+\printbibliography
+
+\cleardoublepage{}
+
+\START
+
+\BEGINTEST{Biblatex: authortitle-icomp}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

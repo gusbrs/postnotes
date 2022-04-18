@@ -1,0 +1,41 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=authoryear-comp,backend=biber,notetype=endonly]{biblatex}
+\addbibresource{biblatex-examples.bib}
+
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\subsection*{Multiple citations}
+
+\footcite{knuth:ct:c,aristotle:physics,knuth:ct:b,aristotle:poetics,aristotle:rhetoric,knuth:ct:d}
+
+\clearpage
+\printbibliography
+
+\cleardoublepage{}
+
+\START
+
+\BEGINTEST{Biblatex: authoryear-comp}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}
