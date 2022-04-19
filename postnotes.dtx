@@ -1328,8 +1328,8 @@
 %    \end{macrocode}
 % For notes, query for next note's type \texttt{after} the current note was
 % typeset, to handle possible nesting.  Even if nesting is not a feature, this
-% should avoid hard crashes related to ``lonely item'' or ``extra endgroup''
-% errors, in case it occurs.
+% should avoid hard crashes related to ``lonely \cs{item}'' or ``extra
+% \cs{endgroup}'' errors, in case it occurs.
 %    \begin{macrocode}
                 \seq_if_empty:NTF \g_@@_queue_seq
                   {
