@@ -430,7 +430,7 @@
 %    \begin{macrocode}
 \NewDocumentEnvironment { postnoteslist } { }
   {
-    \begin{list} { }
+    \list { }
       {
         \setlength { \leftmargin }    { 0pt }
         \setlength { \labelwidth }    { 0pt }
@@ -444,10 +444,10 @@
         \setlength { \partopsep } { .5\partopsep }
       }
   }
-  { \end{list} }
+  { \endlist }
 \NewDocumentEnvironment { postnoteslisthang } { }
   {
-    \begin{list} { }
+    \list { }
       {
         \setlength { \leftmargin }    { 1em }
         \setlength { \labelwidth }    { -\leftmargin }
@@ -461,7 +461,7 @@
         \setlength { \partopsep } { .5\partopsep }
       }
   }
-  { \end{list} }
+  { \endlist }
 \cs_new:Npn \@@_list_makelabel:n #1
   { \hspace { \labelsep } \normalfont ~ #1 }
 %    \end{macrocode}
