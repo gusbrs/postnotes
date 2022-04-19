@@ -1225,12 +1225,6 @@
           { \@@_sort_queue:N \g_@@_queue_seq }
         \@@_get_headers_data:N \g_@@_queue_seq
         \@@_set_headers_vars_first:
-        \bool_until_do:nn { \seq_if_empty_p:N \g_@@_queue_seq }
-          {
-            \seq_gpop_left:NN \g_@@_queue_seq
-              \l_@@_print_note_id_tl
-            \@@_prop_get:nnN { \l_@@_print_note_id_tl }
-              { type } \l_@@_print_type_curr_tl
 %    \end{macrocode}
 % Ensure the first note after a heading has paragraph indentation when
 % \opt{listenv} is \texttt{none}.  \pkg{endnotes} uses a workaroundish
@@ -1240,11 +1234,17 @@
 % suggests the use of \cs{@afterindenttrue}, which is what \pkg{indentfirst}
 % does (we do the same, just locally).
 %    \begin{macrocode}
-            \bool_if:NF \l_@@_print_as_list_bool
-              {
-                \cs_set_eq:NN \@afterindentfalse \@afterindenttrue
-                \@afterindenttrue
-              }
+        \bool_if:NF \l_@@_print_as_list_bool
+          {
+            \cs_set_eq:NN \@afterindentfalse \@afterindenttrue
+            \@afterindenttrue
+          }
+        \bool_until_do:nn { \seq_if_empty_p:N \g_@@_queue_seq }
+          {
+            \seq_gpop_left:NN \g_@@_queue_seq
+              \l_@@_print_note_id_tl
+            \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+              { type } \l_@@_print_type_curr_tl
             \tl_if_eq:NnTF \l_@@_print_type_curr_tl { section }
               { % type_curr = `section'
                 \seq_if_empty:NTF \g_@@_queue_seq
