@@ -1231,18 +1231,6 @@
               \l_@@_print_note_id_tl
             \@@_prop_get:nnN { \l_@@_print_note_id_tl }
               { type } \l_@@_print_type_curr_tl
-            \seq_if_empty:NTF \g_@@_queue_seq
-              {
-                \tl_set:Nn \l_@@_print_note_id_next_tl { noid }
-                \tl_set:Nn \l_@@_print_type_next_tl { close }
-              }
-              {
-                \seq_get_left:NN \g_@@_queue_seq
-                  \l_@@_print_note_id_next_tl
-                \@@_prop_get:nnN
-                  { \l_@@_print_note_id_next_tl }
-                  { type } \l_@@_print_type_next_tl
-              }
 %    \end{macrocode}
 % Ensure the first note after a heading has paragraph indentation when
 % \opt{listenv} is \texttt{none}.  \pkg{endnotes} uses a workaroundish
@@ -1259,6 +1247,18 @@
               }
             \tl_if_eq:NnTF \l_@@_print_type_curr_tl { section }
               { % type_curr = `section'
+                \seq_if_empty:NTF \g_@@_queue_seq
+                  {
+                    \tl_set:Nn \l_@@_print_note_id_next_tl { noid }
+                    \tl_set:Nn \l_@@_print_type_next_tl { close }
+                  }
+                  {
+                    \seq_get_left:NN \g_@@_queue_seq
+                      \l_@@_print_note_id_next_tl
+                    \@@_prop_get:nnN
+                      { \l_@@_print_note_id_next_tl }
+                      { type } \l_@@_print_type_next_tl
+                  }
 %    \end{macrocode}
 % We only process the entry if \texttt{type_next} is \texttt{note}: here are
 % skipped empty sections.
@@ -1325,6 +1325,24 @@
                 \l_@@_print_content_tl
                 \l_@@_post_printnote_tl
                 \group_end:
+%    \end{macrocode}
+% For notes, query for next note's type \texttt{after} the current note was
+% typeset, to handle possible nesting.  Even if nesting is not a feature, this
+% should avoid hard crashes related to ``lonely item'' or ``extra endgroup''
+% errors, in case it occurs.
+%    \begin{macrocode}
+                \seq_if_empty:NTF \g_@@_queue_seq
+                  {
+                    \tl_set:Nn \l_@@_print_note_id_next_tl { noid }
+                    \tl_set:Nn \l_@@_print_type_next_tl { close }
+                  }
+                  {
+                    \seq_get_left:NN \g_@@_queue_seq
+                      \l_@@_print_note_id_next_tl
+                    \@@_prop_get:nnN
+                      { \l_@@_print_note_id_next_tl }
+                      { type } \l_@@_print_type_next_tl
+                  }
                 \tl_if_eq:NnF \l_@@_print_type_next_tl { note }
                   {
                     \bool_if:NTF \l_@@_print_as_list_bool
@@ -1342,6 +1360,9 @@
           { \bool_gset_false:N \g_@@_header_vars_next_bool }
 %    \end{macrocode}
 % We won't use the variables anymore, clear them to reduce memory usage.
+% Given how we populated \cs{l_@@_clear_queue_seq}, this won't catch nested
+% notes.  But it's not worth to conditionally add new items along the way
+% (testing it every iteration) for this.  Again, not a feature.
 %    \begin{macrocode}
         \seq_map_inline:Nn \l_@@_clear_queue_seq
           { \@@_prop_gclear:n { ##1 } }
