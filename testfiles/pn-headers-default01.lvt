@@ -1,0 +1,60 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+\makeatletter
+\postnotesetup{
+  heading = {
+    \chapter*{\pntitle}
+    \@mkboth{\pnheaderdefault}{\pnheaderdefault}%
+    \thispagestyle{headings}%
+  }
+}
+\makeatother
+\AddToHook{cmd/chapter/before}{%
+  \postnotesection{\section*{Notes to chapter \pnthechapternextnote}}}
+\counterwithin*{postnote}{chapter}
+
+\ExplSyntaxOn
+\NewDocumentCommand \testcontent { m }
+  {
+    \prg_replicate:nn { #1 }
+      {
+        \setbox0=\hbox{\postnote{\leavevmode\vspace{5em}}}
+        \showbox0
+        \box0
+        \par
+        \vspace{5em}
+      }
+  }
+\ExplSyntaxOff
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+\testcontent{20}
+
+\chapter{Second chapter}
+\testcontent{20}
+
+\cleardoublepage{}
+
+\START
+
+\BEGINTEST{Headers default}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

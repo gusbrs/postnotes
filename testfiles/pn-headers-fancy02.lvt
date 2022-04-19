@@ -1,0 +1,69 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+\makeatletter
+\postnotesetup{
+  heading = {
+    \section*{\pntitle}
+    \@mkboth{\mypnheader}{\mypnheader}%
+  }
+}
+\makeatother
+\pagestyle{headings}
+\AddToHook{cmd/section/before}{%
+  \postnotesection{\subsection*{Notes to section \pnthesectionnextnote}}}
+\counterwithin*{postnote}{section}
+
+\ExplSyntaxOn
+\NewDocumentCommand \mypnheader {}
+  {
+    \tl_if_eq:NNTF \pnhdsectfirst \pnhdsectlast
+      { Notes~to~section~\pnhdsectfirst,~ }
+      { Notes~to~sections~\pnhdsectfirst -- \pnhdsectlast,~ }
+    \tl_if_eq:NNTF \pnhdpagefirst \pnhdpagelast
+      { page~\pnhdpagefirst }
+      { pages~\pnhdpagefirst -- \pnhdpagelast }
+  }
+\NewDocumentCommand \testcontent { m }
+  {
+    \prg_replicate:nn { #1 }
+      {
+        \setbox0=\hbox{\postnote{\leavevmode\vspace{5em}}}
+        \showbox0
+        \box0
+        \par
+        \vspace{7em}
+      }
+  }
+\ExplSyntaxOff
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\section{First section}
+\testcontent{15}
+
+\section{Second section}
+\testcontent{15}
+
+\cleardoublepage{}
+
+\START
+
+\BEGINTEST{Headers fancy}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

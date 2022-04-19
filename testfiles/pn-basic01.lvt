@@ -1,0 +1,44 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\ExplSyntaxOn
+\NewDocumentCommand \testcontent { m }
+  {
+    \prg_replicate:nn { #1 }
+      {
+        \setbox0=\hbox{\postnote{\leavevmode\vspace{5em}}}
+        \showbox0
+        \box0
+        \par
+        \vspace{5em}
+      }
+  }
+\ExplSyntaxOff
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\START
+
+\BEGINTEST{Notes}
+\testcontent{20}
+\ENDTEST
+
+\BEGINTEST{Print}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

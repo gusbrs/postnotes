@@ -1,0 +1,84 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+\AddToHook{cmd/section/before}{%
+  \postnotesection{\subsection*{Notes to section \pnthesectionnextnote}}}
+\counterwithin*{postnote}{section}
+\pagestyle{headings}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\section*{Introduction}
+\postnotesection{\subsection*{Notes to the introduction}}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{Notes: Introduction}
+Intro.%
+\setbox0=\hbox{\postnote{Intro note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\section{First section}
+
+\TIMO
+
+\BEGINTEST{Notes: First section}
+Foo.%
+\setbox0=\hbox{\postnote{Foo note.}}%
+\showbox0
+\box0
+
+Bar.%
+\setbox0=\hbox{\postnote{Bar note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\section{Second section}
+
+\TIMO
+
+\BEGINTEST{Notes: Second section}
+Baz.%
+\setbox0=\hbox{\postnote{Baz note.}}%
+\showbox0
+\box0
+
+Boo.%
+\setbox0=\hbox{\postnote{Boo note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

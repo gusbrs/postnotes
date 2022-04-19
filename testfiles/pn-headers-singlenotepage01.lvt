@@ -1,0 +1,69 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+\makeatletter
+\postnotesetup{
+  heading = {
+    \chapter*{\pntitle}
+    \@mkboth{\mypnheader}{\mypnheader}%
+    \thispagestyle{headings}%
+  }
+}
+\makeatother
+\AddToHook{cmd/chapter/before}{%
+  \postnotesection{\section*{Notes to chapter \pnthechapternextnote}}}
+\counterwithin*{postnote}{chapter}
+
+\ExplSyntaxOn
+\NewDocumentCommand \mypnheader {}
+  {
+    \tl_if_eq:NNTF \pnhdchapfirst \pnhdchaplast
+      { Notes~to~chapter~\pnhdchapfirst,~ }
+      { Notes~to~chapters~\pnhdchapfirst -- \pnhdchaplast,~ }
+    \tl_if_eq:NNTF \pnhdpagefirst \pnhdpagelast
+      { page~\pnhdpagefirst }
+      { pages~\pnhdpagefirst -- \pnhdpagelast }
+  }
+\NewDocumentCommand \testcontent { m }
+  {
+    \prg_replicate:nn { #1 }
+      {
+        \setbox0=\hbox{\postnote{\newpage}}
+        \showbox0
+        \box0
+        \par
+        \vspace{15em}
+      }
+  }
+\ExplSyntaxOff
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+\testcontent{10}
+
+\chapter{Second chapter}
+\testcontent{10}
+
+\cleardoublepage{}
+
+\START
+
+\BEGINTEST{Single page notes}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

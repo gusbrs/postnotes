@@ -1,0 +1,239 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: Option heading
+============================================================
+Chapter 2.
+Completed box being shipped out [3]
+\vbox(627.36243+0.0)x380.0
+.\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
+..\kern 0.0
+..\kern 22.0
+..\kern -1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 33.99626fil
+...\kern 0.0
+...\kern 35.0
+...\kern -1.00374
+...\special{pdf:dest (page.3) [@thispage /XYZ @xpos @ypos null]}
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(627.36243+0.0)x380.0
+..\glue 22.0
+..\vbox(605.36243+0.0)x345.0, shifted 35.0
+...\vbox(12.0+0.0)x345.0, glue set 5.17fil
+....\glue 0.0 plus 1.0fil
+....\hbox(6.83+2.05998)x345.0
+.....\hbox(6.83+2.05998)x345.0, glue set 252.04fil
+......\TU/lmr/m/sl/10 Foo
+......\glue 3.33 plus 1.665 minus 1.11
+......\TU/lmr/m/sl/10 Notes
+......\glue 3.33 plus 1.665 minus 1.11
+......\TU/lmr/m/sl/10 to
+......\glue 3.33 plus 1.665 minus 1.11
+......\TU/lmr/m/sl/10 page
+......\glue 3.33 plus 1.665 minus 1.11
+......\TU/lmr/m/sl/10 1
+......\glue 0.0 plus 1.0fil
+......\TU/lmr/m/n/10 3
+...\glue 18.06749
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 314.0fil
+....\mark{{\protect \MakeUppercase  {Chapter\ 1. \ First chapter}}{Foo \pnheaderdefault \ETC.}
+....\write-{}
+....\special{pdf:dest (chapter.2) [@thispage /XYZ @xpos @ypos null]}
+....\write3{\protect \BOOKMARK [0][-]{chapter.2}{\376\377\000M\000y\000\040\000t\\ETC.}
+....\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline \ETC.}
+....\mark{{\protect \MakeUppercase  {Chapter\ 2. \ My title}}{}}
+....\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
+....\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+....\glue(\topskip) 10.0
+....\rule(0.0+0.0)x*
+....\penalty 10000
+....\glue 50.0
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 10.52348
+....\hbox(14.47652+4.02354)x345.0, glue set 121.07516fil
+.....\hbox(0.0+0.0)x0.0
+.....\TU/lmr/bx/n/20.74 Chapter
+.....\glue 7.7775 plus 3.88875 minus 2.5925
+.....\TU/lmr/bx/n/20.74 2
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0 plus 1.0fil
+....\penalty 10000
+....\glue 20.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 8.70973
+....\hbox(17.26672+4.97598)x345.0, glue set 122.10556fil
+.....\hbox(0.0+0.0)x0.0
+.....\TU/lmr/bx/n/24.88 My
+.....\glue 9.33 plus 4.665 minus 3.11
+.....\TU/lmr/bx/n/24.88 title
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0 plus 1.0fil
+....\penalty 10000
+....\glue 40.0
+....\mark{{Foo \pnheaderdefault }{Foo \pnheaderdefault }}
+....\penalty 10000
+....\write1{\post@note {print@1}{\int_use:N \c@page }}
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 0.03001
+....\hbox(5.994+0.0)x345.0, glue set 325.3fil
+.....\hbox(5.994+0.0)x19.7
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.0)x12.2
+.......\glue 5.0
+.......\write1{\post@note {text@1}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\special{pdf:dest (postnote.1.text) [@thispage /XYZ @xpos @ypos null]}
+.........\penalty 10000
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
+.......\TU/lmr/m/n/9 1.
+.......\special{pdf:eann}
+......\glue 5.0
+.....\penalty 0
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\glue 45.0
+....\glue 0.0
+....\penalty -51
+....\glue 5.0
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+...\glue(\baselineskip) 25.29494
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+============================================================
+============================================================
+TEST 2: Option heading 2
+============================================================
+Chapter 3.
+Completed box being shipped out [5]
+\vbox(627.36243+0.0)x380.0
+.\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
+..\kern 0.0
+..\kern 22.0
+..\kern -1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 33.99626fil
+...\kern 0.0
+...\kern 35.0
+...\kern -1.00374
+...\special{pdf:dest (page.5) [@thispage /XYZ @xpos @ypos null]}
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(627.36243+0.0)x380.0
+..\glue 22.0
+..\vbox(605.36243+0.0)x345.0, shifted 35.0
+...\vbox(12.0+0.0)x345.0, glue set 5.17fil
+....\glue 0.0 plus 1.0fil
+....\hbox(6.83+2.05998)x345.0
+.....\hbox(6.83+2.05998)x345.0, glue set 252.01999fil
+......\TU/lmr/m/sl/10 Bar
+......\glue 3.33 plus 1.665 minus 1.11
+......\TU/lmr/m/sl/10 Notes
+......\glue 3.33 plus 1.665 minus 1.11
+......\TU/lmr/m/sl/10 to
+......\glue 3.33 plus 1.665 minus 1.11
+......\TU/lmr/m/sl/10 page
+......\glue 3.33 plus 1.665 minus 1.11
+......\TU/lmr/m/sl/10 4
+......\glue 0.0 plus 1.0fil
+......\TU/lmr/m/n/10 5
+...\glue 18.06749
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 314.0fil
+....\write-{}
+....\mark{{Foo \pnheaderdefault }{Bar \pnheaderdefault }}
+....\write-{}
+....\special{pdf:dest (chapter.3) [@thispage /XYZ @xpos @ypos null]}
+....\write3{\protect \BOOKMARK [0][-]{chapter.3}{\376\377\000M\000y\000\040\000n\\ETC.}
+....\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline \ETC.}
+....\mark{{\protect \MakeUppercase  {Chapter\ 3. \ My new title}}{}}
+....\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
+....\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+....\glue(\topskip) 10.0
+....\rule(0.0+0.0)x*
+....\penalty 10000
+....\glue 50.0
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 10.52348
+....\hbox(14.47652+4.02354)x345.0, glue set 121.07516fil
+.....\hbox(0.0+0.0)x0.0
+.....\TU/lmr/bx/n/20.74 Chapter
+.....\glue 7.7775 plus 3.88875 minus 2.5925
+.....\TU/lmr/bx/n/20.74 3
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0 plus 1.0fil
+....\penalty 10000
+....\glue 20.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 8.70973
+....\hbox(17.26672+4.97598)x345.0, glue set 93.1701fil
+.....\hbox(0.0+0.0)x0.0
+.....\TU/lmr/bx/n/24.88 My
+.....\glue 9.33 plus 4.665 minus 3.11
+.....\TU/lmr/bx/n/24.88 new
+.....\glue 9.33 plus 4.665 minus 3.11
+.....\TU/lmr/bx/n/24.88 title
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0 plus 1.0fil
+....\penalty 10000
+....\glue 40.0
+....\mark{{Bar \pnheaderdefault }{Bar \pnheaderdefault }}
+....\penalty 10000
+....\write1{\post@note {print@2}{\int_use:N \c@page }}
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 0.03001
+....\hbox(5.994+0.0)x345.0, glue set 325.3fil
+.....\hbox(5.994+0.0)x19.7
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.0)x12.2
+.......\glue 5.0
+.......\write1{\post@note {text@2}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\special{pdf:dest (postnote.2.text) [@thispage /XYZ @xpos @ypos null]}
+.........\penalty 10000
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
+.......\TU/lmr/m/n/9 2.
+.......\special{pdf:eann}
+......\glue 5.0
+.....\penalty 0
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\glue 45.0
+....\glue 0.0
+....\penalty -51
+....\glue 5.0
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+...\glue(\baselineskip) 25.29494
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+============================================================

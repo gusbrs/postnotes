@@ -1,0 +1,89 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+\makeatletter
+\postnotesetup{
+  heading = {
+    \chapter*{\pntitle}
+    \@mkboth{\mypnheader}{\mypnheader}%
+    \thispagestyle{headings}%
+  }
+}
+\makeatother
+\AddToHook{cmd/chapter/before}{%
+  \postnotesection{\section*{Notes to chapter \pnthechapternextnote}}}
+\counterwithin*{postnote}{chapter}
+
+\ExplSyntaxOn
+\NewDocumentCommand \mypnheader {}
+  {
+    \bool_case_true:nF
+      {
+        {
+          \str_if_eq_p:ee { \pnhdnamefirst } { intro } &&
+          \str_if_eq_p:ee { \pnhdnamelast } { intro }
+        }
+        { Notes~to~the~introduction,~ }
+        {
+          \str_if_eq_p:ee { \pnhdnamefirst } { intro } &&
+          ! \str_if_eq_p:ee { \pnhdnamelast } { intro }
+        }
+        { Notes~to~the~introduction~and~chapter~\pnhdchaplast{},~ }
+      }
+      {
+        \tl_if_eq:NNTF \pnhdchapfirst \pnhdchaplast
+          { Notes~to~chapter~\pnhdchapfirst{},~ }
+          { Notes~to~chapters~\pnhdchapfirst{} -- \pnhdchaplast{},~ }
+      }
+    \tl_if_eq:NNTF \pnhdpagefirst \pnhdpagelast
+      { page~\pnhdpagefirst{} }
+      { pages~\pnhdpagefirst{} -- \pnhdpagelast{} }
+  }
+\NewDocumentCommand \testcontent { m }
+  {
+    \prg_replicate:nn { #1 }
+      {
+        \setbox0=\hbox{\postnote{\leavevmode\vspace{5em}}}
+        \showbox0
+        \box0
+        \par
+        \vspace{5em}
+      }
+  }
+\ExplSyntaxOff
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter*{Introduction}
+\postnotesection[name=intro]{\section*{Notes to the introduction}}
+
+\testcontent{12}
+
+\chapter{First chapter}
+\testcontent{20}
+
+\chapter{Second chapter}
+\testcontent{20}
+
+\cleardoublepage{}
+
+\START
+
+\BEGINTEST{Headers fancy}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

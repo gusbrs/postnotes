@@ -1,0 +1,69 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+\AddToHook{cmd/chapter/before}{%
+  \postnotesection{\section*{Notes to chapter \pnthechapternextnote}}}
+\counterwithin*{postnote}{chapter}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{Notes: First chapter}
+Foo.%
+\setbox0=\hbox{\postnote{Foo note.}}%
+\showbox0
+\box0
+
+Bar.%
+\setbox0=\hbox{\postnote{Bar note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\chapter{Second chapter}
+
+\TIMO
+
+\BEGINTEST{Notes: Second chapter}
+Baz.%
+\setbox0=\hbox{\postnote{Baz note.}}%
+\showbox0
+\box0
+
+Boo.%
+\setbox0=\hbox{\postnote{Boo note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

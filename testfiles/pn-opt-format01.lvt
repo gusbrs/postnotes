@@ -1,0 +1,56 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\OMIT
+
+Foo.\postnote{Foo note.}
+
+\cleardoublepage{}
+
+\TIMO
+
+\postnotesetup{ format = \footnotesize }
+
+\BEGINTEST{Option format}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+Bar.\postnote{Bar note.}
+
+\cleardoublepage{}
+
+\TIMO
+
+\postnotesetup{ format = \bfseries }
+
+\BEGINTEST{Option format 2}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

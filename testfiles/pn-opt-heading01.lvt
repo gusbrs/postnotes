@@ -1,0 +1,68 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\OMIT
+
+Foo.\postnote{\leavevmode\vspace{5em}}
+
+\cleardoublepage{}
+
+\TIMO
+
+\postnotesetup{
+  heading = {
+    \markright{Foo \pnheaderdefault}
+    \chapter{My title}
+    \markboth{Foo \pnheaderdefault}{Foo \pnheaderdefault}%
+    \thispagestyle{headings}%
+  }
+}
+
+\BEGINTEST{Option heading}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+Bar.\postnote{\leavevmode\vspace{5em}}
+
+\cleardoublepage{}
+
+\TIMO
+
+\renewcommand{\pnheading}{
+    \markright{Bar \pnheaderdefault}
+    \chapter{My new title}
+    \markboth{Bar \pnheaderdefault}{Bar \pnheaderdefault}
+    \thispagestyle{headings}
+  }
+
+\BEGINTEST{Option heading 2}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

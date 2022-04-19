@@ -1,0 +1,105 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\OMIT
+
+\makeatletter
+Default.\postnote{\@currenvir}
+\makeatother
+
+Default.\postnote{Default note.}
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Option listenv default}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\makeatletter
+Foo.\postnote{\@currenvir}
+\makeatother
+
+Foo.\postnote{Foo note.}
+
+\cleardoublepage{}
+
+\TIMO
+
+\postnotesetup{ listenv = postnoteslisthang }
+
+\BEGINTEST{Option listenv}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\makeatletter
+Bar.\postnote{\@currenvir}
+\makeatother
+
+Bar.\postnote{Bar note.}
+
+\cleardoublepage{}
+
+\TIMO
+
+\postnotesetup{ listenv = itemize }
+
+\BEGINTEST{Option listenv 2}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\makeatletter
+Baz.\postnote{\@currenvir}
+\makeatother
+
+Baz.\postnote{Baz note.}
+
+\cleardoublepage{}
+
+\TIMO
+
+\postnotesetup{
+  listenv = none ,
+  maketextmark = {#2#1.#3 } ,
+}
+
+\BEGINTEST{Option listenv none}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}
