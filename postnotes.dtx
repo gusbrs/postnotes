@@ -185,6 +185,8 @@
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { note }
     \prop_gput:cnx { \@@_data_name:e {#1} } { mark }
       { \l_@@_mark_tl }
+    \prop_gput:cnx { \@@_data_name:e {#1} } { counter }
+      { \int_use:N \c@postnote }
     \prop_gput:cnx { \@@_data_name:e {#1} } { sortnum }
       {
         \bool_if:NTF \l_@@_manual_sortnum_bool
@@ -1147,6 +1149,7 @@
 %     \g_@@_print_postnotes_int ,
 %     \l_@@_print_note_id_tl ,
 %     \l_@@_print_note_id_next_tl ,
+%     \l_@@_print_counter_tl ,
 %     \l_@@_print_mark_tl ,
 %     \l_@@_print_type_curr_tl ,
 %     \l_@@_print_type_next_tl ,
@@ -1159,6 +1162,7 @@
 \int_new:N \g_@@_print_postnotes_int
 \tl_new:N \l_@@_print_note_id_tl
 \tl_new:N \l_@@_print_note_id_next_tl
+\tl_new:N \l_@@_print_counter_tl
 \tl_new:N \l_@@_print_mark_tl
 \tl_new:N \l_@@_print_type_curr_tl
 \tl_new:N \l_@@_print_type_next_tl
@@ -1184,21 +1188,33 @@
 %    \end{macrocode}
 %
 %
-% The \texttt{postnotesection} is a counter which is stepped for every
-% postnote section which gets to be actually typeset.  It's aim is to provide
-% a valid ``enclosing counter'' to \texttt{postnote} in the context of
-% \cs{printpostnotes}.  Since we don't know where \texttt{postnote} may have
-% been reset along the document, in the general case, we can't rely on any
-% other preexisting counter.  This means that the particular value of
-% \texttt{postnotesection} is of little practical meaning, it really is just
-% meant to provide recognizable ``bounds'' for \texttt{postnote} along the
-% printing of the notes.  It is a \LaTeXe{} counter, since it may be required
-% externally.  It's main intended use case is to provide a counter with which
-% we can \pkg{zref-clever}'s option \opt{counterresetby} for
-% \texttt{postnote}, but in principle it can be of general use.
+% The \texttt{postnotetext} is a counter used to restore the original value of
+% \texttt{postnote} at the time of printing, for the purposes of
+% cross-referencing, it should be different from \texttt{postnote} if a note
+% may occur inside \cs{printpostnotes}.  The \texttt{postnotesection} is a
+% counter which is stepped for every postnote section which gets to be
+% actually typeset.  It's aim is to provide a valid ``enclosing counter'' to
+% \texttt{postnote} in the context of \cs{printpostnotes}.  Since we don't
+% know where \texttt{postnote} may have been reset along the document, in the
+% general case, we can't rely on any other preexisting counter.  This means
+% that the particular value of \texttt{postnotesection} is of little practical
+% meaning, it really is just meant to provide recognizable ``bounds'' for
+% \texttt{postnote} along the printing of the notes.  Indeed, it is
+% initialized to a very high value, so that ``marks'' and ``texts'' don't mix
+% in the same reference list, which would occur if the enclosing counters of
+% both belonged to the same range, and with somewhat arbitrary results, since
+% we cannot ensure the step of the enclosing counter along the document
+% matches \texttt{postnotesection}.  This is actually a tricky problem from
+% the cross-referencing standpoint: two different things, which should be of
+% the same type, are reset along the document, but shouldn't really be mixed
+% together.  They are both \LaTeXe{} counters, since they may be required
+% externally.  Their main intended use case is to support \pkg{zref-clever},
+% but in principle they can be of general use.
 %
 %    \begin{macrocode}
+\newcounter { postnotetext }
 \newcounter { postnotesection }
+\setcounter { postnotesection } { 10000 }
 %    \end{macrocode}
 %
 %
@@ -1308,8 +1324,13 @@
                   { mark } \l_@@_print_mark_tl
                 \@@_prop_get:nnN
                   { \l_@@_print_note_id_tl }
+                  { counter } \l_@@_print_counter_tl
+                \@@_prop_get:nnN
+                  { \l_@@_print_note_id_tl }
                   { content } \l_@@_print_content_tl
-                \cs_set:Npn \@currentcounter { postnote }
+                \cs_set:Npn \@currentcounter { postnotetext }
+                \int_set:Nn \c@postnotetext
+                  { \int_eval:n { \l_@@_print_counter_tl } }
                 \cs_set:Npx \@currentlabel
                   { \p@postnote \l_@@_print_mark_tl }
                 \@@_hyperref_make_currentHref:n
@@ -2268,9 +2289,13 @@
 %    \begin{macrocode}
 \AddToHook { package/zref-clever/after }
   {
-    \zcsetup { countertype = { postnote = endnote } }
+    \zcsetup
+      {
+        countertype = { postnote = endnote } ,
+        countertype = { postnotetext = endnote } ,
+      }
     \AddToHook { postnotes/print/begin } [ postnotes ]
-      { \zcsetup { counterresetby = { postnote = postnotesection } } }
+      { \zcsetup { counterresetby = { postnotetext = postnotesection } } }
   }
 %    \end{macrocode}
 %
