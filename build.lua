@@ -7,12 +7,10 @@ module = "postnotes"
 -- Typeset only the .tex files
 typesetfiles = {"*.tex"}
 
--- We need at least two runs for the labels but, depending on the case
--- (multipass check, biblatex, etc.), three.  I could probably separate the
--- cases, but let's see if the test suite becomes burdensomely long before
--- trying to optimize this.
-checkruns = 3
--- checkconfigs = {"build","build-4runs"}
+-- We need at least 2 runs for the labels.
+checkruns = 2
+-- But, depending on the case (multipass check, biblatex, etc.), 3.
+checkconfigs = {"build","build-3runs"}
 
 -- Use dev formats for regression tests
 -- See https://tex.stackexchange.com/q/611424
