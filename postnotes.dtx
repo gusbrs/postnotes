@@ -1592,7 +1592,6 @@
 %     \g_@@_header_sect_last_prop ,
 %     \g_@@_header_name_first_prop ,
 %     \g_@@_header_name_last_prop ,
-%     \l_@@_header_page_note_int ,
 %     \g_@@_header_prev_last_page_tl ,
 %     \g_@@_header_prev_last_chap_tl ,
 %     \g_@@_header_prev_last_sect_tl ,
@@ -1614,7 +1613,6 @@
 \prop_new:N \g_@@_header_sect_last_prop
 \prop_new:N \g_@@_header_name_first_prop
 \prop_new:N \g_@@_header_name_last_prop
-\int_new:N \l_@@_header_page_note_int
 \tl_new:N \g_@@_header_prev_last_page_tl
 \tl_new:N \g_@@_header_prev_last_chap_tl
 \tl_new:N \g_@@_header_prev_last_sect_tl
@@ -1654,7 +1652,6 @@
     \prop_gclear:N \g_@@_header_sect_last_prop
     \prop_gclear:N \g_@@_header_name_first_prop
     \prop_gclear:N \g_@@_header_name_last_prop
-    \int_zero:N \l_@@_header_page_note_int
     \tl_gclear:N \g_@@_header_prev_last_page_tl
     \tl_gclear:N \g_@@_header_prev_last_chap_tl
     \tl_gclear:N \g_@@_header_prev_last_sect_tl
@@ -1675,13 +1672,12 @@
               \l_@@_curr_text_page_tl { text@ ##1 }
             \tl_if_empty:NF \l_@@_curr_text_page_tl
               {
-                \int_incr:N \l_@@_header_page_note_int
                 \tl_if_eq:NNTF
                   \l_@@_prev_text_page_tl
                   \l_@@_curr_text_page_tl
                   {
 %    \end{macrocode}
-% We are on the same page as the previous note, just store the
+% We are on the same page as the previous note, just update the
 % \texttt{prev_mark} data.
 %    \begin{macrocode}
                     \@@_get_pageref:Nn
@@ -1699,27 +1695,11 @@
 % the new page (or on the very first note of \cs{printpostnotes}, given
 % \cs{l_@@_prev_text_page_tl} is initialized to empty).
 %
-% Set `first' values for current page, based on the current note ID.
-%    \begin{macrocode}
-                    \prop_gput:Nxx \g_@@_header_page_first_prop
-                      { \l_@@_curr_text_page_tl }
-                      { \@@_extract_pageref:n { mark@ ##1 } }
-                    \prop_gput:Nxx \g_@@_header_chap_first_prop
-                      { \l_@@_curr_text_page_tl }
-                      { \@@_prop_item:nn {##1} { thechapter } }
-                    \prop_gput:Nxx \g_@@_header_sect_first_prop
-                      { \l_@@_curr_text_page_tl }
-                      { \@@_prop_item:nn {##1} { thesection } }
-                    \prop_gput:Nxx \g_@@_header_name_first_prop
-                      { \l_@@_curr_text_page_tl }
-                      { \@@_prop_item:nn {##1} { pnsectname } }
-%    \end{macrocode}
-%
 % Set `last' values for previous page, based on the last valid
-% \texttt{prev_mark} ones stored above (on the \texttt{T} branch).  There is
-% no previous page to the first one of \cs{printpostnotes} (so we don't set
-% `last' values for it, conditioning on \cs{l_@@_prev_text_page_tl} being
-% empty, which only occurs on the first note).
+% \texttt{prev_mark} stored ones.  There is no previous page to the first one
+% of \cs{printpostnotes}, so we don't set `last' values for it (conditioning
+% on \cs{l_@@_prev_text_page_tl} being empty, which only occurs on the first
+% note).
 %    \begin{macrocode}
                     \tl_if_empty:NF \l_@@_prev_text_page_tl
                       {
@@ -1738,30 +1718,38 @@
                       }
 %    \end{macrocode}
 %
-% For the first note on page, set \texttt{prev_mark} data.  These values will
-% only get to be used if this happens to also be the last note on the page,
-% but in this case they are need since the \texttt{T} branch above is never
-% reached for the page.
+% Set `first' values for current page, based on the current note ID.
 %    \begin{macrocode}
-                    \int_compare:nNnT
-                      { \l_@@_header_page_note_int } = { 1 }
-                      {
-                        \@@_get_pageref:Nn
-                          \l_@@_prev_mark_page_tl { mark@ ##1 }
-                        \@@_prop_get:nnN {##1} { thechapter }
-                          \l_@@_prev_mark_chap_tl
-                        \@@_prop_get:nnN {##1} { thesection }
-                          \l_@@_prev_mark_sect_tl
-                        \@@_prop_get:nnN {##1} { pnsectname }
-                          \l_@@_prev_mark_name_tl
-                      }
+                    \prop_gput:Nxx \g_@@_header_page_first_prop
+                      { \l_@@_curr_text_page_tl }
+                      { \@@_extract_pageref:n { mark@ ##1 } }
+                    \prop_gput:Nxx \g_@@_header_chap_first_prop
+                      { \l_@@_curr_text_page_tl }
+                      { \@@_prop_item:nn {##1} { thechapter } }
+                    \prop_gput:Nxx \g_@@_header_sect_first_prop
+                      { \l_@@_curr_text_page_tl }
+                      { \@@_prop_item:nn {##1} { thesection } }
+                    \prop_gput:Nxx \g_@@_header_name_first_prop
+                      { \l_@@_curr_text_page_tl }
+                      { \@@_prop_item:nn {##1} { pnsectname } }
 %    \end{macrocode}
 %
-% Reset \cs{l_@@_header_page_note_int} and set \cs{l_@@_prev_text_page_tl} for
-% the next page (\cs{l_@@_curr_text_page_tl} is never empty at this
-% point, since we conditioned to it).
+% Store \texttt{prev_mark} data for the first note on the page.
 %    \begin{macrocode}
-                    \int_zero:N \l_@@_header_page_note_int
+                    \@@_get_pageref:Nn
+                      \l_@@_prev_mark_page_tl { mark@ ##1 }
+                    \@@_prop_get:nnN {##1} { thechapter }
+                      \l_@@_prev_mark_chap_tl
+                    \@@_prop_get:nnN {##1} { thesection }
+                      \l_@@_prev_mark_sect_tl
+                    \@@_prop_get:nnN {##1} { pnsectname }
+                      \l_@@_prev_mark_name_tl
+%    \end{macrocode}
+%
+% Set \cs{l_@@_prev_text_page_tl} for the next page
+% (\cs{l_@@_curr_text_page_tl} is never empty at this point, since we
+% conditioned to it).
+%    \begin{macrocode}
                     \tl_set:NV \l_@@_prev_text_page_tl
                       \l_@@_curr_text_page_tl
                   }
