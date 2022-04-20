@@ -1,0 +1,53 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+\postnotesetup{
+  backlink=false ,
+  hyperref=true ,
+}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{link bools}
+\ExplSyntaxOn
+\bool_show:N \l__postnotes_hyperlink_bool
+\bool_show:N \g__postnotes_hyperref_loaded_bool
+\bool_show:N \l__postnotes_backlink_bool
+\ExplSyntaxOff
+\ENDTEST
+
+\BEGINTEST{Note backlink}
+Foo.%
+\setbox0=\hbox{\postnote{Foo note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+\cleardoublepage{}
+\TIMO
+
+\BEGINTEST{Print backlink}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

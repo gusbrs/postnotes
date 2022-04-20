@@ -1,0 +1,94 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: hyperref bools
+============================================================
+> \l__postnotes_hyperlink_bool=false.
+<recently read> }
+l. ...\bool_show:N \l__postnotes_hyperlink_bool
+> \g__postnotes_hyperref_loaded_bool=false.
+<recently read> }
+l. ......_show:N \g__postnotes_hyperref_loaded_bool
+============================================================
+============================================================
+TEST 2: Note hyperref
+============================================================
+> \box...=
+\hbox(8.27692+0.0)x4.483
+.\write1{\post@note {mark@1}{\thepage }}
+.\penalty 10000
+.\hbox(8.27692+0.0)x4.483
+..\mathon
+..\hbox(4.648+0.0)x4.483, shifted -3.62892
+...\TU/lmr/m/n/7 1
+..\mathoff
+! OK.
+l. ...\showbox0
+============================================================
+============================================================
+TEST 3: Print hyperref
+============================================================
+Completed box being shipped out [3]
+\vbox(627.36243+0.21999)x380.0
+.\glue 22.0
+.\vbox(605.36243+0.21999)x345.0, shifted 35.0
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+..\glue 18.06749
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 404.0fil
+...\write-{}
+...\glue(\topskip) 10.0
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 50.0
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 12.93231
+...\hbox(17.06769+0.14926)x345.0, glue set 137.19528fil
+....\hbox(0.0+0.0)x0.0
+....\TU/lmr/bx/n/24.88 Notes
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\penalty 10000
+...\glue 40.0
+...\mark{{\pnheaderdefault }{\pnheaderdefault }}
+...\penalty 10000
+...\write1{\post@note {print@1}{\int_use:N \c@page }}
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 4.73074
+...\hbox(6.12+0.09898)x345.0, glue set 287.383fil
+....\hbox(5.994+0.0)x19.7
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.994+0.0)x12.2
+......\glue 5.0
+......\write1{\post@note {text@1}{\int_use:N \c@page }}
+......\TU/lmr/m/n/9 1.
+.....\glue 5.0
+....\penalty 0
+....\TU/lmr/m/n/9 Foo
+....\glue 3.087 plus 1.5435 minus 1.02899
+....\TU/lmr/m/n/9 note.
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 5.0
+...\glue -0.09898
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+..\glue(\baselineskip) 18.63493
+..\hbox(6.66+0.21999)x345.0
+...\hbox(6.66+0.21999)x345.0, glue set 170.0fil
+....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10 3
+....\glue 0.0 plus 1.0fil
+============================================================

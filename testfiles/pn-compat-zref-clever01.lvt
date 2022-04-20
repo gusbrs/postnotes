@@ -1,0 +1,77 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+
+\usepackage{zref-clever}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+\postnotesection{\section{Notes to chapter 1}}
+
+\textsuperscript{avoid font warning}
+
+\postnote[zlabel={en:m:1}]{\zlabel{en:t:1}Foo note.}
+
+\postnote[zlabel={en:m:2}]{\zlabel{en:t:2}Foo note.}
+
+\postnote[zlabel={en:m:3}]{\zlabel{en:t:3}Foo note.}
+
+\chapter{Second chapter}
+\postnotesection{\section{Notes to chapter 2}}
+
+\postnote[zlabel={en:m:4}]{\zlabel{en:t:4}Foo note.}
+
+\postnote[zlabel={en:m:5}]{\zlabel{en:t:5}Foo note.}
+
+\postnote[zlabel={en:m:6}]{\zlabel{en:t:6}Foo note.}
+
+\START
+
+\BEGINTEST{zref-clever}
+mark. %
+\setbox0=\hbox{\zcref{en:m:1,en:m:2,en:m:3,en:m:4,en:m:5,en:m:6}}%
+\showbox0
+\box0
+
+text. %
+\setbox0=\hbox{\zcref{en:t:1,en:t:2,en:t:3,en:t:4,en:t:5,en:t:6}}%
+\showbox0
+\box0
+
+both. %
+\setbox0=\hbox{\zcref{en:m:1,en:m:2,en:m:3,en:m:4,en:m:5,en:m:6, en:t:1,en:t:2,en:t:3,en:t:4,en:t:5,en:t:6}}%
+\showbox0
+\box0
+
+both mix. %
+\setbox0=\hbox{\zcref{en:m:1,en:m:2,en:m:3,en:t:3,en:t:4,en:t:5,en:t:6}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print zref-clever}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

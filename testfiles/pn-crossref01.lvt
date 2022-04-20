@@ -1,0 +1,69 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\usepackage{zref-clever}
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{cross-ref}
+Foo.%
+\setbox0=\hbox{\postnote[label={en:1},zlabel={en:1}]{\label{en:2}\zlabel{en:2}Foo note.}}%
+\showbox0
+\box0
+
+mark ref. %
+\setbox0=\hbox{\ref{en:1}}%
+\showbox0
+\box0
+
+mark zcref. %
+\setbox0=\hbox{\zcref{en:1}}%
+\showbox0
+\box0
+
+text ref. %
+\setbox0=\hbox{\ref{en:2}}%
+\showbox0
+\box0
+
+text zcref. %
+\setbox0=\hbox{\zcref{en:2}}%
+\showbox0
+\box0
+
+pnref. %
+\setbox0=\hbox{\postnoteref{en:2}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print crossref}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

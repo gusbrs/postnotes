@@ -1,0 +1,63 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\OMIT
+
+1.\postnote[sortnum=2]{1.}\par
+2.\postnote[sortnum=5]{2.}\par
+3.\postnote[sortnum=1]{3.}\par
+4.\postnote[sortnum=3]{4.}\par
+5.\postnote[sortnum=4]{5.}
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{sort=true}
+\postnotesetup{ sort=true }
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+\setcounter{postnote}{0}
+
+1.\postnote[sortnum=2]{1.}\par
+2.\postnote[sortnum=5]{2.}\par
+3.\postnote[sortnum=1]{3.}\par
+4.\postnote[sortnum=3]{4.}\par
+5.\postnote[sortnum=4]{5.}
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{sort=false}
+\postnotesetup{ sort=false }
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

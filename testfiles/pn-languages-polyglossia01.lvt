@@ -1,0 +1,118 @@
+\documentclass{book}
+
+\input{regression-test}
+
+% polyglossia...
+% \RequirePackage[enable-debug]{expl3}
+% \ExplSyntaxOn
+% \debug_on:n { check-declarations , deprecation }
+% \ExplSyntaxOff
+
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguages{portuguese}
+
+\usepackage{postnotes}
+\AddToHook{postnotes/print/begin}{\thispagestyle{headings}}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+Foo.\postnote{Foo note.}
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\selectlanguage{english}
+
+\BEGINTEST{Print english}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{vars english}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\OMIT
+
+\clearpage{}
+
+\TIMO
+
+Foo.\postnote{Foo note.}
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\gappto\captionsenglish{%
+  \renewcommand*{\pntitle}{My notes}%
+  \renewcommand*{\pnhdnotes}{My header notes}%
+  \renewcommand*{\pnhdtopage}{to my page}%
+  \renewcommand*{\pnhdtopages}{to my pages}%
+}
+
+\selectlanguage{english}
+
+\BEGINTEST{Print english user config}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{vars english user config}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\OMIT
+
+\clearpage{}
+
+\TIMO
+
+Foo.\postnote{Foo note.}
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\selectlanguage{portuguese}
+
+\BEGINTEST{Print portuguese}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{vars portuguese}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\OMIT
+
+\end{document}

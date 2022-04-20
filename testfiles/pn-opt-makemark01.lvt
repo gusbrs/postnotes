@@ -1,0 +1,70 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{makemark}
+\postnotesetup{ makemark = {#2\hbox{\normalfont#1}#3} }
+Foo.%
+\setbox0=\hbox{\postnote{Foo note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+\clearpage{}
+\TIMO
+
+\BEGINTEST{makemark 2}
+\postnotesetup{ makemark = {#2\textsuperscript{\normalfont Oye! #1}#3} }
+Bar.%
+\setbox0=\hbox{\postnote{Bar note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+\cleardoublepage{}
+\TIMO
+
+\BEGINTEST{maketextmark}
+\postnotesetup{ maketextmark = {#2\textbf{#1.}#3 (page \pnthepage)} }
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+Baz.\postnote{Baz note.}
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{maketextmark 2}
+\postnotesetup{ maketextmark = {#1. (PPPage \pnthepage)} }
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

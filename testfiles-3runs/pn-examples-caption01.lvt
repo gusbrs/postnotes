@@ -1,0 +1,53 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\usepackage[textwidth=8cm]{geometry}
+\usepackage{hyperref}
+
+\begin{document}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{caption 1}
+\begin{figure}
+  Figure.
+  \addtocounter{postnote}{-1}
+  \caption[Caption for LOF]{A long caption, long enough to require two
+    lines\setbox0=\hbox{\postnote{A note.}}\showbox0\box0}
+\end{figure}
+\ENDTEST
+
+\BEGINTEST{caption 2}
+\begin{figure}
+  Figure.
+  \setbox0=\hbox{\postnote[nomark]{\label{en:1}A note.}}\showbox0\box0
+  \caption[Caption for LOF]{A long caption, long enough to require two
+    lines\setbox0=\hbox{\postnoteref{en:1}}\showbox0\box0}
+\end{figure}
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print caption}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

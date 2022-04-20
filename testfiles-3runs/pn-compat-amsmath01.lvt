@@ -1,0 +1,63 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+
+\usepackage{amsmath}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\section{Section 1}
+
+\START
+
+\BEGINTEST{amsmath}
+\begin{align}
+a &= b && \text{something}\setbox0=\hbox{\postnote{align}}\showbox0\box0 \\
+c &= d && \text{other}
+\end{align}
+
+\begin{equation}
+\begin{pmatrix} D_1t&-a_{12}t_2&\dots&-a_{1n}t_n\\
+-a_{21}t_1&D_2t&\dots&-a_{2n}t_n\\
+\hdotsfor[2]{4}\\
+-a_{n1}t_1&-a_{n2}t_2&\dots&D_nt
+\end{pmatrix}\setbox0=\hbox{\postnote{equation}}\showbox0\box0
+\end{equation}
+
+\begin{align}
+a &= b && \text{something\setbox0=\hbox{\postnote{text 1}\postnote{text 2}}\showbox0\box0} \\
+c &= d && \text{other}
+\end{align}
+
+\begin{gather}
+A+B=B\setbox0=\hbox{\postnote{gather:A}}\showbox0\box0\\
+C=D+E\setbox0=\hbox{\postnote{gather:B}}\showbox0\box0\\
+\tag{3$'$}E=F\setbox0=\hbox{\postnote{gather:C}}\showbox0\box0
+\end{gather}
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print amsmath}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

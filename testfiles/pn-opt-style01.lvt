@@ -1,0 +1,62 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\OMIT
+
+\makeatletter
+Foo.\postnote{\@currenvir}
+\makeatother
+
+Foo.\postnote{Foo note.}
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Option style=endnotes}
+\postnotesetup{ style = endnotes }
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\makeatletter
+Bar.\postnote{\@currenvir}
+\makeatother
+
+Bar.\postnote{Bar note.}
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Option style=pagenote}
+\postnotesetup{ style = pagenote }
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

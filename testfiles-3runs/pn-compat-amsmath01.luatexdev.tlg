@@ -1,0 +1,732 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: amsmath
+============================================================
+> \box...=
+\hbox(8.27692+0.0)x4.483, direction TLT
+.\penalty 10000
+.\hbox(8.27692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.648+0.0)x4.483, shifted -3.62892, direction TLT
+...\TU/lmr/m/n/7 1
+..\mathoff
+! OK.
+<to be read again> 
+\box 
+l. ...\end{align}
+> \box...=
+\hbox(8.27692+0.0)x4.483, direction TLT
+.\write1{\post@note {mark@1}{\thepage }}
+.\penalty 10000
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(0.0+0.0)x0.0, shifted -15.0, direction TLT
+...\pdfdest name{postnote.1.mark} xyz
+...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.text}
+.\hbox(8.27692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.648+0.0)x4.483, shifted -3.62892, direction TLT
+...\TU/lmr/m/n/7 1
+..\mathoff
+.\pdfendlink
+! OK.
+<to be read again> 
+\box 
+l. ...\end{align}
+> \box...=
+\hbox(8.27692+0.0)x4.483, direction TLT
+.\write1{\post@note {mark@2}{\thepage }}
+.\penalty 10000
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+...\pdfdest name{postnote.2.mark} xyz
+...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.text}
+.\hbox(8.27692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.648+0.0)x4.483, shifted -3.62892, direction TLT
+...\TU/lmr/m/n/7 2
+..\mathoff
+.\pdfendlink
+! OK.
+<to be read again> 
+\box 
+l. ......box0=\hbox{\postnote{equation}}\showbox0\box
+                                                  0
+> \box...=
+\hbox(8.77692+0.0)x8.966, direction TLT
+.\penalty 10000
+.\hbox(8.77692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.648+0.14)x4.483, shifted -4.12892, direction TLT
+...\TU/lmr/m/n/7 3
+..\mathoff
+.\penalty 10000
+.\hbox(8.77692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.648+0.14)x4.483, shifted -4.12892, direction TLT
+...\TU/lmr/m/n/7 3
+..\mathoff
+! OK.
+<to be read again> 
+\box 
+l. ...\end{align}
+> \box...=
+\hbox(8.27692+0.0)x8.966, direction TLT
+.\penalty 10000
+.\hbox(8.27692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.648+0.14)x4.483, shifted -3.62892, direction TLT
+...\TU/lmr/m/n/7 3
+..\mathoff
+.\penalty 10000
+.\hbox(8.27692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.648+0.14)x4.483, shifted -3.62892, direction TLT
+...\TU/lmr/m/n/7 3
+..\mathoff
+! OK.
+<to be read again> 
+\box 
+l. ...\end{align}
+> \box...=
+\hbox(6.3478+0.0)x7.81, direction TLT
+.\penalty 10000
+.\hbox(6.3478+0.0)x3.905, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(3.33+0.11)x3.905, shifted -3.01779, direction TLT
+...\TU/lmr/m/n/5 3
+..\mathoff
+.\penalty 10000
+.\hbox(6.3478+0.0)x3.905, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(3.33+0.11)x3.905, shifted -3.01779, direction TLT
+...\TU/lmr/m/n/5 3
+..\mathoff
+! OK.
+<to be read again> 
+\box 
+l. ...\end{align}
+> \box...=
+\hbox(5.34776+0.0)x7.81, direction TLT
+.\penalty 10000
+.\hbox(5.34776+0.0)x3.905, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(3.33+0.11)x3.905, shifted -2.01776, direction TLT
+...\TU/lmr/m/n/5 3
+..\mathoff
+.\penalty 10000
+.\hbox(5.34776+0.0)x3.905, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(3.33+0.11)x3.905, shifted -2.01776, direction TLT
+...\TU/lmr/m/n/5 3
+..\mathoff
+! OK.
+<to be read again> 
+\box 
+l. ...\end{align}
+> \box...=
+\hbox(8.84692+0.0)x8.966, direction TLT
+.\write1{\post@note {mark@3}{\thepage }}
+.\penalty 10000
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(0.0+0.0)x0.0, shifted -15.0, direction TLT
+...\pdfdest name{postnote.3.mark} xyz
+...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.text}
+.\hbox(8.77692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.648+0.14)x4.483, shifted -4.12892, direction TLT
+...\TU/lmr/m/n/7 3
+..\mathoff
+.\pdfendlink
+.\write1{\post@note {mark@4}{\thepage }}
+.\penalty 10000
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(0.0+0.0)x0.0, shifted -15.0, direction TLT
+...\pdfdest name{postnote.4.mark} xyz
+...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.text}
+.\hbox(8.84692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.718+0.0)x4.483, shifted -4.12892, direction TLT
+...\TU/lmr/m/n/7 4
+..\mathoff
+.\pdfendlink
+! OK.
+<to be read again> 
+\box 
+l. ...\end{align}
+> \box...=
+\hbox(8.34692+0.0)x8.966, direction TLT
+.\write1{\post@note {mark@5}{\thepage }}
+.\penalty 10000
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(0.0+0.0)x0.0, shifted -15.0, direction TLT
+...\pdfdest name{postnote.5.mark} xyz
+...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.5.text}
+.\hbox(8.34692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.718+0.0)x4.483, shifted -3.62892, direction TLT
+...\TU/lmr/m/n/7 4
+..\mathoff
+.\pdfendlink
+.\write1{\post@note {mark@6}{\thepage }}
+.\penalty 10000
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(0.0+0.0)x0.0, shifted -15.0, direction TLT
+...\pdfdest name{postnote.6.mark} xyz
+...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.6.text}
+.\hbox(8.34692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.718+0.0)x4.483, shifted -3.62892, direction TLT
+...\TU/lmr/m/n/7 4
+..\mathoff
+.\pdfendlink
+! OK.
+<to be read again> 
+\box 
+l. ...\end{align}
+> \box...=
+\hbox(6.40279+0.0)x7.81, direction TLT
+.\write1{\post@note {mark@7}{\thepage }}
+.\penalty 10000
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(0.0+0.0)x0.0, shifted -15.0, direction TLT
+...\pdfdest name{postnote.7.mark} xyz
+...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.7.text}
+.\hbox(6.40279+0.0)x3.905, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(3.385+0.0)x3.905, shifted -3.01779, direction TLT
+...\TU/lmr/m/n/5 4
+..\mathoff
+.\pdfendlink
+.\write1{\post@note {mark@8}{\thepage }}
+.\penalty 10000
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(0.0+0.0)x0.0, shifted -15.0, direction TLT
+...\pdfdest name{postnote.8.mark} xyz
+...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.8.text}
+.\hbox(6.40279+0.0)x3.905, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(3.385+0.0)x3.905, shifted -3.01779, direction TLT
+...\TU/lmr/m/n/5 4
+..\mathoff
+.\pdfendlink
+! OK.
+<to be read again> 
+\box 
+l. ...\end{align}
+> \box...=
+\hbox(5.40276+0.0)x7.81, direction TLT
+.\write1{\post@note {mark@9}{\thepage }}
+.\penalty 10000
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(0.0+0.0)x0.0, shifted -15.0, direction TLT
+...\pdfdest name{postnote.9.mark} xyz
+...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.text}
+.\hbox(5.40276+0.0)x3.905, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(3.385+0.0)x3.905, shifted -2.01776, direction TLT
+...\TU/lmr/m/n/5 4
+..\mathoff
+.\pdfendlink
+.\write1{\post@note {mark@10}{\thepage }}
+.\penalty 10000
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(0.0+0.0)x0.0, shifted -15.0, direction TLT
+...\pdfdest name{postnote.10.mark} xyz
+...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.10.text}
+.\hbox(5.40276+0.0)x3.905, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(3.385+0.0)x3.905, shifted -2.01776, direction TLT
+...\TU/lmr/m/n/5 4
+..\mathoff
+.\pdfendlink
+! OK.
+<to be read again> 
+\box 
+l. ...\end{align}
+> \box...=
+\hbox(8.27692+0.0)x4.483, direction TLT
+.\penalty 10000
+.\hbox(8.27692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.648+0.14)x4.483, shifted -3.62892, direction TLT
+...\TU/lmr/m/n/7 5
+..\mathoff
+! OK.
+<to be read again> 
+\box 
+l. ...\end{gather}
+> \box...=
+\hbox(8.27692+0.0)x4.483, direction TLT
+.\penalty 10000
+.\hbox(8.27692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.648+0.14)x4.483, shifted -3.62892, direction TLT
+...\TU/lmr/m/n/7 5
+..\mathoff
+! OK.
+<to be read again> 
+\box 
+l. ...\end{gather}
+> \box...=
+\hbox(8.27692+0.0)x4.483, direction TLT
+.\penalty 10000
+.\hbox(8.27692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.648+0.14)x4.483, shifted -3.62892, direction TLT
+...\TU/lmr/m/n/7 5
+..\mathoff
+! OK.
+<to be read again> 
+\box 
+l. ...\end{gather}
+> \box...=
+\hbox(8.27692+0.0)x4.483, direction TLT
+.\write1{\post@note {mark@11}{\thepage }}
+.\penalty 10000
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(0.0+0.0)x0.0, shifted -15.0, direction TLT
+...\pdfdest name{postnote.11.mark} xyz
+...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.11.text}
+.\hbox(8.27692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.648+0.14)x4.483, shifted -3.62892, direction TLT
+...\TU/lmr/m/n/7 5
+..\mathoff
+.\pdfendlink
+! OK.
+<to be read again> 
+\box 
+l. ...\end{gather}
+> \box...=
+\hbox(8.27692+0.0)x4.483, direction TLT
+.\write1{\post@note {mark@12}{\thepage }}
+.\penalty 10000
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(0.0+0.0)x0.0, shifted -15.0, direction TLT
+...\pdfdest name{postnote.12.mark} xyz
+...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.12.text}
+.\hbox(8.27692+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.648+0.14)x4.483, shifted -3.62892, direction TLT
+...\TU/lmr/m/n/7 6
+..\mathoff
+.\pdfendlink
+! OK.
+<to be read again> 
+\box 
+l. ...\end{gather}
+> \box...=
+\hbox(8.36092+0.0)x4.483, direction TLT
+.\write1{\post@note {mark@13}{\thepage }}
+.\penalty 10000
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(0.0+0.0)x0.0, shifted -15.0, direction TLT
+...\pdfdest name{postnote.13.mark} xyz
+...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.13.text}
+.\hbox(8.36092+0.0)x4.483, direction TLT
+..\mathon
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\hbox(4.732+0.14)x4.483, shifted -3.62892, direction TLT
+...\TU/lmr/m/n/7 7
+..\mathoff
+.\pdfendlink
+! OK.
+<to be read again> 
+\box 
+l. ...\end{gather}
+============================================================
+============================================================
+TEST 2: Print amsmath
+============================================================
+Completed box being shipped out [2]
+\vbox(633.0+0.0)x407.0, direction TLT
+.\vbox(0.0+0.0)x0.0, glue set - 14.99626fil, direction TLT
+..\kern0.0
+..\kern16.0
+..\kern-1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 60.99626fil, direction TLT
+...\kern0.0
+...\kern62.0
+...\kern-1.00374
+...\pdfdest name{page.2} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(633.0+0.0)x407.0, direction TLT
+..\glue 16.0
+..\vbox(617.0+0.0)x345.0, shifted 62.0, direction TLT
+...\vbox(12.0+0.0)x345.0, glue set 12.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x345.0, direction TLT
+.....\hbox(0.0+0.0)x345.0, direction TLT
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 448.03915fil, direction TLT
+....\write-{}
+....\glue(\topskip) 0.1216
+....\hbox(9.8784+0.0864)x345.0, glue set 304.13281fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\glue 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\kern0.0
+......\penalty 10000
+......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, shifted -18.0, direction TLT
+........\pdfdest name{section*.3} xyz
+........\penalty 10000
+......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\TU/lmr/bx/n/14.4 N
+.....\TU/lmr/bx/n/14.4 o
+.....\TU/lmr/bx/n/14.4 t
+.....\TU/lmr/bx/n/14.4 e
+.....\TU/lmr/bx/n/14.4 s
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty 10000
+....\glue 9.913 plus 0.86198
+....\write1{\post@note {print@1}{\int_use:N \c@page }}
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.6676
+....\hbox(6.246+1.854)x345.0, glue set 305.76096fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.0)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.0)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@1}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.1.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.mark}
+.......\TU/lmr/m/n/9 1
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 l
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 g
+.....\TU/lmr/m/n/9 n
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 3.152
+....\hbox(5.994+1.746)x345.0, glue set 290.60492fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.0)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.0)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@2}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.2.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.mark}
+.......\TU/lmr/m/n/9 2
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 q
+.....\TU/lmr/m/n/9 u
+.....\TU/lmr/m/n/9 a
+.....\discretionary (penalty 50)
+......< \TU/lmr/m/n/9 -
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 i
+.....\TU/lmr/m/n/9 o
+.....\TU/lmr/m/n/9 n
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 3.26
+....\hbox(5.994+0.198)x345.0, glue set 301.39594fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@3}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.3.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.mark}
+.......\TU/lmr/m/n/9 3
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 x
+.....\TU/lmr/m/n/9 t
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 1
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.709
+....\hbox(6.093+0.099)x345.0, glue set 301.39594fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(6.093+0.0)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(6.093+0.0)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@4}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.4.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.mark}
+.......\TU/lmr/m/n/9 4
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 x
+.....\TU/lmr/m/n/9 t
+.....\glue(\spaceskip) 3.087 plus 1.5435 minus 1.029
+.....\TU/lmr/m/n/9 2
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.457
+....\hbox(6.444+1.854)x345.0, glue set 290.06494fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@11}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.11.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.11.mark}
+.......\TU/lmr/m/n/9 5
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\TU/lmr/m/n/9 g
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 h
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 :
+.....\TU/lmr/m/n/9 A
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.9
+....\hbox(6.246+1.854)x345.0, glue set 290.45197fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(5.994+0.198)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.994+0.198)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@12}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.12.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.12.mark}
+.......\TU/lmr/m/n/9 6
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\TU/lmr/m/n/9 g
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 h
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 :
+.....\TU/lmr/m/n/9 B
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.801
+....\hbox(6.345+1.854)x345.0, glue set 290.32596fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(6.084+0.198)x19.70001, direction TLT
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(6.084+0.198)x12.20001, direction TLT
+.......\glue 5.0
+.......\write1{\post@note {text@13}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.........\pdfdest name{postnote.13.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.13.mark}
+.......\TU/lmr/m/n/9 7
+.......\TU/lmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\TU/lmr/m/n/9 g
+.....\TU/lmr/m/n/9 a
+.....\TU/lmr/m/n/9 t
+.....\TU/lmr/m/n/9 h
+.....\TU/lmr/m/n/9 e
+.....\TU/lmr/m/n/9 r
+.....\TU/lmr/m/n/9 :
+.....\TU/lmr/m/n/9 C
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 5.0
+....\glue -1.854
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\glue(\baselineskip) 23.34
+...\hbox(6.66+0.0)x345.0, direction TLT
+....\hbox(6.66+0.0)x345.0, glue set 170.0fil, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\TU/lmr/m/n/10 2
+.....\glue 0.0 plus 1.0fil
+============================================================

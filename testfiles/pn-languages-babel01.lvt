@@ -1,0 +1,218 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage[
+  portuguese,
+  brazilian,
+  portuges,
+  brazil,
+  british,
+  american,
+  canadian,
+  australian,
+  newzealand,
+  UKenglish,
+  USenglish,
+  english, % main
+]{babel}
+
+\usepackage{postnotes}
+\AddToHook{postnotes/print/begin}{\thispagestyle{headings}}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+Foo.\postnote{Foo note.}
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\selectlanguage{english}
+
+\BEGINTEST{Print english}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{vars english}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{american}
+
+\BEGINTEST{vars american}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{australian}
+
+\BEGINTEST{vars australian}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{british}
+
+\BEGINTEST{vars british}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{canadian}
+
+\BEGINTEST{vars canadian}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{newzealand}
+
+\BEGINTEST{vars newzealand}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{UKenglish}
+
+\BEGINTEST{vars UKenglish}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{USenglish}
+
+\BEGINTEST{vars USenglish}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\OMIT
+
+\clearpage{}
+
+\TIMO
+
+Foo.\postnote{Foo note.}
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\addto\extrasenglish{%
+  \renewcommand*{\pntitle}{My notes}%
+  \renewcommand*{\pnhdnotes}{My header notes}%
+  \renewcommand*{\pnhdtopage}{to my page}%
+  \renewcommand*{\pnhdtopages}{to my pages}%
+}
+
+\selectlanguage{english}
+
+\BEGINTEST{Print english user config}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{vars english user config}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\OMIT
+
+\clearpage{}
+
+\TIMO
+
+Foo.\postnote{Foo note.}
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\selectlanguage{portuguese}
+
+\BEGINTEST{Print portuguese}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{vars portuguese}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{brazilian}
+
+\BEGINTEST{vars brazilian}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{portuges}
+
+\BEGINTEST{vars portuges}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{brazil}
+
+\BEGINTEST{vars brazil}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\OMIT
+
+\end{document}

@@ -1,0 +1,46 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\usepackage{tabularx}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\section{Section 1}
+
+\START
+
+\BEGINTEST{tabularx}
+\begin{tabularx}{\textwidth}{@{}lXXXX@{}}
+ 1 &
+ 2\setbox0=\hbox{\postnote{first}}\showbox0\box0 &
+ 3\setbox0=\hbox{\postnote{second}}\showbox0\box0 &
+ 4\setbox0=\hbox{\postnote{third}}\showbox0\box0 &
+ 5 \\
+\end{tabularx}
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print tabularx}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

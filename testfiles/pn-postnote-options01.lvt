@@ -1,0 +1,109 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{mark}
+Foo.%
+\setbox0=\hbox{\postnote[mark={1!}]{Foo note.}}%
+\showbox0
+\box0
+
+Bar.%
+\setbox0=\hbox{\postnote[mark={2? sure?}]{Bar note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+\cleardoublepage{}
+\TIMO
+
+\BEGINTEST{Print mark}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{sortnum}
+Foo.%
+\setbox0=\hbox{\postnote[mark={3?},sortnum=1.5]{Foo note.}}%
+\showbox0
+\box0
+
+Bar.%
+\setbox0=\hbox{\postnote[mark={4!},sortnum=0.7]{Bar note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+\cleardoublepage{}
+\TIMO
+
+\BEGINTEST{Print sortnum}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{nomark}
+Foo.%
+\setbox0=\hbox{\postnote[nomark]{Foo note.}}%
+\showbox0
+\box0
+
+Bar.%
+\setbox0=\hbox{\postnote[nomark]{Bar note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+\cleardoublepage{}
+\TIMO
+
+\BEGINTEST{Print nomark}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+
+\BEGINTEST{label}
+Foo.%
+\setbox0=\hbox{\postnote[label={en:1}]{Foo note.}}%
+\showbox0
+\box0
+
+Ref. %
+\setbox0=\hbox{\ref{en:1}}%
+\showbox0
+\box0
+
+pnref. %
+\setbox0=\hbox{\postnoteref{en:1}}%
+\showbox0
+\box0
+\ENDTEST
+
+
+\OMIT
+
+\end{document}

@@ -1,0 +1,72 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{floatsort}
+\setbox0=\hbox{\postnote{1}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnote{2}}%
+\showbox0
+\box0
+
+\begin{table}[p]
+  \caption{Table}
+  Table.%
+  \setbox0=\hbox{\postnote[mark=5,sortnum=5]{3}}%
+  \showbox0
+  \box0
+\end{table}
+
+\setbox0=\hbox{\postnote{4}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnote{5}}%
+\showbox0
+\box0
+
+\stepcounter{postnote}
+
+\OMIT
+\clearpage{}
+\TIMO
+
+\setbox0=\hbox{\postnote{6}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print floatsort}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

@@ -1,0 +1,75 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\usepackage{zref-user}
+\usepackage{zref-hyperref}
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{zref-user}
+Foo.%
+\setbox0=\hbox{\postnote[zlabel={en:1}]{\zlabel{en:2}Foo note.}}%
+\showbox0
+\box0
+
+mark. %
+\setbox0=\hbox{\zref{en:1}}%
+\showbox0
+\box0
+
+text. %
+\setbox0=\hbox{\zref{en:2}}%
+\showbox0
+\box0
+
+pnref. %
+\setbox0=\hbox{\postnotezref{en:2}}%
+\showbox0
+\box0
+
+pnref*. %
+\setbox0=\hbox{\postnotezref*{en:2}}%
+\showbox0
+\box0
+
+pnref. %
+\setbox0=\hbox{\postnotezref{en:1}}%
+\showbox0
+\box0
+
+pnref*. %
+\setbox0=\hbox{\postnotezref*{en:1}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print zref-user}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

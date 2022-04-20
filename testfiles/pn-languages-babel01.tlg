@@ -1,0 +1,582 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: Print english
+============================================================
+Completed box being shipped out [3]
+\vbox(627.36243+0.0)x380.0
+.\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
+..\kern 0.0
+..\kern 22.0
+..\kern -1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 33.99626fil
+...\kern 0.0
+...\kern 35.0
+...\kern -1.00374
+...\pdfdest name{page.3} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(627.36243+0.0)x380.0
+..\glue 22.0
+..\vbox(605.36243+0.0)x345.0, shifted 35.0
+...\vbox(12.0+0.0)x345.0, glue set 5.16669fil
+....\glue 0.0 plus 1.0fil
+....\hbox(6.83331+1.94444)x345.0
+.....\hbox(6.83331+1.94444)x345.0, glue set 271.3332fil
+......\OT1/cmr/m/sl/10 N
+......\OT1/cmr/m/sl/10 o
+......\OT1/cmr/m/sl/10 t
+......\OT1/cmr/m/sl/10 e
+......\OT1/cmr/m/sl/10 s
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 t
+......\OT1/cmr/m/sl/10 o
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 p
+......\OT1/cmr/m/sl/10 a
+......\OT1/cmr/m/sl/10 g
+......\OT1/cmr/m/sl/10 e
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 1
+......\glue 0.0 plus 1.0fil
+......\OT1/cmr/m/n/10 3
+...\glue 18.06749
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 404.0fil
+....\write1{\babel@aux{english}{}}
+....\write-{}
+....\pdfdest name{chapter*.1} xyz
+....\glue(\topskip) 10.0
+....\rule(0.0+0.0)x*
+....\penalty 10000
+....\glue 50.0
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 12.92955
+....\hbox(17.07045+0.0)x345.0, glue set 137.21155fil
+.....\hbox(0.0+0.0)x0.0
+.....\OT1/cmr/bx/n/24.88 N
+.....\OT1/cmr/bx/n/24.88 o
+.....\OT1/cmr/bx/n/24.88 t
+.....\OT1/cmr/bx/n/24.88 e
+.....\OT1/cmr/bx/n/24.88 s
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0 plus 1.0fil
+....\penalty 10000
+....\glue 40.0
+....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
+....\penalty 10000
+....\write1{\post@note {print@1}{\int_use:N \c@page }}
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.85002
+....\hbox(6.14998+0.0)x345.0, glue set 287.4038fil
+.....\hbox(5.79999+0.0)x19.6944
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.79999+0.0)x12.1944
+.......\glue 5.0
+.......\write1{\post@note {text@1}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\pdfdest name{postnote.1.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.mark}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\OT1/cmr/m/n/9 F
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 o
+.....\kern0.25694
+.....\OT1/cmr/m/n/9 o
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 5.0
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+...\glue(\baselineskip) 25.29494
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+============================================================
+============================================================
+TEST 2: vars english
+============================================================
+> \pntitle=macro:
+->Notes.
+l. ...\show\pntitle
+> \pnhdnotes=macro:
+->Notes.
+l. ...\show\pnhdnotes
+> \pnhdtopage=macro:
+->to page.
+l. ...\show\pnhdtopage
+> \pnhdtopages=macro:
+->to pages.
+l. ...\show\pnhdtopages
+============================================================
+============================================================
+TEST 3: vars american
+============================================================
+> \pntitle=macro:
+->Notes.
+l. ...\show\pntitle
+> \pnhdnotes=macro:
+->Notes.
+l. ...\show\pnhdnotes
+> \pnhdtopage=macro:
+->to page.
+l. ...\show\pnhdtopage
+> \pnhdtopages=macro:
+->to pages.
+l. ...\show\pnhdtopages
+============================================================
+============================================================
+TEST 4: vars australian
+============================================================
+> \pntitle=macro:
+->Notes.
+l. ...\show\pntitle
+> \pnhdnotes=macro:
+->Notes.
+l. ...\show\pnhdnotes
+> \pnhdtopage=macro:
+->to page.
+l. ...\show\pnhdtopage
+> \pnhdtopages=macro:
+->to pages.
+l. ...\show\pnhdtopages
+============================================================
+============================================================
+TEST 5: vars british
+============================================================
+> \pntitle=macro:
+->Notes.
+l. ...\show\pntitle
+> \pnhdnotes=macro:
+->Notes.
+l. ...\show\pnhdnotes
+> \pnhdtopage=macro:
+->to page.
+l. ...\show\pnhdtopage
+> \pnhdtopages=macro:
+->to pages.
+l. ...\show\pnhdtopages
+============================================================
+============================================================
+TEST 6: vars canadian
+============================================================
+> \pntitle=macro:
+->Notes.
+l. ...\show\pntitle
+> \pnhdnotes=macro:
+->Notes.
+l. ...\show\pnhdnotes
+> \pnhdtopage=macro:
+->to page.
+l. ...\show\pnhdtopage
+> \pnhdtopages=macro:
+->to pages.
+l. ...\show\pnhdtopages
+============================================================
+============================================================
+TEST 7: vars newzealand
+============================================================
+> \pntitle=macro:
+->Notes.
+l. ...\show\pntitle
+> \pnhdnotes=macro:
+->Notes.
+l. ...\show\pnhdnotes
+> \pnhdtopage=macro:
+->to page.
+l. ...\show\pnhdtopage
+> \pnhdtopages=macro:
+->to pages.
+l. ...\show\pnhdtopages
+============================================================
+============================================================
+TEST 8: vars UKenglish
+============================================================
+> \pntitle=macro:
+->Notes.
+l. ...\show\pntitle
+> \pnhdnotes=macro:
+->Notes.
+l. ...\show\pnhdnotes
+> \pnhdtopage=macro:
+->to page.
+l. ...\show\pnhdtopage
+> \pnhdtopages=macro:
+->to pages.
+l. ...\show\pnhdtopages
+============================================================
+============================================================
+TEST 9: vars USenglish
+============================================================
+> \pntitle=macro:
+->Notes.
+l. ...\show\pntitle
+> \pnhdnotes=macro:
+->Notes.
+l. ...\show\pnhdnotes
+> \pnhdtopage=macro:
+->to page.
+l. ...\show\pnhdtopage
+> \pnhdtopages=macro:
+->to pages.
+l. ...\show\pnhdtopages
+============================================================
+============================================================
+TEST 10: Print english user config
+============================================================
+Completed box being shipped out [5]
+\vbox(627.36243+0.0)x380.0
+.\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
+..\kern 0.0
+..\kern 22.0
+..\kern -1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 33.99626fil
+...\kern 0.0
+...\kern 35.0
+...\kern -1.00374
+...\pdfdest name{page.5} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(627.36243+0.0)x380.0
+..\glue 22.0
+..\vbox(605.36243+0.0)x345.0, shifted 35.0
+...\vbox(12.0+0.0)x345.0, glue set 5.05556fil
+....\glue 0.0 plus 1.0fil
+....\hbox(6.94444+1.94444)x345.0
+.....\hbox(6.94444+1.94444)x345.0, glue set 206.58308fil
+......\OT1/cmr/m/sl/10 M
+......\OT1/cmr/m/sl/10 y
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 h
+......\OT1/cmr/m/sl/10 e
+......\OT1/cmr/m/sl/10 a
+......\OT1/cmr/m/sl/10 d
+......\OT1/cmr/m/sl/10 e
+......\OT1/cmr/m/sl/10 r
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 n
+......\OT1/cmr/m/sl/10 o
+......\OT1/cmr/m/sl/10 t
+......\OT1/cmr/m/sl/10 e
+......\OT1/cmr/m/sl/10 s
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 t
+......\OT1/cmr/m/sl/10 o
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 m
+......\kern-0.27779
+......\OT1/cmr/m/sl/10 y
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 p
+......\OT1/cmr/m/sl/10 a
+......\OT1/cmr/m/sl/10 g
+......\OT1/cmr/m/sl/10 e
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 4
+......\glue 0.0 plus 1.0fil
+......\OT1/cmr/m/n/10 5
+...\glue 18.06749
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 404.0fil
+....\write-{}
+....\write1{\babel@aux{english}{}}
+....\write-{}
+....\pdfdest name{chapter*.2} xyz
+....\glue(\topskip) 10.0
+....\rule(0.0+0.0)x*
+....\penalty 10000
+....\glue 50.0
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 12.92955
+....\hbox(17.07045+4.83775)x345.0, glue set 115.05281fil
+.....\hbox(0.0+0.0)x0.0
+.....\OT1/cmr/bx/n/24.88 M
+.....\OT1/cmr/bx/n/24.88 y
+.....\glue 9.33 plus 4.665 minus 3.11
+.....\OT1/cmr/bx/n/24.88 n
+.....\OT1/cmr/bx/n/24.88 o
+.....\OT1/cmr/bx/n/24.88 t
+.....\OT1/cmr/bx/n/24.88 e
+.....\OT1/cmr/bx/n/24.88 s
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0 plus 1.0fil
+....\penalty 10000
+....\glue 40.0
+....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
+....\penalty 10000
+....\write1{\post@note {print@2}{\int_use:N \c@page }}
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 0.01227
+....\hbox(6.14998+0.0)x345.0, glue set 287.4038fil
+.....\hbox(5.79999+0.0)x19.6944
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.79999+0.0)x12.1944
+.......\glue 5.0
+.......\write1{\post@note {text@2}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\pdfdest name{postnote.2.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.mark}
+.......\OT1/cmr/m/n/9 2
+.......\OT1/cmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\OT1/cmr/m/n/9 F
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 o
+.....\kern0.25694
+.....\OT1/cmr/m/n/9 o
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 5.0
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+...\glue(\baselineskip) 25.29494
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+============================================================
+============================================================
+TEST 11: vars english user config
+============================================================
+> \pntitle=macro:
+->My notes.
+l. ...\show\pntitle
+> \pnhdnotes=macro:
+->My header notes.
+l. ...\show\pnhdnotes
+> \pnhdtopage=macro:
+->to my page.
+l. ...\show\pnhdtopage
+> \pnhdtopages=macro:
+->to my pages.
+l. ...\show\pnhdtopages
+============================================================
+============================================================
+TEST 12: Print portuguese
+============================================================
+Completed box being shipped out [7]
+\vbox(627.36243+0.0)x380.0
+.\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
+..\kern 0.0
+..\kern 22.0
+..\kern -1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 33.99626fil
+...\kern 0.0
+...\kern 35.0
+...\kern -1.00374
+...\pdfdest name{page.7} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(627.36243+0.0)x380.0
+..\glue 22.0
+..\vbox(605.36243+0.0)x345.0, shifted 35.0
+...\vbox(12.0+0.0)x345.0, glue set 5.05556fil
+....\glue 0.0 plus 1.0fil
+....\hbox(6.94444+1.94444)x345.0
+.....\hbox(6.94444+1.94444)x345.0, glue set 260.22203fil
+......\OT1/cmr/m/sl/10 N
+......\OT1/cmr/m/sl/10 o
+......\OT1/cmr/m/sl/10 t
+......\OT1/cmr/m/sl/10 a
+......\OT1/cmr/m/sl/10 s
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 d
+......\OT1/cmr/m/sl/10 a
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 p
+......\kern 0.0 (for accent)
+......\OT1/cmr/m/sl/10 ^^S
+......\kern -5.00002 (for accent)
+......\OT1/cmr/m/sl/10 a
+......\OT1/cmr/m/sl/10 g
+......\OT1/cmr/m/sl/10 i
+......\OT1/cmr/m/sl/10 n
+......\OT1/cmr/m/sl/10 a
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 6
+......\glue 0.0 plus 1.0fil
+......\OT1/cmr/m/n/10 7
+...\glue 18.06749
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 404.0fil
+....\write-{}
+....\write1{\babel@aux{portuguese}{}}
+....\write-{}
+....\pdfdest name{chapter*.3} xyz
+....\glue(\topskip) 10.0
+....\rule(0.0+0.0)x*
+....\penalty 10000
+....\glue 50.0
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 12.92955
+....\hbox(17.07045+0.0)x345.0, glue set 136.794fil
+.....\hbox(0.0+0.0)x0.0
+.....\OT1/cmr/bx/n/24.88 N
+.....\OT1/cmr/bx/n/24.88 o
+.....\OT1/cmr/bx/n/24.88 t
+.....\OT1/cmr/bx/n/24.88 a
+.....\OT1/cmr/bx/n/24.88 s
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0 plus 1.0fil
+....\penalty 10000
+....\glue 40.0
+....\mark{{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \ETC.}
+....\penalty 10000
+....\write1{\post@note {print@3}{\int_use:N \c@page }}
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.85002
+....\hbox(6.14998+0.0)x345.0, glue set 287.4038fil
+.....\hbox(5.79999+0.0)x19.6944
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.79999+0.0)x12.1944
+.......\glue 5.0
+.......\write1{\post@note {text@3}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\pdfdest name{postnote.3.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.mark}
+.......\OT1/cmr/m/n/9 3
+.......\OT1/cmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\OT1/cmr/m/n/9 F
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 o
+.....\kern0.25694
+.....\OT1/cmr/m/n/9 o
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 5.0
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+...\glue(\baselineskip) 25.29494
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+============================================================
+============================================================
+TEST 13: vars portuguese
+============================================================
+> \pntitle=macro:
+->Notas.
+l. ...\show\pntitle
+> \pnhdnotes=macro:
+->Notas.
+l. ...\show\pnhdnotes
+> \pnhdtopage=macro:
+->da página.
+l. ...\show\pnhdtopage
+> \pnhdtopages=macro:
+->das páginas.
+l. ...\show\pnhdtopages
+============================================================
+============================================================
+TEST 14: vars brazilian
+============================================================
+> \pntitle=macro:
+->Notas.
+l. ...\show\pntitle
+> \pnhdnotes=macro:
+->Notas.
+l. ...\show\pnhdnotes
+> \pnhdtopage=macro:
+->da página.
+l. ...\show\pnhdtopage
+> \pnhdtopages=macro:
+->das páginas.
+l. ...\show\pnhdtopages
+============================================================
+============================================================
+TEST 15: vars portuges
+============================================================
+> \pntitle=macro:
+->Notas.
+l. ...\show\pntitle
+> \pnhdnotes=macro:
+->Notas.
+l. ...\show\pnhdnotes
+> \pnhdtopage=macro:
+->da página.
+l. ...\show\pnhdtopage
+> \pnhdtopages=macro:
+->das páginas.
+l. ...\show\pnhdtopages
+============================================================
+============================================================
+TEST 16: vars brazil
+============================================================
+> \pntitle=macro:
+->Notas.
+l. ...\show\pntitle
+> \pnhdnotes=macro:
+->Notas.
+l. ...\show\pnhdnotes
+> \pnhdtopage=macro:
+->da página.
+l. ...\show\pnhdtopage
+> \pnhdtopages=macro:
+->das páginas.
+l. ...\show\pnhdtopages
+============================================================

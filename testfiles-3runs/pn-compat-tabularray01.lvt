@@ -1,0 +1,51 @@
+\documentclass{article}
+
+\input{regression-test}
+
+% tabularray...
+% \RequirePackage[enable-debug]{expl3}
+% \ExplSyntaxOn
+% \debug_on:n { check-declarations , deprecation }
+% \ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\usepackage{tabularray}
+\UseTblrLibrary{counter}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\section{Section 1}
+
+\START
+
+\BEGINTEST{tabularray}
+\begin{tblr}{
+  colspec = {@{}X[c]X[l]X[c]X[r]X[c]@{}},
+  hlines, vlines,
+}
+  1 &
+  2\setbox0=\hbox{\postnote{first}}\showbox0\box0 &
+  3 &
+  4\setbox0=\hbox{\postnote{second}}\showbox0\box0 &
+  5 \\
+\end{tblr}
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print tabularray}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

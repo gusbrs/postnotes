@@ -1,0 +1,43 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+
+\usepackage{csquotes}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\section{Section 1}
+
+\START
+
+\BEGINTEST{csquotes}
+\setbox0=\hbox{\blockquote{\enquote{Foo.\postnote{\enquote{Foo
+          note.}}\postnote{Bar note.}}}}
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print csquotes}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}
