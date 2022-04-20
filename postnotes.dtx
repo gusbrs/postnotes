@@ -2247,7 +2247,8 @@
               { ! #1 }
               { \l_@@_hyperlink_bool }
               {
-                \hyperref [#2]
+                \hyperlink
+                  { \zref@extractdefault {#2} { anchor } { } }
                   { \@@_make_mark:nnn { \zref{#2} } { } { } }
               }
               { \@@_make_mark:nnn { \zref{#2} } { } { } }
