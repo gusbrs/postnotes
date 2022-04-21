@@ -34,9 +34,6 @@ end
 -- Use UTF-8 logs for all engines
 asciiengines = {}
 
--- Release a TDS-style zip
-packtdszip = true
-
 -- CTAN upload settings
 uploadconfig = {
   version = "0.1.0", -- first line for tagging
