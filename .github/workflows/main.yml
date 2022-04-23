@@ -1,0 +1,143 @@
+# Based on:
+# https://github.com/josephwright/siunitx/blob/main/.github/workflows/main.yaml
+# https://github.com/zauguin/install-texlive
+# https://github.com/moewew/biblatex-ext/blob/dev/.github/workflows/l3build.yml
+
+name: CI l3build tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+env:
+  PN_PACKAGE_LIST: |
+    # The test framework
+    l3build
+    # Build formats
+    latex
+    latex-bin
+    luatex
+    luatexbase
+    xetex
+    # dev kernel
+    latex-bin-dev
+    latex-base-dev
+    latex-amsmath-dev
+    latex-graphics-dev
+    latex-tools-dev
+    latex-firstaid-dev
+    xelatex-dev
+    # Fonts
+    metafont
+    mfware
+    ec
+    amsfonts
+    mathpazo
+    psnfss
+    tex-gyre
+    inconsolata
+    # Dependencies
+    alphalph
+    amsmath
+    babel-english
+    hyphen-english
+    babel-portuges
+    hyphen-portuguese
+    babel-french
+    hyphen-french
+    babel-german
+    hyphen-german
+    babel-spanish
+    hyphen-spanish
+    biblatex
+    biber
+    bookmark
+    booktabs
+    caption
+    carlisle
+    colortbl
+    csquotes
+    dvips
+    enumitem
+    epstopdf-pkg
+    etexcmds
+    geometry
+    graphics
+    hologo
+    hypdoc
+    hyperref
+    hyphen-base
+    iftex
+    infwarerr
+    intcalc
+    kvdefinekeys
+    kvoptions
+    kvsetkeys
+    listings
+    ltxcmds
+    luavlna
+    makeindex
+    microtype
+    mptopdf
+    oberdiek
+    pdftexcmds
+    polyglossia
+    subfig
+    tabularray
+    tools
+    underscore
+    upquote
+    zref
+    zref-clever
+    zref-check
+    zref-vario
+
+jobs:
+  check:
+    name: Regression tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Generate unique ID
+        id: get-id
+        run: |
+          echo -n ::set-output name=id::
+          cat /proc/sys/kernel/random/uuid
+      - name: Load cache
+        uses: actions/cache@v2
+        with:
+          path: ~/texlive
+          key: texlive-v0-${{ steps.get-id.outputs.id }}
+          restore-keys: texlive-v0-
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v1
+        with:
+          packages: ${{ env.PN_PACKAGE_LIST }}
+      - name: Run tests
+        run: l3build check -q -H --show-log-on-error
+
+  doc:
+    name: Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Generate unique ID
+        id: get-id
+        run: |
+          echo -n ::set-output name=id::
+          cat /proc/sys/kernel/random/uuid
+      - name: Load cache
+        uses: actions/cache@v2
+        with:
+          path: ~/texlive
+          key: texlive-v0-${{ steps.get-id.outputs.id }}
+          restore-keys: texlive-v0-
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v1
+        with:
+          packages: ${{ env.PN_PACKAGE_LIST }}
+      - name: Compile documentation
+        run: l3build doc -q -H
