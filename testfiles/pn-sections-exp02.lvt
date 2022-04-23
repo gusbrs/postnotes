@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+\pagestyle{headings}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\section{First section}
+\postnotesectionx{\noexpand\subsection*{Notes to section \thesection}}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{Notes: First section}
+Foo.%
+\setbox0=\hbox{\postnote{Foo note.}}%
+\showbox0
+\box0
+
+Bar.%
+\setbox0=\hbox{\postnote{Bar note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\section{Second section}
+\postnotesectionx{\noexpand\subsection*{Notes to section \thesection}}
+\setcounter{postnote}{0}
+
+\TIMO
+
+\BEGINTEST{Notes: Second section}
+Baz.%
+\setbox0=\hbox{\postnote{Baz note.}}%
+\showbox0
+\box0
+
+Boo.%
+\setbox0=\hbox{\postnote{Boo note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

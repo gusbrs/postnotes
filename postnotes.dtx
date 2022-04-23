@@ -1064,14 +1064,21 @@
 %
 % \section{\cs{postnotesection}}
 %
-% \begin{macro}[int]{\postnotesection}
-%   Provide \cs{postnotesection}.
+% \begin{macro}[int]
+%   {
+%     \postnotesection ,
+%     \postnotesectionx ,
+%   }
+%   Provide \cs{postnotesection} and \cs{postnotesectionx}.
 %   \begin{syntax}
 %     \cs{postnotesection}\oarg{options}\marg{section content}
+%     \cs{postnotesectionx}\oarg{options}\marg{section content}
 %   \end{syntax}
 %    \begin{macrocode}
 \NewDocumentCommand \postnotesection { O { } +m }
   { \@@_section:nn {#1} {#2} }
+\NewDocumentCommand \postnotesectionx { O { } +m }
+  { \@@_section:nx {#1} {#2} }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1093,6 +1100,7 @@
     \@@_store_section:nn { \l_@@_note_id_tl } {#2}
     \group_end:
   }
+\cs_generate_variant:Nn \@@_section:nn { nx }
 %    \end{macrocode}
 % \end{macro}
 %

@@ -2,6 +2,10 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.1...HEAD)
 
+### Added
+- `\postnotesectionx`, a version of `\postnotesection` which expands the
+  content in place.
+
 ## [v0.1.1](https://github.com/gusbrs/postnotes/compare/v0.1.0...v0.1.1) (2022-04-21)
 
 ### Fixed
