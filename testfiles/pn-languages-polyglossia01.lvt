@@ -10,7 +10,7 @@
 
 \usepackage{polyglossia}
 \setmainlanguage{english}
-\setotherlanguages{portuguese}
+\setotherlanguages{portuguese,french}
 
 \usepackage{postnotes}
 \AddToHook{postnotes/print/begin}{\thispagestyle{headings}}
@@ -19,7 +19,7 @@
 
 \begin{document}
 
-\chapter{First chapter}
+\chapter{English}
 
 \textsuperscript{avoid font warning}
 
@@ -86,7 +86,7 @@ Foo.\postnote{Foo note.}
 
 \OMIT
 
-\clearpage{}
+\chapter{Portuguese}
 
 \TIMO
 
@@ -107,6 +107,35 @@ Foo.\postnote{Foo note.}
 \ENDTEST
 
 \BEGINTEST{vars portuguese}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\OMIT
+
+\chapter{French}
+
+\TIMO
+
+Foo.\postnote{Foo note.}
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\selectlanguage{french}
+
+\BEGINTEST{Print french}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{vars french}
 \show\pntitle
 \show\pnhdnotes
 \show\pnhdtopage
