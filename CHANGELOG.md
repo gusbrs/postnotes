@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.1...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.2...HEAD)
+
+## [v0.1.2](https://github.com/gusbrs/postnotes/compare/v0.1.1...v0.1.2) (2022-04-27)
 
 ### Added
 - `\postnotesectionx`, a version of `\postnotesection` which expands the

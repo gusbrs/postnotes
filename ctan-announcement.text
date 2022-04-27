@@ -1,5 +1,8 @@
-## v0.1.1 (2022-04-21)
+## v0.1.2 (2022-04-27)
 
-### Fixed
-- Adjusted for CTAN release requirements.
+### Added
+- `\postnotesectionx`, a version of `\postnotesection` which expands the
+  content in place.
+- French localization (see issue
+  [#1](https://github.com/gusbrs/postnotes/issues/1)).
 
