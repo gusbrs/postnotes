@@ -29,7 +29,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\marks3{\mypnheader }
 .\mark{{\mypnheader }{\mypnheader }}
 .\penalty 10000
-.\write1{\post@note {print@1}{\int_use:N \c@page }}
+.\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
 .\glue(\parskip) 0.0 plus 1.0
 .\glue(\parskip) 0.0
 .\glue(\baselineskip) 7.85715
@@ -66,7 +66,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.994+0.0)x12.2
 ....\glue 5.0
-....\write1{\post@note {text@2}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -94,7 +94,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.994+0.0)x12.2
 ....\glue 5.0
-....\write1{\post@note {text@3}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -122,7 +122,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.994+0.19798)x12.2
 ....\glue 5.0
-....\write1{\post@note {text@4}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -150,7 +150,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(6.093+0.0)x12.2
 ....\glue 5.0
-....\write1{\post@note {text@5}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@5}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -178,7 +178,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.994+0.19798)x12.2
 ....\glue 5.0
-....\write1{\post@note {text@6}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -206,7 +206,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.994+0.19798)x12.2
 ....\glue 5.0
-....\write1{\post@note {text@7}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -234,7 +234,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(6.084+0.19798)x12.2
 ....\glue 5.0
-....\write1{\post@note {text@8}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -311,7 +311,7 @@ Completed box being shipped out [7]
 ....\marks3{\mypnheader }
 ....\mark{{\mypnheader }{\mypnheader }}
 ....\penalty 10000
-....\write1{\post@note {print@1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 7.85715
@@ -348,7 +348,7 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@2}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -376,7 +376,7 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@3}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -404,7 +404,7 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(5.994+0.19798)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@4}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -432,7 +432,7 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(6.093+0.0)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@5}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@5}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -460,7 +460,7 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(5.994+0.19798)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@6}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -488,7 +488,7 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(5.994+0.19798)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@7}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -516,7 +516,7 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(6.084+0.19798)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@8}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -580,7 +580,7 @@ Completed box being shipped out [8]
 ......\glue -5.0
 ......\hbox(5.994+0.19798)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@9}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -608,7 +608,7 @@ Completed box being shipped out [8]
 ......\glue -5.0
 ......\hbox(5.994+0.19798)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@10}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@10}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -636,7 +636,7 @@ Completed box being shipped out [8]
 ......\glue -5.0
 ......\hbox(5.994+0.19798)x16.826
 .......\glue 5.0
-.......\write1{\post@note {text@11}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -664,7 +664,7 @@ Completed box being shipped out [8]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x16.826
 .......\glue 5.0
-.......\write1{\post@note {text@12}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -692,7 +692,7 @@ Completed box being shipped out [8]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x16.826
 .......\glue 5.0
-.......\write1{\post@note {text@13}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@13}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -720,7 +720,7 @@ Completed box being shipped out [8]
 ......\glue -5.0
 ......\hbox(5.994+0.19798)x16.826
 .......\glue 5.0
-.......\write1{\post@note {text@14}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -748,7 +748,7 @@ Completed box being shipped out [8]
 ......\glue -5.0
 ......\hbox(6.093+0.0)x16.826
 .......\glue 5.0
-.......\write1{\post@note {text@15}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@15}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -776,7 +776,7 @@ Completed box being shipped out [8]
 ......\glue -5.0
 ......\hbox(5.994+0.19798)x16.826
 .......\glue 5.0
-.......\write1{\post@note {text@16}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@16}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -804,7 +804,7 @@ Completed box being shipped out [8]
 ......\glue -5.0
 ......\hbox(5.994+0.19798)x16.826
 .......\glue 5.0
-.......\write1{\post@note {text@17}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@17}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -933,7 +933,7 @@ Completed box being shipped out [10]
 ......\glue -5.0
 ......\hbox(6.084+0.19798)x16.826
 .......\glue 5.0
-.......\write1{\post@note {text@18}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@18}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -992,7 +992,7 @@ Completed box being shipped out [10]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@20}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@20}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -1020,7 +1020,7 @@ Completed box being shipped out [10]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@21}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@21}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -1048,7 +1048,7 @@ Completed box being shipped out [10]
 ......\glue -5.0
 ......\hbox(5.994+0.19798)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@22}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@22}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -1076,7 +1076,7 @@ Completed box being shipped out [10]
 ......\glue -5.0
 ......\hbox(6.093+0.0)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@23}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@23}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -1104,7 +1104,7 @@ Completed box being shipped out [10]
 ......\glue -5.0
 ......\hbox(5.994+0.19798)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@24}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@24}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -1132,7 +1132,7 @@ Completed box being shipped out [10]
 ......\glue -5.0
 ......\hbox(5.994+0.19798)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@25}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@25}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -1160,7 +1160,7 @@ Completed box being shipped out [10]
 ......\glue -5.0
 ......\hbox(6.084+0.19798)x12.2
 .......\glue 5.0
-.......\write1{\post@note {text@26}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@26}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0

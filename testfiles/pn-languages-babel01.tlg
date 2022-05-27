@@ -70,7 +70,7 @@ Completed box being shipped out [3]
 ....\glue 40.0
 ....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
 ....\penalty 10000
-....\write1{\post@note {print@1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -82,7 +82,7 @@ Completed box being shipped out [3]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\post@note {text@1}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -332,7 +332,7 @@ Completed box being shipped out [5]
 ....\glue 40.0
 ....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
 ....\penalty 10000
-....\write1{\post@note {print@2}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print@2}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -344,7 +344,7 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\post@note {text@2}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -469,7 +469,7 @@ Completed box being shipped out [9]
 ....\glue 40.0
 ....\mark{{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \ETC.}
 ....\penalty 10000
-....\write1{\post@note {print@3}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print@3}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -481,7 +481,7 @@ Completed box being shipped out [9]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\post@note {text@3}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -654,7 +654,7 @@ Completed box being shipped out [13]
 ....\glue 40.0
 ....\mark{{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
 ....\penalty 10000
-....\write1{\post@note {print@4}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print@4}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -666,7 +666,7 @@ Completed box being shipped out [13]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\post@note {text@4}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0

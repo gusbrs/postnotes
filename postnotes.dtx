@@ -300,19 +300,19 @@
 \cs_new_protected:Npn \@@_set_mark_page_label:n #1
   {
     \iow_shipout_x:Nn \@auxout
-      { \post@note { mark@ #1 } { \thepage } }
+      { \token_to_str:N \post@note { mark@ #1 } { \thepage } }
   }
 \cs_generate_variant:Nn \@@_set_mark_page_label:n { x }
 \cs_new_protected:Npn \@@_set_text_page_label:n #1
   {
     \iow_shipout_x:Nn \@auxout
-      { \post@note { text@ #1 } { \int_use:N \c@page } }
+      { \token_to_str:N \post@note { text@ #1 } { \int_use:N \c@page } }
   }
 \cs_generate_variant:Nn \@@_set_text_page_label:n { x }
 \cs_new_protected:Npn \@@_set_print_page_label:n #1
   {
     \iow_shipout_x:Nn \@auxout
-      { \post@note { print@ #1 } { \int_use:N \c@page } }
+      { \token_to_str:N \post@note { print@ #1 } { \int_use:N \c@page } }
   }
 \cs_generate_variant:Nn \@@_set_print_page_label:n { x }
 %    \end{macrocode}

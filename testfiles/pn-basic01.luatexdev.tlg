@@ -9,7 +9,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line ....
 > \box...=
 \hbox(8.27692+0.0)x4.483, direction TLT
-.\write1{\post@note {mark@1}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -30,7 +30,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.27692+0.0)x4.483, direction TLT
-.\write1{\post@note {mark@2}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -51,7 +51,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.27692+0.0)x4.483, direction TLT
-.\write1{\post@note {mark@3}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -72,7 +72,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.34692+0.0)x4.483, direction TLT
-.\write1{\post@note {mark@4}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@4}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -93,7 +93,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.27692+0.0)x4.483, direction TLT
-.\write1{\post@note {mark@5}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@5}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -114,7 +114,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.27692+0.0)x4.483, direction TLT
-.\write1{\post@note {mark@6}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@6}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -135,7 +135,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.36092+0.0)x4.483, direction TLT
-.\write1{\post@note {mark@7}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@7}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -156,7 +156,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.27692+0.0)x4.483, direction TLT
-.\write1{\post@note {mark@8}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@8}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -177,7 +177,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.27692+0.0)x4.483, direction TLT
-.\write1{\post@note {mark@9}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@9}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -198,7 +198,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.27692+0.0)x8.466, direction TLT
-.\write1{\post@note {mark@10}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@10}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -220,7 +220,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.27692+0.0)x8.466, direction TLT
-.\write1{\post@note {mark@11}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@11}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -246,7 +246,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\pdfdest name{Doc-Start} xyz
 .\glue(\topskip) 1.72308
 .\hbox(8.27692+0.0)x4.483, direction TLT
-..\write1{\post@note {mark@1}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -265,7 +265,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.72308
 .\hbox(8.27692+0.0)x4.483, direction TLT
-..\write1{\post@note {mark@2}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -284,7 +284,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.72308
 .\hbox(8.27692+0.0)x4.483, direction TLT
-..\write1{\post@note {mark@3}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -303,7 +303,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.65308
 .\hbox(8.34692+0.0)x4.483, direction TLT
-..\write1{\post@note {mark@4}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@4}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -322,7 +322,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.72308
 .\hbox(8.27692+0.0)x4.483, direction TLT
-..\write1{\post@note {mark@5}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@5}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -341,7 +341,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.72308
 .\hbox(8.27692+0.0)x4.483, direction TLT
-..\write1{\post@note {mark@6}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@6}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -360,7 +360,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.63908
 .\hbox(8.36092+0.0)x4.483, direction TLT
-..\write1{\post@note {mark@7}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@7}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -379,7 +379,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.72308
 .\hbox(8.27692+0.0)x4.483, direction TLT
-..\write1{\post@note {mark@8}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@8}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -398,7 +398,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.72308
 .\hbox(8.27692+0.0)x4.483, direction TLT
-..\write1{\post@note {mark@9}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@9}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -418,7 +418,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ]
 > \box...=
 \hbox(8.27692+0.0)x8.466, direction TLT
-.\write1{\post@note {mark@12}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@12}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -440,7 +440,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.27692+0.0)x8.466, direction TLT
-.\write1{\post@note {mark@13}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@13}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -462,7 +462,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.34692+0.0)x8.466, direction TLT
-.\write1{\post@note {mark@14}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@14}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -484,7 +484,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.27692+0.0)x8.466, direction TLT
-.\write1{\post@note {mark@15}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@15}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -506,7 +506,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.27692+0.0)x8.466, direction TLT
-.\write1{\post@note {mark@16}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@16}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -528,7 +528,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.36092+0.0)x8.466, direction TLT
-.\write1{\post@note {mark@17}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@17}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -550,7 +550,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.27692+0.0)x8.466, direction TLT
-.\write1{\post@note {mark@18}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@18}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -572,7 +572,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.27692+0.0)x8.466, direction TLT
-.\write1{\post@note {mark@19}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@19}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -594,7 +594,7 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.27692+0.0)x8.466, direction TLT
-.\write1{\post@note {mark@20}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@20}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -618,7 +618,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 \vbox(550.0+0.0)x8.466, direction TLT
 .\glue(\topskip) 1.72308
 .\hbox(8.27692+0.0)x8.466, direction TLT
-..\write1{\post@note {mark@10}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@10}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -638,7 +638,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.72308
 .\hbox(8.27692+0.0)x8.466, direction TLT
-..\write1{\post@note {mark@11}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@11}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -658,7 +658,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.72308
 .\hbox(8.27692+0.0)x8.466, direction TLT
-..\write1{\post@note {mark@12}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@12}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -678,7 +678,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.72308
 .\hbox(8.27692+0.0)x8.466, direction TLT
-..\write1{\post@note {mark@13}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@13}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -698,7 +698,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.65308
 .\hbox(8.34692+0.0)x8.466, direction TLT
-..\write1{\post@note {mark@14}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@14}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -718,7 +718,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.72308
 .\hbox(8.27692+0.0)x8.466, direction TLT
-..\write1{\post@note {mark@15}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@15}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -738,7 +738,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.72308
 .\hbox(8.27692+0.0)x8.466, direction TLT
-..\write1{\post@note {mark@16}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@16}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -758,7 +758,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.63908
 .\hbox(8.36092+0.0)x8.466, direction TLT
-..\write1{\post@note {mark@17}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@17}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -778,7 +778,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.72308
 .\hbox(8.27692+0.0)x8.466, direction TLT
-..\write1{\post@note {mark@18}{\thepage }}
+..\write1{\token_to_str:N \post@note {mark@18}{\thepage }}
 ..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -829,7 +829,7 @@ Completed box being shipped out [3]
 ...\vbox(550.0+0.0)x8.466, glue set 428.0fil, direction TLT
 ....\glue(\topskip) 1.72308
 ....\hbox(8.27692+0.0)x8.466, direction TLT
-.....\write1{\post@note {mark@19}{\thepage }}
+.....\write1{\token_to_str:N \post@note {mark@19}{\thepage }}
 .....\penalty 10000
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0, direction TLT
@@ -849,7 +849,7 @@ Completed box being shipped out [3]
 ....\glue 0.0
 ....\glue(\baselineskip) 3.72308
 ....\hbox(8.27692+0.0)x8.466, direction TLT
-.....\write1{\post@note {mark@20}{\thepage }}
+.....\write1{\token_to_str:N \post@note {mark@20}{\thepage }}
 .....\penalty 10000
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0, direction TLT
@@ -963,7 +963,7 @@ Completed box being shipped out [5]
 ....\marks3{\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
-....\write1{\post@note {print@1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -980,7 +980,7 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@1}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1014,7 +1014,7 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@2}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1048,7 +1048,7 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.994+0.198)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@3}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1082,7 +1082,7 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(6.093+0.0)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@4}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1116,7 +1116,7 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.994+0.198)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@5}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@5}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1150,7 +1150,7 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.994+0.198)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@6}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1184,7 +1184,7 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(6.084+0.198)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@7}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1218,7 +1218,7 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.994+0.198)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@8}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1255,7 +1255,7 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.994+0.198)x12.20001, direction TLT
 ....\glue 5.0
-....\write1{\post@note {text@9}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1289,7 +1289,7 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.994+0.198)x16.82602, direction TLT
 ....\glue 5.0
-....\write1{\post@note {text@10}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@10}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1324,7 +1324,7 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.994+0.0)x16.82602, direction TLT
 ....\glue 5.0
-....\write1{\post@note {text@11}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1359,7 +1359,7 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.994+0.0)x16.82602, direction TLT
 ....\glue 5.0
-....\write1{\post@note {text@12}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1394,7 +1394,7 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.994+0.198)x16.82602, direction TLT
 ....\glue 5.0
-....\write1{\post@note {text@13}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@13}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1429,7 +1429,7 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(6.093+0.0)x16.82602, direction TLT
 ....\glue 5.0
-....\write1{\post@note {text@14}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1464,7 +1464,7 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.994+0.198)x16.82602, direction TLT
 ....\glue 5.0
-....\write1{\post@note {text@15}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@15}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1499,7 +1499,7 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.994+0.198)x16.82602, direction TLT
 ....\glue 5.0
-....\write1{\post@note {text@16}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@16}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1534,7 +1534,7 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(6.084+0.198)x16.82602, direction TLT
 ....\glue 5.0
-....\write1{\post@note {text@17}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@17}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1569,7 +1569,7 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.994+0.198)x16.82602, direction TLT
 ....\glue 5.0
-....\write1{\post@note {text@18}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text@18}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1644,7 +1644,7 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.994+0.198)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@9}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1678,7 +1678,7 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.994+0.198)x16.82602, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@10}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@10}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1713,7 +1713,7 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x16.82602, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@11}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1748,7 +1748,7 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x16.82602, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@12}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1783,7 +1783,7 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.994+0.198)x16.82602, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@13}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@13}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1818,7 +1818,7 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(6.093+0.0)x16.82602, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@14}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1853,7 +1853,7 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.994+0.198)x16.82602, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@15}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@15}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1888,7 +1888,7 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.994+0.198)x16.82602, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@16}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@16}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1923,7 +1923,7 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(6.084+0.198)x16.82602, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@17}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@17}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -1958,7 +1958,7 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.994+0.198)x16.82602, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@18}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@18}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -2033,7 +2033,7 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(5.994+0.198)x16.82602, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@19}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@19}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -2068,7 +2068,7 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(5.994+0.198)x16.82602, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@20}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@20}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT

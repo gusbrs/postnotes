@@ -5,7 +5,7 @@ TEST 1: cross-ref
 ============================================================
 > \box...=
 \hbox(8.14003+0.0)x4.48613
-.\write1{\post@note {mark@1}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
 .\write1{\newlabel{en:1}{{1}{\thepage }{First chapter}{postnote.1.mark}{}}}
 .\write1{\zref@newlabel{en:1}{\default{1}\page{\Z@C@page }\abspage{\Z@C@abspage \ETC.}
 .\penalty 10000
@@ -129,7 +129,7 @@ Completed box being shipped out [3]
 ....\glue 40.0
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
-....\write1{\post@note {print@1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\write1{\newlabel{en:2}{{1}{\thepage }{\pntitle }{postnote.1.text}{}}}
 ....\penalty 10000
@@ -147,7 +147,7 @@ Completed box being shipped out [3]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\post@note {text@1}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0

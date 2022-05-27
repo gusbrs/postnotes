@@ -5,7 +5,7 @@ TEST 1: makemark
 ============================================================
 > \box...=
 \hbox(6.66+0.0)x5.0
-.\write1{\post@note {mark@1}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
@@ -24,7 +24,7 @@ TEST 2: makemark 2
 ============================================================
 > \box...=
 \hbox(8.62692+0.0)x24.01534
-.\write1{\post@note {mark@2}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
@@ -94,7 +94,7 @@ Completed box being shipped out [3]
 ....\marks3{\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
-....\write1{\post@note {print@1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -106,7 +106,7 @@ Completed box being shipped out [3]
 ......\glue -5.0
 ......\hbox(6.75+2.24098)x50.822
 .......\glue 5.0
-.......\write1{\post@note {text@1}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -140,7 +140,7 @@ Completed box being shipped out [3]
 ......\glue -5.0
 ......\hbox(6.75+2.24098)x50.822
 .......\glue 5.0
-.......\write1{\post@note {text@2}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -226,7 +226,7 @@ Completed box being shipped out [5]
 ....\marks3{\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
-....\write1{\post@note {print@2}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print@2}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -238,7 +238,7 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(6.75+2.24098)x63.206
 .......\glue 5.0
-.......\write1{\post@note {text@3}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0

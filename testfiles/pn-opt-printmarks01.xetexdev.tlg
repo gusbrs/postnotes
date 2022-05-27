@@ -51,7 +51,7 @@ Completed box being shipped out [3]
 ....\marks3{\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
-....\write1{\post@note {print@1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -64,7 +64,7 @@ Completed box being shipped out [3]
 ......\hbox(6.75+2.24998)x94.289
 .......\glue 5.0
 .......\TU/lmr/m/n/9 [premark]
-.......\write1{\post@note {text@1}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0

@@ -5,7 +5,7 @@ TEST 1: Notes: Plain
 ============================================================
 > \box...=
 \hbox(8.27692+0.0)x4.483, direction TLT
-.\write1{\post@note {mark@1}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -54,7 +54,7 @@ TEST 2: Notes: Manual mark
 ============================================================
 > \box...=
 \hbox(8.40993+0.0)x10.18799, direction TLT
-.\write1{\post@note {mark@2}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -106,7 +106,7 @@ TEST 3: Notes: No mark
 ============================================================
 > \box...=
 \hbox(0.0+0.0)x0.0, direction TLT
-.\write1{\post@note {mark@3}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
 ..\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
@@ -198,7 +198,7 @@ Completed box being shipped out [3]
 ....\glue 40.0
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
-....\write1{\post@note {print@1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\write1{\newlabel{en:1}{{1}{\thepage }{\pntitle }{postnote.1.text}{}}}
 ....\penalty 10000
@@ -218,7 +218,7 @@ Completed box being shipped out [3]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@1}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -262,7 +262,7 @@ Completed box being shipped out [3]
 ......\glue -5.0
 ......\hbox(6.147+0.0)x18.87799, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@2}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
@@ -307,7 +307,7 @@ Completed box being shipped out [3]
 ......\glue -5.0
 ......\hbox(5.994+0.198)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\post@note {text@3}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
