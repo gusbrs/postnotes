@@ -31,9 +31,9 @@ Foo.\postnote{Foo note.}
 
 \cleardoublepage{}
 
-\TIMO
-
 \selectlanguage{english}
+
+\TIMO
 
 \BEGINTEST{Print english}
 \showoutput
@@ -60,8 +60,6 @@ Foo.\postnote{Foo note.}
 
 \cleardoublepage{}
 
-\TIMO
-
 \gappto\captionsenglish{%
   \renewcommand*{\pntitle}{My notes}%
   \renewcommand*{\pnhdnotes}{My header notes}%
@@ -70,6 +68,8 @@ Foo.\postnote{Foo note.}
 }
 
 \selectlanguage{english}
+
+\TIMO
 
 \BEGINTEST{Print english user config}
 \showoutput
@@ -96,9 +96,9 @@ Foo.\postnote{Foo note.}
 
 \cleardoublepage{}
 
-\TIMO
-
 \selectlanguage{portuguese}
+
+\TIMO
 
 \BEGINTEST{Print portuguese}
 \showoutput
@@ -125,9 +125,9 @@ Foo.\postnote{Foo note.}
 
 \cleardoublepage{}
 
-\TIMO
-
 \selectlanguage{french}
+
+\TIMO
 
 \BEGINTEST{Print french}
 \showoutput

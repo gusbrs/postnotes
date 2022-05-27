@@ -1,8 +1,5 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-LaTeX Info: Redefining \rmfamily on input line ....
-LaTeX Info: Redefining \sffamily on input line ....
-LaTeX Info: Redefining \ttfamily on input line ....
 ============================================================
 TEST 1: Print english
 ============================================================
@@ -149,9 +146,6 @@ l. ...\show\pnhdtopage
 ->to pages.
 l. ...\show\pnhdtopages
 ============================================================
-LaTeX Info: Redefining \rmfamily on input line ....
-LaTeX Info: Redefining \sffamily on input line ....
-LaTeX Info: Redefining \ttfamily on input line ....
 ============================================================
 TEST 3: Print english user config
 ============================================================
@@ -316,10 +310,6 @@ l. ...\show\pnhdtopage
 ->to my pages.
 l. ...\show\pnhdtopages
 ============================================================
-LaTeX Info: Redefining \rmfamily on input line ....
-LaTeX Info: Redefining \sffamily on input line ....
-LaTeX Info: Redefining \ttfamily on input line ....
-set lang portuguese, 2
 ============================================================
 TEST 5: Print portuguese
 ============================================================
@@ -472,9 +462,6 @@ l. ...\show\pnhdtopage
 ->das páginas.
 l. ...\show\pnhdtopages
 ============================================================
-LaTeX Info: Redefining \rmfamily on input line ....
-LaTeX Info: Redefining \sffamily on input line ....
-LaTeX Info: Redefining \ttfamily on input line ....
 ============================================================
 TEST 7: Print french
 ============================================================
