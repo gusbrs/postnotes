@@ -56,6 +56,9 @@ Completed box being shipped out [6]
 .....\glue(\rightskip) 0.0
 ....\penalty 10000
 ....\glue 9.913 plus 0.86198
+....\marks1{\pnheaderdefault }
+....\marks2{\pnheaderdefault }
+....\marks3{\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\post@note {print@1}{\int_use:N \c@page }}

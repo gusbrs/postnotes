@@ -203,6 +203,9 @@ Completed box being shipped out [5]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
+....\marks1{\pnheaderdefault }
+....\marks2{\pnheaderdefault }
+....\marks3{\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\post@note {print@1}{\int_use:N \c@page }}
@@ -226,6 +229,8 @@ Completed box being shipped out [5]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks2{\protect \MakeUppercase  {2.1. \ Notes to chapter 1}}
+....\marks3{\protect \MakeUppercase  {2.1. \ Notes to chapter 1}}
 ....\mark{{\pnheaderdefault }{\protect \MakeUppercase  {2.1. \ Notes to chapter\ETC.}
 ....\penalty 10000
 ....\write3{\protect \BOOKMARK [1][-]{section.2.1}{\376\377\000N\000o\000t\000e\0\ETC.}
@@ -354,6 +359,8 @@ Completed box being shipped out [5]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks2{\protect \MakeUppercase  {2.2. \ Notes to chapter 2}}
+....\marks3{\protect \MakeUppercase  {2.2. \ Notes to chapter 2}}
 ....\mark{{\pnheaderdefault }{\protect \MakeUppercase  {2.2. \ Notes to chapter\ETC.}
 ....\write3{\protect \BOOKMARK [1][-]{section.2.2}{\376\377\000N\000o\000t\000e\0\ETC.}
 ....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline \ETC.}

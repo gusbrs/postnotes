@@ -1,0 +1,251 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: Option style=endnotes
+============================================================
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line ....
+Completed box being shipped out [3]
+\vbox(627.36243+0.0)x380.0
+.\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
+..\kern 0.0
+..\kern 22.0
+..\kern -1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 33.99626fil
+...\kern 0.0
+...\kern 35.0
+...\kern -1.00374
+...\pdfdest name{page.3} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(627.36243+0.0)x380.0
+..\glue 22.0
+..\vbox(605.36243+0.0)x345.0, shifted 35.0
+...\vbox(12.0+0.0)x345.0, glue set 12.0fil
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x345.0
+.....\hbox(0.0+0.0)x345.0
+...\glue 18.06749
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 401.0fil
+....\write-{}
+....\pdfdest name{chapter*.1} xyz
+....\glue(\topskip) 10.0
+....\rule(0.0+0.0)x*
+....\penalty 10000
+....\glue 50.0
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 12.92955
+....\hbox(17.07045+0.0)x345.0, glue set 137.21155fil
+.....\hbox(0.0+0.0)x0.0
+.....\OT1/cmr/bx/n/24.88 N
+.....\OT1/cmr/bx/n/24.88 o
+.....\OT1/cmr/bx/n/24.88 t
+.....\OT1/cmr/bx/n/24.88 e
+.....\OT1/cmr/bx/n/24.88 s
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0 plus 1.0fil
+....\penalty 10000
+....\glue 40.0
+....\marks1{\pnheaderdefault }
+....\marks2{\pnheaderdefault }
+....\marks3{\pnheaderdefault }
+....\mark{{\pnheaderdefault }{\pnheaderdefault }}
+....\penalty 10000
+....\write1{\post@note {print@1}{\int_use:N \c@page }}
+....\write1{\post@note {text@1}{\int_use:N \c@page }}
+....\pdfdest name{postnote.1.text} xyz
+....\penalty 10000
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.81001
+....\hbox(6.68999+0.0)x345.0, glue set 293.33813fil
+.....\hbox(0.0+0.0)x15.30023
+.....\glue -4.16661
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.mark}
+.....\hbox(6.68999+0.0)x4.16661
+......\mathon
+......\hbox(3.86665+0.0)x4.16661, shifted -2.82333
+.......\OT1/cmr/m/n/6 1
+......\mathoff
+.....\pdfendlink
+.....\OT1/cmr/m/n/8 d
+.....\OT1/cmr/m/n/8 o
+.....\kern0.23611
+.....\OT1/cmr/m/n/8 c
+.....\OT1/cmr/m/n/8 u
+.....\OT1/cmr/m/n/8 m
+.....\OT1/cmr/m/n/8 e
+.....\OT1/cmr/m/n/8 n
+.....\kern-0.23611
+.....\OT1/cmr/m/n/8 t
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\write1{\post@note {text@2}{\int_use:N \c@page }}
+....\pdfdest name{postnote.2.text} xyz
+....\penalty 10000
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 2.81001
+....\hbox(6.68999+0.0)x345.0, glue set 294.87704fil
+.....\hbox(0.0+0.0)x15.30023
+.....\glue -4.16661
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.mark}
+.....\hbox(6.68999+0.0)x4.16661
+......\mathon
+......\hbox(3.86665+0.0)x4.16661, shifted -2.82333
+.......\OT1/cmr/m/n/6 2
+......\mathoff
+.....\pdfendlink
+.....\OT1/cmr/m/n/8 F
+.....\kern-0.70834
+.....\OT1/cmr/m/n/8 o
+.....\kern0.23611
+.....\OT1/cmr/m/n/8 o
+.....\glue 2.83337 plus 1.41669 minus 0.94446
+.....\OT1/cmr/m/n/8 n
+.....\OT1/cmr/m/n/8 o
+.....\OT1/cmr/m/n/8 t
+.....\OT1/cmr/m/n/8 e
+.....\OT1/cmr/m/n/8 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+...\glue(\baselineskip) 18.8505
+...\hbox(6.44444+0.0)x345.0
+....\hbox(6.44444+0.0)x345.0, glue set 170.0fil
+.....\glue 0.0 plus 1.0fil
+.....\OT1/cmr/m/n/10 3
+.....\glue 0.0 plus 1.0fil
+============================================================
+============================================================
+TEST 2: Option style=pagenote
+============================================================
+Completed box being shipped out [5]
+\vbox(627.36243+0.0)x380.0
+.\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
+..\kern 0.0
+..\kern 22.0
+..\kern -1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 33.99626fil
+...\kern 0.0
+...\kern 35.0
+...\kern -1.00374
+...\pdfdest name{page.5} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(627.36243+0.0)x380.0
+..\glue 22.0
+..\vbox(605.36243+0.0)x345.0, shifted 35.0
+...\vbox(12.0+0.0)x345.0, glue set 12.0fil
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x345.0
+.....\hbox(0.0+0.0)x345.0
+...\glue 18.06749
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 396.0fil
+....\write-{}
+....\write-{}
+....\pdfdest name{chapter*.2} xyz
+....\glue(\topskip) 10.0
+....\rule(0.0+0.0)x*
+....\penalty 10000
+....\glue 50.0
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 12.92955
+....\hbox(17.07045+0.0)x345.0, glue set 137.21155fil
+.....\hbox(0.0+0.0)x0.0
+.....\OT1/cmr/bx/n/24.88 N
+.....\OT1/cmr/bx/n/24.88 o
+.....\OT1/cmr/bx/n/24.88 t
+.....\OT1/cmr/bx/n/24.88 e
+.....\OT1/cmr/bx/n/24.88 s
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0 plus 1.0fil
+....\penalty 10000
+....\glue 40.0
+....\marks1{\pnheaderdefault }
+....\marks2{\pnheaderdefault }
+....\marks3{\pnheaderdefault }
+....\mark{{\pnheaderdefault }{\pnheaderdefault }}
+....\penalty 10000
+....\write1{\post@note {print@2}{\int_use:N \c@page }}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 5.05556
+....\hbox(6.94444+0.0)x345.0, glue set 289.99988fil
+.....\write1{\post@note {text@3}{\int_use:N \c@page }}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -12.0
+.......\pdfdest name{postnote.3.text} xyz
+.......\penalty 10000
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.mark}
+.....\OT1/cmr/m/n/10 3
+.....\OT1/cmr/m/n/10 .
+.....\pdfendlink
+.....\glue 4.44444 plus 4.99997 minus 0.37036
+.....\OT1/cmr/m/n/10 d
+.....\OT1/cmr/m/n/10 o
+.....\kern0.27779
+.....\OT1/cmr/m/n/10 c
+.....\OT1/cmr/m/n/10 u
+.....\OT1/cmr/m/n/10 m
+.....\OT1/cmr/m/n/10 e
+.....\OT1/cmr/m/n/10 n
+.....\kern-0.27779
+.....\OT1/cmr/m/n/10 t
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 5.16669
+....\hbox(6.83331+0.0)x345.0, glue set 291.77766fil
+.....\write1{\post@note {text@4}{\int_use:N \c@page }}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -12.0
+.......\pdfdest name{postnote.4.text} xyz
+.......\penalty 10000
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.mark}
+.....\OT1/cmr/m/n/10 4
+.....\OT1/cmr/m/n/10 .
+.....\pdfendlink
+.....\glue 4.44444 plus 4.99997 minus 0.37036
+.....\OT1/cmr/m/n/10 B
+.....\OT1/cmr/m/n/10 a
+.....\OT1/cmr/m/n/10 r
+.....\glue 3.33333 plus 1.66666 minus 1.11111
+.....\OT1/cmr/m/n/10 n
+.....\OT1/cmr/m/n/10 o
+.....\OT1/cmr/m/n/10 t
+.....\OT1/cmr/m/n/10 e
+.....\OT1/cmr/m/n/10 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+...\glue(\baselineskip) 18.8505
+...\hbox(6.44444+0.0)x345.0
+....\hbox(6.44444+0.0)x345.0, glue set 170.0fil
+.....\glue 0.0 plus 1.0fil
+.....\OT1/cmr/m/n/10 5
+.....\glue 0.0 plus 1.0fil
+============================================================
