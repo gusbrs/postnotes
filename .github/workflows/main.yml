@@ -62,6 +62,7 @@ env:
     enumitem
     epstopdf-pkg
     etexcmds
+    fancyvrb
     geometry
     graphics
     hologo
