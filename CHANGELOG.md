@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.2...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.3...HEAD)
+
+## [v0.1.3](https://github.com/gusbrs/postnotes/compare/v0.1.2...v0.1.3) (2022-05-28)
 
 ### Fixed
 - Prevent spurious space after `\post@note` in `.aux` file.

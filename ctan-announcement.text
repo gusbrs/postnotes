@@ -1,8 +1,5 @@
-## v0.1.2 (2022-04-27)
+## v0.1.3 (2022-05-28)
 
-### Added
-- `\postnotesectionx`, a version of `\postnotesection` which expands the
-  content in place.
-- French localization (see issue
-  [#1](https://github.com/gusbrs/postnotes/issues/1)).
+### Fixed
+- Prevent spurious space after `\post@note` in `.aux` file.
 
