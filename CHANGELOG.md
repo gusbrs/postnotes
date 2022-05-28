@@ -2,6 +2,9 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.2...HEAD)
 
+### Fixed
+- Prevent spurious space after `\post@note` in `.aux` file.
+
 ## [v0.1.2](https://github.com/gusbrs/postnotes/compare/v0.1.1...v0.1.2) (2022-04-27)
 
 ### Added
