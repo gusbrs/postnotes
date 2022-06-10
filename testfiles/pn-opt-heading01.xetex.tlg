@@ -40,11 +40,15 @@ Completed box being shipped out [3]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 314.0fil
+....\marks2{Foo \pnheaderdefault }
+....\marks3{Foo \pnheaderdefault }
 ....\mark{{\protect \MakeUppercase  {Chapter\ 1. \ First chapter}}{Foo \pnheaderdefault \ETC.}
 ....\write-{}
 ....\special{pdf:dest (chapter.2) [@thispage /XYZ @xpos @ypos null]}
 ....\write3{\protect \BOOKMARK [0][-]{chapter.2}{\376\377\000M\000y\000\040\000t\\ETC.}
 ....\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline \ETC.}
+....\marks1{\protect \MakeUppercase  {Chapter\ 2. \ My title}}
+....\marks2{\prg_do_nothing: }
 ....\mark{{\protect \MakeUppercase  {Chapter\ 2. \ My title}}{}}
 ....\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
 ....\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
@@ -79,6 +83,9 @@ Completed box being shipped out [3]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
+....\marks1{Foo \pnheaderdefault }
+....\marks2{Foo \pnheaderdefault }
+....\marks3{Foo \pnheaderdefault }
 ....\mark{{Foo \pnheaderdefault }{Foo \pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
@@ -158,11 +165,15 @@ Completed box being shipped out [5]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 314.0fil
 ....\write-{}
+....\marks2{Bar \pnheaderdefault }
+....\marks3{Bar \pnheaderdefault }
 ....\mark{{Foo \pnheaderdefault }{Bar \pnheaderdefault }}
 ....\write-{}
 ....\special{pdf:dest (chapter.3) [@thispage /XYZ @xpos @ypos null]}
 ....\write3{\protect \BOOKMARK [0][-]{chapter.3}{\376\377\000M\000y\000\040\000n\\ETC.}
 ....\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline \ETC.}
+....\marks1{\protect \MakeUppercase  {Chapter\ 3. \ My new title}}
+....\marks2{\prg_do_nothing: }
 ....\mark{{\protect \MakeUppercase  {Chapter\ 3. \ My new title}}{}}
 ....\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
 ....\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
@@ -199,6 +210,9 @@ Completed box being shipped out [5]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
+....\marks1{Bar \pnheaderdefault }
+....\marks2{Bar \pnheaderdefault }
+....\marks3{Bar \pnheaderdefault }
 ....\mark{{Bar \pnheaderdefault }{Bar \pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@2}{\int_use:N \c@page }}

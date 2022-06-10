@@ -55,6 +55,9 @@ Completed box being shipped out [9]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
+....\marks1{\protect \foreignlanguage {american}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
+....\marks2{\protect \foreignlanguage {american}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
+....\marks3{\protect \foreignlanguage {american}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
 ....\mark{{\protect \foreignlanguage {american}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
