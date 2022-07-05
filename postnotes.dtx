@@ -2065,12 +2065,10 @@
       {
         \@@_prop_get:nnN { \l_@@_print_note_id_tl }
           { biblatex@refsection } \l_@@_restore_tmp_tl
-        \tl_if_empty:NF \l_@@_restore_tmp_tl
-          { \int_set:Nn \c@refsection { \l_@@_restore_tmp_tl } }
+        \int_set:Nn \c@refsection { \l_@@_restore_tmp_tl }
         \@@_prop_get:nnN { \l_@@_print_note_id_tl }
           { biblatex@refsegment } \l_@@_restore_tmp_tl
-        \tl_if_empty:NF \l_@@_restore_tmp_tl
-          { \int_set:Nn \c@refsegment { \l_@@_restore_tmp_tl } }
+        \int_set:Nn \c@refsegment { \l_@@_restore_tmp_tl }
         \@@_prop_get:nnN { \l_@@_print_note_id_tl }
           { biblatex@refcontextbool } \l_@@_restore_tmp_tl
         \use:c { toggle \l_@@_restore_tmp_tl } { blx@refcontext }
@@ -2333,12 +2331,10 @@
           {
             \@@_prop_get:nnN { \l_@@_print_note_id_tl }
               { zref-check@abschap } \l_@@_restore_tmp_tl
-            \tl_if_empty:NF \l_@@_restore_tmp_tl
-              { \int_set:Nn \c@zc@abschap { \l_@@_restore_tmp_tl } }
+            \int_set:Nn \c@zc@abschap { \l_@@_restore_tmp_tl }
             \@@_prop_get:nnN { \l_@@_print_note_id_tl }
               { zref-check@abssec } \l_@@_restore_tmp_tl
-            \tl_if_empty:NF \l_@@_restore_tmp_tl
-              { \int_set:Nn \c@zc@abssec { \l_@@_restore_tmp_tl } }
+            \int_set:Nn \c@zc@abssec { \l_@@_restore_tmp_tl }
           }
       }
       { }
