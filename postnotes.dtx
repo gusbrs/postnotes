@@ -2315,6 +2315,37 @@
 %    \end{macrocode}
 %
 %
+% \subsection*{\pkg{zref-check}}
+%
+%    \begin{macrocode}
+\AddToHook { package/zref-check/after }
+  {
+    \IfPackageAtLeastTF { zref-check } { 2022-07-05 }
+      {
+        \AddToHook { postnotes/store/note } [ postnotes ]
+          {
+            \prop_gput:cnx { \@@_data_name:e { \l_@@_note_id_tl } }
+              { zref-check@abschap } { \int_use:N \c@zc@abschap }
+            \prop_gput:cnx { \@@_data_name:e { \l_@@_note_id_tl } }
+              { zref-check@abssec } { \int_use:N \c@zc@abssec }
+          }
+        \AddToHook { postnotes/print/eachnote } [ postnotes ]
+          {
+            \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+              { zref-check@abschap } \l_@@_restore_tmp_tl
+            \tl_if_empty:NF \l_@@_restore_tmp_tl
+              { \int_set:Nn \c@zc@abschap { \l_@@_restore_tmp_tl } }
+            \@@_prop_get:nnN { \l_@@_print_note_id_tl }
+              { zref-check@abssec } \l_@@_restore_tmp_tl
+            \tl_if_empty:NF \l_@@_restore_tmp_tl
+              { \int_set:Nn \c@zc@abssec { \l_@@_restore_tmp_tl } }
+          }
+      }
+      { }
+  }
+%    \end{macrocode}
+%
+%
 % \subsection*{\pkg{amsmath}}
 %
 %    \begin{macrocode}
