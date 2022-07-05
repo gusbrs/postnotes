@@ -1940,6 +1940,12 @@
 %
 % \section{Compatibility}
 %
+% A dedicated temp variable for restoring data.
+%
+%    \begin{macrocode}
+\tl_new:N \l_@@_restore_tmp_tl
+%    \end{macrocode}
+%
 % \subsection*{\cs{caption}}
 %
 % For \cs{caption}'s possible two passes.  This catches more than just
@@ -2055,21 +2061,22 @@
 %    \end{macrocode}
 % Restore \pkg{biblatex} variables for each note.
 %    \begin{macrocode}
-    \tl_new:N \l_@@_biblatex_restore_tl
     \AddToHook { postnotes/print/eachnote } [ postnotes ]
       {
         \@@_prop_get:nnN { \l_@@_print_note_id_tl }
-          { biblatex@refsection } \l_@@_biblatex_restore_tl
-        \int_set:Nn \c@refsection { \l_@@_biblatex_restore_tl }
+          { biblatex@refsection } \l_@@_restore_tmp_tl
+        \tl_if_empty:NF \l_@@_restore_tmp_tl
+          { \int_set:Nn \c@refsection { \l_@@_restore_tmp_tl } }
         \@@_prop_get:nnN { \l_@@_print_note_id_tl }
-          { biblatex@refsegment } \l_@@_biblatex_restore_tl
-        \int_set:Nn \c@refsegment { \l_@@_biblatex_restore_tl }
+          { biblatex@refsegment } \l_@@_restore_tmp_tl
+        \tl_if_empty:NF \l_@@_restore_tmp_tl
+          { \int_set:Nn \c@refsegment { \l_@@_restore_tmp_tl } }
         \@@_prop_get:nnN { \l_@@_print_note_id_tl }
-          { biblatex@refcontextbool } \l_@@_biblatex_restore_tl
-        \use:c { toggle \l_@@_biblatex_restore_tl } { blx@refcontext }
+          { biblatex@refcontextbool } \l_@@_restore_tmp_tl
+        \use:c { toggle \l_@@_restore_tmp_tl } { blx@refcontext }
         \@@_prop_get:nnN { \l_@@_print_note_id_tl }
-          { biblatex@refcontext } \l_@@_biblatex_restore_tl
-        \blx@edef@refcontext { \l_@@_biblatex_restore_tl }
+          { biblatex@refcontext } \l_@@_restore_tmp_tl
+        \blx@edef@refcontext { \l_@@_restore_tmp_tl }
       }
 %    \end{macrocode}
 % Make \pkg{biblatex}'s \cs{mkbibendnote} use \cs{postnote}.  This is very
@@ -2204,15 +2211,15 @@
     \AddToHook { postnotes/print/eachnote } [ postnotes ]
       {
         \@@_prop_get:nnN { \l_@@_print_note_id_tl }
-          { biblatex@refsection } \l_@@_biblatex_restore_tl
+          { biblatex@refsection } \l_@@_restore_tmp_tl
         \tl_if_eq:NNF
-          \l_@@_biblatex_restore_tl
+          \l_@@_restore_tmp_tl
           \g_@@_biblatex_prev_refsection_tl
           {
             \int_set:Nn \c@blx@maxsection
-              { \l_@@_biblatex_restore_tl - 1 }
+              { \l_@@_restore_tmp_tl - 1 }
             \tl_gset_eq:NN \g_@@_biblatex_prev_refsection_tl
-              \l_@@_biblatex_restore_tl
+              \l_@@_restore_tmp_tl
             \group_begin:
             \cs_set_eq:NN \label \use_none:n
             \cs_set_eq:NN \blx@info \use_none:n
