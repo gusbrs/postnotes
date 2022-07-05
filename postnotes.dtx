@@ -1338,7 +1338,7 @@
                   { content } \l_@@_print_content_tl
                 \cs_set:Npn \@currentcounter { postnotetext }
                 \int_set:Nn \c@postnotetext
-                  { \int_eval:n { \l_@@_print_counter_tl } }
+                  { \l_@@_print_counter_tl }
                 \cs_set:Npx \@currentlabel
                   { \p@postnote \l_@@_print_mark_tl }
                 \@@_hyperref_make_currentHref:n
