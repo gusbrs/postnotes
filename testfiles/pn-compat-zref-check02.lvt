@@ -1,0 +1,269 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+\counterwithin*{postnote}{section}
+\AddToHook{cmd/section/before}{%
+  \postnotesection{\clearpage{}\subsection*{Notes to section \pnthesectionnextnote}}}
+
+\usepackage{zref-check}
+
+\begin{document}
+
+\zctarget{txt:target-0}{Lorem ipsum}
+
+\section{Section 1}
+\zlabel{sec:section-1}
+\postnote{label\zlabel{pn:sec:section-1}}
+
+\START
+
+\BEGINTEST{Section 1: thissec}
+\zcheck[thissec]{txt:target-0}{this check should fail}
+\postnote{\zcheck[thissec]{txt:target-0}{this check should fail}}
+
+\zcheck[thissec]{sec:section-1}{this check should pass}
+\postnote{\zcheck[thissec]{sec:section-1}{this check should pass}}
+
+\zcheck[thissec]{pn:sec:section-1}{this check should pass}
+\postnote{\zcheck[thissec]{pn:sec:section-1}{this check should pass}}
+
+\zcheck[thissec]{sec:section-2}{this check should fail}
+\postnote{\zcheck[thissec]{sec:section-2}{this check should fail}}
+
+\zcheck[thissec]{pn:sec:section-2}{this check should fail}
+\postnote{\zcheck[thissec]{pn:sec:section-2}{this check should fail}}
+
+\zcheck[thissec]{sec:section-3}{this check should fail}
+\postnote{\zcheck[thissec]{sec:section-3}{this check should fail}}
+
+\zcheck[thissec]{pn:sec:section-3}{this check should fail}
+\postnote{\zcheck[thissec]{pn:sec:section-3}{this check should fail}\SEPARATOR}
+\ENDTEST
+
+
+\BEGINTEST{Section 1: prevsec}
+\zcheck[prevsec]{txt:target-0}{this check should fail}
+\postnote{\zcheck[prevsec]{txt:target-0}{this check should fail}}
+
+\zcheck[prevsec]{sec:section-1}{this check should fail}
+\postnote{\zcheck[prevsec]{sec:section-1}{this check should fail}}
+
+\zcheck[prevsec]{pn:sec:section-1}{this check should fail}
+\postnote{\zcheck[prevsec]{pn:sec:section-1}{this check should fail}}
+
+\zcheck[prevsec]{sec:section-2}{this check should fail}
+\postnote{\zcheck[prevsec]{sec:section-2}{this check should fail}}
+
+\zcheck[prevsec]{pn:sec:section-2}{this check should fail}
+\postnote{\zcheck[prevsec]{pn:sec:section-2}{this check should fail}}
+
+\zcheck[prevsec]{sec:section-3}{this check should fail}
+\postnote{\zcheck[prevsec]{sec:section-3}{this check should fail}}
+
+\zcheck[prevsec]{pn:sec:section-3}{this check should fail}
+\postnote{\zcheck[prevsec]{pn:sec:section-3}{this check should fail}\SEPARATOR}
+\ENDTEST
+
+
+\BEGINTEST{Section 1: nextsec}
+\zcheck[nextsec]{txt:target-0}{this check should fail}
+\postnote{\zcheck[nextsec]{txt:target-0}{this check should fail}}
+
+\zcheck[nextsec]{sec:section-1}{this check should fail}
+\postnote{\zcheck[nextsec]{sec:section-1}{this check should fail}}
+
+\zcheck[nextsec]{pn:sec:section-1}{this check should fail}
+\postnote{\zcheck[nextsec]{pn:sec:section-1}{this check should fail}}
+
+\zcheck[nextsec]{sec:section-2}{this check should pass}
+\postnote{\zcheck[nextsec]{sec:section-2}{this check should pass}}
+
+\zcheck[nextsec]{pn:sec:section-2}{this check should pass}
+\postnote{\zcheck[nextsec]{pn:sec:section-2}{this check should pass}}
+
+\zcheck[nextsec]{sec:section-3}{this check should fail}
+\postnote{\zcheck[nextsec]{sec:section-3}{this check should fail}}
+
+\zcheck[nextsec]{pn:sec:section-3}{this check should fail}
+\postnote{\zcheck[nextsec]{pn:sec:section-3}{this check should fail}\SEPARATOR}
+\ENDTEST
+
+
+\OMIT
+\clearpage{}
+\section{Section 2}
+\zlabel{sec:section-2}
+\postnote{label\zlabel{pn:sec:section-2}}
+\TIMO
+
+
+\BEGINTEST{Section 2: thissec}
+\zcheck[thissec]{txt:target-0}{this check should fail}
+\postnote{\zcheck[thissec]{txt:target-0}{this check should fail}}
+
+\zcheck[thissec]{sec:section-1}{this check should fail}
+\postnote{\zcheck[thissec]{sec:section-1}{this check should fail}}
+
+\zcheck[thissec]{pn:sec:section-1}{this check should fail}
+\postnote{\zcheck[thissec]{pn:sec:section-1}{this check should fail}}
+
+\zcheck[thissec]{sec:section-2}{this check should pass}
+\postnote{\zcheck[thissec]{sec:section-2}{this check should pass}}
+
+\zcheck[thissec]{pn:sec:section-2}{this check should pass}
+\postnote{\zcheck[thissec]{pn:sec:section-2}{this check should pass}}
+
+\zcheck[thissec]{sec:section-3}{this check should fail}
+\postnote{\zcheck[thissec]{sec:section-3}{this check should fail}}
+
+\zcheck[thissec]{pn:sec:section-3}{this check should fail}
+\postnote{\zcheck[thissec]{pn:sec:section-3}{this check should fail}\SEPARATOR}
+\ENDTEST
+
+
+\BEGINTEST{Section 2: prevsec}
+\zcheck[prevsec]{txt:target-0}{this check should fail}
+\postnote{\zcheck[prevsec]{txt:target-0}{this check should fail}}
+
+\zcheck[prevsec]{sec:section-1}{this check should pass}
+\postnote{\zcheck[prevsec]{sec:section-1}{this check should pass}}
+
+\zcheck[prevsec]{pn:sec:section-1}{this check should pass}
+\postnote{\zcheck[prevsec]{pn:sec:section-1}{this check should pass}}
+
+\zcheck[prevsec]{sec:section-2}{this check should fail}
+\postnote{\zcheck[prevsec]{sec:section-2}{this check should fail}}
+
+\zcheck[prevsec]{pn:sec:section-2}{this check should fail}
+\postnote{\zcheck[prevsec]{pn:sec:section-2}{this check should fail}}
+
+\zcheck[prevsec]{sec:section-3}{this check should fail}
+\postnote{\zcheck[prevsec]{sec:section-3}{this check should fail}}
+
+\zcheck[prevsec]{pn:sec:section-3}{this check should fail}
+\postnote{\zcheck[prevsec]{pn:sec:section-3}{this check should fail}\SEPARATOR}
+\ENDTEST
+
+
+\BEGINTEST{Section 2: nextsec}
+\zcheck[nextsec]{txt:target-0}{this check should fail}
+\postnote{\zcheck[nextsec]{txt:target-0}{this check should fail}}
+
+\zcheck[nextsec]{sec:section-1}{this check should fail}
+\postnote{\zcheck[nextsec]{sec:section-1}{this check should fail}}
+
+\zcheck[nextsec]{pn:sec:section-1}{this check should fail}
+\postnote{\zcheck[nextsec]{pn:sec:section-1}{this check should fail}}
+
+\zcheck[nextsec]{sec:section-2}{this check should fail}
+\postnote{\zcheck[nextsec]{sec:section-2}{this check should fail}}
+
+\zcheck[nextsec]{pn:sec:section-2}{this check should fail}
+\postnote{\zcheck[nextsec]{pn:sec:section-2}{this check should fail}}
+
+\zcheck[nextsec]{sec:section-3}{this check should pass}
+\postnote{\zcheck[nextsec]{sec:section-3}{this check should pass}}
+
+\zcheck[nextsec]{pn:sec:section-3}{this check should pass}
+\postnote{\zcheck[nextsec]{pn:sec:section-3}{this check should pass}\SEPARATOR}
+\ENDTEST
+
+
+\OMIT
+\clearpage{}
+\section{Section 3}
+\zlabel{sec:section-3}
+\postnote{label\zlabel{pn:sec:section-3}}
+\TIMO
+
+
+\BEGINTEST{Section 3: thissec}
+\zcheck[thissec]{txt:target-0}{this check should fail}
+\postnote{\zcheck[thissec]{txt:target-0}{this check should fail}}
+
+\zcheck[thissec]{sec:section-1}{this check should fail}
+\postnote{\zcheck[thissec]{sec:section-1}{this check should fail}}
+
+\zcheck[thissec]{pn:sec:section-1}{this check should fail}
+\postnote{\zcheck[thissec]{pn:sec:section-1}{this check should fail}}
+
+\zcheck[thissec]{sec:section-2}{this check should fail}
+\postnote{\zcheck[thissec]{sec:section-2}{this check should fail}}
+
+\zcheck[thissec]{pn:sec:section-2}{this check should fail}
+\postnote{\zcheck[thissec]{pn:sec:section-2}{this check should fail}}
+
+\zcheck[thissec]{sec:section-3}{this check should pass}
+\postnote{\zcheck[thissec]{sec:section-3}{this check should pass}}
+
+\zcheck[thissec]{pn:sec:section-3}{this check should pass}
+\postnote{\zcheck[thissec]{pn:sec:section-3}{this check should pass}\SEPARATOR}
+\ENDTEST
+
+
+\BEGINTEST{Section 3: prevsec}
+\zcheck[prevsec]{txt:target-0}{this check should fail}
+\postnote{\zcheck[prevsec]{txt:target-0}{this check should fail}}
+
+\zcheck[prevsec]{sec:section-1}{this check should fail}
+\postnote{\zcheck[prevsec]{sec:section-1}{this check should fail}}
+
+\zcheck[prevsec]{pn:sec:section-1}{this check should fail}
+\postnote{\zcheck[prevsec]{pn:sec:section-1}{this check should fail}}
+
+\zcheck[prevsec]{sec:section-2}{this check should pass}
+\postnote{\zcheck[prevsec]{sec:section-2}{this check should pass}}
+
+\zcheck[prevsec]{pn:sec:section-2}{this check should pass}
+\postnote{\zcheck[prevsec]{pn:sec:section-2}{this check should pass}}
+
+\zcheck[prevsec]{sec:section-3}{this check should fail}
+\postnote{\zcheck[prevsec]{sec:section-3}{this check should fail}}
+
+\zcheck[prevsec]{pn:sec:section-3}{this check should fail}
+\postnote{\zcheck[prevsec]{pn:sec:section-3}{this check should fail}\SEPARATOR}
+\ENDTEST
+
+
+\BEGINTEST{Section 3: nextsec}
+\zcheck[nextsec]{txt:target-0}{this check should fail}
+\postnote{\zcheck[nextsec]{txt:target-0}{this check should fail}}
+
+\zcheck[nextsec]{sec:section-1}{this check should fail}
+\postnote{\zcheck[nextsec]{sec:section-1}{this check should fail}}
+
+\zcheck[nextsec]{pn:sec:section-1}{this check should fail}
+\postnote{\zcheck[nextsec]{pn:sec:section-1}{this check should fail}}
+
+\zcheck[nextsec]{sec:section-2}{this check should fail}
+\postnote{\zcheck[nextsec]{sec:section-2}{this check should fail}}
+
+\zcheck[nextsec]{pn:sec:section-2}{this check should fail}
+\postnote{\zcheck[nextsec]{pn:sec:section-2}{this check should fail}}
+
+\zcheck[nextsec]{sec:section-3}{this check should fail}
+\postnote{\zcheck[nextsec]{sec:section-3}{this check should fail}}
+
+\zcheck[nextsec]{pn:sec:section-3}{this check should fail}
+\postnote{\zcheck[nextsec]{pn:sec:section-3}{this check should fail}}
+\ENDTEST
+
+
+\OMIT
+\clearpage{}
+\TIMO
+
+\BEGINTEST{Print zref-check}
+\printpostnotes
+\ENDTEST
+
+\OMIT
+
+\end{document}

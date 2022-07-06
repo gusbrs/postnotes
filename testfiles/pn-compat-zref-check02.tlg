@@ -1,0 +1,252 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: Section 1: thissec
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'txt:target-0' on page 1.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'sec:section-2' on page 1.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'pn:sec:section-2' on page 1.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'sec:section-3' on page 1.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'pn:sec:section-3' on page 1.
+============================================================
+============================================================
+TEST 2: Section 1: prevsec
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'txt:target-0' on page 1.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'sec:section-1' on page 1.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'pn:sec:section-1' on page 1.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'sec:section-2' on page 1.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'pn:sec:section-2' on page 1.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'sec:section-3' on page 1.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'pn:sec:section-3' on page 1.
+============================================================
+============================================================
+TEST 3: Section 1: nextsec
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'txt:target-0' on page 1.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'sec:section-1' on page 1.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'pn:sec:section-1' on page 1.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'sec:section-3' on page 1.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'pn:sec:section-3' on page 1.
+============================================================
+============================================================
+TEST 4: Section 2: thissec
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'txt:target-0' on page 2.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'sec:section-1' on page 2.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'pn:sec:section-1' on page 2.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'sec:section-3' on page 2.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'pn:sec:section-3' on page 2.
+============================================================
+============================================================
+TEST 5: Section 2: prevsec
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'txt:target-0' on page 2.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'sec:section-2' on page 2.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'pn:sec:section-2' on page 2.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'sec:section-3' on page 2.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'pn:sec:section-3' on page 2.
+============================================================
+============================================================
+TEST 6: Section 2: nextsec
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'txt:target-0' on page 2.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'sec:section-1' on page 2.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'pn:sec:section-1' on page 2.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'sec:section-2' on page 2.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'pn:sec:section-2' on page 2.
+============================================================
+============================================================
+TEST 7: Section 3: thissec
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'txt:target-0' on page 3.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'sec:section-1' on page 3.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'pn:sec:section-1' on page 3.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'sec:section-2' on page 3.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'pn:sec:section-2' on page 3.
+============================================================
+============================================================
+TEST 8: Section 3: prevsec
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'txt:target-0' on page 3.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'sec:section-1' on page 3.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'pn:sec:section-1' on page 3.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'sec:section-3' on page 3.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'pn:sec:section-3' on page 3.
+============================================================
+============================================================
+TEST 9: Section 3: nextsec
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'txt:target-0' on page 3.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'sec:section-1' on page 3.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'pn:sec:section-1' on page 3.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'sec:section-2' on page 3.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'pn:sec:section-2' on page 3.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'sec:section-3' on page 3.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'pn:sec:section-3' on page 3.
+============================================================
+============================================================
+TEST 10: Print zref-check
+============================================================
+[4
+]
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'txt:target-0' on page 5.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'sec:section-2' on page 5.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'pn:sec:section-2' on page 5.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'sec:section-3' on page 5.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'pn:sec:section-3' on page 5.
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'txt:target-0' on page 5.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'sec:section-1' on page 5.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'pn:sec:section-1' on page 5.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'sec:section-2' on page 5.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'pn:sec:section-2' on page 5.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'sec:section-3' on page 5.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'pn:sec:section-3' on page 5.
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'txt:target-0' on page 5.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'sec:section-1' on page 5.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'pn:sec:section-1' on page 5.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'sec:section-3' on page 5.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'pn:sec:section-3' on page 5.
+============================================================
+[5
+]
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'txt:target-0' on page 6.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'sec:section-1' on page 6.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'pn:sec:section-1' on page 6.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'sec:section-3' on page 6.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'pn:sec:section-3' on page 6.
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'txt:target-0' on page 6.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'sec:section-2' on page 6.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'pn:sec:section-2' on page 6.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'sec:section-3' on page 6.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'pn:sec:section-3' on page 6.
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'txt:target-0' on page 6.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'sec:section-1' on page 6.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'pn:sec:section-1' on page 6.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'sec:section-2' on page 6.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'pn:sec:section-2' on page 6.
+============================================================
+[6
+]
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'txt:target-0' on page 7.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'sec:section-1' on page 7.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'pn:sec:section-1' on page 7.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'sec:section-2' on page 7.
+Package zref-check Warning: Check failed on line .... Failed check 'thissec'
+(zref-check)                for label 'pn:sec:section-2' on page 7.
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'txt:target-0' on page 7.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'sec:section-1' on page 7.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'pn:sec:section-1' on page 7.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'sec:section-3' on page 7.
+Package zref-check Warning: Check failed on line .... Failed check 'prevsec'
+(zref-check)                for label 'pn:sec:section-3' on page 7.
+============================================================
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'txt:target-0' on page 7.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'sec:section-1' on page 7.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'pn:sec:section-1' on page 7.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'sec:section-2' on page 7.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'pn:sec:section-2' on page 7.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'sec:section-3' on page 7.
+Package zref-check Warning: Check failed on line .... Failed check 'nextsec'
+(zref-check)                for label 'pn:sec:section-3' on page 7.
+============================================================

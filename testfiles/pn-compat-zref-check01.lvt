@@ -1,0 +1,267 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+\AddToHook{cmd/chapter/before}{%
+  \postnotesection{\clearpage{}\section*{Notes to chapter \pnthechapternextnote}}}
+
+\usepackage{zref-check}
+
+\begin{document}
+
+\zctarget{txt:target-0}{Lorem ipsum}
+
+\chapter{Chapter 1}
+\zlabel{cha:chapter-1}
+\postnote{label\zlabel{pn:cha:chapter-1}}
+
+\START
+
+\BEGINTEST{Chapter 1: thischap}
+\zcheck[thischap]{txt:target-0}{this check should fail}
+\postnote{\zcheck[thischap]{txt:target-0}{this check should fail}}
+
+\zcheck[thischap]{cha:chapter-1}{this check should pass}
+\postnote{\zcheck[thischap]{cha:chapter-1}{this check should pass}}
+
+\zcheck[thischap]{pn:cha:chapter-1}{this check should pass}
+\postnote{\zcheck[thischap]{pn:cha:chapter-1}{this check should pass}}
+
+\zcheck[thischap]{cha:chapter-2}{this check should fail}
+\postnote{\zcheck[thischap]{cha:chapter-2}{this check should fail}}
+
+\zcheck[thischap]{pn:cha:chapter-2}{this check should fail}
+\postnote{\zcheck[thischap]{pn:cha:chapter-2}{this check should fail}}
+
+\zcheck[thischap]{cha:chapter-3}{this check should fail}
+\postnote{\zcheck[thischap]{cha:chapter-3}{this check should fail}}
+
+\zcheck[thischap]{pn:cha:chapter-3}{this check should fail}
+\postnote{\zcheck[thischap]{pn:cha:chapter-3}{this check should fail}\SEPARATOR}
+\ENDTEST
+
+
+\BEGINTEST{Chapter 1: prevchap}
+\zcheck[prevchap]{txt:target-0}{this check should fail}
+\postnote{\zcheck[prevchap]{txt:target-0}{this check should fail}}
+
+\zcheck[prevchap]{cha:chapter-1}{this check should fail}
+\postnote{\zcheck[prevchap]{cha:chapter-1}{this check should fail}}
+
+\zcheck[prevchap]{pn:cha:chapter-1}{this check should fail}
+\postnote{\zcheck[prevchap]{pn:cha:chapter-1}{this check should fail}}
+
+\zcheck[prevchap]{cha:chapter-2}{this check should fail}
+\postnote{\zcheck[prevchap]{cha:chapter-2}{this check should fail}}
+
+\zcheck[prevchap]{pn:cha:chapter-2}{this check should fail}
+\postnote{\zcheck[prevchap]{pn:cha:chapter-2}{this check should fail}}
+
+\zcheck[prevchap]{cha:chapter-3}{this check should fail}
+\postnote{\zcheck[prevchap]{cha:chapter-3}{this check should fail}}
+
+\zcheck[prevchap]{pn:cha:chapter-3}{this check should fail}
+\postnote{\zcheck[prevchap]{pn:cha:chapter-3}{this check should fail}\SEPARATOR}
+\ENDTEST
+
+
+\BEGINTEST{Chapter 1: nextchap}
+\zcheck[nextchap]{txt:target-0}{this check should fail}
+\postnote{\zcheck[nextchap]{txt:target-0}{this check should fail}}
+
+\zcheck[nextchap]{cha:chapter-1}{this check should fail}
+\postnote{\zcheck[nextchap]{cha:chapter-1}{this check should fail}}
+
+\zcheck[nextchap]{pn:cha:chapter-1}{this check should fail}
+\postnote{\zcheck[nextchap]{pn:cha:chapter-1}{this check should fail}}
+
+\zcheck[nextchap]{cha:chapter-2}{this check should pass}
+\postnote{\zcheck[nextchap]{cha:chapter-2}{this check should pass}}
+
+\zcheck[nextchap]{pn:cha:chapter-2}{this check should pass}
+\postnote{\zcheck[nextchap]{pn:cha:chapter-2}{this check should pass}}
+
+\zcheck[nextchap]{cha:chapter-3}{this check should fail}
+\postnote{\zcheck[nextchap]{cha:chapter-3}{this check should fail}}
+
+\zcheck[nextchap]{pn:cha:chapter-3}{this check should fail}
+\postnote{\zcheck[nextchap]{pn:cha:chapter-3}{this check should fail}\SEPARATOR}
+\ENDTEST
+
+
+\OMIT
+\chapter{Chapter 2}
+\zlabel{cha:chapter-2}
+\postnote{label\zlabel{pn:cha:chapter-2}}
+\TIMO
+
+
+\BEGINTEST{Chapter 2: thischap}
+\zcheck[thischap]{txt:target-0}{this check should fail}
+\postnote{\zcheck[thischap]{txt:target-0}{this check should fail}}
+
+\zcheck[thischap]{cha:chapter-1}{this check should fail}
+\postnote{\zcheck[thischap]{cha:chapter-1}{this check should fail}}
+
+\zcheck[thischap]{pn:cha:chapter-1}{this check should fail}
+\postnote{\zcheck[thischap]{pn:cha:chapter-1}{this check should fail}}
+
+\zcheck[thischap]{cha:chapter-2}{this check should pass}
+\postnote{\zcheck[thischap]{cha:chapter-2}{this check should pass}}
+
+\zcheck[thischap]{pn:cha:chapter-2}{this check should pass}
+\postnote{\zcheck[thischap]{pn:cha:chapter-2}{this check should pass}}
+
+\zcheck[thischap]{cha:chapter-3}{this check should fail}
+\postnote{\zcheck[thischap]{cha:chapter-3}{this check should fail}}
+
+\zcheck[thischap]{pn:cha:chapter-3}{this check should fail}
+\postnote{\zcheck[thischap]{pn:cha:chapter-3}{this check should fail}\SEPARATOR}
+\ENDTEST
+
+
+\BEGINTEST{Chapter 2: prevchap}
+\zcheck[prevchap]{txt:target-0}{this check should fail}
+\postnote{\zcheck[prevchap]{txt:target-0}{this check should fail}}
+
+\zcheck[prevchap]{cha:chapter-1}{this check should pass}
+\postnote{\zcheck[prevchap]{cha:chapter-1}{this check should pass}}
+
+\zcheck[prevchap]{pn:cha:chapter-1}{this check should pass}
+\postnote{\zcheck[prevchap]{pn:cha:chapter-1}{this check should pass}}
+
+\zcheck[prevchap]{cha:chapter-2}{this check should fail}
+\postnote{\zcheck[prevchap]{cha:chapter-2}{this check should fail}}
+
+\zcheck[prevchap]{pn:cha:chapter-2}{this check should fail}
+\postnote{\zcheck[prevchap]{pn:cha:chapter-2}{this check should fail}}
+
+\zcheck[prevchap]{cha:chapter-3}{this check should fail}
+\postnote{\zcheck[prevchap]{cha:chapter-3}{this check should fail}}
+
+\zcheck[prevchap]{pn:cha:chapter-3}{this check should fail}
+\postnote{\zcheck[prevchap]{pn:cha:chapter-3}{this check should fail}\SEPARATOR}
+\ENDTEST
+
+
+\BEGINTEST{Chapter 2: nextchap}
+\zcheck[nextchap]{txt:target-0}{this check should fail}
+\postnote{\zcheck[nextchap]{txt:target-0}{this check should fail}}
+
+\zcheck[nextchap]{cha:chapter-1}{this check should fail}
+\postnote{\zcheck[nextchap]{cha:chapter-1}{this check should fail}}
+
+\zcheck[nextchap]{pn:cha:chapter-1}{this check should fail}
+\postnote{\zcheck[nextchap]{pn:cha:chapter-1}{this check should fail}}
+
+\zcheck[nextchap]{cha:chapter-2}{this check should fail}
+\postnote{\zcheck[nextchap]{cha:chapter-2}{this check should fail}}
+
+\zcheck[nextchap]{pn:cha:chapter-2}{this check should fail}
+\postnote{\zcheck[nextchap]{pn:cha:chapter-2}{this check should fail}}
+
+\zcheck[nextchap]{cha:chapter-3}{this check should pass}
+\postnote{\zcheck[nextchap]{cha:chapter-3}{this check should pass}}
+
+\zcheck[nextchap]{pn:cha:chapter-3}{this check should pass}
+\postnote{\zcheck[nextchap]{pn:cha:chapter-3}{this check should pass}\SEPARATOR}
+\ENDTEST
+
+
+\OMIT
+\chapter{Chapter 3}
+\zlabel{cha:chapter-3}
+\postnote{label\zlabel{pn:cha:chapter-3}}
+\TIMO
+
+
+\BEGINTEST{Chapter 3: thischap}
+\zcheck[thischap]{txt:target-0}{this check should fail}
+\postnote{\zcheck[thischap]{txt:target-0}{this check should fail}}
+
+\zcheck[thischap]{cha:chapter-1}{this check should fail}
+\postnote{\zcheck[thischap]{cha:chapter-1}{this check should fail}}
+
+\zcheck[thischap]{pn:cha:chapter-1}{this check should fail}
+\postnote{\zcheck[thischap]{pn:cha:chapter-1}{this check should fail}}
+
+\zcheck[thischap]{cha:chapter-2}{this check should fail}
+\postnote{\zcheck[thischap]{cha:chapter-2}{this check should fail}}
+
+\zcheck[thischap]{pn:cha:chapter-2}{this check should fail}
+\postnote{\zcheck[thischap]{pn:cha:chapter-2}{this check should fail}}
+
+\zcheck[thischap]{cha:chapter-3}{this check should pass}
+\postnote{\zcheck[thischap]{cha:chapter-3}{this check should pass}}
+
+\zcheck[thischap]{pn:cha:chapter-3}{this check should pass}
+\postnote{\zcheck[thischap]{pn:cha:chapter-3}{this check should pass}\SEPARATOR}
+\ENDTEST
+
+
+\BEGINTEST{Chapter 3: prevchap}
+\zcheck[prevchap]{txt:target-0}{this check should fail}
+\postnote{\zcheck[prevchap]{txt:target-0}{this check should fail}}
+
+\zcheck[prevchap]{cha:chapter-1}{this check should fail}
+\postnote{\zcheck[prevchap]{cha:chapter-1}{this check should fail}}
+
+\zcheck[prevchap]{pn:cha:chapter-1}{this check should fail}
+\postnote{\zcheck[prevchap]{pn:cha:chapter-1}{this check should fail}}
+
+\zcheck[prevchap]{cha:chapter-2}{this check should pass}
+\postnote{\zcheck[prevchap]{cha:chapter-2}{this check should pass}}
+
+\zcheck[prevchap]{pn:cha:chapter-2}{this check should pass}
+\postnote{\zcheck[prevchap]{pn:cha:chapter-2}{this check should pass}}
+
+\zcheck[prevchap]{cha:chapter-3}{this check should fail}
+\postnote{\zcheck[prevchap]{cha:chapter-3}{this check should fail}}
+
+\zcheck[prevchap]{pn:cha:chapter-3}{this check should fail}
+\postnote{\zcheck[prevchap]{pn:cha:chapter-3}{this check should fail}\SEPARATOR}
+\ENDTEST
+
+
+\BEGINTEST{Chapter 3: nextchap}
+\zcheck[nextchap]{txt:target-0}{this check should fail}
+\postnote{\zcheck[nextchap]{txt:target-0}{this check should fail}}
+
+\zcheck[nextchap]{cha:chapter-1}{this check should fail}
+\postnote{\zcheck[nextchap]{cha:chapter-1}{this check should fail}}
+
+\zcheck[nextchap]{pn:cha:chapter-1}{this check should fail}
+\postnote{\zcheck[nextchap]{pn:cha:chapter-1}{this check should fail}}
+
+\zcheck[nextchap]{cha:chapter-2}{this check should fail}
+\postnote{\zcheck[nextchap]{cha:chapter-2}{this check should fail}}
+
+\zcheck[nextchap]{pn:cha:chapter-2}{this check should fail}
+\postnote{\zcheck[nextchap]{pn:cha:chapter-2}{this check should fail}}
+
+\zcheck[nextchap]{cha:chapter-3}{this check should fail}
+\postnote{\zcheck[nextchap]{cha:chapter-3}{this check should fail}}
+
+\zcheck[nextchap]{pn:cha:chapter-3}{this check should fail}
+\postnote{\zcheck[nextchap]{pn:cha:chapter-3}{this check should fail}}
+\ENDTEST
+
+
+\OMIT
+\cleardoublepage{}
+\TIMO
+
+\BEGINTEST{Print zref-check}
+\printpostnotes
+\ENDTEST
+
+\OMIT
+
+\end{document}
