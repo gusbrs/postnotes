@@ -1,6 +1,11 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.3...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.4...HEAD)
+
+## [v0.1.4](https://github.com/gusbrs/postnotes/compare/v0.1.3...v0.1.4) (2022-07-06)
+
+### Added
+- `zref-check` support.
 
 ## [v0.1.3](https://github.com/gusbrs/postnotes/compare/v0.1.2...v0.1.3) (2022-05-28)
 
