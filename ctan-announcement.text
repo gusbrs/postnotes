@@ -1,5 +1,5 @@
-## v0.1.4 (2022-07-06)
+## v0.1.5 (2022-07-07)
 
-### Added
-- `zref-check` support.
+### Fixed
+- Recompiled documentation with workaround for upstream `l3doc` bug.
 
