@@ -2,6 +2,9 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.4...HEAD)
 
+### Fixed
+- Recompiled documentation with workaround for upstream `l3doc` bug.
+
 ## [v0.1.4](https://github.com/gusbrs/postnotes/compare/v0.1.3...v0.1.4) (2022-07-06)
 
 ### Added
