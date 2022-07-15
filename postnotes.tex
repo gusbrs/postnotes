@@ -156,17 +156,13 @@
 \makeatother
 \ExplSyntaxOff
 
+\setlength{\marginparsep}{2\labelsep}
+
 \NewDocumentCommand\opt{m}{\texttt{#1}}
 % Temporary workaround for 'l3doc' bug.
 % https://github.com/latex3/latex3/issues/1111
 % FIXME Remove when fixed upstream.
-\NewDocElement[
-  macrolike = false ,
-  printtype = \textit{opt.} ,
-]{Option}{optiondesc}
-\NewDocElement[
-  macrolike = true ,
-]{UserMacro}{usermacro}
+\NewDocElement[macrolike=false]{Option}{option}
 
 \begin{document}
 
@@ -331,7 +327,7 @@ receives options and values in \texttt{key=value} fashion.
 \bigskip{}
 
 \DescribeOption{heading} %
-\DescribeUserMacro{\pnheading} %
+\DescribeMacro{\pnheading} %
 The \opt{heading} option sets the heading for the printed notes or, more
 generally put, that which is printed at the beginning of \cs{printpostnotes}.
 Its default value depends on the document class in use.  If \cs{chapter} is
@@ -374,7 +370,7 @@ different than the defaults.
 
 \DescribeOption{makemark} %
 \DescribeOption{maketextmark} %
-\DescribeUserMacro{\pnthepage} %
+\DescribeMacro{\pnthepage} %
 The \opt{makemark} and \opt{maketextmark} options control how the mark is to
 be typeset, at the point \cs{postnote} is called and at the point the note's
 text is printed at \cs{printpostnotes}, respectively.  They both can receive
@@ -530,10 +526,10 @@ case, but be able to override it manually for an occasional unnumbered one.
 For this reason, a more semantic name was chosen for it, instead of the
 generic ``add to''.
 
-\DescribeUserMacro{\pnthechapter} %
-\DescribeUserMacro{\pnthesection} %
-\DescribeUserMacro{\pnthechapternextnote} %
-\DescribeUserMacro{\pnthesectionnextnote} %
+\DescribeMacro{\pnthechapter} %
+\DescribeMacro{\pnthesection} %
+\DescribeMacro{\pnthechapternextnote} %
+\DescribeMacro{\pnthesectionnextnote} %
 Just like with \cs{postnote}, the contents of \cs{postnotesection} are not
 expanded in place, but rather stored with ``no manipulation'' to be typeset
 later at \cs{printpostnotes}.  For this reason, some contextual information is
@@ -689,14 +685,14 @@ part of the definition:
 \ExplSyntaxOff
 \end{pnsnippet}
 
-\DescribeUserMacro{\pnhdpagefirst} %
-\DescribeUserMacro{\pnhdpagelast} %
-\DescribeUserMacro{\pnhdchapfirst} %
-\DescribeUserMacro{\pnhdchaplast} %
-\DescribeUserMacro{\pnhdsectfirst} %
-\DescribeUserMacro{\pnhdsectlast} %
-\DescribeUserMacro{\pnhdnamefirst} %
-\DescribeUserMacro{\pnhdnamelast} %
+\DescribeMacro{\pnhdpagefirst} %
+\DescribeMacro{\pnhdpagelast} %
+\DescribeMacro{\pnhdchapfirst} %
+\DescribeMacro{\pnhdchaplast} %
+\DescribeMacro{\pnhdsectfirst} %
+\DescribeMacro{\pnhdsectlast} %
+\DescribeMacro{\pnhdnamefirst} %
+\DescribeMacro{\pnhdnamelast} %
 \cs{pnhdpagefirst} and \cs{pnhdpagelast} store the value of \cs{thepage} for
 the first and the last notes (where these notes were originally placed) of the
 current page (at the point they are being printed).  These variables are
@@ -820,10 +816,10 @@ places, etc.
 \section{Localization}
 \zlabel{sec:localization}
 
-\DescribeUserMacro{\pntitle} %
-\DescribeUserMacro{\pnhdnotes} %
-\DescribeUserMacro{\pnhdtopage} %
-\DescribeUserMacro{\pnhdtopages} %
+\DescribeMacro{\pntitle} %
+\DescribeMacro{\pnhdnotes} %
+\DescribeMacro{\pnhdtopage} %
+\DescribeMacro{\pnhdtopages} %
 \pkg{postnotes} uses a few localized strings, stored in the variables
 \cs{pntitle}, \cs{pnhdnotes}, \cs{pnhdtopage}, and \cs{pnhdtopages}.  The
 first one is used in the default value of the \opt{heading} option and
