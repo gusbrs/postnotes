@@ -26,7 +26,6 @@
 \DeclareRefcontext{rcthree}{sorting=nty}
 
 \usepackage{postnotes}
-\counterwithin*{postnote}{chapter}
 
 \usepackage{hyperref}
 
