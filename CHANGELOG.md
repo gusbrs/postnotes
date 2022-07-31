@@ -2,6 +2,10 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.5...HEAD)
 
+### Removed
+- Withdraw experimental attempt to support `biblatex`'s `refsegment`s and
+  `refcontext`s until upstream support is available.
+
 ## [v0.1.5](https://github.com/gusbrs/postnotes/compare/v0.1.4...v0.1.5) (2022-07-07)
 
 ### Fixed

@@ -31,6 +31,10 @@ function runtest_tasks(name, run)
   end
 end
 
+-- Disable biblatex related tests until proper support for 'refsections',
+-- 'refsegments' and 'refcontexts' can be made available.
+excludetests = {"pn-biblatex-*"}
+
 -- Use UTF-8 logs for all engines
 asciiengines = {}
 
