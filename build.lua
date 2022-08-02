@@ -31,9 +31,16 @@ function runtest_tasks(name, run)
   end
 end
 
--- Disable biblatex related tests until proper support for 'refsections',
--- 'refsegments' and 'refcontexts' can be made available.
-excludetests = {"pn-biblatex-*"}
+-- Disable biblatex related tests which use 'refsection', 'refsegment' or
+-- 'refcontext' until proper support for these features can be made available.
+excludetests = {
+  "pn-biblatex-10-references-per-section" ,
+  "pn-biblatex-12-references-by-segment" ,
+  "pn-biblatex-16-numeric-prefixed-1" ,
+  "pn-biblatex-17-numeric-prefixed-2" ,
+  "pn-biblatex-19-alphabetic-prefixed" ,
+  "pn-biblatex-94-labelprefix" ,
+}
 
 -- Use UTF-8 logs for all engines
 asciiengines = {}
