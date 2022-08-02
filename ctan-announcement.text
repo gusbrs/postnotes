@@ -1,5 +1,6 @@
-## v0.1.5 (2022-07-07)
+## v0.1.6 (2022-08-01)
 
-### Fixed
-- Recompiled documentation with workaround for upstream `l3doc` bug.
+### Removed
+- Withdraw experimental attempt to support `biblatex`'s `refsegment`s and
+  `refcontext`s until upstream support is available.
 

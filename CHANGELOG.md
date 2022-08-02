@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.5...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.6...HEAD)
+
+## [v0.1.6](https://github.com/gusbrs/postnotes/compare/v0.1.5...v0.1.6) (2022-08-01)
 
 ### Removed
 - Withdraw experimental attempt to support `biblatex`'s `refsegment`s and
