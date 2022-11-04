@@ -47,8 +47,6 @@ Completed box being shipped out [3]
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil, direction TLT
 ....\write1{\protect \selectlanguage *{english}}
 ....\write1{\@writefile{toc}{\protect \selectlanguage *{english}}}
-....\write1{\@writefile{lof}{\protect \selectlanguage *{english}}}
-....\write1{\@writefile{lot}{\protect \selectlanguage *{english}}}
 ....\write-{}
 ....\pdfdest name{chapter*.1} xyz
 ....\glue(\topskip) 10.0
@@ -211,8 +209,6 @@ Completed box being shipped out [5]
 ....\write-{}
 ....\write1{\protect \selectlanguage *{english}}
 ....\write1{\@writefile{toc}{\protect \selectlanguage *{english}}}
-....\write1{\@writefile{lof}{\protect \selectlanguage *{english}}}
-....\write1{\@writefile{lot}{\protect \selectlanguage *{english}}}
 ....\write-{}
 ....\pdfdest name{chapter*.2} xyz
 ....\glue(\topskip) 10.0
@@ -367,8 +363,6 @@ Completed box being shipped out [9]
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil, direction TLT
 ....\write1{\protect \selectlanguage *{portuguese}}
 ....\write1{\@writefile{toc}{\protect \selectlanguage *{portuguese}}}
-....\write1{\@writefile{lof}{\protect \selectlanguage *{portuguese}}}
-....\write1{\@writefile{lot}{\protect \selectlanguage *{portuguese}}}
 ....\write-{}
 ....\pdfdest name{chapter*.3} xyz
 ....\glue(\topskip) 10.0
@@ -523,8 +517,6 @@ Completed box being shipped out [13]
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil, direction TLT
 ....\write1{\protect \selectlanguage *{french}}
 ....\write1{\@writefile{toc}{\protect \selectlanguage *{french}}}
-....\write1{\@writefile{lof}{\protect \selectlanguage *{french}}}
-....\write1{\@writefile{lot}{\protect \selectlanguage *{french}}}
 ....\write-{}
 ....\pdfdest name{chapter*.4} xyz
 ....\glue(\topskip) 10.0
