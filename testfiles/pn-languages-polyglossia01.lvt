@@ -10,7 +10,7 @@
 
 \usepackage{polyglossia}
 \setmainlanguage{english}
-\setotherlanguages{portuguese,french}
+\setotherlanguages{portuguese,french,german}
 
 \usepackage{postnotes}
 \AddToHook{postnotes/print/begin}{\thispagestyle{headings}}
@@ -136,6 +136,35 @@ Foo.\postnote{Foo note.}
 \ENDTEST
 
 \BEGINTEST{vars french}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\OMIT
+
+\chapter{German}
+
+\TIMO
+
+Foo.\postnote{Foo note.}
+
+\OMIT
+
+\cleardoublepage{}
+
+\selectlanguage{german}
+
+\TIMO
+
+\BEGINTEST{Print german}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{vars german}
 \show\pntitle
 \show\pnhdnotes
 \show\pnhdtopage

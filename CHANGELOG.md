@@ -2,6 +2,10 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.6...HEAD)
 
+### Added
+- German localization (see issue
+  [#2](https://github.com/gusbrs/postnotes/issues/2)).
+
 ## [v0.1.6](https://github.com/gusbrs/postnotes/compare/v0.1.5...v0.1.6) (2022-08-01)
 
 ### Removed

@@ -8,6 +8,12 @@
 \ExplSyntaxOff
 
 \usepackage[
+  german,
+  ngerman,
+  austrian,
+  naustrian,
+  swissgerman,
+  nswissgerman,
   french,
   acadian,
   canadien,
@@ -259,6 +265,80 @@ Foo.\postnote{Foo note.}
 \selectlanguage{canadien}
 
 \BEGINTEST{vars canadien}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\OMIT
+
+\chapter{German}
+
+\TIMO
+
+Foo.\postnote{Foo note.}
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\selectlanguage{ngerman}
+
+\BEGINTEST{Print ngerman}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{vars ngerman}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{german}
+
+\BEGINTEST{vars german}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{austrian}
+
+\BEGINTEST{vars austrian}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{naustrian}
+
+\BEGINTEST{vars naustrian}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{swissgerman}
+
+\BEGINTEST{vars swissgerman}
+\show\pntitle
+\show\pnhdnotes
+\show\pnhdtopage
+\show\pnhdtopages
+\ENDTEST
+
+\selectlanguage{nswissgerman}
+
+\BEGINTEST{vars nswissgerman}
 \show\pntitle
 \show\pnhdnotes
 \show\pnhdtopage

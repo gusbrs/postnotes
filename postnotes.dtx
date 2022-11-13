@@ -2640,7 +2640,8 @@
 %
 % \subsection*{French}
 %
-% French localization validated by \texttt{Pika78} at \githubissue{1}.
+% French localization validated by \contributor{\texttt{Pika78}} at
+% \githubissue{1}.
 %
 %    \begin{macrocode}
 \@@_define_language:nn { french }
@@ -2656,6 +2657,29 @@
 \@@_set_babel_language:nn { francais } { french }
 \@@_set_babel_language:nn { frenchb }  { french }
 \@@_set_polyglossia_language:nn { french } { french }
+%    \end{macrocode}
+%
+%
+% \subsection*{German}
+%
+% German localization provided by \contributor{Herbert Voß} at
+% \githubissue{2}.
+%
+%    \begin{macrocode}
+\@@_define_language:nn { german }
+  {
+    \tl_set:Nn \pntitle     { Endnoten }
+    \tl_set:Nn \pnhdnotes   { Endnoten }
+    \tl_set:Nn \pnhdtopage  { zu~Seite }
+    \tl_set:Nn \pnhdtopages { zu~Seiten }
+  }
+\@@_set_babel_language:nn { german }       { german }
+\@@_set_babel_language:nn { ngerman }      { german }
+\@@_set_babel_language:nn { austrian }     { german }
+\@@_set_babel_language:nn { naustrian }    { german }
+\@@_set_babel_language:nn { swissgerman }  { german }
+\@@_set_babel_language:nn { nswissgerman } { german }
+\@@_set_polyglossia_language:nn { german } { german }
 %    \end{macrocode}
 %
 %
