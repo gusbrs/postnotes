@@ -1,6 +1,6 @@
-## v0.1.6 (2022-08-01)
+## v0.1.7 (2022-11-13)
 
-### Removed
-- Withdraw experimental attempt to support `biblatex`'s `refsegment`s and
-  `refcontext`s until upstream support is available.
+### Added
+- German localization (see issue
+  [#2](https://github.com/gusbrs/postnotes/issues/2)).
 

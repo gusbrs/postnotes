@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.6...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.7...HEAD)
+
+## [v0.1.7](https://github.com/gusbrs/postnotes/compare/v0.1.6...v0.1.7) (2022-11-13)
 
 ### Added
 - German localization (see issue
