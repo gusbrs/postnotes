@@ -16,9 +16,6 @@
   nswissgerman,
   french,
   acadian,
-  canadien,
-  % francais, % error in loading, and is deprecated by babel, just loads french.ldf
-  % frenchb, % error in loading, and is deprecated by babel, just loads french.ldf
   portuguese,
   brazilian,
   portuges,
@@ -256,15 +253,6 @@ Foo.\postnote{Foo note.}
 \selectlanguage{acadian}
 
 \BEGINTEST{vars acadian}
-\show\pntitle
-\show\pnhdnotes
-\show\pnhdtopage
-\show\pnhdtopages
-\ENDTEST
-
-\selectlanguage{canadien}
-
-\BEGINTEST{vars canadien}
 \show\pntitle
 \show\pnhdnotes
 \show\pnhdtopage

@@ -2643,6 +2643,10 @@
 % French localization validated by \contributor{\texttt{Pika78}} at
 % \githubissue{1}.
 %
+% \pkg{babel-french} also has \file{.ldf}s for \texttt{francais},
+% \texttt{frenchb}, and \texttt{canadien}, but they are deprecated as options
+% and, if used, they fall back to either \texttt{french} or \texttt{acadian}.
+%
 %    \begin{macrocode}
 \@@_define_language:nn { french }
   {
@@ -2651,11 +2655,8 @@
     \tl_set:Nn \pnhdtopage  { de~la~page }
     \tl_set:Nn \pnhdtopages { des~pages }
   }
-\@@_set_babel_language:nn { french }   { french }
-\@@_set_babel_language:nn { acadian }  { french }
-\@@_set_babel_language:nn { canadien } { french }
-\@@_set_babel_language:nn { francais } { french }
-\@@_set_babel_language:nn { frenchb }  { french }
+\@@_set_babel_language:nn { french }  { french }
+\@@_set_babel_language:nn { acadian } { french }
 \@@_set_polyglossia_language:nn { french } { french }
 %    \end{macrocode}
 %
@@ -2664,6 +2665,10 @@
 %
 % German localization provided by \contributor{Herbert Voß} at
 % \githubissue{2}.
+%
+% \pkg{babel-german} also has \file{.ldf}s for \texttt{germanb} and
+% \texttt{ngermanb}, but they are deprecated as options and, if used, they
+% fall back respectively to \texttt{german} and \texttt{ngerman}.
 %
 %    \begin{macrocode}
 \@@_define_language:nn { german }
