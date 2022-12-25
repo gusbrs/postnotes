@@ -65,8 +65,8 @@
 % \NewDocumentCommand\githubPR{m}{^^A
 %   PR~\href{https://github.com/gusbrs/postnotes/pull/#1}{\##1}}
 %
-% ^^A Currently just for keeping semantic markup on this.
 % \NewDocumentCommand\contributor{m}{#1}
+% \NewDocumentCommand\username{m}{`\texttt{#1}'}
 %
 % \NewDocumentCommand\opt{m}{\texttt{#1}}
 %
@@ -2640,7 +2640,7 @@
 %
 % \subsection*{French}
 %
-% French localization validated by \contributor{\texttt{Pika78}} at
+% French localization validated by \contributor{\username{Pika78}} at
 % \githubissue{1}.
 %
 % \pkg{babel-french} also has \file{.ldf}s for \texttt{francais},
