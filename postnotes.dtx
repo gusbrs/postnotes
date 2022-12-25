@@ -2389,7 +2389,12 @@
 % \cs{textnormal}, \cs{textup}, etc.) in inline math environments is not
 % supported.  If a note really needs to be there, one can use the \opt{nomark}
 % option and \cs{postnoteref}.  Things should work in text mode and in display
-% style.
+% style.  For some related discussion with regard to footnotes,
+% see \url{https://tex.stackexchange.com/a/82820} and, in particular, Barbara
+% Beeton's comment: ``This is certainly bravura code.  I do hope it doesn't
+% result in a request to add \cs{footnote} capabilities to \pkg{amsmath}'s
+% multi-line display facilities.  (The answer will almost certainly be "no".
+% We agree with Kopka \& Daly.)''
 %    \begin{macrocode}
     \AddToHook { postnotes/note/begin } [ postnotes ]
       {
