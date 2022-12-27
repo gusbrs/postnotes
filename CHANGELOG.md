@@ -5,10 +5,12 @@
 ### Added
 - `\postnote` option `markstr`, which can receive a string as value, and does
   not set `sortnum`.
+- `\postnotesection` option `exp`, to expand the contents in place.
 
 ### Changed
 - To simplify user input, `\postnote` option `mark` now requires a number as
   value, but it also sets `sortnum`.
+- `\postnotesectionx` is deprecated in favor of the new `exp` option.
 
 ## [v0.1.7](https://github.com/gusbrs/postnotes/compare/v0.1.6...v0.1.7) (2022-11-13)
 

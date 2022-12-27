@@ -15,7 +15,7 @@
 \begin{document}
 
 \section{First section}
-\postnotesectionx{\noexpand\subsection*{Notes to section \thesection}}
+\postnotesection[exp]{\noexpand\subsection*{Notes to section \thesection}}
 
 \textsuperscript{avoid font warning}
 
@@ -36,7 +36,7 @@ Bar.%
 \OMIT
 
 \section{Second section}
-\postnotesectionx{\noexpand\subsection*{Notes to section \thesection}}
+\postnotesection[exp]{\noexpand\subsection*{Notes to section \thesection}}
 \setcounter{postnote}{0}
 
 \TIMO

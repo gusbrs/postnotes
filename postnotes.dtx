@@ -233,6 +233,7 @@
       { \thesection }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
   }
+\cs_generate_variant:Nn \@@_store_section:nn { nx }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1084,7 +1085,16 @@
 \NewDocumentCommand \postnotesection { O { } +m }
   { \@@_section:nn {#1} {#2} }
 \NewDocumentCommand \postnotesectionx { O { } +m }
-  { \@@_section:nx {#1} {#2} }
+  {
+    % NOTE Command deprecated in 2022-12-27 for v0.2.0.
+    \msg_warning:nn { postnotes } { postnotesectionx-deprecated }
+    \postnotesection [ #1 , exp ] {#2}
+  }
+\msg_new:nnn { postnotes } { postnotesectionx-deprecated }
+  {
+    '\iow_char:N\\postnotesectionx'~is~deprecated~\msg_line_context:.~
+    Use~the~'exp'~option~of~'\iow_char:N\\postnotesection'~instead.
+  }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1103,10 +1113,11 @@
     \seq_gput_right:Nx \g_@@_queue_seq { \l_@@_note_id_tl }
     \tl_gclear:N \g_@@_section_name_tl
     \keys_set:nn { postnotes/section } {#1}
-    \@@_store_section:nn { \l_@@_note_id_tl } {#2}
+    \bool_if:NTF \l_@@_section_exp_bool
+      { \@@_store_section:nx { \l_@@_note_id_tl } {#2} }
+      { \@@_store_section:nn { \l_@@_note_id_tl } {#2} }
     \group_end:
   }
-\cs_generate_variant:Nn \@@_section:nn { nx }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1117,10 +1128,14 @@
 %
 %    \begin{macrocode}
 \tl_new:N \g_@@_section_name_tl
+\bool_new:N \l_@@_section_exp_bool
 \keys_define:nn { postnotes/section }
   {
     name .tl_gset:N = \g_@@_section_name_tl ,
     name .value_required:n = true ,
+    exp .bool_set:N = \l_@@_section_exp_bool ,
+    exp .initial:n = false ,
+    exp .default:n = true ,
   }
 %    \end{macrocode}
 %

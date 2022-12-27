@@ -282,10 +282,7 @@ for making notes subdivisions, and it places \meta{text} between the notes
 where it occurs, at the point the notes are printed by \cs{printpostnotes}.
 For more details and some examples, see \zcref{sec:notes-sections}.  Its
 \meta{options} are presented in \zcref{sec:options},
-\zcref[ref=title,noname]{sec:section-options}.  A \cs{postnotesectionx} is
-also provided which expands \meta{text} in place (\texttt{x}-type expansion)
-before storing it (differently from \cs{postnotesection} which stores
-\meta{text} with ``no manipulation'').
+\zcref[ref=title,noname]{sec:section-options}.
 
 \begin{function}{\printpostnotes}
   \begin{syntax}
@@ -503,6 +500,13 @@ available for the first and last note on a given page through the variables
 \cs{pnhdnamefirst} and \cs{pnhdnamelast} at the moment the header of the page
 is typeset.  For details on how to use these variables, see
 \zcref{sec:headers}.
+
+\DescribeOption{exp} %
+By default, \cs{postnotesection} stores its \meta{text} argument with ``no
+manipulation''.  The \opt{exp} option allows one to fully expand
+(\texttt{x}-type expansion) \meta{text} in place before storing it.  It is a
+boolean option, and the option given with no value is equivalent to
+\texttt{exp=true}.
 
 
 \section{Notes sections}

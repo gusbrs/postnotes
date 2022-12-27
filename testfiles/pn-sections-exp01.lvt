@@ -14,7 +14,7 @@
 \begin{document}
 
 \chapter{First chapter}
-\postnotesectionx{\noexpand\section*{Notes to chapter \thechapter}}
+\postnotesection[exp]{\noexpand\section*{Notes to chapter \thechapter}}
 
 \textsuperscript{avoid font warning}
 
@@ -35,7 +35,7 @@ Bar.%
 \OMIT
 
 \chapter{Second chapter}
-\postnotesectionx{\noexpand\section*{Notes to chapter \thechapter}}
+\postnotesection[exp]{\noexpand\section*{Notes to chapter \thechapter}}
 \setcounter{postnote}{0}
 
 \TIMO
