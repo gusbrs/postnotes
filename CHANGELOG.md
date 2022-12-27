@@ -2,6 +2,14 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.7...HEAD)
 
+### Added
+- `\postnote` option `markstr`, which can receive a string as value, and does
+  not set `sortnum`.
+
+### Changed
+- To simplify user input, `\postnote` option `mark` now requires a number as
+  value, but it also sets `sortnum`.
+
 ## [v0.1.7](https://github.com/gusbrs/postnotes/compare/v0.1.6...v0.1.7) (2022-11-13)
 
 ### Added

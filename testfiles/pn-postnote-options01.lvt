@@ -19,14 +19,14 @@
 
 \START
 
-\BEGINTEST{mark}
+\BEGINTEST{markstr}
 Foo.%
-\setbox0=\hbox{\postnote[mark={1!}]{Foo note.}}%
+\setbox0=\hbox{\postnote[markstr={1!}]{Foo note.}}%
 \showbox0
 \box0
 
 Bar.%
-\setbox0=\hbox{\postnote[mark={2? sure?}]{Bar note.}}%
+\setbox0=\hbox{\postnote[markstr={2? sure?}]{Bar note.}}%
 \showbox0
 \box0
 \ENDTEST
@@ -35,7 +35,7 @@ Bar.%
 \cleardoublepage{}
 \TIMO
 
-\BEGINTEST{Print mark}
+\BEGINTEST{Print markstr}
 \showoutput
 \printpostnotes
 \newpage
@@ -43,12 +43,12 @@ Bar.%
 
 \BEGINTEST{sortnum}
 Foo.%
-\setbox0=\hbox{\postnote[mark={3?},sortnum=1.5]{Foo note.}}%
+\setbox0=\hbox{\postnote[markstr={3?},sortnum=1.5]{Foo note.}}%
 \showbox0
 \box0
 
 Bar.%
-\setbox0=\hbox{\postnote[mark={4!},sortnum=0.7]{Bar note.}}%
+\setbox0=\hbox{\postnote[markstr={4!},sortnum=0.7]{Bar note.}}%
 \showbox0
 \box0
 \ENDTEST
@@ -58,6 +58,28 @@ Bar.%
 \TIMO
 
 \BEGINTEST{Print sortnum}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{mark}
+Foo.%
+\setbox0=\hbox{\postnote[mark=35]{Foo note.}}%
+\showbox0
+\box0
+
+Bar.%
+\setbox0=\hbox{\postnote[mark=32]{Bar note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+\cleardoublepage{}
+\TIMO
+
+\BEGINTEST{Print mark}
 \showoutput
 \printpostnotes
 \newpage

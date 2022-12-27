@@ -898,16 +898,22 @@
 \bool_new:N \l_@@_maybe_multi_bool
 \keys_define:nn { postnotes/note }
   {
-    mark .tl_set:N = \l_@@_mark_tl ,
-    mark .value_required:n = true ,
-    nomark .bool_set:N = \l_@@_nomark_bool ,
-    nomark .default:n = true ,
+    markstr .tl_set:N = \l_@@_mark_tl ,
+    markstr .value_required:n = true ,
     sortnum .code:n =
       {
         \fp_set:Nn \l_@@_sort_num_fp {#1}
         \bool_set_true:N \l_@@_manual_sortnum_bool
       } ,
     sortnum .value_required:n = true ,
+    mark .meta:n =
+      {
+        markstr = {#1} ,
+        sortnum = {#1} ,
+      } ,
+    mark .value_required:n = true ,
+    nomark .bool_set:N = \l_@@_nomark_bool ,
+    nomark .default:n = true ,
     label .tl_set:N = \l_@@_note_label_tl ,
     label .value_required:n = true ,
   }

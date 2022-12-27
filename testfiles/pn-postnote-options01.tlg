@@ -1,7 +1,7 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 ============================================================
-TEST 1: mark
+TEST 1: markstr
 ============================================================
 > \box...=
 \hbox(8.49002+0.0)x6.75003
@@ -49,7 +49,7 @@ l. ...\showbox0
 l. ...\showbox0
 ============================================================
 ============================================================
-TEST 2: Print mark
+TEST 2: Print markstr
 ============================================================
 Completed box being shipped out [3]
 \vbox(627.36243+0.0)x380.0
@@ -382,31 +382,49 @@ Completed box being shipped out [5]
 .....\glue 0.0 plus 1.0fil
 ============================================================
 ============================================================
-TEST 5: nomark
+TEST 5: mark
 ============================================================
 > \box...=
-\hbox(0.0+0.0)x0.0
+\hbox(8.14003+0.0)x8.47226
 .\write1{\token_to_str:N \post@note {mark@5}{\thepage }}
+.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.5.mark} xyz
 ...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.5.text}
+.\hbox(8.14003+0.0)x8.47226
+..\mathon
+..\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+...\OT1/cmr/m/n/7 3
+...\OT1/cmr/m/n/7 5
+..\mathoff
+.\pdfendlink
 ! OK.
 l. ...\showbox0
 > \box...=
-\hbox(0.0+0.0)x0.0
+\hbox(8.14003+0.0)x8.47226
 .\write1{\token_to_str:N \post@note {mark@6}{\thepage }}
+.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.6.mark} xyz
 ...\penalty 10000
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.6.text}
+.\hbox(8.14003+0.0)x8.47226
+..\mathon
+..\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+...\OT1/cmr/m/n/7 3
+...\OT1/cmr/m/n/7 2
+..\mathoff
+.\pdfendlink
 ! OK.
 l. ...\showbox0
 ============================================================
 ============================================================
-TEST 6: Print nomark
+TEST 6: Print mark
 ============================================================
 Completed box being shipped out [7]
 \vbox(627.36243+0.0)x380.0
@@ -466,12 +484,49 @@ Completed box being shipped out [7]
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.85002
-....\hbox(6.14998+0.0)x345.0, glue set 287.4038fil
-.....\hbox(5.79999+0.0)x19.6944
+....\hbox(6.14998+0.0)x345.0, glue set 282.758fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.79999+0.0)x12.1944
+......\hbox(5.79999+0.0)x16.81937
+.......\glue 5.0
+.......\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\pdfdest name{postnote.6.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.6.mark}
+.......\OT1/cmr/m/n/9 3
+.......\OT1/cmr/m/n/9 2
+.......\OT1/cmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\OT1/cmr/m/n/9 B
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 r
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.85002
+....\hbox(6.14998+0.0)x345.0, glue set 282.77882fil
+.....\hbox(5.79999+0.0)x24.31937
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\write1{\token_to_str:N \post@note {text@5}{\int_use:N \c@page }}
 .......\penalty 10000
@@ -480,6 +535,136 @@ Completed box being shipped out [7]
 .........\pdfdest name{postnote.5.text} xyz
 .........\penalty 10000
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.5.mark}
+.......\OT1/cmr/m/n/9 3
+.......\OT1/cmr/m/n/9 5
+.......\OT1/cmr/m/n/9 .
+.......\pdfendlink
+......\glue 5.0
+.....\penalty 0
+.....\OT1/cmr/m/n/9 F
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 o
+.....\kern0.25694
+.....\OT1/cmr/m/n/9 o
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 5.0
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+...\glue(\baselineskip) 18.8505
+...\hbox(6.44444+0.0)x345.0
+....\hbox(6.44444+0.0)x345.0, glue set 170.0fil
+.....\glue 0.0 plus 1.0fil
+.....\OT1/cmr/m/n/10 7
+.....\glue 0.0 plus 1.0fil
+============================================================
+============================================================
+TEST 7: nomark
+============================================================
+> \box...=
+\hbox(0.0+0.0)x0.0
+.\write1{\token_to_str:N \post@note {mark@7}{\thepage }}
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0
+..\hbox(0.0+0.0)x0.0, shifted -12.0
+...\pdfdest name{postnote.7.mark} xyz
+...\penalty 10000
+! OK.
+l. ...\showbox0
+> \box...=
+\hbox(0.0+0.0)x0.0
+.\write1{\token_to_str:N \post@note {mark@8}{\thepage }}
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0
+..\hbox(0.0+0.0)x0.0, shifted -12.0
+...\pdfdest name{postnote.8.mark} xyz
+...\penalty 10000
+! OK.
+l. ...\showbox0
+============================================================
+============================================================
+TEST 8: Print nomark
+============================================================
+Completed box being shipped out [9]
+\vbox(627.36243+0.0)x380.0
+.\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
+..\kern 0.0
+..\kern 22.0
+..\kern -1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 33.99626fil
+...\kern 0.0
+...\kern 35.0
+...\kern -1.00374
+...\pdfdest name{page.9} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(627.36243+0.0)x380.0
+..\glue 22.0
+..\vbox(605.36243+0.0)x345.0, shifted 35.0
+...\vbox(12.0+0.0)x345.0, glue set 12.0fil
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x345.0
+.....\hbox(0.0+0.0)x345.0
+...\glue 18.06749
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 393.0fil
+....\write-{}
+....\write-{}
+....\pdfdest name{chapter*.4} xyz
+....\glue(\topskip) 10.0
+....\rule(0.0+0.0)x*
+....\penalty 10000
+....\glue 50.0
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 12.92955
+....\hbox(17.07045+0.0)x345.0, glue set 137.21155fil
+.....\hbox(0.0+0.0)x0.0
+.....\OT1/cmr/bx/n/24.88 N
+.....\OT1/cmr/bx/n/24.88 o
+.....\OT1/cmr/bx/n/24.88 t
+.....\OT1/cmr/bx/n/24.88 e
+.....\OT1/cmr/bx/n/24.88 s
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0 plus 1.0fil
+....\penalty 10000
+....\glue 40.0
+....\marks1{\pnheaderdefault }
+....\marks2{\pnheaderdefault }
+....\marks3{\pnheaderdefault }
+....\mark{{\pnheaderdefault }{\pnheaderdefault }}
+....\penalty 10000
+....\write1{\token_to_str:N \post@note {print@4}{\int_use:N \c@page }}
+....\glue 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.85002
+....\hbox(6.14998+0.0)x345.0, glue set 287.4038fil
+.....\hbox(5.79999+0.0)x19.6944
+......\glue 7.5
+......\glue 0.0
+......\glue -5.0
+......\hbox(5.79999+0.0)x12.1944
+.......\glue 5.0
+.......\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\pdfdest name{postnote.7.text} xyz
+.........\penalty 10000
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.7.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
 .......\pdfendlink
@@ -511,13 +696,13 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
-.........\pdfdest name{postnote.6.text} xyz
+.........\pdfdest name{postnote.8.text} xyz
 .........\penalty 10000
-.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.6.mark}
+.......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.8.mark}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 .
 .......\pdfendlink
@@ -543,23 +728,23 @@ Completed box being shipped out [7]
 ...\hbox(6.44444+0.0)x345.0
 ....\hbox(6.44444+0.0)x345.0, glue set 170.0fil
 .....\glue 0.0 plus 1.0fil
-.....\OT1/cmr/m/n/10 7
+.....\OT1/cmr/m/n/10 9
 .....\glue 0.0 plus 1.0fil
 ============================================================
 ============================================================
-TEST 7: label
+TEST 9: label
 ============================================================
 > \box...=
 \hbox(8.14003+0.0)x4.48613
-.\write1{\token_to_str:N \post@note {mark@7}{\thepage }}
-.\write1{\newlabel{en:1}{{3}{\thepage }{First chapter}{postnote.7.mark}{}}}
+.\write1{\token_to_str:N \post@note {mark@9}{\thepage }}
+.\write1{\newlabel{en:1}{{3}{\thepage }{First chapter}{postnote.9.mark}{}}}
 .\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
-...\pdfdest name{postnote.7.mark} xyz
+...\pdfdest name{postnote.9.mark} xyz
 ...\penalty 10000
-.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.7.text}
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.text}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
 ..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
@@ -570,7 +755,7 @@ TEST 7: label
 l. ...\showbox0
 > \box...=
 \hbox(6.44444+0.0)x5.00002
-.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.7.mark}
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.mark}
 .\OT1/cmr/m/n/10 3
 .\pdfendlink
 ! OK.
@@ -578,7 +763,7 @@ l. ...\showbox0
 > \box...=
 \hbox(8.14003+0.0)x4.48613
 .\penalty 10000
-.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.7.mark}
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.mark}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
 ..\hbox(4.51111+0.0)x4.48613, shifted -3.62892

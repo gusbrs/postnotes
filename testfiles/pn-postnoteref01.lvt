@@ -37,9 +37,9 @@ Baz.%
 \ENDTEST
 
 
-\BEGINTEST{Notes: Manual mark}
+\BEGINTEST{Notes: Manual markstr}
 Foo.%
-\setbox0=\hbox{\postnote[mark=ZZ]{\label{en:2}Foo note.}}%
+\setbox0=\hbox{\postnote[markstr=ZZ]{\label{en:2}Foo note.}}%
 \showbox0
 \box0
 
@@ -54,11 +54,10 @@ Baz.%
 \box0
 \ENDTEST
 
-\setcounter{postnote}{5}
 
-\BEGINTEST{Notes: No mark}
+\BEGINTEST{Notes: Manual mark}
 Foo.%
-\setbox0=\hbox{\postnote[nomark]{\label{en:3}Foo note.}}%
+\setbox0=\hbox{\postnote[mark=33]{\label{en:3}Foo note.}}%
 \showbox0
 \box0
 
@@ -69,6 +68,26 @@ Bar.%
 
 Baz.%
 \setbox0=\hbox{\postnoteref*{en:3}}%
+\showbox0
+\box0
+\ENDTEST
+
+
+\setcounter{postnote}{5}
+
+\BEGINTEST{Notes: No mark}
+Foo.%
+\setbox0=\hbox{\postnote[nomark]{\label{en:4}Foo note.}}%
+\showbox0
+\box0
+
+Bar.%
+\setbox0=\hbox{\postnoteref{en:4}}%
+\showbox0
+\box0
+
+Baz.%
+\setbox0=\hbox{\postnoteref*{en:4}}%
 \showbox0
 \box0
 \ENDTEST
