@@ -1226,7 +1226,8 @@
 % that the particular value of \texttt{postnotesection} is of little practical
 % meaning, it really is just meant to provide recognizable ``bounds'' for
 % \texttt{postnote} along the printing of the notes.  Indeed, it is
-% initialized to a very high value, so that ``marks'' and ``texts'' don't mix
+% initialized to a very high value (larger than the conceivable number of
+% postnote sections in a document), so that ``marks'' and ``texts'' don't mix
 % in the same reference list, which would occur if the enclosing counters of
 % both belonged to the same range, and with somewhat arbitrary results, since
 % we cannot ensure the step of the enclosing counter along the document
