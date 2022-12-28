@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.1.7...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.0...HEAD)
+
+## [v0.2.0](https://github.com/gusbrs/postnotes/compare/v0.1.7...v0.2.0) (2022-12-28)
 
 ### Added
 - `\postnote` option `markstr`, which can receive a string as value, and does
