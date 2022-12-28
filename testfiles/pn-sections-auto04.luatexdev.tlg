@@ -5,13 +5,13 @@ TEST 1: Notes: Introduction
 ============================================================
 > \box...=
 \hbox(8.27692+0.0)x4.483, direction TLT
-.\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
 ..\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
 ...\pdfdest name{postnote.3.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.text}
 .\hbox(8.27692+0.0)x4.483, direction TLT
 ..\mathon
@@ -28,13 +28,13 @@ TEST 2: Notes: First section
 ============================================================
 > \box...=
 \hbox(8.27692+0.0)x4.483, direction TLT
-.\write1{\token_to_str:N \post@note {mark@5}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
 ..\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
 ...\pdfdest name{postnote.5.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@5}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.5.text}
 .\hbox(8.27692+0.0)x4.483, direction TLT
 ..\mathon
@@ -47,13 +47,13 @@ TEST 2: Notes: First section
 l. ...\showbox0
 > \box...=
 \hbox(8.27692+0.0)x4.483, direction TLT
-.\write1{\token_to_str:N \post@note {mark@6}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
 ..\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
 ...\pdfdest name{postnote.6.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@6}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.6.text}
 .\hbox(8.27692+0.0)x4.483, direction TLT
 ..\mathon
@@ -70,13 +70,13 @@ TEST 3: Notes: Second section
 ============================================================
 > \box...=
 \hbox(8.27692+0.0)x4.483, direction TLT
-.\write1{\token_to_str:N \post@note {mark@8}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
 ..\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
 ...\pdfdest name{postnote.8.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@8}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.8.text}
 .\hbox(8.27692+0.0)x4.483, direction TLT
 ..\mathon
@@ -89,13 +89,13 @@ TEST 3: Notes: Second section
 l. ...\showbox0
 > \box...=
 \hbox(8.27692+0.0)x4.483, direction TLT
-.\write1{\token_to_str:N \post@note {mark@9}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
 ..\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
 ...\pdfdest name{postnote.9.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@9}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.text}
 .\hbox(8.27692+0.0)x4.483, direction TLT
 ..\mathon
@@ -258,12 +258,12 @@ Completed box being shipped out [2]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
 .........\pdfdest name{postnote.3.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.mark}
 .......\TU/lmr/m/n/9 1
 .......\TU/lmr/m/n/9 .
@@ -354,12 +354,12 @@ Completed box being shipped out [2]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@5}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
 .........\pdfdest name{postnote.5.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@5}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.5.mark}
 .......\TU/lmr/m/n/9 1
 .......\TU/lmr/m/n/9 .
@@ -397,12 +397,12 @@ Completed box being shipped out [2]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
 .........\pdfdest name{postnote.6.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.6.mark}
 .......\TU/lmr/m/n/9 2
 .......\TU/lmr/m/n/9 .
@@ -488,12 +488,12 @@ Completed box being shipped out [2]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
 .........\pdfdest name{postnote.8.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.8.mark}
 .......\TU/lmr/m/n/9 1
 .......\TU/lmr/m/n/9 .
@@ -529,12 +529,12 @@ Completed box being shipped out [2]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
 .........\pdfdest name{postnote.9.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.mark}
 .......\TU/lmr/m/n/9 2
 .......\TU/lmr/m/n/9 .

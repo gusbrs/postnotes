@@ -60,9 +60,9 @@ Completed box being shipped out [3]
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
-....\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 ....\pdfdest name{postnote.1.text} xyz
 ....\penalty 10000
+....\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 2.81001
@@ -89,9 +89,8 @@ Completed box being shipped out [3]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 ....\pdfdest name{postnote.2.text} xyz
-....\penalty 10000
+....\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 2.81001
@@ -189,12 +188,12 @@ Completed box being shipped out [5]
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.05556
 ....\hbox(6.94444+0.0)x345.0, glue set 289.99988fil
-.....\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0
 ......\hbox(0.0+0.0)x0.0, shifted -12.0
 .......\pdfdest name{postnote.3.text} xyz
 .......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.mark}
 .....\OT1/cmr/m/n/10 3
 .....\OT1/cmr/m/n/10 .
@@ -217,12 +216,12 @@ Completed box being shipped out [5]
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.16669
 ....\hbox(6.83331+0.0)x345.0, glue set 291.77766fil
-.....\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0
 ......\hbox(0.0+0.0)x0.0, shifted -12.0
 .......\pdfdest name{postnote.4.text} xyz
 .......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
 .....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.mark}
 .....\OT1/cmr/m/n/10 4
 .....\OT1/cmr/m/n/10 .

@@ -6,9 +6,6 @@ TEST 1: link bools
 > \l__postnotes_hyperlink_bool=true.
 <recently read> }
 l. ...\bool_show:N \l__postnotes_hyperlink_bool
-> \g__postnotes_hyperref_loaded_bool=true.
-<recently read> }
-l. ......_show:N \g__postnotes_hyperref_loaded_bool
 > \l__postnotes_backlink_bool=false.
 <recently read> }
 l. ...\bool_show:N \l__postnotes_backlink_bool
@@ -18,13 +15,13 @@ TEST 2: Note backlink
 ============================================================
 > \box...=
 \hbox(8.14003+0.0)x4.48613
-.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.1.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.text}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -102,12 +99,12 @@ Completed box being shipped out [3]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.1.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
 ......\glue 5.0

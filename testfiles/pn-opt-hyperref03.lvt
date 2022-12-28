@@ -27,7 +27,6 @@
 \BEGINTEST{hyperref bools}
 \ExplSyntaxOn
 \bool_show:N \l__postnotes_hyperlink_bool
-\bool_show:N \g__postnotes_hyperref_loaded_bool
 \ExplSyntaxOff
 \ENDTEST
 

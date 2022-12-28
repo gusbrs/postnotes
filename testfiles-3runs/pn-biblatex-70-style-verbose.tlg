@@ -67,12 +67,12 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.1.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
@@ -218,12 +218,12 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.2.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.mark}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 .
@@ -359,12 +359,12 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.3.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.mark}
 .......\OT1/cmr/m/n/9 3
 .......\OT1/cmr/m/n/9 .
@@ -411,12 +411,12 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.4.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.mark}
 .......\OT1/cmr/m/n/9 4
 .......\OT1/cmr/m/n/9 .
@@ -511,12 +511,12 @@ Completed box being shipped out [8]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.6.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.6.mark}
 .......\OT1/cmr/m/n/9 5
 .......\OT1/cmr/m/n/9 .
@@ -797,12 +797,12 @@ Completed box being shipped out [8]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.7.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.7.mark}
 .......\OT1/cmr/m/n/9 6
 .......\OT1/cmr/m/n/9 .
@@ -1103,12 +1103,12 @@ Completed box being shipped out [8]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.8.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.8.mark}
 .......\OT1/cmr/m/n/9 7
 .......\OT1/cmr/m/n/9 .
@@ -1145,12 +1145,12 @@ Completed box being shipped out [8]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.9.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.mark}
 .......\OT1/cmr/m/n/9 8
 .......\OT1/cmr/m/n/9 .
@@ -1238,12 +1238,12 @@ Completed box being shipped out [9]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.11.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.11.mark}
 .......\OT1/cmr/m/n/9 9
 .......\OT1/cmr/m/n/9 .
@@ -1488,12 +1488,12 @@ Completed box being shipped out [9]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.12.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.12.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 0
@@ -1831,12 +1831,12 @@ Completed box being shipped out [9]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@13}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.13.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@13}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.13.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 1
@@ -1884,12 +1884,12 @@ Completed box being shipped out [9]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.14.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.14.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 2
@@ -1937,12 +1937,12 @@ Completed box being shipped out [9]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@15}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.15.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@15}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.15.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 3
@@ -1988,12 +1988,12 @@ Completed box being shipped out [9]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@16}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.16.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@16}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.16.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 4

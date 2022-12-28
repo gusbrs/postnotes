@@ -9,13 +9,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line ....
 > \box...=
 \hbox(8.14003+0.0)x4.48613
-.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.1.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.text}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -29,13 +29,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x4.48613
-.\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.2.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.text}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -49,13 +49,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x4.48613
-.\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.3.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.text}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -69,13 +69,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x4.48613
-.\write1{\token_to_str:N \post@note {mark@4}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.4.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@4}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.text}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -89,13 +89,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x4.48613
-.\write1{\token_to_str:N \post@note {mark@5}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.5.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@5}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.5.text}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -109,13 +109,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x4.48613
-.\write1{\token_to_str:N \post@note {mark@6}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.6.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@6}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.6.text}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -129,13 +129,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x4.48613
-.\write1{\token_to_str:N \post@note {mark@7}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.7.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@7}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.7.text}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -149,13 +149,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x4.48613
-.\write1{\token_to_str:N \post@note {mark@8}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.8.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@8}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.8.text}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -169,13 +169,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x4.48613
-.\write1{\token_to_str:N \post@note {mark@9}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.9.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@9}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.text}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -189,13 +189,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x8.47226
-.\write1{\token_to_str:N \post@note {mark@10}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.10.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@10}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.10.text}
 .\hbox(8.14003+0.0)x8.47226
 ..\mathon
@@ -210,13 +210,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x8.47226
-.\write1{\token_to_str:N \post@note {mark@11}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.11.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@11}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.11.text}
 .\hbox(8.14003+0.0)x8.47226
 ..\mathon
@@ -235,13 +235,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\pdfdest name{Doc-Start} xyz
 .\glue(\topskip) 1.85997
 .\hbox(8.14003+0.0)x4.48613
-..\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.1.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.text}
 ..\hbox(8.14003+0.0)x4.48613
 ...\mathon
@@ -253,13 +253,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x4.48613
-..\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.2.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.text}
 ..\hbox(8.14003+0.0)x4.48613
 ...\mathon
@@ -271,13 +271,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x4.48613
-..\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.3.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.text}
 ..\hbox(8.14003+0.0)x4.48613
 ...\mathon
@@ -289,13 +289,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x4.48613
-..\write1{\token_to_str:N \post@note {mark@4}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.4.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@4}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.text}
 ..\hbox(8.14003+0.0)x4.48613
 ...\mathon
@@ -307,13 +307,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x4.48613
-..\write1{\token_to_str:N \post@note {mark@5}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.5.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@5}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.5.text}
 ..\hbox(8.14003+0.0)x4.48613
 ...\mathon
@@ -325,13 +325,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x4.48613
-..\write1{\token_to_str:N \post@note {mark@6}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.6.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@6}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.6.text}
 ..\hbox(8.14003+0.0)x4.48613
 ...\mathon
@@ -343,13 +343,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x4.48613
-..\write1{\token_to_str:N \post@note {mark@7}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.7.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@7}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.7.text}
 ..\hbox(8.14003+0.0)x4.48613
 ...\mathon
@@ -361,13 +361,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x4.48613
-..\write1{\token_to_str:N \post@note {mark@8}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.8.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@8}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.8.text}
 ..\hbox(8.14003+0.0)x4.48613
 ...\mathon
@@ -379,13 +379,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x4.48613
-..\write1{\token_to_str:N \post@note {mark@9}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.9.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@9}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.text}
 ..\hbox(8.14003+0.0)x4.48613
 ...\mathon
@@ -398,13 +398,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ]
 > \box...=
 \hbox(8.14003+0.0)x8.47226
-.\write1{\token_to_str:N \post@note {mark@12}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.12.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@12}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.12.text}
 .\hbox(8.14003+0.0)x8.47226
 ..\mathon
@@ -419,13 +419,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x8.47226
-.\write1{\token_to_str:N \post@note {mark@13}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.13.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@13}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.13.text}
 .\hbox(8.14003+0.0)x8.47226
 ..\mathon
@@ -440,13 +440,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x8.47226
-.\write1{\token_to_str:N \post@note {mark@14}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.14.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@14}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.14.text}
 .\hbox(8.14003+0.0)x8.47226
 ..\mathon
@@ -461,13 +461,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x8.47226
-.\write1{\token_to_str:N \post@note {mark@15}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.15.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@15}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.15.text}
 .\hbox(8.14003+0.0)x8.47226
 ..\mathon
@@ -482,13 +482,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x8.47226
-.\write1{\token_to_str:N \post@note {mark@16}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.16.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@16}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.16.text}
 .\hbox(8.14003+0.0)x8.47226
 ..\mathon
@@ -503,13 +503,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x8.47226
-.\write1{\token_to_str:N \post@note {mark@17}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.17.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@17}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.17.text}
 .\hbox(8.14003+0.0)x8.47226
 ..\mathon
@@ -524,13 +524,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x8.47226
-.\write1{\token_to_str:N \post@note {mark@18}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.18.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@18}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.18.text}
 .\hbox(8.14003+0.0)x8.47226
 ..\mathon
@@ -545,13 +545,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x8.47226
-.\write1{\token_to_str:N \post@note {mark@19}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.19.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@19}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.19.text}
 .\hbox(8.14003+0.0)x8.47226
 ..\mathon
@@ -566,13 +566,13 @@ l. ...\testcontent{20}
 l. ...\testcontent{20}
 > \box...=
 \hbox(8.14003+0.0)x8.47226
-.\write1{\token_to_str:N \post@note {mark@20}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.20.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@20}{\thepage }}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.20.text}
 .\hbox(8.14003+0.0)x8.47226
 ..\mathon
@@ -589,13 +589,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 \vbox(550.0+0.0)x8.47226
 .\glue(\topskip) 1.85997
 .\hbox(8.14003+0.0)x8.47226
-..\write1{\token_to_str:N \post@note {mark@10}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.10.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@10}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.10.text}
 ..\hbox(8.14003+0.0)x8.47226
 ...\mathon
@@ -608,13 +608,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x8.47226
-..\write1{\token_to_str:N \post@note {mark@11}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.11.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@11}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.11.text}
 ..\hbox(8.14003+0.0)x8.47226
 ...\mathon
@@ -627,13 +627,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x8.47226
-..\write1{\token_to_str:N \post@note {mark@12}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.12.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@12}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.12.text}
 ..\hbox(8.14003+0.0)x8.47226
 ...\mathon
@@ -646,13 +646,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x8.47226
-..\write1{\token_to_str:N \post@note {mark@13}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.13.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@13}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.13.text}
 ..\hbox(8.14003+0.0)x8.47226
 ...\mathon
@@ -665,13 +665,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x8.47226
-..\write1{\token_to_str:N \post@note {mark@14}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.14.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@14}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.14.text}
 ..\hbox(8.14003+0.0)x8.47226
 ...\mathon
@@ -684,13 +684,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x8.47226
-..\write1{\token_to_str:N \post@note {mark@15}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.15.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@15}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.15.text}
 ..\hbox(8.14003+0.0)x8.47226
 ...\mathon
@@ -703,13 +703,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x8.47226
-..\write1{\token_to_str:N \post@note {mark@16}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.16.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@16}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.16.text}
 ..\hbox(8.14003+0.0)x8.47226
 ...\mathon
@@ -722,13 +722,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x8.47226
-..\write1{\token_to_str:N \post@note {mark@17}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.17.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@17}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.17.text}
 ..\hbox(8.14003+0.0)x8.47226
 ...\mathon
@@ -741,13 +741,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\glue 0.0
 .\glue(\baselineskip) 3.85997
 .\hbox(8.14003+0.0)x8.47226
-..\write1{\token_to_str:N \post@note {mark@18}{\thepage }}
-..\penalty 10000
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
 ....\pdfdest name{postnote.18.mark} xyz
 ....\penalty 10000
+..\write1{\token_to_str:N \post@note {mark@18}{\thepage }}
+..\penalty 10000
 ..\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.18.text}
 ..\hbox(8.14003+0.0)x8.47226
 ...\mathon
@@ -791,13 +791,13 @@ Completed box being shipped out [3]
 ...\vbox(550.0+0.0)x8.47226, glue set 427.99985fil
 ....\glue(\topskip) 1.85997
 ....\hbox(8.14003+0.0)x8.47226
-.....\write1{\token_to_str:N \post@note {mark@19}{\thepage }}
-.....\penalty 10000
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0
 ......\hbox(0.0+0.0)x0.0, shifted -12.0
 .......\pdfdest name{postnote.19.mark} xyz
 .......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark@19}{\thepage }}
+.....\penalty 10000
 .....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.19.text}
 .....\hbox(8.14003+0.0)x8.47226
 ......\mathon
@@ -810,13 +810,13 @@ Completed box being shipped out [3]
 ....\glue 0.0
 ....\glue(\baselineskip) 3.85997
 ....\hbox(8.14003+0.0)x8.47226
-.....\write1{\token_to_str:N \post@note {mark@20}{\thepage }}
-.....\penalty 10000
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0
 ......\hbox(0.0+0.0)x0.0, shifted -12.0
 .......\pdfdest name{postnote.20.mark} xyz
 .......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark@20}{\thepage }}
+.....\penalty 10000
 .....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.20.text}
 .....\hbox(8.14003+0.0)x8.47226
 ......\mathon
@@ -930,12 +930,12 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.1.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
@@ -959,12 +959,12 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.2.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.mark}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 .
@@ -988,12 +988,12 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.3.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.mark}
 .......\OT1/cmr/m/n/9 3
 .......\OT1/cmr/m/n/9 .
@@ -1017,12 +1017,12 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.4.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.mark}
 .......\OT1/cmr/m/n/9 4
 .......\OT1/cmr/m/n/9 .
@@ -1046,12 +1046,12 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@5}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.5.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@5}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.5.mark}
 .......\OT1/cmr/m/n/9 5
 .......\OT1/cmr/m/n/9 .
@@ -1075,12 +1075,12 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.6.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.6.mark}
 .......\OT1/cmr/m/n/9 6
 .......\OT1/cmr/m/n/9 .
@@ -1104,12 +1104,12 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.7.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.7.mark}
 .......\OT1/cmr/m/n/9 7
 .......\OT1/cmr/m/n/9 .
@@ -1133,12 +1133,12 @@ Completed box being shipped out [5]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.8.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.8.mark}
 .......\OT1/cmr/m/n/9 8
 .......\OT1/cmr/m/n/9 .
@@ -1165,12 +1165,12 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.79999+0.0)x12.1944
 ....\glue 5.0
-....\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.9.text} xyz
 ......\penalty 10000
+....\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.mark}
 ....\OT1/cmr/m/n/9 9
 ....\OT1/cmr/m/n/9 .
@@ -1194,12 +1194,12 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
-....\write1{\token_to_str:N \post@note {text@10}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.10.text} xyz
 ......\penalty 10000
+....\write1{\token_to_str:N \post@note {text@10}{\int_use:N \c@page }}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.10.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 0
@@ -1224,12 +1224,12 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
-....\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.11.text} xyz
 ......\penalty 10000
+....\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.11.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 1
@@ -1254,12 +1254,12 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
-....\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.12.text} xyz
 ......\penalty 10000
+....\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.12.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 2
@@ -1284,12 +1284,12 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
-....\write1{\token_to_str:N \post@note {text@13}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.13.text} xyz
 ......\penalty 10000
+....\write1{\token_to_str:N \post@note {text@13}{\int_use:N \c@page }}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.13.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 3
@@ -1314,12 +1314,12 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
-....\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.14.text} xyz
 ......\penalty 10000
+....\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.14.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 4
@@ -1344,12 +1344,12 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
-....\write1{\token_to_str:N \post@note {text@15}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.15.text} xyz
 ......\penalty 10000
+....\write1{\token_to_str:N \post@note {text@15}{\int_use:N \c@page }}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.15.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 5
@@ -1374,12 +1374,12 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
-....\write1{\token_to_str:N \post@note {text@16}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.16.text} xyz
 ......\penalty 10000
+....\write1{\token_to_str:N \post@note {text@16}{\int_use:N \c@page }}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.16.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 6
@@ -1404,12 +1404,12 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
-....\write1{\token_to_str:N \post@note {text@17}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.17.text} xyz
 ......\penalty 10000
+....\write1{\token_to_str:N \post@note {text@17}{\int_use:N \c@page }}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.17.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 7
@@ -1434,12 +1434,12 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ...\glue -5.0
 ...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
-....\write1{\token_to_str:N \post@note {text@18}{\int_use:N \c@page }}
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.18.text} xyz
 ......\penalty 10000
+....\write1{\token_to_str:N \post@note {text@18}{\int_use:N \c@page }}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.18.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 8
@@ -1504,12 +1504,12 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.9.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.mark}
 .......\OT1/cmr/m/n/9 9
 .......\OT1/cmr/m/n/9 .
@@ -1533,12 +1533,12 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@10}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.10.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@10}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.10.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 0
@@ -1563,12 +1563,12 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.11.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.11.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 1
@@ -1593,12 +1593,12 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.12.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.12.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 2
@@ -1623,12 +1623,12 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@13}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.13.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@13}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.13.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 3
@@ -1653,12 +1653,12 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.14.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.14.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 4
@@ -1683,12 +1683,12 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@15}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.15.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@15}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.15.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 5
@@ -1713,12 +1713,12 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@16}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.16.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@16}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.16.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 6
@@ -1743,12 +1743,12 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@17}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.17.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@17}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.17.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 7
@@ -1773,12 +1773,12 @@ Completed box being shipped out [6]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@18}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.18.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@18}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.18.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 8
@@ -1843,12 +1843,12 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@19}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.19.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@19}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.19.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 9
@@ -1873,12 +1873,12 @@ Completed box being shipped out [7]
 ......\glue -5.0
 ......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@20}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.20.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@20}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.20.mark}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 0

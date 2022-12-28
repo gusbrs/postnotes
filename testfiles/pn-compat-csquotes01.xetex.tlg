@@ -17,13 +17,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 .\glue -0.0002
 .\glue 0.0002
 .\TU/lmr/m/n/10 Foo.
-.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.1.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
+.\penalty 10000
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
 .\hbox(8.27692+0.0)x4.483
 ..\mathon
@@ -31,13 +31,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ...\TU/lmr/m/n/7 1
 ..\mathoff
 .\special{pdf:eann}
-.\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.2.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
+.\penalty 10000
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
 .\hbox(8.27692+0.0)x4.483
 ..\mathon
@@ -111,12 +111,12 @@ Completed box being shipped out [2]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.2
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.1.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
 .......\TU/lmr/m/n/9 1.
 .......\special{pdf:eann}
@@ -144,12 +144,12 @@ Completed box being shipped out [2]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.2
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.2.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
 .......\TU/lmr/m/n/9 2.
 .......\special{pdf:eann}

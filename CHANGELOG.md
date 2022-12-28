@@ -11,6 +11,10 @@
 - To simplify user input, `\postnote` option `mark` now requires a number as
   value, but it also sets `sortnum`.
 - `\postnotesectionx` is deprecated in favor of the new `exp` option.
+- Bumped the required kernel to 2022-06-01, so that we can use the new
+  `\MakeLinkTarget` and the starred version of `\ref*` defined by the kernel,
+  which simplifies the relation with `hyperref`.  All in all, `postnotes` no
+  longer needs to use any internal `hyperref` commands.
 
 ## [v0.1.7](https://github.com/gusbrs/postnotes/compare/v0.1.6...v0.1.7) (2022-11-13)
 

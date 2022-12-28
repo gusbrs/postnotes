@@ -5,13 +5,13 @@ TEST 1: Notes: Plain
 ============================================================
 > \box...=
 \hbox(8.27692+0.0)x4.483
-.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.1.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
+.\penalty 10000
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
 .\hbox(8.27692+0.0)x4.483
 ..\mathon
@@ -51,13 +51,13 @@ TEST 2: Notes: Manual markstr
 ============================================================
 > \box...=
 \hbox(8.40993+0.0)x10.188
-.\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.2.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
+.\penalty 10000
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
 .\hbox(8.40993+0.0)x10.188
 ..\mathon
@@ -97,13 +97,13 @@ TEST 3: Notes: Manual mark
 ============================================================
 > \box...=
 \hbox(8.27692+0.0)x8.466
-.\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.3.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
+.\penalty 10000
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
 .\hbox(8.27692+0.0)x8.466
 ..\mathon
@@ -143,12 +143,12 @@ TEST 4: Notes: No mark
 ============================================================
 > \box...=
 \hbox(0.0+0.0)x0.0
-.\write1{\token_to_str:N \post@note {mark@4}{\thepage }}
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.4.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@4}{\thepage }}
 ! OK.
 l. ...\showbox0
 > \box...=
@@ -242,12 +242,12 @@ Completed box being shipped out [3]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.2
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.1.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
 .......\TU/lmr/m/n/9 1.
 .......\special{pdf:eann}
@@ -272,12 +272,12 @@ Completed box being shipped out [3]
 ......\glue -5.0
 ......\hbox(6.147+0.0)x18.878
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.2.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
 .......\TU/lmr/m/n/9 ZZ.
 .......\special{pdf:eann}
@@ -302,12 +302,12 @@ Completed box being shipped out [3]
 ......\glue -5.0
 ......\hbox(5.994+0.19798)x12.2
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.4.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
 .......\TU/lmr/m/n/9 6.
 .......\special{pdf:eann}
@@ -332,12 +332,12 @@ Completed box being shipped out [3]
 ......\glue -5.0
 ......\hbox(5.994+0.19798)x16.826
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.3.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
 .......\TU/lmr/m/n/9 33.
 .......\special{pdf:eann}

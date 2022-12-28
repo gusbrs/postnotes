@@ -128,17 +128,23 @@
 %    \end{macrocode}
 %
 %
-% Require the new syntax for file/package hooks (\texttt{ltnews34},
-% \texttt{ltfilehook}).
+% The new syntax for file/package hooks, which the package assumes, requires
+% kernel 2021-11-15 (\texttt{ltnews34}, \texttt{ltfilehook}).  Furthermore,
+% the kernel of 2022-06-01 introduced a couple of very nice features which
+% simplifies the relation with \pkg{hyperref} (\texttt{ltnews35},
+% \texttt{hyperref-linktarget}): the provision of \cs{MakeLinkTarget} and the
+% definition by the kernel of the starred version of \cs{ref}, which we can
+% use regardless of \pkg{hyperref} being loaded.  So we require the 2022-06-01
+% kernel or newer.
 %
 %    \begin{macrocode}
 \providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
-\IfFormatAtLeastTF{2021-11-15}
+\IfFormatAtLeastTF{2022-06-01}
   {}
   {%
     \PackageError{postnotes}{LaTeX kernel too old}
       {%
-        'postnotes' requires a LaTeX kernel 2021-11-15 or newer.%
+        'postnotes' requires a LaTeX kernel 2022-06-01 or newer.%
         \MessageBreak Loading will abort!%
       }%
     \endinput
@@ -864,18 +870,10 @@
         \UseHook { postnotes/note/begin }
         \cs_set:Npn \@currentcounter { postnote }
         \cs_set:Npx \@currentlabel { \p@postnote \l_@@_mark_tl }
-        \@@_hyperref_make_currentHref:n
-          { postnote. \l_@@_note_id_tl .mark }
+        \MakeLinkTarget* { postnote. \l_@@_note_id_tl .mark }
         \@@_set_mark_page_label:x { \l_@@_note_id_tl }
         \@@_set_user_labels:
-        \bool_if:NTF \l_@@_nomark_bool
-          {
-            \bool_if:NT \l_@@_hyperlink_bool
-              {
-                \@@_hyperref_set_anchor:n
-                  { postnote. \l_@@_note_id_tl .mark }
-              }
-          }
+        \bool_if:NF \l_@@_nomark_bool
           {
             \@@_typeset_mark:xV
               { \l_@@_note_id_tl } \l_@@_mark_tl
@@ -988,7 +986,6 @@
       {
         \bool_if:NTF \l_@@_hyperlink_bool
           {
-            \@@_hyperref_set_anchor:n { postnote. #1 .mark }
             \@@_make_mark:nnn {#2}
               { \hyper@linkstart { link } { postnote. #1 .text } }
               { \hyper@linkend }
@@ -1061,7 +1058,7 @@
             \hyperref [#2]
               { \@@_make_mark:nnn { \ref*{#2} } { } { } }
           }
-          { \@@_make_mark:nnn { \@@_ref_star:n {#2} } { } { } }
+          { \@@_make_mark:nnn { \ref*{#2} } { } { } }
       }
     \group_end:
   }
@@ -1362,10 +1359,10 @@
                   { \l_@@_print_counter_tl }
                 \cs_set:Npx \@currentlabel
                   { \p@postnote \l_@@_print_mark_tl }
-                \@@_hyperref_make_currentHref:n
-                  { postnote. \l_@@_print_note_id_tl .text }
                 \@@_text_mark_wrapper:n
                   {
+                    \MakeLinkTarget*
+                      { postnote. \l_@@_print_note_id_tl .text }
                     \@@_set_text_page_label:x
                       { \l_@@_print_note_id_tl }
                     \@@_typeset_text_mark:eV
@@ -1441,16 +1438,13 @@
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_typeset_text_mark:nn #1#2
   {
-    \bool_if:NTF \l_@@_hyperlink_bool
+    \bool_lazy_and:nnTF
+      { \l_@@_hyperlink_bool }
+      { \l_@@_backlink_bool  }
       {
-        \@@_hyperref_set_anchor:n { postnote. #1 .text }
-        \bool_if:NTF \l_@@_backlink_bool
-          {
-            \@@_make_text_mark:nnn {#2}
-              { \hyper@linkstart { link } { postnote. #1 .mark } }
-              { \hyper@linkend }
-          }
-          { \@@_make_text_mark:nnn {#2} { } { } }
+        \@@_make_text_mark:nnn {#2}
+          { \hyper@linkstart { link } { postnote. #1 .mark } }
+          { \hyper@linkend }
       }
       { \@@_make_text_mark:nnn {#2} { } { } }
   }
@@ -1458,10 +1452,7 @@
 \cs_new_protected:Npn \@@_text_mark_wrapper:n #1
   {
     \bool_if:NTF \l_@@_print_as_list_bool
-      {
-        \item
-          [ \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl ]
-      }
+      { \item [ \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl ] }
       { \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl }
   }
 %    \end{macrocode}
@@ -1987,47 +1978,6 @@
       { \bool_set_true:N \l_@@_maybe_multi_bool }
   }
 %    \end{macrocode}
-%
-%
-% \subsection*{\pkg{hyperref}}
-%
-%    \begin{macrocode}
-\bool_new:N \g_@@_hyperref_loaded_bool
-\AddToHook { package/hyperref/after }
-  { \bool_gset_true:N \g_@@_hyperref_loaded_bool }
-%    \end{macrocode}
-%
-% \begin{macro}
-%   {
-%     \@@_hyperref_make_currentHref:n ,
-%     \@@_hyperref_set_anchor:n ,
-%     \@@_ref_star:n ,
-%   }
-%   Auxiliary functions for \pkg{hyperref} support.
-%   \begin{syntax}
-%     \cs{@@_hyperref_make_currentHref:n} \Arg{anchor/destination}
-%     \cs{@@_hyperref_set_anchor:n} \Arg{anchor/destination}
-%     \cs{@@_ref_star:n} \Arg{label}
-%   \end{syntax}
-%    \begin{macrocode}
-\cs_new_protected:Npn \@@_hyperref_make_currentHref:n #1
-  {
-    \bool_if:NT \g_@@_hyperref_loaded_bool
-      { \Hy@MakeCurrentHref {#1} }
-  }
-\cs_new_protected:Npn \@@_hyperref_set_anchor:n #1
-  {
-    \bool_if:NT \g_@@_hyperref_loaded_bool
-      { \Hy@raisedlink { \hyper@anchor {#1} } }
-  }
-\cs_new_protected:Npn \@@_ref_star:n #1
-  {
-    \bool_if:NTF \g_@@_hyperref_loaded_bool
-      { \ref*{#1} }
-      { \ref{#1} }
-  }
-%    \end{macrocode}
-% \end{macro}
 %
 %
 % \subsection*{\pkg{biblatex}}

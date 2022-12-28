@@ -5,14 +5,14 @@ TEST 1: zref-user
 ============================================================
 > \box...=
 \hbox(8.27692+0.0)x4.483, direction TLT
-.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
-.\write1{\zref@newlabel{en:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.m\ETC.}
-.\penalty 10000
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
 ..\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
 ...\pdfdest name{postnote.1.mark} xyz
 ...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
+.\write1{\zref@newlabel{en:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.m\ETC.}
+.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.text}
 .\hbox(8.27692+0.0)x4.483, direction TLT
 ..\mathon
@@ -162,12 +162,12 @@ Completed box being shipped out [3]
 ......\glue -5.0
 ......\hbox(5.994+0.0)x12.20001, direction TLT
 .......\glue 5.0
-.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0, direction TLT
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
 .........\pdfdest name{postnote.1.text} xyz
 .........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.mark}
 .......\TU/lmr/m/n/9 1
 .......\TU/lmr/m/n/9 .

@@ -23,15 +23,13 @@ TEST 1: hyperref bools
 > \l__postnotes_hyperlink_bool=false.
 <recently read> }
 l. ...\bool_show:N \l__postnotes_hyperlink_bool
-> \g__postnotes_hyperref_loaded_bool=false.
-<recently read> }
-l. ......_show:N \g__postnotes_hyperref_loaded_bool
 ============================================================
 ============================================================
 TEST 2: Note hyperref
 ============================================================
 > \box...=
 \hbox(8.14003+0.0)x4.48613
+.\hbox(0.0+0.0)x0.0
 .\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
 .\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
@@ -94,6 +92,7 @@ Completed box being shipped out [3]
 .....\glue -5.0
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
+......\hbox(0.0+0.0)x0.0
 ......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 ......\OT1/cmr/m/n/9 1
 ......\OT1/cmr/m/n/9 .
