@@ -178,13 +178,13 @@
 % \begin{macro}{\@@_store:nn}
 %   Stores the metadata and \meta{note content} of \cs{postnote} with ID
 %   \meta{note id}, from where it is called.  The
-%   \texttt{postnotes/store/note} hook is intended to add further data to the
+%   \texttt{postnotes/note/store} hook is intended to add further data to the
 %   note, when required to support packages with specific needs.
 %     \begin{syntax}
 %       \cs{@@_store:nn} \Arg{note id} \Arg{note content}
 %     \end{syntax}
 %    \begin{macrocode}
-\NewHook { postnotes/store/note }
+\NewHook { postnotes/note/store }
 \cs_new_protected:Npn \@@_store:nn #1#2
   {
     \prop_new:c { \@@_data_name:e {#1} }
@@ -213,7 +213,7 @@
     \prop_gput:cnx { \@@_data_name:e {#1} } { multibool }
       { \bool_to_str:N \l_@@_maybe_multi_bool }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
-    \UseHook { postnotes/store/note }
+    \UseHook { postnotes/note/store }
   }
 %    \end{macrocode}
 % \end{macro}
@@ -2042,7 +2042,7 @@
 %    \end{macrocode}
 % Store \pkg{biblatex} variables for each note.
 %    \begin{macrocode}
-    \AddToHook { postnotes/store/note } [ postnotes ]
+    \AddToHook { postnotes/note/store } [ postnotes ]
       {
         \prop_gput:cnx { \@@_data_name:e { \l_@@_note_id_tl } }
           { biblatex@refsection } { \int_use:N \c@refsection }
@@ -2311,7 +2311,7 @@
   {
     \IfPackageAtLeastTF { zref-check } { 2022-07-05 }
       {
-        \AddToHook { postnotes/store/note } [ postnotes ]
+        \AddToHook { postnotes/note/store } [ postnotes ]
           {
             \prop_gput:cnx { \@@_data_name:e { \l_@@_note_id_tl } }
               { zref-check@abschap } { \int_use:N \c@zc@abschap }

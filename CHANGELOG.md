@@ -2,6 +2,10 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.0...HEAD)
 
+### Changed
+- To standardize hooks' names, the `postnotes/store/note` hook has been
+  renamed to `postnotes/note/store`.
+
 ## [v0.2.0](https://github.com/gusbrs/postnotes/compare/v0.1.7...v0.2.0) (2022-12-28)
 
 ### Added
