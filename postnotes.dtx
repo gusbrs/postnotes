@@ -175,6 +175,13 @@
 % \end{macro}
 %
 %
+% \pkg{postnotes} provides a number of hooks from the new hook system to grant
+% some points of access in key places of the package.  Note that hooks created
+% with \cs{NewHook} are meant to be public interfaces (see
+% \url{https://chat.stackexchange.com/transcript/message/62955941#62955941},
+% and following discussion).
+%
+%
 % \begin{macro}{\@@_store:nn}
 %   Stores the metadata and \meta{note content} of \cs{postnote} with ID
 %   \meta{note id}, from where it is called.  The
