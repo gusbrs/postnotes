@@ -4,7 +4,7 @@ Don't change this file in any respect.
 TEST 1: Biblatex: verbose-trad1
 ============================================================
 Completed box being shipped out [3]
-\vbox(633.0+0.21999)x407.0
+\vbox(633.0+0.0)x407.0
 .\vbox(0.0+0.0)x0.0, glue set - 14.99626fil
 ..\kern 0.0
 ..\kern 16.0
@@ -18,19 +18,19 @@ Completed box being shipped out [3]
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 ..\glue 0.0 plus 1.0fil minus 1.0fil
 .\glue(\lineskip) 0.0
-.\vbox(633.0+0.21999)x407.0
+.\vbox(633.0+0.0)x407.0
 ..\glue 16.0
-..\vbox(617.0+0.21999)x345.0, shifted 62.0
+..\vbox(617.0+0.0)x345.0, shifted 62.0
 ...\vbox(12.0+0.0)x345.0, glue set 12.0fil
 ....\glue 0.0 plus 1.0fil
 ....\hbox(0.0+0.0)x345.0
 .....\hbox(0.0+0.0)x345.0
 ...\glue 25.0
 ...\glue(\lineskip) 0.0
-...\vbox(550.0+0.0)x345.0, glue set 338.0509fil
+...\vbox(550.0+0.0)x345.0, glue set 338.06114fil
 ....\write-{}
-....\glue(\topskip) 0.1216
-....\hbox(9.8784+0.08638)x345.0, glue set 304.13281fil
+....\glue(\topskip) 0.12001
+....\hbox(9.87999+0.0)x345.0, glue set 304.15167fil
 .....\hbox(0.0+0.0)x0.0
 ......\glue 0.0
 .....\hbox(0.0+0.0)x0.0
@@ -41,23 +41,27 @@ Completed box being shipped out [3]
 ........\special{pdf:dest (section*.5) [@thispage /XYZ @xpos @ypos null]}
 ........\penalty 10000
 ......\glue 0.0 plus 1.0fil minus 1.0fil
-.....\TU/lmr/bx/n/14.4 Notes
+.....\OT1/cmr/bx/n/14.4 N
+.....\OT1/cmr/bx/n/14.4 o
+.....\OT1/cmr/bx/n/14.4 t
+.....\OT1/cmr/bx/n/14.4 e
+.....\OT1/cmr/bx/n/14.4 s
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty 10000
-....\glue 9.913 plus 0.86198
+....\glue 9.90276 plus 0.86108
 ....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.46962
-....\hbox(6.444+1.85399)x345.0, glue set 0.21419
-.....\hbox(5.994+0.0)x19.7
+....\glue(\baselineskip) 4.75
+....\hbox(6.25+1.75)x345.0, glue set 0.21007
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.0)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -65,8 +69,9 @@ Completed box being shipped out [3]
 .........\special{pdf:dest (postnote.1.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 1.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.1.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -79,42 +84,126 @@ Completed box being shipped out [3]
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
-.......\special{pdf:dest (cite.0:f:1:aristotle:anima) [@thispage /XYZ @xpos @ypos nul\ETC.}
+.......\special{pdf:dest (cite.0:f:1:aristotle:anima) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Aristotle.
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/it/9 De
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Anima
-.....\TU/lmr/m/n/9 .
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 Ed.
+.....\OT1/cmr/m/n/9 A
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/it/9 D
+.....\OT1/cmr/m/it/9 e
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 A
+.....\kern-0.23611
+.....\OT1/cmr/m/it/9 n
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 m
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 E
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 .
 .....\penalty 50
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 by
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Robert
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 b
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 y
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 R
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 b
+.....\kern0.25694
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 t
 .....\penalty 50
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Drew
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 D
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 w
 .....\penalty 25
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Hicks.
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 Cambridge:
-.....\glue 4.116 plus 3.087 minus 0.5145
-.....\TU/lmr/m/n/9 Cambridge
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Uni-
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 H
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 c
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 k
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 C
+.....\OT1/cmr/m/n/9 a
+.....\discretionary replacing 2
+......\OT1/cmr/m/n/9 m
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 m
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 b
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 g
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 :
+.....\glue 4.11108 plus 3.08331 minus 0.51389
+.....\OT1/cmr/m/n/9 C
+.....\OT1/cmr/m/n/9 a
+.....\discretionary replacing 2
+......\OT1/cmr/m/n/9 m
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 m
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 b
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 g
+.....\OT1/cmr/m/n/9 e
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 U
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 i
+.....\discretionary
+.....\OT1/cmr/m/n/9 -
 .....\glue(\rightskip) 0.0
 ....\penalty 10250
-....\glue(\baselineskip) 2.99901
-....\hbox(6.147+1.84499)x345.0, glue set 267.07799fil
-.....\TU/lmr/m/n/9 versity
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Press,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\TU/lmr/m/n/9 1907.
+....\glue(\baselineskip) 3.10002
+....\hbox(6.14998+1.75)x345.0, glue set 267.07277fil
+.....\OT1/cmr/m/n/9 v
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 t
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 y
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 P
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\OT1/cmr/m/n/9 1
+.....\OT1/cmr/m/n/9 9
+.....\OT1/cmr/m/n/9 0
+.....\OT1/cmr/m/n/9 7
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -122,13 +211,13 @@ Completed box being shipped out [3]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.71101
-....\hbox(6.444+1.84499)x345.0, glue set 0.06688
-.....\hbox(5.994+0.0)x19.7
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 0.03287
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.0)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -136,8 +225,9 @@ Completed box being shipped out [3]
 .........\special{pdf:dest (postnote.2.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 2.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.2.mark)>>>>}
+.......\OT1/cmr/m/n/9 2
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -150,109 +240,317 @@ Completed box being shipped out [3]
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
-.......\special{pdf:dest (cite.0:f:1:averroes/bland) [@thispage /XYZ @xpos @ypos null\ETC.}
+.......\special{pdf:dest (cite.0:f:1:averroes/bland) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Averroes.
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/it/9 The
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Epistle
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 on
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 the
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Possibility
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 of
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Conjunction
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 with
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 the
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Active
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Intellect
+.....\OT1/cmr/m/n/9 A
+.....\OT1/cmr/m/n/9 v
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 o
+.....\kern0.25694
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/it/9 T
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 e
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 E
+.....\OT1/cmr/m/it/9 p
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 s
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 l
+.....\OT1/cmr/m/it/9 e
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 o
+.....\OT1/cmr/m/it/9 n
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 e
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 P
+.....\OT1/cmr/m/it/9 o
+.....\OT1/cmr/m/it/9 s
+.....\OT1/cmr/m/it/9 s
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 b
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 l
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 y
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 o
+.....\OT1/cmr/m/it/9 f
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 C
+.....\OT1/cmr/m/it/9 o
+.....\OT1/cmr/m/it/9 n
+.....\OT1/cmr/m/it/9 j
+.....\OT1/cmr/m/it/9 u
+.....\OT1/cmr/m/it/9 n
+.....\OT1/cmr/m/it/9 c
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 o
+.....\OT1/cmr/m/it/9 n
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 w
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 h
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 e
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 A
+.....\kern-0.47224
+.....\OT1/cmr/m/it/9 c
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 v
+.....\OT1/cmr/m/it/9 e
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 I
+.....\OT1/cmr/m/it/9 n
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 l
+.....\kern0.47223
+.....\OT1/cmr/m/it/9 l
+.....\OT1/cmr/m/it/9 e
+.....\kern-0.47224
+.....\OT1/cmr/m/it/9 c
+.....\OT1/cmr/m/it/9 t
 .....\glue(\rightskip) 0.0
 ....\penalty 10000
-....\glue(\baselineskip) 2.81001
-....\hbox(6.345+1.84499)x345.0, glue set 0.11443
-.....\TU/lmr/m/it/9 by
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Ibn
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Rushd
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 with
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 the
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Commentary
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 of
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Moses
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Narboni
-.....\TU/lmr/m/n/9 .
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 Ed.
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 0.12524
+.....\OT1/cmr/m/it/9 b
+.....\OT1/cmr/m/it/9 y
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 I
+.....\OT1/cmr/m/it/9 b
+.....\OT1/cmr/m/it/9 n
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 R
+.....\kern-0.23611
+.....\OT1/cmr/m/it/9 u
+.....\OT1/cmr/m/it/9 s
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 d
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 w
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 h
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 e
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 C
+.....\OT1/cmr/m/it/9 o
+.....\OT1/cmr/m/it/9 m
+.....\OT1/cmr/m/it/9 m
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 n
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 r
+.....\OT1/cmr/m/it/9 y
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 o
+.....\OT1/cmr/m/it/9 f
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 M
+.....\OT1/cmr/m/it/9 o
+.....\OT1/cmr/m/it/9 s
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 s
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 N
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 r
+.....\OT1/cmr/m/it/9 b
+.....\kern-0.47224
+.....\OT1/cmr/m/it/9 o
+.....\OT1/cmr/m/it/9 n
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 E
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 .
 .....\penalty 50
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 and
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 trans.
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 by
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Kalman
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 d
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 .
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 b
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 y
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 K
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 m
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 n
 .....\penalty 50
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 P.
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 P
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 .
 .....\penalty 25
 .....\glue(\rightskip) 0.0
-....\glue(\baselineskip) 2.81001
-....\hbox(6.345+1.85399)x345.0, glue set 0.34459
-.....\TU/lmr/m/n/9 Bland.
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 Moreshet:
-.....\glue 4.116 plus 3.087 minus 0.5145
-.....\TU/lmr/m/n/9 Studies
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 in
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Jewish
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 History,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\TU/lmr/m/n/9 Literature
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 and
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Thought
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 7.
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 New
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 York:
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 0.34813
+.....\OT1/cmr/m/n/9 B
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 M
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 h
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 :
+.....\glue 4.11108 plus 3.08331 minus 0.51389
+.....\OT1/cmr/m/n/9 S
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 u
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 s
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 n
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 J
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 w
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 h
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 H
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 y
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\OT1/cmr/m/n/9 L
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 u
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 e
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 d
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 T
+.....\OT1/cmr/m/n/9 h
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 u
+.....\OT1/cmr/m/n/9 g
+.....\OT1/cmr/m/n/9 h
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 t
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 7
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 N
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 w
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 Y
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 k
+.....\OT1/cmr/m/n/9 :
 .....\glue(\rightskip) 0.0
 ....\penalty 150
-....\glue(\baselineskip) 2.70201
-....\hbox(6.444+1.85399)x345.0, glue set 153.81297fil
-.....\TU/lmr/m/n/9 Jewish
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Theological
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Seminary
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 of
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 America,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\TU/lmr/m/n/9 1982.
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 153.85828fil
+.....\OT1/cmr/m/n/9 J
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 w
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 h
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 T
+.....\OT1/cmr/m/n/9 h
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 g
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 l
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 S
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 m
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 y
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 f
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 A
+.....\OT1/cmr/m/n/9 m
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\OT1/cmr/m/n/9 1
+.....\OT1/cmr/m/n/9 9
+.....\OT1/cmr/m/n/9 8
+.....\OT1/cmr/m/n/9 2
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -260,13 +558,13 @@ Completed box being shipped out [3]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.70201
-....\hbox(6.444+1.74599)x345.0, glue set 227.77596fil
-.....\hbox(5.994+0.19798)x19.7
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 227.85002fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -274,8 +572,9 @@ Completed box being shipped out [3]
 .........\special{pdf:dest (postnote.3.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 3.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.3.mark)>>>>}
+.......\OT1/cmr/m/n/9 3
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -285,20 +584,37 @@ Completed box being shipped out [3]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite11) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Aristotle,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/n/9 op.
+.....\OT1/cmr/m/n/9 A
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:f:1:aristotle:anima)>>>>}
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 .
 .....\penalty 50
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 cit.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 .
 .....\special{pdf:eann}
-.....\TU/lmr/m/n/9 ,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\TU/lmr/m/n/9 p.
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 26.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 2
+.....\OT1/cmr/m/n/9 6
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -306,13 +622,13 @@ Completed box being shipped out [3]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.81001
-....\hbox(6.444+1.74599)x345.0, glue set 209.52394fil
-.....\hbox(6.093+0.0)x19.7
+....\glue(\baselineskip) 3.10002
+....\hbox(6.14998+1.75)x345.0, glue set 208.55502fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(6.093+0.0)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -320,8 +636,9 @@ Completed box being shipped out [3]
 .........\special{pdf:dest (postnote.4.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 4.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.4.mark)>>>>}
+.......\OT1/cmr/m/n/9 4
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -331,23 +648,43 @@ Completed box being shipped out [3]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite12) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Averroes,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/n/9 op.
+.....\OT1/cmr/m/n/9 A
+.....\OT1/cmr/m/n/9 v
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 o
+.....\kern0.25694
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:f:1:averroes/bland)>>>>}
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 .
 .....\penalty 50
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 cit.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 .
 .....\special{pdf:eann}
-.....\TU/lmr/m/n/9 ,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\TU/lmr/m/n/9 pp.
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 59–
-.....\discretionary
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 5
+.....\OT1/cmr/m/n/9 9
+.....\OT1/cmr/m/n/9 {
 .....\penalty 50
-.....\TU/lmr/m/n/9 61.
+.....\OT1/cmr/m/n/9 6
+.....\OT1/cmr/m/n/9 1
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -355,13 +692,13 @@ Completed box being shipped out [3]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.81001
-....\hbox(6.444+1.73698)x345.0, glue set 254.25398fil
-.....\hbox(5.994+0.19798)x19.7
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 254.31512fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -369,8 +706,9 @@ Completed box being shipped out [3]
 .........\special{pdf:dest (postnote.5.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@5}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 5.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.5.mark)>>>>}
+.......\OT1/cmr/m/n/9 5
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -380,13 +718,29 @@ Completed box being shipped out [3]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite13) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Aristotle,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/n/9 loc.
+.....\OT1/cmr/m/n/9 A
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:cite11)>>>>}
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 o
+.....\kern0.25694
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 .
 .....\penalty 50
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 cit.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 .
 .....\special{pdf:eann}
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
@@ -395,13 +749,13 @@ Completed box being shipped out [3]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.81902
-....\hbox(6.444+1.73698)x345.0, glue set 255.01898fil
-.....\hbox(5.994+0.19798)x19.7
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 254.03389fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -409,8 +763,9 @@ Completed box being shipped out [3]
 .........\special{pdf:dest (postnote.6.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 6.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.6.mark)>>>>}
+.......\OT1/cmr/m/n/9 6
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -420,13 +775,30 @@ Completed box being shipped out [3]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite14) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Averroes,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/n/9 loc.
+.....\OT1/cmr/m/n/9 A
+.....\OT1/cmr/m/n/9 v
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 o
+.....\kern0.25694
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:cite12)>>>>}
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 o
+.....\kern0.25694
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 .
 .....\penalty 50
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 cit.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 .
 .....\special{pdf:eann}
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
@@ -435,13 +807,13 @@ Completed box being shipped out [3]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.81902
-....\hbox(6.444+1.84499)x345.0, glue set 0.26372
-.....\hbox(6.084+0.19798)x19.7
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 0.2669
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(6.084+0.19798)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -449,8 +821,9 @@ Completed box being shipped out [3]
 .........\special{pdf:dest (postnote.7.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 7.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.7.mark)>>>>}
+.......\OT1/cmr/m/n/9 7
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -463,49 +836,116 @@ Completed box being shipped out [3]
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
-.......\special{pdf:dest (cite.0:f:1:aristotle:physics) [@thispage /XYZ @xpos @ypos n\ETC.}
+.......\special{pdf:dest (cite.0:f:1:aristotle:physics) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Aristotle.
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/it/9 Physics
-.....\TU/lmr/m/n/9 .
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 Trans.
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 by
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 P.
+.....\OT1/cmr/m/n/9 A
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/it/9 P
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 y
+.....\OT1/cmr/m/it/9 s
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 c
+.....\OT1/cmr/m/it/9 s
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 T
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 .
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 b
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 y
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 P
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 H.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 H
+.....\OT1/cmr/m/n/9 .
 .....\penalty 25
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 Wicksteed
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 and
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 F.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 W
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 c
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 k
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 d
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 d
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 F
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 M.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 M
+.....\OT1/cmr/m/n/9 .
 .....\penalty 25
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 Cornford.
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 New
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 York:
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 C
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 f
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 N
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 w
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 Y
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 k
+.....\OT1/cmr/m/n/9 :
 .....\glue(\rightskip) 0.0
 ....\penalty 10150
-....\glue(\baselineskip) 2.81001
-....\hbox(6.345+1.73698)x345.0, glue set 261.65997fil
-.....\TU/lmr/m/n/9 G.
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 P.
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Putnam,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\TU/lmr/m/n/9 1929.
+....\glue(\baselineskip) 3.10002
+....\hbox(6.14998+1.75)x345.0, glue set 261.68808fil
+.....\OT1/cmr/m/n/9 G
+.....\OT1/cmr/m/n/9 .
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 P
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 .
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 P
+.....\OT1/cmr/m/n/9 u
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 m
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\OT1/cmr/m/n/9 1
+.....\OT1/cmr/m/n/9 9
+.....\OT1/cmr/m/n/9 2
+.....\OT1/cmr/m/n/9 9
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -513,13 +953,13 @@ Completed box being shipped out [3]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.81902
-....\hbox(6.444+1.74599)x345.0, glue set 256.82797fil
-.....\hbox(5.994+0.19798)x19.7
+....\glue(\baselineskip) 3.10002
+....\hbox(6.14998+1.75)x345.0, glue set 255.83249fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -527,8 +967,9 @@ Completed box being shipped out [3]
 .........\special{pdf:dest (postnote.8.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 8.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.8.mark)>>>>}
+.......\OT1/cmr/m/n/9 8
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -538,13 +979,28 @@ Completed box being shipped out [3]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite16) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Averroes,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/n/9 op.
+.....\OT1/cmr/m/n/9 A
+.....\OT1/cmr/m/n/9 v
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 o
+.....\kern0.25694
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:f:1:averroes/bland)>>>>}
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 .
 .....\penalty 50
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 cit.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 .
 .....\special{pdf:eann}
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
@@ -553,13 +1009,13 @@ Completed box being shipped out [3]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.81001
-....\hbox(6.444+1.73698)x345.0, glue set 240.39398fil
-.....\hbox(5.994+0.19798)x19.7
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 239.62895fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -567,8 +1023,9 @@ Completed box being shipped out [3]
 .........\special{pdf:dest (postnote.9.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 9.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.9.mark)>>>>}
+.......\OT1/cmr/m/n/9 9
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -578,15 +1035,30 @@ Completed box being shipped out [3]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite17) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Aristotle,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/it/9 De
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Anima
-.....\kern 0.144
+.....\OT1/cmr/m/n/9 A
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:f:1:aristotle:anima)>>>>}
+.....\OT1/cmr/m/it/9 D
+.....\OT1/cmr/m/it/9 e
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 A
+.....\kern-0.23611
+.....\OT1/cmr/m/it/9 n
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 m
+.....\OT1/cmr/m/it/9 a
+.....\kern 0.7118
 .....\special{pdf:eann}
-.....\TU/lmr/m/n/9 .
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -594,13 +1066,13 @@ Completed box being shipped out [3]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 3.00801
-....\hbox(6.255+1.84499)x345.0, glue set 236.24496fil
-.....\hbox(5.994+0.19798)x24.326
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 235.61676fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -608,8 +1080,10 @@ Completed box being shipped out [3]
 .........\special{pdf:dest (postnote.10.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@10}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 10.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.10.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 0
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -619,18 +1093,31 @@ Completed box being shipped out [3]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite18) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Idem,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/it/9 Physics
-.....\kern 0.072
+.....\OT1/cmr/m/n/9 I
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 m
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:f:1:aristotle:physics)>>>>}
+.....\OT1/cmr/m/it/9 P
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 y
+.....\OT1/cmr/m/it/9 s
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 c
+.....\OT1/cmr/m/it/9 s
+.....\kern 0.73262
 .....\special{pdf:eann}
-.....\TU/lmr/m/n/9 ,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\TU/lmr/m/n/9 p.
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 55.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 5
+.....\OT1/cmr/m/n/9 5
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -638,13 +1125,13 @@ Completed box being shipped out [3]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.90901
-....\hbox(6.246+1.74599)x345.0, glue set 273.62198fil
-.....\hbox(5.994+0.0)x24.326
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 273.66151fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.0)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -652,8 +1139,10 @@ Completed box being shipped out [3]
 .........\special{pdf:dest (postnote.11.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 11.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.11.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -663,15 +1152,22 @@ Completed box being shipped out [3]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite19) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/n/9 Ibid.
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:cite18)>>>>}
+.....\OT1/cmr/m/n/9 I
+.....\OT1/cmr/m/n/9 b
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 .
 .....\special{pdf:eann}
-.....\TU/lmr/m/n/9 ,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\TU/lmr/m/n/9 p.
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 25.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 2
+.....\OT1/cmr/m/n/9 5
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -679,13 +1175,13 @@ Completed box being shipped out [3]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 3.00801
-....\hbox(6.246+1.74599)x345.0, glue set 273.62198fil
-.....\hbox(5.994+0.0)x24.326
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 273.66151fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.0)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -693,8 +1189,10 @@ Completed box being shipped out [3]
 .........\special{pdf:dest (postnote.12.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 12.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.12.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 2
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -704,30 +1202,166 @@ Completed box being shipped out [3]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite20) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/n/9 Ibid.
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:cite19)>>>>}
+.....\OT1/cmr/m/n/9 I
+.....\OT1/cmr/m/n/9 b
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 .
 .....\special{pdf:eann}
-.....\TU/lmr/m/n/9 ,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\TU/lmr/m/n/9 p.
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 25.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 2
+.....\OT1/cmr/m/n/9 5
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
 ....\glue 5.0
-....\glue -1.74599
+....\glue -1.75
 ....\glue 0.0 plus 1.0fil
 ....\glue 0.0
 ....\glue 0.0 plus 0.0001fil
-...\glue(\baselineskip) 23.34
-...\hbox(6.66+0.21999)x345.0
-....\hbox(6.66+0.21999)x345.0, glue set 170.0fil
+...\glue(\baselineskip) 23.55556
+...\hbox(6.44444+0.0)x345.0
+....\hbox(6.44444+0.0)x345.0, glue set 170.0fil
 .....\glue 0.0 plus 1.0fil
-.....\TU/lmr/m/n/10 3
+.....\OT1/cmr/m/n/10 3
 .....\glue 0.0 plus 1.0fil
+Overfull \hbox (1.68579pt too wide) in paragraph at lines 72--72
+[][][][]\OT1/cmr/m/n/9 Immanuel Kant. \  Kri-tik der prak-tis-chen Ver-nunft." In: \OT1/cmr/m/it/9 Kants Werke. Akademie
+\hbox(6.25+1.75)x345.0, glue set - 1.0
+.\hbox(5.79999+0.0)x24.31937
+..\glue 7.5
+..\glue 0.0
+..\glue -5.0
+..\hbox(5.79999+0.0)x16.81937
+...\glue 5.0
+...\penalty 10000
+...\hbox(0.0+0.0)x0.0
+....\hbox(0.0+0.0)x0.0, shifted -11.0
+.....\special{pdf:dest (postnote.14.text) [@thispage /XYZ @xpos @ypos null]}
+.....\penalty 10000
+...\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
+...\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.14.mark)>>>>}
+...\OT1/cmr/m/n/9 1
+...\OT1/cmr/m/n/9 3
+...\OT1/cmr/m/n/9 .
+...\special{pdf:eann}
+..\glue 5.0
+.\penalty 0
+.\write1{\abx@aux@fnpage{21}{\the \c@page }}
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0
+..\hbox(0.0+0.0)x0.0, shifted -11.0
+...\special{pdf:dest (cite.0:cite21) [@thispage /XYZ @xpos @ypos null]}
+...\penalty 10000
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0
+..\hbox(0.0+0.0)x0.0, shifted -11.0
+...\special{pdf:dest (cite.0:f:1:kant:kpv) [@thispage /XYZ @xpos @ypos null]}
+...\penalty 10000
+.\OT1/cmr/m/n/9 I
+.\OT1/cmr/m/n/9 m
+.\OT1/cmr/m/n/9 m
+.\OT1/cmr/m/n/9 a
+.\OT1/cmr/m/n/9 n
+.\kern-0.25694
+.\OT1/cmr/m/n/9 u
+.\OT1/cmr/m/n/9 e
+.\OT1/cmr/m/n/9 l
+.\penalty 25
+.\glue 3.08331 plus 1.54166 minus 1.02777
+.\OT1/cmr/m/n/9 K
+.\OT1/cmr/m/n/9 a
+.\OT1/cmr/m/n/9 n
+.\kern-0.25694
+.\OT1/cmr/m/n/9 t
+.\OT1/cmr/m/n/9 .
+.\glue 4.11108 plus 4.62497 minus 0.34259
+.\OT1/cmr/m/n/9 \
+.\penalty 10000
+.\glue -0.0002
+.\glue 0.0002
+.\OT1/cmr/m/n/9 K
+.\OT1/cmr/m/n/9 r
+.\OT1/cmr/m/n/9 i
+.\discretionary
+..\OT1/cmr/m/n/9 -
+.\OT1/cmr/m/n/9 t
+.\OT1/cmr/m/n/9 i
+.\OT1/cmr/m/n/9 k
+.\glue 3.08331 plus 1.54166 minus 1.02777
+.\OT1/cmr/m/n/9 d
+.\OT1/cmr/m/n/9 e
+.\OT1/cmr/m/n/9 r
+.\glue 3.08331 plus 1.54166 minus 1.02777
+.\OT1/cmr/m/n/9 p
+.\OT1/cmr/m/n/9 r
+.\OT1/cmr/m/n/9 a
+.\OT1/cmr/m/n/9 k
+.\discretionary
+..\OT1/cmr/m/n/9 -
+.\OT1/cmr/m/n/9 t
+.\OT1/cmr/m/n/9 i
+.\OT1/cmr/m/n/9 s
+.\discretionary
+..\OT1/cmr/m/n/9 -
+.\OT1/cmr/m/n/9 c
+.\kern-0.25694
+.\OT1/cmr/m/n/9 h
+.\OT1/cmr/m/n/9 e
+.\OT1/cmr/m/n/9 n
+.\glue 3.08331 plus 1.54166 minus 1.02777
+.\OT1/cmr/m/n/9 V
+.\kern-0.77083
+.\OT1/cmr/m/n/9 e
+.\OT1/cmr/m/n/9 r
+.\discretionary
+..\OT1/cmr/m/n/9 -
+.\OT1/cmr/m/n/9 n
+.\kern-0.25694
+.\OT1/cmr/m/n/9 u
+.\OT1/cmr/m/n/9 n
+.\OT1/cmr/m/n/9 f
+.\OT1/cmr/m/n/9 t
+.\OT1/cmr/m/n/9 .
+.\OT1/cmr/m/n/9 "
+.\kern -0.0002
+.\kern 0.0002
+.\glue 4.11108 plus 4.62497 minus 0.34259
+.\OT1/cmr/m/n/9 I
+.\OT1/cmr/m/n/9 n
+.\OT1/cmr/m/n/9 :
+.\glue 4.11108 plus 3.08331 minus 0.51389
+.\OT1/cmr/m/it/9 K
+.\OT1/cmr/m/it/9 a
+.\OT1/cmr/m/it/9 n
+.\OT1/cmr/m/it/9 t
+.\OT1/cmr/m/it/9 s
+.\glue 3.3056 plus 1.41669 minus 0.94444
+.\OT1/cmr/m/it/9 W
+.\OT1/cmr/m/it/9 e
+.\OT1/cmr/m/it/9 r
+.\OT1/cmr/m/it/9 k
+.\OT1/cmr/m/it/9 e
+.\OT1/cmr/m/it/9 .
+.\glue 4.25005 plus 4.25006 minus 0.3148
+.\OT1/cmr/m/it/9 A
+.\kern-0.23611
+.\OT1/cmr/m/it/9 k
+.\OT1/cmr/m/it/9 a
+.\OT1/cmr/m/it/9 d
+.\OT1/cmr/m/it/9 e
+.\OT1/cmr/m/it/9 m
+.\OT1/cmr/m/it/9 i
+.\OT1/cmr/m/it/9 e
+.\glue(\rightskip) 0.0
 Completed box being shipped out [4]
 \vbox(633.0+0.0)x407.0
 .\vbox(0.0+0.0)x0.0, glue set - 14.99626fil
@@ -754,13 +1388,13 @@ Completed box being shipped out [4]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 457.95108fil
 ....\write-{}
-....\glue(\topskip) 3.556
-....\hbox(6.444+1.74599)x345.0, glue set - 0.80774
-.....\hbox(5.994+0.19798)x24.326
+....\glue(\topskip) 3.75
+....\hbox(6.25+1.75)x345.0, glue set - 1.0
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -768,8 +1402,10 @@ Completed box being shipped out [4]
 .........\special{pdf:dest (postnote.14.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 13.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.14.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 3
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -784,87 +1420,289 @@ Completed box being shipped out [4]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:f:1:kant:kpv) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Immanuel
+.....\OT1/cmr/m/n/9 I
+.....\OT1/cmr/m/n/9 m
+.....\OT1/cmr/m/n/9 m
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 n
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 u
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 l
 .....\penalty 25
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Kant.
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 “
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 K
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 n
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 \
 .....\penalty 10000
 .....\glue -0.0002
 .....\glue 0.0002
-.....\TU/lmr/m/n/9 Kritik
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 der
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 praktischen
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Vernunft.”
+.....\OT1/cmr/m/n/9 K
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 i
+.....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 k
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 k
+.....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 s
+.....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 c
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 h
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 n
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 V
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 n
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 u
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 f
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 .
+.....\OT1/cmr/m/n/9 "
 .....\kern -0.0002
 .....\kern 0.0002
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 In:
-.....\glue 4.116 plus 3.087 minus 0.5145
-.....\TU/lmr/m/it/9 Kants
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Werke.
-.....\glue 4.40399 plus 4.95447 minus 0.36699
-.....\TU/lmr/m/it/9 Akademie
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 I
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 :
+.....\glue 4.11108 plus 3.08331 minus 0.51389
+.....\OT1/cmr/m/it/9 K
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 n
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 s
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 W
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 r
+.....\OT1/cmr/m/it/9 k
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 .
+.....\glue 4.25005 plus 4.25006 minus 0.3148
+.....\OT1/cmr/m/it/9 A
+.....\kern-0.23611
+.....\OT1/cmr/m/it/9 k
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 d
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 m
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 e
 .....\glue(\rightskip) 0.0
 ....\penalty 10000
-....\glue(\baselineskip) 2.90901
-....\hbox(6.345+1.84499)x345.0, glue set - 0.14885
-.....\TU/lmr/m/it/9 Textausgabe
-.....\TU/lmr/m/n/9 .
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 Vol.
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set - 0.2642
+.....\OT1/cmr/m/it/9 T
+.....\kern-0.70834
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 x
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 u
+.....\OT1/cmr/m/it/9 s
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 g
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 b
+.....\kern-0.47224
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 V
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 5:
-.....\glue 4.116 plus 3.087 minus 0.5145
-.....\TU/lmr/m/it/9 Kritik
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 der
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 praktischen
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Vernunft.
-.....\glue 4.40399 plus 4.95447 minus 0.36699
-.....\TU/lmr/m/it/9 Kritik
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 der
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Urtheilskraft
-.....\TU/lmr/m/n/9 .
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 Berlin:
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 5
+.....\OT1/cmr/m/n/9 :
+.....\glue 4.11108 plus 3.08331 minus 0.51389
+.....\OT1/cmr/m/it/9 K
+.....\OT1/cmr/m/it/9 r
+.....\OT1/cmr/m/it/9 i
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 k
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 d
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 r
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 p
+.....\OT1/cmr/m/it/9 r
+.....\kern-0.47224
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 k
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 s
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 c
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 n
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 V
+.....\kern-0.70834
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 r
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 n
+.....\OT1/cmr/m/it/9 u
+.....\OT1/cmr/m/it/9 n
+.....\OT1/cmr/m/it/9 f
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 .
+.....\glue 4.25005 plus 4.25006 minus 0.3148
+.....\OT1/cmr/m/it/9 K
+.....\OT1/cmr/m/it/9 r
+.....\OT1/cmr/m/it/9 i
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 k
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 d
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 r
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 U
+.....\OT1/cmr/m/it/9 r
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 l
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 s
+.....\OT1/cmr/m/it/9 k
+.....\OT1/cmr/m/it/9 r
+.....\kern-0.47224
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 f
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 B
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 :
 .....\glue(\rightskip) 0.0
 ....\penalty 150
-....\glue(\baselineskip) 2.40501
-....\hbox(6.75+2.24098)x345.0, glue set 89.56192fil
-.....\TU/lmr/m/n/9 Walter
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 de
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Gruyter,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\TU/lmr/m/n/9 1968,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\TU/lmr/m/n/9 pp.
-.....\penalty 10000
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 1–
+....\glue(\baselineskip) 2.5
+....\hbox(6.75+2.25)x345.0, glue set 89.64069fil
+.....\OT1/cmr/m/n/9 W
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 l
 .....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 e
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 G
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 u
+.....\OT1/cmr/m/n/9 y
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\OT1/cmr/m/n/9 1
+.....\OT1/cmr/m/n/9 9
+.....\OT1/cmr/m/n/9 6
+.....\OT1/cmr/m/n/9 8
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 .
+.....\penalty 10000
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 1
+.....\OT1/cmr/m/n/9 {
 .....\penalty 50
-.....\TU/lmr/m/n/9 163
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 (henceforth
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 cited
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 as
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 KpV).
+.....\OT1/cmr/m/n/9 1
+.....\OT1/cmr/m/n/9 6
+.....\OT1/cmr/m/n/9 3
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 (
+.....\OT1/cmr/m/n/9 h
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 e
+.....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 f
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 h
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 d
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 s
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 K
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 V
+.....\OT1/cmr/m/n/9 )
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -872,13 +1710,13 @@ Completed box being shipped out [4]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.31502
-....\hbox(6.444+0.19798)x345.0, glue set 0.26288
-.....\hbox(6.093+0.0)x24.326
+....\glue(\baselineskip) 2.5
+....\hbox(6.25+0.0)x345.0, glue set 0.1608
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(6.093+0.0)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -886,8 +1724,10 @@ Completed box being shipped out [4]
 .........\special{pdf:dest (postnote.15.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@15}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 14.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.15.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 4
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -902,87 +1742,279 @@ Completed box being shipped out [4]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:f:1:kant:ku) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Immanuel
+.....\OT1/cmr/m/n/9 I
+.....\OT1/cmr/m/n/9 m
+.....\OT1/cmr/m/n/9 m
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 n
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 u
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 l
 .....\penalty 25
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Kant.
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 “
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 K
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 n
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 \
 .....\penalty 10000
 .....\glue -0.0002
 .....\glue 0.0002
-.....\TU/lmr/m/n/9 Kritik
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 der
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Urtheilskraft.”
+.....\OT1/cmr/m/n/9 K
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 i
+.....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 k
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 U
+.....\OT1/cmr/m/n/9 r
+.....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 h
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 l
+.....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 k
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 f
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 .
+.....\OT1/cmr/m/n/9 "
 .....\kern -0.0002
 .....\kern 0.0002
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 In:
-.....\glue 4.116 plus 3.087 minus 0.5145
-.....\TU/lmr/m/it/9 Kants
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Werke.
-.....\glue 4.40399 plus 4.95447 minus 0.36699
-.....\TU/lmr/m/it/9 Akademie
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Tex-
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 I
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 :
+.....\glue 4.11108 plus 3.08331 minus 0.51389
+.....\OT1/cmr/m/it/9 K
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 n
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 s
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 W
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 r
+.....\OT1/cmr/m/it/9 k
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 .
+.....\glue 4.25005 plus 4.25006 minus 0.3148
+.....\OT1/cmr/m/it/9 A
+.....\kern-0.23611
+.....\OT1/cmr/m/it/9 k
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 d
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 m
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 e
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 T
+.....\kern-0.70834
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 x
+.....\discretionary
+.....\OT1/cmr/m/it/9 -
 .....\glue(\rightskip) 0.0
 ....\penalty 10100
-....\glue(\baselineskip) 4.45702
-....\hbox(6.345+1.84499)x345.0, glue set 0.48747
-.....\TU/lmr/m/it/9 tausgabe
-.....\TU/lmr/m/n/9 .
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 Vol.
+....\glue(\baselineskip) 4.75
+....\hbox(6.25+1.75)x345.0, glue set 0.49577
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 u
+.....\OT1/cmr/m/it/9 s
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 g
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 b
+.....\kern-0.47224
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 V
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 5:
-.....\glue 4.116 plus 3.087 minus 0.5145
-.....\TU/lmr/m/it/9 Kritik
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 der
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 praktischen
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Vernunft.
-.....\glue 4.40399 plus 4.95447 minus 0.36699
-.....\TU/lmr/m/it/9 Kritik
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 der
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Urtheilskraft
-.....\TU/lmr/m/n/9 .
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 Berlin:
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 5
+.....\OT1/cmr/m/n/9 :
+.....\glue 4.11108 plus 3.08331 minus 0.51389
+.....\OT1/cmr/m/it/9 K
+.....\OT1/cmr/m/it/9 r
+.....\OT1/cmr/m/it/9 i
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 k
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 d
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 r
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 p
+.....\OT1/cmr/m/it/9 r
+.....\kern-0.47224
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 k
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 s
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 c
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 n
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 V
+.....\kern-0.70834
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 r
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 n
+.....\OT1/cmr/m/it/9 u
+.....\OT1/cmr/m/it/9 n
+.....\OT1/cmr/m/it/9 f
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 .
+.....\glue 4.25005 plus 4.25006 minus 0.3148
+.....\OT1/cmr/m/it/9 K
+.....\OT1/cmr/m/it/9 r
+.....\OT1/cmr/m/it/9 i
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 k
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 d
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 r
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 U
+.....\OT1/cmr/m/it/9 r
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 l
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 s
+.....\OT1/cmr/m/it/9 k
+.....\OT1/cmr/m/it/9 r
+.....\kern-0.47224
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 f
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 B
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 :
 .....\glue(\rightskip) 0.0
 ....\penalty 150
-....\glue(\baselineskip) 2.40501
-....\hbox(6.75+2.24098)x345.0, glue set 85.44893fil
-.....\TU/lmr/m/n/9 Walter
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 de
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Gruyter,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\TU/lmr/m/n/9 1968,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\TU/lmr/m/n/9 pp.
-.....\penalty 10000
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 165–
+....\glue(\baselineskip) 2.5
+....\hbox(6.75+2.25)x345.0, glue set 85.5296fil
+.....\OT1/cmr/m/n/9 W
+.....\kern-0.77083
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 l
 .....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 e
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 G
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 u
+.....\OT1/cmr/m/n/9 y
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\OT1/cmr/m/n/9 1
+.....\OT1/cmr/m/n/9 9
+.....\OT1/cmr/m/n/9 6
+.....\OT1/cmr/m/n/9 8
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 .
+.....\penalty 10000
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 1
+.....\OT1/cmr/m/n/9 6
+.....\OT1/cmr/m/n/9 5
+.....\OT1/cmr/m/n/9 {
 .....\penalty 50
-.....\TU/lmr/m/n/9 485
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 (henceforth
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 cited
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 as
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 KU).
+.....\OT1/cmr/m/n/9 4
+.....\OT1/cmr/m/n/9 8
+.....\OT1/cmr/m/n/9 5
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 (
+.....\OT1/cmr/m/n/9 h
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 e
+.....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 f
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 h
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 d
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 s
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 K
+.....\OT1/cmr/m/n/9 U
+.....\OT1/cmr/m/n/9 )
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -990,13 +2022,13 @@ Completed box being shipped out [4]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.61201
-....\hbox(6.147+1.74599)x345.0, glue set 273.11798fil
-.....\hbox(5.994+0.19798)x24.326
+....\glue(\baselineskip) 2.60002
+....\hbox(6.14998+1.75)x345.0, glue set 273.14903fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1004,8 +2036,10 @@ Completed box being shipped out [4]
 .........\special{pdf:dest (postnote.16.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@16}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 15.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.16.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 5
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -1015,15 +2049,20 @@ Completed box being shipped out [4]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite23) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/n/9 KpV
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:f:1:kant:kpv)>>>>}
+.....\OT1/cmr/m/n/9 K
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 V
 .....\special{pdf:eann}
-.....\TU/lmr/m/n/9 ,
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 p.
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 24.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 2
+.....\OT1/cmr/m/n/9 4
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -1031,13 +2070,13 @@ Completed box being shipped out [4]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 3.10701
-....\hbox(6.147+1.74599)x345.0, glue set 259.23996fil
-.....\hbox(5.994+0.19798)x24.326
+....\glue(\baselineskip) 3.10002
+....\hbox(6.14998+1.75)x345.0, glue set 259.27412fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1045,8 +2084,10 @@ Completed box being shipped out [4]
 .........\special{pdf:dest (postnote.17.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@17}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 16.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.17.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 6
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -1056,35 +2097,41 @@ Completed box being shipped out [4]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite24) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/n/9 KU
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:f:1:kant:ku)>>>>}
+.....\OT1/cmr/m/n/9 K
+.....\OT1/cmr/m/n/9 U
 .....\special{pdf:eann}
-.....\TU/lmr/m/n/9 ,
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 pp.
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 59–
-.....\discretionary
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 5
+.....\OT1/cmr/m/n/9 9
+.....\OT1/cmr/m/n/9 {
 .....\penalty 50
-.....\TU/lmr/m/n/9 63.
+.....\OT1/cmr/m/n/9 6
+.....\OT1/cmr/m/n/9 3
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
 ....\glue 5.0
-....\glue -1.74599
+....\glue -1.75
 ....\glue 0.0 plus 1.0fil
 ....\glue 0.0
 ....\glue 0.0 plus 0.0001fil
-...\glue(\baselineskip) 23.23
-...\hbox(6.77+0.0)x345.0
-....\hbox(6.77+0.0)x345.0, glue set 170.0fil
+...\glue(\baselineskip) 23.55556
+...\hbox(6.44444+0.0)x345.0
+....\hbox(6.44444+0.0)x345.0, glue set 170.0fil
 .....\glue 0.0 plus 1.0fil
-.....\TU/lmr/m/n/10 4
+.....\OT1/cmr/m/n/10 4
 .....\glue 0.0 plus 1.0fil
 Completed box being shipped out [5]
-\vbox(633.0+0.21999)x407.0
+\vbox(633.0+0.0)x407.0
 .\vbox(0.0+0.0)x0.0, glue set - 14.99626fil
 ..\kern 0.0
 ..\kern 16.0
@@ -1098,9 +2145,9 @@ Completed box being shipped out [5]
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 ..\glue 0.0 plus 1.0fil minus 1.0fil
 .\glue(\lineskip) 0.0
-.\vbox(633.0+0.21999)x407.0
+.\vbox(633.0+0.0)x407.0
 ..\glue 16.0
-..\vbox(617.0+0.21999)x345.0, shifted 62.0
+..\vbox(617.0+0.0)x345.0, shifted 62.0
 ...\vbox(12.0+0.0)x345.0, glue set 12.0fil
 ....\glue 0.0 plus 1.0fil
 ....\hbox(0.0+0.0)x345.0
@@ -1109,13 +2156,13 @@ Completed box being shipped out [5]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 457.95108fil
 ....\write-{}
-....\glue(\topskip) 3.556
-....\hbox(6.444+1.84499)x345.0, glue set 0.85002
-.....\hbox(6.084+0.19798)x24.326
+....\glue(\topskip) 3.75
+....\hbox(6.25+1.75)x345.0, glue set 0.94614
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(6.084+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1123,8 +2170,10 @@ Completed box being shipped out [5]
 .........\special{pdf:dest (postnote.19.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@19}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 17.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.19.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 7
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -1137,74 +2186,225 @@ Completed box being shipped out [5]
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
-.......\special{pdf:dest (cite.0:f:1:aristotle:rhetoric) [@thispage /XYZ @xpos @ypos \ETC.}
+.......\special{pdf:dest (cite.0:f:1:aristotle:rhetoric) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Aristotle.
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/it/9 The
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Rhetoric
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 of
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Aristotle
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 with
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 a
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 commentary
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 by
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 the
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 late
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Edward
+.....\OT1/cmr/m/n/9 A
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/it/9 T
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 e
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 R
+.....\kern-0.23611
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 o
+.....\OT1/cmr/m/it/9 r
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 c
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 o
+.....\OT1/cmr/m/it/9 f
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 A
+.....\kern-0.23611
+.....\OT1/cmr/m/it/9 r
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 s
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 o
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 l
+.....\OT1/cmr/m/it/9 e
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 w
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 h
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 a
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 c
+.....\kern-0.47224
+.....\OT1/cmr/m/it/9 o
+.....\OT1/cmr/m/it/9 m
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 m
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 n
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 r
+.....\OT1/cmr/m/it/9 y
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 b
+.....\OT1/cmr/m/it/9 y
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 e
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 l
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 e
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 E
+.....\OT1/cmr/m/it/9 d
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 w
+.....\OT1/cmr/m/it/9 a
+.....\OT1/cmr/m/it/9 r
+.....\kern-0.47224
+.....\OT1/cmr/m/it/9 d
 .....\glue(\rightskip) 0.0
 ....\penalty 10000
-....\glue(\baselineskip) 2.81001
-....\hbox(6.345+1.85399)x345.0, glue set 0.28348
-.....\TU/lmr/m/it/9 Meredith
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Cope
-.....\TU/lmr/m/n/9 .
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 Ed.
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 0.28922
+.....\OT1/cmr/m/it/9 M
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/it/9 r
+.....\kern-0.47224
+.....\OT1/cmr/m/it/9 e
+.....\kern-0.47224
+.....\OT1/cmr/m/it/9 d
+.....\discretionary
+......\OT1/cmr/m/it/9 -
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 t
+.....\OT1/cmr/m/it/9 h
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 C
+.....\OT1/cmr/m/it/9 o
+.....\OT1/cmr/m/it/9 p
+.....\kern-0.47224
+.....\OT1/cmr/m/it/9 e
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 E
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 .
 .....\penalty 50
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 and
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 comm.
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 by
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Edward
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 d
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 m
+.....\OT1/cmr/m/n/9 m
+.....\OT1/cmr/m/n/9 .
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 b
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 y
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 E
+.....\OT1/cmr/m/n/9 d
+.....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 w
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 d
 .....\penalty 50
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Meredith
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 M
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 d
+.....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 h
 .....\penalty 25
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Cope.
-.....\glue 4.116 plus 4.63051 minus 0.34299
-.....\TU/lmr/m/n/9 3
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 C
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 p
+.....\kern0.25694
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 .
+.....\glue 4.11108 plus 4.62497 minus 0.34259
+.....\OT1/cmr/m/n/9 3
 .....\penalty 10000
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 vols.
-.....\glue 3.087 plus 1.55275 minus 1.02284
-.....\TU/lmr/m/n/9 Cambridge
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Uni-
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 v
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 .
+.....\glue 3.08331 plus 1.5509 minus 1.02164
+.....\OT1/cmr/m/n/9 C
+.....\OT1/cmr/m/n/9 a
+.....\discretionary replacing 2
+......\OT1/cmr/m/n/9 m
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 m
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 b
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 g
+.....\OT1/cmr/m/n/9 e
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 U
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 i
+.....\discretionary
+.....\OT1/cmr/m/n/9 -
 .....\glue(\rightskip) 0.0
 ....\penalty 250
-....\glue(\baselineskip) 2.99901
-....\hbox(6.147+1.84499)x345.0, glue set 267.07799fil
-.....\TU/lmr/m/n/9 versity
-.....\glue 3.087 plus 1.5435 minus 1.02899
-.....\TU/lmr/m/n/9 Press,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\TU/lmr/m/n/9 1877.
+....\glue(\baselineskip) 3.10002
+....\hbox(6.14998+1.75)x345.0, glue set 267.07277fil
+.....\OT1/cmr/m/n/9 v
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\discretionary
+......\OT1/cmr/m/n/9 -
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 t
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 y
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 P
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\OT1/cmr/m/n/9 1
+.....\OT1/cmr/m/n/9 8
+.....\OT1/cmr/m/n/9 7
+.....\OT1/cmr/m/n/9 7
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -1212,13 +2412,13 @@ Completed box being shipped out [5]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.71101
-....\hbox(6.444+1.74599)x345.0, glue set 252.20197fil
-.....\hbox(5.994+0.19798)x24.326
+....\glue(\baselineskip) 3.10002
+....\hbox(6.14998+1.75)x345.0, glue set 251.20752fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1226,8 +2426,10 @@ Completed box being shipped out [5]
 .........\special{pdf:dest (postnote.20.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@20}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 18.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.20.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 8
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -1237,13 +2439,28 @@ Completed box being shipped out [5]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite26) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Averroes,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/n/9 op.
+.....\OT1/cmr/m/n/9 A
+.....\OT1/cmr/m/n/9 v
+.....\kern-0.25694
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 o
+.....\kern0.25694
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:f:1:averroes/bland)>>>>}
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 .
 .....\penalty 50
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 cit.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 .
 .....\special{pdf:eann}
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
@@ -1252,13 +2469,13 @@ Completed box being shipped out [5]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.81001
-....\hbox(6.444+1.74599)x345.0, glue set 251.43697fil
-.....\hbox(5.994+0.19798)x24.326
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 251.48875fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1266,8 +2483,10 @@ Completed box being shipped out [5]
 .........\special{pdf:dest (postnote.21.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@21}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 19.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.21.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 9
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -1277,13 +2496,27 @@ Completed box being shipped out [5]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite27) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Aristotle,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/n/9 op.
+.....\OT1/cmr/m/n/9 A
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 l
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:f:1:aristotle:rhetoric)>>>>}
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 .
 .....\penalty 50
-.....\glue 3.087 plus 1.54659 minus 1.02693
-.....\TU/lmr/m/n/9 cit.
+.....\glue 3.08331 plus 1.54474 minus 1.02571
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 t
+.....\OT1/cmr/m/n/9 .
 .....\special{pdf:eann}
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
@@ -1292,13 +2525,13 @@ Completed box being shipped out [5]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.81001
-....\hbox(6.444+1.73698)x345.0, glue set 250.76198fil
-.....\hbox(5.994+0.19798)x24.326
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 249.97888fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1306,8 +2539,10 @@ Completed box being shipped out [5]
 .........\special{pdf:dest (postnote.22.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@22}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 20.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.22.mark)>>>>}
+.......\OT1/cmr/m/n/9 2
+.......\OT1/cmr/m/n/9 0
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -1317,15 +2552,25 @@ Completed box being shipped out [5]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite28) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Idem,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/it/9 De
-.....\glue 3.303 plus 1.65149 minus 1.101
-.....\TU/lmr/m/it/9 Anima
-.....\kern 0.144
+.....\OT1/cmr/m/n/9 I
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 m
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:f:1:aristotle:anima)>>>>}
+.....\OT1/cmr/m/it/9 D
+.....\OT1/cmr/m/it/9 e
+.....\glue 3.3056 plus 1.41669 minus 0.94444
+.....\OT1/cmr/m/it/9 A
+.....\kern-0.23611
+.....\OT1/cmr/m/it/9 n
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 m
+.....\OT1/cmr/m/it/9 a
+.....\kern 0.7118
 .....\special{pdf:eann}
-.....\TU/lmr/m/n/9 .
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -1333,13 +2578,13 @@ Completed box being shipped out [5]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 3.00801
-....\hbox(6.255+1.84499)x345.0, glue set 261.95798fil
-.....\hbox(5.994+0.0)x24.326
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 261.31104fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.0)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1347,8 +2592,10 @@ Completed box being shipped out [5]
 .........\special{pdf:dest (postnote.23.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@23}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 21.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.23.mark)>>>>}
+.......\OT1/cmr/m/n/9 2
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -1358,13 +2605,23 @@ Completed box being shipped out [5]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite29) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\TU/lmr/m/n/9 Idem,
-.....\glue 3.087 plus 1.92937 minus 0.82318
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/it/9 Physics
-.....\kern 0.072
+.....\OT1/cmr/m/n/9 I
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 m
+.....\OT1/cmr/m/n/9 ,
+.....\glue 3.08331 plus 1.92706 minus 0.8222
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:f:1:aristotle:physics)>>>>}
+.....\OT1/cmr/m/it/9 P
+.....\OT1/cmr/m/it/9 h
+.....\OT1/cmr/m/it/9 y
+.....\OT1/cmr/m/it/9 s
+.....\OT1/cmr/m/it/9 i
+.....\OT1/cmr/m/it/9 c
+.....\OT1/cmr/m/it/9 s
+.....\kern 0.73262
 .....\special{pdf:eann}
-.....\TU/lmr/m/n/9 .
+.....\OT1/cmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -1372,13 +2629,13 @@ Completed box being shipped out [5]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.90901
-....\hbox(6.246+0.09898)x345.0, glue set 301.909fil
-.....\hbox(5.994+0.0)x24.326
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+0.0)x345.0, glue set 301.92522fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.0)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1386,8 +2643,10 @@ Completed box being shipped out [5]
 .........\special{pdf:dest (postnote.24.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@24}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 22.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.24.mark)>>>>}
+.......\OT1/cmr/m/n/9 2
+.......\OT1/cmr/m/n/9 2
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
@@ -1397,22 +2656,25 @@ Completed box being shipped out [5]
 ......\hbox(0.0+0.0)x0.0, shifted -11.0
 .......\special{pdf:dest (cite.0:cite30) [@thispage /XYZ @xpos @ypos null]}
 .......\penalty 10000
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/G\ETC.}
-.....\TU/lmr/m/n/9 Ibid.
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[0 1 0]/A<</S/GoTo/D(cite.0:cite29)>>>>}
+.....\OT1/cmr/m/n/9 I
+.....\OT1/cmr/m/n/9 b
+.....\OT1/cmr/m/n/9 i
+.....\OT1/cmr/m/n/9 d
+.....\OT1/cmr/m/n/9 .
 .....\special{pdf:eann}
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
 ....\glue 5.0
-....\glue -0.09898
 ....\glue 0.0 plus 1.0fil
 ....\glue 0.0
 ....\glue 0.0 plus 0.0001fil
-...\glue(\baselineskip) 23.34
-...\hbox(6.66+0.21999)x345.0
-....\hbox(6.66+0.21999)x345.0, glue set 170.0fil
+...\glue(\baselineskip) 23.55556
+...\hbox(6.44444+0.0)x345.0
+....\hbox(6.44444+0.0)x345.0, glue set 170.0fil
 .....\glue 0.0 plus 1.0fil
-.....\TU/lmr/m/n/10 5
+.....\OT1/cmr/m/n/10 5
 .....\glue 0.0 plus 1.0fil
 ============================================================

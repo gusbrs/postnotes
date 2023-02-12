@@ -7,6 +7,12 @@
 \debug_on:n { check-declarations , deprecation }
 \ExplSyntaxOff
 
+% Ensure the same font across check engines
+\usepackage[T1]{fontenc}
+\renewcommand\rmdefault{lmr}
+\renewcommand\sfdefault{lmss}
+\renewcommand\ttdefault{lmtt}
+
 \usepackage[
   german,
   ngerman,

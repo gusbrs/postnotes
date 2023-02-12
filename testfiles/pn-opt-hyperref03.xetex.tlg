@@ -31,14 +31,14 @@ l. ...\bool_show:N \l__postnotes_hyperlink_bool
 TEST 2: Note hyperref
 ============================================================
 > \box...=
-\hbox(8.27692+0.0)x4.483
+\hbox(8.14003+0.0)x4.48613
 .\hbox(0.0+0.0)x0.0
 .\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
 .\penalty 10000
-.\hbox(8.27692+0.0)x4.483
+.\hbox(8.14003+0.0)x4.48613
 ..\mathon
-..\hbox(4.648+0.0)x4.483, shifted -3.62892
-...\TU/lmr/m/n/7 1
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
 ..\mathoff
 ! OK.
 l. ...\showbox0
@@ -47,9 +47,9 @@ l. ...\showbox0
 TEST 3: Print hyperref
 ============================================================
 Completed box being shipped out [3]
-\vbox(627.36243+0.21999)x380.0
+\vbox(627.36243+0.0)x380.0
 .\glue 22.0
-.\vbox(605.36243+0.21999)x345.0, shifted 35.0
+.\vbox(605.36243+0.0)x345.0, shifted 35.0
 ..\vbox(12.0+0.0)x345.0, glue set 12.0fil
 ...\glue 0.0 plus 1.0fil
 ...\hbox(0.0+0.0)x345.0
@@ -65,10 +65,14 @@ Completed box being shipped out [3]
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
-...\glue(\baselineskip) 12.93231
-...\hbox(17.06769+0.14926)x345.0, glue set 137.19528fil
+...\glue(\baselineskip) 12.92955
+...\hbox(17.07045+0.0)x345.0, glue set 137.21155fil
 ....\hbox(0.0+0.0)x0.0
-....\TU/lmr/bx/n/24.88 Notes
+....\OT1/cmr/bx/n/24.88 N
+....\OT1/cmr/bx/n/24.88 o
+....\OT1/cmr/bx/n/24.88 t
+....\OT1/cmr/bx/n/24.88 e
+....\OT1/cmr/bx/n/24.88 s
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0 plus 1.0fil
@@ -83,34 +87,42 @@ Completed box being shipped out [3]
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
-...\glue(\baselineskip) 4.73074
-...\hbox(6.12+0.09898)x345.0, glue set 287.383fil
-....\hbox(5.994+0.0)x19.7
+...\glue(\baselineskip) 4.85002
+...\hbox(6.14998+0.0)x345.0, glue set 287.4038fil
+....\hbox(5.79999+0.0)x19.6944
 .....\glue 7.5
 .....\glue 0.0
 .....\glue -5.0
-.....\hbox(5.994+0.0)x12.2
+.....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
 ......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
-......\TU/lmr/m/n/9 1.
+......\OT1/cmr/m/n/9 1
+......\OT1/cmr/m/n/9 .
 .....\glue 5.0
 ....\penalty 0
-....\TU/lmr/m/n/9 Foo
-....\glue 3.087 plus 1.5435 minus 1.02899
-....\TU/lmr/m/n/9 note.
+....\OT1/cmr/m/n/9 F
+....\kern-0.77083
+....\OT1/cmr/m/n/9 o
+....\kern0.25694
+....\OT1/cmr/m/n/9 o
+....\glue 3.08331 plus 1.54166 minus 1.02777
+....\OT1/cmr/m/n/9 n
+....\OT1/cmr/m/n/9 o
+....\OT1/cmr/m/n/9 t
+....\OT1/cmr/m/n/9 e
+....\OT1/cmr/m/n/9 .
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
 ...\penalty -51
 ...\glue 5.0
-...\glue -0.09898
 ...\glue 0.0 plus 1.0fil
 ...\glue 0.0
-..\glue(\baselineskip) 18.63493
-..\hbox(6.66+0.21999)x345.0
-...\hbox(6.66+0.21999)x345.0, glue set 170.0fil
+..\glue(\baselineskip) 18.8505
+..\hbox(6.44444+0.0)x345.0
+...\hbox(6.44444+0.0)x345.0, glue set 170.0fil
 ....\glue 0.0 plus 1.0fil
-....\TU/lmr/m/n/10 3
+....\OT1/cmr/m/n/10 3
 ....\glue 0.0 plus 1.0fil
 ============================================================

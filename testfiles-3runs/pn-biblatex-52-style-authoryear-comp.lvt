@@ -7,6 +7,12 @@
 \debug_on:n { check-declarations , deprecation }
 \ExplSyntaxOff
 
+% Ensure the same font across check engines
+\usepackage[OT1]{fontenc}
+\renewcommand\rmdefault{cmr}
+\renewcommand\sfdefault{cmss}
+\renewcommand\ttdefault{cmtt}
+
 \usepackage[american]{babel}
 \usepackage{csquotes}
 \usepackage[style=authoryear-comp,backend=biber,notetype=endonly]{biblatex}

@@ -7,6 +7,14 @@
 \debug_on:n { check-declarations , deprecation }
 \ExplSyntaxOff
 
+% Ensure the same font across check engines
+\usepackage[OT1]{fontenc}
+\renewcommand\rmdefault{cmr}
+\renewcommand\sfdefault{cmss}
+\renewcommand\ttdefault{cmtt}
+
+\newcommand{\testtmp}{}
+
 \usepackage{postnotes}
 \counterwithin*{postnote}{chapter}
 
@@ -26,12 +34,14 @@ a &= b && \text{something}\setbox0=\hbox{\postnote{align}}\showbox0\box0 \\
 c &= d && \text{other}
 \end{align}
 
+\renewcommand{\testtmp}{\postnote{equation}}
 \begin{equation}
 \begin{pmatrix} D_1t&-a_{12}t_2&\dots&-a_{1n}t_n\\
 -a_{21}t_1&D_2t&\dots&-a_{2n}t_n\\
 \hdotsfor[2]{4}\\
 -a_{n1}t_1&-a_{n2}t_2&\dots&D_nt
-\end{pmatrix}\setbox0=\hbox{\postnote{equation}}\showbox0\box0
+\end{pmatrix}%
+\setbox0=\hbox{\testtmp}\showbox0\box0
 \end{equation}
 
 \begin{align}

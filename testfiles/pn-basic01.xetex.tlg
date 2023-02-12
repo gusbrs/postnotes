@@ -8,7 +8,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line ....
 > \box...=
-\hbox(8.27692+0.0)x4.483
+\hbox(8.14003+0.0)x4.48613
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -16,11 +16,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x4.483
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.1.text)>>>>}
+.\hbox(8.14003+0.0)x4.48613
 ..\mathon
-..\hbox(4.648+0.0)x4.483, shifted -3.62892
-...\TU/lmr/m/n/7 1
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -28,7 +28,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.27692+0.0)x4.483
+\hbox(8.14003+0.0)x4.48613
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -36,11 +36,11 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x4.483
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.2.text)>>>>}
+.\hbox(8.14003+0.0)x4.48613
 ..\mathon
-..\hbox(4.648+0.0)x4.483, shifted -3.62892
-...\TU/lmr/m/n/7 2
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 2
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -48,7 +48,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.27692+0.0)x4.483
+\hbox(8.14003+0.0)x4.48613
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -56,11 +56,11 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x4.483
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.3.text)>>>>}
+.\hbox(8.14003+0.0)x4.48613
 ..\mathon
-..\hbox(4.648+0.13998)x4.483, shifted -3.62892
-...\TU/lmr/m/n/7 3
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 3
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -68,7 +68,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.34692+0.0)x4.483
+\hbox(8.14003+0.0)x4.48613
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -76,11 +76,11 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@4}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.34692+0.0)x4.483
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.4.text)>>>>}
+.\hbox(8.14003+0.0)x4.48613
 ..\mathon
-..\hbox(4.718+0.0)x4.483, shifted -3.62892
-...\TU/lmr/m/n/7 4
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 4
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -88,7 +88,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.27692+0.0)x4.483
+\hbox(8.14003+0.0)x4.48613
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -96,11 +96,11 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@5}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x4.483
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.5.text)>>>>}
+.\hbox(8.14003+0.0)x4.48613
 ..\mathon
-..\hbox(4.648+0.13998)x4.483, shifted -3.62892
-...\TU/lmr/m/n/7 5
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 5
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -108,7 +108,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.27692+0.0)x4.483
+\hbox(8.14003+0.0)x4.48613
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -116,11 +116,11 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@6}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x4.483
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.6.text)>>>>}
+.\hbox(8.14003+0.0)x4.48613
 ..\mathon
-..\hbox(4.648+0.13998)x4.483, shifted -3.62892
-...\TU/lmr/m/n/7 6
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 6
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -128,7 +128,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.36092+0.0)x4.483
+\hbox(8.14003+0.0)x4.48613
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -136,11 +136,11 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@7}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.36092+0.0)x4.483
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.7.text)>>>>}
+.\hbox(8.14003+0.0)x4.48613
 ..\mathon
-..\hbox(4.732+0.13998)x4.483, shifted -3.62892
-...\TU/lmr/m/n/7 7
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 7
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -148,7 +148,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.27692+0.0)x4.483
+\hbox(8.14003+0.0)x4.48613
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -156,11 +156,11 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@8}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x4.483
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.8.text)>>>>}
+.\hbox(8.14003+0.0)x4.48613
 ..\mathon
-..\hbox(4.648+0.13998)x4.483, shifted -3.62892
-...\TU/lmr/m/n/7 8
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 8
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -168,7 +168,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.27692+0.0)x4.483
+\hbox(8.14003+0.0)x4.48613
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -176,11 +176,11 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@9}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x4.483
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.9.text)>>>>}
+.\hbox(8.14003+0.0)x4.48613
 ..\mathon
-..\hbox(4.648+0.13998)x4.483, shifted -3.62892
-...\TU/lmr/m/n/7 9
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 9
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -188,7 +188,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.27692+0.0)x8.466
+\hbox(8.14003+0.0)x8.47226
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -196,11 +196,12 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@10}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x8.466
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.10.text)>>>>}
+.\hbox(8.14003+0.0)x8.47226
 ..\mathon
-..\hbox(4.648+0.13998)x8.466, shifted -3.62892
-...\TU/lmr/m/n/7 10
+..\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+...\OT1/cmr/m/n/7 0
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -208,7 +209,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.27692+0.0)x8.466
+\hbox(8.14003+0.0)x8.47226
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -216,11 +217,12 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@11}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x8.466
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.11.text)>>>>}
+.\hbox(8.14003+0.0)x8.47226
 ..\mathon
-..\hbox(4.648+0.0)x8.466, shifted -3.62892
-...\TU/lmr/m/n/7 11
+..\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+...\OT1/cmr/m/n/7 1
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -228,14 +230,14 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 Underfull \vbox (badness 10000) has occurred while \output is active
-\vbox(550.0+0.0)x4.483
+\vbox(550.0+0.0)x4.48613
 .\write-{}
 .\special{pdf:majorversion 1}
 .\special{pdf:minorversion 5}
 .\special{pdf:docview<</OpenAction[@page1/Fit]/PageMode/UseOutlines>>}
 .\special{pdf:dest (Doc-Start) [@thispage /XYZ @xpos @ypos null]}
-.\glue(\topskip) 1.72308
-.\hbox(8.27692+0.0)x4.483
+.\glue(\topskip) 1.85997
+.\hbox(8.14003+0.0)x4.48613
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -243,17 +245,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.27692+0.0)x4.483
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.1.text)>>>>}
+..\hbox(8.14003+0.0)x4.48613
 ...\mathon
-...\hbox(4.648+0.0)x4.483, shifted -3.62892
-....\TU/lmr/m/n/7 1
+...\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+....\OT1/cmr/m/n/7 1
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.72308
-.\hbox(8.27692+0.0)x4.483
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x4.48613
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -261,17 +263,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.27692+0.0)x4.483
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.2.text)>>>>}
+..\hbox(8.14003+0.0)x4.48613
 ...\mathon
-...\hbox(4.648+0.0)x4.483, shifted -3.62892
-....\TU/lmr/m/n/7 2
+...\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+....\OT1/cmr/m/n/7 2
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.72308
-.\hbox(8.27692+0.0)x4.483
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x4.48613
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -279,17 +281,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.27692+0.0)x4.483
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.3.text)>>>>}
+..\hbox(8.14003+0.0)x4.48613
 ...\mathon
-...\hbox(4.648+0.13998)x4.483, shifted -3.62892
-....\TU/lmr/m/n/7 3
+...\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+....\OT1/cmr/m/n/7 3
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.65308
-.\hbox(8.34692+0.0)x4.483
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x4.48613
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -297,17 +299,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@4}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.34692+0.0)x4.483
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.4.text)>>>>}
+..\hbox(8.14003+0.0)x4.48613
 ...\mathon
-...\hbox(4.718+0.0)x4.483, shifted -3.62892
-....\TU/lmr/m/n/7 4
+...\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+....\OT1/cmr/m/n/7 4
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.72308
-.\hbox(8.27692+0.0)x4.483
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x4.48613
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -315,17 +317,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@5}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.27692+0.0)x4.483
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.5.text)>>>>}
+..\hbox(8.14003+0.0)x4.48613
 ...\mathon
-...\hbox(4.648+0.13998)x4.483, shifted -3.62892
-....\TU/lmr/m/n/7 5
+...\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+....\OT1/cmr/m/n/7 5
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.72308
-.\hbox(8.27692+0.0)x4.483
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x4.48613
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -333,17 +335,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@6}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.27692+0.0)x4.483
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.6.text)>>>>}
+..\hbox(8.14003+0.0)x4.48613
 ...\mathon
-...\hbox(4.648+0.13998)x4.483, shifted -3.62892
-....\TU/lmr/m/n/7 6
+...\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+....\OT1/cmr/m/n/7 6
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.63908
-.\hbox(8.36092+0.0)x4.483
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x4.48613
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -351,17 +353,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@7}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.36092+0.0)x4.483
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.7.text)>>>>}
+..\hbox(8.14003+0.0)x4.48613
 ...\mathon
-...\hbox(4.732+0.13998)x4.483, shifted -3.62892
-....\TU/lmr/m/n/7 7
+...\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+....\OT1/cmr/m/n/7 7
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.72308
-.\hbox(8.27692+0.0)x4.483
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x4.48613
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -369,17 +371,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@8}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.27692+0.0)x4.483
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.8.text)>>>>}
+..\hbox(8.14003+0.0)x4.48613
 ...\mathon
-...\hbox(4.648+0.13998)x4.483, shifted -3.62892
-....\TU/lmr/m/n/7 8
+...\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+....\OT1/cmr/m/n/7 8
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.72308
-.\hbox(8.27692+0.0)x4.483
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x4.48613
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -387,18 +389,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@9}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.27692+0.0)x4.483
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.9.text)>>>>}
+..\hbox(8.14003+0.0)x4.48613
 ...\mathon
-...\hbox(4.648+0.13998)x4.483, shifted -3.62892
-....\TU/lmr/m/n/7 9
+...\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+....\OT1/cmr/m/n/7 9
 ...\mathoff
 ..\special{pdf:eann}
 .\glue 0.0
 [1
 ]
 > \box...=
-\hbox(8.27692+0.0)x8.466
+\hbox(8.14003+0.0)x8.47226
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -406,11 +408,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@12}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x8.466
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.12.text)>>>>}
+.\hbox(8.14003+0.0)x8.47226
 ..\mathon
-..\hbox(4.648+0.0)x8.466, shifted -3.62892
-...\TU/lmr/m/n/7 12
+..\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+...\OT1/cmr/m/n/7 2
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -418,7 +421,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.27692+0.0)x8.466
+\hbox(8.14003+0.0)x8.47226
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -426,11 +429,12 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@13}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x8.466
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.13.text)>>>>}
+.\hbox(8.14003+0.0)x8.47226
 ..\mathon
-..\hbox(4.648+0.13998)x8.466, shifted -3.62892
-...\TU/lmr/m/n/7 13
+..\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+...\OT1/cmr/m/n/7 3
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -438,7 +442,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.34692+0.0)x8.466
+\hbox(8.14003+0.0)x8.47226
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -446,11 +450,12 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@14}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.34692+0.0)x8.466
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.14.text)>>>>}
+.\hbox(8.14003+0.0)x8.47226
 ..\mathon
-..\hbox(4.718+0.0)x8.466, shifted -3.62892
-...\TU/lmr/m/n/7 14
+..\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+...\OT1/cmr/m/n/7 4
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -458,7 +463,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.27692+0.0)x8.466
+\hbox(8.14003+0.0)x8.47226
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -466,11 +471,12 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@15}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x8.466
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.15.text)>>>>}
+.\hbox(8.14003+0.0)x8.47226
 ..\mathon
-..\hbox(4.648+0.13998)x8.466, shifted -3.62892
-...\TU/lmr/m/n/7 15
+..\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+...\OT1/cmr/m/n/7 5
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -478,7 +484,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.27692+0.0)x8.466
+\hbox(8.14003+0.0)x8.47226
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -486,11 +492,12 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@16}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x8.466
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.16.text)>>>>}
+.\hbox(8.14003+0.0)x8.47226
 ..\mathon
-..\hbox(4.648+0.13998)x8.466, shifted -3.62892
-...\TU/lmr/m/n/7 16
+..\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+...\OT1/cmr/m/n/7 6
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -498,7 +505,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.36092+0.0)x8.466
+\hbox(8.14003+0.0)x8.47226
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -506,11 +513,12 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@17}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.36092+0.0)x8.466
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.17.text)>>>>}
+.\hbox(8.14003+0.0)x8.47226
 ..\mathon
-..\hbox(4.732+0.13998)x8.466, shifted -3.62892
-...\TU/lmr/m/n/7 17
+..\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+...\OT1/cmr/m/n/7 7
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -518,7 +526,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.27692+0.0)x8.466
+\hbox(8.14003+0.0)x8.47226
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -526,11 +534,12 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@18}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x8.466
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.18.text)>>>>}
+.\hbox(8.14003+0.0)x8.47226
 ..\mathon
-..\hbox(4.648+0.13998)x8.466, shifted -3.62892
-...\TU/lmr/m/n/7 18
+..\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+...\OT1/cmr/m/n/7 8
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -538,7 +547,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.27692+0.0)x8.466
+\hbox(8.14003+0.0)x8.47226
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -546,11 +555,12 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@19}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x8.466
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.19.text)>>>>}
+.\hbox(8.14003+0.0)x8.47226
 ..\mathon
-..\hbox(4.648+0.13998)x8.466, shifted -3.62892
-...\TU/lmr/m/n/7 19
+..\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+...\OT1/cmr/m/n/7 9
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -558,7 +568,7 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 > \box...=
-\hbox(8.27692+0.0)x8.466
+\hbox(8.14003+0.0)x8.47226
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -566,11 +576,12 @@ l. ...\testcontent{20}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@20}{\thepage }}
 .\penalty 10000
-.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.\hbox(8.27692+0.0)x8.466
+.\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.20.text)>>>>}
+.\hbox(8.14003+0.0)x8.47226
 ..\mathon
-..\hbox(4.648+0.13998)x8.466, shifted -3.62892
-...\TU/lmr/m/n/7 20
+..\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+...\OT1/cmr/m/n/7 2
+...\OT1/cmr/m/n/7 0
 ..\mathoff
 .\special{pdf:eann}
 ! OK.
@@ -578,9 +589,9 @@ l. ...\testcontent{20}
                    \box 
 l. ...\testcontent{20}
 Underfull \vbox (badness 10000) has occurred while \output is active
-\vbox(550.0+0.0)x8.466
-.\glue(\topskip) 1.72308
-.\hbox(8.27692+0.0)x8.466
+\vbox(550.0+0.0)x8.47226
+.\glue(\topskip) 1.85997
+.\hbox(8.14003+0.0)x8.47226
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -588,17 +599,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@10}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.27692+0.0)x8.466
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.10.text)>>>>}
+..\hbox(8.14003+0.0)x8.47226
 ...\mathon
-...\hbox(4.648+0.13998)x8.466, shifted -3.62892
-....\TU/lmr/m/n/7 10
+...\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+....\OT1/cmr/m/n/7 1
+....\OT1/cmr/m/n/7 0
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.72308
-.\hbox(8.27692+0.0)x8.466
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x8.47226
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -606,17 +618,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@11}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.27692+0.0)x8.466
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.11.text)>>>>}
+..\hbox(8.14003+0.0)x8.47226
 ...\mathon
-...\hbox(4.648+0.0)x8.466, shifted -3.62892
-....\TU/lmr/m/n/7 11
+...\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+....\OT1/cmr/m/n/7 1
+....\OT1/cmr/m/n/7 1
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.72308
-.\hbox(8.27692+0.0)x8.466
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x8.47226
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -624,17 +637,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@12}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.27692+0.0)x8.466
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.12.text)>>>>}
+..\hbox(8.14003+0.0)x8.47226
 ...\mathon
-...\hbox(4.648+0.0)x8.466, shifted -3.62892
-....\TU/lmr/m/n/7 12
+...\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+....\OT1/cmr/m/n/7 1
+....\OT1/cmr/m/n/7 2
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.72308
-.\hbox(8.27692+0.0)x8.466
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x8.47226
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -642,17 +656,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@13}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.27692+0.0)x8.466
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.13.text)>>>>}
+..\hbox(8.14003+0.0)x8.47226
 ...\mathon
-...\hbox(4.648+0.13998)x8.466, shifted -3.62892
-....\TU/lmr/m/n/7 13
+...\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+....\OT1/cmr/m/n/7 1
+....\OT1/cmr/m/n/7 3
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.65308
-.\hbox(8.34692+0.0)x8.466
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x8.47226
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -660,17 +675,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@14}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.34692+0.0)x8.466
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.14.text)>>>>}
+..\hbox(8.14003+0.0)x8.47226
 ...\mathon
-...\hbox(4.718+0.0)x8.466, shifted -3.62892
-....\TU/lmr/m/n/7 14
+...\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+....\OT1/cmr/m/n/7 1
+....\OT1/cmr/m/n/7 4
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.72308
-.\hbox(8.27692+0.0)x8.466
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x8.47226
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -678,17 +694,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@15}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.27692+0.0)x8.466
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.15.text)>>>>}
+..\hbox(8.14003+0.0)x8.47226
 ...\mathon
-...\hbox(4.648+0.13998)x8.466, shifted -3.62892
-....\TU/lmr/m/n/7 15
+...\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+....\OT1/cmr/m/n/7 1
+....\OT1/cmr/m/n/7 5
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.72308
-.\hbox(8.27692+0.0)x8.466
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x8.47226
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -696,17 +713,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@16}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.27692+0.0)x8.466
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.16.text)>>>>}
+..\hbox(8.14003+0.0)x8.47226
 ...\mathon
-...\hbox(4.648+0.13998)x8.466, shifted -3.62892
-....\TU/lmr/m/n/7 16
+...\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+....\OT1/cmr/m/n/7 1
+....\OT1/cmr/m/n/7 6
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.63908
-.\hbox(8.36092+0.0)x8.466
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x8.47226
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -714,17 +732,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@17}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.36092+0.0)x8.466
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.17.text)>>>>}
+..\hbox(8.14003+0.0)x8.47226
 ...\mathon
-...\hbox(4.732+0.13998)x8.466, shifted -3.62892
-....\TU/lmr/m/n/7 17
+...\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+....\OT1/cmr/m/n/7 1
+....\OT1/cmr/m/n/7 7
 ...\mathoff
 ..\special{pdf:eann}
-.\glue 50.0
+.\glue 50.00008
 .\glue 0.0
-.\glue(\baselineskip) 3.72308
-.\hbox(8.27692+0.0)x8.466
+.\glue(\baselineskip) 3.85997
+.\hbox(8.14003+0.0)x8.47226
 ..\penalty 10000
 ..\hbox(0.0+0.0)x0.0
 ...\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -732,11 +751,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ....\penalty 10000
 ..\write1{\token_to_str:N \post@note {mark@18}{\thepage }}
 ..\penalty 10000
-..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-..\hbox(8.27692+0.0)x8.466
+..\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.18.text)>>>>}
+..\hbox(8.14003+0.0)x8.47226
 ...\mathon
-...\hbox(4.648+0.13998)x8.466, shifted -3.62892
-....\TU/lmr/m/n/7 18
+...\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+....\OT1/cmr/m/n/7 1
+....\OT1/cmr/m/n/7 8
 ...\mathoff
 ..\special{pdf:eann}
 .\glue 0.0
@@ -763,17 +783,17 @@ Completed box being shipped out [3]
 .\vbox(627.36243+0.0)x380.0
 ..\glue 22.0
 ..\vbox(605.36243+0.0)x345.0, shifted 35.0
-...\vbox(12.0+0.0)x345.0, glue set 5.34fil
+...\vbox(12.0+0.0)x345.0, glue set 5.55556fil
 ....\glue 0.0 plus 1.0fil
-....\hbox(6.66+0.21999)x345.0
-.....\hbox(6.66+0.21999)x345.0, glue set 340.0fil
+....\hbox(6.44444+0.0)x345.0
+.....\hbox(6.44444+0.0)x345.0, glue set 339.99998fil
 ......\glue 0.0 plus 1.0fil
-......\TU/lmr/m/n/10 3
+......\OT1/cmr/m/n/10 3
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
-...\vbox(550.0+0.0)x8.466, glue set 428.0fil
-....\glue(\topskip) 1.72308
-....\hbox(8.27692+0.0)x8.466
+...\vbox(550.0+0.0)x8.47226, glue set 427.99985fil
+....\glue(\topskip) 1.85997
+....\hbox(8.14003+0.0)x8.47226
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0
 ......\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -781,17 +801,18 @@ Completed box being shipped out [3]
 .......\penalty 10000
 .....\write1{\token_to_str:N \post@note {mark@19}{\thepage }}
 .....\penalty 10000
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.....\hbox(8.27692+0.0)x8.466
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.19.text)>>>>}
+.....\hbox(8.14003+0.0)x8.47226
 ......\mathon
-......\hbox(4.648+0.13998)x8.466, shifted -3.62892
-.......\TU/lmr/m/n/7 19
+......\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+.......\OT1/cmr/m/n/7 1
+.......\OT1/cmr/m/n/7 9
 ......\mathoff
 .....\special{pdf:eann}
-....\glue 50.0
+....\glue 50.00008
 ....\glue 0.0
-....\glue(\baselineskip) 3.72308
-....\hbox(8.27692+0.0)x8.466
+....\glue(\baselineskip) 3.85997
+....\hbox(8.14003+0.0)x8.47226
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0
 ......\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -799,14 +820,15 @@ Completed box being shipped out [3]
 .......\penalty 10000
 .....\write1{\token_to_str:N \post@note {mark@20}{\thepage }}
 .....\penalty 10000
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.....\hbox(8.27692+0.0)x8.466
+.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.20.text)>>>>}
+.....\hbox(8.14003+0.0)x8.47226
 ......\mathon
-......\hbox(4.648+0.13998)x8.466, shifted -3.62892
-.......\TU/lmr/m/n/7 20
+......\hbox(4.51111+0.0)x8.47226, shifted -3.62892
+.......\OT1/cmr/m/n/7 2
+.......\OT1/cmr/m/n/7 0
 ......\mathoff
 .....\special{pdf:eann}
-....\glue 50.0
+....\glue 50.00008
 ....\glue 0.0
 ....\glue 0.0 plus 1.0fil
 ....\glue 0.0
@@ -831,11 +853,11 @@ Completed box being shipped out [4]
 .\vbox(627.36243+0.0)x434.0
 ..\glue 22.0
 ..\vbox(605.36243+0.0)x345.0, shifted 89.0
-...\vbox(12.0+0.0)x345.0, glue set 5.23fil
+...\vbox(12.0+0.0)x345.0, glue set 5.55556fil
 ....\glue 0.0 plus 1.0fil
-....\hbox(6.77+0.0)x345.0
-.....\hbox(6.77+0.0)x345.0, glue set 340.0fil
-......\TU/lmr/m/n/10 4
+....\hbox(6.44444+0.0)x345.0
+.....\hbox(6.44444+0.0)x345.0, glue set 339.99998fil
+......\OT1/cmr/m/n/10 4
 ......\glue 0.0 plus 1.0fil
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
@@ -849,7 +871,7 @@ Completed box being shipped out [4]
 ...\hbox(0.0+0.0)x345.0
 ....\hbox(0.0+0.0)x345.0
 Completed box being shipped out [5]
-\vbox(627.36243+0.21999)x380.0
+\vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
 ..\kern 0.0
 ..\kern 22.0
@@ -863,16 +885,16 @@ Completed box being shipped out [5]
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 ..\glue 0.0 plus 1.0fil minus 1.0fil
 .\glue(\lineskip) 0.0
-.\vbox(627.36243+0.21999)x380.0
+.\vbox(627.36243+0.0)x380.0
 ..\glue 22.0
-..\vbox(605.36243+0.21999)x345.0, shifted 35.0
+..\vbox(605.36243+0.0)x345.0, shifted 35.0
 ...\vbox(12.0+0.0)x345.0, glue set 12.0fil
 ....\glue 0.0 plus 1.0fil
 ....\hbox(0.0+0.0)x345.0
 .....\hbox(0.0+0.0)x345.0
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
-...\vbox(550.0+0.0)x345.0, glue set 1.88889
+...\vbox(550.0+0.0)x345.0, glue set 0.9169
 ....\special{pdf:dest (chapter*.1) [@thispage /XYZ @xpos @ypos null]}
 ....\glue(\topskip) 10.0
 ....\rule(0.0+0.0)x*
@@ -881,10 +903,14 @@ Completed box being shipped out [5]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 12.93231
-....\hbox(17.06769+0.14926)x345.0, glue set 137.19528fil
+....\glue(\baselineskip) 12.92955
+....\hbox(17.07045+0.0)x345.0, glue set 137.21155fil
 .....\hbox(0.0+0.0)x0.0
-.....\TU/lmr/bx/n/24.88 Notes
+.....\OT1/cmr/bx/n/24.88 N
+.....\OT1/cmr/bx/n/24.88 o
+.....\OT1/cmr/bx/n/24.88 t
+.....\OT1/cmr/bx/n/24.88 e
+.....\OT1/cmr/bx/n/24.88 s
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0 plus 1.0fil
@@ -899,13 +925,13 @@ Completed box being shipped out [5]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.85674
-....\hbox(5.994+0.0)x345.0, glue set 325.3fil
-.....\hbox(5.994+0.0)x19.7
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.0)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -913,27 +939,28 @@ Completed box being shipped out [5]
 .........\special{pdf:dest (postnote.1.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 1.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.1.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 5.006
-....\hbox(5.994+0.0)x345.0, glue set 325.3fil
-.....\hbox(5.994+0.0)x19.7
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.0)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -941,27 +968,28 @@ Completed box being shipped out [5]
 .........\special{pdf:dest (postnote.2.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 2.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.2.mark)>>>>}
+.......\OT1/cmr/m/n/9 2
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 5.006
-....\hbox(5.994+0.19798)x345.0, glue set 325.3fil
-.....\hbox(5.994+0.19798)x19.7
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -969,27 +997,28 @@ Completed box being shipped out [5]
 .........\special{pdf:dest (postnote.3.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 3.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.3.mark)>>>>}
+.......\OT1/cmr/m/n/9 3
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.70901
-....\hbox(6.093+0.0)x345.0, glue set 325.3fil
-.....\hbox(6.093+0.0)x19.7
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(6.093+0.0)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -997,27 +1026,28 @@ Completed box being shipped out [5]
 .........\special{pdf:dest (postnote.4.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 4.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.4.mark)>>>>}
+.......\OT1/cmr/m/n/9 4
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 5.006
-....\hbox(5.994+0.19798)x345.0, glue set 325.3fil
-.....\hbox(5.994+0.19798)x19.7
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1025,27 +1055,28 @@ Completed box being shipped out [5]
 .........\special{pdf:dest (postnote.5.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@5}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 5.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.5.mark)>>>>}
+.......\OT1/cmr/m/n/9 5
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.80801
-....\hbox(5.994+0.19798)x345.0, glue set 325.3fil
-.....\hbox(5.994+0.19798)x19.7
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1053,27 +1084,28 @@ Completed box being shipped out [5]
 .........\special{pdf:dest (postnote.6.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 6.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.6.mark)>>>>}
+.......\OT1/cmr/m/n/9 6
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.71802
-....\hbox(6.084+0.19798)x345.0, glue set 325.3fil
-.....\hbox(6.084+0.19798)x19.7
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(6.084+0.19798)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1081,27 +1113,28 @@ Completed box being shipped out [5]
 .........\special{pdf:dest (postnote.7.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 7.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.7.mark)>>>>}
+.......\OT1/cmr/m/n/9 7
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.80801
-....\hbox(5.994+0.19798)x345.0, glue set 325.3fil
-.....\hbox(5.994+0.19798)x19.7
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1109,30 +1142,31 @@ Completed box being shipped out [5]
 .........\special{pdf:dest (postnote.8.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 8.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.8.mark)>>>>}
+.......\OT1/cmr/m/n/9 8
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue -0.19798
-...\glue(\baselineskip) 18.63493
-...\hbox(6.66+0.21999)x345.0
-....\hbox(6.66+0.21999)x345.0, glue set 170.0fil
+....\glue 0.0
+...\glue(\baselineskip) 18.8505
+...\hbox(6.44444+0.0)x345.0
+....\hbox(6.44444+0.0)x345.0, glue set 170.0fil
 .....\glue 0.0 plus 1.0fil
-.....\TU/lmr/m/n/10 5
+.....\OT1/cmr/m/n/10 5
 .....\glue 0.0 plus 1.0fil
-Underfull \vbox (badness 6396) has occurred while \output is active
-\vbox(550.0+0.0)x345.0, glue set 4.0
-.\glue(\topskip) 4.006
-.\hbox(5.994+0.19798)x345.0, glue set 325.3fil
-..\hbox(5.994+0.19798)x19.7
+Underfull \vbox (badness 2073) has occurred while \output is active
+\vbox(550.0+0.0)x345.0, glue set 2.7503
+.\glue(\topskip) 4.20001
+.\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
+..\hbox(5.79999+0.0)x19.6944
 ...\glue 7.5
 ...\glue 0.0
 ...\glue -5.0
-...\hbox(5.994+0.19798)x12.2
+...\hbox(5.79999+0.0)x12.1944
 ....\glue 5.0
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
@@ -1140,27 +1174,28 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ......\special{pdf:dest (postnote.9.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
 ....\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
-....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-....\TU/lmr/m/n/9 9.
+....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.9.mark)>>>>}
+....\OT1/cmr/m/n/9 9
+....\OT1/cmr/m/n/9 .
 ....\special{pdf:eann}
 ...\glue 5.0
 ..\penalty 0
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
-.\glue 45.0
+.\glue 46.2497
 .\glue 0.0
 .\penalty -51
 .\glue 0.0
 .\glue(\parskip) 0.0 plus 1.0
 .\glue(\parskip) 0.0
-.\glue(\baselineskip) 4.80801
-.\hbox(5.994+0.19798)x345.0, glue set 320.674fil
-..\hbox(5.994+0.19798)x24.326
+.\glue(\baselineskip) 5.20001
+.\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+..\hbox(5.79999+0.0)x24.31937
 ...\glue 7.5
 ...\glue 0.0
 ...\glue -5.0
-...\hbox(5.994+0.19798)x16.826
+...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
@@ -1168,27 +1203,29 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ......\special{pdf:dest (postnote.10.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
 ....\write1{\token_to_str:N \post@note {text@10}{\int_use:N \c@page }}
-....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-....\TU/lmr/m/n/9 10.
+....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.10.mark)>>>>}
+....\OT1/cmr/m/n/9 1
+....\OT1/cmr/m/n/9 0
+....\OT1/cmr/m/n/9 .
 ....\special{pdf:eann}
 ...\glue 5.0
 ..\penalty 0
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
-.\glue 45.0
+.\glue 46.2497
 .\glue 0.0
 .\penalty -51
 .\glue 0.0
 .\glue(\parskip) 0.0 plus 1.0
 .\glue(\parskip) 0.0
-.\glue(\baselineskip) 4.80801
-.\hbox(5.994+0.0)x345.0, glue set 320.674fil
-..\hbox(5.994+0.0)x24.326
+.\glue(\baselineskip) 5.20001
+.\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+..\hbox(5.79999+0.0)x24.31937
 ...\glue 7.5
 ...\glue 0.0
 ...\glue -5.0
-...\hbox(5.994+0.0)x16.826
+...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
@@ -1196,27 +1233,29 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ......\special{pdf:dest (postnote.11.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
 ....\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
-....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-....\TU/lmr/m/n/9 11.
+....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.11.mark)>>>>}
+....\OT1/cmr/m/n/9 1
+....\OT1/cmr/m/n/9 1
+....\OT1/cmr/m/n/9 .
 ....\special{pdf:eann}
 ...\glue 5.0
 ..\penalty 0
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
-.\glue 45.0
+.\glue 46.2497
 .\glue 0.0
 .\penalty -51
 .\glue 0.0
 .\glue(\parskip) 0.0 plus 1.0
 .\glue(\parskip) 0.0
-.\glue(\baselineskip) 5.006
-.\hbox(5.994+0.0)x345.0, glue set 320.674fil
-..\hbox(5.994+0.0)x24.326
+.\glue(\baselineskip) 5.20001
+.\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+..\hbox(5.79999+0.0)x24.31937
 ...\glue 7.5
 ...\glue 0.0
 ...\glue -5.0
-...\hbox(5.994+0.0)x16.826
+...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
@@ -1224,27 +1263,29 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ......\special{pdf:dest (postnote.12.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
 ....\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
-....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-....\TU/lmr/m/n/9 12.
+....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.12.mark)>>>>}
+....\OT1/cmr/m/n/9 1
+....\OT1/cmr/m/n/9 2
+....\OT1/cmr/m/n/9 .
 ....\special{pdf:eann}
 ...\glue 5.0
 ..\penalty 0
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
-.\glue 45.0
+.\glue 46.2497
 .\glue 0.0
 .\penalty -51
 .\glue 0.0
 .\glue(\parskip) 0.0 plus 1.0
 .\glue(\parskip) 0.0
-.\glue(\baselineskip) 5.006
-.\hbox(5.994+0.19798)x345.0, glue set 320.674fil
-..\hbox(5.994+0.19798)x24.326
+.\glue(\baselineskip) 5.20001
+.\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+..\hbox(5.79999+0.0)x24.31937
 ...\glue 7.5
 ...\glue 0.0
 ...\glue -5.0
-...\hbox(5.994+0.19798)x16.826
+...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
@@ -1252,27 +1293,29 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ......\special{pdf:dest (postnote.13.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
 ....\write1{\token_to_str:N \post@note {text@13}{\int_use:N \c@page }}
-....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-....\TU/lmr/m/n/9 13.
+....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.13.mark)>>>>}
+....\OT1/cmr/m/n/9 1
+....\OT1/cmr/m/n/9 3
+....\OT1/cmr/m/n/9 .
 ....\special{pdf:eann}
 ...\glue 5.0
 ..\penalty 0
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
-.\glue 45.0
+.\glue 46.2497
 .\glue 0.0
 .\penalty -51
 .\glue 0.0
 .\glue(\parskip) 0.0 plus 1.0
 .\glue(\parskip) 0.0
-.\glue(\baselineskip) 4.70901
-.\hbox(6.093+0.0)x345.0, glue set 320.674fil
-..\hbox(6.093+0.0)x24.326
+.\glue(\baselineskip) 5.20001
+.\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+..\hbox(5.79999+0.0)x24.31937
 ...\glue 7.5
 ...\glue 0.0
 ...\glue -5.0
-...\hbox(6.093+0.0)x16.826
+...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
@@ -1280,27 +1323,29 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ......\special{pdf:dest (postnote.14.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
 ....\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
-....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-....\TU/lmr/m/n/9 14.
+....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.14.mark)>>>>}
+....\OT1/cmr/m/n/9 1
+....\OT1/cmr/m/n/9 4
+....\OT1/cmr/m/n/9 .
 ....\special{pdf:eann}
 ...\glue 5.0
 ..\penalty 0
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
-.\glue 45.0
+.\glue 46.2497
 .\glue 0.0
 .\penalty -51
 .\glue 0.0
 .\glue(\parskip) 0.0 plus 1.0
 .\glue(\parskip) 0.0
-.\glue(\baselineskip) 5.006
-.\hbox(5.994+0.19798)x345.0, glue set 320.674fil
-..\hbox(5.994+0.19798)x24.326
+.\glue(\baselineskip) 5.20001
+.\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+..\hbox(5.79999+0.0)x24.31937
 ...\glue 7.5
 ...\glue 0.0
 ...\glue -5.0
-...\hbox(5.994+0.19798)x16.826
+...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
@@ -1308,27 +1353,29 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ......\special{pdf:dest (postnote.15.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
 ....\write1{\token_to_str:N \post@note {text@15}{\int_use:N \c@page }}
-....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-....\TU/lmr/m/n/9 15.
+....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.15.mark)>>>>}
+....\OT1/cmr/m/n/9 1
+....\OT1/cmr/m/n/9 5
+....\OT1/cmr/m/n/9 .
 ....\special{pdf:eann}
 ...\glue 5.0
 ..\penalty 0
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
-.\glue 45.0
+.\glue 46.2497
 .\glue 0.0
 .\penalty -51
 .\glue 0.0
 .\glue(\parskip) 0.0 plus 1.0
 .\glue(\parskip) 0.0
-.\glue(\baselineskip) 4.80801
-.\hbox(5.994+0.19798)x345.0, glue set 320.674fil
-..\hbox(5.994+0.19798)x24.326
+.\glue(\baselineskip) 5.20001
+.\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+..\hbox(5.79999+0.0)x24.31937
 ...\glue 7.5
 ...\glue 0.0
 ...\glue -5.0
-...\hbox(5.994+0.19798)x16.826
+...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
@@ -1336,27 +1383,29 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ......\special{pdf:dest (postnote.16.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
 ....\write1{\token_to_str:N \post@note {text@16}{\int_use:N \c@page }}
-....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-....\TU/lmr/m/n/9 16.
+....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.16.mark)>>>>}
+....\OT1/cmr/m/n/9 1
+....\OT1/cmr/m/n/9 6
+....\OT1/cmr/m/n/9 .
 ....\special{pdf:eann}
 ...\glue 5.0
 ..\penalty 0
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
-.\glue 45.0
+.\glue 46.2497
 .\glue 0.0
 .\penalty -51
 .\glue 0.0
 .\glue(\parskip) 0.0 plus 1.0
 .\glue(\parskip) 0.0
-.\glue(\baselineskip) 4.71802
-.\hbox(6.084+0.19798)x345.0, glue set 320.674fil
-..\hbox(6.084+0.19798)x24.326
+.\glue(\baselineskip) 5.20001
+.\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+..\hbox(5.79999+0.0)x24.31937
 ...\glue 7.5
 ...\glue 0.0
 ...\glue -5.0
-...\hbox(6.084+0.19798)x16.826
+...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
@@ -1364,27 +1413,29 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ......\special{pdf:dest (postnote.17.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
 ....\write1{\token_to_str:N \post@note {text@17}{\int_use:N \c@page }}
-....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-....\TU/lmr/m/n/9 17.
+....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.17.mark)>>>>}
+....\OT1/cmr/m/n/9 1
+....\OT1/cmr/m/n/9 7
+....\OT1/cmr/m/n/9 .
 ....\special{pdf:eann}
 ...\glue 5.0
 ..\penalty 0
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
-.\glue 45.0
+.\glue 46.2497
 .\glue 0.0
 .\penalty -51
 .\glue 0.0
 .\glue(\parskip) 0.0 plus 1.0
 .\glue(\parskip) 0.0
-.\glue(\baselineskip) 4.80801
-.\hbox(5.994+0.19798)x345.0, glue set 320.674fil
-..\hbox(5.994+0.19798)x24.326
+.\glue(\baselineskip) 5.20001
+.\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+..\hbox(5.79999+0.0)x24.31937
 ...\glue 7.5
 ...\glue 0.0
 ...\glue -5.0
-...\hbox(5.994+0.19798)x16.826
+...\hbox(5.79999+0.0)x16.81937
 ....\glue 5.0
 ....\penalty 10000
 ....\hbox(0.0+0.0)x0.0
@@ -1392,15 +1443,17 @@ Underfull \vbox (badness 6396) has occurred while \output is active
 ......\special{pdf:dest (postnote.18.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
 ....\write1{\token_to_str:N \post@note {text@18}{\int_use:N \c@page }}
-....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-....\TU/lmr/m/n/9 18.
+....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.18.mark)>>>>}
+....\OT1/cmr/m/n/9 1
+....\OT1/cmr/m/n/9 8
+....\OT1/cmr/m/n/9 .
 ....\special{pdf:eann}
 ...\glue 5.0
 ..\penalty 0
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
-.\glue -0.19798
+.\glue 0.0
 Completed box being shipped out [6]
 \vbox(627.36243+0.0)x434.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
@@ -1419,29 +1472,40 @@ Completed box being shipped out [6]
 .\vbox(627.36243+0.0)x434.0
 ..\glue 22.0
 ..\vbox(605.36243+0.0)x345.0, shifted 89.0
-...\vbox(12.0+0.0)x345.0, glue set 5.17fil
+...\vbox(12.0+0.0)x345.0, glue set 5.16669fil
 ....\glue 0.0 plus 1.0fil
-....\hbox(6.83+2.05998)x345.0
-.....\hbox(6.83+2.05998)x345.0, glue set 257.40999fil
-......\TU/lmr/m/n/10 6
+....\hbox(6.83331+1.94444)x345.0
+.....\hbox(6.83331+1.94444)x345.0, glue set 257.38873fil
+......\OT1/cmr/m/n/10 6
 ......\glue 0.0 plus 1.0fil
-......\TU/lmr/m/sl/10 Notes
-......\glue 3.33 plus 1.665 minus 1.11
-......\TU/lmr/m/sl/10 to
-......\glue 3.33 plus 1.665 minus 1.11
-......\TU/lmr/m/sl/10 pages
-......\glue 3.33 plus 1.665 minus 1.11
-......\TU/lmr/m/sl/10 1–2
+......\OT1/cmr/m/sl/10 N
+......\OT1/cmr/m/sl/10 o
+......\OT1/cmr/m/sl/10 t
+......\OT1/cmr/m/sl/10 e
+......\OT1/cmr/m/sl/10 s
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 t
+......\OT1/cmr/m/sl/10 o
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 p
+......\OT1/cmr/m/sl/10 a
+......\OT1/cmr/m/sl/10 g
+......\OT1/cmr/m/sl/10 e
+......\OT1/cmr/m/sl/10 s
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 1
+......\OT1/cmr/m/sl/10 { (ligature --)
+......\OT1/cmr/m/sl/10 2
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
-...\vbox(550.0+0.0)x345.0, glue set 4.0
-....\glue(\topskip) 4.006
-....\hbox(5.994+0.19798)x345.0, glue set 325.3fil
-.....\hbox(5.994+0.19798)x19.7
+...\vbox(550.0+0.0)x345.0, glue set 2.7503
+....\glue(\topskip) 4.20001
+....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
+.....\hbox(5.79999+0.0)x19.6944
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x12.2
+......\hbox(5.79999+0.0)x12.1944
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1449,27 +1513,28 @@ Completed box being shipped out [6]
 .........\special{pdf:dest (postnote.9.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 9.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.9.mark)>>>>}
+.......\OT1/cmr/m/n/9 9
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.80801
-....\hbox(5.994+0.19798)x345.0, glue set 320.674fil
-.....\hbox(5.994+0.19798)x24.326
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1477,27 +1542,29 @@ Completed box being shipped out [6]
 .........\special{pdf:dest (postnote.10.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@10}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 10.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.10.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 0
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.80801
-....\hbox(5.994+0.0)x345.0, glue set 320.674fil
-.....\hbox(5.994+0.0)x24.326
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.0)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1505,27 +1572,29 @@ Completed box being shipped out [6]
 .........\special{pdf:dest (postnote.11.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 11.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.11.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 5.006
-....\hbox(5.994+0.0)x345.0, glue set 320.674fil
-.....\hbox(5.994+0.0)x24.326
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.0)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1533,27 +1602,29 @@ Completed box being shipped out [6]
 .........\special{pdf:dest (postnote.12.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 12.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.12.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 2
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 5.006
-....\hbox(5.994+0.19798)x345.0, glue set 320.674fil
-.....\hbox(5.994+0.19798)x24.326
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1561,27 +1632,29 @@ Completed box being shipped out [6]
 .........\special{pdf:dest (postnote.13.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@13}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 13.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.13.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 3
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.70901
-....\hbox(6.093+0.0)x345.0, glue set 320.674fil
-.....\hbox(6.093+0.0)x24.326
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(6.093+0.0)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1589,27 +1662,29 @@ Completed box being shipped out [6]
 .........\special{pdf:dest (postnote.14.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 14.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.14.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 4
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 5.006
-....\hbox(5.994+0.19798)x345.0, glue set 320.674fil
-.....\hbox(5.994+0.19798)x24.326
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1617,27 +1692,29 @@ Completed box being shipped out [6]
 .........\special{pdf:dest (postnote.15.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@15}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 15.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.15.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 5
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.80801
-....\hbox(5.994+0.19798)x345.0, glue set 320.674fil
-.....\hbox(5.994+0.19798)x24.326
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1645,27 +1722,29 @@ Completed box being shipped out [6]
 .........\special{pdf:dest (postnote.16.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@16}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 16.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.16.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 6
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.71802
-....\hbox(6.084+0.19798)x345.0, glue set 320.674fil
-.....\hbox(6.084+0.19798)x24.326
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(6.084+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1673,27 +1752,29 @@ Completed box being shipped out [6]
 .........\special{pdf:dest (postnote.17.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@17}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 17.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.17.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 7
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.80801
-....\hbox(5.994+0.19798)x345.0, glue set 320.674fil
-.....\hbox(5.994+0.19798)x24.326
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1701,15 +1782,17 @@ Completed box being shipped out [6]
 .........\special{pdf:dest (postnote.18.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@18}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 18.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.18.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 8
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue -0.19798
+....\glue 0.0
 ...\glue(\baselineskip) 25.29494
 ...\hbox(0.0+0.0)x345.0
 ....\hbox(0.0+0.0)x345.0
@@ -1731,29 +1814,37 @@ Completed box being shipped out [7]
 .\vbox(627.36243+0.0)x380.0
 ..\glue 22.0
 ..\vbox(605.36243+0.0)x345.0, shifted 35.0
-...\vbox(12.0+0.0)x345.0, glue set 5.17fil
+...\vbox(12.0+0.0)x345.0, glue set 5.16669fil
 ....\glue 0.0 plus 1.0fil
-....\hbox(6.83+2.05998)x345.0
-.....\hbox(6.83+2.05998)x345.0, glue set 271.34999fil
-......\TU/lmr/m/sl/10 Notes
-......\glue 3.33 plus 1.665 minus 1.11
-......\TU/lmr/m/sl/10 to
-......\glue 3.33 plus 1.665 minus 1.11
-......\TU/lmr/m/sl/10 page
-......\glue 3.33 plus 1.665 minus 1.11
-......\TU/lmr/m/sl/10 3
+....\hbox(6.83331+1.94444)x345.0
+.....\hbox(6.83331+1.94444)x345.0, glue set 271.3332fil
+......\OT1/cmr/m/sl/10 N
+......\OT1/cmr/m/sl/10 o
+......\OT1/cmr/m/sl/10 t
+......\OT1/cmr/m/sl/10 e
+......\OT1/cmr/m/sl/10 s
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 t
+......\OT1/cmr/m/sl/10 o
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 p
+......\OT1/cmr/m/sl/10 a
+......\OT1/cmr/m/sl/10 g
+......\OT1/cmr/m/sl/10 e
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\OT1/cmr/m/sl/10 3
 ......\glue 0.0 plus 1.0fil
-......\TU/lmr/m/n/10 7
+......\OT1/cmr/m/n/10 7
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
-...\vbox(550.0+0.0)x345.0, glue set 434.0fil
-....\glue(\topskip) 4.006
-....\hbox(5.994+0.19798)x345.0, glue set 320.674fil
-.....\hbox(5.994+0.19798)x24.326
+...\vbox(550.0+0.0)x345.0, glue set 431.50061fil
+....\glue(\topskip) 4.20001
+....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1761,27 +1852,29 @@ Completed box being shipped out [7]
 .........\special{pdf:dest (postnote.19.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@19}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 19.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.19.mark)>>>>}
+.......\OT1/cmr/m/n/9 1
+.......\OT1/cmr/m/n/9 9
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.80801
-....\hbox(5.994+0.19798)x345.0, glue set 320.674fil
-.....\hbox(5.994+0.19798)x24.326
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+.....\hbox(5.79999+0.0)x24.31937
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.994+0.19798)x16.826
+......\hbox(5.79999+0.0)x16.81937
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -1789,19 +1882,20 @@ Completed box being shipped out [7]
 .........\special{pdf:dest (postnote.20.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@20}{\int_use:N \c@page }}
-.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/G\ETC.}
-.......\TU/lmr/m/n/9 20.
+.......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.20.mark)>>>>}
+.......\OT1/cmr/m/n/9 2
+.......\OT1/cmr/m/n/9 0
+.......\OT1/cmr/m/n/9 .
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\glue 45.0
+....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
 ....\glue 5.0
-....\glue -0.19798
 ....\glue 0.0 plus 1.0fil
 ....\glue 0.0
 ...\glue(\baselineskip) 25.29494

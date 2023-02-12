@@ -54,8 +54,8 @@ l. ...\end{align}
 ! OK.
 <to be read again> 
                    \box 
-l. ......x0=\hbox{\postnote{equation}}\showbox0\box
-                                                  0
+l. ...\setbox0=\hbox{\testtmp}\showbox0\box
+                                          0
 > \box...=
 \hbox(8.64003+0.0)x8.97226
 .\penalty 10000

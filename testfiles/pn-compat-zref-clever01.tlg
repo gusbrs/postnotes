@@ -285,13 +285,13 @@ Completed box being shipped out [5]
 ....\marks3{\MakeUppercase    []{2.1. \ Notes to chapter 1}}
 ....\mark{{\pnheaderdefault }{\MakeUppercase    []{2.1. \ Notes to chapter 1}}}
 ....\penalty 10000
-....\write3{\protect \BOOKMARK [1][-]{section.2.1}{\376\377\000N\000o\000t\000e\0\ETC.}
+....\write3{\protect \BOOKMARK [1][-]{section.2.1}{\376\377\000N\000o\000t\000e\000s\000\040\000t\000o\000\040\000c\000h\000a\000p\000t\000e\000r\000\040\0001}{chapter.2}% 3}
 ....\penalty 10000
-....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline \ETC.}
+....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {2.1}Notes to chapter 1}{\thepage }{section.2.1}\protected@file@percent }}
 ....\penalty 10000
 ....\penalty 10000
 ....\glue 9.90276 plus 0.86108
-....\write1{\zref@newlabel{en:t:1}{\default{1}\page{\Z@C@page }\abspage{\Z@C@abspage \ETC.}
+....\write1{\zref@newlabel{en:t:1}{\default{1}\page{\Z@C@page }\abspage{\Z@C@abspage }\zc@counter{postnotetext}\thecounter{1}\zc@type{endnote}\zc@cntval{1}\zc@pgval{\Z@C@zc@pgval }\zc@enclval{{10001}}\zc@pgfmt{\Z@C@zc@pgfmt }\anchor{postnote.2.text}}}
 ....\penalty 10000
 ....\penalty 10000
 ....\glue(\parskip) 0.0 plus 1.0
@@ -332,7 +332,7 @@ Completed box being shipped out [5]
 .....\glue(\rightskip) 0.0
 ....\penalty -51
 ....\glue 0.0
-....\write1{\zref@newlabel{en:t:2}{\default{2}\page{\Z@C@page }\abspage{\Z@C@abspage \ETC.}
+....\write1{\zref@newlabel{en:t:2}{\default{2}\page{\Z@C@page }\abspage{\Z@C@abspage }\zc@counter{postnotetext}\thecounter{2}\zc@type{endnote}\zc@cntval{2}\zc@pgval{\Z@C@zc@pgval }\zc@enclval{{10001}}\zc@pgfmt{\Z@C@zc@pgfmt }\anchor{postnote.3.text}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.85002
@@ -371,7 +371,7 @@ Completed box being shipped out [5]
 .....\glue(\rightskip) 0.0
 ....\penalty -51
 ....\glue 0.0
-....\write1{\zref@newlabel{en:t:3}{\default{3}\page{\Z@C@page }\abspage{\Z@C@abspage \ETC.}
+....\write1{\zref@newlabel{en:t:3}{\default{3}\page{\Z@C@page }\abspage{\Z@C@abspage }\zc@counter{postnotetext}\thecounter{3}\zc@type{endnote}\zc@cntval{3}\zc@pgval{\Z@C@zc@pgval }\zc@enclval{{10001}}\zc@pgfmt{\Z@C@zc@pgfmt }\anchor{postnote.4.text}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.85002
@@ -454,11 +454,11 @@ Completed box being shipped out [5]
 ....\marks2{\MakeUppercase    []{2.2. \ Notes to chapter 2}}
 ....\marks3{\MakeUppercase    []{2.2. \ Notes to chapter 2}}
 ....\mark{{\pnheaderdefault }{\MakeUppercase    []{2.2. \ Notes to chapter 2}}}
-....\write3{\protect \BOOKMARK [1][-]{section.2.2}{\376\377\000N\000o\000t\000e\0\ETC.}
-....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline \ETC.}
+....\write3{\protect \BOOKMARK [1][-]{section.2.2}{\376\377\000N\000o\000t\000e\000s\000\040\000t\000o\000\040\000c\000h\000a\000p\000t\000e\000r\000\040\0002}{chapter.2}% 4}
+....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {2.2}Notes to chapter 2}{\thepage }{section.2.2}\protected@file@percent }}
 ....\penalty 10000
 ....\glue 9.90276 plus 0.86108
-....\write1{\zref@newlabel{en:t:4}{\default{1}\page{\Z@C@page }\abspage{\Z@C@abspage \ETC.}
+....\write1{\zref@newlabel{en:t:4}{\default{1}\page{\Z@C@page }\abspage{\Z@C@abspage }\zc@counter{postnotetext}\thecounter{1}\zc@type{endnote}\zc@cntval{1}\zc@pgval{\Z@C@zc@pgval }\zc@enclval{{10002}}\zc@pgfmt{\Z@C@zc@pgfmt }\anchor{postnote.6.text}}}
 ....\penalty 10000
 ....\penalty 10000
 ....\glue(\parskip) 0.0 plus 1.0
@@ -499,7 +499,7 @@ Completed box being shipped out [5]
 .....\glue(\rightskip) 0.0
 ....\penalty -51
 ....\glue 0.0
-....\write1{\zref@newlabel{en:t:5}{\default{2}\page{\Z@C@page }\abspage{\Z@C@abspage \ETC.}
+....\write1{\zref@newlabel{en:t:5}{\default{2}\page{\Z@C@page }\abspage{\Z@C@abspage }\zc@counter{postnotetext}\thecounter{2}\zc@type{endnote}\zc@cntval{2}\zc@pgval{\Z@C@zc@pgval }\zc@enclval{{10002}}\zc@pgfmt{\Z@C@zc@pgfmt }\anchor{postnote.7.text}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.85002
@@ -538,7 +538,7 @@ Completed box being shipped out [5]
 .....\glue(\rightskip) 0.0
 ....\penalty -51
 ....\glue 0.0
-....\write1{\zref@newlabel{en:t:6}{\default{3}\page{\Z@C@page }\abspage{\Z@C@abspage \ETC.}
+....\write1{\zref@newlabel{en:t:6}{\default{3}\page{\Z@C@page }\abspage{\Z@C@abspage }\zc@counter{postnotetext}\thecounter{3}\zc@type{endnote}\zc@cntval{3}\zc@pgval{\Z@C@zc@pgval }\zc@enclval{{10002}}\zc@pgfmt{\Z@C@zc@pgfmt }\anchor{postnote.8.text}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.85002

@@ -21,27 +21,27 @@ Completed box being shipped out [3]
 .\vbox(627.36243+0.0)x380.0
 ..\glue 22.0
 ..\vbox(605.36243+0.0)x345.0, shifted 35.0
-...\vbox(12.0+0.0)x345.0, glue set 5.16669fil
+...\vbox(12.0+0.0)x345.0, glue set 5.11125fil
 ....\glue 0.0 plus 1.0fil
-....\hbox(6.83331+1.94444)x345.0
-.....\hbox(6.83331+1.94444)x345.0, glue set 271.3332fil
-......\OT1/cmr/m/sl/10 N
-......\OT1/cmr/m/sl/10 o
-......\OT1/cmr/m/sl/10 t
-......\OT1/cmr/m/sl/10 e
-......\OT1/cmr/m/sl/10 s
+....\hbox(6.88875+1.94443)x345.0
+.....\hbox(6.88875+1.94443)x345.0, glue set 271.33301fil
+......\T1/lmr/m/sl/10 N
+......\T1/lmr/m/sl/10 o
+......\T1/lmr/m/sl/10 t
+......\T1/lmr/m/sl/10 e
+......\T1/lmr/m/sl/10 s
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 t
-......\OT1/cmr/m/sl/10 o
+......\T1/lmr/m/sl/10 t
+......\T1/lmr/m/sl/10 o
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 p
-......\OT1/cmr/m/sl/10 a
-......\OT1/cmr/m/sl/10 g
-......\OT1/cmr/m/sl/10 e
+......\T1/lmr/m/sl/10 p
+......\T1/lmr/m/sl/10 a
+......\T1/lmr/m/sl/10 g
+......\T1/lmr/m/sl/10 e
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 1
+......\T1/lmr/m/sl/10 1
 ......\glue 0.0 plus 1.0fil
-......\OT1/cmr/m/n/10 3
+......\T1/lmr/m/n/10 3
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil
@@ -55,35 +55,35 @@ Completed box being shipped out [3]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 12.92955
-....\hbox(17.07045+0.0)x345.0, glue set 137.21155fil
+....\glue(\baselineskip) 12.98935
+....\hbox(17.01065+0.0)x345.0, glue set 137.2119fil
 .....\hbox(0.0+0.0)x0.0
-.....\OT1/cmr/bx/n/24.88 N
-.....\OT1/cmr/bx/n/24.88 o
-.....\OT1/cmr/bx/n/24.88 t
-.....\OT1/cmr/bx/n/24.88 e
-.....\OT1/cmr/bx/n/24.88 s
+.....\T1/lmr/bx/n/24.88 N
+.....\T1/lmr/bx/n/24.88 o
+.....\T1/lmr/bx/n/24.88 t
+.....\T1/lmr/bx/n/24.88 e
+.....\T1/lmr/bx/n/24.88 s
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
-....\marks2{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
-....\marks3{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
-....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
+....\marks1{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks2{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks3{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.85002
-....\hbox(6.14998+0.0)x345.0, glue set 287.4038fil
-.....\hbox(5.79999+0.0)x19.6944
+....\glue(\baselineskip) 4.8
+....\hbox(6.2+0.0)x345.0, glue set 287.40358fil
+.....\hbox(5.6945+0.0)x19.6945
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.79999+0.0)x12.1944
+......\hbox(5.6945+0.0)x12.1945
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -92,22 +92,22 @@ Completed box being shipped out [3]
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.mark}
-.......\OT1/cmr/m/n/9 1
-.......\OT1/cmr/m/n/9 .
+.......\T1/lmr/m/n/9 1
+.......\T1/lmr/m/n/9 .
 .......\pdfendlink
 ......\glue 5.0
 .....\penalty 0
-.....\OT1/cmr/m/n/9 F
+.....\T1/lmr/m/n/9 F
 .....\kern-0.77083
-.....\OT1/cmr/m/n/9 o
+.....\T1/lmr/m/n/9 o
 .....\kern0.25694
-.....\OT1/cmr/m/n/9 o
+.....\T1/lmr/m/n/9 o
 .....\glue 3.08331 plus 1.54166 minus 1.02777
-.....\OT1/cmr/m/n/9 n
-.....\OT1/cmr/m/n/9 o
-.....\OT1/cmr/m/n/9 t
-.....\OT1/cmr/m/n/9 e
-.....\OT1/cmr/m/n/9 .
+.....\T1/lmr/m/n/9 n
+.....\T1/lmr/m/n/9 o
+.....\T1/lmr/m/n/9 t
+.....\T1/lmr/m/n/9 e
+.....\T1/lmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -268,44 +268,44 @@ Completed box being shipped out [5]
 .\vbox(627.36243+0.0)x380.0
 ..\glue 22.0
 ..\vbox(605.36243+0.0)x345.0, shifted 35.0
-...\vbox(12.0+0.0)x345.0, glue set 5.05556fil
+...\vbox(12.0+0.0)x345.0, glue set 5.11125fil
 ....\glue 0.0 plus 1.0fil
-....\hbox(6.94444+1.94444)x345.0
-.....\hbox(6.94444+1.94444)x345.0, glue set 206.58308fil
-......\OT1/cmr/m/sl/10 M
-......\OT1/cmr/m/sl/10 y
+....\hbox(6.88875+1.94443)x345.0
+.....\hbox(6.88875+1.94443)x345.0, glue set 206.58269fil
+......\T1/lmr/m/sl/10 M
+......\T1/lmr/m/sl/10 y
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 h
-......\OT1/cmr/m/sl/10 e
-......\OT1/cmr/m/sl/10 a
-......\OT1/cmr/m/sl/10 d
-......\OT1/cmr/m/sl/10 e
-......\OT1/cmr/m/sl/10 r
+......\T1/lmr/m/sl/10 h
+......\T1/lmr/m/sl/10 e
+......\T1/lmr/m/sl/10 a
+......\T1/lmr/m/sl/10 d
+......\T1/lmr/m/sl/10 e
+......\T1/lmr/m/sl/10 r
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 n
-......\OT1/cmr/m/sl/10 o
-......\OT1/cmr/m/sl/10 t
-......\OT1/cmr/m/sl/10 e
-......\OT1/cmr/m/sl/10 s
+......\T1/lmr/m/sl/10 n
+......\T1/lmr/m/sl/10 o
+......\T1/lmr/m/sl/10 t
+......\T1/lmr/m/sl/10 e
+......\T1/lmr/m/sl/10 s
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 t
-......\OT1/cmr/m/sl/10 o
+......\T1/lmr/m/sl/10 t
+......\T1/lmr/m/sl/10 o
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 m
+......\T1/lmr/m/sl/10 m
 ......\kern-0.27779
-......\OT1/cmr/m/sl/10 y
+......\T1/lmr/m/sl/10 y
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 p
-......\OT1/cmr/m/sl/10 a
-......\OT1/cmr/m/sl/10 g
-......\OT1/cmr/m/sl/10 e
+......\T1/lmr/m/sl/10 p
+......\T1/lmr/m/sl/10 a
+......\T1/lmr/m/sl/10 g
+......\T1/lmr/m/sl/10 e
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 4
+......\T1/lmr/m/sl/10 4
 ......\glue 0.0 plus 1.0fil
-......\OT1/cmr/m/n/10 5
+......\T1/lmr/m/n/10 5
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
-...\vbox(550.0+0.0)x345.0, glue set 404.0fil
+...\vbox(550.0+0.0)x345.0, glue set 402.96225fil
 ....\write-{}
 ....\write1{\babel@aux{english}{}}
 ....\write-{}
@@ -317,38 +317,38 @@ Completed box being shipped out [5]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 12.92955
-....\hbox(17.07045+4.83775)x345.0, glue set 115.05281fil
+....\glue(\baselineskip) 12.98935
+....\hbox(17.01065+4.83775)x345.0, glue set 115.05211fil
 .....\hbox(0.0+0.0)x0.0
-.....\OT1/cmr/bx/n/24.88 M
-.....\OT1/cmr/bx/n/24.88 y
+.....\T1/lmr/bx/n/24.88 M
+.....\T1/lmr/bx/n/24.88 y
 .....\glue 9.33 plus 4.665 minus 3.11
-.....\OT1/cmr/bx/n/24.88 n
-.....\OT1/cmr/bx/n/24.88 o
-.....\OT1/cmr/bx/n/24.88 t
-.....\OT1/cmr/bx/n/24.88 e
-.....\OT1/cmr/bx/n/24.88 s
+.....\T1/lmr/bx/n/24.88 n
+.....\T1/lmr/bx/n/24.88 o
+.....\T1/lmr/bx/n/24.88 t
+.....\T1/lmr/bx/n/24.88 e
+.....\T1/lmr/bx/n/24.88 s
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
-....\marks2{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
-....\marks3{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
-....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
+....\marks1{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks2{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks3{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@2}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 0.01227
-....\hbox(6.14998+0.0)x345.0, glue set 287.4038fil
-.....\hbox(5.79999+0.0)x19.6944
+....\glue(\lineskip) 1.0
+....\hbox(6.2+0.0)x345.0, glue set 287.40358fil
+.....\hbox(5.6945+0.0)x19.6945
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.79999+0.0)x12.1944
+......\hbox(5.6945+0.0)x12.1945
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -357,22 +357,22 @@ Completed box being shipped out [5]
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.mark}
-.......\OT1/cmr/m/n/9 2
-.......\OT1/cmr/m/n/9 .
+.......\T1/lmr/m/n/9 2
+.......\T1/lmr/m/n/9 .
 .......\pdfendlink
 ......\glue 5.0
 .....\penalty 0
-.....\OT1/cmr/m/n/9 F
+.....\T1/lmr/m/n/9 F
 .....\kern-0.77083
-.....\OT1/cmr/m/n/9 o
+.....\T1/lmr/m/n/9 o
 .....\kern0.25694
-.....\OT1/cmr/m/n/9 o
+.....\T1/lmr/m/n/9 o
 .....\glue 3.08331 plus 1.54166 minus 1.02777
-.....\OT1/cmr/m/n/9 n
-.....\OT1/cmr/m/n/9 o
-.....\OT1/cmr/m/n/9 t
-.....\OT1/cmr/m/n/9 e
-.....\OT1/cmr/m/n/9 .
+.....\T1/lmr/m/n/9 n
+.....\T1/lmr/m/n/9 o
+.....\T1/lmr/m/n/9 t
+.....\T1/lmr/m/n/9 e
+.....\T1/lmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -421,32 +421,29 @@ Completed box being shipped out [9]
 .\vbox(627.36243+0.0)x380.0
 ..\glue 22.0
 ..\vbox(605.36243+0.0)x345.0, shifted 35.0
-...\vbox(12.0+0.0)x345.0, glue set 5.05556fil
+...\vbox(12.0+0.0)x345.0, glue set 5.11125fil
 ....\glue 0.0 plus 1.0fil
-....\hbox(6.94444+1.94444)x345.0
-.....\hbox(6.94444+1.94444)x345.0, glue set 260.22203fil
-......\OT1/cmr/m/sl/10 N
-......\OT1/cmr/m/sl/10 o
-......\OT1/cmr/m/sl/10 t
-......\OT1/cmr/m/sl/10 a
-......\OT1/cmr/m/sl/10 s
+....\hbox(6.88875+1.94443)x345.0
+.....\hbox(6.88875+1.94443)x345.0, glue set 260.22227fil
+......\T1/lmr/m/sl/10 N
+......\T1/lmr/m/sl/10 o
+......\T1/lmr/m/sl/10 t
+......\T1/lmr/m/sl/10 a
+......\T1/lmr/m/sl/10 s
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 d
-......\OT1/cmr/m/sl/10 a
+......\T1/lmr/m/sl/10 d
+......\T1/lmr/m/sl/10 a
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 p
-......\kern 0.0 (for accent)
-......\OT1/cmr/m/sl/10 ^^S
-......\kern -5.00002 (for accent)
-......\OT1/cmr/m/sl/10 a
-......\OT1/cmr/m/sl/10 g
-......\OT1/cmr/m/sl/10 i
-......\OT1/cmr/m/sl/10 n
-......\OT1/cmr/m/sl/10 a
+......\T1/lmr/m/sl/10 p
+......\T1/lmr/m/sl/10 á
+......\T1/lmr/m/sl/10 g
+......\T1/lmr/m/sl/10 i
+......\T1/lmr/m/sl/10 n
+......\T1/lmr/m/sl/10 a
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 7
+......\T1/lmr/m/sl/10 7
 ......\glue 0.0 plus 1.0fil
-......\OT1/cmr/m/n/10 9
+......\T1/lmr/m/n/10 9
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil
@@ -460,35 +457,35 @@ Completed box being shipped out [9]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 12.92955
-....\hbox(17.07045+0.0)x345.0, glue set 136.794fil
+....\glue(\baselineskip) 12.98935
+....\hbox(17.01065+0.0)x345.0, glue set 136.79465fil
 .....\hbox(0.0+0.0)x0.0
-.....\OT1/cmr/bx/n/24.88 N
-.....\OT1/cmr/bx/n/24.88 o
-.....\OT1/cmr/bx/n/24.88 t
-.....\OT1/cmr/bx/n/24.88 a
-.....\OT1/cmr/bx/n/24.88 s
+.....\T1/lmr/bx/n/24.88 N
+.....\T1/lmr/bx/n/24.88 o
+.....\T1/lmr/bx/n/24.88 t
+.....\T1/lmr/bx/n/24.88 a
+.....\T1/lmr/bx/n/24.88 s
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \ETC.}
-....\marks2{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \ETC.}
-....\marks3{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \ETC.}
-....\mark{{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \ETC.}
+....\marks1{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks2{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks3{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\mark{{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@3}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.85002
-....\hbox(6.14998+0.0)x345.0, glue set 287.4038fil
-.....\hbox(5.79999+0.0)x19.6944
+....\glue(\baselineskip) 4.8
+....\hbox(6.2+0.0)x345.0, glue set 287.40358fil
+.....\hbox(5.6945+0.0)x19.6945
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.79999+0.0)x12.1944
+......\hbox(5.6945+0.0)x12.1945
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -497,22 +494,22 @@ Completed box being shipped out [9]
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.mark}
-.......\OT1/cmr/m/n/9 3
-.......\OT1/cmr/m/n/9 .
+.......\T1/lmr/m/n/9 3
+.......\T1/lmr/m/n/9 .
 .......\pdfendlink
 ......\glue 5.0
 .....\penalty 0
-.....\OT1/cmr/m/n/9 F
+.....\T1/lmr/m/n/9 F
 .....\kern-0.77083
-.....\OT1/cmr/m/n/9 o
+.....\T1/lmr/m/n/9 o
 .....\kern0.25694
-.....\OT1/cmr/m/n/9 o
+.....\T1/lmr/m/n/9 o
 .....\glue 3.08331 plus 1.54166 minus 1.02777
-.....\OT1/cmr/m/n/9 n
-.....\OT1/cmr/m/n/9 o
-.....\OT1/cmr/m/n/9 t
-.....\OT1/cmr/m/n/9 e
-.....\OT1/cmr/m/n/9 .
+.....\T1/lmr/m/n/9 n
+.....\T1/lmr/m/n/9 o
+.....\T1/lmr/m/n/9 t
+.....\T1/lmr/m/n/9 e
+.....\T1/lmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -609,32 +606,32 @@ Completed box being shipped out [13]
 .\vbox(627.36243+0.0)x380.0
 ..\glue 22.0
 ..\vbox(605.36243+0.0)x345.0, shifted 35.0
-...\vbox(12.0+0.0)x345.0, glue set 5.05556fil
+...\vbox(12.0+0.0)x345.0, glue set 5.11125fil
 ....\glue 0.0 plus 1.0fil
-....\hbox(6.94444+1.94444)x345.0
-.....\hbox(6.94444+1.94444)x345.0, glue set 249.11095fil
-......\OT1/cmr/m/sl/10 N
-......\OT1/cmr/m/sl/10 o
-......\OT1/cmr/m/sl/10 t
-......\OT1/cmr/m/sl/10 e
-......\OT1/cmr/m/sl/10 s
+....\hbox(6.88875+1.94443)x345.0
+.....\hbox(6.88875+1.94443)x345.0, glue set 249.11093fil
+......\T1/lmr/m/sl/10 N
+......\T1/lmr/m/sl/10 o
+......\T1/lmr/m/sl/10 t
+......\T1/lmr/m/sl/10 e
+......\T1/lmr/m/sl/10 s
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 d
-......\OT1/cmr/m/sl/10 e
+......\T1/lmr/m/sl/10 d
+......\T1/lmr/m/sl/10 e
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 l
-......\OT1/cmr/m/sl/10 a
+......\T1/lmr/m/sl/10 l
+......\T1/lmr/m/sl/10 a
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 p
-......\OT1/cmr/m/sl/10 a
-......\OT1/cmr/m/sl/10 g
-......\OT1/cmr/m/sl/10 e
+......\T1/lmr/m/sl/10 p
+......\T1/lmr/m/sl/10 a
+......\T1/lmr/m/sl/10 g
+......\T1/lmr/m/sl/10 e
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 1
-......\OT1/cmr/m/sl/10 1
+......\T1/lmr/m/sl/10 1
+......\T1/lmr/m/sl/10 1
 ......\glue 0.0 plus 1.0fil
-......\OT1/cmr/m/n/10 1
-......\OT1/cmr/m/n/10 3
+......\T1/lmr/m/n/10 1
+......\T1/lmr/m/n/10 3
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil
@@ -648,35 +645,35 @@ Completed box being shipped out [13]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 12.92955
-....\hbox(17.07045+0.0)x345.0, glue set 137.21155fil
+....\glue(\baselineskip) 12.98935
+....\hbox(17.01065+0.0)x345.0, glue set 137.2119fil
 .....\hbox(0.0+0.0)x0.0
-.....\OT1/cmr/bx/n/24.88 N
-.....\OT1/cmr/bx/n/24.88 o
-.....\OT1/cmr/bx/n/24.88 t
-.....\OT1/cmr/bx/n/24.88 e
-.....\OT1/cmr/bx/n/24.88 s
+.....\T1/lmr/bx/n/24.88 N
+.....\T1/lmr/bx/n/24.88 o
+.....\T1/lmr/bx/n/24.88 t
+.....\T1/lmr/bx/n/24.88 e
+.....\T1/lmr/bx/n/24.88 s
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
-....\marks2{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
-....\marks3{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
-....\mark{{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
+....\marks1{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks2{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks3{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\mark{{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@4}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.85002
-....\hbox(6.14998+0.0)x345.0, glue set 287.4038fil
-.....\hbox(5.79999+0.0)x19.6944
+....\glue(\baselineskip) 4.8
+....\hbox(6.2+0.0)x345.0, glue set 287.40358fil
+.....\hbox(5.6945+0.0)x19.6945
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.79999+0.0)x12.1944
+......\hbox(5.6945+0.0)x12.1945
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -685,22 +682,22 @@ Completed box being shipped out [13]
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.mark}
-.......\OT1/cmr/m/n/9 4
-.......\OT1/cmr/m/n/9 .
+.......\T1/lmr/m/n/9 4
+.......\T1/lmr/m/n/9 .
 .......\pdfendlink
 ......\glue 5.0
 .....\penalty 0
-.....\OT1/cmr/m/n/9 F
+.....\T1/lmr/m/n/9 F
 .....\kern-0.77083
-.....\OT1/cmr/m/n/9 o
+.....\T1/lmr/m/n/9 o
 .....\kern0.25694
-.....\OT1/cmr/m/n/9 o
+.....\T1/lmr/m/n/9 o
 .....\glue 3.08331 plus 1.54166 minus 1.02777
-.....\OT1/cmr/m/n/9 n
-.....\OT1/cmr/m/n/9 o
-.....\OT1/cmr/m/n/9 t
-.....\OT1/cmr/m/n/9 e
-.....\OT1/cmr/m/n/9 .
+.....\T1/lmr/m/n/9 n
+.....\T1/lmr/m/n/9 o
+.....\T1/lmr/m/n/9 t
+.....\T1/lmr/m/n/9 e
+.....\T1/lmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
@@ -765,33 +762,33 @@ Completed box being shipped out [17]
 .\vbox(627.36243+0.0)x380.0
 ..\glue 22.0
 ..\vbox(605.36243+0.0)x345.0, shifted 35.0
-...\vbox(12.0+0.0)x345.0, glue set 5.05556fil
+...\vbox(12.0+0.0)x345.0, glue set 5.11125fil
 ....\glue 0.0 plus 1.0fil
-....\hbox(6.94444+0.0)x345.0
-.....\hbox(6.94444+0.0)x345.0, glue set 241.52757fil
-......\OT1/cmr/m/sl/10 E
-......\OT1/cmr/m/sl/10 n
-......\OT1/cmr/m/sl/10 d
-......\OT1/cmr/m/sl/10 n
-......\OT1/cmr/m/sl/10 o
-......\OT1/cmr/m/sl/10 t
-......\OT1/cmr/m/sl/10 e
-......\OT1/cmr/m/sl/10 n
+....\hbox(6.88875+0.0)x345.0
+.....\hbox(6.88875+0.0)x345.0, glue set 241.52776fil
+......\T1/lmr/m/sl/10 E
+......\T1/lmr/m/sl/10 n
+......\T1/lmr/m/sl/10 d
+......\T1/lmr/m/sl/10 n
+......\T1/lmr/m/sl/10 o
+......\T1/lmr/m/sl/10 t
+......\T1/lmr/m/sl/10 e
+......\T1/lmr/m/sl/10 n
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 z
-......\OT1/cmr/m/sl/10 u
+......\T1/lmr/m/sl/10 z
+......\T1/lmr/m/sl/10 u
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 S
-......\OT1/cmr/m/sl/10 e
-......\OT1/cmr/m/sl/10 i
-......\OT1/cmr/m/sl/10 t
-......\OT1/cmr/m/sl/10 e
+......\T1/lmr/m/sl/10 S
+......\T1/lmr/m/sl/10 e
+......\T1/lmr/m/sl/10 i
+......\T1/lmr/m/sl/10 t
+......\T1/lmr/m/sl/10 e
 ......\glue 3.33333 plus 1.66666 minus 1.11111
-......\OT1/cmr/m/sl/10 1
-......\OT1/cmr/m/sl/10 5
+......\T1/lmr/m/sl/10 1
+......\T1/lmr/m/sl/10 5
 ......\glue 0.0 plus 1.0fil
-......\OT1/cmr/m/n/10 1
-......\OT1/cmr/m/n/10 7
+......\T1/lmr/m/n/10 1
+......\T1/lmr/m/n/10 7
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil
@@ -805,38 +802,38 @@ Completed box being shipped out [17]
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 12.72224
-....\hbox(17.27776+0.0)x345.0, glue set 113.3884fil
+....\glue(\baselineskip) 12.98935
+....\hbox(17.01065+0.0)x345.0, glue set 113.38824fil
 .....\hbox(0.0+0.0)x0.0
-.....\OT1/cmr/bx/n/24.88 E
-.....\OT1/cmr/bx/n/24.88 n
-.....\OT1/cmr/bx/n/24.88 d
-.....\OT1/cmr/bx/n/24.88 n
-.....\OT1/cmr/bx/n/24.88 o
-.....\OT1/cmr/bx/n/24.88 t
-.....\OT1/cmr/bx/n/24.88 e
-.....\OT1/cmr/bx/n/24.88 n
+.....\T1/lmr/bx/n/24.88 E
+.....\T1/lmr/bx/n/24.88 n
+.....\T1/lmr/bx/n/24.88 d
+.....\T1/lmr/bx/n/24.88 n
+.....\T1/lmr/bx/n/24.88 o
+.....\T1/lmr/bx/n/24.88 t
+.....\T1/lmr/bx/n/24.88 e
+.....\T1/lmr/bx/n/24.88 n
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
-....\marks2{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
-....\marks3{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
-....\mark{{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault \ETC.}
+....\marks1{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks2{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks3{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\mark{{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@5}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 4.85002
-....\hbox(6.14998+0.0)x345.0, glue set 287.4038fil
-.....\hbox(5.79999+0.0)x19.6944
+....\glue(\baselineskip) 4.8
+....\hbox(6.2+0.0)x345.0, glue set 287.40358fil
+.....\hbox(5.6945+0.0)x19.6945
 ......\glue 7.5
 ......\glue 0.0
 ......\glue -5.0
-......\hbox(5.79999+0.0)x12.1944
+......\hbox(5.6945+0.0)x12.1945
 .......\glue 5.0
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
@@ -845,22 +842,22 @@ Completed box being shipped out [17]
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@5}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.5.mark}
-.......\OT1/cmr/m/n/9 5
-.......\OT1/cmr/m/n/9 .
+.......\T1/lmr/m/n/9 5
+.......\T1/lmr/m/n/9 .
 .......\pdfendlink
 ......\glue 5.0
 .....\penalty 0
-.....\OT1/cmr/m/n/9 F
+.....\T1/lmr/m/n/9 F
 .....\kern-0.77083
-.....\OT1/cmr/m/n/9 o
+.....\T1/lmr/m/n/9 o
 .....\kern0.25694
-.....\OT1/cmr/m/n/9 o
+.....\T1/lmr/m/n/9 o
 .....\glue 3.08331 plus 1.54166 minus 1.02777
-.....\OT1/cmr/m/n/9 n
-.....\OT1/cmr/m/n/9 o
-.....\OT1/cmr/m/n/9 t
-.....\OT1/cmr/m/n/9 e
-.....\OT1/cmr/m/n/9 .
+.....\T1/lmr/m/n/9 n
+.....\T1/lmr/m/n/9 o
+.....\T1/lmr/m/n/9 t
+.....\T1/lmr/m/n/9 e
+.....\T1/lmr/m/n/9 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0

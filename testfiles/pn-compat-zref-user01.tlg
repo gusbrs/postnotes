@@ -11,7 +11,7 @@ TEST 1: zref-user
 ...\pdfdest name{postnote.1.mark} xyz
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
-.\write1{\zref@newlabel{en:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.m\ETC.}
+.\write1{\zref@newlabel{en:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}}}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.text}
 .\hbox(8.14003+0.0)x4.48613
@@ -134,7 +134,7 @@ Completed box being shipped out [3]
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
 ....\glue 0.0
-....\write1{\zref@newlabel{en:2}{\default{1}\page{\Z@C@page }\anchor{postnote.1.t\ETC.}
+....\write1{\zref@newlabel{en:2}{\default{1}\page{\Z@C@page }\anchor{postnote.1.text}}}
 ....\penalty 10000
 ....\penalty 10000
 ....\glue(\parskip) 0.0 plus 1.0
