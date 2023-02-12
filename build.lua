@@ -12,6 +12,10 @@ checkruns = 2
 -- But, depending on the case (multipass check, biblatex, etc.), 3.
 checkconfigs = {"build","build-3runs"}
 
+-- Don't wrap/truncate lines in test logs
+-- See https://tex.stackexchange.com/q/674844#comment1676566_674846
+maxprintline = 1000
+
 -- Use dev formats for regression tests
 -- See https://tex.stackexchange.com/q/611424
 checkengines = {"pdftex","luatex","xetex","pdftexdev","luatexdev","xetexdev"}
