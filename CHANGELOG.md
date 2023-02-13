@@ -2,6 +2,9 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.0...HEAD)
 
+### Fixed
+- User manual typos.
+
 ### Changed
 - To standardize hooks' names, the `postnotes/store/note` hook has been
   renamed to `postnotes/note/store`.
