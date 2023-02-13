@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.0...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.1...HEAD)
+
+## [v0.2.1](https://github.com/gusbrs/postnotes/compare/v0.2.0...v0.2.1) (2023-02-13)
 
 ### Fixed
 - User manual typos.
