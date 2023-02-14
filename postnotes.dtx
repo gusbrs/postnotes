@@ -2474,6 +2474,82 @@
 %    \end{macrocode}
 %
 %
+% \subsection*{\pkg{tagpdf}}
+%
+%    \begin{macrocode}
+\AddToHook { package/tagpdf/after }
+  {
+    \tl_new:N \l_@@_tag_currentstruct_tl
+    \AddToHook { postnotes/note/mark/begin } [ postnotes ]
+      {
+        % TODO start tagging for postnote mark here
+        \tl_set:Nx \l_@@_tag_currentstruct_tl
+          { \int_use:N \g_@@_temp_struct_num_int }
+      }
+    \AddToHook { postnotes/note/store } [ postnotes ]
+      {
+        \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
+          { tagpdf@structnum } \l_@@_tag_currentstruct_tl
+      }
+    \AddToHook { postnotes/note/mark/end } [ postnotes ]
+      {
+        % TODO end tagging for postnote mark here
+      }
+    \AddToHook { postnotes/print/content/begin } [ postnotes ]
+      {
+        % TODO start tagging for postnote text here
+        \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
+          { tagpdf@structnum } \l_@@_restore_tmp_tl
+        % The variable may be empty in case the property was not present,
+        % which can occur if the postnote was set with nomark option, in which
+        % case there is no tagging cross-reference to make.
+        \tl_if_empty:NF \l_@@_restore_tmp_tl
+          {
+            \prop_gput:NVx \g_@@_tag_postnotes_crossrefs_prop
+              \l_@@_restore_tmp_tl { \int_use:N \g_@@_temp_struct_num_int }
+          }
+      }
+    \AddToHook { postnotes/print/content/end } [ postnotes ]
+      {
+        % TODO end tagging for postnote text here
+      }
+
+    %%%% Temporary %%%%
+    % Just some stuff for generating preliminary association lists and
+    % inspecting them.
+
+    % For the time being, pretend this is '\tag_get:n{struct_num}'
+    \int_new:N \g_@@_temp_struct_num_int
+    \AddToHook{para/before}{ \int_gincr:N \g_@@_temp_struct_num_int }
+
+    \prop_new:N \g_@@_tag_postnotes_crossrefs_prop
+    \prop_new:N \g_@@_tag_postnoteID_to_structnum_prop
+    \prop_new:N \g_@@_tag_printID_to_structnum_prop
+
+    \AddToHook { postnotes/note/store }
+      {
+        \prop_gput:Nxx \g_@@_tag_postnoteID_to_structnum_prop
+          { \l_postnotes_note_id_tl }
+          { \int_use:N \g_@@_temp_struct_num_int }
+      }
+    \AddToHook { postnotes/print/content/begin }
+      {
+        \prop_gput:Nxx \g_@@_tag_printID_to_structnum_prop
+          { \l_postnotes_print_note_id_tl }
+          { \int_use:N \g_@@_temp_struct_num_int }
+      }
+    \AddToHook { enddocument }
+      {
+        \prop_show:N \g_@@_tag_postnoteID_to_structnum_prop
+        \prop_show:N \g_@@_tag_printID_to_structnum_prop
+        \prop_show:N \g_@@_tag_postnotes_crossrefs_prop
+      }
+
+    %%%% End of temporary %%%%
+  }
+%    \end{macrocode}
+%
+%
 % \section{Languages}
 % \label{sec:languages}
 %
