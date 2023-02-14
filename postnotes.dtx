@@ -963,8 +963,9 @@
               \group_end:
               \tl_set:Nn \l_@@_mark_tl { \thepostnote }
           }
-        \@@_typeset_mark_wrapper:n
+        \@@_typeset_mark_wrapper:nnn
           { \@@_make_mark:nnn { \l_@@_mark_tl } { } { } }
+          { } { }
       }
     \bool_if:NTF \l_@@_inhibit_note_bool
       { \prg_return_true:  }
@@ -977,19 +978,22 @@
 % \begin{macro}
 %   {
 %     \@@_typeset_mark:nn ,
-%     \@@_typeset_mark_wrapper:n ,
+%     \@@_typeset_mark_wrapper:nnn ,
 %   }
 %   Auxiliary functions for mark typesetting in \cs{@@_note:nn}.
-%   \cs{@@_typeset_mark_wrapper:n} is based on the definition of
+%   \cs{@@_typeset_mark_wrapper:nnn} is based on the definition of
 %   \cs{@footnotemark} in the kernel.
 %   \begin{syntax}
 %     \cs{@@_typeset_mark:nn} \Arg{note id} \Arg{mark}
-%     \cs{@@_typeset_mark_wrapper:n} \Arg{mark}
+%     \cs{@@_typeset_mark_wrapper:nnn}
+%       \Arg{mark} \Arg{begin hook} \Arg{end hook}
 %   \end{syntax}
 %    \begin{macrocode}
+\NewHook { postnotes/note/mark/begin }
+\NewHook { postnotes/note/mark/end }
 \cs_new_protected:Npn \@@_typeset_mark:nn #1#2
   {
-    \@@_typeset_mark_wrapper:n
+    \@@_typeset_mark_wrapper:nnn
       {
         \bool_if:NTF \l_@@_hyperlink_bool
           {
@@ -998,11 +1002,13 @@
               { \hyper@linkend }
           }
           { \@@_make_mark:nnn {#2} { } { } }
-      }
+        }
+        { \UseHook { postnotes/note/mark/begin } }
+        { \UseHook { postnotes/note/mark/end } }
   }
 \cs_generate_variant:Nn \@@_typeset_mark:nn { xV }
 \tl_new:N \l_@@_saved_spacefactor_tl
-\cs_new_protected:Npn \@@_typeset_mark_wrapper:n #1
+\cs_new_protected:Npn \@@_typeset_mark_wrapper:nnn #1#2#3
   {
     \mode_leave_vertical:
     \mode_if_horizontal:T
@@ -1010,7 +1016,9 @@
         \tl_set:Nx \l_@@_saved_spacefactor_tl { \the\spacefactor }
         \nobreak
       }
-    #1
+    #2 % begin hook
+    #1 % mark
+    #3 % end hook
     \mode_if_horizontal:T
       { \spacefactor \l_@@_saved_spacefactor_tl }
     \scan_stop:
@@ -1053,10 +1061,12 @@
 %     \cs{@@_note_ref:nn} \Arg{star bool} \Arg{label}
 %   \end{syntax}
 %    \begin{macrocode}
+\NewHook { postnotes/ref/mark/begin }
+\NewHook { postnotes/ref/mark/end }
 \cs_new_protected:Npn \@@_note_ref:nn #1#2
   {
     \group_begin:
-    \@@_typeset_mark_wrapper:n
+    \@@_typeset_mark_wrapper:nnn
       {
         \bool_lazy_and:nnTF
           { ! #1 }
@@ -1067,6 +1077,8 @@
           }
           { \@@_make_mark:nnn { \ref*{#2} } { } { } }
       }
+      { \UseHook { postnotes/ref/mark/begin } }
+      { \UseHook { postnotes/ref/mark/end } }
     \group_end:
   }
 %    \end{macrocode}
@@ -1218,6 +1230,8 @@
 %    \begin{macrocode}
 \NewHook { postnotes/print/begin }
 \NewHook { postnotes/print/eachnote }
+\NewHook { postnotes/print/content/begin }
+\NewHook { postnotes/print/content/end }
 %    \end{macrocode}
 %
 %
@@ -1377,7 +1391,9 @@
                       { \l_postnotes_print_note_id_tl }
                       \l_@@_print_mark_tl
                   }
+                \UseHook { postnotes/print/content/begin }
                 \l_@@_print_content_tl
+                \UseHook { postnotes/print/content/end }
                 \l_@@_post_printnote_tl
                 \group_end:
 %    \end{macrocode}
@@ -2241,6 +2257,8 @@
 % \end{macro}
 %
 %    \begin{macrocode}
+\NewHook { postnotes/zref/mark/begin }
+\NewHook { postnotes/zref/mark/end }
 \AddToHook { package/zref-user/after }
   {
 %    \end{macrocode}
@@ -2273,7 +2291,7 @@
     \cs_new_protected:Npn \@@_note_zref:nn #1#2
       {
         \group_begin:
-        \@@_typeset_mark_wrapper:n
+        \@@_typeset_mark_wrapper:nnn
           {
             \bool_lazy_and:nnTF
               { ! #1 }
@@ -2285,6 +2303,8 @@
               }
               { \@@_make_mark:nnn { \zref{#2} } { } { } }
           }
+          { \UseHook { postnotes/zref/mark/begin } }
+          { \UseHook { postnotes/zref/mark/end } }
         \group_end:
       }
 %    \end{macrocode}
