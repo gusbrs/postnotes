@@ -2257,6 +2257,7 @@
 % \end{macro}
 %
 %    \begin{macrocode}
+\NewHook { postnotes/zref/begin }
 \NewHook { postnotes/zref/mark/begin }
 \NewHook { postnotes/zref/mark/end }
 \AddToHook { package/zref-user/after }
@@ -2288,9 +2289,12 @@
 %     \cs{@@_note_zref:nn} \Arg{star bool} \Arg{label}
 %   \end{syntax}
 %    \begin{macrocode}
+    \tl_new:N \l_@@_note_zref_zlabel_tl
     \cs_new_protected:Npn \@@_note_zref:nn #1#2
       {
         \group_begin:
+        \tl_set:Nn \l_@@_note_zref_zlabel_tl {#2}
+        \UseHook { postnotes/zref/begin }
         \@@_typeset_mark_wrapper:nnn
           {
             \bool_lazy_and:nnTF
@@ -2479,6 +2483,7 @@
 %    \begin{macrocode}
 \AddToHook { package/tagpdf/after }
   {
+    % First, standard '\postnote's
     \tl_new:N \l_@@_tag_currentstruct_tl
     \AddToHook { postnotes/note/mark/begin } [ postnotes ]
       {
@@ -2505,13 +2510,42 @@
         % case there is no tagging cross-reference to make.
         \tl_if_empty:NF \l_@@_restore_tmp_tl
           {
-            \prop_gput:NVx \g_@@_tag_postnotes_crossrefs_prop
+            \prop_gput:NVx \g_@@_tag_postnote_crossrefs_prop
               \l_@@_restore_tmp_tl { \int_use:N \g_@@_temp_struct_num_int }
           }
       }
     \AddToHook { postnotes/print/content/end } [ postnotes ]
       {
         % TODO end tagging for postnote text here
+      }
+
+    % \postnotezref
+    \AddToHook { package/zref-user/after } [ postnotes ]
+      {
+        \AddToHook { postnotes/zref/mark/begin } [ postnotes ]
+          {
+            % TODO start tagging for postnotezref here
+            \tl_show:N \l_@@_note_zref_zlabel_tl
+            \zref@ifrefcontainsprop { \l_@@_note_zref_zlabel_tl }
+              { pn@tag@struct@text }
+              {
+                \prop_gput:Nxx \g_@@_tag_postnotezref_crossrefs_prop
+                  { \int_use:N \g_@@_temp_struct_num_int }
+                  {
+                    \zref@extractdefault { \l_@@_note_zref_zlabel_tl }
+                      { pn@tag@struct@text } { }
+                  }
+              }
+              { \typeout{Oh~no!} }
+          }
+        \AddToHook { postnotes/zref/mark/end } [ postnotes ]
+          {
+            % TODO end tagging for postnotezref here
+          }
+        \zref@newprop { pn@tag@struct@text }
+          { \int_eval:n { \g_@@_temp_struct_num_int - 1 } }
+        \AddToHook { postnotes/print/begin } [ postnotes ]
+          { \zref@localaddprop { main } { pn@tag@struct@text } }
       }
 
     %%%% Temporary %%%%
@@ -2522,9 +2556,10 @@
     \int_new:N \g_@@_temp_struct_num_int
     \AddToHook{para/before}{ \int_gincr:N \g_@@_temp_struct_num_int }
 
-    \prop_new:N \g_@@_tag_postnotes_crossrefs_prop
+    \prop_new:N \g_@@_tag_postnote_crossrefs_prop
     \prop_new:N \g_@@_tag_postnoteID_to_structnum_prop
     \prop_new:N \g_@@_tag_printID_to_structnum_prop
+    \prop_new:N \g_@@_tag_postnotezref_crossrefs_prop
 
     \AddToHook { postnotes/note/store }
       {
@@ -2542,7 +2577,8 @@
       {
         \prop_show:N \g_@@_tag_postnoteID_to_structnum_prop
         \prop_show:N \g_@@_tag_printID_to_structnum_prop
-        \prop_show:N \g_@@_tag_postnotes_crossrefs_prop
+        \prop_show:N \g_@@_tag_postnote_crossrefs_prop
+        \prop_show:N \g_@@_tag_postnotezref_crossrefs_prop
       }
 
     %%%% End of temporary %%%%
