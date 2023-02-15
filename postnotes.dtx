@@ -1210,14 +1210,14 @@
 % additional setup, specially to add support to packages and features which
 % require it.  The \texttt{postnotes/print/begin} hook is run early in
 % \cs{@@_print_notes:} and only once per call, after the user options have
-% been processed.  The \texttt{postnotes/print/eachnote} hook is run once for
-% each note, at the point where environment variables are being set or
+% been processed.  The \texttt{postnotes/print/note/begin} hook is run once
+% for each note, at the point where environment variables are being set or
 % restored, before the typesetting of either the mark or the text, but within
 % a group of its own of each note.
 %
 %    \begin{macrocode}
 \NewHook { postnotes/print/begin }
-\NewHook { postnotes/print/eachnote }
+\NewHook { postnotes/print/note/begin }
 %    \end{macrocode}
 %
 %
@@ -1350,7 +1350,7 @@
                     \l_@@_print_format_tl
                   }
                 \group_begin:
-                \UseHook { postnotes/print/eachnote }
+                \UseHook { postnotes/print/note/begin }
                 \@@_get_pageref:Nx \pnthepage
                   { mark@ \l_postnotes_print_note_id_tl }
                 \@@_prop_get:nnN
@@ -2076,7 +2076,7 @@
 %    \end{macrocode}
 % Restore \pkg{biblatex} variables for each note.
 %    \begin{macrocode}
-    \AddToHook { postnotes/print/eachnote } [ postnotes ]
+    \AddToHook { postnotes/print/note/begin } [ postnotes ]
       {
         \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
           { biblatex@refsection } \l_@@_restore_tmp_tl
@@ -2205,7 +2205,7 @@
         \tl_gset:Nx \g_@@_biblatex_prev_refsection_tl
           \l_@@_biblatex_orig_refsection_tl
      }
-    \AddToHook { postnotes/print/eachnote } [ postnotes ]
+    \AddToHook { postnotes/print/note/begin } [ postnotes ]
       {
         \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
           { biblatex@refsection } \l_@@_restore_tmp_tl
@@ -2338,7 +2338,7 @@
             \prop_gput:cnx { \@@_data_name:e { \l_postnotes_note_id_tl } }
               { zref-check@abssec } { \int_use:N \c@zc@abssec }
           }
-        \AddToHook { postnotes/print/eachnote } [ postnotes ]
+        \AddToHook { postnotes/print/note/begin } [ postnotes ]
           {
             \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
               { zref-check@abschap } \l_@@_restore_tmp_tl
