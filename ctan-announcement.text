@@ -1,9 +1,9 @@
-## v0.2.1 (2023-02-13)
+## v0.2.2 (2023-02-15)
 
 ### Fixed
-- User manual typos.
+- Don't try to hyperlink `\postnotezref` when `zref-hyperref` is not loaded.
+- "perhaps a missing \item" error for empty `\postnote`.
 
 ### Changed
-- To standardize hooks' names, the `postnotes/store/note` hook has been
-  renamed to `postnotes/note/store`.
+- Renamed `postnotes/print/eachnote` hook to `postnotes/print/note/begin`.
 

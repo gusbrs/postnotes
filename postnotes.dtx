@@ -153,7 +153,7 @@
 %
 %
 %    \begin{macrocode}
-\ProvidesExplPackage {postnotes} {2023-02-13} {0.2.1}
+\ProvidesExplPackage {postnotes} {2023-02-15} {0.2.2}
   {Endnotes for LaTeX}
 %    \end{macrocode}
 %
@@ -1226,14 +1226,14 @@
 % additional setup, specially to add support to packages and features which
 % require it.  The \texttt{postnotes/print/begin} hook is run early in
 % \cs{@@_print_notes:} and only once per call, after the user options have
-% been processed.  The \texttt{postnotes/print/eachnote} hook is run once for
-% each note, at the point where environment variables are being set or
+% been processed.  The \texttt{postnotes/print/note/begin} hook is run once
+% for each note, at the point where environment variables are being set or
 % restored, before the typesetting of either the mark or the text, but within
 % a group of its own of each note.
 %
 %    \begin{macrocode}
 \NewHook { postnotes/print/begin }
-\NewHook { postnotes/print/eachnote }
+\NewHook { postnotes/print/note/begin }
 \NewHook { postnotes/print/content/begin }
 \NewHook { postnotes/print/content/end }
 %    \end{macrocode}
@@ -1368,7 +1368,7 @@
                     \l_@@_print_format_tl
                   }
                 \group_begin:
-                \UseHook { postnotes/print/eachnote }
+                \UseHook { postnotes/print/note/begin }
                 \@@_get_pageref:Nx \pnthepage
                   { mark@ \l_postnotes_print_note_id_tl }
                 \@@_prop_get:nnN
@@ -1395,6 +1395,10 @@
                       { \l_postnotes_print_note_id_tl }
                       \l_@@_print_mark_tl
                   }
+%    \end{macrocode}
+% Leave vertical mode to avoid ``perhaps a missing \cs{item}'' error.
+%    \begin{macrocode}
+                \mode_leave_vertical:
                 \UseHook { postnotes/print/content/begin }
                 \l_@@_print_content_tl
                 \UseHook { postnotes/print/content/end }
@@ -2092,7 +2096,7 @@
 %    \end{macrocode}
 % Restore \pkg{biblatex} variables for each note.
 %    \begin{macrocode}
-    \AddToHook { postnotes/print/eachnote } [ postnotes ]
+    \AddToHook { postnotes/print/note/begin } [ postnotes ]
       {
         \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
           { biblatex@refsection } \l_@@_restore_tmp_tl
@@ -2221,7 +2225,7 @@
         \tl_gset:Nx \g_@@_biblatex_prev_refsection_tl
           \l_@@_biblatex_orig_refsection_tl
      }
-    \AddToHook { postnotes/print/eachnote } [ postnotes ]
+    \AddToHook { postnotes/print/note/begin } [ postnotes ]
       {
         \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
           { biblatex@refsection } \l_@@_restore_tmp_tl
@@ -2301,9 +2305,12 @@
         \UseHook { postnotes/zref/begin }
         \@@_typeset_mark_wrapper:nnn
           {
-            \bool_lazy_and:nnTF
-              { ! #1 }
-              { \l_@@_hyperlink_bool }
+            \bool_lazy_all:nTF
+              {
+                { ! #1 }
+                { \l_@@_hyperlink_bool }
+                { \l_@@_zrefhyperref_bool }
+              }
               {
                 \hyperlink
                   { \zref@extractdefault {#2} { anchor } { } }
@@ -2320,6 +2327,12 @@
 %
 %    \begin{macrocode}
   }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\bool_new:N \l_@@_zrefhyperref_bool
+\AddToHook { package/zref-hyperref/after }
+  { \bool_set_true:N \l_@@_zrefhyperref_bool }
 %    \end{macrocode}
 %
 %
@@ -2353,7 +2366,7 @@
             \prop_gput:cnx { \@@_data_name:e { \l_postnotes_note_id_tl } }
               { zref-check@abssec } { \int_use:N \c@zc@abssec }
           }
-        \AddToHook { postnotes/print/eachnote } [ postnotes ]
+        \AddToHook { postnotes/print/note/begin } [ postnotes ]
           {
             \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
               { zref-check@abschap } \l_@@_restore_tmp_tl

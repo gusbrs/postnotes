@@ -1,0 +1,94 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+% Ensure the same font across check engines
+\usepackage[OT1]{fontenc}
+\renewcommand\rmdefault{cmr}
+\renewcommand\sfdefault{cmss}
+\renewcommand\ttdefault{cmtt}
+
+\usepackage{postnotes}
+
+\begin{document}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+% This case did not generate the "perhaps missing \item" error, but still
+% "merged" the following note into the empty one.
+\BEGINTEST{empty postnote not first}
+Foo.%
+\setbox0=\hbox{\postnote{1}}%
+\showbox0
+\box0
+
+Bar.%
+\setbox0=\hbox{\postnote{}}%
+\showbox0
+\box0
+
+Baz.%
+\setbox0=\hbox{\postnote{3}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print: empty postnote not first}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+% An empty postnote in the first item position resulted in "perhaps
+% missing \item" error.
+\BEGINTEST{empty postnote first}
+Foo.%
+\setbox0=\hbox{\postnote{}}%
+\showbox0
+\box0
+
+Bar.%
+\setbox0=\hbox{\postnote{2}}%
+\showbox0
+\box0
+
+Baz.%
+\setbox0=\hbox{\postnote{3}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print: empty postnote first}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

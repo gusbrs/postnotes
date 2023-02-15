@@ -1,6 +1,15 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.1...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.2...HEAD)
+
+## [v0.2.2](https://github.com/gusbrs/postnotes/compare/v0.2.1...v0.2.2) (2023-02-15)
+
+### Fixed
+- Don't try to hyperlink `\postnotezref` when `zref-hyperref` is not loaded.
+- "perhaps a missing \item" error for empty `\postnote`.
+
+### Changed
+- Renamed `postnotes/print/eachnote` hook to `postnotes/print/note/begin`.
 
 ## [v0.2.1](https://github.com/gusbrs/postnotes/compare/v0.2.0...v0.2.1) (2023-02-13)
 

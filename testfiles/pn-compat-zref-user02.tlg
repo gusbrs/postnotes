@@ -1,0 +1,46 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: zref-user no zref-hyperref
+============================================================
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+..\mathoff
+! OK.
+l. ...\showbox0
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+..\mathoff
+! OK.
+l. ...\showbox0
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+..\mathoff
+! OK.
+l. ...\showbox0
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+..\mathoff
+! OK.
+l. ...\showbox0
+============================================================
