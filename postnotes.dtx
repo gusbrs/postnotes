@@ -2513,6 +2513,18 @@
             \prop_gput:NVx \g_@@_tag_postnote_crossrefs_prop
               \l_@@_restore_tmp_tl { \int_use:N \g_@@_temp_struct_num_int }
           }
+        \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
+          { zlabel } \l_@@_restore_tmp_tl
+        \tl_if_empty:NF \l_@@_restore_tmp_tl
+          {
+            % Can we be setting labels at this point?  Or must this be done at
+            % postnotes/print/eachnote, in which case we'd need to add one to
+            % the struct_num since it nas not been stepped (would this work
+            % though?).
+            \zref@labelbyprops
+              { postnote@tag@struct. \l_@@_restore_tmp_tl }
+              { pn@tag@struct@text@zref }
+          }
       }
     \AddToHook { postnotes/print/content/end } [ postnotes ]
       {
@@ -2526,26 +2538,59 @@
           {
             % TODO start tagging for postnotezref here
             \tl_show:N \l_@@_note_zref_zlabel_tl
+            % If we have a label coming from a \zlabel inside the note.
             \zref@ifrefcontainsprop { \l_@@_note_zref_zlabel_tl }
               { pn@tag@struct@text }
               {
                 \prop_gput:Nxx \g_@@_tag_postnotezref_crossrefs_prop
                   { \int_use:N \g_@@_temp_struct_num_int }
                   {
-                    \zref@extractdefault { \l_@@_note_zref_zlabel_tl }
-                      { pn@tag@struct@text } { }
+                    \zref@extract { \l_@@_note_zref_zlabel_tl }
+                      { pn@tag@struct@text }
                   }
               }
-              { \typeout{Oh~no!} }
+              { }
+            % If we have a label coming from a zlabel option.
+            \zref@ifrefundefined
+              { postnote@tag@struct. \l_@@_note_zref_zlabel_tl }
+              { }
+              {
+                \prop_gput:Nxx \g_@@_tag_postnotezref_crossrefs_prop
+                  { \int_use:N \g_@@_temp_struct_num_int }
+                  {
+                    \zref@extract
+                      { postnote@tag@struct. \l_@@_note_zref_zlabel_tl }
+                      { pn@tag@struct@text@zref }
+                  }
+              }
           }
         \AddToHook { postnotes/zref/mark/end } [ postnotes ]
           {
             % TODO end tagging for postnotezref here
           }
-        \zref@newprop { pn@tag@struct@text }
+        % Setup for \zlabel inside the note.
+        % Is an empty default the reasonable value here?  What happens if a
+        % cross-ref gets an empty value?  What would be the equivalent of
+        % 'Doc-Start' in this context?  "1" I presume, using it provisionally.
+        \zref@newprop { pn@tag@struct@text } [ 1 ]
           { \int_eval:n { \g_@@_temp_struct_num_int - 1 } }
-        \AddToHook { postnotes/print/begin } [ postnotes ]
+        \AddToHook { postnotes/print/eachnote } [ postnotes ]
           { \zref@localaddprop { main } { pn@tag@struct@text } }
+        % Setup for zlabel option.
+        \AddToHook { postnotes/note/store } [ postnotes ]
+          {
+            % Based on this property we set a dedicated zlabel at
+            % postnotes/print/content/begin (above) from which \postnotezref
+            % can find the struct_num of the printed contents.
+            \tl_if_empty:NF \l_@@_note_zlabel_tl
+              {
+                \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
+                  { zlabel } \l_@@_note_zlabel_tl
+              }
+            \prop_show:c { \@@_data_name:e { \l_postnotes_note_id_tl } }
+          }
+        \zref@newprop { pn@tag@struct@text@zref } [ 1 ]
+          { \int_use:N \g_@@_temp_struct_num_int }
       }
 
     %%%% Temporary %%%%
