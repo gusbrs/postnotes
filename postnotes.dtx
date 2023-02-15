@@ -1377,6 +1377,10 @@
                       { \l_postnotes_print_note_id_tl }
                       \l_@@_print_mark_tl
                   }
+%    \end{macrocode}
+% Leave vertical mode to avoid ``perhaps a missing \cs{item}'' error.
+%    \begin{macrocode}
+                \mode_leave_vertical:
                 \l_@@_print_content_tl
                 \l_@@_post_printnote_tl
                 \group_end:

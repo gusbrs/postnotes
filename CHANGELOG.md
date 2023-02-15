@@ -4,6 +4,7 @@
 
 ### Fixed
 - Don't try to hyperlink `\postnotezref` when `zref-hyperref` is not loaded.
+- "perhaps a missing \item" error for empty `\postnote`.
 
 ## [v0.2.1](https://github.com/gusbrs/postnotes/compare/v0.2.0...v0.2.1) (2023-02-13)
 
