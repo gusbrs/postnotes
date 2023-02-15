@@ -2275,9 +2275,12 @@
         \group_begin:
         \@@_typeset_mark_wrapper:n
           {
-            \bool_lazy_and:nnTF
-              { ! #1 }
-              { \l_@@_hyperlink_bool }
+            \bool_lazy_all:nTF
+              {
+                { ! #1 }
+                { \l_@@_hyperlink_bool }
+                { \l_@@_zrefhyperref_bool }
+              }
               {
                 \hyperlink
                   { \zref@extractdefault {#2} { anchor } { } }
@@ -2292,6 +2295,12 @@
 %
 %    \begin{macrocode}
   }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\bool_new:N \l_@@_zrefhyperref_bool
+\AddToHook { package/zref-hyperref/after }
+  { \bool_set_true:N \l_@@_zrefhyperref_bool }
 %    \end{macrocode}
 %
 %

@@ -1,0 +1,63 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+% Ensure the same font across check engines
+\usepackage[OT1]{fontenc}
+\renewcommand\rmdefault{cmr}
+\renewcommand\sfdefault{cmss}
+\renewcommand\ttdefault{cmtt}
+
+% Similar to 'pn-compat-zref-user01.lvt' but not loading 'zref-hyperref', but
+% we test here if '\postnotezref' works gracefully even if not linked.
+
+\usepackage{postnotes}
+
+\usepackage{zref-user}
+% \usepackage{zref-hyperref} % that's the difference from 'pn-compat-zref-user01.lvt'
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\postnote[zlabel={en:1}]{\zlabel{en:2}Foo note.}
+
+\START
+
+\BEGINTEST{zref-user no zref-hyperref}
+pnref. %
+\setbox0=\hbox{\postnotezref{en:2}}%
+\showbox0
+\box0
+
+pnref*. %
+\setbox0=\hbox{\postnotezref*{en:2}}%
+\showbox0
+\box0
+
+pnref. %
+\setbox0=\hbox{\postnotezref{en:1}}%
+\showbox0
+\box0
+
+pnref*. %
+\setbox0=\hbox{\postnotezref*{en:1}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\printpostnotes
+
+\end{document}
