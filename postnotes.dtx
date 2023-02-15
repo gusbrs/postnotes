@@ -2575,8 +2575,9 @@
           }
         % Set labels for label/zlabel options in \postnote.
         % Can we be setting labels at this point?  Or must this be done at
-        % postnotes/print/eachnote, in which case we'd need to add one to the
-        % struct_num since it nas not been stepped (would this work though?).
+        % postnotes/print/note/begin, in which case we'd need to add one to
+        % the struct_num since it nas not been stepped (would this work
+        % though?).
         \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
           { label } \l_@@_restore_tmp_tl
         \tl_if_empty:NF \l_@@_restore_tmp_tl
@@ -2636,13 +2637,13 @@
       }
     % Setup for \label inside the note.
     \ref_attribute_gset:nnnn { pn@tag@innote@struct } { 1 } { now }
-      { \int_eval:n { \g_@@_temp_struct_num_int - 1 } }
+      { \int_use:N \g_@@_temp_struct_num_int }
     \cs_set_nopar:Npn \@@_tag_label:n #1
       {
         \@@_orig_label:n {#1}
         \ref_label:nn { postnote@tag@innote. #1 } { pn@tag@innote@struct }
       }
-    \AddToHook { postnotes/print/eachnote } [ postnotes ]
+    \AddToHook { postnotes/print/note/begin } [ postnotes ]
       {
         \cs_set_eq:NN \@@_orig_label:n \label
         \cs_set_eq:NN \label \@@_tag_label:n
@@ -2700,8 +2701,8 @@
           }
         % Setup for \zlabel inside the note.
         \zref@newprop { pn@tag@innote@struct } [ 1 ]
-          { \int_eval:n { \g_@@_temp_struct_num_int - 1 } }
-        \AddToHook { postnotes/print/eachnote } [ postnotes ]
+          { \int_use:N \g_@@_temp_struct_num_int }
+        \AddToHook { postnotes/print/note/begin } [ postnotes ]
           { \zref@localaddprop { main } { pn@tag@innote@struct } }
         % Setup for zlabel option.
         \zref@newprop { pn@tag@option@struct } [ 1 ]
