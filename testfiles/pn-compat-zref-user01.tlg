@@ -134,9 +134,6 @@ Completed box being shipped out [3]
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
 ....\glue 0.0
-....\write1{\zref@newlabel{en:2}{\default{1}\page{\Z@C@page }\anchor{postnote.1.text}}}
-....\penalty 10000
-....\penalty 10000
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.85002
@@ -159,6 +156,7 @@ Completed box being shipped out [3]
 .......\pdfendlink
 ......\glue 5.0
 .....\penalty 0
+.....\write1{\zref@newlabel{en:2}{\default{1}\page{\Z@C@page }\anchor{postnote.1.text}}}
 .....\OT1/cmr/m/n/9 F
 .....\kern-0.77083
 .....\OT1/cmr/m/n/9 o

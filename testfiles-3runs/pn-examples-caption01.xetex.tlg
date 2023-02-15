@@ -175,7 +175,6 @@ Completed box being shipped out [2]
 .....\glue(\rightskip) 0.0
 ....\penalty -51
 ....\glue 0.0
-....\write1{\newlabel{en:1}{{2}{\thepage }{\pntitle }{postnote.3.text}{}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.85002
@@ -198,6 +197,7 @@ Completed box being shipped out [2]
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
+.....\write1{\newlabel{en:1}{{2}{\thepage }{\pntitle }{postnote.3.text}{}}}
 .....\OT1/cmr/m/n/9 A
 .....\glue 3.08331 plus 1.5401 minus 1.0288
 .....\OT1/cmr/m/n/9 n
