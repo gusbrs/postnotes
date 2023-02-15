@@ -1061,11 +1061,15 @@
 %     \cs{@@_note_ref:nn} \Arg{star bool} \Arg{label}
 %   \end{syntax}
 %    \begin{macrocode}
+\tl_new:N \l_@@_note_ref_label_tl
+\NewHook { postnotes/ref/begin }
 \NewHook { postnotes/ref/mark/begin }
 \NewHook { postnotes/ref/mark/end }
 \cs_new_protected:Npn \@@_note_ref:nn #1#2
   {
     \group_begin:
+    \tl_set:Nn \l_@@_note_ref_label_tl {#2}
+    \UseHook { postnotes/ref/begin }
     \@@_typeset_mark_wrapper:nnn
       {
         \bool_lazy_and:nnTF
@@ -2513,16 +2517,24 @@
             \prop_gput:NVx \g_@@_tag_postnote_crossrefs_prop
               \l_@@_restore_tmp_tl { \int_use:N \g_@@_temp_struct_num_int }
           }
+        % Set labels for label/zlabel options in \postnote.
+        % Can we be setting labels at this point?  Or must this be done at
+        % postnotes/print/eachnote, in which case we'd need to add one to the
+        % struct_num since it nas not been stepped (would this work though?).
+        \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
+          { label } \l_@@_restore_tmp_tl
+        \tl_if_empty:NF \l_@@_restore_tmp_tl
+          {
+            \exp_args:Ne \ref_label:nn
+              { postnote@ref@tag@struct. \l_@@_restore_tmp_tl }
+              { pn@tag@struct@text@ref }
+          }
         \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
           { zlabel } \l_@@_restore_tmp_tl
         \tl_if_empty:NF \l_@@_restore_tmp_tl
           {
-            % Can we be setting labels at this point?  Or must this be done at
-            % postnotes/print/eachnote, in which case we'd need to add one to
-            % the struct_num since it nas not been stepped (would this work
-            % though?).
             \zref@labelbyprops
-              { postnote@tag@struct. \l_@@_restore_tmp_tl }
+              { postnote@zref@tag@struct. \l_@@_restore_tmp_tl }
               { pn@tag@struct@text@zref }
           }
       }
@@ -2531,13 +2543,75 @@
         % TODO end tagging for postnote text here
       }
 
+    % \postnoteref
+    \AddToHook { postnotes/ref/mark/begin } [ postnotes ]
+      {
+        % TODO start tagging for postnoteref here
+        % If we have a label coming from a \label inside the note.
+        \exp_args:Nx \ref_if_exist:nnT
+          { postnote@tag@struct. \l_@@_note_ref_label_tl }
+          { pn@tag@struct@text }
+          {
+            \prop_gput:Nxx \g_@@_tag_postnoteref_crossrefs_prop
+              { \int_use:N \g_@@_temp_struct_num_int }
+              {
+                \exp_args:Ne \ref_value:nn
+                  { postnote@tag@struct. \l_@@_note_ref_label_tl }
+                  { pn@tag@struct@text }
+              }
+          }
+        % If we have a label coming from a label option.
+        \exp_args:Nx \ref_if_exist:nnT
+          { postnote@ref@tag@struct. \l_@@_note_ref_label_tl }
+          { pn@tag@struct@text@ref }
+          {
+            \prop_gput:Nxx \g_@@_tag_postnoteref_crossrefs_prop
+              { \int_use:N \g_@@_temp_struct_num_int }
+              {
+                \exp_args:Ne \ref_value:nn
+                  { postnote@ref@tag@struct. \l_@@_note_ref_label_tl }
+                  { pn@tag@struct@text@ref }
+              }
+          }
+      }
+    \AddToHook { postnotes/ref/mark/end } [ postnotes ]
+      {
+        % TODO end tagging for postnoteref here
+      }
+    % Setup for \label inside the note.
+    \ref_attribute_gset:nnnn { pn@tag@struct@text } { 1 } { now }
+      { \int_eval:n { \g_@@_temp_struct_num_int - 1 } }
+    \cs_set_nopar:Npn \@@_tag_label:n #1
+      {
+        \@@_orig_label:n {#1}
+        \ref_label:nn { postnote@tag@struct. #1 } { pn@tag@struct@text }
+      }
+    \AddToHook { postnotes/print/eachnote } [ postnotes ]
+      {
+        \cs_set_eq:NN \@@_orig_label:n \label
+        \cs_set_eq:NN \label \@@_tag_label:n
+      }
+    % Setup for label option.
+    \AddToHook { postnotes/note/store } [ postnotes ]
+      {
+        % Based on this property we set a dedicated label at
+        % postnotes/print/content/begin (above) from which \postnoteref
+        % can find the struct_num of the printed contents.
+        \tl_if_empty:NF \l_@@_note_label_tl
+          {
+            \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
+              { label } \l_@@_note_label_tl
+          }
+      }
+    \ref_attribute_gset:nnnn { pn@tag@struct@text@ref } { 1 } { now }
+      { \int_use:N \g_@@_temp_struct_num_int }
+
     % \postnotezref
     \AddToHook { package/zref-user/after } [ postnotes ]
       {
         \AddToHook { postnotes/zref/mark/begin } [ postnotes ]
           {
             % TODO start tagging for postnotezref here
-            \tl_show:N \l_@@_note_zref_zlabel_tl
             % If we have a label coming from a \zlabel inside the note.
             \zref@ifrefcontainsprop { \l_@@_note_zref_zlabel_tl }
               { pn@tag@struct@text }
@@ -2552,14 +2626,14 @@
               { }
             % If we have a label coming from a zlabel option.
             \zref@ifrefundefined
-              { postnote@tag@struct. \l_@@_note_zref_zlabel_tl }
+              { postnote@zref@tag@struct. \l_@@_note_zref_zlabel_tl }
               { }
               {
                 \prop_gput:Nxx \g_@@_tag_postnotezref_crossrefs_prop
                   { \int_use:N \g_@@_temp_struct_num_int }
                   {
                     \zref@extract
-                      { postnote@tag@struct. \l_@@_note_zref_zlabel_tl }
+                      { postnote@zref@tag@struct. \l_@@_note_zref_zlabel_tl }
                       { pn@tag@struct@text@zref }
                   }
               }
@@ -2569,9 +2643,6 @@
             % TODO end tagging for postnotezref here
           }
         % Setup for \zlabel inside the note.
-        % Is an empty default the reasonable value here?  What happens if a
-        % cross-ref gets an empty value?  What would be the equivalent of
-        % 'Doc-Start' in this context?  "1" I presume, using it provisionally.
         \zref@newprop { pn@tag@struct@text } [ 1 ]
           { \int_eval:n { \g_@@_temp_struct_num_int - 1 } }
         \AddToHook { postnotes/print/eachnote } [ postnotes ]
@@ -2579,15 +2650,11 @@
         % Setup for zlabel option.
         \AddToHook { postnotes/note/store } [ postnotes ]
           {
-            % Based on this property we set a dedicated zlabel at
-            % postnotes/print/content/begin (above) from which \postnotezref
-            % can find the struct_num of the printed contents.
             \tl_if_empty:NF \l_@@_note_zlabel_tl
               {
                 \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
                   { zlabel } \l_@@_note_zlabel_tl
               }
-            \prop_show:c { \@@_data_name:e { \l_postnotes_note_id_tl } }
           }
         \zref@newprop { pn@tag@struct@text@zref } [ 1 ]
           { \int_use:N \g_@@_temp_struct_num_int }
@@ -2604,6 +2671,7 @@
     \prop_new:N \g_@@_tag_postnote_crossrefs_prop
     \prop_new:N \g_@@_tag_postnoteID_to_structnum_prop
     \prop_new:N \g_@@_tag_printID_to_structnum_prop
+    \prop_new:N \g_@@_tag_postnoteref_crossrefs_prop
     \prop_new:N \g_@@_tag_postnotezref_crossrefs_prop
 
     \AddToHook { postnotes/note/store }
@@ -2623,9 +2691,9 @@
         \prop_show:N \g_@@_tag_postnoteID_to_structnum_prop
         \prop_show:N \g_@@_tag_printID_to_structnum_prop
         \prop_show:N \g_@@_tag_postnote_crossrefs_prop
+        \prop_show:N \g_@@_tag_postnoteref_crossrefs_prop
         \prop_show:N \g_@@_tag_postnotezref_crossrefs_prop
       }
-
     %%%% End of temporary %%%%
   }
 %    \end{macrocode}
