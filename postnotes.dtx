@@ -771,7 +771,7 @@
 % not all cases are as tricky as \cs{caption} or \cs{text}, and even that can
 % be decently dealt with without a separation between ``mark'' and ``text''.
 % Besides, in difficult cases, the package offers a \opt{nomark} option to
-% \cs{postnote} to place a note, but typeset no mark. Than we can typeset a
+% \cs{postnote} to place a note, but typeset no mark.  Then we can typeset a
 % mark with \cs{postnoteref} referring to a \cs{label} in the note of
 % interest.  This would result in a correct mark without duplicity, and in a
 % correct link from there to the note's text at \cs{printpostnotes}.  The
@@ -1395,10 +1395,6 @@
                       { \l_postnotes_print_note_id_tl }
                       \l_@@_print_mark_tl
                   }
-%    \end{macrocode}
-% Leave vertical mode to avoid ``perhaps a missing \cs{item}'' error.
-%    \begin{macrocode}
-                \mode_leave_vertical:
                 \UseHook { postnotes/print/content/begin }
                 \l_@@_print_content_tl
                 \UseHook { postnotes/print/content/end }
@@ -1484,7 +1480,14 @@
 \cs_new_protected:Npn \@@_text_mark_wrapper:n #1
   {
     \bool_if:NTF \l_@@_print_as_list_bool
-      { \item [ \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl ] }
+      {
+        \item [ \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl ]
+%    \end{macrocode}
+% Leave vertical mode to avoid ``perhaps a missing \cs{item}'' error for empty
+% notes.
+%    \begin{macrocode}
+        \mode_leave_vertical:
+      }
       { \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl }
   }
 %    \end{macrocode}
