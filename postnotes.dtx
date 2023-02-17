@@ -2520,7 +2520,9 @@
 % established at \cs{postnoteref}, for the simple fact that any \cs{postnote}
 % can be referenced by arbitrarily many \cs{postnotref}s.  So we need to be
 % able to retrieve the \texttt{struct_num} from the ``text'' to which the
-% reference refers to at \cs{postnoteref}.
+% reference refers to at \cs{postnoteref}.  However, at \cs{postnotref} the
+% only information we have is the \meta{label} but, since it is unique, we can
+% establish a connection through it.
 %
 % When the label is set from inside the note, it is actually set at
 % \cs{printposntones}, at which place we have access to the
