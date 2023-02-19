@@ -2457,6 +2457,12 @@
 % \pkg{tabularray} a trial/measure pass from the final one.  So we use
 % \cs{@@_verify_multipass:N} for it.
 %
+% See, however, \url{https://tex.stackexchange.com/q/675818} and
+% \url{https://github.com/lvjr/tabularray/issues/179} (thanks
+% \contributor{Ulrike Fischer}).  In sum, there's a not yet released new
+% boolean \cs{lTblrMeasuringBool} provided by \pkg{tabularray}, use it when it
+% comes.
+%
 %    \begin{macrocode}
 \AddToHook { package/tabularray/after }
   {
