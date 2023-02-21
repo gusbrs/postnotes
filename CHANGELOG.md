@@ -2,6 +2,10 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.2...HEAD)
 
+### Fixed
+- Don't apply fix for "perhaps a missing \item" error for option
+  `listenv=none`.
+
 ## [v0.2.2](https://github.com/gusbrs/postnotes/compare/v0.2.1...v0.2.2) (2023-02-15)
 
 ### Fixed
