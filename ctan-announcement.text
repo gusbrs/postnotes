@@ -1,9 +1,6 @@
-## v0.2.2 (2023-02-15)
+## v0.2.3 (2023-02-21)
 
 ### Fixed
-- Don't try to hyperlink `\postnotezref` when `zref-hyperref` is not loaded.
-- "perhaps a missing \item" error for empty `\postnote`.
-
-### Changed
-- Renamed `postnotes/print/eachnote` hook to `postnotes/print/note/begin`.
+- Don't apply fix for "perhaps a missing \item" error for option
+  `listenv=none`.
 

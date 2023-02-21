@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.2...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.3...HEAD)
+
+## [v0.2.3](https://github.com/gusbrs/postnotes/compare/v0.2.2...v0.2.3) (2023-02-21)
 
 ### Fixed
 - Don't apply fix for "perhaps a missing \item" error for option
