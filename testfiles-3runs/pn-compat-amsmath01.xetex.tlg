@@ -68,7 +68,7 @@ l. ...\setbox0=\hbox{\testtmp}\showbox0\box
 .\hbox(8.64003+0.0)x4.48613
 ..\mathon
 ..\hbox(4.51111+0.0)x4.48613, shifted -4.12892
-...\OT1/cmr/m/n/7 3
+...\OT1/cmr/m/n/7 4
 ..\mathoff
 ! OK.
 <to be read again> 
@@ -80,13 +80,13 @@ l. ...\end{align}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
 ..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
-...\OT1/cmr/m/n/7 3
+...\OT1/cmr/m/n/7 4
 ..\mathoff
 .\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
 ..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
-...\OT1/cmr/m/n/7 3
+...\OT1/cmr/m/n/7 4
 ..\mathoff
 ! OK.
 <to be read again> 
@@ -98,13 +98,13 @@ l. ...\end{align}
 .\hbox(6.24+0.0)x3.90283
 ..\mathon
 ..\hbox(3.22221+0.0)x3.90283, shifted -3.01779
-...\OT1/cmr/m/n/5 3
+...\OT1/cmr/m/n/5 4
 ..\mathoff
 .\penalty 10000
 .\hbox(6.24+0.0)x3.90283
 ..\mathon
 ..\hbox(3.22221+0.0)x3.90283, shifted -3.01779
-...\OT1/cmr/m/n/5 3
+...\OT1/cmr/m/n/5 4
 ..\mathoff
 ! OK.
 <to be read again> 
@@ -116,13 +116,13 @@ l. ...\end{align}
 .\hbox(5.23997+0.0)x3.90283
 ..\mathon
 ..\hbox(3.22221+0.0)x3.90283, shifted -2.01776
-...\OT1/cmr/m/n/5 3
+...\OT1/cmr/m/n/5 4
 ..\mathoff
 .\penalty 10000
 .\hbox(5.23997+0.0)x3.90283
 ..\mathon
 ..\hbox(3.22221+0.0)x3.90283, shifted -2.01776
-...\OT1/cmr/m/n/5 3
+...\OT1/cmr/m/n/5 4
 ..\mathoff
 ! OK.
 <to be read again> 
@@ -282,7 +282,7 @@ l. ...\end{gather}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
 ..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
-...\OT1/cmr/m/n/7 5
+...\OT1/cmr/m/n/7 6
 ..\mathoff
 ! OK.
 <to be read again> 
@@ -294,7 +294,7 @@ l. ...\end{gather}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
 ..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
-...\OT1/cmr/m/n/7 5
+...\OT1/cmr/m/n/7 7
 ..\mathoff
 ! OK.
 <to be read again> 

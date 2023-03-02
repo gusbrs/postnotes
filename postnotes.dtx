@@ -932,36 +932,50 @@
 %   conditional, obviously, will always return the true branch unless
 %   something is done in the \texttt{postnotes/note/inhibit} hook.  This hook
 %   is meant to handle support for packages or features which may justify note
-%   inhibition, and the code there should set \cs{l_@@_inhibit_note_bool} and
-%   \cs{l_@@_print_plain_mark_bool} as appropriate to the case.
+%   inhibition, and the code there should set \cs{l_@@_inhibit_note_bool},
+%   \cs{l_@@_print_plain_mark_bool} and
+%   \cs{l_@@_print_plain_mark_stepcounter_bool} as appropriate to the case.
 %    \begin{macrocode}
 \bool_new:N \l_@@_inhibit_note_bool
 \bool_new:N \l_@@_print_plain_mark_bool
+\bool_new:N \l_@@_print_plain_mark_stepcounter_bool
 \NewHook { postnotes/note/inhibit }
 \prg_new_protected_conditional:Npnn \@@_inhibit_note: { F }
   {
     \bool_set_false:N \l_@@_inhibit_note_bool
     \bool_set_false:N \l_@@_print_plain_mark_bool
+    \bool_set_false:N \l_@@_print_plain_mark_stepcounter_bool
     \UseHook { postnotes/note/inhibit }
 %    \end{macrocode}
 % Printing a plain mark here may be needed because, if we are inhibiting the
 % note in a ``measuring context'' and omit it completely, the measuring being
 % performed will be off by the size of the mark.  So, to ensure the measuring
-% can be done correctly, we place the mark.  Since we'd only print this mark
-% in case of inhibition, when we don't actually step the counter, to typeset
-% correctly the mark that would be printed if the counter had been stepped, we
-% increment \cs{c@postnote} locally and grouped, and smuggle \cs{thepostnote}
-% out of the group.
+% can be done correctly, we place the mark.  What to do with the counter
+% itself, depends on the situation.  In places that are known to restore the
+% counter values after the measuring pass, we can let the counter be stepped.
+% And, actually we should do so, for example, in a \env{tabularx} with
+% multiple postnotes, if we don't step the counter, all the measuring will be
+% done with the number of the first note.  Otherwise, we don't actually step
+% the counter but, to typeset correctly the mark that would be printed if the
+% counter had been stepped, we increment \cs{c@postnote} locally and grouped,
+% and smuggle \cs{thepostnote} out of the group.
 %    \begin{macrocode}
     \bool_if:NT \l_@@_print_plain_mark_bool
       {
         \tl_if_empty:NT \l_@@_mark_tl
           {
-            \group_begin:
-            \int_incr:N \c@postnote
-            \exp_args:NNNx
-              \group_end:
-              \tl_set:Nn \l_@@_mark_tl { \thepostnote }
+            \bool_if:NTF \l_@@_print_plain_mark_stepcounter_bool
+              {
+                \stepcounter { postnote }
+                \tl_set:Nx \l_@@_mark_tl { \thepostnote }
+              }
+              {
+                \group_begin:
+                \int_incr:N \c@postnote
+                \exp_args:NNNx
+                  \group_end:
+                  \tl_set:Nn \l_@@_mark_tl { \thepostnote }
+              }
           }
         \@@_typeset_mark_wrapper:n
           { \@@_make_mark:nnn { \l_@@_mark_tl } { } { } }
@@ -2371,6 +2385,7 @@
           {
             \bool_set_true:N \l_@@_inhibit_note_bool
             \bool_set_true:N \l_@@_print_plain_mark_bool
+            \bool_set_true:N \l_@@_print_plain_mark_stepcounter_bool
           }
       }
 %    \end{macrocode}
@@ -2414,6 +2429,7 @@
           {
             \bool_set_true:N \l_@@_inhibit_note_bool
             \bool_set_true:N \l_@@_print_plain_mark_bool
+            \bool_set_true:N \l_@@_print_plain_mark_stepcounter_bool
           }
       }
   }
@@ -2445,6 +2461,7 @@
           {
             \bool_set_true:N \l_@@_inhibit_note_bool
             \bool_set_true:N \l_@@_print_plain_mark_bool
+            \bool_set_true:N \l_@@_print_plain_mark_stepcounter_bool
           }
       }
   }
@@ -2471,7 +2488,12 @@
 % and public boolean, and users can create arbitrary new \pkg{tabularray}
 % environments with \cs{NewTblrEnviron}, which we either wouldn't catch or
 % have to provide an user interface for.  So, for the time being, let's trust
-% this boolean won't be misused by third-parties or users.
+% this boolean won't be misused by third-parties or users.  Note that setting
+% \cs{l_@@_print_plain_mark_stepcounter_bool} to true presumes
+% \pkg{tabularray}'s \texttt{counter} module is enabled.  But, since this is
+% the only way to get the measuring right in this context if there is more
+% than one \cs{postnote} inside a given table, pkg{postnotes} expects and
+% requires the \texttt{counter} module.
 %    \begin{macrocode}
         \AddToHook { postnotes/note/inhibit } [ postnotes ]
           {
@@ -2479,6 +2501,7 @@
               {
                 \bool_set_true:N \l_@@_inhibit_note_bool
                 \bool_set_true:N \l_@@_print_plain_mark_bool
+                \bool_set_true:N \l_@@_print_plain_mark_stepcounter_bool
               }
           }
       }
