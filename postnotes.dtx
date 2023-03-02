@@ -2453,24 +2453,49 @@
 %
 % \subsection*{\pkg{tabularray}}
 %
-% I've tried, but I could not find any ``handle'' to distinguish in
-% \pkg{tabularray} a trial/measure pass from the final one.  So we use
-% \cs{@@_verify_multipass:N} for it.
-%
-% See, however, \url{https://tex.stackexchange.com/q/675818} and
-% \url{https://github.com/lvjr/tabularray/issues/179} (thanks
-% \contributor{Ulrike Fischer}).  In sum, there's a not yet released new
-% boolean \cs{lTblrMeasuringBool} provided by \pkg{tabularray}, use it when it
-% comes.
-%
 %    \begin{macrocode}
 \AddToHook { package/tabularray/after }
   {
-    \clist_map_inline:nn
-      { tblr , longtblr , talltblr , booktabs , longtabs , talltabs , +array }
+%    \end{macrocode}
+% Since version \texttt{2023A}, from 2023-03-01, \pkg{tabularray} offers the
+% \cs{lTblrMeasuringBool} which is true when measuring and false otherwise.
+% See \url{https://tex.stackexchange.com/q/675818}
+% and \url{https://github.com/lvjr/tabularray/issues/179} (thanks
+% \contributor{Ulrike Fischer}).
+%    \begin{macrocode}
+    \bool_if_exist:NTF \lTblrMeasuringBool
       {
-        \AddToHook { env/#1/begin } [ postnotes ]
-          { \bool_set_true:N \l_@@_maybe_multi_bool }
+%    \end{macrocode}
+% I'd be inclined to restrict the inhibition effect to known \pkg{tabularray}
+% environments to ``keep things under control''.  However this is a dedicated
+% and public boolean, and users can create arbitrary new \pkg{tabularray}
+% environments with \cs{NewTblrEnviron}, which we either wouldn't catch or
+% have to provide an user interface for.  So, for the time being, let's trust
+% this boolean won't be misused by third-parties or users.
+%    \begin{macrocode}
+        \AddToHook { postnotes/note/inhibit } [ postnotes ]
+          {
+            \bool_if:NT \lTblrMeasuringBool
+              {
+                \bool_set_true:N \l_@@_inhibit_note_bool
+                \bool_set_true:N \l_@@_print_plain_mark_bool
+              }
+          }
+      }
+      {
+%    \end{macrocode}
+% If the new boolean is not yet available, we use \cs{@@_verify_multipass:N}
+% to distinguish a trial/measure pass from the final one.
+%    \begin{macrocode}
+        \clist_map_inline:nn
+          {
+            tblr , longtblr , talltblr , booktabs ,
+            longtabs , talltabs , +array
+          }
+          {
+            \AddToHook { env/#1/begin } [ postnotes ]
+              { \bool_set_true:N \l_@@_maybe_multi_bool }
+          }
       }
   }
 %    \end{macrocode}
