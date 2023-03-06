@@ -2,6 +2,14 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.3...HEAD)
 
+### Changed
+- Use new `\lTblrMeasuringBool` for identifying measuring passes in
+  `tabularray` tables.
+
+### Fixed
+- Don't inhibit `postnote` counter stepping in contexts which restore counter
+  values in measuring passes to ensure proper measuring.
+
 ## [v0.2.3](https://github.com/gusbrs/postnotes/compare/v0.2.2...v0.2.3) (2023-02-21)
 
 ### Fixed
