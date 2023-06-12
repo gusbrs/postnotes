@@ -9,6 +9,8 @@
 ### Fixed
 - Don't inhibit `postnote` counter stepping in contexts which restore counter
   values in measuring passes to ensure proper measuring.
+- Update User manual and regression tests for `l3kernel`'s renaming of
+  `\bool_case_true:n(TF)` to `\bool_case:n(TF)`.
 
 ## [v0.2.3](https://github.com/gusbrs/postnotes/compare/v0.2.2...v0.2.3) (2023-02-21)
 

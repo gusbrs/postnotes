@@ -86,7 +86,7 @@
     \ExplSyntaxOff ,
     \NewDocumentCommand ,
     \tl_if_eq:NNTF ,
-    \bool_case_true:nF ,
+    \bool_case:nF ,
     \str_if_eq_p:ee ,
     \prg_replicate:nn ,
     \lipsum ,
@@ -754,7 +754,7 @@ their use (of course, the use of \pkg{lipsum} is just for demonstration):
 \ExplSyntaxOn
 \NewDocumentCommand \mypnheader {}
   {
-    \bool_case_true:nF
+    \bool_case:nF
       {
         {
           \str_if_eq_p:ee { \pnhdnamefirst } { intro } &&
