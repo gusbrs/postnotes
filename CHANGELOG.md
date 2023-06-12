@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.3...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.4...HEAD)
+
+## [v0.2.4](https://github.com/gusbrs/postnotes/compare/v0.2.3...v0.2.4) (2023-06-12)
 
 ### Changed
 - Use new `\lTblrMeasuringBool` for identifying measuring passes in
