@@ -11,8 +11,8 @@ TEST 1: cross-ref
 ...\special{pdf:dest (postnote.1.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
-.\write1{\newlabel{en:1}{{1}{\thepage }{First chapter}{postnote.1.mark}{}}}
 .\write1{\zref@newlabel{en:1}{\default{1}\page{\Z@C@page }\abspage{\Z@C@abspage }\zc@counter{postnote}\thecounter{1}\zc@type{endnote}\zc@cntval{1}\zc@pgval{\Z@C@zc@pgval }\zc@enclval{}\zc@pgfmt{\Z@C@zc@pgfmt }\anchor{postnote.1.mark}}}
+.\write1{\newlabel{en:1}{{1}{\thepage }{First chapter}{postnote.1.mark}{}}}
 .\penalty 10000
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.1.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
@@ -156,8 +156,8 @@ Completed box being shipped out [3]
 .......\special{pdf:eann}
 ......\glue 5.0
 .....\penalty 0
-.....\write1{\newlabel{en:2}{{1}{\thepage }{\pntitle }{postnote.1.text}{}}}
 .....\write1{\zref@newlabel{en:2}{\default{1}\page{\Z@C@page }\abspage{\Z@C@abspage }\zc@counter{postnotetext}\thecounter{1}\zc@type{endnote}\zc@cntval{1}\zc@pgval{\Z@C@zc@pgval }\zc@enclval{{10000}}\zc@pgfmt{\Z@C@zc@pgfmt }\anchor{postnote.1.text}}}
+.....\write1{\newlabel{en:2}{{1}{\thepage }{\pntitle }{postnote.1.text}{}}}
 .....\OT1/cmr/m/n/9 F
 .....\kern-0.77083
 .....\OT1/cmr/m/n/9 o
