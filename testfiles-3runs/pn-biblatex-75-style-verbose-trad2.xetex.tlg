@@ -1395,7 +1395,7 @@ Completed box being shipped out [4]
 .....\OT1/cmr/m/it/9 i
 .....\OT1/cmr/m/it/9 e
 .....\glue(\rightskip) 0.0
-....\penalty 10000
+....\penalty 150
 ....\glue(\baselineskip) 3.0
 ....\hbox(6.25+1.75)x345.0, glue set - 0.2642
 .....\OT1/cmr/m/it/9 T
@@ -1712,7 +1712,7 @@ Completed box being shipped out [4]
 .....\discretionary
 .....\OT1/cmr/m/it/9 -
 .....\glue(\rightskip) 0.0
-....\penalty 10100
+....\penalty 250
 ....\glue(\baselineskip) 4.75
 ....\hbox(6.25+1.75)x345.0, glue set 0.49577
 .....\OT1/cmr/m/it/9 t
@@ -2155,7 +2155,7 @@ Completed box being shipped out [5]
 .....\kern-0.47224
 .....\OT1/cmr/m/it/9 d
 .....\glue(\rightskip) 0.0
-....\penalty 10000
+....\penalty 150
 ....\glue(\baselineskip) 3.0
 ....\hbox(6.25+1.75)x345.0, glue set 0.28922
 .....\OT1/cmr/m/it/9 M

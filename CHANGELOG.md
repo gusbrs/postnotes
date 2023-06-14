@@ -2,6 +2,10 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.4...HEAD)
 
+### Fixed
+- Ensure `\par` at the end of `\printpostnotes`, see
+  https://github.com/u-fischer/tagpdf/issues/68#issuecomment-1587343876 .
+
 ## [v0.2.4](https://github.com/gusbrs/postnotes/compare/v0.2.3...v0.2.4) (2023-06-12)
 
 ### Changed

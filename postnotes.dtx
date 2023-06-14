@@ -1418,6 +1418,12 @@
                     \bool_if:NTF \l_@@_print_as_list_bool
                       { \exp_args:Nx \end { \l_@@_print_env_tl } }
                       { \group_end: }
+%    \end{macrocode}
+% Ensure \cs{par} at the end of \cs{printopostnotes} (see
+% \url{https://github.com/u-fischer/tagpdf/issues/68#issuecomment-1587343876},
+% thanks \contributor{Ulrike Fischer}).
+%    \begin{macrocode}
+                    \par
                   }
 %    \end{macrocode}
 % Set \texttt{type_prev} for the next iteration.
