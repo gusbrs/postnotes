@@ -1,12 +1,6 @@
-## v0.2.4 (2023-06-12)
-
-### Changed
-- Use new `\lTblrMeasuringBool` for identifying measuring passes in
-  `tabularray` tables.
+## v0.2.5 (2023-06-16)
 
 ### Fixed
-- Don't inhibit `postnote` counter stepping in contexts which restore counter
-  values in measuring passes to ensure proper measuring.
-- Update User manual and regression tests for `l3kernel`'s renaming of
-  `\bool_case_true:n(TF)` to `\bool_case:n(TF)`.
+- Ensure `\par` at the end of `\printpostnotes`, see
+  https://github.com/u-fischer/tagpdf/issues/68#issuecomment-1587343876 .
 
