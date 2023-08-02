@@ -138,14 +138,15 @@
 % kernel or newer.
 %
 %    \begin{macrocode}
-\NeedsTeXFormat{LaTeX2e}[2022-06-01]
+\def\postnotes@required@kernel{2022-06-01}
+\NeedsTeXFormat{LaTeX2e}[\postnotes@required@kernel]
 \providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
-\IfFormatAtLeastTF{2022-06-01}
+\IfFormatAtLeastTF{\postnotes@required@kernel}
   {}
   {%
     \PackageError{postnotes}{LaTeX kernel too old}
       {%
-        'postnotes' requires a LaTeX kernel 2022-06-01 or newer.%
+        'postnotes' requires a LaTeX kernel \postnotes@required@kernel\space or newer.%
       }%
   }%
 %    \end{macrocode}
