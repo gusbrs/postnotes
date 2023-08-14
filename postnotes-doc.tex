@@ -22,7 +22,7 @@
 %
 % This work consists of the files postnotes.dtx,
 %                                 postnotes.ins,
-%                                 postnotes.tex,
+%                                 postnotes-doc.tex,
 %                                 postnotes-code.tex,
 %                   and the files generated from them.
 %
@@ -86,7 +86,7 @@
     \ExplSyntaxOff ,
     \NewDocumentCommand ,
     \tl_if_eq:NNTF ,
-    \bool_case_true:nF ,
+    \bool_case:nF ,
     \str_if_eq_p:ee ,
     \prg_replicate:nn ,
     \lipsum ,
@@ -754,7 +754,7 @@ their use (of course, the use of \pkg{lipsum} is just for demonstration):
 \ExplSyntaxOn
 \NewDocumentCommand \mypnheader {}
   {
-    \bool_case_true:nF
+    \bool_case:nF
       {
         {
           \str_if_eq_p:ee { \pnhdnamefirst } { intro } &&
@@ -965,6 +965,7 @@ provided by (in chronological order):
   % 2022-03-31: https://github.com/latex3/hyperref/issues/230
   % 2022-04-09: https://github.com/latex3/hyperref/issues/229
   % 2023-02-10: https://chat.stackexchange.com/transcript/message/62955941#62955941 (and discussion)
+  % 2023-02-19: https://tex.stackexchange.com/q/675818#comment1678904_675818
   David Carlisle,
   % 2022-03-28: https://chat.stackexchange.com/transcript/message/60754383#60754383
   % 2022-04-08: https://tex.stackexchange.com/a/640035 (comments)

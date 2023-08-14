@@ -30,7 +30,7 @@
 \ExplSyntaxOn
 \NewDocumentCommand \mypnheader {}
   {
-    \bool_case_true:nF
+    \bool_case:nF
       {
         {
           \str_if_eq_p:ee { \pnhdnamefirst } { intro } &&

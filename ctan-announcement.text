@@ -1,9 +1,6 @@
-## v0.2.2 (2023-02-15)
+## v0.2.5 (2023-06-16)
 
 ### Fixed
-- Don't try to hyperlink `\postnotezref` when `zref-hyperref` is not loaded.
-- "perhaps a missing \item" error for empty `\postnote`.
-
-### Changed
-- Renamed `postnotes/print/eachnote` hook to `postnotes/print/note/begin`.
+- Ensure `\par` at the end of `\printpostnotes`, see
+  https://github.com/u-fischer/tagpdf/issues/68#issuecomment-1587343876 .
 

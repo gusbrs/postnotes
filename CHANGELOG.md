@@ -1,6 +1,34 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.2...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.5...HEAD)
+
+### Fixed
+- Check `if@filesw` before writing labels to the .aux file.
+- Ensure `\post@note` is defined in the .aux file.
+
+## [v0.2.5](https://github.com/gusbrs/postnotes/compare/v0.2.4...v0.2.5) (2023-06-16)
+
+### Fixed
+- Ensure `\par` at the end of `\printpostnotes`, see
+  https://github.com/u-fischer/tagpdf/issues/68#issuecomment-1587343876 .
+
+## [v0.2.4](https://github.com/gusbrs/postnotes/compare/v0.2.3...v0.2.4) (2023-06-12)
+
+### Changed
+- Use new `\lTblrMeasuringBool` for identifying measuring passes in
+  `tabularray` tables.
+
+### Fixed
+- Don't inhibit `postnote` counter stepping in contexts which restore counter
+  values in measuring passes to ensure proper measuring.
+- Update User manual and regression tests for `l3kernel`'s renaming of
+  `\bool_case_true:n(TF)` to `\bool_case:n(TF)`.
+
+## [v0.2.3](https://github.com/gusbrs/postnotes/compare/v0.2.2...v0.2.3) (2023-02-21)
+
+### Fixed
+- Don't apply fix for "perhaps a missing \item" error for option
+  `listenv=none`.
 
 ## [v0.2.2](https://github.com/gusbrs/postnotes/compare/v0.2.1...v0.2.2) (2023-02-15)
 

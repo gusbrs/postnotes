@@ -22,7 +22,7 @@
 %
 % This work consists of the files postnotes.dtx,
 %                                 postnotes.ins,
-%                                 postnotes.tex,
+%                                 postnotes-doc.tex,
 %                                 postnotes-code.tex,
 %                   and the files generated from them.
 %
@@ -138,22 +138,22 @@
 % kernel or newer.
 %
 %    \begin{macrocode}
+\def\postnotes@required@kernel{2022-06-01}
+\NeedsTeXFormat{LaTeX2e}[\postnotes@required@kernel]
 \providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
-\IfFormatAtLeastTF{2022-06-01}
+\IfFormatAtLeastTF{\postnotes@required@kernel}
   {}
   {%
     \PackageError{postnotes}{LaTeX kernel too old}
       {%
-        'postnotes' requires a LaTeX kernel 2022-06-01 or newer.%
-        \MessageBreak Loading will abort!%
+        'postnotes' requires a LaTeX kernel \postnotes@required@kernel\space or newer.%
       }%
-    \endinput
   }%
 %    \end{macrocode}
 %
 %
 %    \begin{macrocode}
-\ProvidesExplPackage {postnotes} {2023-02-15} {0.2.2}
+\ProvidesExplPackage {postnotes} {2023-06-16} {0.2.5}
   {Endnotes for LaTeX}
 %    \end{macrocode}
 %
@@ -295,9 +295,32 @@
 %    \end{macrocode}
 % \end{macro}
 %
+% And ensure \cs{post@note} is defined in the \file{.aux} file.  The hooks are
+% the same used by \pkg{hyperref} for similar purpose.
+%
+%    \begin{macrocode}
+\AddToHook { begindocument }
+  {
+    \legacy_if:nT { @filesw }
+      {
+        \iow_now:Nx \@mainaux
+          { \token_to_str:N \providecommand \token_to_str:N \post@note [2]{} }
+      }
+  }
+\AddToHook { include/before }
+  {
+    \legacy_if:nT { @filesw }
+      {
+        \iow_now:Nx \@partaux
+          { \token_to_str:N \providecommand \token_to_str:N \post@note [2]{} }
+      }
+  }
+%    \end{macrocode}
+%
 %
 % \begin{macro}
 %   {
+%     \@@_set_label:nn ,
 %     \@@_set_mark_page_label:n ,
 %     \@@_set_text_page_label:n ,
 %     \@@_set_print_page_label:n ,
@@ -306,28 +329,28 @@
 %   \cs{iow_shipout_x:Nn}, since the main information we are interested in is
 %   the \texttt{page}.
 %     \begin{syntax}
-%       \cs{@@_set_mark_page_label:n} \Arg{label name}
-%       \cs{@@_set_text_page_label:n} \Arg{label name}
-%       \cs{@@_set_print_page_label:n} \Arg{label name}
+%       \cs{@@_set_label:nn} \Arg{label name} \Arg{value}
+%       \cs{@@_set_mark_page_label:n} \Arg{note id}
+%       \cs{@@_set_text_page_label:n} \Arg{note id}
+%       \cs{@@_set_print_page_label:n} \Arg{note id}
 %     \end{syntax}
 %    \begin{macrocode}
-\cs_new_protected:Npn \@@_set_mark_page_label:n #1
+\cs_new_protected:Npn \@@_set_label:nn #1#2
   {
-    \iow_shipout_x:Nn \@auxout
-      { \token_to_str:N \post@note { mark@ #1 } { \thepage } }
+    \legacy_if:nT { @filesw }
+      {
+        \iow_shipout_x:Nn \@auxout
+          { \token_to_str:N \post@note { #1 } { #2 } }
+      }
   }
+\cs_new_protected:Npn \@@_set_mark_page_label:n #1
+  { \@@_set_label:nn { mark@ #1 } { \thepage } }
 \cs_generate_variant:Nn \@@_set_mark_page_label:n { x }
 \cs_new_protected:Npn \@@_set_text_page_label:n #1
-  {
-    \iow_shipout_x:Nn \@auxout
-      { \token_to_str:N \post@note { text@ #1 } { \int_use:N \c@page } }
-  }
+  { \@@_set_label:nn { text@ #1 } { \int_use:N \c@page } }
 \cs_generate_variant:Nn \@@_set_text_page_label:n { x }
 \cs_new_protected:Npn \@@_set_print_page_label:n #1
-  {
-    \iow_shipout_x:Nn \@auxout
-      { \token_to_str:N \post@note { print@ #1 } { \int_use:N \c@page } }
-  }
+  { \@@_set_label:nn { print@ #1 } { \int_use:N \c@page } }
 \cs_generate_variant:Nn \@@_set_print_page_label:n { x }
 %    \end{macrocode}
 % \end{macro}
@@ -700,7 +723,7 @@
 % offers a boolean to indicate when it is a measuring pass; \pkg{csquotes}
 % offers further handles.  But the standard \cs{caption} offers none, and
 % neither does \pkg{amsmath}'s \cs{text} macro.  Well, the pkg{caption}
-% package has can disable the multiple passes for \cs{caption} with the option
+% package can disable the multiple passes for \cs{caption} with the option
 % \opt{singlelinecheck}, but it is not reasonable to require it for our
 % purposes, so we must assume the worst case.
 %
@@ -932,36 +955,50 @@
 %   conditional, obviously, will always return the true branch unless
 %   something is done in the \texttt{postnotes/note/inhibit} hook.  This hook
 %   is meant to handle support for packages or features which may justify note
-%   inhibition, and the code there should set \cs{l_@@_inhibit_note_bool} and
-%   \cs{l_@@_print_plain_mark_bool} as appropriate to the case.
+%   inhibition, and the code there should set \cs{l_@@_inhibit_note_bool},
+%   \cs{l_@@_print_plain_mark_bool} and
+%   \cs{l_@@_print_plain_mark_stepcounter_bool} as appropriate to the case.
 %    \begin{macrocode}
 \bool_new:N \l_@@_inhibit_note_bool
 \bool_new:N \l_@@_print_plain_mark_bool
+\bool_new:N \l_@@_print_plain_mark_stepcounter_bool
 \NewHook { postnotes/note/inhibit }
 \prg_new_protected_conditional:Npnn \@@_inhibit_note: { F }
   {
     \bool_set_false:N \l_@@_inhibit_note_bool
     \bool_set_false:N \l_@@_print_plain_mark_bool
+    \bool_set_false:N \l_@@_print_plain_mark_stepcounter_bool
     \UseHook { postnotes/note/inhibit }
 %    \end{macrocode}
 % Printing a plain mark here may be needed because, if we are inhibiting the
 % note in a ``measuring context'' and omit it completely, the measuring being
 % performed will be off by the size of the mark.  So, to ensure the measuring
-% can be done correctly, we place the mark.  Since we'd only print this mark
-% in case of inhibition, when we don't actually step the counter, to typeset
-% correctly the mark that would be printed if the counter had been stepped, we
-% increment \cs{c@postnote} locally and grouped, and smuggle \cs{thepostnote}
-% out of the group.
+% can be done correctly, we place the mark.  What to do with the counter
+% itself, depends on the situation.  In places that are known to restore the
+% counter values after the measuring pass, we can let the counter be stepped.
+% And, actually we should do so, for example, in a \env{tabularx} with
+% multiple postnotes, if we don't step the counter, all the measuring will be
+% done with the number of the first note.  Otherwise, we don't actually step
+% the counter but, to typeset correctly the mark that would be printed if the
+% counter had been stepped, we increment \cs{c@postnote} locally and grouped,
+% and smuggle \cs{thepostnote} out of the group.
 %    \begin{macrocode}
     \bool_if:NT \l_@@_print_plain_mark_bool
       {
         \tl_if_empty:NT \l_@@_mark_tl
           {
-            \group_begin:
-            \int_incr:N \c@postnote
-            \exp_args:NNNx
-              \group_end:
-              \tl_set:Nn \l_@@_mark_tl { \thepostnote }
+            \bool_if:NTF \l_@@_print_plain_mark_stepcounter_bool
+              {
+                \stepcounter { postnote }
+                \tl_set:Nx \l_@@_mark_tl { \thepostnote }
+              }
+              {
+                \group_begin:
+                \int_incr:N \c@postnote
+                \exp_args:NNNx
+                  \group_end:
+                  \tl_set:Nn \l_@@_mark_tl { \thepostnote }
+              }
           }
         \@@_typeset_mark_wrapper:nnn
           { \@@_make_mark:nnn { \l_@@_mark_tl } { } { } }
@@ -1423,6 +1460,12 @@
                     \bool_if:NTF \l_@@_print_as_list_bool
                       { \exp_args:Nx \end { \l_@@_print_env_tl } }
                       { \group_end: }
+%    \end{macrocode}
+% Ensure \cs{par} at the end of \cs{printopostnotes} (see
+% \url{https://github.com/u-fischer/tagpdf/issues/68#issuecomment-1587343876},
+% thanks \contributor{Ulrike Fischer}).
+%    \begin{macrocode}
+                    \par
                   }
 %    \end{macrocode}
 % Set \texttt{type_prev} for the next iteration.
@@ -2399,6 +2442,7 @@
           {
             \bool_set_true:N \l_@@_inhibit_note_bool
             \bool_set_true:N \l_@@_print_plain_mark_bool
+            \bool_set_true:N \l_@@_print_plain_mark_stepcounter_bool
           }
       }
 %    \end{macrocode}
@@ -2442,6 +2486,7 @@
           {
             \bool_set_true:N \l_@@_inhibit_note_bool
             \bool_set_true:N \l_@@_print_plain_mark_bool
+            \bool_set_true:N \l_@@_print_plain_mark_stepcounter_bool
           }
       }
   }
@@ -2473,6 +2518,7 @@
           {
             \bool_set_true:N \l_@@_inhibit_note_bool
             \bool_set_true:N \l_@@_print_plain_mark_bool
+            \bool_set_true:N \l_@@_print_plain_mark_stepcounter_bool
           }
       }
   }
@@ -2481,18 +2527,55 @@
 %
 % \subsection*{\pkg{tabularray}}
 %
-% I've tried, but I could not find any ``handle'' to distinguish in
-% \pkg{tabularray} a trial/measure pass from the final one.  So we use
-% \cs{@@_verify_multipass:N} for it.
-%
 %    \begin{macrocode}
 \AddToHook { package/tabularray/after }
   {
-    \clist_map_inline:nn
-      { tblr , longtblr , talltblr , booktabs , longtabs , talltabs , +array }
+%    \end{macrocode}
+% Since version \texttt{2023A}, from 2023-03-01, \pkg{tabularray} offers the
+% \cs{lTblrMeasuringBool} which is true when measuring and false otherwise.
+% See \url{https://tex.stackexchange.com/q/675818}
+% and \url{https://github.com/lvjr/tabularray/issues/179} (thanks
+% \contributor{Ulrike Fischer}).
+%    \begin{macrocode}
+    \bool_if_exist:NTF \lTblrMeasuringBool
       {
-        \AddToHook { env/#1/begin } [ postnotes ]
-          { \bool_set_true:N \l_@@_maybe_multi_bool }
+%    \end{macrocode}
+% I'd be inclined to restrict the inhibition effect to known \pkg{tabularray}
+% environments to ``keep things under control''.  However this is a dedicated
+% and public boolean, and users can create arbitrary new \pkg{tabularray}
+% environments with \cs{NewTblrEnviron}, which we either wouldn't catch or
+% have to provide an user interface for.  So, for the time being, let's trust
+% this boolean won't be misused by third-parties or users.  Note that setting
+% \cs{l_@@_print_plain_mark_stepcounter_bool} to true presumes
+% \pkg{tabularray}'s \texttt{counter} module is enabled.  But, since this is
+% the only way to get the measuring right in this context if there is more
+% than one \cs{postnote} inside a given table, pkg{postnotes} expects and
+% requires the \texttt{counter} module.
+%    \begin{macrocode}
+        \AddToHook { postnotes/note/inhibit } [ postnotes ]
+          {
+            \bool_if:NT \lTblrMeasuringBool
+              {
+                \bool_set_true:N \l_@@_inhibit_note_bool
+                \bool_set_true:N \l_@@_print_plain_mark_bool
+                \bool_set_true:N \l_@@_print_plain_mark_stepcounter_bool
+              }
+          }
+      }
+      {
+%    \end{macrocode}
+% If the new boolean is not yet available, we use \cs{@@_verify_multipass:N}
+% to distinguish a trial/measure pass from the final one.
+%    \begin{macrocode}
+        \clist_map_inline:nn
+          {
+            tblr , longtblr , talltblr , booktabs ,
+            longtabs , talltabs , +array
+          }
+          {
+            \AddToHook { env/#1/begin } [ postnotes ]
+              { \bool_set_true:N \l_@@_maybe_multi_bool }
+          }
       }
   }
 %    \end{macrocode}

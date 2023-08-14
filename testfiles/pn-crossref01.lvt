@@ -28,7 +28,7 @@
 
 \BEGINTEST{cross-ref}
 Foo.%
-\setbox0=\hbox{\postnote[label={en:1},zlabel={en:1}]{\label{en:2}\zlabel{en:2}Foo note.}}%
+\setbox0=\hbox{\postnote[label={en:1}]{\label{en:2}Foo note.}}%
 \showbox0
 \box0
 

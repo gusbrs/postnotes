@@ -26,10 +26,9 @@
 \START
 
 \BEGINTEST{csquotes}
-\setbox0=\hbox{\blockquote{\enquote{Foo.\postnote{\enquote{Foo
-          note.}}\postnote{Bar note.}}}}
-\showbox0
-\box0
+\blockquote{\enquote{Foo.\setbox0=\hbox{\postnote{\enquote{Foo
+          note.}}}\showbox0\box0\setbox0=\hbox{\postnote{Bar
+        note.}}\showbox0\box0}}
 \ENDTEST
 
 \OMIT
