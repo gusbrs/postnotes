@@ -15,4 +15,4 @@ notes, including back links.
 The released version of this package is available [from CTAN](https://ctan.org/pkg/postnotes).
 
 For more details, check the
-[Documentation](https://mirrors.ctan.org/macros/latex/contrib/postnotes/postnotes.pdf).
+[Documentation](https://mirrors.ctan.org/macros/latex/contrib/postnotes/postnotes-doc.pdf).
