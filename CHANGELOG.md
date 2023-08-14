@@ -4,6 +4,7 @@
 
 ### Fixed
 - Check `if@filesw` before writing labels to the .aux file.
+- Ensure `\post@note` is defined in the .aux file.
 
 ## [v0.2.5](https://github.com/gusbrs/postnotes/compare/v0.2.4...v0.2.5) (2023-06-16)
 

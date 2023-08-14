@@ -295,6 +295,28 @@
 %    \end{macrocode}
 % \end{macro}
 %
+% And ensure \cs{post@note} is defined in the \file{.aux} file.  The hooks are
+% the same used by \pkg{hyperref} for similar purpose.
+%
+%    \begin{macrocode}
+\AddToHook { begindocument }
+  {
+    \legacy_if:nT { @filesw }
+      {
+        \iow_now:Nx \@mainaux
+          { \token_to_str:N \providecommand \token_to_str:N \post@note [2]{} }
+      }
+  }
+\AddToHook { include/before }
+  {
+    \legacy_if:nT { @filesw }
+      {
+        \iow_now:Nx \@partaux
+          { \token_to_str:N \providecommand \token_to_str:N \post@note [2]{} }
+      }
+  }
+%    \end{macrocode}
+%
 %
 % \begin{macro}
 %   {
