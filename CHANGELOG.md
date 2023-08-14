@@ -2,6 +2,9 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.5...HEAD)
 
+### Fixed
+- Check `if@filesw` before writing labels to the .aux file.
+
 ## [v0.2.5](https://github.com/gusbrs/postnotes/compare/v0.2.4...v0.2.5) (2023-06-16)
 
 ### Fixed

@@ -298,6 +298,7 @@
 %
 % \begin{macro}
 %   {
+%     \@@_set_label:nn ,
 %     \@@_set_mark_page_label:n ,
 %     \@@_set_text_page_label:n ,
 %     \@@_set_print_page_label:n ,
@@ -306,28 +307,28 @@
 %   \cs{iow_shipout_x:Nn}, since the main information we are interested in is
 %   the \texttt{page}.
 %     \begin{syntax}
-%       \cs{@@_set_mark_page_label:n} \Arg{label name}
-%       \cs{@@_set_text_page_label:n} \Arg{label name}
-%       \cs{@@_set_print_page_label:n} \Arg{label name}
+%       \cs{@@_set_label:nn} \Arg{label name} \Arg{value}
+%       \cs{@@_set_mark_page_label:n} \Arg{note id}
+%       \cs{@@_set_text_page_label:n} \Arg{note id}
+%       \cs{@@_set_print_page_label:n} \Arg{note id}
 %     \end{syntax}
 %    \begin{macrocode}
-\cs_new_protected:Npn \@@_set_mark_page_label:n #1
+\cs_new_protected:Npn \@@_set_label:nn #1#2
   {
-    \iow_shipout_x:Nn \@auxout
-      { \token_to_str:N \post@note { mark@ #1 } { \thepage } }
+    \legacy_if:nT { @filesw }
+      {
+        \iow_shipout_x:Nn \@auxout
+          { \token_to_str:N \post@note { #1 } { #2 } }
+      }
   }
+\cs_new_protected:Npn \@@_set_mark_page_label:n #1
+  { \@@_set_label:nn { mark@ #1 } { \thepage } }
 \cs_generate_variant:Nn \@@_set_mark_page_label:n { x }
 \cs_new_protected:Npn \@@_set_text_page_label:n #1
-  {
-    \iow_shipout_x:Nn \@auxout
-      { \token_to_str:N \post@note { text@ #1 } { \int_use:N \c@page } }
-  }
+  { \@@_set_label:nn { text@ #1 } { \int_use:N \c@page } }
 \cs_generate_variant:Nn \@@_set_text_page_label:n { x }
 \cs_new_protected:Npn \@@_set_print_page_label:n #1
-  {
-    \iow_shipout_x:Nn \@auxout
-      { \token_to_str:N \post@note { print@ #1 } { \int_use:N \c@page } }
-  }
+  { \@@_set_label:nn { print@ #1 } { \int_use:N \c@page } }
 \cs_generate_variant:Nn \@@_set_print_page_label:n { x }
 %    \end{macrocode}
 % \end{macro}
