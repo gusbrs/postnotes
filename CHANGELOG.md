@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.5...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.6...HEAD)
+
+## [v0.2.6](https://github.com/gusbrs/postnotes/compare/v0.2.5...v0.2.6) (2023-08-21)
 
 ### Fixed
 - Check `if@filesw` before writing labels to the .aux file.
