@@ -158,6 +158,23 @@
 %    \end{macrocode}
 %
 %
+% \begin{macro}
+%   {
+%      \l_@@_tmpa_tl ,
+%      \l_@@_tmpb_tl ,
+%      \l_@@_tmpa_seq ,
+%      \l_@@_tmpa_box ,
+%   }
+%   Temporary scratch variables.
+%    \begin{macrocode}
+\tl_new:N \l_@@_tmpa_tl
+\tl_new:N \l_@@_tmpb_tl
+\seq_new:N \l_@@_tmpa_seq
+\box_new:N \l_@@_tmpa_box
+%    \end{macrocode}
+% \end{macro}
+%
+%
 % \section{Data}
 %
 %
@@ -646,9 +663,10 @@
 %    \begin{macrocode}
         maketextmark =
          {
-           \hbox_set:Nn \l_tmpa_box { \@textsuperscript { \normalfont ##1 } }
-           \skip_horizontal:n { - \box_wd:N \l_tmpa_box }
-           ##2 \box_use:N \l_tmpa_box ##3
+           \hbox_set:Nn \l_@@_tmpa_box
+             { \@textsuperscript { \normalfont ##1 } }
+           \skip_horizontal:n { - \box_wd:N \l_@@_tmpa_box }
+           ##2 \box_use:N \l_@@_tmpa_box ##3
          } ,
       } ,
     style / pagenote .meta:n =
@@ -1548,19 +1566,19 @@
 \cs_new_protected:Npn \@@_verify_multipass:N #1
   {
     \group_begin:
-    \seq_clear:N \l_tmpa_seq
+    \seq_clear:N \l_@@_tmpa_seq
     \seq_map_inline:Nn #1
       {
-        \@@_prop_get:nnN {##1} { multibool } \l_tmpa_tl
-        \tl_if_eq:NnTF \l_tmpa_tl { true }
+        \@@_prop_get:nnN {##1} { multibool } \l_@@_tmpa_tl
+        \tl_if_eq:NnTF \l_@@_tmpa_tl { true }
           {
             \cs_if_exist:cT
               { \c_@@_ref_prefix_tl @ mark@ ##1 }
-              { \seq_put_right:Nn \l_tmpa_seq {##1} }
+              { \seq_put_right:Nn \l_@@_tmpa_seq {##1} }
           }
-          { \seq_put_right:Nn \l_tmpa_seq {##1} }
+          { \seq_put_right:Nn \l_@@_tmpa_seq {##1} }
       }
-    \seq_gset_eq:NN #1 \l_tmpa_seq
+    \seq_gset_eq:NN #1 \l_@@_tmpa_seq
     \group_end:
   }
 %    \end{macrocode}
@@ -1578,19 +1596,20 @@
     \group_begin:
     \seq_gsort:Nn #1
       {
-        \@@_prop_get:nnN {##1} { pnsectid } \l_tmpa_tl
-        \@@_prop_get:nnN {##2} { pnsectid } \l_tmpb_tl
-        \tl_if_eq:NNTF \l_tmpa_tl \l_tmpb_tl
+        \@@_prop_get:nnN {##1} { pnsectid } \l_@@_tmpa_tl
+        \@@_prop_get:nnN {##2} { pnsectid } \l_@@_tmpb_tl
+        \tl_if_eq:NNTF \l_@@_tmpa_tl \l_@@_tmpb_tl
           {
-            \@@_prop_get:nnN {##1} { type } \l_tmpa_tl
-            \@@_prop_get:nnN {##2} { type } \l_tmpb_tl
+            \@@_prop_get:nnN {##1} { type } \l_@@_tmpa_tl
+            \@@_prop_get:nnN {##2} { type } \l_@@_tmpb_tl
             \bool_lazy_and:nnTF
-              { \str_if_eq_p:Vn \l_tmpa_tl { note } }
-              { \str_if_eq_p:Vn \l_tmpb_tl { note } }
+              { \str_if_eq_p:Vn \l_@@_tmpa_tl { note } }
+              { \str_if_eq_p:Vn \l_@@_tmpb_tl { note } }
               {
-                \@@_prop_get:nnN {##1} { sortnum } \l_tmpa_tl
-                \@@_prop_get:nnN {##2} { sortnum } \l_tmpb_tl
-                \fp_compare:nNnTF { \l_tmpa_tl } > { \l_tmpb_tl }
+                \@@_prop_get:nnN {##1} { sortnum } \l_@@_tmpa_tl
+                \@@_prop_get:nnN {##2} { sortnum } \l_@@_tmpb_tl
+                \fp_compare:nNnTF
+                  { \l_@@_tmpa_tl } > { \l_@@_tmpb_tl }
                   { \sort_return_swapped: }
                   { \sort_return_same:    }
               }
@@ -1905,47 +1924,51 @@
   {
     \group_begin:
     \prop_get:NnNTF \g_@@_header_page_first_prop
-      {#1} \l_tmpa_tl
-      { \tl_gset:NV \pnhdpagefirst \l_tmpa_tl }
+      {#1} \l_@@_tmpa_tl
+      { \tl_gset:NV \pnhdpagefirst \l_@@_tmpa_tl }
       { \tl_gset:NV \pnhdpagefirst \g_@@_header_prev_last_page_tl }
     \prop_get:NnNTF \g_@@_header_page_last_prop
-      {#1} \l_tmpa_tl
+      {#1} \l_@@_tmpa_tl
       {
-        \tl_gset:NV \pnhdpagelast \l_tmpa_tl
-        \tl_gset:NV \g_@@_header_prev_last_page_tl \l_tmpa_tl
+        \tl_gset:NV \pnhdpagelast \l_@@_tmpa_tl
+        \tl_gset:NV \g_@@_header_prev_last_page_tl
+          \l_@@_tmpa_tl
       }
       { \tl_gset:NV \pnhdpagelast \g_@@_header_prev_last_page_tl }
     \prop_get:NnNTF \g_@@_header_chap_first_prop
-      {#1} \l_tmpa_tl
-      { \tl_gset:NV \pnhdchapfirst \l_tmpa_tl }
+      {#1} \l_@@_tmpa_tl
+      { \tl_gset:NV \pnhdchapfirst \l_@@_tmpa_tl }
       { \tl_gset:NV \pnhdchapfirst \g_@@_header_prev_last_chap_tl }
     \prop_get:NnNTF \g_@@_header_chap_last_prop
-      {#1} \l_tmpa_tl
+      {#1} \l_@@_tmpa_tl
       {
-        \tl_gset:NV \pnhdchaplast \l_tmpa_tl
-        \tl_gset:NV \g_@@_header_prev_last_chap_tl \l_tmpa_tl
+        \tl_gset:NV \pnhdchaplast \l_@@_tmpa_tl
+        \tl_gset:NV \g_@@_header_prev_last_chap_tl
+          \l_@@_tmpa_tl
       }
       { \tl_gset:NV \pnhdchaplast \g_@@_header_prev_last_chap_tl }
     \prop_get:NnNTF \g_@@_header_sect_first_prop
-      {#1} \l_tmpa_tl
-      { \tl_gset:NV \pnhdsectfirst \l_tmpa_tl }
+      {#1} \l_@@_tmpa_tl
+      { \tl_gset:NV \pnhdsectfirst \l_@@_tmpa_tl }
       { \tl_gset:NV \pnhdsectfirst \g_@@_header_prev_last_sect_tl }
     \prop_get:NnNTF \g_@@_header_sect_last_prop
-      {#1} \l_tmpa_tl
+      {#1} \l_@@_tmpa_tl
       {
-        \tl_gset:NV \pnhdsectlast \l_tmpa_tl
-        \tl_gset:NV \g_@@_header_prev_last_sect_tl \l_tmpa_tl
+        \tl_gset:NV \pnhdsectlast \l_@@_tmpa_tl
+        \tl_gset:NV \g_@@_header_prev_last_sect_tl
+          \l_@@_tmpa_tl
       }
       { \tl_gset:NV \pnhdsectlast \g_@@_header_prev_last_sect_tl }
     \prop_get:NnNTF \g_@@_header_name_first_prop
-      {#1} \l_tmpa_tl
-      { \tl_gset:NV \pnhdnamefirst \l_tmpa_tl }
+      {#1} \l_@@_tmpa_tl
+      { \tl_gset:NV \pnhdnamefirst \l_@@_tmpa_tl }
       { \tl_gset:NV \pnhdnamefirst \g_@@_header_prev_last_name_tl }
     \prop_get:NnNTF \g_@@_header_name_last_prop
-      {#1} \l_tmpa_tl
+      {#1} \l_@@_tmpa_tl
       {
-        \tl_gset:NV \pnhdnamelast \l_tmpa_tl
-        \tl_gset:NV \g_@@_header_prev_last_name_tl \l_tmpa_tl
+        \tl_gset:NV \pnhdnamelast \l_@@_tmpa_tl
+        \tl_gset:NV \g_@@_header_prev_last_name_tl
+          \l_@@_tmpa_tl
       }
       { \tl_gset:NV \pnhdnamelast \g_@@_header_prev_last_name_tl }
     \group_end:
