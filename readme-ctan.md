@@ -2,8 +2,8 @@
 
 **Endnotes for LaTeX**
 
-Author: Gustavo Barros
-Maintainer: Gustavo Barros
+Author: gusbrs
+Maintainer: gusbrs
 
 `postnotes` is an endnotes package for LaTeX.  Its user interface provides
 means to print multiple sections of notes along the document, and to subdivide
