@@ -63,10 +63,7 @@
 \hypersetup{hidelinks}
 
 \usepackage{zref-clever}
-\zcsetup{
-  cap,
-  countertype = { pnexample = example } ,
-}
+\zcsetup{cap}
 \usepackage{zref-titleref}
 \usepackage{zref-check}
 
@@ -154,22 +151,15 @@
 \lstnewenvironment{pnexample}[1][]{%
   \renewcommand{\lstlistingname}{Example}%
   \renewcommand*\theHlstlisting{ht.\thelstlisting}%
+  \zcsetup{countertype={lstlisting=example}}%
   \lstset{#1}%
+  \stepcounter{pnexample}%
   \setcounter{lstlisting}{\value{pnexample}}%
 }{}
 \lstnewenvironment{pnsnippet}[1][]{%
   \renewcommand{\lstlistingname}{Example}%
   \lstset{#1}%
 }{}
-\ExplSyntaxOn
-\makeatletter
-\lst@AddToHook { PreInit }
-  {
-    \cs_if_exist:cT { c@ \lstenv@name }
-      { \exp_args:Nx \refstepcounter { \lstenv@name } }
-  }
-\makeatother
-\ExplSyntaxOff
 
 \setlength{\marginparsep}{2\labelsep}
 
