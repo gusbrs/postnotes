@@ -1218,12 +1218,14 @@
 %     \pnthechapternextnote ,
 %     \pnthesectionnextnote ,
 %     \pnthepage ,
+%     \pnidnextnote ,
 %   }
 %   User facing variables, aimed at making available some of the notes' and
 %   sections' metadata for the user at specific contexts.
 %    \begin{macrocode}
 \tl_new:N \pnthechapter
 \tl_new:N \pnthesection
+\tl_new:N \pnidnextnote
 \tl_new:N \pnthechapternextnote
 \tl_new:N \pnthesectionnextnote
 \tl_new:N \pnthepage
@@ -1376,6 +1378,7 @@
                     \@@_prop_get:nnN
                       { \l_postnotes_print_note_id_tl }
                       { thesection } \pnthesection
+                    \tl_set:NV \pnidnextnote \l_@@_print_note_id_next_tl
                     \@@_prop_get:nnN
                       { \l_@@_print_note_id_next_tl }
                       { thechapter } \pnthechapternextnote

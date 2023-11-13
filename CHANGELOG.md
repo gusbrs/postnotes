@@ -2,6 +2,9 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.6...HEAD)
 
+### Added
+- Provide `\pnidnextnote`, with usage example in the manual.
+
 ### Changed
 - Don't use `expl3` public scratch temporary variables.
 

@@ -1,0 +1,99 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+% Ensure the same font across check engines
+\usepackage[OT1]{fontenc}
+\renewcommand\rmdefault{cmr}
+\renewcommand\sfdefault{cmss}
+\renewcommand\ttdefault{cmtt}
+
+\usepackage{postnotes}
+\ExplSyntaxOn
+\tl_new:N \g_my_currentname_tl
+\prop_new:N \g_my_names_prop
+\AddToHook{cmd/chapter/before}{
+  \AddToHookNext{cmd/NR@gettitle/after}{
+    \tl_gset:Nv \g_my_currentname_tl { @currentlabelname } } }
+\AddToHook{postnotes/note/store}{
+  \prop_gput:NeV \g_my_names_prop
+    { \l_postnotes_note_id_tl } \g_my_currentname_tl }
+\AddToHook{cmd/chapter/before}{
+  \postnotesection{
+    \section*{Notes~to~\prop_item:NV \g_my_names_prop \pnidnextnote}}}
+\ExplSyntaxOff
+\counterwithin*{postnote}{chapter}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter*{Introduction}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{Notes: Introduction}
+Intro.%
+\setbox0=\hbox{\postnote{Intro note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\chapter{First chapter}
+
+\TIMO
+
+\BEGINTEST{Notes: First chapter}
+Foo.%
+\setbox0=\hbox{\postnote{Foo note.}}%
+\showbox0
+\box0
+
+Bar.%
+\setbox0=\hbox{\postnote{Bar note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\chapter{Second chapter}
+
+\TIMO
+
+\BEGINTEST{Notes: Second chapter}
+Baz.%
+\setbox0=\hbox{\postnote{Baz note.}}%
+\showbox0
+\box0
+
+Boo.%
+\setbox0=\hbox{\postnote{Boo note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}
