@@ -132,11 +132,12 @@
 % simplifies the relation with \pkg{hyperref} (\texttt{ltnews35},
 % \texttt{hyperref-linktarget}): the provision of \cs{MakeLinkTarget} and the
 % definition by the kernel of the starred version of \cs{ref}, which we can
-% use regardless of \pkg{hyperref} being loaded.  So we require the 2022-06-01
-% kernel or newer.
+% use regardless of \pkg{hyperref} being loaded.  Finally, since we followed
+% the move to \texttt{e}-type expansion, to play safe we require the
+% 2023-11-01 kernel or newer.
 %
 %    \begin{macrocode}
-\def\postnotes@required@kernel{2022-06-01}
+\def\postnotes@required@kernel{2023-11-01}
 \NeedsTeXFormat{LaTeX2e}[\postnotes@required@kernel]
 \providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
 \IfFormatAtLeastTF{\postnotes@required@kernel}
