@@ -4,6 +4,7 @@
 
 ### Added
 - Provide `\pnidnextnote`, with usage example in the manual.
+- User manual example for section splitting using section redefinition.
 
 ### Changed
 - Don't use `expl3` public scratch temporary variables.

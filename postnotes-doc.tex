@@ -78,6 +78,7 @@
     \chapter ,
     \@mkboth ,
     \@textsuperscript ,
+    \thechapter ,
     \AddToHook ,
     \AddToHookNext ,
     \counterwithin ,
@@ -85,6 +86,10 @@
     \ExplSyntaxOn ,
     \ExplSyntaxOff ,
     \NewDocumentCommand ,
+    \RenewDocumentCommand ,
+    \NewCommandCopy ,
+    \IfBooleanTF ,
+    \IfNoValueTF ,
     \tl_if_eq:NNTF ,
     \tl_new:N ,
     \tl_gset:Nv ,
@@ -129,6 +134,7 @@
     \pnhdnamelast ,
     \mypnheader ,
     \demochapter ,
+    \origlatexchapter ,
     \l_postnotes_note_id_tl ,
     \g_my_currentname_tl ,
     \g_my_names_prop ,
@@ -632,10 +638,14 @@ by means of \cs{counterwithin*}.  Note that the call to \cs{chapter*} inside
 \cs{tableofcontents} does not generate a spurious notes section at
 \cs{printpostnotes} (as long as you don't place a note in a sectioning command
 with no short argument, which you shouldn't do anyway).  But what if we have,
-among mostly numbered chapters, an ocasional unnumbered one?
-\cs{pnthechapternextnote} wouldn't possibly work in this case.  Since
-immediately successive calls to \cs{postnotesection} override the previous
-ones, it is straightforward to just manually adjust the exception:
+among mostly numbered chapters, an ocasional unnumbered one?\footnote{The
+  example here counts on the lucky circumstance of having only a single
+  initial unnumbered section.  But, in general, if that's not the case,
+  \cs{counterwithin*} is insufficient and the resetting of the
+  \texttt{postnote} counter at unnumbered sections most be handled somehow
+  else.}  \cs{pnthechapternextnote} wouldn't possibly work in this case.
+Since immediately successive calls to \cs{postnotesection} override the
+previous ones, it is straightforward to just manually adjust the exception:
 
 \begin{pnexample}[caption={Fine-tuning automation},label={ex:sect:fine-auto}]
 \documentclass{book}
@@ -670,7 +680,7 @@ We then store the value of this variable for each note using the
 \texttt{postnotes/note/store} hook and the note's Id number
 \cs{l_postnotes_note_id_tl}.  Finally we can retrieve this stored value using
 \cs{pnidnextnote} inside \cs{postnotesection}.  Indeed, this example is also
-meant to illustrate the general technique for storing / restoring variables of
+meant to illustrate the general technique for storing/restoring variables of
 interest for this purpose.
 
 \begin{pnexample}[caption={Section names},label={ex:sect:names}]
@@ -703,6 +713,62 @@ Boo.\postnote{Boo note.}
 \printpostnotes
 \end{document}
 \end{pnexample}
+
+While \pkg{postnotes} goes through great lengths to avoid tampering with
+sectioning commands, the fact that in general we cannot use \texttt{cmd} hooks
+after \cs{chapter} or \cs{section} does complicate things.  And
+\zcref{ex:sect:names} is indeed a good illustration of how a supposedly simple
+task can become quite convoluted if we are not allowed to observe the
+variables of interest \emph{after} the sectioning commands.  However, things
+are quite different from the perspective of a user, considering the problem at
+the document level.  In this case, the definition of the sectioning commands
+is known, and unique, so that it may make sense to use of the traditional
+technique of storing the definition of the sectioning command, and then
+redefining it to do what it used to, plus something
+else.\footnote{\username{egreg} commonly applies the technique for the same
+  purpose in answers using \pkg{endnotes} at TeX.SX.  For example:
+  \url{https://tex.stackexchange.com/a/62425},
+\url{https://tex.stackexchange.com/a/109566}, and
+\url{https://tex.stackexchange.com/a/85001}.  But things are somewhat simpler
+with \pkg{postnotes}, since there's no need to handle the case of sections
+with no notes, given that empty \cs{postnotesection}s are already skipped.}
+In which case, we can set \cs{postnotesection}s with full generality and
+flexibility.
+
+\begin{pnexample}[caption={Redefining sections},label={ex:sect:redefined}]
+\documentclass{book}
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+\NewCommandCopy\origlatexchapter\chapter
+\RenewDocumentCommand{\chapter}{som}{%
+  \IfBooleanTF{#1}{%
+    \origlatexchapter*{#3}%
+    \setcounter{postnote}{0}%
+    \postnotesection{\section*{Notes to ``#3''}}%
+  }{%
+    \IfNoValueTF{#2}{%
+      \origlatexchapter{#3}%
+    }{%
+      \origlatexchapter[#2]{#3}%
+    }%
+    \postnotesection{\section*{Notes to chapter \pnthechapter}}%
+  }%
+}
+\usepackage{hyperref}
+\begin{document}
+\chapter*{Introduction}
+Intro.\postnote{Intro note.}
+\chapter{First chapter}
+Foo.\postnote{Foo note.}
+Bar.\postnote{Bar note.}
+\chapter{Second chapter}
+Baz.\postnote{Baz note.}
+Boo.\postnote{Boo note.}
+\printpostnotes
+\end{document}
+\end{pnexample}
+
+Things could easily get fancier, of course.  But that's the basic structure.
 
 
 \section{Headers}

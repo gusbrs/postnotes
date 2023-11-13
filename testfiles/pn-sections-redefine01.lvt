@@ -1,0 +1,101 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\RequirePackage[enable-debug]{expl3}
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+% Ensure the same font across check engines
+\usepackage[OT1]{fontenc}
+\renewcommand\rmdefault{cmr}
+\renewcommand\sfdefault{cmss}
+\renewcommand\ttdefault{cmtt}
+
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+\NewCommandCopy\origlatexchapter\chapter
+\RenewDocumentCommand{\chapter}{som}{%
+  \IfBooleanTF{#1}{%
+    \origlatexchapter*{#3}%
+    \setcounter{postnote}{0}%
+    \postnotesection{\section*{Notes to ``#3''}}%
+  }{%
+    \IfNoValueTF{#2}{%
+      \origlatexchapter{#3}%
+    }{%
+      \origlatexchapter[#2]{#3}%
+    }%
+    \postnotesection{\section*{Notes to chapter \pnthechapter}}%
+  }%
+}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter*{Introduction}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{Notes: Introduction}
+Intro.%
+\setbox0=\hbox{\postnote{Intro note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\chapter{First chapter}
+
+\TIMO
+
+\BEGINTEST{Notes: First chapter}
+Foo.%
+\setbox0=\hbox{\postnote{Foo note.}}%
+\showbox0
+\box0
+
+Bar.%
+\setbox0=\hbox{\postnote{Bar note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\chapter{Second chapter}
+
+\TIMO
+
+\BEGINTEST{Notes: Second chapter}
+Baz.%
+\setbox0=\hbox{\postnote{Baz note.}}%
+\showbox0
+\box0
+
+Boo.%
+\setbox0=\hbox{\postnote{Boo note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}
