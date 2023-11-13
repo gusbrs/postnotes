@@ -211,11 +211,11 @@
   {
     \prop_new:c { \@@_data_name:e {#1} }
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { note }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { mark }
+    \prop_gput:cne { \@@_data_name:e {#1} } { mark }
       { \l_@@_mark_tl }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { counter }
+    \prop_gput:cne { \@@_data_name:e {#1} } { counter }
       { \int_use:N \c@postnote }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { sortnum }
+    \prop_gput:cne { \@@_data_name:e {#1} } { sortnum }
       {
         \bool_if:NTF \l_@@_manual_sortnum_bool
           { \fp_use:N \l_@@_sort_num_fp }
@@ -223,16 +223,16 @@
       }
     \cs_if_exist:cT { chapter }
       {
-        \prop_gput:cnx { \@@_data_name:e {#1} }
+        \prop_gput:cne { \@@_data_name:e {#1} }
           { thechapter } { \thechapter }
       }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { thesection }
+    \prop_gput:cne { \@@_data_name:e {#1} } { thesection }
       { \thesection }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { pnsectname }
+    \prop_gput:cne { \@@_data_name:e {#1} } { pnsectname }
       { \g_@@_section_name_tl }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { pnsectid }
+    \prop_gput:cne { \@@_data_name:e {#1} } { pnsectid }
       { \int_use:N \g_@@_sectid_int }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { multibool }
+    \prop_gput:cne { \@@_data_name:e {#1} } { multibool }
       { \bool_to_str:N \l_@@_maybe_multi_bool }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
     \UseHook { postnotes/note/store }
@@ -254,14 +254,14 @@
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { section }
     \cs_if_exist:cT { chapter }
       {
-        \prop_gput:cnx { \@@_data_name:e {#1} }
+        \prop_gput:cne { \@@_data_name:e {#1} }
           { thechapter } { \thechapter }
       }
-    \prop_gput:cnx { \@@_data_name:e {#1} } { thesection }
+    \prop_gput:cne { \@@_data_name:e {#1} } { thesection }
       { \thesection }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
   }
-\cs_generate_variant:Nn \@@_store_section:nn { nx }
+\cs_generate_variant:Nn \@@_store_section:nn { ne }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -305,7 +305,7 @@
 %     \end{syntax}
 %    \begin{macrocode}
 \tl_const:Nn \c_@@_ref_prefix_tl { postnote@r }
-\cs_new_protected:Npx \post@note #1#2
+\cs_new_protected:Npe \post@note #1#2
   { \exp_not:N \@newl@bel { \c_@@_ref_prefix_tl } {#1} {#2} }
 %    \end{macrocode}
 % \end{macro}
@@ -318,7 +318,7 @@
   {
     \legacy_if:nT { @filesw }
       {
-        \iow_now:Nx \@mainaux
+        \iow_now:Ne \@mainaux
           { \token_to_str:N \providecommand \token_to_str:N \post@note [2]{} }
       }
   }
@@ -326,7 +326,7 @@
   {
     \legacy_if:nT { @filesw }
       {
-        \iow_now:Nx \@partaux
+        \iow_now:Ne \@partaux
           { \token_to_str:N \providecommand \token_to_str:N \post@note [2]{} }
       }
   }
@@ -360,13 +360,13 @@
   }
 \cs_new_protected:Npn \@@_set_mark_page_label:n #1
   { \@@_set_label:nn { mark@ #1 } { \thepage } }
-\cs_generate_variant:Nn \@@_set_mark_page_label:n { x }
+\cs_generate_variant:Nn \@@_set_mark_page_label:n { e }
 \cs_new_protected:Npn \@@_set_text_page_label:n #1
   { \@@_set_label:nn { text@ #1 } { \int_use:N \c@page } }
-\cs_generate_variant:Nn \@@_set_text_page_label:n { x }
+\cs_generate_variant:Nn \@@_set_text_page_label:n { e }
 \cs_new_protected:Npn \@@_set_print_page_label:n #1
   { \@@_set_label:nn { print@ #1 } { \int_use:N \c@page } }
-\cs_generate_variant:Nn \@@_set_print_page_label:n { x }
+\cs_generate_variant:Nn \@@_set_print_page_label:n { e }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -388,7 +388,7 @@
       { \tl_set:Nv #1 { \c_@@_ref_prefix_tl @ #2 } }
       { \tl_clear:N #1 }
   }
-\cs_generate_variant:Nn \@@_get_pageref:Nn { Nx }
+\cs_generate_variant:Nn \@@_get_pageref:Nn { Ne }
 \cs_new:Npn \@@_extract_pageref:n #1
   {
     \cs_if_exist:cTF { \c_@@_ref_prefix_tl @ #1 }
@@ -909,19 +909,19 @@
         \tl_if_empty:NT \l_@@_mark_tl
           {
             \stepcounter { postnote }
-            \tl_set:Nx \l_@@_mark_tl { \thepostnote }
+            \tl_set:Ne \l_@@_mark_tl { \thepostnote }
           }
-        \seq_gput_right:Nx \g_@@_queue_seq
+        \seq_gput_right:Ne \g_@@_queue_seq
           { \l_postnotes_note_id_tl }
         \UseHook { postnotes/note/begin }
         \cs_set:Npn \@currentcounter { postnote }
-        \cs_set:Npx \@currentlabel { \p@postnote \l_@@_mark_tl }
+        \cs_set:Npe \@currentlabel { \p@postnote \l_@@_mark_tl }
         \MakeLinkTarget* { postnote. \l_postnotes_note_id_tl .mark }
-        \@@_set_mark_page_label:x { \l_postnotes_note_id_tl }
+        \@@_set_mark_page_label:e { \l_postnotes_note_id_tl }
         \@@_set_user_labels:
         \bool_if:NF \l_@@_nomark_bool
           {
-            \@@_typeset_mark:xV
+            \@@_typeset_mark:eV
               { \l_postnotes_note_id_tl } \l_@@_mark_tl
           }
         \@@_store:nn { \l_postnotes_note_id_tl } {#2}
@@ -1006,12 +1006,12 @@
             \bool_if:NTF \l_@@_print_plain_mark_stepcounter_bool
               {
                 \stepcounter { postnote }
-                \tl_set:Nx \l_@@_mark_tl { \thepostnote }
+                \tl_set:Ne \l_@@_mark_tl { \thepostnote }
               }
               {
                 \group_begin:
                 \int_incr:N \c@postnote
-                \exp_args:NNNx
+                \exp_args:NNNe
                   \group_end:
                   \tl_set:Nn \l_@@_mark_tl { \thepostnote }
               }
@@ -1053,14 +1053,14 @@
           { \@@_make_mark:nnn {#2} { } { } }
       }
   }
-\cs_generate_variant:Nn \@@_typeset_mark:nn { xV }
+\cs_generate_variant:Nn \@@_typeset_mark:nn { eV }
 \tl_new:N \l_@@_saved_spacefactor_tl
 \cs_new_protected:Npn \@@_typeset_mark_wrapper:n #1
   {
     \mode_leave_vertical:
     \mode_if_horizontal:T
       {
-        \tl_set:Nx \l_@@_saved_spacefactor_tl { \the\spacefactor }
+        \tl_set:Ne \l_@@_saved_spacefactor_tl { \the\spacefactor }
         \nobreak
       }
     #1
@@ -1167,11 +1167,11 @@
     \group_begin:
     \int_gincr:N \g_@@_sectid_int
     \int_gincr:N \g_@@_note_id_int
-    \seq_gput_right:Nx \g_@@_queue_seq { \l_postnotes_note_id_tl }
+    \seq_gput_right:Ne \g_@@_queue_seq { \l_postnotes_note_id_tl }
     \tl_gclear:N \g_@@_section_name_tl
     \keys_set:nn { postnotes/section } {#1}
     \bool_if:NTF \l_@@_section_exp_bool
-      { \@@_store_section:nx { \l_postnotes_note_id_tl } {#2} }
+      { \@@_store_section:ne { \l_postnotes_note_id_tl } {#2} }
       { \@@_store_section:nn { \l_postnotes_note_id_tl } {#2} }
     \group_end:
   }
@@ -1401,13 +1401,13 @@
                 \tl_if_eq:NnF \l_@@_print_type_prev_tl { note }
                   {
                     \bool_if:NTF \l_@@_print_as_list_bool
-                      { \exp_args:Nx \begin { \l_@@_print_env_tl } }
+                      { \exp_args:Ne \begin { \l_@@_print_env_tl } }
                       { \group_begin: }
                     \l_@@_print_format_tl
                   }
                 \group_begin:
                 \UseHook { postnotes/print/note/begin }
-                \@@_get_pageref:Nx \pnthepage
+                \@@_get_pageref:Ne \pnthepage
                   { mark@ \l_postnotes_print_note_id_tl }
                 \@@_prop_get:nnN
                   { \l_postnotes_print_note_id_tl }
@@ -1421,13 +1421,13 @@
                 \cs_set:Npn \@currentcounter { postnotetext }
                 \int_set:Nn \c@postnotetext
                   { \l_@@_print_counter_tl }
-                \cs_set:Npx \@currentlabel
+                \cs_set:Npe \@currentlabel
                   { \p@postnote \l_@@_print_mark_tl }
                 \@@_text_mark_wrapper:n
                   {
                     \MakeLinkTarget*
                       { postnote. \l_postnotes_print_note_id_tl .text }
-                    \@@_set_text_page_label:x
+                    \@@_set_text_page_label:e
                       { \l_postnotes_print_note_id_tl }
                     \@@_typeset_text_mark:eV
                       { \l_postnotes_print_note_id_tl }
@@ -1457,7 +1457,7 @@
                 \tl_if_eq:NnF \l_@@_print_type_next_tl { note }
                   {
                     \bool_if:NTF \l_@@_print_as_list_bool
-                      { \exp_args:Nx \end { \l_@@_print_env_tl } }
+                      { \exp_args:Ne \end { \l_@@_print_env_tl } }
                       { \group_end: }
 %    \end{macrocode}
 % Ensure \cs{par} at the end of \cs{printopostnotes} (see
@@ -1783,7 +1783,7 @@
     \tl_clear:N \l_@@_prev_mark_name_tl
     \seq_map_inline:Nn #1
       {
-        \exp_args:Nx \tl_if_eq:nnT
+        \exp_args:Ne \tl_if_eq:nnT
           { \@@_prop_item:nn {##1} { type } }
           { note }
           {
@@ -1822,16 +1822,16 @@
 %    \begin{macrocode}
                     \tl_if_empty:NF \l_@@_prev_text_page_tl
                       {
-                        \prop_gput:Nxx \g_@@_header_page_last_prop
+                        \prop_gput:Nee \g_@@_header_page_last_prop
                           { \l_@@_prev_text_page_tl }
                           { \l_@@_prev_mark_page_tl }
-                        \prop_gput:Nxx \g_@@_header_chap_last_prop
+                        \prop_gput:Nee \g_@@_header_chap_last_prop
                           { \l_@@_prev_text_page_tl }
                           { \l_@@_prev_mark_chap_tl }
-                        \prop_gput:Nxx \g_@@_header_sect_last_prop
+                        \prop_gput:Nee \g_@@_header_sect_last_prop
                           { \l_@@_prev_text_page_tl }
                           { \l_@@_prev_mark_sect_tl }
-                        \prop_gput:Nxx \g_@@_header_name_last_prop
+                        \prop_gput:Nee \g_@@_header_name_last_prop
                           { \l_@@_prev_text_page_tl }
                           { \l_@@_prev_mark_name_tl }
                       }
@@ -1839,16 +1839,16 @@
 %
 % Set `first' values for current page, based on the current note ID.
 %    \begin{macrocode}
-                    \prop_gput:Nxx \g_@@_header_page_first_prop
+                    \prop_gput:Nee \g_@@_header_page_first_prop
                       { \l_@@_curr_text_page_tl }
                       { \@@_extract_pageref:n { mark@ ##1 } }
-                    \prop_gput:Nxx \g_@@_header_chap_first_prop
+                    \prop_gput:Nee \g_@@_header_chap_first_prop
                       { \l_@@_curr_text_page_tl }
                       { \@@_prop_item:nn {##1} { thechapter } }
-                    \prop_gput:Nxx \g_@@_header_sect_first_prop
+                    \prop_gput:Nee \g_@@_header_sect_first_prop
                       { \l_@@_curr_text_page_tl }
                       { \@@_prop_item:nn {##1} { thesection } }
-                    \prop_gput:Nxx \g_@@_header_name_first_prop
+                    \prop_gput:Nee \g_@@_header_name_first_prop
                       { \l_@@_curr_text_page_tl }
                       { \@@_prop_item:nn {##1} { pnsectname } }
 %    \end{macrocode}
@@ -1883,16 +1883,16 @@
 %    \begin{macrocode}
     \tl_if_empty:NF \l_@@_prev_text_page_tl
       {
-        \prop_gput:Nxx \g_@@_header_page_last_prop
+        \prop_gput:Nee \g_@@_header_page_last_prop
           { \l_@@_prev_text_page_tl }
           { \l_@@_prev_mark_page_tl }
-        \prop_gput:Nxx \g_@@_header_chap_last_prop
+        \prop_gput:Nee \g_@@_header_chap_last_prop
           { \l_@@_prev_text_page_tl }
           { \l_@@_prev_mark_chap_tl }
-        \prop_gput:Nxx \g_@@_header_sect_last_prop
+        \prop_gput:Nee \g_@@_header_sect_last_prop
           { \l_@@_prev_text_page_tl }
           { \l_@@_prev_mark_sect_tl }
-        \prop_gput:Nxx \g_@@_header_name_last_prop
+        \prop_gput:Nee \g_@@_header_name_last_prop
           { \l_@@_prev_text_page_tl }
           { \l_@@_prev_mark_name_tl }
       }
@@ -1974,7 +1974,7 @@
       { \tl_gset:NV \pnhdnamelast \g_@@_header_prev_last_name_tl }
     \group_end:
   }
-\cs_generate_variant:Nn \@@_set_headers_vars:n { x }
+\cs_generate_variant:Nn \@@_set_headers_vars:n { e }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1998,13 +1998,13 @@
 \cs_new_protected:Npn \@@_set_headers_vars_next:
   {
     \bool_if:NT \g_@@_header_vars_next_bool
-      { \@@_set_headers_vars:x { \int_eval:n { \c@page + 1 } } }
+      { \@@_set_headers_vars:e { \int_eval:n { \c@page + 1 } } }
   }
 \cs_new_protected:Npn \@@_set_headers_vars_first:
   {
-    \@@_set_print_page_label:x
+    \@@_set_print_page_label:e
       { \int_use:N \g_@@_print_postnotes_int }
-    \@@_set_headers_vars:x
+    \@@_set_headers_vars:e
       {
         \@@_extract_pageref:e
           { print@ \int_use:N \g_@@_print_postnotes_int }
@@ -2125,11 +2125,11 @@
 %    \begin{macrocode}
     \AddToHook { postnotes/note/store } [ postnotes ]
       {
-        \prop_gput:cnx { \@@_data_name:e { \l_postnotes_note_id_tl } }
+        \prop_gput:cne { \@@_data_name:e { \l_postnotes_note_id_tl } }
           { biblatex@refsection } { \int_use:N \c@refsection }
-        \prop_gput:cnx { \@@_data_name:e { \l_postnotes_note_id_tl } }
+        \prop_gput:cne { \@@_data_name:e { \l_postnotes_note_id_tl } }
           { biblatex@refsegment } { \int_use:N \c@refsegment }
-        \prop_gput:cnx { \@@_data_name:e { \l_postnotes_note_id_tl } }
+        \prop_gput:cne { \@@_data_name:e { \l_postnotes_note_id_tl } }
           { biblatex@refcontextbool }
           { \iftoggle { blx@refcontext } { true } { false } }
         \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
@@ -2173,7 +2173,7 @@
         \togglefalse { blx@refcontext }
         \tl_clear:N \blx@refcontext@labelprefix
         \tl_clear:N \blx@refcontext@labelprefix@real
-        \tl_set:Nx \blx@refcontext@sortingtemplatename { \blx@sorting }
+        \tl_set:Ne \blx@refcontext@sortingtemplatename { \blx@sorting }
         \tl_set:Nn \blx@refcontext@sortingnamekeytemplatename { global }
         \tl_set:Nn \blx@refcontext@uniquenametemplatename { global }
         \tl_set:Nn \blx@refcontext@labelalphanametemplatename { global }
@@ -2270,10 +2270,10 @@
     \tl_new:N \g_@@_biblatex_prev_refsection_tl
     \AddToHook { postnotes/print/begin } [ postnotes ]
       {
-        \tl_set:Nx \l_@@_biblatex_orig_refsection_tl
+        \tl_set:Ne \l_@@_biblatex_orig_refsection_tl
           { \int_use:N \c@refsection }
-        \tl_gset:Nx \g_@@_biblatex_prev_refsection_tl
-          \l_@@_biblatex_orig_refsection_tl
+        \tl_gset:Ne \g_@@_biblatex_prev_refsection_tl
+          { \l_@@_biblatex_orig_refsection_tl }
      }
     \AddToHook { postnotes/print/note/begin } [ postnotes ]
       {
@@ -2403,9 +2403,9 @@
       {
         \AddToHook { postnotes/note/store } [ postnotes ]
           {
-            \prop_gput:cnx { \@@_data_name:e { \l_postnotes_note_id_tl } }
+            \prop_gput:cne { \@@_data_name:e { \l_postnotes_note_id_tl } }
               { zref-check@abschap } { \int_use:N \c@zc@abschap }
-            \prop_gput:cnx { \@@_data_name:e { \l_postnotes_note_id_tl } }
+            \prop_gput:cne { \@@_data_name:e { \l_postnotes_note_id_tl } }
               { zref-check@abssec } { \int_use:N \c@zc@abssec }
           }
         \AddToHook { postnotes/print/note/begin } [ postnotes ]

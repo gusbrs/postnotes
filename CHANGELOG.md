@@ -8,6 +8,7 @@
 
 ### Changed
 - Don't use `expl3` public scratch temporary variables.
+- Prefer `e-type` expansion.
 
 ## [v0.2.6](https://github.com/gusbrs/postnotes/compare/v0.2.5...v0.2.6) (2023-08-21)
 
