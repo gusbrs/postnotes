@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.6...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.7...HEAD)
+
+## [v0.2.7](https://github.com/gusbrs/postnotes/compare/v0.2.6...v0.2.7) (2023-11-14)
 
 ### Added
 - Provide `\pnidnextnote`, with usage example in the manual.
