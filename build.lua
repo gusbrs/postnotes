@@ -16,20 +16,6 @@ checkconfigs = {"build","build-3runs"}
 -- See https://tex.stackexchange.com/q/674844#comment1676566_674846
 maxprintline = 1000
 
--- Use dev formats for regression tests
--- See https://tex.stackexchange.com/q/611424
--- But only for pdftexdev and luatexdev, because it is possible to ensure
--- equal .tlgs for luatex and pdftex by using the same font for all engines,
--- but any xetex test with a hyperlink will result in different logs.  So, we
--- can have most tests with two .tlgs and, besides, five engines is probably
--- already overkill.
-checkengines = {"pdftex","luatex","xetex","pdftexdev","luatexdev"}
-specialformats = specialformats or {}
-specialformats.latex = specialformats.latex or { }
-specialformats.latex.pdftexdev = { binary = "pdflatex-dev" , format = "" }
-specialformats.latex.luatexdev = { binary = "lualatex-dev" , format = "" }
-specialformats.latex.xetexdev  = { binary = "xelatex-dev"  , format = "" }
-
 -- Run biber for biblatex related tests
 -- See https://github.com/moewew/biblatex-ext/blob/dev/build.lua
 function runtest_tasks(name, run)
@@ -56,10 +42,10 @@ asciiengines = {}
 
 -- CTAN upload settings
 uploadconfig = {
-  version = "0.2.5", -- first line for tagging
+  version = "0.2.7", -- first line for tagging
   pkg = "postnotes",
-  author = "Gustavo Barros",
-  uploader = "Gustavo Barros",
+  author = "gusbrs",
+  uploader = "gusbrs",
   summary = "Endnotes for LaTeX",
   license = "lppl1.3c",
   ctanPath = "/macros/latex/contrib/postnotes",

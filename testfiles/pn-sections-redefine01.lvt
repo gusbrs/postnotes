@@ -13,19 +13,45 @@
 \renewcommand\ttdefault{cmtt}
 
 \usepackage{postnotes}
-\AddToHook{cmd/chapter/before}{%
-  \postnotesection{\section*{Notes to chapter \pnthechapternextnote}}}
 \counterwithin*{postnote}{chapter}
+\NewCommandCopy\origlatexchapter\chapter
+\RenewDocumentCommand{\chapter}{som}{%
+  \IfBooleanTF{#1}{%
+    \origlatexchapter*{#3}%
+    \setcounter{postnote}{0}%
+    \postnotesection{\section*{Notes to ``#3''}}%
+  }{%
+    \IfNoValueTF{#2}{%
+      \origlatexchapter{#3}%
+    }{%
+      \origlatexchapter[#2]{#3}%
+    }%
+    \postnotesection{\section*{Notes to chapter \pnthechapter}}%
+  }%
+}
 
 \usepackage{hyperref}
 
 \begin{document}
 
-\chapter{First chapter}
+\chapter*{Introduction}
 
 \textsuperscript{avoid font warning}
 
 \START
+
+\BEGINTEST{Notes: Introduction}
+Intro.%
+\setbox0=\hbox{\postnote{Intro note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\chapter{First chapter}
+
+\TIMO
 
 \BEGINTEST{Notes: First chapter}
 Foo.%

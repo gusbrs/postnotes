@@ -13,19 +13,43 @@
 \renewcommand\ttdefault{cmtt}
 
 \usepackage{postnotes}
-\AddToHook{cmd/chapter/before}{%
-  \postnotesection{\section*{Notes to chapter \pnthechapternextnote}}}
+\ExplSyntaxOn
+\tl_new:N \g_my_currentname_tl
+\prop_new:N \g_my_names_prop
+\AddToHook{cmd/chapter/before}{
+  \AddToHookNext{cmd/NR@gettitle/after}{
+    \tl_gset:Nv \g_my_currentname_tl { @currentlabelname } } }
+\AddToHook{postnotes/note/store}{
+  \prop_gput:NeV \g_my_names_prop
+    { \l_postnotes_note_id_tl } \g_my_currentname_tl }
+\AddToHook{cmd/chapter/before}{
+  \postnotesection{
+    \section*{Notes~to~\prop_item:NV \g_my_names_prop \pnidnextnote}}}
+\ExplSyntaxOff
 \counterwithin*{postnote}{chapter}
 
 \usepackage{hyperref}
 
 \begin{document}
 
-\chapter{First chapter}
+\chapter*{Introduction}
 
 \textsuperscript{avoid font warning}
 
 \START
+
+\BEGINTEST{Notes: Introduction}
+Intro.%
+\setbox0=\hbox{\postnote{Intro note.}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\chapter{First chapter}
+
+\TIMO
 
 \BEGINTEST{Notes: First chapter}
 Foo.%

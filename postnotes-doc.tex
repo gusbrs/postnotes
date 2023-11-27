@@ -4,7 +4,7 @@
 %
 % This file is part of the LaTeX package "postnotes".
 %
-% Copyright (C) 2022-2023  Gustavo Barros
+% Copyright (C) 2022-2023  gusbrs
 %
 % It may be distributed and/or modified under the conditions of the
 % LaTeX Project Public License (LPPL), either version 1.3c of this
@@ -17,8 +17,7 @@
 % version 2005/12/01 or later.
 %
 %
-% This work is "maintained" (as per LPPL maintenance status) by
-% Gustavo Barros.
+% This work is "maintained" (as per LPPL maintenance status) by gusbrs.
 %
 % This work consists of the files postnotes.dtx,
 %                                 postnotes.ins,
@@ -64,10 +63,7 @@
 \hypersetup{hidelinks}
 
 \usepackage{zref-clever}
-\zcsetup{
-  cap,
-  countertype = { pnexample = example } ,
-}
+\zcsetup{cap}
 \usepackage{zref-titleref}
 \usepackage{zref-check}
 
@@ -79,13 +75,24 @@
     \chapter ,
     \@mkboth ,
     \@textsuperscript ,
+    \thechapter ,
     \AddToHook ,
+    \AddToHookNext ,
     \counterwithin ,
     \tableofcontents ,
     \ExplSyntaxOn ,
     \ExplSyntaxOff ,
     \NewDocumentCommand ,
+    \RenewDocumentCommand ,
+    \NewCommandCopy ,
+    \IfBooleanTF ,
+    \IfNoValueTF ,
     \tl_if_eq:NNTF ,
+    \tl_new:N ,
+    \tl_gset:Nv ,
+    \prop_new:N ,
+    \prop_gput:NeV ,
+    \prop_item:NV ,
     \bool_case:nF ,
     \str_if_eq_p:ee ,
     \prg_replicate:nn ,
@@ -113,6 +120,7 @@
     \pnthesection ,
     \pnthechapternextnote ,
     \pnthesectionnextnote ,
+    \pnidnextnote ,
     \pnhdpagefirst ,
     \pnhdpagelast ,
     \pnhdchapfirst ,
@@ -123,6 +131,10 @@
     \pnhdnamelast ,
     \mypnheader ,
     \demochapter ,
+    \origlatexchapter ,
+    \l_postnotes_note_id_tl ,
+    \g_my_currentname_tl ,
+    \g_my_names_prop ,
   }
 }
 \lstset{
@@ -139,22 +151,15 @@
 \lstnewenvironment{pnexample}[1][]{%
   \renewcommand{\lstlistingname}{Example}%
   \renewcommand*\theHlstlisting{ht.\thelstlisting}%
+  \zcsetup{countertype={lstlisting=example}}%
   \lstset{#1}%
+  \stepcounter{pnexample}%
   \setcounter{lstlisting}{\value{pnexample}}%
 }{}
 \lstnewenvironment{pnsnippet}[1][]{%
   \renewcommand{\lstlistingname}{Example}%
   \lstset{#1}%
 }{}
-\ExplSyntaxOn
-\makeatletter
-\lst@AddToHook { PreInit }
-  {
-    \cs_if_exist:cT { c@ \lstenv@name }
-      { \exp_args:Nx \refstepcounter { \lstenv@name } }
-  }
-\makeatother
-\ExplSyntaxOff
 
 \setlength{\marginparsep}{2\labelsep}
 
@@ -168,18 +173,17 @@
 
 \title{%
   The \pkg{postnotes} package%
-  \thanks{This file describes \fileversion, released \filedate.}%
   \texorpdfstring{\\{}\medskip{}}{ - }%
   User manual%
   \texorpdfstring{\medskip{}}{}%
 }
 
 \author{%
-  Gustavo Barros%
-  \thanks{\url{https://github.com/gusbrs/postnotes}}%
-}
+  \texorpdfstring{\texttt{gusbrs}\\[0.8em]
+  \url{https://github.com/gusbrs/postnotes}\\
+  \url{https://www.ctan.org/pkg/postnotes}}{gusbrs}}
 
-\date{\filedate}
+\date{Version \fileversion\ -- \filedate}
 
 \maketitle
 
@@ -505,7 +509,7 @@ is typeset.  For details on how to use these variables, see
 \DescribeOption{exp} %
 By default, \cs{postnotesection} stores its \meta{text} argument with ``no
 manipulation''.  The \opt{exp} option allows one to fully expand
-(\texttt{x}-type expansion) \meta{text} in place before storing it.  It is a
+(\texttt{e}-type expansion) \meta{text} in place before storing it.  It is a
 boolean option, and the option given with no value is equivalent to
 \texttt{exp=true}.
 
@@ -536,6 +540,7 @@ generic ``add to''.
 \DescribeMacro{\pnthesection} %
 \DescribeMacro{\pnthechapternextnote} %
 \DescribeMacro{\pnthesectionnextnote} %
+\DescribeMacro{\pnidnextnote} %
 Just like with \cs{postnote}, the contents of \cs{postnotesection} are not
 expanded in place, but rather stored with ``no manipulation'' to be typeset
 later at \cs{printpostnotes}.  For this reason, some contextual information is
@@ -560,6 +565,7 @@ the value of \cs{thechapter} at the point the ``next note'' is placed (a
 \cs{postnote}, that is), the first in the chapter, and already inside it, thus
 with an expected value of the \texttt{chapter} counter.  Similarly,
 \cs{pnthesectionnextnote} contains the value of \cs{thesection} for the ``next
+note''.  \cs{pnidnextnote}, in turn, stores the Id number of the ``next
 note''.  Of course, the ``next note'' variables are \emph{proxies}, but they
 are meant to support the automation of the subdivision of the notes through
 the use of \texttt{before} hooks to the document's sectioning commands, in
@@ -622,10 +628,14 @@ by means of \cs{counterwithin*}.  Note that the call to \cs{chapter*} inside
 \cs{tableofcontents} does not generate a spurious notes section at
 \cs{printpostnotes} (as long as you don't place a note in a sectioning command
 with no short argument, which you shouldn't do anyway).  But what if we have,
-among mostly numbered chapters, an ocasional unnumbered one?
-\cs{pnthechapternextnote} wouldn't possibly work in this case.  Since
-immediately successive calls to \cs{postnotesection} override the previous
-ones, it is straightforward to just manually adjust the exception:
+among mostly numbered chapters, an ocasional unnumbered one?\footnote{The
+  example here counts on the lucky circumstance of having only a single
+  initial unnumbered section.  But, in general, if that's not the case,
+  \cs{counterwithin*} is insufficient and the resetting of the
+  \texttt{postnote} counter at unnumbered sections most be handled somehow
+  else.}  \cs{pnthechapternextnote} wouldn't possibly work in this case.
+Since immediately successive calls to \cs{postnotesection} override the
+previous ones, it is straightforward to just manually adjust the exception:
 
 \begin{pnexample}[caption={Fine-tuning automation},label={ex:sect:fine-auto}]
 \documentclass{book}
@@ -648,6 +658,108 @@ Boo.\postnote{Boo note.}
 \printpostnotes
 \end{document}
 \end{pnexample}
+
+If one wants to use section names/titles, the technique above (of using
+something similar to \cs{pnthechapternextnote}) is less useful, since if the
+first note in the section occurs within a subsection we would lose the
+information of interest.  So we have a little more work to do in this case.
+\zcref{ex:sect:names} uses the \texttt{cmd/chapter/before} hook to store the
+value of \cs{@currentlabelname} in a dedicated variable after the next call to
+\cs{NR@gettitle} (presuming the use of \pkg{nameref}, through \pkg{hyperref}).
+We then store the value of this variable for each note using the
+\texttt{postnotes/note/store} hook and the note's Id number
+\cs{l_postnotes_note_id_tl}.  Finally we can retrieve this stored value using
+\cs{pnidnextnote} inside \cs{postnotesection}.  Indeed, this example is also
+meant to illustrate the general technique for storing/restoring variables of
+interest for this purpose.
+
+\begin{pnexample}[caption={Section names},label={ex:sect:names}]
+\documentclass{book}
+\usepackage{postnotes}
+\ExplSyntaxOn
+\tl_new:N \g_my_currentname_tl
+\prop_new:N \g_my_names_prop
+\AddToHook{cmd/chapter/before}{
+  \AddToHookNext{cmd/NR@gettitle/after}{
+    \tl_gset:Nv \g_my_currentname_tl { @currentlabelname } } }
+\AddToHook{postnotes/note/store}{
+  \prop_gput:NeV \g_my_names_prop
+    { \l_postnotes_note_id_tl } \g_my_currentname_tl }
+\AddToHook{cmd/chapter/before}{
+  \postnotesection{
+    \section*{Notes~to~\prop_item:NV \g_my_names_prop \pnidnextnote}}}
+\ExplSyntaxOff
+\counterwithin*{postnote}{chapter}
+\usepackage{hyperref}
+\begin{document}
+\chapter*{Introduction}
+Intro.\postnote{Intro note.}
+\chapter{First chapter}
+Foo.\postnote{Foo note.}
+Bar.\postnote{Bar note.}
+\chapter{Second chapter}
+Baz.\postnote{Baz note.}
+Boo.\postnote{Boo note.}
+\printpostnotes
+\end{document}
+\end{pnexample}
+
+While \pkg{postnotes} goes through great lengths to avoid tampering with
+sectioning commands, the fact that in general we cannot use \texttt{cmd} hooks
+after \cs{chapter} or \cs{section} does complicate things.  And
+\zcref{ex:sect:names} is indeed a good illustration of how a supposedly simple
+task can become quite convoluted if we are not allowed to observe the
+variables of interest \emph{after} the sectioning commands.  However, things
+are quite different from the perspective of a user, considering the problem at
+the document level.  In this case, the definition of the sectioning commands
+is known, and unique, so that it may make sense to use of the traditional
+technique of storing the definition of the sectioning command, and then
+redefining it to do what it used to, plus something
+else.\footnote{\username{egreg} commonly applies the technique for the same
+  purpose in answers using \pkg{endnotes} at TeX.SX.  For example:
+  \url{https://tex.stackexchange.com/a/62425},
+\url{https://tex.stackexchange.com/a/109566}, and
+\url{https://tex.stackexchange.com/a/85001}.  But things are somewhat simpler
+with \pkg{postnotes}, since there's no need to handle the case of sections
+with no notes, given that empty \cs{postnotesection}s are already skipped.}
+In which case, we can set \cs{postnotesection}s with full generality and
+flexibility.
+
+\begin{pnexample}[caption={Redefining sections},label={ex:sect:redefined}]
+\documentclass{book}
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+\NewCommandCopy\origlatexchapter\chapter
+\RenewDocumentCommand{\chapter}{som}{%
+  \IfBooleanTF{#1}{%
+    \origlatexchapter*{#3}%
+    \setcounter{postnote}{0}%
+    \postnotesection{\section*{Notes to ``#3''}}%
+  }{%
+    \IfNoValueTF{#2}{%
+      \origlatexchapter{#3}%
+    }{%
+      \origlatexchapter[#2]{#3}%
+    }%
+    \postnotesection{\section*{Notes to chapter \pnthechapter}}%
+  }%
+}
+\usepackage{hyperref}
+\begin{document}
+\chapter*{Introduction}
+Intro.\postnote{Intro note.}
+\chapter{First chapter}
+Foo.\postnote{Foo note.}
+Bar.\postnote{Bar note.}
+\chapter{Second chapter}
+Baz.\postnote{Baz note.}
+Boo.\postnote{Boo note.}
+\printpostnotes
+\end{document}
+\end{pnexample}
+
+Things could easily get fancier, of course.  But that's the basic structure.
+
 
 \section{Headers}
 \zlabel{sec:headers}

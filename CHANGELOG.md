@@ -1,6 +1,19 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.5...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.7...HEAD)
+
+## [v0.2.7](https://github.com/gusbrs/postnotes/compare/v0.2.6...v0.2.7) (2023-11-14)
+
+### Added
+- Provide `\pnidnextnote`, with usage example in the manual.
+- User manual example for section splitting using section redefinition.
+
+### Changed
+- Don't use `expl3` public scratch temporary variables.
+- Prefer `e-type` expansion.
+- Require 2023-11-01 LaTeX kernel.
+
+## [v0.2.6](https://github.com/gusbrs/postnotes/compare/v0.2.5...v0.2.6) (2023-08-21)
 
 ### Fixed
 - Check `if@filesw` before writing labels to the .aux file.
