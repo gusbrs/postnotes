@@ -2820,18 +2820,17 @@
       }
 
     % Setup for \label inside the note.
-    \cs_new_protected:Npn \@@_orig_label:n #1 {}
-    \cs_new_protected:Npn \@@_tag_label:n #1
+    \bool_new:N \l_@@_inside_note_bool
+    \AddToHookWithArguments { label }
       {
-        \@@_orig_label:n {#1}
-        \property_record:nn { postnote@tag@innote. #1 }
-          { postnotes/tag@struct }
+        \bool_if:NT \l_@@_inside_note_bool
+          {
+            \property_record:nn { postnote@tag@innote. #1 }
+              { postnotes/tag@struct }
+          }
       }
     \AddToHook { postnotes/print/note/begin } [ postnotes ]
-      {
-        \cs_set_eq:NN \@@_orig_label:n \label
-        \cs_set_eq:NN \label \@@_tag_label:n
-      }
+      { \bool_set_true:N \l_@@_inside_note_bool }
 
     % Setup for label option.
     \AddToHook { postnotes/note/store } [ postnotes ]
