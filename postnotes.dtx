@@ -1057,8 +1057,8 @@
           }
           { \@@_make_mark:nnn {#2} { } { } }
         }
-        { \UseHook { postnotes/note/mark/begin } }
-        { \UseHook { postnotes/note/mark/end } }
+        { \@@_tagsup_mark_begin: }
+        { \@@_tagsup_mark_end: }
   }
 \cs_generate_variant:Nn \@@_typeset_mark:nn { eV }
 \tl_new:N \l_@@_saved_spacefactor_tl
@@ -1070,9 +1070,9 @@
         \tl_set:Ne \l_@@_saved_spacefactor_tl { \the\spacefactor }
         \nobreak
       }
-    #2 % begin hook
+    #2 % begin tagging function
     #1 % mark
-    #3 % end hook
+    #3 % end tagging function
     \mode_if_horizontal:T
       { \spacefactor \l_@@_saved_spacefactor_tl }
     \scan_stop:
@@ -1442,6 +1442,7 @@
                   { \l_@@_print_counter_tl }
                 \cs_set:Npe \@currentlabel
                   { \p@postnote \l_@@_print_mark_tl }
+                \@@_tagsup_print_begin:
                 \@@_text_mark_wrapper:n
                   {
                     \MakeLinkTarget*
@@ -1452,9 +1453,9 @@
                       { \l_postnotes_print_note_id_tl }
                       \l_@@_print_mark_tl
                   }
-                \UseHook { postnotes/print/content/begin }
+                \@@_tagsup_print_after_mark:
                 \l_@@_print_content_tl
-                \UseHook { postnotes/print/content/end }
+                \@@_tagsup_print_end:
                 \l_@@_post_printnote_tl
                 \group_end:
 %    \end{macrocode}
@@ -2653,8 +2654,63 @@
 % with \pkg{l3ref-tmp} labels.
 %
 %    \begin{macrocode}
+\cs_new_eq:NN \@@_tagsup_mark_begin: \prg_do_nothing:
+\cs_new_eq:NN \@@_tagsup_mark_end: \prg_do_nothing:
+\cs_new_eq:NN \@@_tagsup_print_begin: \prg_do_nothing:
+\cs_new_eq:NN \@@_tagsup_print_after_mark: \prg_do_nothing:
+\cs_new_eq:NN \@@_tagsup_print_end: \prg_do_nothing:
 \AddToHook { package/tagpdf/after }
   {
+    % CHECK As far as I can tell, we don't "own" these tags in the relevant
+    % namespaces, not even in the "user" namespace (I guess?, since it is just
+    % one shared one).  What happens if someone else creates them before us?
+    % Is there some "provide-tag"?
+    \tagpdfsetup
+      {
+        add-new-tag = { tag=endnote, role=FENote } ,
+        add-new-tag = { tag=endnotemark, role=Lbl } ,
+        add-new-tag = { tag=endnotelabel, role=Lbl } ,
+      }
+
+    \cs_set:Npn \@@_tagsup_mark_begin:
+      {
+        \tag_mc_end_push:
+        \tag_struct_begin:n
+          { tag=endnotemark , ref=postnote. \l_postnotes_note_id_tl }
+        \tag_mc_begin:n{}
+      }
+    \cs_set:Npn \@@_tagsup_mark_end:
+      {
+        \tag_mc_end:
+        \tag_struct_end:
+        \tag_mc_begin_pop:n{}
+      }
+    \cs_set:Npn \@@_tagsup_print_begin:
+      {
+        \mode_leave_vertical:
+        \tag_mc_end_push:
+        \tag_struct_begin:n
+           { tag=endnote , label= postnote. \l_postnotes_print_note_id_tl }
+        % \tag_mc_begin:n{}
+        \tag_struct_begin:n { tag=endnotelabel }
+        \tag_mc_begin:n{}
+      }
+    \cs_set:Npn \@@_tagsup_print_after_mark:
+      {
+        \tag_mc_end:
+        \tag_struct_end: % endnotelabel
+        % \tag_mc_begin_pop:n{}
+        % \tag_mc_end_push:
+        \tag_mc_begin:n{} % end note text
+      }
+    \cs_set:Npn \@@_tagsup_print_end:
+      {
+        \tag_mc_end: % end note text
+        % \tag_mc_end:
+        \tag_struct_end: % endnote
+        \tag_mc_begin_pop:n{}
+      }
+
     % \postnote
     \tl_new:N \l_@@_tag_currentstruct_tl
     \AddToHook { postnotes/note/mark/begin } [ postnotes ]
@@ -2662,7 +2718,7 @@
         % TODO start tagging for postnote mark here
 
         % Store structnum
-        \tl_set:Nx \l_@@_tag_currentstruct_tl
+        \tl_set:Ne \l_@@_tag_currentstruct_tl
           { \int_use:N \g_@@_temp_struct_num_int }
       }
     \AddToHook { postnotes/note/store } [ postnotes ]
@@ -2700,17 +2756,17 @@
           { label } \l_@@_restore_tmp_tl
         \tl_if_empty:NF \l_@@_restore_tmp_tl
           {
-            \exp_args:Ne \ref_label:nn
-              { postnote@tag@option. \l_@@_restore_tmp_tl }
-              { pn@tag@struct }
+            % \exp_args:Ne \ref_label:nn
+            %   { postnote@tag@option. \l_@@_restore_tmp_tl }
+            %   { pn@tag@struct }
           }
         \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
           { zlabel } \l_@@_restore_tmp_tl
         \tl_if_empty:NF \l_@@_restore_tmp_tl
           {
-            \exp_args:Ne \ref_label:nn
-              { postnote@tag@option@z. \l_@@_restore_tmp_tl }
-              { pn@tag@struct }
+            % \exp_args:Ne \ref_label:nn
+            %   { postnote@tag@option@z. \l_@@_restore_tmp_tl }
+            %   { pn@tag@struct }
           }
       }
     \AddToHook { postnotes/print/content/end } [ postnotes ]
@@ -2721,8 +2777,8 @@
     % 'l3ref' property for use with \postnoteref and \postnotezref
     % Default "1" is the same used in 'latex-lab-footnotes.dtx', I presume it
     % is the equivalent of 'DocStart' in the context of tagging.
-    \ref_attribute_gset:nnnn { pn@tag@struct } { 1 } { now }
-      { \int_use:N \g_@@_temp_struct_num_int }
+    % \ref_attribute_gset:nnnn { pn@tag@struct } { 1 } { now }
+    %   { \int_use:N \g_@@_temp_struct_num_int }
 
 
     % \postnoteref
@@ -2732,31 +2788,31 @@
 
         % Set cross-refs for \postnoteref
         % If we have a label coming from a \label inside the note.
-        \exp_args:Nx \ref_if_exist:nnT
-          { postnote@tag@innote. \l_@@_note_ref_label_tl }
-          { pn@tag@struct }
-          {
-            \prop_gput:Nxx \g_@@_tag_postnoteref_crossrefs_prop
-              { \int_use:N \g_@@_temp_struct_num_int }
-              {
-                \exp_args:Ne \ref_value:nn
-                  { postnote@tag@innote. \l_@@_note_ref_label_tl }
-                  { pn@tag@struct }
-              }
-          }
+        % \exp_args:Nx \ref_if_exist:nnT
+        %   { postnote@tag@innote. \l_@@_note_ref_label_tl }
+        %   { pn@tag@struct }
+        %   {
+        %     \prop_gput:Nxx \g_@@_tag_postnoteref_crossrefs_prop
+        %       { \int_use:N \g_@@_temp_struct_num_int }
+        %       {
+        %         \exp_args:Ne \ref_value:nn
+        %           { postnote@tag@innote. \l_@@_note_ref_label_tl }
+        %           { pn@tag@struct }
+        %       }
+        %   }
         % If we have a label coming from a label option.
-        \exp_args:Nx \ref_if_exist:nnT
-          { postnote@tag@option. \l_@@_note_ref_label_tl }
-          { pn@tag@struct }
-          {
-            \prop_gput:Nxx \g_@@_tag_postnoteref_crossrefs_prop
-              { \int_use:N \g_@@_temp_struct_num_int }
-              {
-                \exp_args:Ne \ref_value:nn
-                  { postnote@tag@option. \l_@@_note_ref_label_tl }
-                  { pn@tag@struct }
-              }
-          }
+        % \exp_args:Nx \ref_if_exist:nnT
+        %   { postnote@tag@option. \l_@@_note_ref_label_tl }
+        %   { pn@tag@struct }
+        %   {
+        %     \prop_gput:Nxx \g_@@_tag_postnoteref_crossrefs_prop
+        %       { \int_use:N \g_@@_temp_struct_num_int }
+        %       {
+        %         \exp_args:Ne \ref_value:nn
+        %           { postnote@tag@option. \l_@@_note_ref_label_tl }
+        %           { pn@tag@struct }
+        %       }
+        %   }
       }
     \AddToHook { postnotes/ref/mark/end } [ postnotes ]
       {
@@ -2768,7 +2824,7 @@
     \cs_new_protected:Npn \@@_tag_label:n #1
       {
         \@@_orig_label:n {#1}
-        \ref_label:nn { postnote@tag@innote. #1 } { pn@tag@struct }
+        % \ref_label:nn { postnote@tag@innote. #1 } { pn@tag@struct }
       }
     \AddToHook { postnotes/print/note/begin } [ postnotes ]
       {
@@ -2811,18 +2867,18 @@
               }
               { }
             % If we have a label coming from a zlabel option.
-            \exp_args:Nx \ref_if_exist:nnT
-              { postnote@tag@option@z. \l_@@_note_zref_zlabel_tl }
-              { pn@tag@struct }
-              {
-                \prop_gput:Nxx \g_@@_tag_postnotezref_crossrefs_prop
-                  { \int_use:N \g_@@_temp_struct_num_int }
-                  {
-                    \exp_args:Ne \ref_value:nn
-                      { postnote@tag@option@z. \l_@@_note_zref_zlabel_tl }
-                      { pn@tag@struct }
-                  }
-              }
+            % \exp_args:Nx \ref_if_exist:nnT
+            %   { postnote@tag@option@z. \l_@@_note_zref_zlabel_tl }
+            %   { pn@tag@struct }
+            %   {
+            %     \prop_gput:Nxx \g_@@_tag_postnotezref_crossrefs_prop
+            %       { \int_use:N \g_@@_temp_struct_num_int }
+            %       {
+            %         \exp_args:Ne \ref_value:nn
+            %           { postnote@tag@option@z. \l_@@_note_zref_zlabel_tl }
+            %           { pn@tag@struct }
+            %       }
+            %   }
           }
         \AddToHook { postnotes/zref/mark/end } [ postnotes ]
           {
