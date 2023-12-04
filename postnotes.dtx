@@ -1442,7 +1442,7 @@
                   { \l_@@_print_counter_tl }
                 \cs_set:Npe \@currentlabel
                   { \p@postnote \l_@@_print_mark_tl }
-                \@@_tagsup_print_begin:
+                \@@_tagsup_print_note_begin:
                 \@@_text_mark_wrapper:n
                   {
                     \MakeLinkTarget*
@@ -1453,10 +1453,11 @@
                       { \l_postnotes_print_note_id_tl }
                       \l_@@_print_mark_tl
                   }
-                \@@_tagsup_print_after_mark:
+                \@@_tagsup_print_text_begin:
                 \l_@@_print_content_tl
-                \@@_tagsup_print_end:
                 \l_@@_post_printnote_tl
+                \@@_tagsup_print_text_end:
+                \@@_tagsup_print_note_end:
                 \group_end:
 %    \end{macrocode}
 % For notes, query for next note's type \texttt{after} the current note was
@@ -2656,9 +2657,10 @@
 %    \begin{macrocode}
 \cs_new_eq:NN \@@_tagsup_mark_begin: \prg_do_nothing:
 \cs_new_eq:NN \@@_tagsup_mark_end: \prg_do_nothing:
-\cs_new_eq:NN \@@_tagsup_print_begin: \prg_do_nothing:
-\cs_new_eq:NN \@@_tagsup_print_after_mark: \prg_do_nothing:
-\cs_new_eq:NN \@@_tagsup_print_end: \prg_do_nothing:
+\cs_new_eq:NN \@@_tagsup_print_note_begin: \prg_do_nothing:
+\cs_new_eq:NN \@@_tagsup_print_note_end: \prg_do_nothing:
+\cs_new_eq:NN \@@_tagsup_print_text_begin: \prg_do_nothing:
+\cs_new_eq:NN \@@_tagsup_print_text_end: \prg_do_nothing:
 \AddToHook { package/tagpdf/after }
   {
     % CHECK As far as I can tell, we don't "own" these tags in the relevant
@@ -2685,42 +2687,103 @@
         \tag_struct_end:
         \tag_mc_begin_pop:n{}
       }
-    \cs_set:Npn \@@_tagsup_print_begin:
+    \cs_set:Npn \@@_tagsup_print_note_begin:
       {
-        \mode_leave_vertical:
-        \tag_mc_end_push:
+        \bool_if:NF \l_@@_print_as_list_bool
+          {
+            \mode_leave_vertical:
+            \tag_mc_end_push:
+          }
         \tag_struct_begin:n
            { tag=endnote , label= postnote. \l_postnotes_print_note_id_tl }
-        \tag_struct_begin:n { tag=endnotelabel }
-        % I'm adding a NonStruct here because latex-lab-footnotes.ltx does it.
-        % Since the footnote is a child of the mark the footnotelabel/Lbl is
-        % indeed redundant.  However, when hyperref is present we will find
-        % the Link struct from the backlink inside this NonStruct element,
-        % which does not occur for footnotes, since there's no backlink.
-        % NonStruct are not exported to other formats.  As far as I
-        % understand, it makes sense to have this NonStruct, so long as we are
-        % establishing a parent-child relation between the note and the text.
-        % In which case the information contained in the backlink is redundant
-        % at the structure level anyway.  If we opt to not make the text a
-        % child of the mark, we should remove this NonStruct.
-        \tag_struct_begin:n { tag=NonStruct }
-        \tag_mc_begin:n{ tag=Lbl }
       }
-    \cs_set:Npn \@@_tagsup_print_after_mark:
+    \cs_set:Npn \@@_tagsup_print_note_end:
       {
-        \tag_mc_end:
-        \tag_struct_end: \tag_struct_end: % endnotelabel
-        \tag_struct_begin:n { tag=text-unit } % end note text
+        \tag_struct_end:
+      }
+    \cs_set:Npn \@@_tagsup_print_text_begin:
+      {
+        \tag_struct_begin:n { tag=text-unit }
         \tag_struct_begin:n { tag=text }
+        \bool_if:NT \l_@@_print_as_list_bool
+          {
+            \mode_leave_vertical:
+            \tagtool{para=true}
+          }
         \tag_mc_begin:n{}
       }
-    \cs_set:Npn \@@_tagsup_print_end:
+    \cs_set:Npn \@@_tagsup_print_text_end:
       {
-        \tag_mc_end:
-        \tag_struct_end: \tag_struct_end: % end note text
-        \tag_struct_end: % endnote
+        \bool_if:NTF \l_@@_print_as_list_bool
+          {
+            \tag_mc_end:
+            \tagtool{para=false}
+          }
+          {
+            % instead of \tag_mc_end: because of \par in listenv=none
+            \tag_mc_end_push:
+          }
+        \tag_struct_end:
+        \tag_struct_end:
         \tag_mc_begin_pop:n{}
       }
+
+      % https://tex.stackexchange.com/q/703083
+      \AddToHook { postnotes/print/begin }
+        {
+          \bool_if:NT \l_@@_print_as_list_bool
+            {
+              \exp_args:Ne \AddToHookNext
+                { env / \l_@@_print_env_tl / begin}
+                {
+                  \cs_set_eq:NN \__block_list_begin: \prg_do_nothing:
+                  \cs_set_eq:NN \__block_list_end: \prg_do_nothing:
+                  \cs_set_eq:NN \__block_list_item_begin: \prg_do_nothing:
+                  \cs_set_eq:NN \__block_list_item_end: \prg_do_nothing:
+                  \cs_set_eq:NN \__kernel_list_label_begin: \prg_do_nothing:
+                  \cs_set_eq:NN \__kernel_list_label_end: \prg_do_nothing:
+                  \tagtool{para=false}
+                }
+            }
+        }
+
+    % I'm adding a NonStruct here because latex-lab-footnotes.ltx does it.
+    % Since the footnote is a child of the mark the footnotelabel/Lbl is
+    % indeed redundant.  However, when hyperref is present we will find the
+    % Link struct from the backlink inside this NonStruct element, which does
+    % not occur for footnotes, since there's no backlink.  NonStruct are not
+    % exported to other formats.  As far as I understand, it makes sense to
+    % have this NonStruct, so long as we are establishing a parent-child
+    % relation between the note and the text.  In which case the information
+    % contained in the backlink is redundant at the structure level anyway.
+    % If we opt to not make the text a child of the mark, we should remove
+    % this NonStruct.
+    \cs_new_protected:Npn \@@_tagsup_text_mark_wrapper:n #1
+      {
+        \bool_if:NTF \l_@@_print_as_list_bool
+          {
+            \item [
+                \tag_struct_begin:n { tag=endnotelabel }
+                \tag_struct_begin:n { tag=NonStruct }
+                \tag_mc_begin:n{ tag=Lbl }
+                \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl
+                \tag_mc_end:
+                \tag_struct_end:
+                \tag_struct_end:
+              ]
+            \mode_leave_vertical:
+          }
+          {
+            \tag_struct_begin:n { tag=endnotelabel }
+            \tag_struct_begin:n { tag=NonStruct }
+            \tag_mc_begin:n{ tag=Lbl }
+            \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl
+            \tag_mc_end:
+            \tag_struct_end:
+            \tag_struct_end:
+          }
+      }
+    \cs_set_eq:NN \@@_text_mark_wrapper:n \@@_tagsup_text_mark_wrapper:n
 
     % \postnote
     \tl_new:N \l_@@_tag_currentstruct_tl
