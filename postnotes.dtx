@@ -2674,16 +2674,26 @@
         add-new-tag = { tag=endnotelabel, role=Lbl } ,
       }
 
+    % \postnote
+    \tl_new:N \l_@@_tag_currentstruct_tl
     \cs_set:Npn \@@_tagsup_mark_begin:
       {
         \tag_mc_end_push:
+        % Store structnum
+        \tl_set:Ne \l_@@_tag_currentstruct_tl
+          { \tag_get:n { struct_num } }
         \tag_struct_begin:n
           {
             tag = endnotemark ,
             ref = { postnote. \l_postnotes_note_id_tl } ,
-            label = { postnotemark. \l_postnotes_note_id_tl } ,
           }
         \tag_mc_begin:n{}
+      }
+    \AddToHook { postnotes/note/store } [ postnotes ]
+      {
+        % Store structnum
+        \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
+          { tagsup@structnum } \l_@@_tag_currentstruct_tl
       }
     \cs_set:Npn \@@_tagsup_mark_end:
       {
@@ -2698,17 +2708,13 @@
             \mode_leave_vertical:
             \tag_mc_end_push:
           }
+        \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
+          { tagsup@structnum } \l_@@_restore_tmp_tl
         \tag_struct_begin:n
            {
              tag = endnote ,
              label = { postnote. \l_postnotes_print_note_id_tl } ,
-             parent =
-               {
-                 \property_ref:ee
-                   { tagpdfstruct-postnotemark. \l_postnotes_print_note_id_tl }
-                   { tagstruct }
-                 - 1
-               },
+             parent = \l_@@_restore_tmp_tl ,
            }
       }
     \cs_set:Npn \@@_tagsup_print_note_end:
@@ -2800,32 +2806,31 @@
     \cs_set_eq:NN \@@_text_mark_wrapper:n \@@_tagsup_text_mark_wrapper:n
 
     % \postnote
-    \tl_new:N \l_@@_tag_currentstruct_tl
-    \AddToHook { postnotes/note/mark/begin } [ postnotes ]
-      {
-        % TODO start tagging for postnote mark here
-
-        % Store structnum
-        \tl_set:Ne \l_@@_tag_currentstruct_tl
-          { \int_use:N \g_@@_temp_struct_num_int }
-      }
-    \AddToHook { postnotes/note/store } [ postnotes ]
-      {
-        % Store structnum
-        \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
-          { tagpdf@structnum } \l_@@_tag_currentstruct_tl
-      }
-    \AddToHook { postnotes/note/mark/end } [ postnotes ]
-      {
-        % TODO end tagging for postnote mark here
-      }
+    % \AddToHook { postnotes/note/mark/begin } [ postnotes ]
+    %   {
+    %     % TODO start tagging for postnote mark here
+    %
+    %     % Store structnum
+    %     \tl_set:Ne \l_@@_tag_currentstruct_tl
+    %       { \int_use:N \g_@@_temp_struct_num_int }
+    %   }
+    % \AddToHook { postnotes/note/store } [ postnotes ]
+    %   {
+    %     % Store structnum
+    %     \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
+    %       { tagsup@structnum } \l_@@_tag_currentstruct_tl
+    %   }
+    % \AddToHook { postnotes/note/mark/end } [ postnotes ]
+    %   {
+    %     % TODO end tagging for postnote mark here
+    %   }
     \AddToHook { postnotes/print/content/begin } [ postnotes ]
       {
         % TODO start tagging for postnote text here
 
         % Set cross-refs for \postnote
         \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
-          { tagpdf@structnum } \l_@@_restore_tmp_tl
+          { tagsup@structnum } \l_@@_restore_tmp_tl
         % The variable may be empty in case the property was not present,
         % which can occur if the postnote was set with nomark option, in which
         % case there is no tagging cross-reference to make.
