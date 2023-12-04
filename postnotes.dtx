@@ -2678,7 +2678,11 @@
       {
         \tag_mc_end_push:
         \tag_struct_begin:n
-          { tag=endnotemark , ref=postnote. \l_postnotes_note_id_tl }
+          {
+            tag = endnotemark ,
+            ref = { postnote. \l_postnotes_note_id_tl } ,
+            label = { postnotemark. \l_postnotes_note_id_tl } ,
+          }
         \tag_mc_begin:n{}
       }
     \cs_set:Npn \@@_tagsup_mark_end:
@@ -2695,7 +2699,17 @@
             \tag_mc_end_push:
           }
         \tag_struct_begin:n
-           { tag=endnote , label= postnote. \l_postnotes_print_note_id_tl }
+           {
+             tag = endnote ,
+             label = { postnote. \l_postnotes_print_note_id_tl } ,
+             parent =
+               {
+                 \property_ref:ee
+                   { tagpdfstruct-postnotemark. \l_postnotes_print_note_id_tl }
+                   { tagstruct }
+                 - 1
+               },
+           }
       }
     \cs_set:Npn \@@_tagsup_print_note_end:
       {
