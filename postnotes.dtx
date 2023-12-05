@@ -2745,6 +2745,7 @@
         \tag_struct_begin:n
           {
             tag = endnotemark ,
+            label = { postnotemark. \l_postnotes_note_id_tl } ,
             ref = { postnote. \l_postnotes_note_id_tl } ,
           }
         \tag_mc_begin:n{}
@@ -2770,6 +2771,10 @@
           {
             tag = endnote ,
             label = { postnote. \l_postnotes_print_note_id_tl } ,
+            % CHECK Should we really add a back reference here?  I couldn't
+            % find any hint about this in the standards, but
+            % latex-lab-footnotes does it.  No harm, I guess.
+            ref = { postnotemark. \l_postnotes_print_note_id_tl } ,
           }
       }
     \cs_set:Npn \@@_tagsup_print_note_end:
