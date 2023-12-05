@@ -2610,9 +2610,73 @@
 %
 % \subsection*{PDF Tagging (experimental)}
 %
-% Adding support for tagging entails two basic tasks: i) applying the tagging
-% markup at the appropriate places; ii) generating a list of tag
-% cross-references between the ``mark(s)'' and the ``text''.
+% A first thing to consider in tagging end notes is how we want to represent
+% them in the PDF structure.  My first thought, for lack of another, was:
+% emulate footnotes.  There's no relevant semantic difference at the structure
+% level between the two, and the tagging support for footnotes was done by the
+% pros.  And one distinctive characteristic the the footnotes tagging is that
+% the footnote itself is placed in the structure as a child to the (parent)
+% \texttt{text} element which surrounds the footnote mark.  However, for end
+% notes this introduces a number of problems and complicates things.  While
+% footnotes ``float around'' and have no real structure of their own, that is
+% not true for end notes.  End notes comprise a proper document section, and
+% may be printed in a list environment, etc.  So when the tagging of footnotes
+% places the footnote structure element as a child element of the mark's
+% surrounding text, this is arguably for a lack of other options.  Where else,
+% after all?  Indeed, a typical \texttt{html} would render footnotes at the
+% end of the page, and not inline.  True the normal \texttt{html} page is much
+% smaller than our typical \texttt{PDF}, but the point stands.  We can have a
+% hover over call out for footnotes, but the same could be done for end notes,
+% regardless of the parent-child relation (as long as the required
+% cross-references are in place).  On the other hand, for end notes this is
+% not an issue: they have a natural place to plugged into.  Furthermore,
+% making an end note a child of the text surrounding its mark leaves an empty
+% ``skeleton'' of the end notes' section: the heading, the list structure,
+% etc.  Technically, we could clean that too, but from experience that is an
+% uphill battle against the tagging performed by the kernel/\pkg{tagpdf}.
+%
+% Finally, the parent-child relation is not required by \texttt{PDF} standards
+% for the relevant structure types.  The \texttt{PDF} 2.0 standard
+% (ISO~32000-2:2020), says the following about \texttt{FENote}:
+%
+% \begin{quote}
+%   Used to markup footnotes and endnotes.  Footnotes and endnotes are content
+%   that is not normally read as part of the enclosing content from which it
+%   is referenced, but rather consulted at the reading person's discretion.
+%   In order for text to be considered a footnote or endnote, there should be
+%   a reference from the enclosing content to the footnote or endnote.  Such
+%   reference may be achieved by means of a Link structure element through a
+%   structure destination in its link annotation (see ``Table 368 — General
+%   inline level structure types''), or use of Ref in structure elements (see
+%   ``Table 355 — Entries in a structure element dictionary'').
+% \end{quote}
+%
+% The \texttt{PDF} 1.7 standard (PDF~32000-1:2008), says the following about
+% \texttt{Note}:
+%
+% \begin{quote}
+%   An item of explanatory text, such as a footnote or an endnote, that is
+%   referred to from within the body of the document.  It may have a label
+%   (structure type Lbl; see ``List Elements'' in 14.8.4.3, ``Block-Level
+%   Structure Elements'') as a child.  The note may be included as a child of
+%   the structure element in the body text that refers to it, or it may be
+%   included elsewhere (such as in an endnotes section) and accessed by means
+%   of a reference (structure type Reference).
+%
+%   Tagged PDF does not prescribe the placement of footnotes in the page
+%   content order.  They may be either inline or at the end of the page, at
+%   the discretion of the conforming writer.
+% \end{quote}
+%
+% So, the note \emph{may} be included as a child of the surrounding text, but
+% that's not required (PDF 2.0 does not even mention that).  What is required
+% is the reference between the elements.  All in all, let's not follow
+% footnotes in establishing the parent-child relation.
+%
+%
+% In practical terms, adding support for tagging entails two basic tasks: i)
+% applying the tagging markup at the appropriate places; ii) generating a list
+% of tag cross-references between the ``mark(s)'' and the ``text''.
 %
 % Regarding tag cross-references, we have three different cases: i) a regular
 % \cs{postnote}; ii) a \cs{postnoteref} to a note labeled from inside the
@@ -2675,25 +2739,15 @@
       }
 
     % \postnote
-    \tl_new:N \l_@@_tag_currentstruct_tl
     \cs_set:Npn \@@_tagsup_mark_begin:
       {
         \tag_mc_end_push:
-        % Store structnum
-        \tl_set:Ne \l_@@_tag_currentstruct_tl
-          { \tag_get:n { struct_num } }
         \tag_struct_begin:n
           {
             tag = endnotemark ,
             ref = { postnote. \l_postnotes_note_id_tl } ,
           }
         \tag_mc_begin:n{}
-      }
-    \AddToHook { postnotes/note/store } [ postnotes ]
-      {
-        % Store structnum
-        \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
-          { tagsup@structnum } \l_@@_tag_currentstruct_tl
       }
     \cs_set:Npn \@@_tagsup_mark_end:
       {
@@ -2703,23 +2757,29 @@
       }
     \cs_set:Npn \@@_tagsup_print_note_begin:
       {
-        \bool_if:NF \l_@@_print_as_list_bool
+        \bool_if:NTF \l_@@_print_as_list_bool
+          {
+            \tag_struct_begin:n { tag=LI }
+            \tag_struct_begin:n { tag=LBody }
+          }
           {
             \mode_leave_vertical:
             \tag_mc_end_push:
           }
-        \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
-          { tagsup@structnum } \l_@@_restore_tmp_tl
         \tag_struct_begin:n
-           {
-             tag = endnote ,
-             label = { postnote. \l_postnotes_print_note_id_tl } ,
-             parent = \l_@@_restore_tmp_tl ,
-           }
+          {
+            tag = endnote ,
+            label = { postnote. \l_postnotes_print_note_id_tl } ,
+          }
       }
     \cs_set:Npn \@@_tagsup_print_note_end:
       {
-        \tag_struct_end:
+        \tag_struct_end: % endnote
+        \bool_if:NT \l_@@_print_as_list_bool
+          {
+            \tag_struct_end: % LBody
+            \tag_struct_end: % LI
+          }
       }
     \cs_set:Npn \@@_tagsup_print_text_begin:
       {
@@ -2743,63 +2803,52 @@
             % instead of \tag_mc_end: because of \par in listenv=none
             \tag_mc_end_push:
           }
-        \tag_struct_end:
-        \tag_struct_end:
+        \tag_struct_end: % text
+        \tag_struct_end: % text-unit
         \tag_mc_begin_pop:n{}
       }
+    \cs_new:Npn \@@_tagsup_print_list_begin:
+      { \tag_struct_begin:n { tag=L, attribute-class=list } }
+    \cs_new:Npn \@@_tagsup_print_list_end:
+      { \tag_struct_end: }
 
-      % https://tex.stackexchange.com/q/703083
-      \AddToHook { postnotes/print/begin }
-        {
-          \bool_if:NT \l_@@_print_as_list_bool
-            {
-              \exp_args:Ne \AddToHookNext
-                { env / \l_@@_print_env_tl / begin}
-                {
-                  \cs_set_eq:NN \__block_list_begin: \prg_do_nothing:
-                  \cs_set_eq:NN \__block_list_end: \prg_do_nothing:
-                  \cs_set_eq:NN \__block_list_item_begin: \prg_do_nothing:
-                  \cs_set_eq:NN \__block_list_item_end: \prg_do_nothing:
-                  \cs_set_eq:NN \__kernel_list_label_begin: \prg_do_nothing:
-                  \cs_set_eq:NN \__kernel_list_label_end: \prg_do_nothing:
-                  \tagtool{para=false}
-                }
-            }
-        }
+    % https://tex.stackexchange.com/q/703083
+    \AddToHook { postnotes/print/begin }
+      {
+        \bool_if:NT \l_@@_print_as_list_bool
+          {
+            \exp_args:Ne \AddToHookNext
+              { env / \l_@@_print_env_tl / begin}
+              {
+                \cs_set_eq:NN \__block_list_begin: \@@_tagsup_print_list_begin:
+                \cs_set_eq:NN \__block_list_end: \@@_tagsup_print_list_end:
+                \cs_set_eq:NN \__block_list_item_begin: \prg_do_nothing:
+                \cs_set_eq:NN \__block_list_item_end: \prg_do_nothing:
+                \cs_set_eq:NN \__kernel_list_label_begin: \prg_do_nothing:
+                \cs_set_eq:NN \__kernel_list_label_end: \prg_do_nothing:
+                \tagtool{para=false}
+              }
+          }
+      }
 
-    % I'm adding a NonStruct here because latex-lab-footnotes.ltx does it.
-    % Since the footnote is a child of the mark the footnotelabel/Lbl is
-    % indeed redundant.  However, when hyperref is present we will find the
-    % Link struct from the backlink inside this NonStruct element, which does
-    % not occur for footnotes, since there's no backlink.  NonStruct are not
-    % exported to other formats.  As far as I understand, it makes sense to
-    % have this NonStruct, so long as we are establishing a parent-child
-    % relation between the note and the text.  In which case the information
-    % contained in the backlink is redundant at the structure level anyway.
-    % If we opt to not make the text a child of the mark, we should remove
-    % this NonStruct.
     \cs_new_protected:Npn \@@_tagsup_text_mark_wrapper:n #1
       {
         \bool_if:NTF \l_@@_print_as_list_bool
           {
             \item [
                 \tag_struct_begin:n { tag=endnotelabel }
-                \tag_struct_begin:n { tag=NonStruct }
                 \tag_mc_begin:n{ tag=Lbl }
                 \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl
                 \tag_mc_end:
-                \tag_struct_end:
                 \tag_struct_end:
               ]
             \mode_leave_vertical:
           }
           {
             \tag_struct_begin:n { tag=endnotelabel }
-            \tag_struct_begin:n { tag=NonStruct }
             \tag_mc_begin:n{ tag=Lbl }
             \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl
             \tag_mc_end:
-            \tag_struct_end:
             \tag_struct_end:
           }
       }
