@@ -2676,26 +2676,37 @@
 %
 % Another smaller but related issue is how to treat the list structure in
 % \cs{printpostnotes} when \opt{listenv} is used.  The natural thing here
-% would be to use a \env{description} type list (not \env{enumerate}, since
-% the marks \emph{may} not be a sequence of numbers), where the mark is used
-% as the item's label.  The problem here is that the PDF 2.0 standards
-% determine that the \texttt{FENote} structure element cannot be a child of a
+% would be to use a \texttt{enumerate} type list, where the mark is used as
+% the item's label.  The problem here is that the PDF 2.0 standards determine
+% that the \texttt{FENote} structure element cannot be a child of a
 % \texttt{LI} (list item).  However, we also want the \texttt{endnotelabel}
 % element to be a child of the \texttt{endnote} element.  Thus, we have a
 % conflict, the mc-chunk can only be used once, and can be either the
 % \texttt{Lbl} of the \texttt{LI}, or the \texttt{endnotelabel} for the
-% \texttt{endnote}.  Currently, I'm using a simple \env{list} type list with
-% no \texttt{Lbl} for \texttt{LI}, and letting \texttt{endnote} be a child of
-% \texttt{LBody}, with \texttt{endnotelabel} a child for \texttt{endnote}.  In
-% a way, the possibility of exporting the tagged content to different formats
-% makes me think that using an \env{enumerate} list type and letting the label
-% belong to the list item may arguably be the most appropriate in practical
-% terms.  Other possibilities to consider are either drop the list structure
-% altogether, and let the tagging behave as if \texttt{listenv=none}, or
-% standardize things by making the \texttt{listenv=none} case behave as if
-% there was a list.  All in all, this is not difficult to adjust, but it is
-% just very hard to reach a decision without knowledge of applications and use
-% cases.  So, a call to be revisited in the future, pending users' feedback.
+% \texttt{endnote}.  Currently, I'm using an \texttt{enumerate} type list with
+% \texttt{endnotelabel} as \texttt{Lbl} for \texttt{LI}, and letting
+% \texttt{endnote} be a child of \texttt{LBody}.  In a way, the possibility of
+% exporting the tagged content to different formats makes me think that this
+% is the most appropriate for the list case.  For the case of
+% \texttt{listenv=none}, I let \texttt{endnotelabel} be a child of
+% \texttt{endnote}, as is done for footnotes.  This makes the structure of an
+% \texttt{endnote} element different in each of the two cases, which is
+% inconsistent and also leads to more code complexity than I'd like.  I'm not
+% sure how bad this is for machine readability.  But, even if we moved
+% \texttt{endnotelabel} out of \texttt{endnote} for \texttt{listenv=none} the
+% structures would still be different, since with the list there's also
+% \texttt{LBody} involved.  Other possibilities to consider are either to drop
+% the list structure altogether, and let the tagging behave as if
+% \texttt{listenv=none}, or standardize things by making the
+% \texttt{listenv=none} case behave as if there was a list.  The latter is
+% probably the ideal solution.  I did try to implement it, but failed to
+% circumvent the default paragraph tagging structure.  All in all, this should
+% be viable to adjust (modulo the usual battle with the default tagging code),
+% but it is just very hard to reach a decision without knowledge of
+% applications and use cases (including standards and practices, relevant
+% software which consume the resulting PDF, providing accessibility or other
+% byproducts, etc.).  So, a call to be revisited in the future, pending users'
+% feedback.
 %
 %
 % On the \LaTeX{} side of things, adding support for tagging entails two basic
@@ -2786,33 +2797,44 @@
         \bool_if:NTF \l_@@_print_as_list_bool
           {
             \tag_struct_begin:n { tag=LI }
-            \tag_struct_begin:n { tag=LBody }
           }
           {
             \mode_leave_vertical:
             \tag_mc_end_push:
-          }
-        \tag_struct_begin:n
-          {
-            tag = endnote ,
-            label = { postnote. \l_postnotes_print_note_id_tl } ,
-            % CHECK Should we really add a back reference here?  I couldn't
-            % find any hint about this in the standards, but
-            % latex-lab-footnotes does it.  No harm, I guess.
-            ref = { postnotemark. \l_postnotes_print_note_id_tl } ,
+            \tag_struct_begin:n
+              {
+                tag = endnote ,
+                label = { postnote. \l_postnotes_print_note_id_tl } ,
+                % CHECK Should we really add a back reference here?  I couldn't
+                % find any hint about this in the standards, but
+                % latex-lab-footnotes does it.  No harm, I guess.
+                ref = { postnotemark. \l_postnotes_print_note_id_tl } ,
+              }
           }
       }
     \cs_set:Npn \@@_tagsup_print_note_end:
       {
-        \tag_struct_end: % endnote
-        \bool_if:NT \l_@@_print_as_list_bool
+        \bool_if:NTF \l_@@_print_as_list_bool
           {
-            \tag_struct_end: % LBody
             \tag_struct_end: % LI
+          }
+          {
+            \tag_struct_end: % endnote
           }
       }
     \cs_set:Npn \@@_tagsup_print_text_begin:
       {
+         \bool_if:NT \l_@@_print_as_list_bool
+           {
+             \tag_struct_begin:n { tag=LBody }
+             \tag_struct_begin:n
+               {
+                 tag = endnote ,
+                 label = { postnote. \l_postnotes_print_note_id_tl } ,
+                 % CHECK Ditto.
+                 ref = { postnotemark. \l_postnotes_print_note_id_tl } ,
+               }
+           }
         \tag_struct_begin:n { tag=text-unit }
         \tag_struct_begin:n { tag=text }
         \bool_if:NT \l_@@_print_as_list_bool
@@ -2835,10 +2857,15 @@
           }
         \tag_struct_end: % text
         \tag_struct_end: % text-unit
+        \bool_if:NT \l_@@_print_as_list_bool
+          {
+            \tag_struct_end: % endnote
+            \tag_struct_end: % LBody
+          }
         \tag_mc_begin_pop:n{}
       }
     \cs_new:Npn \@@_tagsup_print_list_begin:
-      { \tag_struct_begin:n { tag=L, attribute-class=list } }
+      { \tag_struct_begin:n { tag=L, attribute-class=enumerate } }
     \cs_new:Npn \@@_tagsup_print_list_end:
       { \tag_struct_end: }
 
