@@ -2699,48 +2699,43 @@
 %
 % On the \LaTeX{} side of things, adding support for tagging entails two basic
 % tasks: i) applying the tagging markup at the appropriate places; ii)
-% generating references between the ``mark(s)'' (plus cross-references) and
-% the ``text''.
+% generating references between the ``mark(s)'' and the ``text'' (plus
+% cross-reference commands to their respective targets).
 %
-% Regarding tag cross-references, we have three different cases: i) a regular
+% Regarding tagging references, we have three different cases: i) a regular
 % \cs{postnote}; ii) a \cs{postnoteref} to a note labeled from inside the
 % note; and iii) a \cs{postnoteref} to a note labeled with the \opt{label}
 % option.
 %
-% For regular \cs{postnote}s it is trivial to establish the cross-reference.
-% We store the ``mark's'' \texttt{struct_num} at the \cs{postnote} by standard
-% \pkg{postnotes} mechanisms, and from the note's ID, we restore it at
-% \cs{printpostnotes}, at which point we have the ``text's''
-% \texttt{struct_num}, and we can thus establish the connection between the
-% two.
+% For regular \cs{postnote}s it is trivial to establish the reference using
+% the \texttt{label} / \texttt{ref} options of \pkg{tagpdf}.
 %
 % For \cs{postnoteref}s, however labeled, the connection \emph{must} be
 % established at \cs{postnoteref}, for the simple fact that any \cs{postnote}
 % can be referenced by arbitrarily many \cs{postnotref}s.  So we need to be
-% able to retrieve the \texttt{struct_num} from the ``text'' to which the
-% reference refers to at \cs{postnoteref}.  However, at \cs{postnotref} the
-% only information we have is the \meta{label} but, since it is unique, we can
-% establish a connection through it.
+% able to retrieve the note ID from the ``text'' to which the reference refers
+% to at \cs{postnoteref}.  However, at \cs{postnotref} the only information we
+% have is the \meta{label} but, since it is unique, we can establish a
+% connection through it.
 %
 % When the label is set from inside the note, it is actually set at
-% \cs{printposntones}, at which place we have access to the
-% \texttt{struct_num} of interest, that of ``text'', so we can use the
-% \meta{label} to pass that information around to \cs{postnoteref}.  With a
-% standard \cs{label} we must set an additional label, for which we redefine
-% \cs{label} locally to add a \pkg{l3ref-tmp} auxiliary label, which
-% \cs{postnoteref} can retrieve from its own \meta{label} argument.  For
-% \cs{zlabel} this particular task is trivial, since we can simply add a
-% property to store \texttt{struct_num} with the label, which
-% \cs{postnotezref} can extract.
+% \cs{printposntones}, at which place we have access to
+% \cs{l_postnotes_print_note_id_tl} so we can use the \meta{label} to pass
+% that information around to \cs{postnoteref}.  With a standard \cs{label} we
+% must set an additional \pkg{ltproperties} label, using the new
+% \texttt{label} hook, which \cs{postnoteref} can retrieve from its own
+% \meta{label} argument.  For \cs{zlabel} this particular task is trivial,
+% since we can simply add a property to store the note ID with the label,
+% which \cs{postnotezref} can extract.
 %
 % When the label is set from the option, things are slightly more complicated,
 % because the label is set at \cs{postnote}, at which place we do not have
-% access to the \texttt{struct_num} of the ``text''.  What we do here is then
-% store the label with the note and restore it later at \cs{printpostnotes} as
-% usual.  Then, at that point, we can set an auxiliary label which can be
-% retrieved from \cs{postnoteref} from its own \meta{label} argument, as we
-% did for the case of labels inside the note.  Auxiliary labels are handled
-% with \pkg{l3ref-tmp} labels.
+% access to the note ID of the ``text''.  What we do here is then store the
+% label with the note and restore it later at \cs{printpostnotes} as usual.
+% Then, at that point, we can set an auxiliary label which can be retrieved
+% from \cs{postnoteref} from its own \meta{label} argument, as we did for the
+% case of labels inside the note.  Auxiliary labels are handled with
+% \pkg{ltproperties} labels.
 %
 %    \begin{macrocode}
 \cs_new_eq:NN \@@_tagsup_mark_begin: \prg_do_nothing:
