@@ -2674,9 +2674,34 @@
 % footnotes in establishing the parent-child relation.
 %
 %
-% In practical terms, adding support for tagging entails two basic tasks: i)
-% applying the tagging markup at the appropriate places; ii) generating a list
-% of tag cross-references between the ``mark(s)'' and the ``text''.
+% Another smaller but related issue is how to treat the list structure in
+% \cs{printpostnotes} when \opt{listenv} is used.  The natural thing here
+% would be to use a \env{description} type list (not \env{enumerate}, since
+% the marks \emph{may} not be a sequence of numbers), where the mark is used
+% as the item's label.  The problem here is that the PDF 2.0 standards
+% determine that the \texttt{FENote} structure element cannot be a child of a
+% \texttt{LI} (list item).  However, we also want the \texttt{endnotelabel}
+% element to be a child of the \texttt{endnote} element.  Thus, we have a
+% conflict, the mc-chunk can only be used once, and can be either the
+% \texttt{Lbl} of the \texttt{LI}, or the \texttt{endnotelabel} for the
+% \texttt{endnote}.  Currently, I'm using a simple \env{list} type list with
+% no \texttt{Lbl} for \texttt{LI}, and letting \texttt{endnote} be a child of
+% \texttt{LBody}, with \texttt{endnotelabel} a child for \texttt{endnote}.  In
+% a way, the possibility of exporting the tagged content to different formats
+% makes me think that using an \env{enumerate} list type and letting the label
+% belong to the list item may arguably be the most appropriate in practical
+% terms.  Other possibilities to consider are either drop the list structure
+% altogether, and let the tagging behave as if \texttt{listenv=none}, or
+% standardize things by making the \texttt{listenv=none} case behave as if
+% there was a list.  All in all, this is not difficult to adjust, but it is
+% just very hard to reach a decision without knowledge of applications and use
+% cases.  So, a call to be revisited in the future, pending users' feedback.
+%
+%
+% On the \LaTeX{} side of things, adding support for tagging entails two basic
+% tasks: i) applying the tagging markup at the appropriate places; ii)
+% generating references between the ``mark(s)'' (plus cross-references) and
+% the ``text''.
 %
 % Regarding tag cross-references, we have three different cases: i) a regular
 % \cs{postnote}; ii) a \cs{postnoteref} to a note labeled from inside the
