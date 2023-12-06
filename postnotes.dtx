@@ -1043,8 +1043,6 @@
 %       \Arg{mark} \Arg{begin hook} \Arg{end hook}
 %   \end{syntax}
 %    \begin{macrocode}
-\NewHook { postnotes/note/mark/begin }
-\NewHook { postnotes/note/mark/end }
 \cs_new_protected:Npn \@@_typeset_mark:nn #1#2
   {
     \@@_typeset_mark_wrapper:nnn
@@ -1116,14 +1114,10 @@
 %   \end{syntax}
 %    \begin{macrocode}
 \tl_new:N \l_@@_note_ref_label_tl
-\NewHook { postnotes/ref/begin }
-\NewHook { postnotes/ref/mark/begin }
-\NewHook { postnotes/ref/mark/end }
 \cs_new_protected:Npn \@@_note_ref:nn #1#2
   {
     \group_begin:
     \tl_set:Nn \l_@@_note_ref_label_tl {#2}
-    \UseHook { postnotes/ref/begin }
     \@@_typeset_mark_wrapper:nnn
       {
         \bool_lazy_and:nnTF
@@ -1135,8 +1129,8 @@
           }
           { \@@_make_mark:nnn { \ref*{#2} } { } { } }
       }
-      { \UseHook { postnotes/ref/mark/begin } }
-      { \UseHook { postnotes/ref/mark/end } }
+      { \@@_tagsup_postnoteref_begin: }
+      { \@@_tagsup_postnoteref_end: }
     \group_end:
   }
 %    \end{macrocode}
@@ -1290,8 +1284,6 @@
 %    \begin{macrocode}
 \NewHook { postnotes/print/begin }
 \NewHook { postnotes/print/note/begin }
-\NewHook { postnotes/print/content/begin }
-\NewHook { postnotes/print/content/end }
 %    \end{macrocode}
 %
 %
@@ -2338,9 +2330,6 @@
 % \end{macro}
 %
 %    \begin{macrocode}
-\NewHook { postnotes/zref/begin }
-\NewHook { postnotes/zref/mark/begin }
-\NewHook { postnotes/zref/mark/end }
 \AddToHook { package/zref-user/after }
   {
 %    \end{macrocode}
@@ -2375,7 +2364,6 @@
       {
         \group_begin:
         \tl_set:Nn \l_@@_note_zref_zlabel_tl {#2}
-        \UseHook { postnotes/zref/begin }
         \@@_typeset_mark_wrapper:nnn
           {
             \bool_lazy_all:nTF
@@ -2391,8 +2379,8 @@
               }
               { \@@_make_mark:nnn { \zref{#2} } { } { } }
           }
-          { \UseHook { postnotes/zref/mark/begin } }
-          { \UseHook { postnotes/zref/mark/end } }
+          { \@@_tagsup_postnotezref_begin: }
+          { \@@_tagsup_postnotezref_end:   }
         \group_end:
       }
 %    \end{macrocode}
@@ -2761,6 +2749,10 @@
 \cs_new_eq:NN \@@_tagsup_print_note_end: \prg_do_nothing:
 \cs_new_eq:NN \@@_tagsup_print_text_begin: \prg_do_nothing:
 \cs_new_eq:NN \@@_tagsup_print_text_end: \prg_do_nothing:
+\cs_new_eq:NN \@@_tagsup_postnoteref_begin: \prg_do_nothing:
+\cs_new_eq:NN \@@_tagsup_postnoteref_end: \prg_do_nothing:
+\cs_new_eq:NN \@@_tagsup_postnotezref_begin: \prg_do_nothing:
+\cs_new_eq:NN \@@_tagsup_postnotezref_end: \prg_do_nothing:
 \AddToHook { package/tagpdf/after }
   {
     % CHECK As far as I can tell, we don't "own" these tags in the relevant
@@ -2792,6 +2784,7 @@
         \tag_struct_end: % endnotemark
         \tag_mc_begin_pop:n{}
       }
+    % \printpostnotes
     \cs_set:Npn \@@_tagsup_print_note_begin:
       {
         \bool_if:NTF \l_@@_print_as_list_bool
@@ -2803,8 +2796,8 @@
               {
                 tag = endnote ,
                 label = { postnote. \l_postnotes_print_note_id_tl } ,
-                % CHECK Should we really add a back reference here?  I couldn't
-                % find any hint about this in the standards, but
+                % CHECK Should we really add a back reference here?  I
+                % couldn't find any hint about this in the standards, but
                 % latex-lab-footnotes does it.  No harm, I guess.
                 ref = { postnotemark. \l_postnotes_print_note_id_tl } ,
               }
@@ -2816,6 +2809,7 @@
           { \tag_struct_end: } % LI
           { \tag_struct_end: } % endnote
       }
+
     \cs_set:Npn \@@_tagsup_print_text_begin:
       {
         \bool_if:NTF \l_@@_print_as_list_bool
@@ -2860,29 +2854,6 @@
             \tag_mc_begin_pop:n{}
           }
       }
-    \cs_new:Npn \@@_tagsup_print_list_begin:
-      { \tag_struct_begin:n { tag=L, attribute-class=enumerate } }
-    \cs_new:Npn \@@_tagsup_print_list_end:
-      { \tag_struct_end: } % L
-
-    % https://tex.stackexchange.com/q/703083
-    \AddToHook { postnotes/print/begin }
-      {
-        \bool_if:NT \l_@@_print_as_list_bool
-          {
-            \exp_args:Ne \AddToHookNext
-              { env / \l_@@_print_env_tl / begin}
-              {
-                \cs_set_eq:NN \__block_list_begin: \@@_tagsup_print_list_begin:
-                \cs_set_eq:NN \__block_list_end: \@@_tagsup_print_list_end:
-                \cs_set_eq:NN \__block_list_item_begin: \prg_do_nothing:
-                \cs_set_eq:NN \__block_list_item_end: \prg_do_nothing:
-                \cs_set_eq:NN \__kernel_list_label_begin: \prg_do_nothing:
-                \cs_set_eq:NN \__kernel_list_label_end: \prg_do_nothing:
-                \tagtool{para=false}
-              }
-          }
-      }
 
     \cs_new_protected:Npn \@@_tagsup_text_mark_wrapper:n #1
       {
@@ -2907,9 +2878,33 @@
       }
     \cs_set_eq:NN \@@_text_mark_wrapper:n \@@_tagsup_text_mark_wrapper:n
 
+    % https://tex.stackexchange.com/q/703083
+    \cs_new:Npn \@@_tagsup_print_list_begin:
+      { \tag_struct_begin:n { tag=L, attribute-class=enumerate } }
+    \cs_new:Npn \@@_tagsup_print_list_end:
+      { \tag_struct_end: } % L
+    \AddToHook { postnotes/print/begin }
+      {
+        \bool_if:NT \l_@@_print_as_list_bool
+          {
+            \exp_args:Ne \AddToHookNext
+              { env / \l_@@_print_env_tl / begin}
+              {
+                \cs_set_eq:NN \__block_list_begin:
+                  \@@_tagsup_print_list_begin:
+                \cs_set_eq:NN \__block_list_end:
+                  \@@_tagsup_print_list_end:
+                \cs_set_eq:NN \__block_list_item_begin: \prg_do_nothing:
+                \cs_set_eq:NN \__block_list_item_end: \prg_do_nothing:
+                \cs_set_eq:NN \__kernel_list_label_begin: \prg_do_nothing:
+                \cs_set_eq:NN \__kernel_list_label_end: \prg_do_nothing:
+                \tagtool{para=false}
+              }
+          }
+      }
 
 
-    % Setup for \label inside the note.
+    % Setup for \label and \zlabel inside the note.
     \bool_new:N \l_@@_inside_note_bool
     \AddToHookWithArguments { label }
       {
@@ -2921,18 +2916,14 @@
       }
     \AddToHook { postnotes/print/note/begin } [ postnotes ]
       { \bool_set_true:N \l_@@_inside_note_bool }
-    % 'ltproperties' property for use with \postnoteref and \postnotezref
     \property_new:nnnn { postnotes/tagsup@noteid } { now } { 0 }
       { \l_postnotes_print_note_id_tl }
-    % Setup for \zlabel inside the note.
-    \bool_new:N \g_@@_zrefuser_loaded_bool
     \AddToHook { package/zref-user/after } [ postnotes ]
       {
-        \bool_gset_true:N \g_@@_zrefuser_loaded_bool
-        \zref@newprop { postnotes/tagsup@noteid } [ 0 ]
+        \zref@newprop { postnotes@tagsup@noteid } [ 0 ]
           { \l_postnotes_print_note_id_tl }
         \AddToHook { postnotes/print/note/begin } [ postnotes ]
-          { \zref@localaddprop { main } { postnotes/tagsup@noteid } }
+          { \zref@localaddprop { main } { postnotes@tagsup@noteid } }
       }
 
 
@@ -2940,8 +2931,8 @@
     \AddToHook { postnotes/note/store } [ postnotes ]
       {
         % Based on this property we set a dedicated label at
-        % postnotes/print/content/begin (above) from which \postnoteref
-        % can find the struct_num of the printed contents.
+        % postnotes/print/note/begin (below) from which \postnoteref  and
+        % \postnotezref can find the note ID of the printed contents.
         \tl_if_empty:NF \l_@@_note_label_tl
           {
             \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
@@ -2982,173 +2973,107 @@
       }
 
 
-    % \postnote
-    % \AddToHook { postnotes/note/mark/begin } [ postnotes ]
-    %   {
-    %     % TODO start tagging for postnote mark here
-    %
-    %     % Store structnum
-    %     \tl_set:Ne \l_@@_tag_currentstruct_tl
-    %       { \int_use:N \g_@@_temp_struct_num_int }
-    %   }
-    % \AddToHook { postnotes/note/store } [ postnotes ]
-    %   {
-    %     % Store structnum
-    %     \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
-    %       { tagsup@structnum } \l_@@_tag_currentstruct_tl
-    %   }
-    % \AddToHook { postnotes/note/mark/end } [ postnotes ]
-    %   {
-    %     % TODO end tagging for postnote mark here
-    %   }
-    \AddToHook { postnotes/print/content/begin } [ postnotes ]
-      {
-        % TODO start tagging for postnote text here
-
-        % Set cross-refs for \postnote
-        \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
-          { tagsup@structnum } \l_@@_restore_tmp_tl
-        % The variable may be empty in case the property was not present,
-        % which can occur if the postnote was set with nomark option, in which
-        % case there is no tagging cross-reference to make.
-        \tl_if_empty:NF \l_@@_restore_tmp_tl
-          {
-            \prop_gput:NVe \g_@@_tag_postnote_crossrefs_prop
-              \l_@@_restore_tmp_tl { \int_use:N \g_@@_temp_struct_num_int }
-          }
-
-      }
-    \AddToHook { postnotes/print/content/end } [ postnotes ]
-      {
-        % TODO end tagging for postnote text here
-      }
-
-    % 'ltproperties' property for use with \postnoteref and \postnotezref
-    % Default "1" is the same used in 'latex-lab-footnotes.dtx', I presume it
-    % is the equivalent of 'DocStart' in the context of tagging.
-    \property_new:nnnn { postnotes/tag@struct } { now } { 1 }
-      { \int_use:N \g_@@_temp_struct_num_int }
-
-
     % \postnoteref
-    \AddToHook { postnotes/ref/mark/begin } [ postnotes ]
+    \cs_set:Nn \@@_tagsup_postnoteref_begin:
       {
-        % TODO start tagging for postnoteref here
-
-        % Set cross-refs for \postnoteref
+        \tag_mc_end_push:
         % If we have a label coming from a \label inside the note.
-        \property_if_recorded:eeT
-          { postnote@tag@innote. \l_@@_note_ref_label_tl }
-          { postnotes/tag@struct }
+        \property_if_recorded:eeTF
+          { postnote@label@innote. \l_@@_note_ref_label_tl }
+          { postnotes/tagsup@noteid }
           {
-            \prop_gput:Nee \g_@@_tag_postnoteref_crossrefs_prop
-              { \int_use:N \g_@@_temp_struct_num_int }
+            \tl_set:Ne \l_@@_tmpa_tl
               {
                 \property_ref:ee
-                  { postnote@tag@innote. \l_@@_note_ref_label_tl }
-                  { postnotes/tag@struct }
+                  { postnote@label@innote. \l_@@_note_ref_label_tl }
+                  { postnotes/tagsup@noteid }
               }
-          }
-        % If we have a label coming from a label option.
-        \property_if_recorded:eeT
-          { postnote@tag@option. \l_@@_note_ref_label_tl }
-          { postnotes/tag@struct }
-          {
-            \prop_gput:Nee \g_@@_tag_postnoteref_crossrefs_prop
-              { \int_use:N \g_@@_temp_struct_num_int }
+            \tag_struct_begin:n
               {
-                \property_ref:ee
-                  { postnote@tag@option. \l_@@_note_ref_label_tl }
-                  { postnotes/tag@struct }
+                tag = endnotemark ,
+                ref = { postnote. \l_@@_tmpa_tl } ,
               }
           }
+          {
+            % If we have a label coming from a label option.
+            \property_if_recorded:eeTF
+              { postnote@label@option. \l_@@_note_ref_label_tl }
+              { postnotes/tagsup@noteid }
+              {
+                \tl_set:Ne \l_@@_tmpa_tl
+                  {
+                    \property_ref:ee
+                      { postnote@label@option. \l_@@_note_ref_label_tl }
+                      { postnotes/tagsup@noteid }
+                  }
+                \tag_struct_begin:n
+                  {
+                    tag = endnotemark ,
+                    ref = { postnotemark. \l_@@_tmpa_tl } ,
+                  }
+              }
+              { \tag_struct_begin:n { tag = endnotemark } }
+          }
+        \tag_mc_begin:n{}
       }
-    \AddToHook { postnotes/ref/mark/end } [ postnotes ]
+    \cs_set:Nn \@@_tagsup_postnoteref_end:
       {
-        % TODO end tagging for postnoteref here
+        \tag_mc_end:
+        \tag_struct_end: % endnotemark
+        \tag_mc_begin_pop:n{}
       }
-
 
 
     % \postnotezref
     \AddToHook { package/zref-user/after } [ postnotes ]
       {
-        \AddToHook { postnotes/zref/mark/begin } [ postnotes ]
+        \cs_set:Nn \@@_tagsup_postnotezref_begin:
           {
-            % TODO start tagging for postnotezref here
-
-            % Set cross-refs for \postnotezref
+            \tag_mc_end_push:
             % If we have a label coming from a \zlabel inside the note.
             \zref@ifrefcontainsprop { \l_@@_note_zref_zlabel_tl }
-              { postnotes/tag@struct }
+              { postnotes@tagsup@noteid }
               {
-                \prop_gput:Nee \g_@@_tag_postnotezref_crossrefs_prop
-                  { \int_use:N \g_@@_temp_struct_num_int }
+                \tl_set:Ne \l_@@_tmpa_tl
                   {
                     \zref@extract { \l_@@_note_zref_zlabel_tl }
-                      { postnotes/tag@struct }
+                      { postnotes@tagsup@noteid }
                   }
-              }
-              { }
-            % If we have a label coming from a zlabel option.
-            \property_if_recorded:eeT
-              { postnote@tag@option@z. \l_@@_note_zref_zlabel_tl }
-              { postnotes/tag@struct }
-              {
-                \prop_gput:Nee \g_@@_tag_postnotezref_crossrefs_prop
-                  { \int_use:N \g_@@_temp_struct_num_int }
+                \tag_struct_begin:n
                   {
-                    \property_ref:ee
-                      { postnote@tag@option@z. \l_@@_note_zref_zlabel_tl }
-                      { postnotes/tag@struct }
+                    tag = endnotemark ,
+                    ref = { postnote. \l_@@_tmpa_tl } ,
                   }
               }
+              {
+                % If we have a label coming from a zlabel option.
+                \property_if_recorded:eeTF
+                  { postnote@zlabel@option. \l_@@_note_zref_zlabel_tl }
+                  { postnotes/tagsup@noteid }
+                  {
+                    \tl_set:Ne \l_@@_tmpa_tl
+                      {
+                        \property_ref:ee
+                          { postnote@zlabel@option. \l_@@_note_zref_zlabel_tl }
+                          { postnotes/tagsup@noteid }
+                      }
+                    \tag_struct_begin:n
+                      {
+                        tag = endnotemark ,
+                        ref = { postnotemark. \l_@@_tmpa_tl } ,
+                      }
+                  }
+                  { \tag_struct_begin:n { tag = endnotemark } }
+              }
+            \tag_mc_begin:n{}
           }
-        \AddToHook { postnotes/zref/mark/end } [ postnotes ]
+        \cs_set:Nn \@@_tagsup_postnotezref_end:
           {
-            % TODO end tagging for postnotezref here
+            \tag_mc_end:
+            \tag_struct_end: % endnotemark
+            \tag_mc_begin_pop:n{}
           }
-
-
-        % Setup for zlabel option.
-
       }
-
-    %%%% Temporary %%%%
-    % Just some stuff for generating preliminary association lists and
-    % inspecting them.
-
-    % For the time being, pretend this is '\tag_get:n{struct_num}'
-    \int_new:N \g_@@_temp_struct_num_int
-    \AddToHook{para/before}{ \int_gincr:N \g_@@_temp_struct_num_int }
-
-    \prop_new:N \g_@@_tag_postnote_crossrefs_prop
-    \prop_new:N \g_@@_tag_postnoteID_to_structnum_prop
-    \prop_new:N \g_@@_tag_printID_to_structnum_prop
-    \prop_new:N \g_@@_tag_postnoteref_crossrefs_prop
-    \prop_new:N \g_@@_tag_postnotezref_crossrefs_prop
-
-    \AddToHook { postnotes/note/store }
-      {
-        \prop_gput:Nee \g_@@_tag_postnoteID_to_structnum_prop
-          { \l_postnotes_note_id_tl }
-          { \int_use:N \g_@@_temp_struct_num_int }
-      }
-    \AddToHook { postnotes/print/content/begin }
-      {
-        \prop_gput:Nee \g_@@_tag_printID_to_structnum_prop
-          { \l_postnotes_print_note_id_tl }
-          { \int_use:N \g_@@_temp_struct_num_int }
-      }
-    \AddToHook { enddocument }
-      {
-        \prop_show:N \g_@@_tag_postnoteID_to_structnum_prop
-        \prop_show:N \g_@@_tag_printID_to_structnum_prop
-        \prop_show:N \g_@@_tag_postnote_crossrefs_prop
-        \prop_show:N \g_@@_tag_postnoteref_crossrefs_prop
-        \prop_show:N \g_@@_tag_postnotezref_crossrefs_prop
-      }
-    %%%% End of temporary %%%%
   }
 %    \end{macrocode}
 %
