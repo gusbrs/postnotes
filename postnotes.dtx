@@ -2884,6 +2884,81 @@
       }
     \cs_set_eq:NN \@@_text_mark_wrapper:n \@@_tagsup_text_mark_wrapper:n
 
+
+
+    % Setup for \label inside the note.
+    \bool_new:N \l_@@_inside_note_bool
+    \AddToHookWithArguments { label }
+      {
+        \bool_if:NT \l_@@_inside_note_bool
+          {
+            \property_record:nn { postnote@label@innote. #1 }
+              { postnotes/tagsup@noteid }
+          }
+      }
+    \AddToHook { postnotes/print/note/begin } [ postnotes ]
+      { \bool_set_true:N \l_@@_inside_note_bool }
+    % 'ltproperties' property for use with \postnoteref and \postnotezref
+    \property_new:nnnn { postnotes/tagsup@noteid } { now } { 0 }
+      { \l_postnotes_print_note_id_tl }
+    % Setup for \zlabel inside the note.
+    \bool_new:N \g_@@_zrefuser_loaded_bool
+    \AddToHook { package/zref-user/after } [ postnotes ]
+      {
+        \bool_gset_true:N \g_@@_zrefuser_loaded_bool
+        \zref@newprop { postnotes/tagsup@noteid } [ 0 ]
+          { \l_postnotes_print_note_id_tl }
+        \AddToHook { postnotes/print/note/begin } [ postnotes ]
+          { \zref@localaddprop { main } { postnotes/tagsup@noteid } }
+      }
+
+
+    % Setup for label and zlabel options.
+    \AddToHook { postnotes/note/store } [ postnotes ]
+      {
+        % Based on this property we set a dedicated label at
+        % postnotes/print/content/begin (above) from which \postnoteref
+        % can find the struct_num of the printed contents.
+        \tl_if_empty:NF \l_@@_note_label_tl
+          {
+            \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
+              { label } \l_@@_note_label_tl
+          }
+      }
+    \AddToHook { package/zref-user/after } [ postnotes ]
+      {
+        \AddToHook { postnotes/note/store } [ postnotes ]
+          {
+            \tl_if_empty:NF \l_@@_note_zlabel_tl
+              {
+                \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
+                  { zlabel } \l_@@_note_zlabel_tl
+              }
+          }
+      }
+    \AddToHook { postnotes/print/note/begin } [ postnotes ]
+      {
+        % Set labels for label/zlabel options in \postnote, for use in setting
+        % cross-references for \postnoteref and \postnotezref.
+        \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
+          { label } \l_@@_restore_tmp_tl
+        \tl_if_empty:NF \l_@@_restore_tmp_tl
+          {
+            \exp_args:Ne \property_record:nn
+              { postnote@label@option. \l_@@_restore_tmp_tl }
+              { postnotes/tagsup@noteid }
+          }
+        \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
+          { zlabel } \l_@@_restore_tmp_tl
+        \tl_if_empty:NF \l_@@_restore_tmp_tl
+          {
+            \exp_args:Ne \property_record:nn
+              { postnote@zlabel@option. \l_@@_restore_tmp_tl }
+              { postnotes/tagsup@noteid }
+          }
+      }
+
+
     % \postnote
     % \AddToHook { postnotes/note/mark/begin } [ postnotes ]
     %   {
@@ -2919,27 +2994,6 @@
               \l_@@_restore_tmp_tl { \int_use:N \g_@@_temp_struct_num_int }
           }
 
-        % Set labels for label/zlabel options in \postnote, for use in setting
-        % cross-references for \postnoteref and \postnotezref.  But it is done
-        % here because sequence matters, we must get a current struct_num, for
-        % which we must come after the tagging started.
-        % CHECK Can we actually be setting labels at this point?
-        \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
-          { label } \l_@@_restore_tmp_tl
-        \tl_if_empty:NF \l_@@_restore_tmp_tl
-          {
-            \exp_args:Ne \property_record:nn
-              { postnote@tag@option. \l_@@_restore_tmp_tl }
-              { postnotes/tag@struct }
-          }
-        \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
-          { zlabel } \l_@@_restore_tmp_tl
-        \tl_if_empty:NF \l_@@_restore_tmp_tl
-          {
-            \exp_args:Ne \property_record:nn
-              { postnote@tag@option@z. \l_@@_restore_tmp_tl }
-              { postnotes/tag@struct }
-          }
       }
     \AddToHook { postnotes/print/content/end } [ postnotes ]
       {
@@ -2991,31 +3045,6 @@
         % TODO end tagging for postnoteref here
       }
 
-    % Setup for \label inside the note.
-    \bool_new:N \l_@@_inside_note_bool
-    \AddToHookWithArguments { label }
-      {
-        \bool_if:NT \l_@@_inside_note_bool
-          {
-            \property_record:nn { postnote@tag@innote. #1 }
-              { postnotes/tag@struct }
-          }
-      }
-    \AddToHook { postnotes/print/note/begin } [ postnotes ]
-      { \bool_set_true:N \l_@@_inside_note_bool }
-
-    % Setup for label option.
-    \AddToHook { postnotes/note/store } [ postnotes ]
-      {
-        % Based on this property we set a dedicated label at
-        % postnotes/print/content/begin (above) from which \postnoteref
-        % can find the struct_num of the printed contents.
-        \tl_if_empty:NF \l_@@_note_label_tl
-          {
-            \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
-              { label } \l_@@_note_label_tl
-          }
-      }
 
 
     % \postnotezref
@@ -3057,21 +3086,9 @@
             % TODO end tagging for postnotezref here
           }
 
-        % Setup for \zlabel inside the note.
-        \zref@newprop { postnotes/tag@struct } [ 1 ]
-          { \int_use:N \g_@@_temp_struct_num_int }
-        \AddToHook { postnotes/print/note/begin } [ postnotes ]
-          { \zref@localaddprop { main } { postnotes/tag@struct } }
 
         % Setup for zlabel option.
-        \AddToHook { postnotes/note/store } [ postnotes ]
-          {
-            \tl_if_empty:NF \l_@@_note_zlabel_tl
-              {
-                \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
-                  { zlabel } \l_@@_note_zlabel_tl
-              }
-          }
+
       }
 
     %%%% Temporary %%%%
