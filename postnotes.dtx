@@ -2789,15 +2789,13 @@
     \cs_set:Npn \@@_tagsup_mark_end:
       {
         \tag_mc_end:
-        \tag_struct_end:
+        \tag_struct_end: % endnotemark
         \tag_mc_begin_pop:n{}
       }
     \cs_set:Npn \@@_tagsup_print_note_begin:
       {
         \bool_if:NTF \l_@@_print_as_list_bool
-          {
-            \tag_struct_begin:n { tag=LI }
-          }
+          { \tag_struct_begin:n { tag=LI } }
           {
             \mode_leave_vertical:
             \tag_mc_end_push:
@@ -2815,34 +2813,32 @@
     \cs_set:Npn \@@_tagsup_print_note_end:
       {
         \bool_if:NTF \l_@@_print_as_list_bool
-          {
-            \tag_struct_end: % LI
-          }
-          {
-            \tag_struct_end: % endnote
-          }
+          { \tag_struct_end: } % LI
+          { \tag_struct_end: } % endnote
       }
     \cs_set:Npn \@@_tagsup_print_text_begin:
       {
-         \bool_if:NT \l_@@_print_as_list_bool
-           {
-             \tag_struct_begin:n { tag=LBody }
-             \tag_struct_begin:n
-               {
-                 tag = endnote ,
-                 label = { postnote. \l_postnotes_print_note_id_tl } ,
-                 % CHECK Ditto.
-                 ref = { postnotemark. \l_postnotes_print_note_id_tl } ,
-               }
-           }
-        \tag_struct_begin:n { tag=text-unit }
-        \tag_struct_begin:n { tag=text }
-        \bool_if:NT \l_@@_print_as_list_bool
+        \bool_if:NTF \l_@@_print_as_list_bool
           {
+            \tag_struct_begin:n { tag=LBody }
+            \tag_struct_begin:n
+              {
+                tag = endnote ,
+                label = { postnote. \l_postnotes_print_note_id_tl } ,
+                % CHECK Ditto.
+                ref = { postnotemark. \l_postnotes_print_note_id_tl } ,
+              }
+            \tag_struct_begin:n { tag=text-unit }
+            \tag_struct_begin:n { tag=text }
             \mode_leave_vertical:
             \tagtool{para=true}
+            \tag_mc_begin:n{}
           }
-        \tag_mc_begin:n{}
+          {
+            \tag_struct_begin:n { tag=text-unit }
+            \tag_struct_begin:n { tag=text }
+            \tag_mc_begin:n{}
+          }
       }
     \cs_set:Npn \@@_tagsup_print_text_end:
       {
@@ -2850,24 +2846,24 @@
           {
             \tag_mc_end:
             \tagtool{para=false}
+            \tag_struct_end: % text
+            \tag_struct_end: % text-unit
+            \tag_struct_end: % endnote
+            \tag_struct_end: % LBody
+            \tag_mc_begin_pop:n{}
           }
           {
             % instead of \tag_mc_end: because of \par in listenv=none
             \tag_mc_end_push:
+            \tag_struct_end: % text
+            \tag_struct_end: % text-unit
+            \tag_mc_begin_pop:n{}
           }
-        \tag_struct_end: % text
-        \tag_struct_end: % text-unit
-        \bool_if:NT \l_@@_print_as_list_bool
-          {
-            \tag_struct_end: % endnote
-            \tag_struct_end: % LBody
-          }
-        \tag_mc_begin_pop:n{}
       }
     \cs_new:Npn \@@_tagsup_print_list_begin:
       { \tag_struct_begin:n { tag=L, attribute-class=enumerate } }
     \cs_new:Npn \@@_tagsup_print_list_end:
-      { \tag_struct_end: }
+      { \tag_struct_end: } % L
 
     % https://tex.stackexchange.com/q/703083
     \AddToHook { postnotes/print/begin }
