@@ -2976,11 +2976,12 @@
     % needed, and how it could be used.  But... I trust Ulrike knows better
     % than me.
     \prop_new:N \g_@@_tagsup_crossrefs_prop
-    \cs_new_protected:Npn \@@_tagsup_store_crossref:N #1 % ID number of note
+    % #1: "postnote" or "postnotemark" ; #2: ID number of note
+    \cs_new_protected:Npn \@@_tagsup_store_crossref:nN #1#2
       {
         \prop_gput:Nee \g_@@_tagsup_crossrefs_prop
           { \tag_get:n { struct_num } }
-          { \property_ref:ee { tagpdfstruct-postnote. #1 } { tagstruct } }
+          { \property_ref:ee { tagpdfstruct-#1. #2 } { tagstruct } }
       }
     % See \__fnote_gput_ref:nn
     % #1 the structnum receiving the ref of structnum #2
@@ -2989,6 +2990,11 @@
         \tag_if_active:T
           { \tag_struct_gput:nne {#1} {ref} { \tag_struct_object_ref:e {#2} } }
       }
+    % The actual inclusion of the reference has to be done at the end, since
+    % the "ref" option called by \tag_struct_begin:n does not check if the
+    % variable to store the refs already exists, resulting in a clash if we
+    % add immediately and a \posnoteref is made before \printposnotes, and
+    % also so that the "main" reference always comes first at the list.
     \AddToHook{ tagpdf/finish/before } [ postnotes ]
       {
         \prop_map_inline:Nn \g_@@_tagsup_crossrefs_prop
@@ -3016,7 +3022,7 @@
                 tag = endnotemark ,
                 ref = { postnote. \l_@@_tmpa_tl } ,
               }
-            \@@_tagsup_store_crossref:N \l_@@_tmpa_tl
+            \@@_tagsup_store_crossref:nN { postnote } \l_@@_tmpa_tl
           }
           {
             % If we have a label coming from a label option.
@@ -3035,7 +3041,8 @@
                     tag = endnotemark ,
                     ref = { postnotemark. \l_@@_tmpa_tl } ,
                   }
-                \@@_tagsup_store_crossref:N \l_@@_tmpa_tl
+                \@@_tagsup_store_crossref:nN
+                  { postnotemark } \l_@@_tmpa_tl
               }
               { \tag_struct_begin:n { tag = endnotemark } }
           }
@@ -3069,7 +3076,7 @@
                     tag = endnotemark ,
                     ref = { postnote. \l_@@_tmpa_tl } ,
                   }
-                \@@_tagsup_store_crossref:N \l_@@_tmpa_tl
+                \@@_tagsup_store_crossref:nN { postnote } \l_@@_tmpa_tl
               }
               {
                 % If we have a label coming from a zlabel option.
@@ -3080,7 +3087,10 @@
                     \tl_set:Ne \l_@@_tmpa_tl
                       {
                         \property_ref:ee
-                          { postnote@zlabel@option. \l_@@_note_zref_zlabel_tl }
+                          {
+                            postnote@zlabel@option.
+                            \l_@@_note_zref_zlabel_tl
+                          }
                           { postnotes/tagsup@noteid }
                       }
                     \tag_struct_begin:n
@@ -3088,7 +3098,8 @@
                         tag = endnotemark ,
                         ref = { postnotemark. \l_@@_tmpa_tl } ,
                       }
-                    \@@_tagsup_store_crossref:N \l_@@_tmpa_tl
+                    \@@_tagsup_store_crossref:nN
+                      { postnotemark } \l_@@_tmpa_tl
                   }
                   { \tag_struct_begin:n { tag = endnotemark } }
               }
