@@ -2598,30 +2598,30 @@
 %
 % \subsection*{PDF Tagging (experimental)}
 %
-% A first thing to consider in tagging end notes is how we want to represent
+% A first thing to consider in tagging endnotes is how we want to represent
 % them in the PDF structure.  My first thought, for lack of another, was:
 % emulate footnotes.  There's no relevant semantic difference at the structure
 % level between the two, and the tagging support for footnotes was done by the
 % pros.  And one distinctive characteristic the the footnotes tagging is that
 % the footnote itself is placed in the structure as a child to the (parent)
-% \texttt{text} element which surrounds the footnote mark.  However, for end
-% notes this introduces a number of problems and complicates things.  While
+% \texttt{text} element which surrounds the footnote mark.  However, for
+% endnotes this introduces a number of problems and complicates things.  While
 % footnotes ``float around'' and have no real structure of their own, that is
-% not true for end notes.  End notes comprise a proper document section, and
-% may be printed in a list environment, etc.  So when the tagging of footnotes
+% not true for endnotes.  Endnotes comprise a proper document section, and may
+% be printed in a list environment, etc.  So when the tagging of footnotes
 % places the footnote structure element as a child element of the mark's
 % surrounding text, this is arguably for a lack of other options.  Where else,
 % after all?  Indeed, a typical \texttt{html} would render footnotes at the
 % end of the page, and not inline.  True the normal \texttt{html} page is much
-% smaller than our typical \texttt{PDF}, but the point stands.  We can have a
-% hover over call out for footnotes, but the same could be done for end notes,
+% smaller than our typical PDF, but the point stands.  We can have a hover
+% over call out for footnotes, but the same could be done for end notes,
 % regardless of the parent-child relation (as long as the required
-% cross-references are in place).  On the other hand, for end notes this is
-% not an issue: they have a natural place to plugged into.  Furthermore,
-% making an end note a child of the text surrounding its mark leaves an empty
-% ``skeleton'' of the end notes' section: the heading, the list structure,
-% etc.  Technically, we could clean that too, but from experience that is an
-% uphill battle against the tagging performed by the kernel/\pkg{tagpdf}.
+% cross-references are in place).  On the other hand, for endnotes this is not
+% an issue: they have a natural place to plugged into.  Furthermore, making an
+% endnote a child of the text surrounding its mark leaves an empty
+% ``skeleton'' of the endnotes section: the heading, the list structure, etc.
+% Technically, we could clean that too, but from experience that is an uphill
+% battle against the tagging performed by the kernel/\pkg{tagpdf}.
 %
 % Finally, the parent-child relation is not required by \texttt{PDF} standards
 % for the relevant structure types.  The \texttt{PDF} 2.0 standard
@@ -2664,7 +2664,7 @@
 %
 % Another smaller but related issue is how to treat the list structure in
 % \cs{printpostnotes} when \opt{listenv} is used.  The natural thing here
-% would be to use a \texttt{enumerate} type list, where the mark is used as
+% would be to use an \texttt{enumerate} type list, where the mark is used as
 % the item's label.  The problem here is that the PDF 2.0 standards determine
 % that the \texttt{FENote} structure element cannot be a child of a
 % \texttt{LI} (list item).  However, we also want the \texttt{endnotelabel}
@@ -2737,6 +2737,20 @@
 % case of labels inside the note.  Auxiliary labels are handled with
 % \pkg{ltproperties} labels.
 %
+% \begin{macro}
+%   {
+%     \@@_tagsup_mark_begin: ,
+%     \@@_tagsup_mark_end: ,
+%     \@@_tagsup_print_note_begin: ,
+%     \@@_tagsup_print_note_end: ,
+%     \@@_tagsup_print_text_begin: ,
+%     \@@_tagsup_print_text_end: ,
+%     \@@_tagsup_postnoteref_begin: ,
+%     \@@_tagsup_postnoteref_end: ,
+%     \@@_tagsup_postnotezref_begin: ,
+%     \@@_tagsup_postnotezref_end: ,
+%   }
+%   Unconditionally define functions used for tagging support.
 %    \begin{macrocode}
 \cs_new_eq:NN \@@_tagsup_mark_begin: \prg_do_nothing:
 \cs_new_eq:NN \@@_tagsup_mark_end: \prg_do_nothing:
@@ -2748,20 +2762,27 @@
 \cs_new_eq:NN \@@_tagsup_postnoteref_end: \prg_do_nothing:
 \cs_new_eq:NN \@@_tagsup_postnotezref_begin: \prg_do_nothing:
 \cs_new_eq:NN \@@_tagsup_postnotezref_end: \prg_do_nothing:
+%    \end{macrocode}
+% \end{macro}
+%
+%    \begin{macrocode}
 \AddToHook { package/tagpdf/after }
   {
-    % CHECK As far as I can tell, we don't "own" these tags in the relevant
-    % namespaces, not even in the "user" namespace (I guess?, since it is just
-    % one shared one).  What happens if someone else creates them before us?
-    % Is there some "provide-tag"?
+%    \end{macrocode}
+% CHECK As far as I can tell, we don't ``own'' these tags in the relevant
+% namespaces, not even in the ``user'' namespace (I guess?, since it is just
+% one shared one).  What happens if someone else creates them before us?  Is
+% there some ``provide-tag''?
+%    \begin{macrocode}
     \tagpdfsetup
       {
         add-new-tag = { tag=endnote, role=FENote } ,
         add-new-tag = { tag=endnotemark, role=Lbl } ,
         add-new-tag = { tag=endnotelabel, role=Lbl } ,
       }
-
-    % \postnote
+%    \end{macrocode}
+% \cs{postnote}
+%    \begin{macrocode}
     \cs_set:Npn \@@_tagsup_mark_begin:
       {
         \tag_mc_end_push:
@@ -2779,7 +2800,9 @@
         \tag_struct_end: % endnotemark
         \tag_mc_begin_pop:n{}
       }
-    % \printpostnotes
+%    \end{macrocode}
+% \cs{printpostnotes}
+%    \begin{macrocode}
     \cs_set:Npn \@@_tagsup_print_note_begin:
       {
         \bool_if:NTF \l_@@_print_as_list_bool
@@ -2791,9 +2814,11 @@
               {
                 tag = endnote ,
                 label = { postnote. \l_postnotes_print_note_id_tl } ,
-                % CHECK Should we really add a back reference here?  I
-                % couldn't find any hint about this in the standards, but
-                % latex-lab-footnotes does it.  No harm, I guess.
+%    \end{macrocode}
+% CHECK Should we really add a back reference here?  I couldn't find any hint
+% about this in the standards, but \pkg{latex-lab-footnotes} does it.  No
+% harm, I guess.
+%    \begin{macrocode}
                 ref = { postnotemark. \l_postnotes_print_note_id_tl } ,
               }
           }
@@ -2804,7 +2829,6 @@
           { \tag_struct_end: } % LI
           { \tag_struct_end: } % endnote
       }
-
     \cs_set:Npn \@@_tagsup_print_text_begin:
       {
         \bool_if:NTF \l_@@_print_as_list_bool
@@ -2814,7 +2838,9 @@
               {
                 tag = endnote ,
                 label = { postnote. \l_postnotes_print_note_id_tl } ,
-                % CHECK Ditto.
+%    \end{macrocode}
+% CHECK Ditto.
+%    \begin{macrocode}
                 ref = { postnotemark. \l_postnotes_print_note_id_tl } ,
               }
             \tag_struct_begin:n { tag=text-unit }
@@ -2842,14 +2868,15 @@
             \tag_mc_begin_pop:n{}
           }
           {
-            % instead of \tag_mc_end: because of \par in listenv=none
+%    \end{macrocode}
+% Instead of \cs{tag_mc_end:} because of \cs{par} in \texttt{listenv=none}.
+%    \begin{macrocode}
             \tag_mc_end_push:
             \tag_struct_end: % text
             \tag_struct_end: % text-unit
             \tag_mc_begin_pop:n{}
           }
       }
-
     \cs_new_protected:Npn \@@_tagsup_text_mark_wrapper:n #1
       {
         \bool_if:NTF \l_@@_print_as_list_bool
@@ -2871,9 +2898,14 @@
             \tag_struct_end:
           }
       }
-    \cs_set_eq:NN \@@_text_mark_wrapper:n \@@_tagsup_text_mark_wrapper:n
-
-    % https://tex.stackexchange.com/q/703083
+    \cs_set_eq:NN \@@_text_mark_wrapper:n
+      \@@_tagsup_text_mark_wrapper:n
+%    \end{macrocode}
+% As far as I can tell, there is no (public) interface to control / tweak /
+% disable the default tagging of lists (see
+% \url{https://tex.stackexchange.com/q/703083}).  So I could only make things
+% work by tampering with \pkg{latex-lab-testphase-block}'s internals.
+%    \begin{macrocode}
     \cs_new:Npn \@@_tagsup_print_list_begin:
       { \tag_struct_begin:n { tag=L, attribute-class=enumerate } }
     \cs_new:Npn \@@_tagsup_print_list_end:
@@ -2897,9 +2929,9 @@
               }
           }
       }
-
-
-    % Setup for \label and \zlabel inside the note.
+%    \end{macrocode}
+% Setup for \cs{label} and \cs{zlabel} inside the note.
+%    \begin{macrocode}
     \bool_new:N \l_@@_inside_note_bool
     \AddToHookWithArguments { label }
       {
@@ -2920,14 +2952,11 @@
         \AddToHook { postnotes/print/note/begin } [ postnotes ]
           { \zref@localaddprop { main } { postnotes@tagsup@noteid } }
       }
-
-
-    % Setup for label and zlabel options.
+%    \end{macrocode}
+% Setup for \opt{label} and \opt{zlabel} options.
+%    \begin{macrocode}
     \AddToHook { postnotes/note/store } [ postnotes ]
       {
-        % Based on this property we set a dedicated label at
-        % postnotes/print/note/begin (below) from which \postnoteref  and
-        % \postnotezref can find the note ID of the printed contents.
         \tl_if_empty:NF \l_@@_note_label_tl
           {
             \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
@@ -2947,8 +2976,6 @@
       }
     \AddToHook { postnotes/print/note/begin } [ postnotes ]
       {
-        % Set labels for label/zlabel options in \postnote, for use in setting
-        % cross-references for \postnoteref and \postnotezref.
         \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
           { label } \l_@@_restore_tmp_tl
         \tl_if_empty:NF \l_@@_restore_tmp_tl
@@ -2966,51 +2993,68 @@
               { postnotes/tagsup@noteid }
           }
       }
-
-
-    % latex-lab-footnotes creates the footnote structure element (FENote tag)
-    % and adds to it a /Ref entry pointing to the structures of \emph{all}
-    % marks related to the note, and that includes \footrefs.  I don't see
-    % anything stating something of the sort in the standards, the backref of
-    % the original mark is already a stretch.  I also fail to see why this is
-    % needed, and how it could be used.  But... I trust Ulrike knows better
-    % than me.
+%    \end{macrocode}
+% \pkg{latex-lab-footnotes} creates the footnote structure element
+% (\texttt{FENote} tag) and adds to it a \texttt{/Ref} entry pointing to the
+% structures of \emph{all} marks related to the note, and that includes
+% \cs{footref}s.  I don't see anything stating something of the sort in the
+% standards, the backref of the original mark is already a stretch.  I also
+% fail to see why this is needed, and how it could be used.  But\dots{} I
+% trust Ulrike knows better than me.
+% \begin{macro}{\@@_tagsup_store_crossref:nN}
+%   \begin{syntax}
+%     \cs{@@_tagsup_store_crossref:nN} \Arg{ref type} \Arg{ID number of note}
+%   \end{syntax}
+%   \meta{ref type} is either ``\texttt{postnote}'' or
+%   ``\texttt{postnotemark}''.
+%    \begin{macrocode}
     \prop_new:N \g_@@_tagsup_crossrefs_prop
-    % #1: "postnote" or "postnotemark" ; #2: ID number of note
     \cs_new_protected:Npn \@@_tagsup_store_crossref:nN #1#2
       {
         \prop_gput:Nee \g_@@_tagsup_crossrefs_prop
           { \tag_get:n { struct_num } }
           { \property_ref:ee { tagpdfstruct-#1. #2 } { tagstruct } }
       }
-    % See \__fnote_gput_ref:nn
-    % #1 the structnum receiving the ref of structnum #2
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\@@_tagsup_gput_ref:nn}
+%   \begin{syntax}
+%     \cs{@@_tagsup_gput_ref:nn} \Arg{structnum refering from}
+%     ~~~~\Arg{structnum being referenced to}
+%   \end{syntax}
+%   See \cs{__fnote_gput_ref:nn}.
+%    \begin{macrocode}
     \cs_new_protected:Npn \@@_tagsup_gput_ref:nn #1#2
       {
         \tag_if_active:T
           { \tag_struct_gput:nne {#1} {ref} { \tag_struct_object_ref:e {#2} } }
       }
-    % The actual inclusion of the reference has to be done at the end, since
-    % the "ref" option called by \tag_struct_begin:n does not check if the
-    % variable to store the refs already exists, resulting in a clash if we
-    % add immediately and a \posnoteref is made before \printposnotes, and
-    % also so that the "main" reference always comes first at the list.
+%    \end{macrocode}
+% \end{macro}
+% The actual inclusion of the reference has to be done at the end, since the
+% \opt{ref} option called by \cs{tag_struct_begin:n} does not check if the
+% variable to store the refs already exists, resulting in a clash if we add it
+% immediately and a \cs{posnoteref} is made before \cs{printposnotes}, and
+% also so that the ``main'' reference always comes first at the list.
+%    \begin{macrocode}
     \AddToHook{ tagpdf/finish/before } [ postnotes ]
       {
         \prop_map_inline:Nn \g_@@_tagsup_crossrefs_prop
           { \@@_tagsup_gput_ref:nn {#2} {#1} }
       }
-
-
-    % \postnoteref
+%    \end{macrocode}
+% \cs{postnoteref}
+%    \begin{macrocode}
     \cs_set:Nn \@@_tagsup_postnoteref_begin:
       {
         \tag_mc_end_push:
-        % If we have a label coming from a \label inside the note.
         \property_if_recorded:eeTF
           { postnote@label@innote. \l_@@_note_ref_label_tl }
           { postnotes/tagsup@noteid }
           {
+%    \end{macrocode}
+% Label coming from a \cs{label} inside the note.
+%    \begin{macrocode}
             \tl_set:Ne \l_@@_tmpa_tl
               {
                 \property_ref:ee
@@ -3022,14 +3066,17 @@
                 tag = endnotemark ,
                 ref = { postnote. \l_@@_tmpa_tl } ,
               }
-            \@@_tagsup_store_crossref:nN { postnote } \l_@@_tmpa_tl
+            \@@_tagsup_store_crossref:nN
+              { postnote } \l_@@_tmpa_tl
           }
           {
-            % If we have a label coming from a label option.
             \property_if_recorded:eeTF
               { postnote@label@option. \l_@@_note_ref_label_tl }
               { postnotes/tagsup@noteid }
               {
+%    \end{macrocode}
+% Label coming from a \opt{label} option.
+%    \begin{macrocode}
                 \tl_set:Ne \l_@@_tmpa_tl
                   {
                     \property_ref:ee
@@ -3054,18 +3101,20 @@
         \tag_struct_end: % endnotemark
         \tag_mc_begin_pop:n{}
       }
-
-
-    % \postnotezref
+%    \end{macrocode}
+% \cs{postnotezref}
+%    \begin{macrocode}
     \AddToHook { package/zref-user/after } [ postnotes ]
       {
         \cs_set:Nn \@@_tagsup_postnotezref_begin:
           {
             \tag_mc_end_push:
-            % If we have a label coming from a \zlabel inside the note.
             \zref@ifrefcontainsprop { \l_@@_note_zref_zlabel_tl }
               { postnotes@tagsup@noteid }
               {
+%    \end{macrocode}
+% Label coming from a \cs{zlabel} inside the note.
+%    \begin{macrocode}
                 \tl_set:Ne \l_@@_tmpa_tl
                   {
                     \zref@extract { \l_@@_note_zref_zlabel_tl }
@@ -3076,14 +3125,17 @@
                     tag = endnotemark ,
                     ref = { postnote. \l_@@_tmpa_tl } ,
                   }
-                \@@_tagsup_store_crossref:nN { postnote } \l_@@_tmpa_tl
+                \@@_tagsup_store_crossref:nN
+                  { postnote } \l_@@_tmpa_tl
               }
               {
-                % If we have a label coming from a zlabel option.
                 \property_if_recorded:eeTF
                   { postnote@zlabel@option. \l_@@_note_zref_zlabel_tl }
                   { postnotes/tagsup@noteid }
                   {
+%    \end{macrocode}
+% Label coming from a \opt{zlabel} option.
+%    \begin{macrocode}
                     \tl_set:Ne \l_@@_tmpa_tl
                       {
                         \property_ref:ee
@@ -3342,3 +3394,7 @@
 % \PrintIndex
 %
 %
+
+% Local Variables:
+% jinx-local-words: "endnote endnotes"
+% End:
