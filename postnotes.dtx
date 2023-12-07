@@ -2818,8 +2818,7 @@
 %    \begin{macrocode}
     \cs_set:Npn \@@_tagsup_print_note_begin:
       {
-        \bool_if:NTF \l_@@_print_as_list_bool
-          { \tag_struct_begin:n { tag=LI } }
+        \bool_if:NF \l_@@_print_as_list_bool
           {
             \mode_leave_vertical:
             \tag_mc_end_push:
@@ -2838,17 +2837,12 @@
       }
     \cs_set:Npn \@@_tagsup_print_note_end:
       {
-        \bool_if:NTF \l_@@_print_as_list_bool
-          { \tag_struct_end: } % LI
+        \bool_if:NF \l_@@_print_as_list_bool
           { \tag_struct_end: } % endnote
       }
     \cs_set:Npn \@@_tagsup_print_mark_begin:
       {
-        \bool_if:NTF \l_@@_print_as_list_bool
-         {
-           \tag_struct_begin:n { tag=endnotelabel }
-           \tag_mc_begin:n{ tag=Lbl }
-         }
+        \bool_if:NF \l_@@_print_as_list_bool
          {
            \tag_struct_begin:n { tag=endnotelabel }
            \tag_mc_begin:n{ tag=Lbl }
@@ -2856,11 +2850,7 @@
       }
     \cs_set:Npn \@@_tagsup_print_mark_end:
       {
-        \bool_if:NTF \l_@@_print_as_list_bool
-         {
-           \tag_mc_end:
-           \tag_struct_end: % endnotelabel
-         }
+        \bool_if:NF \l_@@_print_as_list_bool
          {
            \tag_mc_end:
            \tag_struct_end: % endnotelabel
@@ -2870,7 +2860,6 @@
       {
         \bool_if:NTF \l_@@_print_as_list_bool
           {
-            \tag_struct_begin:n { tag=LBody }
             \tag_struct_begin:n
               {
                 tag = endnote ,
@@ -2882,8 +2871,6 @@
               }
             \tag_struct_begin:n { tag=text-unit }
             \tag_struct_begin:n { tag=text }
-            \mode_leave_vertical:
-            \tag_tool:n { para=true }
             \tag_mc_begin:n{}
           }
           {
@@ -2897,12 +2884,9 @@
         \bool_if:NTF \l_@@_print_as_list_bool
           {
             \tag_mc_end:
-            \tag_tool:n { para=false }
             \tag_struct_end: % text
             \tag_struct_end: % text-unit
             \tag_struct_end: % endnote
-            \tag_struct_end: % LBody
-            \tag_mc_begin_pop:n{}
           }
           {
 %    \end{macrocode}
@@ -2915,12 +2899,12 @@
           }
       }
 %    \end{macrocode}
-% As far as I can tell, there is no (public) interface to control / tweak /
-% disable the default tagging of lists (see
-% \url{https://tex.stackexchange.com/q/703083}).  So I could only make things
-% work by tampering with \pkg{latex-lab-testphase-block}'s internals.
+% As far as I can tell, there is no (public) interface to control / tweak the
+% default tagging of lists (see \url{https://tex.stackexchange.com/q/703083}).
+% So I could only make things work by tampering with
+% \pkg{latex-lab-testphase-block}'s internals.
 %    \begin{macrocode}
-    \cs_new:Npn \@@_tagsup_print_list_begin:
+    \cs_new:Npn \@@_tagsup_print_block_begin:
       { \tag_struct_begin:n { tag=L, attribute-class=enumerate } }
     \cs_new:Npn \@@_tagsup_print_list_end:
       { \tag_struct_end: } % L
@@ -2932,14 +2916,7 @@
               { env / \l_@@_print_env_tl / begin}
               {
                 \cs_set_eq:NN \__block_list_begin:
-                  \@@_tagsup_print_list_begin:
-                \cs_set_eq:NN \__block_list_end:
-                  \@@_tagsup_print_list_end:
-                \cs_set_eq:NN \__block_list_item_begin: \prg_do_nothing:
-                \cs_set_eq:NN \__block_list_item_end: \prg_do_nothing:
-                \cs_set_eq:NN \__kernel_list_label_begin: \prg_do_nothing:
-                \cs_set_eq:NN \__kernel_list_label_end: \prg_do_nothing:
-                \tag_tool:n { para=false }
+                  \@@_tagsup_print_block_begin:
               }
           }
       }
