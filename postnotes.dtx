@@ -1447,9 +1447,9 @@
                   }
                 \@@_tagsup_print_text_begin:
                 \l_@@_print_content_tl
-                \l_@@_post_printnote_tl
                 \@@_tagsup_print_text_end:
                 \@@_tagsup_print_note_end:
+                \l_@@_post_printnote_tl
                 \group_end:
 %    \end{macrocode}
 % For notes, query for next note's type \texttt{after} the current note was
@@ -1538,14 +1538,23 @@
   {
     \bool_if:NTF \l_@@_print_as_list_bool
       {
-        \item [ \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl ]
+        \item
+          [
+            \@@_tagsup_print_mark_begin:
+            \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl
+            \@@_tagsup_print_mark_end:
+          ]
 %    \end{macrocode}
 % Leave vertical mode to avoid ``perhaps a missing \cs{item}'' error for empty
 % notes.
 %    \begin{macrocode}
         \mode_leave_vertical:
       }
-      { \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl }
+      {
+        \@@_tagsup_print_mark_begin:
+        \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl
+        \@@_tagsup_print_mark_end:
+      }
   }
 %    \end{macrocode}
 % \end{macro}
@@ -2743,6 +2752,8 @@
 %     \@@_tagsup_mark_end: ,
 %     \@@_tagsup_print_note_begin: ,
 %     \@@_tagsup_print_note_end: ,
+%     \@@_tagsup_print_mark_begin: ,
+%     \@@_tagsup_print_mark_end: ,
 %     \@@_tagsup_print_text_begin: ,
 %     \@@_tagsup_print_text_end: ,
 %     \@@_tagsup_postnoteref_begin: ,
@@ -2756,6 +2767,8 @@
 \cs_new_eq:NN \@@_tagsup_mark_end: \prg_do_nothing:
 \cs_new_eq:NN \@@_tagsup_print_note_begin: \prg_do_nothing:
 \cs_new_eq:NN \@@_tagsup_print_note_end: \prg_do_nothing:
+\cs_new_eq:NN \@@_tagsup_print_mark_begin: \prg_do_nothing:
+\cs_new_eq:NN \@@_tagsup_print_mark_end: \prg_do_nothing:
 \cs_new_eq:NN \@@_tagsup_print_text_begin: \prg_do_nothing:
 \cs_new_eq:NN \@@_tagsup_print_text_end: \prg_do_nothing:
 \cs_new_eq:NN \@@_tagsup_postnoteref_begin: \prg_do_nothing:
@@ -2829,6 +2842,30 @@
           { \tag_struct_end: } % LI
           { \tag_struct_end: } % endnote
       }
+    \cs_set:Npn \@@_tagsup_print_mark_begin:
+      {
+        \bool_if:NTF \l_@@_print_as_list_bool
+         {
+           \tag_struct_begin:n { tag=endnotelabel }
+           \tag_mc_begin:n{ tag=Lbl }
+         }
+         {
+           \tag_struct_begin:n { tag=endnotelabel }
+           \tag_mc_begin:n{ tag=Lbl }
+         }
+      }
+    \cs_set:Npn \@@_tagsup_print_mark_end:
+      {
+        \bool_if:NTF \l_@@_print_as_list_bool
+         {
+           \tag_mc_end:
+           \tag_struct_end: % endnotelabel
+         }
+         {
+           \tag_mc_end:
+           \tag_struct_end: % endnotelabel
+         }
+      }
     \cs_set:Npn \@@_tagsup_print_text_begin:
       {
         \bool_if:NTF \l_@@_print_as_list_bool
@@ -2877,29 +2914,6 @@
             \tag_mc_begin_pop:n{}
           }
       }
-    \cs_new_protected:Npn \@@_tagsup_text_mark_wrapper:n #1
-      {
-        \bool_if:NTF \l_@@_print_as_list_bool
-          {
-            \item [
-                \tag_struct_begin:n { tag=endnotelabel }
-                \tag_mc_begin:n{ tag=Lbl }
-                \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl
-                \tag_mc_end:
-                \tag_struct_end:
-              ]
-            \mode_leave_vertical:
-          }
-          {
-            \tag_struct_begin:n { tag=endnotelabel }
-            \tag_mc_begin:n{ tag=Lbl }
-            \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl
-            \tag_mc_end:
-            \tag_struct_end:
-          }
-      }
-    \cs_set_eq:NN \@@_text_mark_wrapper:n
-      \@@_tagsup_text_mark_wrapper:n
 %    \end{macrocode}
 % As far as I can tell, there is no (public) interface to control / tweak /
 % disable the default tagging of lists (see
