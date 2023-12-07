@@ -2818,6 +2818,7 @@
         \bool_if:NF \l_@@_print_as_list_bool
           {
             \tag_tool:n { para=false }
+            \mode_leave_vertical:
             \tag_struct_begin:n { tag=L, attribute-class=enumerate }
           }
       }
@@ -2829,7 +2830,10 @@
     \cs_set:Npn \@@_tagsup_print_note_begin:
       {
         \bool_if:NF \l_@@_print_as_list_bool
-          { \tag_struct_begin:n { tag=LI } }
+          {
+            \mode_leave_vertical:
+            \tag_struct_begin:n { tag=LI }
+          }
       }
     \cs_set:Npn \@@_tagsup_print_note_end:
       {
