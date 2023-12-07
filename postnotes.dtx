@@ -2968,6 +2968,34 @@
       }
 
 
+    % latex-lab-footnotes creates the footnote structure element (FENote tag)
+    % and adds to it a /Ref entry pointing to the structures of \emph{all}
+    % marks related to the note, and that includes \footrefs.  I don't see
+    % anything stating something of the sort in the standards, the backref of
+    % the original mark is already a stretch.  I also fail to see why this is
+    % needed, and how it could be used.  But... I trust Ulrike knows better
+    % than me.
+    \prop_new:N \g_@@_tagsup_crossrefs_prop
+    \cs_new_protected:Npn \@@_tagsup_store_crossref:N #1 % ID number of note
+      {
+        \prop_gput:Nee \g_@@_tagsup_crossrefs_prop
+          { \tag_get:n { struct_num } }
+          { \property_ref:ee { tagpdfstruct-postnote. #1 } { tagstruct } }
+      }
+    % See \__fnote_gput_ref:nn
+    % #1 the structnum receiving the ref of structnum #2
+    \cs_new_protected:Npn \@@_tagsup_gput_ref:nn #1#2
+      {
+        \tag_if_active:T
+          { \tag_struct_gput:nne {#1} {ref} { \tag_struct_object_ref:e {#2} } }
+      }
+    \AddToHook{ tagpdf/finish/before } [ postnotes ]
+      {
+        \prop_map_inline:Nn \g_@@_tagsup_crossrefs_prop
+          { \@@_tagsup_gput_ref:nn {#2} {#1} }
+      }
+
+
     % \postnoteref
     \cs_set:Nn \@@_tagsup_postnoteref_begin:
       {
@@ -2988,6 +3016,7 @@
                 tag = endnotemark ,
                 ref = { postnote. \l_@@_tmpa_tl } ,
               }
+            \@@_tagsup_store_crossref:N \l_@@_tmpa_tl
           }
           {
             % If we have a label coming from a label option.
@@ -3006,6 +3035,7 @@
                     tag = endnotemark ,
                     ref = { postnotemark. \l_@@_tmpa_tl } ,
                   }
+                \@@_tagsup_store_crossref:N \l_@@_tmpa_tl
               }
               { \tag_struct_begin:n { tag = endnotemark } }
           }
@@ -3039,6 +3069,7 @@
                     tag = endnotemark ,
                     ref = { postnote. \l_@@_tmpa_tl } ,
                   }
+                \@@_tagsup_store_crossref:N \l_@@_tmpa_tl
               }
               {
                 % If we have a label coming from a zlabel option.
@@ -3057,6 +3088,7 @@
                         tag = endnotemark ,
                         ref = { postnotemark. \l_@@_tmpa_tl } ,
                       }
+                    \@@_tagsup_store_crossref:N \l_@@_tmpa_tl
                   }
                   { \tag_struct_begin:n { tag = endnotemark } }
               }
