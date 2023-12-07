@@ -2788,6 +2788,7 @@
       {
         add-new-tag = { tag=endnote, role=FENote } ,
         add-new-tag = { tag=endnotemark, role=Lbl } ,
+        newattribute = { EndnoteType } { /O /FENote /NoteType /Endnote }
       }
 %    \end{macrocode}
 % \cs{postnote}
@@ -2858,6 +2859,7 @@
             \tag_struct_begin:n
               {
                 tag = endnote ,
+                attribute-class = EndnoteType ,
                 label = { postnote. \l_postnotes_print_note_id_tl } ,
 %    \end{macrocode}
 % CHECK Should we really add a back reference here?  I couldn't find any hint
@@ -2875,6 +2877,7 @@
             \tag_struct_begin:n
               {
                 tag = endnote ,
+                attribute-class = EndnoteType ,
                 label = { postnote. \l_postnotes_print_note_id_tl } ,
                 ref = { postnotemark. \l_postnotes_print_note_id_tl } ,
               }
