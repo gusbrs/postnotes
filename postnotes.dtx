@@ -2609,6 +2609,10 @@
 %
 % \subsection*{PDF Tagging (experimental)}
 %
+% Note: All of this presumes
+% \texttt{\cs{DocumentMetadata}\{testphase=phase-III\}} and was only tested
+% with it.
+%
 % A first thing to consider in tagging endnotes is how we want to represent
 % them in the PDF structure.  My first thought, for lack of another, was:
 % emulate footnotes.  There's no relevant semantic difference at the structure
@@ -2912,7 +2916,7 @@
           }
       }
 %    \end{macrocode}
-% As far as I can tell, there is no (public) interface to control / tweak the
+% As far as I can tell, there is no (public) interface to control/tweak the
 % default tagging of lists (see \url{https://tex.stackexchange.com/q/703083}).
 % So I could only make things work by tampering with
 % \pkg{latex-lab-testphase-block}'s internals.
