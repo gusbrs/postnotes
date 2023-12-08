@@ -121,6 +121,7 @@ jobs:
           path: |
             build/test*/*.diff
             build/test*/*.log
+          retention-days: 5
 
   doc:
     name: Documentation
@@ -154,3 +155,4 @@ jobs:
         with:
           name: doc-logs
           path: build/doc/*.log
+          retention-days: 5
