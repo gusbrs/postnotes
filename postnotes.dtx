@@ -2923,7 +2923,7 @@
 %    \begin{macrocode}
     \cs_new:Npn \@@_tagsup_print_block_begin:
       { \tag_struct_begin:n { tag=L, attribute-class=enumerate } }
-    \AddToHook { postnotes/print/begin }
+    \AddToHook { postnotes/print/begin } [ postnotes ]
       {
         \bool_if:NT \l_@@_print_as_list_bool
           {
@@ -2940,7 +2940,7 @@
 % Setup for \cs{label} and \cs{zlabel} inside the note.
 %    \begin{macrocode}
     \bool_new:N \l_@@_inside_note_bool
-    \AddToHookWithArguments { label }
+    \AddToHookWithArguments { label } [ postnotes ]
       {
         \bool_if:NT \l_@@_inside_note_bool
           {
@@ -3044,7 +3044,7 @@
 % immediately and a \cs{posnoteref} is made before \cs{printposnotes}, and
 % also so that the ``main'' reference always comes first at the list.
 %    \begin{macrocode}
-    \AddToHook{ tagpdf/finish/before } [ postnotes ]
+    \AddToHook { tagpdf/finish/before } [ postnotes ]
       {
         \prop_map_inline:Nn \g_@@_tagsup_crossrefs_prop
           { \@@_tagsup_gput_ref:nn {#2} {#1} }
