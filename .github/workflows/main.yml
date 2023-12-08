@@ -34,6 +34,11 @@ env:
     psnfss
     tex-gyre
     inconsolata
+    # tagging
+    latex-lab
+    pdfmanagement-testphase
+    tagpdf
+    l3experimental
     # Dependencies
     alphalph
     amsmath
