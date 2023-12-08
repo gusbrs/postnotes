@@ -1,0 +1,1327 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: Postnote 1
+============================================================
+Package tagpdf Info: Parent-Child 'Sect' --> 'Lbl'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'endnotemark/user' on
+(tagpdf)             line 45
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 10 tagged /Link
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 9 tagged /endnotemark
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0
+..\hbox(0.0+0.0)x0.0, shifted -12.0
+...\special{pdf:dest (postnote.1.mark)[@thispage/XYZ @xpos @ypos null]}
+...\special{pdf:obj @pdf.SDest.postnote.1.mark[@pdf.obj25/XYZ @xpos @ypos null]}
+...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
+.\write1{\newlabel{en:mark:1}{{1}{\thepage }{Section 1}{postnote.1.mark}{}}}
+.\write1{\zref@newlabel{zen:mark:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}}}
+.\penalty 10000
+.\write1{\new@label@record{tagpdfstruct-postnotemark.1}{{tagstruct}{9}{tagstructobj}{@pdf.obj30}}}
+.\write1{\new@label@record{mcid-4}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{4}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,4,9,endnotemark,,,}
+.\marks4{b+,4,9,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,4,9,}
+.\marks4{e+,4,9,}
+.\write1{\new@label@record{mcid-5}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{5}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,5,10,Link,,,}
+.\marks4{b+,5,10,Link,,,}
+.\special{pdf:bann @pdf.lnk1 <</Type/Annot/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 3 /Subtype/Link/A<<../SD @pdf.SDest.postnote.1.text>>>>}
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+..\mathoff
+.\special{pdf:eann}
+.\write1{\new@label@record{@tag@objr@page@3}{{tagabspage}{\__property_code_tagabspage: }}}
+.\special{pdf:obj @pdf.obj32 << /Type/OBJR/Obj @pdf.lnk1/Pg @page1 >>}
+.\special{pdf:code EMC}
+.\marks4{e-,5,10,}
+.\marks4{e+,5,10,}
+.\write1{\new@label@record{mcid-6}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{6}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,6,9,endnotemark,,,}
+.\marks4{b+,6,9,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,6,9,}
+.\marks4{e+,6,9,}
+! OK.
+l. ...\showbox0
+============================================================
+============================================================
+TEST 2: Postnoterefs 1
+============================================================
+Package tagpdf Info: Parent-Child 'Sect' --> 'Lbl'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'endnotemark/user' on
+(tagpdf)             line 51
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 12 tagged /Link
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 11 tagged /endnotemark
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\write1{\new@label@record{mcid-7}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{7}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,7,11,endnotemark,,,}
+.\marks4{b+,7,11,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,7,11,}
+.\marks4{e+,7,11,}
+.\write1{\new@label@record{mcid-8}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{8}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,8,12,Link,,,}
+.\marks4{b+,8,12,Link,,,}
+.\special{pdf:bann @pdf.lnk2 <</Type/Annot/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 4 /Subtype/Link/A<<../SD @pdf.SDest.postnote.1.text>>>>}
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+...\hbox(0.0+0.0)x0.0
+..\mathoff
+.\special{pdf:eann}
+.\write1{\new@label@record{@tag@objr@page@4}{{tagabspage}{\__property_code_tagabspage: }}}
+.\special{pdf:obj @pdf.obj35 << /Type/OBJR/Obj @pdf.lnk2/Pg @page1 >>}
+.\special{pdf:code EMC}
+.\marks4{e-,8,12,}
+.\marks4{e+,8,12,}
+.\write1{\new@label@record{mcid-9}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{9}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,9,11,endnotemark,,,}
+.\marks4{b+,9,11,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,9,11,}
+.\marks4{e+,9,11,}
+! OK.
+l. ...\showbox0
+Package tagpdf Info: Parent-Child 'Sect' --> 'Lbl'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'endnotemark/user' on
+(tagpdf)             line 55
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 14 tagged /Link
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 13 tagged /endnotemark
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\write1{\new@label@record{mcid-10}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{10}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,10,13,endnotemark,,,}
+.\marks4{b+,10,13,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,10,13,}
+.\marks4{e+,10,13,}
+.\write1{\new@label@record{mcid-11}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{11}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,11,14,Link,,,}
+.\marks4{b+,11,14,Link,,,}
+.\special{pdf:bann @pdf.lnk3 <</Type/Annot/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 5 /Subtype/Link/A<<../SD @pdf.SDest.postnote.1.text>>>>}
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+..\mathoff
+.\special{pdf:eann}
+.\write1{\new@label@record{@tag@objr@page@5}{{tagabspage}{\__property_code_tagabspage: }}}
+.\special{pdf:obj @pdf.obj38 << /Type/OBJR/Obj @pdf.lnk3/Pg @page1 >>}
+.\special{pdf:code EMC}
+.\marks4{e-,11,14,}
+.\marks4{e+,11,14,}
+.\write1{\new@label@record{mcid-12}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{12}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,12,13,endnotemark,,,}
+.\marks4{b+,12,13,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,12,13,}
+.\marks4{e+,12,13,}
+! OK.
+l. ...\showbox0
+Package tagpdf Info: Parent-Child 'Sect' --> 'Lbl'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'endnotemark/user' on
+(tagpdf)             line 59
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 16 tagged /Link
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 15 tagged /endnotemark
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\write1{\new@label@record{mcid-13}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{13}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,13,15,endnotemark,,,}
+.\marks4{b+,13,15,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,13,15,}
+.\marks4{e+,13,15,}
+.\write1{\new@label@record{mcid-14}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{14}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,14,16,Link,,,}
+.\marks4{b+,14,16,Link,,,}
+.\special{pdf:bann @pdf.lnk4 <</Type/Annot/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 6 /Subtype/Link/A<<../SD @pdf.SDest.postnote.1.mark>>>>}
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+...\hbox(0.0+0.0)x0.0
+..\mathoff
+.\special{pdf:eann}
+.\write1{\new@label@record{@tag@objr@page@6}{{tagabspage}{\__property_code_tagabspage: }}}
+.\special{pdf:obj @pdf.obj41 << /Type/OBJR/Obj @pdf.lnk4/Pg @page1 >>}
+.\special{pdf:code EMC}
+.\marks4{e-,14,16,}
+.\marks4{e+,14,16,}
+.\write1{\new@label@record{mcid-15}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{15}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,15,15,endnotemark,,,}
+.\marks4{b+,15,15,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,15,15,}
+.\marks4{e+,15,15,}
+! OK.
+l. ...\showbox0
+Package tagpdf Info: Parent-Child 'Sect' --> 'Lbl'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'endnotemark/user' on
+(tagpdf)             line 63
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 18 tagged /Link
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 17 tagged /endnotemark
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\write1{\new@label@record{mcid-16}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{16}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,16,17,endnotemark,,,}
+.\marks4{b+,16,17,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,16,17,}
+.\marks4{e+,16,17,}
+.\write1{\new@label@record{mcid-17}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{17}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,17,18,Link,,,}
+.\marks4{b+,17,18,Link,,,}
+.\special{pdf:bann @pdf.lnk5 <</Type/Annot/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 7 /Subtype/Link/A<<../SD @pdf.SDest.postnote.1.mark>>>>}
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+..\mathoff
+.\special{pdf:eann}
+.\write1{\new@label@record{@tag@objr@page@7}{{tagabspage}{\__property_code_tagabspage: }}}
+.\special{pdf:obj @pdf.obj44 << /Type/OBJR/Obj @pdf.lnk5/Pg @page1 >>}
+.\special{pdf:code EMC}
+.\marks4{e-,17,18,}
+.\marks4{e+,17,18,}
+.\write1{\new@label@record{mcid-18}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{18}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,18,17,endnotemark,,,}
+.\marks4{b+,18,17,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,18,17,}
+.\marks4{e+,18,17,}
+! OK.
+l. ...\showbox0
+============================================================
+============================================================
+TEST 3: Postnote 2
+============================================================
+Package tagpdf Info: Parent-Child 'Sect' --> 'Lbl'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'endnotemark/user' on
+(tagpdf)             line 70
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 20 tagged /Link
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 19 tagged /endnotemark
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0
+..\hbox(0.0+0.0)x0.0, shifted -12.0
+...\special{pdf:dest (postnote.2.mark)[@thispage/XYZ @xpos @ypos null]}
+...\special{pdf:obj @pdf.SDest.postnote.2.mark[@pdf.obj25/XYZ @xpos @ypos null]}
+...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
+.\write1{\newlabel{en:mark:2}{{2}{\thepage }{Section 1}{postnote.2.mark}{}}}
+.\write1{\zref@newlabel{zen:mark:2}{\default{2}\page{\Z@C@page }\anchor{postnote.2.mark}}}
+.\penalty 10000
+.\write1{\new@label@record{tagpdfstruct-postnotemark.2}{{tagstruct}{19}{tagstructobj}{@pdf.obj45}}}
+.\write1{\new@label@record{mcid-19}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{19}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,19,19,endnotemark,,,}
+.\marks4{b+,19,19,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,19,19,}
+.\marks4{e+,19,19,}
+.\write1{\new@label@record{mcid-20}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{20}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,20,20,Link,,,}
+.\marks4{b+,20,20,Link,,,}
+.\special{pdf:bann @pdf.lnk6 <</Type/Annot/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 8 /Subtype/Link/A<<../SD @pdf.SDest.postnote.2.text>>>>}
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 2
+..\mathoff
+.\special{pdf:eann}
+.\write1{\new@label@record{@tag@objr@page@8}{{tagabspage}{\__property_code_tagabspage: }}}
+.\special{pdf:obj @pdf.obj47 << /Type/OBJR/Obj @pdf.lnk6/Pg @page1 >>}
+.\special{pdf:code EMC}
+.\marks4{e-,20,20,}
+.\marks4{e+,20,20,}
+.\write1{\new@label@record{mcid-21}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{21}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,21,19,endnotemark,,,}
+.\marks4{b+,21,19,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,21,19,}
+.\marks4{e+,21,19,}
+! OK.
+l. ...\showbox0
+============================================================
+============================================================
+TEST 4: Postnoterefs 2
+============================================================
+Package tagpdf Info: Parent-Child 'Sect' --> 'Lbl'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'endnotemark/user' on
+(tagpdf)             line 76
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 22 tagged /Link
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 21 tagged /endnotemark
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\write1{\new@label@record{mcid-22}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{22}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,22,21,endnotemark,,,}
+.\marks4{b+,22,21,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,22,21,}
+.\marks4{e+,22,21,}
+.\write1{\new@label@record{mcid-23}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{23}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,23,22,Link,,,}
+.\marks4{b+,23,22,Link,,,}
+.\special{pdf:bann @pdf.lnk7 <</Type/Annot/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 9 /Subtype/Link/A<<../SD @pdf.SDest.postnote.2.text>>>>}
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 2
+...\hbox(0.0+0.0)x0.0
+..\mathoff
+.\special{pdf:eann}
+.\write1{\new@label@record{@tag@objr@page@9}{{tagabspage}{\__property_code_tagabspage: }}}
+.\special{pdf:obj @pdf.obj50 << /Type/OBJR/Obj @pdf.lnk7/Pg @page1 >>}
+.\special{pdf:code EMC}
+.\marks4{e-,23,22,}
+.\marks4{e+,23,22,}
+.\write1{\new@label@record{mcid-24}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{24}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,24,21,endnotemark,,,}
+.\marks4{b+,24,21,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,24,21,}
+.\marks4{e+,24,21,}
+! OK.
+l. ...\showbox0
+Package tagpdf Info: Parent-Child 'Sect' --> 'Lbl'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'endnotemark/user' on
+(tagpdf)             line 80
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 24 tagged /Link
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 23 tagged /endnotemark
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\write1{\new@label@record{mcid-25}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{25}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,25,23,endnotemark,,,}
+.\marks4{b+,25,23,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,25,23,}
+.\marks4{e+,25,23,}
+.\write1{\new@label@record{mcid-26}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{26}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,26,24,Link,,,}
+.\marks4{b+,26,24,Link,,,}
+.\special{pdf:bann @pdf.lnk8 <</Type/Annot/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 10 /Subtype/Link/A<<../SD @pdf.SDest.postnote.2.text>>>>}
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 2
+..\mathoff
+.\special{pdf:eann}
+.\write1{\new@label@record{@tag@objr@page@10}{{tagabspage}{\__property_code_tagabspage: }}}
+.\special{pdf:obj @pdf.obj53 << /Type/OBJR/Obj @pdf.lnk8/Pg @page1 >>}
+.\special{pdf:code EMC}
+.\marks4{e-,26,24,}
+.\marks4{e+,26,24,}
+.\write1{\new@label@record{mcid-27}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{27}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,27,23,endnotemark,,,}
+.\marks4{b+,27,23,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,27,23,}
+.\marks4{e+,27,23,}
+! OK.
+l. ...\showbox0
+Package tagpdf Info: Parent-Child 'Sect' --> 'Lbl'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'endnotemark/user' on
+(tagpdf)             line 84
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 26 tagged /Link
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 25 tagged /endnotemark
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\write1{\new@label@record{mcid-28}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{28}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,28,25,endnotemark,,,}
+.\marks4{b+,28,25,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,28,25,}
+.\marks4{e+,28,25,}
+.\write1{\new@label@record{mcid-29}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{29}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,29,26,Link,,,}
+.\marks4{b+,29,26,Link,,,}
+.\special{pdf:bann @pdf.lnk9 <</Type/Annot/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 11 /Subtype/Link/A<<../SD @pdf.SDest.postnote.2.mark>>>>}
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 2
+...\hbox(0.0+0.0)x0.0
+..\mathoff
+.\special{pdf:eann}
+.\write1{\new@label@record{@tag@objr@page@11}{{tagabspage}{\__property_code_tagabspage: }}}
+.\special{pdf:obj @pdf.obj56 << /Type/OBJR/Obj @pdf.lnk9/Pg @page1 >>}
+.\special{pdf:code EMC}
+.\marks4{e-,29,26,}
+.\marks4{e+,29,26,}
+.\write1{\new@label@record{mcid-30}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{30}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,30,25,endnotemark,,,}
+.\marks4{b+,30,25,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,30,25,}
+.\marks4{e+,30,25,}
+! OK.
+l. ...\showbox0
+Package tagpdf Info: Parent-Child 'Sect' --> 'Lbl'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'endnotemark/user' on
+(tagpdf)             line 88
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 28 tagged /Link
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 27 tagged /endnotemark
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\write1{\new@label@record{mcid-31}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{31}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,31,27,endnotemark,,,}
+.\marks4{b+,31,27,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,31,27,}
+.\marks4{e+,31,27,}
+.\write1{\new@label@record{mcid-32}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{32}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,32,28,Link,,,}
+.\marks4{b+,32,28,Link,,,}
+.\special{pdf:bann @pdf.lnk10 <</Type/Annot/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 12 /Subtype/Link/A<<../SD @pdf.SDest.postnote.2.mark>>>>}
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 2
+..\mathoff
+.\special{pdf:eann}
+.\write1{\new@label@record{@tag@objr@page@12}{{tagabspage}{\__property_code_tagabspage: }}}
+.\special{pdf:obj @pdf.obj59 << /Type/OBJR/Obj @pdf.lnk10/Pg @page1 >>}
+.\special{pdf:code EMC}
+.\marks4{e-,32,28,}
+.\marks4{e+,32,28,}
+.\write1{\new@label@record{mcid-33}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{33}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,33,27,endnotemark,,,}
+.\marks4{b+,33,27,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,33,27,}
+.\marks4{e+,33,27,}
+! OK.
+l. ...\showbox0
+============================================================
+============================================================
+TEST 5: Postnote 3
+============================================================
+Package tagpdf Info: Parent-Child 'Sect' --> 'Lbl'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'endnotemark/user' on
+(tagpdf)             line 95
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 30 tagged /Link
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 29 tagged /endnotemark
+> \box...=
+\hbox(8.14003+0.0)x4.48613
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0
+..\hbox(0.0+0.0)x0.0, shifted -12.0
+...\special{pdf:dest (postnote.3.mark)[@thispage/XYZ @xpos @ypos null]}
+...\special{pdf:obj @pdf.SDest.postnote.3.mark[@pdf.obj25/XYZ @xpos @ypos null]}
+...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
+.\penalty 10000
+.\write1{\new@label@record{tagpdfstruct-postnotemark.3}{{tagstruct}{29}{tagstructobj}{@pdf.obj60}}}
+.\write1{\new@label@record{mcid-34}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{34}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,34,29,endnotemark,,,}
+.\marks4{b+,34,29,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,34,29,}
+.\marks4{e+,34,29,}
+.\write1{\new@label@record{mcid-35}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{35}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,35,30,Link,,,}
+.\marks4{b+,35,30,Link,,,}
+.\special{pdf:bann @pdf.lnk11 <</Type/Annot/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 13 /Subtype/Link/A<<../SD @pdf.SDest.postnote.3.text>>>>}
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 3
+..\mathoff
+.\special{pdf:eann}
+.\write1{\new@label@record{@tag@objr@page@13}{{tagabspage}{\__property_code_tagabspage: }}}
+.\special{pdf:obj @pdf.obj62 << /Type/OBJR/Obj @pdf.lnk11/Pg @page1 >>}
+.\special{pdf:code EMC}
+.\marks4{e-,35,30,}
+.\marks4{e+,35,30,}
+.\write1{\new@label@record{mcid-36}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{36}{tagmcid}{\__property_code_tagmcid: }}}
+.\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.\marks4{b-,36,29,endnotemark,,,}
+.\marks4{b+,36,29,endnotemark,,,}
+.\special{pdf:code EMC}
+.\marks4{e-,36,29,}
+.\marks4{e+,36,29,}
+! OK.
+l. ...\showbox0
+============================================================
+============================================================
+TEST 6: Print postnotes
+============================================================
+Package tagpdf Info: closing structure 4 tagged /Sect
+Package tagpdf Info: Parent-Child 'Document' --> 'Sect'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Document/pdf2' --> 'Sect/pdf2' on line
+(tagpdf)             108
+Package tagpdf Info: Parent-Child 'Sect' --> 'H1'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'section/latex' on line
+(tagpdf)             108
+Package tagpdf Info: Parent-Child 'H1' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'H1/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 32 tagged /section
+Package tagpdf Info: Parent-Child 'Sect' --> 'L'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'L/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'L' --> 'LI'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'L/pdf2' --> 'LI/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'LI' --> 'Lbl'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'LI/pdf2' --> 'Lbl/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 36 tagged /Link
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 35 tagged /Lbl
+Package tagpdf Info: Parent-Child 'LI' --> 'LBody'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'LI/pdf2' --> 'LBody/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'LBody' --> 'FENote'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'LBody/pdf2' --> 'endnote/user' on line
+(tagpdf)             108
+Package tagpdf Info: Parent-Child 'FENote' --> 'Part'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'FENote/pdf2' --> 'text-unit/latex' on
+(tagpdf)             line 108
+Package tagpdf Info: Parent-Child 'FENote' --> 'P'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'FENote/pdf2' --> 'text/latex' on line
+(tagpdf)             108
+Package tagpdf Info: Parent-Child 'P' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'P/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 40 tagged /text
+Package tagpdf Info: closing structure 39 tagged /text-unit
+Package tagpdf Info: closing structure 38 tagged /endnote
+Package tagpdf Info: closing structure 37 tagged /LBody
+Package tagpdf Info: closing structure 34 tagged /LI
+Package tagpdf Info: Parent-Child 'L' --> 'LI'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'L/pdf2' --> 'LI/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'LI' --> 'Lbl'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'LI/pdf2' --> 'Lbl/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 43 tagged /Link
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 42 tagged /Lbl
+Package tagpdf Info: Parent-Child 'LI' --> 'LBody'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'LI/pdf2' --> 'LBody/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'LBody' --> 'FENote'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'LBody/pdf2' --> 'endnote/user' on line
+(tagpdf)             108
+Package tagpdf Info: Parent-Child 'FENote' --> 'Part'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'FENote/pdf2' --> 'text-unit/latex' on
+(tagpdf)             line 108
+Package tagpdf Info: Parent-Child 'FENote' --> 'P'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'FENote/pdf2' --> 'text/latex' on line
+(tagpdf)             108
+Package tagpdf Info: Parent-Child 'P' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'P/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 47 tagged /text
+Package tagpdf Info: closing structure 46 tagged /text-unit
+Package tagpdf Info: closing structure 45 tagged /endnote
+Package tagpdf Info: closing structure 44 tagged /LBody
+Package tagpdf Info: closing structure 41 tagged /LI
+Package tagpdf Info: Parent-Child 'L' --> 'LI'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'L/pdf2' --> 'LI/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'LI' --> 'Lbl'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'LI/pdf2' --> 'Lbl/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 50 tagged /Link
+Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 49 tagged /Lbl
+Package tagpdf Info: Parent-Child 'LI' --> 'LBody'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'LI/pdf2' --> 'LBody/pdf2' on line ...
+Package tagpdf Info: Parent-Child 'LBody' --> 'FENote'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'LBody/pdf2' --> 'endnote/user' on line
+(tagpdf)             108
+Package tagpdf Info: Parent-Child 'FENote' --> 'Part'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'FENote/pdf2' --> 'text-unit/latex' on
+(tagpdf)             line 108
+Package tagpdf Info: Parent-Child 'FENote' --> 'P'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'FENote/pdf2' --> 'text/latex' on line
+(tagpdf)             108
+Package tagpdf Info: Parent-Child 'P' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'P/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 54 tagged /text
+Package tagpdf Info: closing structure 53 tagged /text-unit
+Package tagpdf Info: Parent-Child 'FENote' --> 'Part'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'FENote/pdf2' --> 'text-unit/latex' on
+(tagpdf)             line 108
+Package tagpdf Info: Parent-Child 'FENote' --> 'P'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'FENote/pdf2' --> 'text/latex' on line
+(tagpdf)             108
+Package tagpdf Info: Parent-Child 'P' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'P/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 56 tagged /text
+Package tagpdf Info: closing structure 55 tagged /text-unit
+====> In \@makecol 2
+Pick up new bot mark!
+=> first b-, 39, 32, section
+=> bot e+, 52, 56
+=> TMB not missing
+=> TME not missing
+The sequence \g__tag_mc_main_marks_seq contains the items (without outer
+braces):
+>  {e+}
+>  {3}
+>  {8}.
+Completed box being shipped out [2]
+\vbox(633.0+0.0)x407.0
+.\hbox(0.0+0.0)x0.0
+..\kern -72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil
+...\kern -72.26999
+...\hbox(0.0+0.0)x0.0
+....\special{pdf: put @thispage <</Tabs /S /StructParents 1 >>}
+....\special{pdf:put @resources <</ExtGState @pdf.obj1>>}
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\vbox(0.0+0.0)x0.0, glue set - 14.99626fil
+..\kern 0.0
+..\kern 16.0
+..\kern -1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 60.99626fil
+...\kern 0.0
+...\kern 62.0
+...\kern -1.00374
+...\special{pdf:dest (page.2)[@thispage/XYZ @xpos @ypos null]}
+...\special{pdf:obj @pdf.SDest.page.2[@pdf.obj87/XYZ @xpos @ypos null]}
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(633.0+0.0)x407.0
+..\glue 16.0
+..\vbox(617.0+0.0)x345.0, shifted 62.0
+...\vbox(12.0+0.0)x345.0, glue set 12.0fil
+....\glue 0.0 plus 1.0fil
+....\special{pdf:nolink}
+....\special{pdf:code /Artifact BMC}
+....\marks4{b-,53,-1,}
+....\marks4{b+,53,-1,}
+....\hbox(0.0+0.0)x345.0
+.....\hbox(0.0+0.0)x345.0
+....\special{pdf:code EMC}
+....\marks4{e-,53,52,}
+....\marks4{e+,53,52,}
+....\special{pdf:link}
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 486.04533fil
+....\hbox(0.0+0.0)x0.0
+....\write-{}
+....\glue(\topskip) 0.12001
+....\hbox(9.87999+0.0)x345.0, glue set 304.15167fil
+.....\write1{\new@label@record{mcid-39}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{39}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /section <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\hbox(0.0+0.0)x0.0
+......\glue 0.0
+......\hbox(0.0+0.0)x0.0
+.......\kern 0.0
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -18.0
+.........\special{pdf:dest (section*.1)[@thispage/XYZ @xpos @ypos null]}
+.........\special{pdf:obj @pdf.SDest.section*.1[@pdf.obj63/XYZ @xpos @ypos null]}
+.........\penalty 10000
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\OT1/cmr/bx/n/14.4 N
+.....\OT1/cmr/bx/n/14.4 o
+.....\OT1/cmr/bx/n/14.4 t
+.....\OT1/cmr/bx/n/14.4 e
+.....\OT1/cmr/bx/n/14.4 s
+.....\special{pdf:code EMC}
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\marks4{b-,39,32,section,,,}
+....\marks4{b+,39,32,section,,,}
+....\marks4{e-,39,32,}
+....\marks4{e+,39,32,}
+....\penalty 10000
+....\glue 9.90276 plus 0.86108
+....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 318.18063fil
+.....\hbox(0.0+0.0)x15.0
+.....\write1{\new@label@record{postnote@label@option.en:mark:1}{{postnotes/tagsup@noteid}{1}}}
+.....\write1{\new@label@record{postnote@zlabel@option.zen:mark:1}{{postnotes/tagsup@noteid}{1}}}
+.....\write1{\new@label@record{mcid-40}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{40}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -11.0
+.......\special{pdf:dest (postnote.1.text)[@thispage/XYZ @xpos @ypos null]}
+.......\special{pdf:obj @pdf.SDest.postnote.1.text[@pdf.obj67/XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
+.....\special{pdf:code EMC}
+.....\write1{\new@label@record{mcid-41}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{41}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\special{pdf:bann @pdf.lnk12 <</Type/Annot/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 14 /Subtype/Link/A<<../SD @pdf.SDest.postnote.1.mark>>>>}
+.....\OT1/cmr/m/n/9 1
+.....\OT1/cmr/m/n/9 .
+.....\special{pdf:eann}
+.....\write1{\new@label@record{@tag@objr@page@14}{{tagabspage}{\__property_code_tagabspage: }}}
+.....\special{pdf:obj @pdf.obj69 << /Type/OBJR/Obj @pdf.lnk12/Pg @page2 >>}
+.....\special{pdf:code EMC}
+.....\write1{\new@label@record{mcid-42}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{42}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\special{pdf:code EMC}
+.....\write1{\new@label@record{tagpdfstruct-postnote.1}{{tagstruct}{38}{tagstructobj}{@pdf.obj71}}}
+.....\write1{\new@label@record{mcid-43}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{43}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /text <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\write1{\new@label@record{postnote@label@innote.en:text:1}{{postnotes/tagsup@noteid}{1}}}
+.....\write1{\newlabel{en:text:1}{{1}{\thepage }{\pntitle }{postnote.1.text}{}}}
+.....\write1{\zref@newlabel{zen:text:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.text}\postnotes@tagsup@noteid{1}}}
+.....\OT1/cmr/m/n/9 1
+.....\special{pdf:code EMC}
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\marks4{b-,40,35,Lbl,,,}
+....\marks4{b+,40,35,Lbl,,,}
+....\marks4{e-,40,35,}
+....\marks4{e+,40,35,}
+....\marks4{b-,41,36,Link,,,}
+....\marks4{b+,41,36,Link,,,}
+....\marks4{e-,41,36,}
+....\marks4{e+,41,36,}
+....\marks4{b-,42,35,Lbl,,,}
+....\marks4{b+,42,35,Lbl,,,}
+....\marks4{e-,42,35,}
+....\marks4{e+,42,35,}
+....\marks4{b-,43,40,text,,,}
+....\marks4{b+,43,40,text,,,}
+....\marks4{e-,43,40,}
+....\marks4{e+,43,40,}
+....\write1{\new@label@record{postnote@label@option.en:mark:2}{{postnotes/tagsup@noteid}{2}}}
+....\write1{\new@label@record{postnote@zlabel@option.zen:mark:2}{{postnotes/tagsup@noteid}{2}}}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 5.20001
+....\hbox(5.79999+0.0)x345.0, glue set 318.18063fil
+.....\hbox(0.0+0.0)x15.0
+.....\write1{\new@label@record{mcid-44}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{44}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -11.0
+.......\special{pdf:dest (postnote.2.text)[@thispage/XYZ @xpos @ypos null]}
+.......\special{pdf:obj @pdf.SDest.postnote.2.text[@pdf.obj75/XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
+.....\special{pdf:code EMC}
+.....\write1{\new@label@record{mcid-45}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{45}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\special{pdf:bann @pdf.lnk13 <</Type/Annot/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 15 /Subtype/Link/A<<../SD @pdf.SDest.postnote.2.mark>>>>}
+.....\OT1/cmr/m/n/9 2
+.....\OT1/cmr/m/n/9 .
+.....\special{pdf:eann}
+.....\write1{\new@label@record{@tag@objr@page@15}{{tagabspage}{\__property_code_tagabspage: }}}
+.....\special{pdf:obj @pdf.obj77 << /Type/OBJR/Obj @pdf.lnk13/Pg @page2 >>}
+.....\special{pdf:code EMC}
+.....\write1{\new@label@record{mcid-46}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{46}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\special{pdf:code EMC}
+.....\write1{\new@label@record{tagpdfstruct-postnote.2}{{tagstruct}{45}{tagstructobj}{@pdf.obj79}}}
+.....\write1{\new@label@record{mcid-47}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{47}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /text <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\write1{\new@label@record{postnote@label@innote.en:text:2}{{postnotes/tagsup@noteid}{2}}}
+.....\write1{\newlabel{en:text:2}{{2}{\thepage }{\pntitle }{postnote.2.text}{}}}
+.....\write1{\zref@newlabel{zen:text:2}{\default{2}\page{\Z@C@page }\anchor{postnote.2.text}\postnotes@tagsup@noteid{2}}}
+.....\OT1/cmr/m/n/9 2
+.....\special{pdf:code EMC}
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\marks4{b-,44,42,Lbl,,,}
+....\marks4{b+,44,42,Lbl,,,}
+....\marks4{e-,44,42,}
+....\marks4{e+,44,42,}
+....\marks4{b-,45,43,Link,,,}
+....\marks4{b+,45,43,Link,,,}
+....\marks4{e-,45,43,}
+....\marks4{e+,45,43,}
+....\marks4{b-,46,42,Lbl,,,}
+....\marks4{b+,46,42,Lbl,,,}
+....\marks4{e-,46,42,}
+....\marks4{e+,46,42,}
+....\marks4{b-,47,47,text,,,}
+....\marks4{b+,47,47,text,,,}
+....\marks4{e-,47,47,}
+....\marks4{e+,47,47,}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.75
+....\hbox(6.25+1.75)x345.0, glue set 290.33777fil
+.....\hbox(0.0+0.0)x15.0
+.....\write1{\new@label@record{mcid-48}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{48}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -11.0
+.......\special{pdf:dest (postnote.3.text)[@thispage/XYZ @xpos @ypos null]}
+.......\special{pdf:obj @pdf.SDest.postnote.3.text[@pdf.obj83/XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
+.....\special{pdf:code EMC}
+.....\write1{\new@label@record{mcid-49}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{49}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\special{pdf:bann @pdf.lnk14 <</Type/Annot/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 16 /Subtype/Link/A<<../SD @pdf.SDest.postnote.3.mark>>>>}
+.....\OT1/cmr/m/n/9 3
+.....\OT1/cmr/m/n/9 .
+.....\special{pdf:eann}
+.....\write1{\new@label@record{@tag@objr@page@16}{{tagabspage}{\__property_code_tagabspage: }}}
+.....\special{pdf:obj @pdf.obj85 << /Type/OBJR/Obj @pdf.lnk14/Pg @page2 >>}
+.....\special{pdf:code EMC}
+.....\write1{\new@label@record{mcid-50}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{50}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\special{pdf:code EMC}
+.....\write1{\new@label@record{tagpdfstruct-postnote.3}{{tagstruct}{52}{tagstructobj}{@pdf.obj87}}}
+.....\write1{\new@label@record{mcid-51}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{51}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /text <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\OT1/cmr/m/n/9 ^^L (ligature fi)
+.....\OT1/cmr/m/n/9 r
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 t
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 r
+.....\special{pdf:code EMC}
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\marks4{b-,48,49,Lbl,,,}
+....\marks4{b+,48,49,Lbl,,,}
+....\marks4{e-,48,49,}
+....\marks4{e+,48,49,}
+....\marks4{b-,49,50,Link,,,}
+....\marks4{b+,49,50,Link,,,}
+....\marks4{e-,49,50,}
+....\marks4{e+,49,50,}
+....\marks4{b-,50,49,Lbl,,,}
+....\marks4{b+,50,49,Lbl,,,}
+....\marks4{e-,50,49,}
+....\marks4{e+,50,49,}
+....\marks4{b-,51,54,text,,,}
+....\marks4{b+,51,54,text,,,}
+....\marks4{e-,51,54,}
+....\marks4{e+,51,54,}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 3.0
+....\hbox(6.25+1.75)x345.0, glue set 286.75793fil
+.....\write1{\new@label@record{mcid-52}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{52}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /text <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\hbox(0.0+0.0)x15.0
+.....\OT1/cmr/m/n/9 s
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 c
+.....\OT1/cmr/m/n/9 o
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 d
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 r
+.....\special{pdf:code EMC}
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\marks4{b-,52,56,text,,,}
+....\marks4{b+,52,56,text,,,}
+....\marks4{e-,52,56,}
+....\marks4{e+,52,56,}
+....\glue -1.75
+....\glue 0.0 plus 1.0fil
+....\glue 0.0 plus -1.0fil
+....\kern 0.0
+....\hbox(0.0+0.0)x0.0
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\special{pdf:nolink}
+...\special{pdf:code /Artifact BMC}
+...\marks4{b-,54,-1,}
+...\marks4{b+,54,-1,}
+...\glue(\baselineskip) 23.55556
+...\hbox(6.44444+0.0)x345.0
+....\hbox(6.44444+0.0)x345.0, glue set 170.0fil
+.....\glue 0.0 plus 1.0fil
+.....\OT1/cmr/m/n/10 2
+.....\glue 0.0 plus 1.0fil
+...\special{pdf:code EMC}
+...\marks4{e-,54,52,}
+...\marks4{e+,54,52,}
+...\special{pdf:link}
+.\kern 0.0
+Package tagpdf Info: Parent-Child 'FENote' --> 'Part'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'FENote/pdf2' --> 'text-unit/latex' on
+(tagpdf)             line 108
+Package tagpdf Info: Parent-Child 'FENote' --> 'P'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'FENote/pdf2' --> 'text/latex' on line
+(tagpdf)             108
+Package tagpdf Info: Parent-Child 'P' --> 'MC'.
+(tagpdf)             Relation is 1 (='0..n')
+(tagpdf)             Rolemapped from 'P/pdf2' --> 'MC' on line ...
+Package tagpdf Info: closing structure 58 tagged /text
+Package tagpdf Info: closing structure 57 tagged /text-unit
+Package tagpdf Info: closing structure 52 tagged /endnote
+Package tagpdf Info: closing structure 51 tagged /LBody
+Package tagpdf Info: closing structure 48 tagged /LI
+Package tagpdf Info: closing structure 33 tagged /L
+====> In \@makecol 3
+Pick up new bot mark!
+=> first b-, 55, 58, text
+=> bot e+, 55, 58
+=> TMB not missing
+=> TME not missing
+The sequence \g__tag_mc_main_marks_seq contains the items (without outer
+braces):
+>  {e+}
+>  {52}
+>  {56}.
+Package tagpdf Info: closing structure 31 tagged /Sect
+Package tagpdf Info: closing structure 1 tagged /Document
+Completed box being shipped out [3]
+\vbox(633.0+0.0)x407.0
+.\hbox(0.0+0.0)x0.0
+..\kern -72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil
+...\kern -72.26999
+...\hbox(0.0+0.0)x0.0
+....\special{pdf: put @thispage <</Tabs /S /StructParents 2 >>}
+....\special{pdf:put @resources <</ExtGState @pdf.obj1>>}
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\vbox(0.0+0.0)x0.0, glue set - 14.99626fil
+..\kern 0.0
+..\kern 16.0
+..\kern -1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 60.99626fil
+...\kern 0.0
+...\kern 62.0
+...\kern -1.00374
+...\special{pdf:dest (page.3)[@thispage/XYZ @xpos @ypos null]}
+...\special{pdf:obj @pdf.SDest.page.3[@pdf.obj63/XYZ @xpos @ypos null]}
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(633.0+0.0)x407.0
+..\glue 16.0
+..\vbox(617.0+0.0)x345.0, shifted 62.0
+...\vbox(12.0+0.0)x345.0, glue set 12.0fil
+....\glue 0.0 plus 1.0fil
+....\special{pdf:nolink}
+....\special{pdf:code /Artifact BMC}
+....\marks4{b-,56,-1,}
+....\marks4{b+,56,-1,}
+....\hbox(0.0+0.0)x345.0
+.....\hbox(0.0+0.0)x345.0
+....\special{pdf:code EMC}
+....\marks4{e-,56,31,}
+....\marks4{e+,56,31,}
+....\special{pdf:link}
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(550.0+0.0)x345.0, glue set 539.94232fil
+....\hbox(0.0+0.0)x0.0
+....\glue(\topskip) 4.4643
+....\hbox(5.5357+1.75)x345.0, glue set 290.68083fil
+.....\write1{\new@label@record{mcid-55}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{55}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /text <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\hbox(0.0+0.0)x15.0
+.....\OT1/cmr/m/n/9 n
+.....\OT1/cmr/m/n/9 e
+.....\OT1/cmr/m/n/9 x
+.....\OT1/cmr/m/n/9 t
+.....\glue 3.08331 plus 1.54166 minus 1.02777
+.....\OT1/cmr/m/n/9 p
+.....\OT1/cmr/m/n/9 a
+.....\OT1/cmr/m/n/9 g
+.....\OT1/cmr/m/n/9 e
+.....\special{pdf:code EMC}
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\marks4{b-,55,58,text,,,}
+....\marks4{b+,55,58,text,,,}
+....\marks4{e-,55,58,}
+....\marks4{e+,55,58,}
+....\glue -1.75
+....\glue 0.0 plus 1.0fil
+....\glue 0.0 plus -1.0fil
+....\kern 0.0
+....\hbox(0.0+0.0)x0.0
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\special{pdf:nolink}
+...\special{pdf:code /Artifact BMC}
+...\marks4{b-,57,-1,}
+...\marks4{b+,57,-1,}
+...\glue(\baselineskip) 23.55556
+...\hbox(6.44444+0.0)x345.0
+....\hbox(6.44444+0.0)x345.0, glue set 170.0fil
+.....\glue 0.0 plus 1.0fil
+.....\OT1/cmr/m/n/10 3
+.....\glue 0.0 plus 1.0fil
+...\special{pdf:code EMC}
+...\marks4{e-,57,31,}
+...\marks4{e+,57,31,}
+...\special{pdf:link}
+.\kern 0.0
+.\kern -633.0
+.\hbox(0.0+0.0)x0.0
+..\special{pdf:obj @pdf.obj6 << /Nums [0 [ @pdf.obj27 @pdf.obj26 @pdf.obj29 @pdf.obj30 @pdf.obj31 @pdf.obj30 @pdf.obj33 @pdf.obj34 @pdf.obj33 @pdf.obj36 @pdf.obj37 @pdf.obj36 @pdf.obj39 @pdf.obj40 @pdf.obj39 @pdf.obj42 @pdf.obj43 @pdf.obj42 @pdf.obj45 @pdf.obj46 @pdf.obj45 @pdf.obj48 @pdf.obj49 @pdf.obj48 @pdf.obj51 @pdf.obj52 @pdf.obj51 @pdf.obj54 @pdf.obj55 @pdf.obj54 @pdf.obj57 @pdf.obj58 @pdf.obj57 @pdf.obj60 @pdf.obj61 @pdf.obj60 ]
+1 [ @pdf.obj64 @pdf.obj67 @pdf.obj68 @pdf.obj67 @pdf.obj73 @pdf.obj75 @pdf.obj76 @pdf.obj75 @pdf.obj81 @pdf.obj83 @pdf.obj84 @pdf.obj83 @pdf.obj89 @pdf.obj91 ]
+2 [ @pdf.obj93 ]
+3 @pdf.obj31
+4 @pdf.obj34
+5 @pdf.obj37
+6 @pdf.obj40
+7 @pdf.obj43
+8 @pdf.obj46
+9 @pdf.obj49
+10 @pdf.obj52
+11 @pdf.obj55
+12 @pdf.obj58
+13 @pdf.obj61
+14 @pdf.obj68
+15 @pdf.obj76
+16 @pdf.obj84
+] >>}
+..\special{pdf:obj @pdf.obj94 << /Limits [(ID.001) (ID.050)]/Names [(ID.001) @pdf.obj22 (ID.002) @pdf.obj23 (ID.003) @pdf.obj24 (ID.004) @pdf.obj25 (ID.005) @pdf.obj26 (ID.006) @pdf.obj27 (ID.007) @pdf.obj28 (ID.008) @pdf.obj29 (ID.009) @pdf.obj30 (ID.010) @pdf.obj31 (ID.011) @pdf.obj33 (ID.012) @pdf.obj34 (ID.013) @pdf.obj36 (ID.014) @pdf.obj37 (ID.015) @pdf.obj39 (ID.016) @pdf.obj40 (ID.017) @pdf.obj42 (ID.018) @pdf.obj43 (ID.019) @pdf.obj45 (ID.020) @pdf.obj46 (ID.021) @pdf.obj48 (ID.022) @pdf.obj49 (ID.023) @pdf.obj51 (ID.024) @pdf.obj52 (ID.025) @pdf.obj54 (ID.026) @pdf.obj55 (ID.027) @pdf.obj57 (ID.028) @pdf.obj58 (ID.029) @pdf.obj60 (ID.030) @pdf.obj61 (ID.031) @pdf.obj63 (ID.032) @pdf.obj64 (ID.033) @pdf.obj65 (ID.034) @pdf.obj66 (ID.035) @pdf.obj67 (ID.036) @pdf.obj68 (ID.037) @pdf.obj70 (ID.038) @pdf.obj71 (ID.039) @pdf.obj72 (ID.040) @pdf.obj73 (ID.041) @pdf.obj74 (ID.042) @pdf.obj75 (ID.043) @pdf.obj76 (ID.044) @pdf.obj78 (ID.045) @pdf.obj79 (ID.046) @pdf.obj80 (ID.047) @pdf\ETC.}
+..\special{pdf:obj @pdf.obj95 << /Limits [(ID.051) (ID.058)]/Names [(ID.051) @pdf.obj86 (ID.052) @pdf.obj87 (ID.053) @pdf.obj88 (ID.054) @pdf.obj89 (ID.055) @pdf.obj90 (ID.056) @pdf.obj91 (ID.057) @pdf.obj92 (ID.058) @pdf.obj93 ] >>}
+..\special{pdf:obj @pdf.obj96 << /Kids [@pdf.obj94 @pdf.obj95] >>}
+..\special{pdf:obj @pdf.obj97 << /justify <</O/Layout/TextAlign/Justify>>
+/EndnoteType <</O/FENote/NoteType/Endnote>>
+/enumerate <</O/List/ListNumbering/Ordered>> >>}
+..\special{pdf:obj @pdf.obj8 << /Type /Namespace /NS (http://iso.org/pdf/ssn)  >>}
+..\special{pdf:obj @pdf.obj10 << /Type /Namespace /NS (http://iso.org/pdf2/ssn)  >>}
+..\special{pdf:obj @pdf.obj12 << /Type /Namespace /NS (http://www.w3.org/1998/Math/MathML)  >>}
+..\special{pdf:obj @pdf.obj15 << /title [/Title @pdf.obj10] /part [/Title @pdf.obj10] /section [/H1 @pdf.obj10] /subsection [/H2 @pdf.obj10] /subsubsection [/H3 @pdf.obj10] /paragraph [/H4 @pdf.obj10] /subparagraph [/H5 @pdf.obj10] /list [/L @pdf.obj10] /itemize [/L @pdf.obj10] /enumerate [/L @pdf.obj10] /description [/L @pdf.obj10] /quote [/BlockQuote @pdf.obj8] /quotation [/BlockQuote @pdf.obj8] /verbatim [/P @pdf.obj10] /item [/LI @pdf.obj10] /itemlabel [/Lbl @pdf.obj10] /itembody [/LBody @pdf.obj10] /footnote [/FENote @pdf.obj10] /footnotemark [/Lbl @pdf.obj10] /footnotelabel [/Lbl @pdf.obj10] /text-unit [/Part @pdf.obj10] /text [/P @pdf.obj10] /theorem-like [/Sect @pdf.obj10] /codeline [/Sub @pdf.obj10] /float [/Aside @pdf.obj10] /figures [/Sect @pdf.obj10] /tables [/Sect @pdf.obj10]  >>}
+..\special{pdf:obj @pdf.obj14 << /Type /Namespace /NS (https://www.latex-project.org/ns/dflt/2022) /RoleMapNS @pdf.obj15  >>}
+..\special{pdf:obj @pdf.obj17 << /chapter [/H1 @pdf.obj10] /section [/H2 @pdf.obj10] /subsection [/H3 @pdf.obj10] /subsubsection [/H4 @pdf.obj10] /paragraph [/H5 @pdf.obj10] /subparagraph [/H6 @pdf.obj10]  >>}
+..\special{pdf:obj @pdf.obj16 << /Type /Namespace /NS (https://www.latex-project.org/ns/book/2022) /RoleMapNS @pdf.obj17  >>}
+..\special{pdf:obj @pdf.obj19 << /chapter [/Span @pdf.obj10] /section [/Span @pdf.obj10] /subsection [/Span @pdf.obj10] /subsubsection [/Span @pdf.obj10] /paragraph [/Span @pdf.obj10] /subparagraph [/Span @pdf.obj10] /P [/Span @pdf.obj10]  >>}
+..\special{pdf:obj @pdf.obj18 << /Type /Namespace /NS (https://www.latex-project.org/ns/inline/2022) /RoleMapNS @pdf.obj19  >>}
+..\special{pdf:obj @pdf.obj21 << /endnote [/FENote @pdf.obj10] /endnotemark [/Lbl @pdf.obj10]  >>}
+..\special{pdf:obj @pdf.obj20 << /Type /Namespace /NS (data:,A63761E-9D7-4FBB-9B27-C3BC8D9BFB06) /RoleMapNS @pdf.obj21  >>}
+..\special{pdf:obj @pdf.obj7 [ @pdf.obj8 @pdf.obj10 @pdf.obj12 @pdf.obj14 @pdf.obj16 @pdf.obj18 @pdf.obj20  ]}
+..\special{pdf:obj @pdf.obj22 <<  /Type /StructElem /S /Document /P @pdf.obj5 /K [@pdf.obj25 @pdf.obj63] /NS @pdf.obj10  /ID (ID.001) >>}
+..\special{pdf:obj @pdf.obj23 <<  /Type /StructElem /S /Artifact /P @pdf.obj5 /NS @pdf.obj14  /ID (ID.002) >>}
+..\special{pdf:obj @pdf.obj24 <<  /Type /StructElem /S /Artifact /P @pdf.obj5 /NS @pdf.obj14  /ID (ID.003) >>}
+..\special{pdf:obj @pdf.obj25 <<  /Type /StructElem /S /Sect /P @pdf.obj22 /K [@pdf.obj26 @pdf.obj28 @pdf.obj30 @pdf.obj33 @pdf.obj36 @pdf.obj39 @pdf.obj42 @pdf.obj45 @pdf.obj48 @pdf.obj51 @pdf.obj54 @pdf.obj57 @pdf.obj60] /NS @pdf.obj10  /ID (ID.004) >>}
+..\special{pdf:obj @pdf.obj26 <<  /Type /StructElem /S /section /P @pdf.obj25 /K [@pdf.obj27 <</Type /MCR /Pg @page1/MCID 1>>] /NS @pdf.obj14  /ID (ID.005) >>}
+..\special{pdf:obj @pdf.obj27 <<  /Type /StructElem /S /Lbl /P @pdf.obj26 /K <</Type /MCR /Pg @page1/MCID 0>> /NS @pdf.obj10  /ID (ID.006) >>}
+..\special{pdf:obj @pdf.obj28 <<  /Type /StructElem /S /text-unit /P @pdf.obj25 /K @pdf.obj29 /NS @pdf.obj14  /ID (ID.007) >>}
+..\special{pdf:obj @pdf.obj29 <<  /Type /StructElem /S /text /P @pdf.obj28 /K <</Type /MCR /Pg @page1/MCID 2>> /C /justify /NS @pdf.obj14  /ID (ID.008) >>}
+..\special{pdf:obj @pdf.obj30 <<  /Type /StructElem /S /endnotemark /P @pdf.obj25 /Ref [ @pdf.obj71 @pdf.obj39 @pdf.obj42] /K [<</Type /MCR /Pg @page1/MCID 3>> @pdf.obj31 <</Type /MCR /Pg @page1/MCID 5>>] /NS @pdf.obj20  /ID (ID.009) >>}
+..\special{pdf:obj @pdf.obj31 <<  /Type /StructElem /S /Link /P @pdf.obj30 /K [<</Type /MCR /Pg @page1/MCID 4>> @pdf.obj32] /NS @pdf.obj10  /ID (ID.010) >>}
+..\special{pdf:obj @pdf.obj33 <<  /Type /StructElem /S /endnotemark /P @pdf.obj25 /Ref [ @pdf.obj71] /K [<</Type /MCR /Pg @page1/MCID 6>> @pdf.obj34 <</Type /MCR /Pg @page1/MCID 8>>] /NS @pdf.obj20  /ID (ID.011) >>}
+..\special{pdf:obj @pdf.obj34 <<  /Type /StructElem /S /Link /P @pdf.obj33 /K [<</Type /MCR /Pg @page1/MCID 7>> @pdf.obj35] /NS @pdf.obj10  /ID (ID.012) >>}
+..\special{pdf:obj @pdf.obj36 <<  /Type /StructElem /S /endnotemark /P @pdf.obj25 /Ref [ @pdf.obj71] /K [<</Type /MCR /Pg @page1/MCID 9>> @pdf.obj37 <</Type /MCR /Pg @page1/MCID 11>>] /NS @pdf.obj20  /ID (ID.013) >>}
+..\special{pdf:obj @pdf.obj37 <<  /Type /StructElem /S /Link /P @pdf.obj36 /K [<</Type /MCR /Pg @page1/MCID 10>> @pdf.obj38] /NS @pdf.obj10  /ID (ID.014) >>}
+..\special{pdf:obj @pdf.obj39 <<  /Type /StructElem /S /endnotemark /P @pdf.obj25 /Ref [ @pdf.obj30] /K [<</Type /MCR /Pg @page1/MCID 12>> @pdf.obj40 <</Type /MCR /Pg @page1/MCID 14>>] /NS @pdf.obj20  /ID (ID.015) >>}
+..\special{pdf:obj @pdf.obj40 <<  /Type /StructElem /S /Link /P @pdf.obj39 /K [<</Type /MCR /Pg @page1/MCID 13>> @pdf.obj41] /NS @pdf.obj10  /ID (ID.016) >>}
+..\special{pdf:obj @pdf.obj42 <<  /Type /StructElem /S /endnotemark /P @pdf.obj25 /Ref [ @pdf.obj30] /K [<</Type /MCR /Pg @page1/MCID 15>> @pdf.obj43 <</Type /MCR /Pg @page1/MCID 17>>] /NS @pdf.obj20  /ID (ID.017) >>}
+..\special{pdf:obj @pdf.obj43 <<  /Type /StructElem /S /Link /P @pdf.obj42 /K [<</Type /MCR /Pg @page1/MCID 16>> @pdf.obj44] /NS @pdf.obj10  /ID (ID.018) >>}
+..\special{pdf:obj @pdf.obj45 <<  /Type /StructElem /S /endnotemark /P @pdf.obj25 /Ref [ @pdf.obj79 @pdf.obj54 @pdf.obj57] /K [<</Type /MCR /Pg @page1/MCID 18>> @pdf.obj46 <</Type /MCR /Pg @page1/MCID 20>>] /NS @pdf.obj20  /ID (ID.019) >>}
+..\special{pdf:obj @pdf.obj46 <<  /Type /StructElem /S /Link /P @pdf.obj45 /K [<</Type /MCR /Pg @page1/MCID 19>> @pdf.obj47] /NS @pdf.obj10  /ID (ID.020) >>}
+..\special{pdf:obj @pdf.obj48 <<  /Type /StructElem /S /endnotemark /P @pdf.obj25 /Ref [ @pdf.obj79] /K [<</Type /MCR /Pg @page1/MCID 21>> @pdf.obj49 <</Type /MCR /Pg @page1/MCID 23>>] /NS @pdf.obj20  /ID (ID.021) >>}
+..\special{pdf:obj @pdf.obj49 <<  /Type /StructElem /S /Link /P @pdf.obj48 /K [<</Type /MCR /Pg @page1/MCID 22>> @pdf.obj50] /NS @pdf.obj10  /ID (ID.022) >>}
+..\special{pdf:obj @pdf.obj51 <<  /Type /StructElem /S /endnotemark /P @pdf.obj25 /Ref [ @pdf.obj79] /K [<</Type /MCR /Pg @page1/MCID 24>> @pdf.obj52 <</Type /MCR /Pg @page1/MCID 26>>] /NS @pdf.obj20  /ID (ID.023) >>}
+..\special{pdf:obj @pdf.obj52 <<  /Type /StructElem /S /Link /P @pdf.obj51 /K [<</Type /MCR /Pg @page1/MCID 25>> @pdf.obj53] /NS @pdf.obj10  /ID (ID.024) >>}
+..\special{pdf:obj @pdf.obj54 <<  /Type /StructElem /S /endnotemark /P @pdf.obj25 /Ref [ @pdf.obj45] /K [<</Type /MCR /Pg @page1/MCID 27>> @pdf.obj55 <</Type /MCR /Pg @page1/MCID 29>>] /NS @pdf.obj20  /ID (ID.025) >>}
+..\special{pdf:obj @pdf.obj55 <<  /Type /StructElem /S /Link /P @pdf.obj54 /K [<</Type /MCR /Pg @page1/MCID 28>> @pdf.obj56] /NS @pdf.obj10  /ID (ID.026) >>}
+..\special{pdf:obj @pdf.obj57 <<  /Type /StructElem /S /endnotemark /P @pdf.obj25 /Ref [ @pdf.obj45] /K [<</Type /MCR /Pg @page1/MCID 30>> @pdf.obj58 <</Type /MCR /Pg @page1/MCID 32>>] /NS @pdf.obj20  /ID (ID.027) >>}
+..\special{pdf:obj @pdf.obj58 <<  /Type /StructElem /S /Link /P @pdf.obj57 /K [<</Type /MCR /Pg @page1/MCID 31>> @pdf.obj59] /NS @pdf.obj10  /ID (ID.028) >>}
+..\special{pdf:obj @pdf.obj60 <<  /Type /StructElem /S /endnotemark /P @pdf.obj25 /Ref [ @pdf.obj87] /K [<</Type /MCR /Pg @page1/MCID 33>> @pdf.obj61 <</Type /MCR /Pg @page1/MCID 35>>] /NS @pdf.obj20  /ID (ID.029) >>}
+..\special{pdf:obj @pdf.obj61 <<  /Type /StructElem /S /Link /P @pdf.obj60 /K [<</Type /MCR /Pg @page1/MCID 34>> @pdf.obj62] /NS @pdf.obj10  /ID (ID.030) >>}
+..\special{pdf:obj @pdf.obj63 <<  /Type /StructElem /S /Sect /P @pdf.obj22 /K [@pdf.obj64 @pdf.obj65] /NS @pdf.obj10  /ID (ID.031) >>}
+..\special{pdf:obj @pdf.obj64 <<  /Type /StructElem /S /section /P @pdf.obj63 /K <</Type /MCR /Pg @page2/MCID 0>> /C /justify /NS @pdf.obj14  /ID (ID.032) >>}
+..\special{pdf:obj @pdf.obj65 <<  /Type /StructElem /S /L /P @pdf.obj63 /K [@pdf.obj66 @pdf.obj74 @pdf.obj82] /C /enumerate /NS @pdf.obj10  /ID (ID.033) >>}
+..\special{pdf:obj @pdf.obj66 <<  /Type /StructElem /S /LI /P @pdf.obj65 /K [@pdf.obj67 @pdf.obj70] /NS @pdf.obj10  /ID (ID.034) >>}
+..\special{pdf:obj @pdf.obj67 <<  /Type /StructElem /S /Lbl /P @pdf.obj66 /K [<</Type /MCR /Pg @page2/MCID 1>> @pdf.obj68 <</Type /MCR /Pg @page2/MCID 3>>] /NS @pdf.obj10  /ID (ID.035) >>}
+..\special{pdf:obj @pdf.obj68 <<  /Type /StructElem /S /Link /P @pdf.obj67 /K [<</Type /MCR /Pg @page2/MCID 2>> @pdf.obj69] /NS @pdf.obj10  /ID (ID.036) >>}
+..\special{pdf:obj @pdf.obj70 <<  /Type /StructElem /S /LBody /P @pdf.obj66 /K @pdf.obj71 /NS @pdf.obj10  /ID (ID.037) >>}
+..\special{pdf:obj @pdf.obj71 <<  /Type /StructElem /S /endnote /P @pdf.obj70 /Ref [ @pdf.obj30 @pdf.obj33 @pdf.obj36] /K @pdf.obj72 /C /EndnoteType /NS @pdf.obj20  /ID (ID.038) >>}
+..\special{pdf:obj @pdf.obj72 <<  /Type /StructElem /S /text-unit /P @pdf.obj71 /K @pdf.obj73 /NS @pdf.obj14  /ID (ID.039) >>}
+..\special{pdf:obj @pdf.obj73 <<  /Type /StructElem /S /text /P @pdf.obj72 /K <</Type /MCR /Pg @page2/MCID 4>> /NS @pdf.obj14  /ID (ID.040) >>}
+..\special{pdf:obj @pdf.obj74 <<  /Type /StructElem /S /LI /P @pdf.obj65 /K [@pdf.obj75 @pdf.obj78] /NS @pdf.obj10  /ID (ID.041) >>}
+..\special{pdf:obj @pdf.obj75 <<  /Type /StructElem /S /Lbl /P @pdf.obj74 /K [<</Type /MCR /Pg @page2/MCID 5>> @pdf.obj76 <</Type /MCR /Pg @page2/MCID 7>>] /NS @pdf.obj10  /ID (ID.042) >>}
+..\special{pdf:obj @pdf.obj76 <<  /Type /StructElem /S /Link /P @pdf.obj75 /K [<</Type /MCR /Pg @page2/MCID 6>> @pdf.obj77] /NS @pdf.obj10  /ID (ID.043) >>}
+..\special{pdf:obj @pdf.obj78 <<  /Type /StructElem /S /LBody /P @pdf.obj74 /K @pdf.obj79 /NS @pdf.obj10  /ID (ID.044) >>}
+..\special{pdf:obj @pdf.obj79 <<  /Type /StructElem /S /endnote /P @pdf.obj78 /Ref [ @pdf.obj45 @pdf.obj48 @pdf.obj51] /K @pdf.obj80 /C /EndnoteType /NS @pdf.obj20  /ID (ID.045) >>}
+..\special{pdf:obj @pdf.obj80 <<  /Type /StructElem /S /text-unit /P @pdf.obj79 /K @pdf.obj81 /NS @pdf.obj14  /ID (ID.046) >>}
+..\special{pdf:obj @pdf.obj81 <<  /Type /StructElem /S /text /P @pdf.obj80 /K <</Type /MCR /Pg @page2/MCID 8>> /NS @pdf.obj14  /ID (ID.047) >>}
+..\special{pdf:obj @pdf.obj82 <<  /Type /StructElem /S /LI /P @pdf.obj65 /K [@pdf.obj83 @pdf.obj86] /NS @pdf.obj10  /ID (ID.048) >>}
+..\special{pdf:obj @pdf.obj83 <<  /Type /StructElem /S /Lbl /P @pdf.obj82 /K [<</Type /MCR /Pg @page2/MCID 9>> @pdf.obj84 <</Type /MCR /Pg @page2/MCID 11>>] /NS @pdf.obj10  /ID (ID.049) >>}
+..\special{pdf:obj @pdf.obj84 <<  /Type /StructElem /S /Link /P @pdf.obj83 /K [<</Type /MCR /Pg @page2/MCID 10>> @pdf.obj85] /NS @pdf.obj10  /ID (ID.050) >>}
+..\special{pdf:obj @pdf.obj86 <<  /Type /StructElem /S /LBody /P @pdf.obj82 /K @pdf.obj87 /NS @pdf.obj10  /ID (ID.051) >>}
+..\special{pdf:obj @pdf.obj87 <<  /Type /StructElem /S /endnote /P @pdf.obj86 /Ref [ @pdf.obj60] /K [@pdf.obj88 @pdf.obj90 @pdf.obj92] /C /EndnoteType /NS @pdf.obj20  /ID (ID.052) >>}
+..\special{pdf:obj @pdf.obj88 <<  /Type /StructElem /S /text-unit /P @pdf.obj87 /K @pdf.obj89 /NS @pdf.obj14  /ID (ID.053) >>}
+..\special{pdf:obj @pdf.obj89 <<  /Type /StructElem /S /text /P @pdf.obj88 /K <</Type /MCR /Pg @page2/MCID 12>> /NS @pdf.obj14  /ID (ID.054) >>}
+..\special{pdf:obj @pdf.obj90 <<  /Type /StructElem /S /text-unit /P @pdf.obj87 /K @pdf.obj91 /NS @pdf.obj14  /ID (ID.055) >>}
+..\special{pdf:obj @pdf.obj91 <<  /Type /StructElem /S /text /P @pdf.obj90 /K <</Type /MCR /Pg @page2/MCID 13>> /C /justify /NS @pdf.obj14  /ID (ID.056) >>}
+..\special{pdf:obj @pdf.obj92 <<  /Type /StructElem /S /text-unit /P @pdf.obj87 /K @pdf.obj93 /NS @pdf.obj14  /ID (ID.057) >>}
+..\special{pdf:obj @pdf.obj93 <<  /Type /StructElem /S /text /P @pdf.obj92 /K <</Type /MCR /Pg @page3/MCID 0>> /C /justify /NS @pdf.obj14  /ID (ID.058) >>}
+..\special{pdf:obj @pdf.obj5 <<  /Type /StructTreeRoot /K @pdf.obj22 /IDTree @pdf.obj96 /ParentTree @pdf.obj6 /ClassMap @pdf.obj97 /Namespaces @pdf.obj7 >>}
+..\special{pdf:docinfo<</Producer (xetex)>>}
+..\special{pdf:docinfo<</Creator <FEFF004C006100540065005800200077006900740068002000680079007000650072007200650066>>>}
+..\special{pdf:obj @pdf.obj98 << /Marked true  >>}
+..\special{pdf:put @catalog<</MarkInfo @pdf.obj98>>}
+..\special{pdf:put @catalog<</Lang (en-US)>>}
+..\special{pdf:put @catalog<</PageMode /UseOutlines>>}
+..\special{pdf:put @catalog<</OpenAction [@page1 /Fit]>>}
+..\special{pdf:put @catalog<</PageLabels <</Nums[0<</S/D>>]>>>>}
+..\special{pdf:put @catalog<</StructTreeRoot @pdf.obj5>>}
+.\kern 633.0
+============================================================

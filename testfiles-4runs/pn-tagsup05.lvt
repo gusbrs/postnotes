@@ -1,0 +1,111 @@
+\ExplSyntaxOn
+\sys_gset_rand_seed:n {1000} % before tagging is loaded
+\ExplSyntaxOff
+
+\DocumentMetadata
+  {
+    testphase=phase-III,
+    pdfversion=2.0,
+    xmp=false,
+    debug={log=v},
+  }
+
+\documentclass{article}
+
+\input{regression-test}
+
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+% Ensure the same font across check engines
+\usepackage[OT1]{fontenc}
+\renewcommand\rmdefault{cmr}
+\renewcommand\sfdefault{cmss}
+\renewcommand\ttdefault{cmtt}
+
+\usepackage{postnotes}
+
+\usepackage{zref-user,zref-hyperref}
+\usepackage{hyperref}
+
+\begin{document}
+
+\section{Section 1}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{Postnote 1}
+\setbox0=\hbox{%
+  \postnote[label=en:mark:1,zlabel=zen:mark:1]{\label{en:text:1}\zlabel{zen:text:1}1}}%
+\showbox0
+\box0
+\ENDTEST
+
+\BEGINTEST{Postnoterefs 1}
+\setbox0=\hbox{\postnoteref{en:text:1}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnotezref{zen:text:1}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnoteref{en:mark:1}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnotezref{zen:mark:1}}%
+\showbox0
+\box0
+\ENDTEST
+
+\BEGINTEST{Postnote 2}
+\setbox0=\hbox{%
+  \postnote[label=en:mark:2,zlabel=zen:mark:2]{\label{en:text:2}\zlabel{zen:text:2}2}}%
+\showbox0
+\box0
+\ENDTEST
+
+\BEGINTEST{Postnoterefs 2}
+\setbox0=\hbox{\postnoteref{en:text:2}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnotezref{zen:text:2}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnoteref{en:mark:2}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnotezref{zen:mark:2}}%
+\showbox0
+\box0
+\ENDTEST
+
+\BEGINTEST{Postnote 3}
+\setbox0=\hbox{%
+  \postnote{first par \par second par \newpage next page}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print postnotes}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}
