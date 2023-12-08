@@ -293,7 +293,7 @@ For more details and some examples, see \zcref{sec:notes-sections}.  Its
     \cs{printpostnotes}
   \end{syntax}
 \end{function}
-Prints the \cs{postnotes} set since the last call of \cs{printpostnotes}, or
+Prints the \cs{postnote}s set since the last call of \cs{printpostnotes}, or
 since the beginning of the document.  For two basic usage illustrations, see
 \zcref{ex:sect:basic,ex:x:multi-print}.
 
@@ -632,7 +632,7 @@ among mostly numbered chapters, an ocasional unnumbered one?\footnote{The
   example here counts on the lucky circumstance of having only a single
   initial unnumbered section.  But, in general, if that's not the case,
   \cs{counterwithin*} is insufficient and the resetting of the
-  \texttt{postnote} counter at unnumbered sections most be handled somehow
+  \texttt{postnote} counter at unnumbered sections must be handled somehow
   else.}  \cs{pnthechapternextnote} wouldn't possibly work in this case.
 Since immediately successive calls to \cs{postnotesection} override the
 previous ones, it is straightforward to just manually adjust the exception:
@@ -822,7 +822,7 @@ these variables to build a rule in the form: ``if the page of the first and
 last notes are equal, write a singular form and just one value but, if they
 are different, write a plural form and a range of both values''.
 \cs{pnhdchapfirst}, \cs{pnhdchaplast}, \cs{pnhdsectfirst}, and
-\cs{pnhdsectfirst} provide the same for \cs{thechapter} and \cs{thesection}.
+\cs{pnhdsectlast} provide the same for \cs{thechapter} and \cs{thesection}.
 \cs{pnhdnamefirst} and \cs{pnhdnamelast} contain the name of the notes
 section, the one given with the \opt{name} option of \cs{postnotesection} (and
 are empty in case no \opt{name} was provided).
@@ -1089,6 +1089,7 @@ provided by (in chronological order):
   % 2023-02-10: https://chat.stackexchange.com/transcript/message/62955941#62955941 (and discussion)
   and \username{SwitWu}.
   % 2023-11-29: https://github.com/gusbrs/postnotes/pull/4
+  % 2023-11-30: https://github.com/gusbrs/postnotes/pull/5
 
 The package's language support have been provided or improved thanks to:
   \username{Pika78} (French)
@@ -1111,5 +1112,6 @@ change log is also distributed with the package's documentation through CTAN
 upon release so, most likely, \texttt{texdoc postnotes/changelog} should
 provide easy local access to it.  An archive of historical versions of the
 package is also kept at \url{https://github.com/gusbrs/postnotes/releases}.
+
 
 \end{document}
