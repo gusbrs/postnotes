@@ -1572,7 +1572,7 @@
     \seq_map_inline:Nn #1
       {
         \@@_prop_get:nnN {##1} { multibool } \l_@@_tmpa_tl
-        \tl_if_eq:NnTF \l_@@_tmpa_tl { true }
+        \str_if_eq:VnTF \l_@@_tmpa_tl { true }
           {
             \cs_if_exist:cT
               { \c_@@_ref_prefix_tl @ mark@ ##1 }
