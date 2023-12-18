@@ -15,7 +15,7 @@
 \usepackage[american]{babel}
 \usepackage{csquotes}
 \usepackage[style=verbose-ibid,backend=biber,notetype=endonly]{biblatex}
-\addbibresource{biblatex-examples.bib}
+\addbibresource{pn-biblatex-tests.bib}
 
 \usepackage{postnotes}
 \counterwithin*{postnote}{chapter}
