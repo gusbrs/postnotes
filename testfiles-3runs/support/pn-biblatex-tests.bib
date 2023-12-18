@@ -1,0 +1,205 @@
+% This file is a subset of "biblatex-examples.bib" taken from
+% https://github.com/plk/biblatex/blob/dev/bibtex/bib/biblatex/biblatex-examples.bib
+% for the purpose of testing interaction of postnotes with biblatex.
+
+@string{cup     = {Cambridge University Press}}
+
+@book{aristotle:anima,
+  author       = {Aristotle},
+  title        = {De Anima},
+  date         = 1907,
+  editor       = {Hicks, Robert Drew},
+  publisher    = cup,
+  location     = {Cambridge},
+  keywords     = {primary},
+  langid       = {english},
+  langidopts   = {variant=british},
+  annotation   = {A \texttt{book} entry with an \texttt{author} and an
+                  \texttt{editor}},
+}
+
+@book{aristotle:physics,
+  author       = {Aristotle},
+  title        = {Physics},
+  date         = 1929,
+  translator   = {Wicksteed, P. H. and Cornford, F. M.},
+  publisher    = {G. P. Putnam},
+  location     = {New York},
+  keywords     = {primary},
+  langid       = {english},
+  langidopts   = {variant=american},
+  shorttitle   = {Physics},
+  annotation   = {A \texttt{book} entry with a \texttt{translator} field},
+}
+
+@book{aristotle:poetics,
+  author       = {Aristotle},
+  title        = {Poetics},
+  date         = 1968,
+  editor       = {Lucas, D. W.},
+  series       = {Clarendon {Aristotle}},
+  publisher    = {Clarendon Press},
+  location     = {Oxford},
+  keywords     = {primary},
+  langid       = {english},
+  langidopts   = {variant=british},
+  shorttitle   = {Poetics},
+  annotation   = {A \texttt{book} entry with an \texttt{author} and an
+                  \texttt{editor} as well as a \texttt{series} field},
+}
+
+@mvbook{aristotle:rhetoric,
+  author       = {Aristotle},
+  title        = {The Rhetoric of {Aristotle} with a commentary by the late {Edward
+                  Meredith Cope}},
+  date         = 1877,
+  editor       = {Cope, Edward Meredith},
+  commentator  = {Cope, Edward Meredith},
+  volumes      = 3,
+  publisher    = cup,
+  keywords     = {primary},
+  langid       = {english},
+  langidopts   = {variant=british},
+  sorttitle    = {Rhetoric of Aristotle},
+  indextitle   = {Rhetoric of {Aristotle}, The},
+  shorttitle   = {Rhetoric},
+  annotation   = {A commented edition. Note the concatenation of the
+                  \texttt{editor} and \texttt{commentator} fields as well as the
+                  \texttt{volumes}, \texttt{sorttitle}, and \texttt{indextitle}
+                  fields},
+}
+
+@book{averroes/bland,
+  author       = {Averroes},
+  title        = {The Epistle on the Possibility of Conjunction with the Active
+                  Intellect by {Ibn Rushd} with the Commentary of {Moses Narboni}},
+  date         = 1982,
+  editor       = {Bland, Kalman P.},
+  translator   = {Bland, Kalman P.},
+  series       = {Moreshet: Studies in {Jewish} History, Literature and Thought},
+  number       = 7,
+  publisher    = {Jewish Theological Seminary of America},
+  location     = {New York},
+  keywords     = {primary},
+  langid       = {english},
+  langidopts   = {variant=american},
+  indextitle   = {Epistle on the Possibility of Conjunction, The},
+  shorttitle   = {Possibility of Conjunction},
+  annotation   = {A \texttt{book} entry with a \texttt{series} and a
+                  \texttt{number}. Note the concatenation of the \texttt{editor}
+                  and \texttt{translator} fields as well as the
+                  \texttt{indextitle} field},
+}
+
+@book{companion,
+  author       = {Goossens, Michel and Mittelbach, Frank and Samarin, Alexander},
+  title        = {The {LaTeX} Companion},
+  date         = 1994,
+  edition      = 1,
+  publisher    = {Addison-Wesley},
+  location     = {Reading, Mass.},
+  pagetotal    = 528,
+  langid       = {english},
+  langidopts   = {variant=american},
+  sorttitle    = {LaTeX Companion},
+  indextitle   = {LaTeX Companion, The},
+  shorttitle   = {LaTeX Companion},
+  annotation   = {A book with three authors. Note the formatting of the author
+                  list. By default, only the first name is reversed in the
+                  bibliography},
+}
+
+@inbook{kant:kpv,
+  title        = {Kritik der praktischen Vernunft},
+  date         = 1968,
+  author       = {Kant, Immanuel},
+  booktitle    = {Kritik der praktischen Vernunft. Kritik der Urtheilskraft},
+  bookauthor   = {Kant, Immanuel},
+  maintitle    = {Kants Werke. Akademie Textausgabe},
+  volume       = 5,
+  publisher    = {Walter de Gruyter},
+  location     = {Berlin},
+  pages        = {1-163},
+  shorthand    = {KpV},
+  langid       = {german},
+  shorttitle   = {Kritik der praktischen Vernunft},
+  annotation   = {An edition of Kant's \emph{Collected Works}, volume five. This
+                  is an \texttt{inbook} entry which explicitly refers to the
+                  \emph{Critique of Practical Reason} only, not to the entire
+                  fifth volume. Note the \texttt{author} and \texttt{bookauthor}
+                  fields in the database file. By default, the
+                  \texttt{bookauthor} is omitted if the values of the
+                  \texttt{author} and \texttt{bookauthor} fields are identical},
+}
+
+@inbook{kant:ku,
+  title        = {Kritik der Urtheilskraft},
+  date         = 1968,
+  author       = {Kant, Immanuel},
+  booktitle    = {Kritik der praktischen Vernunft. Kritik der Urtheilskraft},
+  bookauthor   = {Kant, Immanuel},
+  maintitle    = {Kants Werke. Akademie Textausgabe},
+  volume       = 5,
+  publisher    = {Walter de Gruyter},
+  location     = {Berlin},
+  pages        = {165-485},
+  shorthand    = {KU},
+  langid       = {german},
+  annotation   = {An edition of Kant's \emph{Collected Works}, volume five. This
+                  is an \texttt{inbook} entry which explicitly refers to the
+                  \emph{Critique of Judgment} only, not to the entire fifth
+                  volume},
+}
+
+@book{knuth:ct:b,
+  author       = {Knuth, Donald E.},
+  title        = {{\TeX}: The Program},
+  date         = 1986,
+  maintitle    = {Computers \& Typesetting},
+  volume       = {B},
+  publisher    = {Addison-Wesley},
+  location     = {Reading, Mass.},
+  langid       = {english},
+  langidopts   = {variant=american},
+  sorttitle    = {Computers & Typesetting B},
+  indexsorttitle= {TeX: The Program},
+  shorttitle   = {\TeX},
+  annotation   = {The second volume of a five-volume book. Note the
+                  \texttt{sorttitle} field. Also note the
+                  \texttt{indexsorttitle} field},
+}
+
+@book{knuth:ct:c,
+  author       = {Knuth, Donald E.},
+  title        = {The {METAFONTbook}},
+  date         = 1986,
+  maintitle    = {Computers \& Typesetting},
+  volume       = {C},
+  publisher    = {Addison-Wesley},
+  location     = {Reading, Mass.},
+  langid       = {english},
+  langidopts   = {variant=american},
+  sorttitle    = {Computers & Typesetting C},
+  indextitle   = {METAFONTbook, The},
+  shorttitle   = {METAFONTbook},
+  annotation   = {The third volume of a five-volume book. Note the
+                  \texttt{sorttitle} field as well as the
+                  \texttt{indextitle} field},
+}
+
+@book{knuth:ct:d,
+  author       = {Knuth, Donald E.},
+  title        = {{METAFONT}: The Program},
+  date         = 1986,
+  maintitle    = {Computers \& Typesetting},
+  volume       = {D},
+  publisher    = {Addison-Wesley},
+  location     = {Reading, Mass.},
+  langid       = {english},
+  langidopts   = {variant=american},
+  sorttitle    = {Computers & Typesetting D},
+  shorttitle   = {METAFONT},
+  annotation   = {The fourth volume of a five-volume book. Note the
+                  \texttt{sorttitle} field},
+}
+
