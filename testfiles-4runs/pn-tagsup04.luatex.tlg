@@ -33,7 +33,7 @@ Package tagpdf Info: closing structure 9 tagged /endnotemark
 .\write1{\newlabel{en:mark:1}{{1}{\thepage }{Section 1}{postnote.1.mark}{}}}
 .\write1{\zref@newlabel{zen:mark:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}}}
 .\penalty 10000
-.\write1{\new@label@record{tagpdfstruct-postnotemark.1}{{tagstruct}{9}{tagstructobj}{31 0 R}}}
+.\write1{\new@label@record{tagpdfstruct-postnotemark.1}{{tagstruct}{9}{tagstructobj}{32 0 R}}}
 .\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 3 } action struct name{postnote.1.text} goto name{postnote.1.text}
 .\hbox(8.14003+0.0)x4.48613, direction TLT
 ..\mathon
@@ -213,7 +213,7 @@ Package tagpdf Info: closing structure 19 tagged /endnotemark
 .\write1{\newlabel{en:mark:2}{{2}{\thepage }{Section 1}{postnote.2.mark}{}}}
 .\write1{\zref@newlabel{zen:mark:2}{\default{2}\page{\Z@C@page }\anchor{postnote.2.mark}}}
 .\penalty 10000
-.\write1{\new@label@record{tagpdfstruct-postnotemark.2}{{tagstruct}{19}{tagstructobj}{51 0 R}}}
+.\write1{\new@label@record{tagpdfstruct-postnotemark.2}{{tagstruct}{19}{tagstructobj}{52 0 R}}}
 .\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 8 } action struct name{postnote.2.text} goto name{postnote.2.text}
 .\hbox(8.14003+0.0)x4.48613, direction TLT
 ..\mathon
@@ -391,7 +391,7 @@ Package tagpdf Info: closing structure 29 tagged /endnotemark
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
 .\penalty 10000
-.\write1{\new@label@record{tagpdfstruct-postnotemark.3}{{tagstruct}{29}{tagstructobj}{71 0 R}}}
+.\write1{\new@label@record{tagpdfstruct-postnotemark.3}{{tagstruct}{29}{tagstructobj}{72 0 R}}}
 .\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 13 } action struct name{postnote.3.text} goto name{postnote.3.text}
 .\hbox(8.14003+0.0)x4.48613, direction TLT
 ..\mathon
@@ -673,7 +673,7 @@ Completed box being shipped out [2]
 .....\penalty 0
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
-.....\write1{\new@label@record{tagpdfstruct-postnote.1}{{tagstruct}{39}{tagstructobj}{112 0 R}}}
+.....\write1{\new@label@record{tagpdfstruct-postnote.1}{{tagstruct}{39}{tagstructobj}{113 0 R}}}
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\write1{\new@label@record{postnote@label@innote.en:text:1}{{postnotes/tagsup@noteid}{1}}}
@@ -722,7 +722,7 @@ Completed box being shipped out [2]
 .....\penalty 0
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
-.....\write1{\new@label@record{tagpdfstruct-postnote.2}{{tagstruct}{46}{tagstructobj}{121 0 R}}}
+.....\write1{\new@label@record{tagpdfstruct-postnote.2}{{tagstruct}{46}{tagstructobj}{122 0 R}}}
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\write1{\new@label@record{postnote@label@innote.en:text:2}{{postnotes/tagsup@noteid}{2}}}
@@ -767,7 +767,7 @@ Completed box being shipped out [2]
 .....\penalty 0
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
-.....\write1{\new@label@record{tagpdfstruct-postnote.3}{{tagstruct}{53}{tagstructobj}{130 0 R}}}
+.....\write1{\new@label@record{tagpdfstruct-postnote.3}{{tagstruct}{53}{tagstructobj}{131 0 R}}}
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\OT1/cmr/m/n/9 ^^L (ligature fi)

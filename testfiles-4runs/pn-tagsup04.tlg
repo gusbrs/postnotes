@@ -27,13 +27,13 @@ Package tagpdf Info: closing structure 9 tagged /endnotemark
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.1.mark} xyz
-...\pdfdest struct26 name{postnote.1.mark} xyz
+...\pdfdest struct27 name{postnote.1.mark} xyz
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
 .\write1{\newlabel{en:mark:1}{{1}{\thepage }{Section 1}{postnote.1.mark}{}}}
 .\write1{\zref@newlabel{zen:mark:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}}}
 .\penalty 10000
-.\write1{\new@label@record{tagpdfstruct-postnotemark.1}{{tagstruct}{9}{tagstructobj}{31 0 R}}}
+.\write1{\new@label@record{tagpdfstruct-postnotemark.1}{{tagstruct}{9}{tagstructobj}{32 0 R}}}
 .\write1{\new@label@record{mcid-4}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{4}{tagmcid}{\__property_code_tagmcid: }}}
 .\pdfliteral shipout page{/endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 .\marks4{b-,4,9,endnotemark,,,}
@@ -307,13 +307,13 @@ Package tagpdf Info: closing structure 19 tagged /endnotemark
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.2.mark} xyz
-...\pdfdest struct26 name{postnote.2.mark} xyz
+...\pdfdest struct27 name{postnote.2.mark} xyz
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
 .\write1{\newlabel{en:mark:2}{{2}{\thepage }{Section 1}{postnote.2.mark}{}}}
 .\write1{\zref@newlabel{zen:mark:2}{\default{2}\page{\Z@C@page }\anchor{postnote.2.mark}}}
 .\penalty 10000
-.\write1{\new@label@record{tagpdfstruct-postnotemark.2}{{tagstruct}{19}{tagstructobj}{51 0 R}}}
+.\write1{\new@label@record{tagpdfstruct-postnotemark.2}{{tagstruct}{19}{tagstructobj}{52 0 R}}}
 .\write1{\new@label@record{mcid-19}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{19}{tagmcid}{\__property_code_tagmcid: }}}
 .\pdfliteral shipout page{/endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 .\marks4{b-,19,19,endnotemark,,,}
@@ -587,11 +587,11 @@ Package tagpdf Info: closing structure 29 tagged /endnotemark
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.3.mark} xyz
-...\pdfdest struct26 name{postnote.3.mark} xyz
+...\pdfdest struct27 name{postnote.3.mark} xyz
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
 .\penalty 10000
-.\write1{\new@label@record{tagpdfstruct-postnotemark.3}{{tagstruct}{29}{tagstructobj}{71 0 R}}}
+.\write1{\new@label@record{tagpdfstruct-postnotemark.3}{{tagstruct}{29}{tagstructobj}{72 0 R}}}
 .\write1{\new@label@record{mcid-34}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{34}{tagmcid}{\__property_code_tagmcid: }}}
 .\pdfliteral shipout page{/endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 .\marks4{b-,34,29,endnotemark,,,}
@@ -815,7 +815,7 @@ Completed box being shipped out [2]
 ...\kern 62.0
 ...\kern -1.00374
 ...\pdfdest name{page.2} xyz
-...\pdfdest struct129 name{page.2} xyz
+...\pdfdest struct130 name{page.2} xyz
 ...\penalty 10000
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 ..\glue 0.0 plus 1.0fil minus 1.0fil
@@ -852,7 +852,7 @@ Completed box being shipped out [2]
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -18.0
 .........\pdfdest name{section*.1} xyz
-.........\pdfdest struct100 name{section*.1} xyz
+.........\pdfdest struct101 name{section*.1} xyz
 .........\penalty 10000
 .......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\OT1/cmr/bx/n/14.4 N
@@ -890,7 +890,7 @@ Completed box being shipped out [2]
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.1.text} xyz
-.........\pdfdest struct106 name{postnote.1.text} xyz
+.........\pdfdest struct107 name{postnote.1.text} xyz
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\pdfliteral page{EMC}
@@ -917,7 +917,7 @@ Completed box being shipped out [2]
 .......\marks4{e+,42,36,}
 ......\glue 5.0
 .....\penalty 0
-.....\write1{\new@label@record{tagpdfstruct-postnote.1}{{tagstruct}{39}{tagstructobj}{111 0 R}}}
+.....\write1{\new@label@record{tagpdfstruct-postnote.1}{{tagstruct}{39}{tagstructobj}{112 0 R}}}
 .....\write1{\new@label@record{mcid-43}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{43}{tagmcid}{\__property_code_tagmcid: }}}
 .....\pdfliteral shipout page{/text <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 .....\write1{\new@label@record{postnote@label@innote.en:text:1}{{postnotes/tagsup@noteid}{1}}}
@@ -952,7 +952,7 @@ Completed box being shipped out [2]
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.2.text} xyz
-.........\pdfdest struct115 name{postnote.2.text} xyz
+.........\pdfdest struct116 name{postnote.2.text} xyz
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .......\pdfliteral page{EMC}
@@ -979,7 +979,7 @@ Completed box being shipped out [2]
 .......\marks4{e+,46,43,}
 ......\glue 5.0
 .....\penalty 0
-.....\write1{\new@label@record{tagpdfstruct-postnote.2}{{tagstruct}{46}{tagstructobj}{120 0 R}}}
+.....\write1{\new@label@record{tagpdfstruct-postnote.2}{{tagstruct}{46}{tagstructobj}{121 0 R}}}
 .....\write1{\new@label@record{mcid-47}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{47}{tagmcid}{\__property_code_tagmcid: }}}
 .....\pdfliteral shipout page{/text <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 .....\write1{\new@label@record{postnote@label@innote.en:text:2}{{postnotes/tagsup@noteid}{2}}}
@@ -1012,7 +1012,7 @@ Completed box being shipped out [2]
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.3.text} xyz
-.........\pdfdest struct124 name{postnote.3.text} xyz
+.........\pdfdest struct125 name{postnote.3.text} xyz
 .........\penalty 10000
 .......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .......\pdfliteral page{EMC}
@@ -1039,7 +1039,7 @@ Completed box being shipped out [2]
 .......\marks4{e+,50,50,}
 ......\glue 5.0
 .....\penalty 0
-.....\write1{\new@label@record{tagpdfstruct-postnote.3}{{tagstruct}{53}{tagstructobj}{129 0 R}}}
+.....\write1{\new@label@record{tagpdfstruct-postnote.3}{{tagstruct}{53}{tagstructobj}{130 0 R}}}
 .....\write1{\new@label@record{mcid-51}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{51}{tagmcid}{\__property_code_tagmcid: }}}
 .....\pdfliteral shipout page{/text <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 .....\OT1/cmr/m/n/9 ^^L (ligature fi)
@@ -1153,7 +1153,7 @@ Completed box being shipped out [3]
 ...\kern 62.0
 ...\kern -1.00374
 ...\pdfdest name{page.3} xyz
-...\pdfdest struct100 name{page.3} xyz
+...\pdfdest struct101 name{page.3} xyz
 ...\penalty 10000
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 ..\glue 0.0 plus 1.0fil minus 1.0fil
