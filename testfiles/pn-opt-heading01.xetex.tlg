@@ -52,15 +52,15 @@ Completed box being shipped out [3]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 312.7503fil
-....\marks2{Foo \pnheaderdefault }
-....\marks3{Foo \pnheaderdefault }
+....\marks2{\__mark_id:n {3}Foo \pnheaderdefault }
+....\marks3{\__mark_id:n {4}Foo \pnheaderdefault }
 ....\mark{{\MakeUppercase    []{Chapter\ 1. \ First chapter}}{Foo \pnheaderdefault }}
 ....\write-{}
 ....\special{pdf:dest (chapter.2) [@thispage /XYZ @xpos @ypos null]}
 ....\write3{\protect \BOOKMARK [0][-]{chapter.2}{\376\377\000M\000y\000\040\000t\000i\000t\000l\000e}{}% 2}
 ....\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline {2}My title}{\thepage }{chapter.2}\protected@file@percent }}
-....\marks1{\MakeUppercase    []{Chapter\ 2. \ My title}}
-....\marks2{\prg_do_nothing: }
+....\marks1{\__mark_id:n {5}\MakeUppercase    []{Chapter\ 2. \ My title}}
+....\marks2{\__mark_id:n {6}}
 ....\mark{{\MakeUppercase    []{Chapter\ 2. \ My title}}{}}
 ....\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
 ....\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
@@ -106,9 +106,9 @@ Completed box being shipped out [3]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{Foo \pnheaderdefault }
-....\marks2{Foo \pnheaderdefault }
-....\marks3{Foo \pnheaderdefault }
+....\marks1{\__mark_id:n {7}Foo \pnheaderdefault }
+....\marks2{\__mark_id:n {8}Foo \pnheaderdefault }
+....\marks3{\__mark_id:n {9}Foo \pnheaderdefault }
 ....\mark{{Foo \pnheaderdefault }{Foo \pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
@@ -199,15 +199,15 @@ Completed box being shipped out [5]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 312.7503fil
 ....\write-{}
-....\marks2{Bar \pnheaderdefault }
-....\marks3{Bar \pnheaderdefault }
+....\marks2{\__mark_id:n {10}Bar \pnheaderdefault }
+....\marks3{\__mark_id:n {11}Bar \pnheaderdefault }
 ....\mark{{Foo \pnheaderdefault }{Bar \pnheaderdefault }}
 ....\write-{}
 ....\special{pdf:dest (chapter.3) [@thispage /XYZ @xpos @ypos null]}
 ....\write3{\protect \BOOKMARK [0][-]{chapter.3}{\376\377\000M\000y\000\040\000n\000e\000w\000\040\000t\000i\000t\000l\000e}{}% 3}
 ....\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline {3}My new title}{\thepage }{chapter.3}\protected@file@percent }}
-....\marks1{\MakeUppercase    []{Chapter\ 3. \ My new title}}
-....\marks2{\prg_do_nothing: }
+....\marks1{\__mark_id:n {12}\MakeUppercase    []{Chapter\ 3. \ My new title}}
+....\marks2{\__mark_id:n {13}}
 ....\mark{{\MakeUppercase    []{Chapter\ 3. \ My new title}}{}}
 ....\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
 ....\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
@@ -257,9 +257,9 @@ Completed box being shipped out [5]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{Bar \pnheaderdefault }
-....\marks2{Bar \pnheaderdefault }
-....\marks3{Bar \pnheaderdefault }
+....\marks1{\__mark_id:n {14}Bar \pnheaderdefault }
+....\marks2{\__mark_id:n {15}Bar \pnheaderdefault }
+....\marks3{\__mark_id:n {16}Bar \pnheaderdefault }
 ....\mark{{Bar \pnheaderdefault }{Bar \pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@2}{\int_use:N \c@page }}

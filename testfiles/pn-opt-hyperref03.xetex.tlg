@@ -77,9 +77,9 @@ Completed box being shipped out [3]
 ....\glue(\rightskip) 0.0 plus 1.0fil
 ...\penalty 10000
 ...\glue 40.0
-...\marks1{\pnheaderdefault }
-...\marks2{\pnheaderdefault }
-...\marks3{\pnheaderdefault }
+...\marks1{\__mark_id:n {3}\pnheaderdefault }
+...\marks2{\__mark_id:n {4}\pnheaderdefault }
+...\marks3{\__mark_id:n {5}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
 ...\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
