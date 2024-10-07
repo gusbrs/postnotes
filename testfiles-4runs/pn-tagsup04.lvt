@@ -7,7 +7,8 @@
     testphase=phase-III,
     pdfversion=2.0,
     xmp=false,
-    debug={log=v},
+    debug={log=v,tagpdf},
+    uncompress,
   }
 
 \documentclass{article}
