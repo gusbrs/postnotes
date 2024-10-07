@@ -12,10 +12,6 @@ checkruns = 2
 -- But, depending on the case (multipass check, biblatex, etc.), 3.
 checkconfigs = {"build","build-3runs","build-4runs"}
 
--- Don't wrap/truncate lines in test logs
--- See https://tex.stackexchange.com/q/674844#comment1676566_674846
-maxprintline = 1000
-
 -- Run biber for biblatex related tests
 -- See https://github.com/moewew/biblatex-ext/blob/dev/build.lua
 function runtest_tasks(name, run)

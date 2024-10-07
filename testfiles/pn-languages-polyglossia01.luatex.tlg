@@ -45,7 +45,7 @@ Completed box being shipped out [3]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil, direction TLT
-....\write1{\@writefile{toc}{\protect \selectlanguage *{english}}}
+....\write1{\@writefile{toc}{\selectlanguage *[]{english}}}
 ....\write-{}
 ....\pdfdest name{chapter*.1} xyz
 ....\glue(\topskip) 10.0
@@ -73,9 +73,9 @@ Completed box being shipped out [3]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\pnheaderdefault }
-....\marks2{\pnheaderdefault }
-....\marks3{\pnheaderdefault }
+....\marks1{\__mark_id:n {3}\pnheaderdefault }
+....\marks2{\__mark_id:n {4}\pnheaderdefault }
+....\marks3{\__mark_id:n {5}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
@@ -177,6 +177,8 @@ Completed box being shipped out [5]
 ......\TU/lmr/m/sl/10 h
 ......\TU/lmr/m/sl/10 e
 ......\TU/lmr/m/sl/10 a
+......\discretionary (penalty 50)
+.......< \TU/lmr/m/sl/10 -
 ......\TU/lmr/m/sl/10 d
 ......\TU/lmr/m/sl/10 e
 ......\TU/lmr/m/sl/10 r
@@ -206,7 +208,7 @@ Completed box being shipped out [5]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 402.90399fil, direction TLT
 ....\write-{}
-....\write1{\@writefile{toc}{\protect \selectlanguage *{english}}}
+....\write1{\@writefile{toc}{\selectlanguage *[]{english}}}
 ....\write-{}
 ....\pdfdest name{chapter*.2} xyz
 ....\glue(\topskip) 10.0
@@ -237,9 +239,9 @@ Completed box being shipped out [5]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\pnheaderdefault }
-....\marks2{\pnheaderdefault }
-....\marks3{\pnheaderdefault }
+....\marks1{\__mark_id:n {6}\pnheaderdefault }
+....\marks2{\__mark_id:n {7}\pnheaderdefault }
+....\marks3{\__mark_id:n {8}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@2}{\int_use:N \c@page }}
@@ -348,6 +350,8 @@ Completed box being shipped out [9]
 ......\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
 ......\TU/lmr/m/sl/10 p
 ......\TU/lmr/m/sl/10 á
+......\discretionary (penalty 50)
+.......< \TU/lmr/m/sl/10 -
 ......\TU/lmr/m/sl/10 g
 ......\TU/lmr/m/sl/10 i
 ......\TU/lmr/m/sl/10 n
@@ -359,7 +363,7 @@ Completed box being shipped out [9]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil, direction TLT
-....\write1{\@writefile{toc}{\protect \selectlanguage *{portuguese}}}
+....\write1{\@writefile{toc}{\selectlanguage *[]{portuguese}}}
 ....\write-{}
 ....\pdfdest name{chapter*.3} xyz
 ....\glue(\topskip) 10.0
@@ -389,9 +393,9 @@ Completed box being shipped out [9]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\pnheaderdefault }
-....\marks2{\pnheaderdefault }
-....\marks3{\pnheaderdefault }
+....\marks1{\__mark_id:n {11}\pnheaderdefault }
+....\marks2{\__mark_id:n {12}\pnheaderdefault }
+....\marks3{\__mark_id:n {13}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@3}{\int_use:N \c@page }}
@@ -512,7 +516,7 @@ Completed box being shipped out [13]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil, direction TLT
-....\write1{\@writefile{toc}{\protect \selectlanguage *{french}}}
+....\write1{\@writefile{toc}{\selectlanguage *[]{french}}}
 ....\write-{}
 ....\pdfdest name{chapter*.4} xyz
 ....\glue(\topskip) 10.0
@@ -540,9 +544,9 @@ Completed box being shipped out [13]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\pnheaderdefault }
-....\marks2{\pnheaderdefault }
-....\marks3{\pnheaderdefault }
+....\marks1{\__mark_id:n {16}\pnheaderdefault }
+....\marks2{\__mark_id:n {17}\pnheaderdefault }
+....\marks3{\__mark_id:n {18}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@4}{\int_use:N \c@page }}
@@ -645,6 +649,8 @@ Completed box being shipped out [17]
 .......< \TU/lmr/m/sl/10 -
 ......\TU/lmr/m/sl/10 n
 ......\TU/lmr/m/sl/10 o
+......\discretionary (penalty 50)
+.......< \TU/lmr/m/sl/10 -
 ......\TU/lmr/m/sl/10 t
 ......\TU/lmr/m/sl/10 e
 ......\TU/lmr/m/sl/10 n
@@ -666,7 +672,7 @@ Completed box being shipped out [17]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil, direction TLT
-....\write1{\@writefile{toc}{\protect \selectlanguage *{german}}}
+....\write1{\@writefile{toc}{\selectlanguage *[]{german}}}
 ....\write-{}
 ....\pdfdest name{chapter*.5} xyz
 ....\glue(\topskip) 10.0
@@ -701,9 +707,9 @@ Completed box being shipped out [17]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\pnheaderdefault }
-....\marks2{\pnheaderdefault }
-....\marks3{\pnheaderdefault }
+....\marks1{\__mark_id:n {21}\pnheaderdefault }
+....\marks2{\__mark_id:n {22}\pnheaderdefault }
+....\marks3{\__mark_id:n {23}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@5}{\int_use:N \c@page }}

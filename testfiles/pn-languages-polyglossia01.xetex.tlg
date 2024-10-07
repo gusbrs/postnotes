@@ -37,7 +37,7 @@ Completed box being shipped out [3]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil
-....\write1{\@writefile{toc}{\protect \selectlanguage *{english}}}
+....\write1{\@writefile{toc}{\selectlanguage *[]{english}}}
 ....\write-{}
 ....\special{pdf:dest (chapter*.1) [@thispage /XYZ @xpos @ypos null]}
 ....\glue(\topskip) 10.0
@@ -56,9 +56,9 @@ Completed box being shipped out [3]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\pnheaderdefault }
-....\marks2{\pnheaderdefault }
-....\marks3{\pnheaderdefault }
+....\marks1{\__mark_id:n {3}\pnheaderdefault }
+....\marks2{\__mark_id:n {4}\pnheaderdefault }
+....\marks3{\__mark_id:n {5}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
@@ -159,7 +159,7 @@ Completed box being shipped out [5]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 402.90402fil
 ....\write-{}
-....\write1{\@writefile{toc}{\protect \selectlanguage *{english}}}
+....\write1{\@writefile{toc}{\selectlanguage *[]{english}}}
 ....\write-{}
 ....\special{pdf:dest (chapter*.2) [@thispage /XYZ @xpos @ypos null]}
 ....\glue(\topskip) 10.0
@@ -180,9 +180,9 @@ Completed box being shipped out [5]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\pnheaderdefault }
-....\marks2{\pnheaderdefault }
-....\marks3{\pnheaderdefault }
+....\marks1{\__mark_id:n {6}\pnheaderdefault }
+....\marks2{\__mark_id:n {7}\pnheaderdefault }
+....\marks3{\__mark_id:n {8}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@2}{\int_use:N \c@page }}
@@ -276,7 +276,7 @@ Completed box being shipped out [9]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil
-....\write1{\@writefile{toc}{\protect \selectlanguage *{portuguese}}}
+....\write1{\@writefile{toc}{\selectlanguage *[]{portuguese}}}
 ....\write-{}
 ....\special{pdf:dest (chapter*.3) [@thispage /XYZ @xpos @ypos null]}
 ....\glue(\topskip) 10.0
@@ -295,9 +295,9 @@ Completed box being shipped out [9]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\pnheaderdefault }
-....\marks2{\pnheaderdefault }
-....\marks3{\pnheaderdefault }
+....\marks1{\__mark_id:n {11}\pnheaderdefault }
+....\marks2{\__mark_id:n {12}\pnheaderdefault }
+....\marks3{\__mark_id:n {13}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@3}{\int_use:N \c@page }}
@@ -393,7 +393,7 @@ Completed box being shipped out [13]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil
-....\write1{\@writefile{toc}{\protect \selectlanguage *{french}}}
+....\write1{\@writefile{toc}{\selectlanguage *[]{french}}}
 ....\write-{}
 ....\special{pdf:dest (chapter*.4) [@thispage /XYZ @xpos @ypos null]}
 ....\glue(\topskip) 10.0
@@ -412,9 +412,9 @@ Completed box being shipped out [13]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\pnheaderdefault }
-....\marks2{\pnheaderdefault }
-....\marks3{\pnheaderdefault }
+....\marks1{\__mark_id:n {16}\pnheaderdefault }
+....\marks2{\__mark_id:n {17}\pnheaderdefault }
+....\marks3{\__mark_id:n {18}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@4}{\int_use:N \c@page }}
@@ -508,7 +508,7 @@ Completed box being shipped out [17]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil
-....\write1{\@writefile{toc}{\protect \selectlanguage *{german}}}
+....\write1{\@writefile{toc}{\selectlanguage *[]{german}}}
 ....\write-{}
 ....\special{pdf:dest (chapter*.5) [@thispage /XYZ @xpos @ypos null]}
 ....\glue(\topskip) 10.0
@@ -527,9 +527,9 @@ Completed box being shipped out [17]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\pnheaderdefault }
-....\marks2{\pnheaderdefault }
-....\marks3{\pnheaderdefault }
+....\marks1{\__mark_id:n {21}\pnheaderdefault }
+....\marks2{\__mark_id:n {22}\pnheaderdefault }
+....\marks3{\__mark_id:n {23}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@5}{\int_use:N \c@page }}

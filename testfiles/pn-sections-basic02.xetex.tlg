@@ -148,9 +148,9 @@ Completed box being shipped out [2]
 .....\glue(\rightskip) 0.0
 ....\penalty 10000
 ....\glue 9.90276 plus 0.86108
-....\marks1{\pnheaderdefault }
-....\marks2{\pnheaderdefault }
-....\marks3{\pnheaderdefault }
+....\marks1{\__mark_id:n {5}\pnheaderdefault }
+....\marks2{\__mark_id:n {6}\pnheaderdefault }
+....\marks3{\__mark_id:n {7}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}

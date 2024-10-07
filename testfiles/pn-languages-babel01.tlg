@@ -68,9 +68,9 @@ Completed box being shipped out [3]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks2{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks3{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks1{\__mark_id:n {3}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks2{\__mark_id:n {4}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks3{\__mark_id:n {5}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
@@ -333,9 +333,9 @@ Completed box being shipped out [5]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks2{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks3{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks1{\__mark_id:n {6}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks2{\__mark_id:n {7}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks3{\__mark_id:n {8}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@2}{\int_use:N \c@page }}
@@ -470,9 +470,9 @@ Completed box being shipped out [9]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks2{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks3{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks1{\__mark_id:n {11}\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks2{\__mark_id:n {12}\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks3{\__mark_id:n {13}\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@3}{\int_use:N \c@page }}
@@ -658,9 +658,9 @@ Completed box being shipped out [13]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks2{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks3{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks1{\__mark_id:n {16}\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks2{\__mark_id:n {17}\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks3{\__mark_id:n {18}\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@4}{\int_use:N \c@page }}
@@ -818,9 +818,9 @@ Completed box being shipped out [17]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks2{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks3{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks1{\__mark_id:n {21}\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks2{\__mark_id:n {22}\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks3{\__mark_id:n {23}\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@5}{\int_use:N \c@page }}
