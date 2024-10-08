@@ -2780,7 +2780,9 @@
 % \end{macro}
 %
 %    \begin{macrocode}
-\AddToHook { package/tagpdf/after }
+\bool_lazy_and:nnT
+  { \cs_if_exist_p:N \tag_if_active_p: }
+  { \tag_if_active_p: }
   {
 %    \end{macrocode}
 % CHECK As far as I can tell, we don't ``own'' these tags in the relevant
