@@ -2303,3 +2303,792 @@ Completed box being shipped out [3]
 ..\special{pdf:put @catalog<</StructTreeRoot @pdf.obj5>>}
 .\kern 633.0
 ============================================================
+============================================================
+TEST 7: Check references
+============================================================
+> \l_tmpa_tl=PDF object of structnum 1 is @pdf.obj5.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_1_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructTreeRoot}
+>  {rolemap}  =>  {{StructTreeRoot}{pdf}}
+>  {parentrole}  =>  {{StructTreeRoot}{pdf}}
+>  {IDTree}  =>  {@pdf.obj84}
+>  {ClassMap}  =>  {@pdf.obj85}
+>  {ParentTree}  =>  {@pdf.obj6}
+>  {RoleMap}  =>  {@pdf.obj7}
+>  {K}  =>  {@pdf.obj9}
+>  {S}  =>  {/StructTreeRoot}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 2 is @pdf.obj9.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_2_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Document}
+>  {rolemap}  =>  {{Document}{}}
+>  {parentrole}  =>  {{Document}{}}
+>  {P}  =>  {@pdf.obj5}
+>  {K}  =>  {[@pdf.obj12\c_space_tl @pdf.obj50]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 3 is @pdf.obj10.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_3_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Artifact}
+>  {rolemap}  =>  {{Sect}{}}
+>  {parentrole}  =>  {{Sect}{}}
+>  {P}  =>  {@pdf.obj5}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 4 is @pdf.obj11.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_4_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Artifact}
+>  {rolemap}  =>  {{Sect}{}}
+>  {parentrole}  =>  {{Sect}{}}
+>  {P}  =>  {@pdf.obj5}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 5 is @pdf.obj12.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_5_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Sect}
+>  {rolemap}  =>  {{Sect}{}}
+>  {parentrole}  =>  {{Sect}{}}
+>  {P}  =>  {@pdf.obj9}
+>  {K}  =>  {[@pdf.obj13\c_space_tl @pdf.obj15\c_space_tl @pdf.obj17\c_space_tl @pdf.obj20\c_space_tl @pdf.obj23\c_space_tl @pdf.obj26\c_space_tl @pdf.obj29\c_space_tl @pdf.obj32\c_space_tl @pdf.obj35\c_space_tl @pdf.obj38\c_space_tl @pdf.obj41\c_space_tl @pdf.obj44\c_space_tl @pdf.obj47]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 6 is @pdf.obj13.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_6_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/section}
+>  {rolemap}  =>  {{H1}{}}
+>  {parentrole}  =>  {{H1}{}}
+>  {P}  =>  {@pdf.obj12}
+>  {K}  =>  {[@pdf.obj14\c_space_tl <</Type /MCR /Pg @page1/MCID 1>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 7 is @pdf.obj14.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_7_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Lbl}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj13}
+>  {K}  =>  {<</Type /MCR /Pg @page1/MCID 0>>}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 8 is @pdf.obj15.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_8_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/text-unit}
+>  {rolemap}  =>  {{Part}{}}
+>  {parentrole}  =>  {{Sect}{}}
+>  {P}  =>  {@pdf.obj12}
+>  {K}  =>  {@pdf.obj16}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 9 is @pdf.obj16.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_9_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {C}  =>  {/justify}
+>  {S}  =>  {/text}
+>  {rolemap}  =>  {{P}{}}
+>  {parentrole}  =>  {{P}{}}
+>  {P}  =>  {@pdf.obj15}
+>  {K}  =>  {<</Type /MCR /Pg @page1/MCID 2>>}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 10 is @pdf.obj17.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_10_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnote.1},\__tag_struct_Ref_obj:nN {@pdf.obj26},\__tag_struct_Ref_obj:nN {@pdf.obj29},}
+>  {S}  =>  {/endnotemark}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj12}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 3>>\c_space_tl @pdf.obj18\c_space_tl <</Type /MCR /Pg @page1/MCID 5>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpb_tl=PDF object of Refs: @pdf.obj59, @pdf.obj26, @pdf.obj29.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 11 is @pdf.obj18.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_11_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Link}
+>  {rolemap}  =>  {{Link}{}}
+>  {parentrole}  =>  {{Link}{}}
+>  {P}  =>  {@pdf.obj17}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 4>>\c_space_tl @pdf.obj19]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 12 is @pdf.obj20.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_12_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnote.1},}
+>  {S}  =>  {/endnotemark}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj12}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 6>>\c_space_tl @pdf.obj21\c_space_tl <</Type /MCR /Pg @page1/MCID 8>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpb_tl=PDF object of Refs: @pdf.obj59.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 13 is @pdf.obj21.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_13_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Link}
+>  {rolemap}  =>  {{Link}{}}
+>  {parentrole}  =>  {{Link}{}}
+>  {P}  =>  {@pdf.obj20}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 7>>\c_space_tl @pdf.obj22]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 14 is @pdf.obj23.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_14_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnote.1},}
+>  {S}  =>  {/endnotemark}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj12}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 9>>\c_space_tl @pdf.obj24\c_space_tl <</Type /MCR /Pg @page1/MCID 11>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpb_tl=PDF object of Refs: @pdf.obj59.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 15 is @pdf.obj24.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_15_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Link}
+>  {rolemap}  =>  {{Link}{}}
+>  {parentrole}  =>  {{Link}{}}
+>  {P}  =>  {@pdf.obj23}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 10>>\c_space_tl @pdf.obj25]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 16 is @pdf.obj26.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_16_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnotemark.1},}
+>  {S}  =>  {/endnotemark}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj12}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 12>>\c_space_tl @pdf.obj27\c_space_tl <</Type /MCR /Pg @page1/MCID 14>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpb_tl=PDF object of Refs: @pdf.obj17.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 17 is @pdf.obj27.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_17_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Link}
+>  {rolemap}  =>  {{Link}{}}
+>  {parentrole}  =>  {{Link}{}}
+>  {P}  =>  {@pdf.obj26}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 13>>\c_space_tl @pdf.obj28]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 18 is @pdf.obj29.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_18_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnotemark.1},}
+>  {S}  =>  {/endnotemark}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj12}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 15>>\c_space_tl @pdf.obj30\c_space_tl <</Type /MCR /Pg @page1/MCID 17>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpb_tl=PDF object of Refs: @pdf.obj17.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 19 is @pdf.obj30.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_19_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Link}
+>  {rolemap}  =>  {{Link}{}}
+>  {parentrole}  =>  {{Link}{}}
+>  {P}  =>  {@pdf.obj29}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 16>>\c_space_tl @pdf.obj31]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 20 is @pdf.obj32.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_20_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnote.2},\__tag_struct_Ref_obj:nN {@pdf.obj41},\__tag_struct_Ref_obj:nN {@pdf.obj44},}
+>  {S}  =>  {/endnotemark}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj12}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 18>>\c_space_tl @pdf.obj33\c_space_tl <</Type /MCR /Pg @page1/MCID 20>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpb_tl=PDF object of Refs: @pdf.obj67, @pdf.obj41, @pdf.obj44.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 21 is @pdf.obj33.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_21_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Link}
+>  {rolemap}  =>  {{Link}{}}
+>  {parentrole}  =>  {{Link}{}}
+>  {P}  =>  {@pdf.obj32}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 19>>\c_space_tl @pdf.obj34]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 22 is @pdf.obj35.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_22_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnote.2},}
+>  {S}  =>  {/endnotemark}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj12}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 21>>\c_space_tl @pdf.obj36\c_space_tl <</Type /MCR /Pg @page1/MCID 23>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpb_tl=PDF object of Refs: @pdf.obj67.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 23 is @pdf.obj36.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_23_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Link}
+>  {rolemap}  =>  {{Link}{}}
+>  {parentrole}  =>  {{Link}{}}
+>  {P}  =>  {@pdf.obj35}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 22>>\c_space_tl @pdf.obj37]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 24 is @pdf.obj38.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_24_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnote.2},}
+>  {S}  =>  {/endnotemark}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj12}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 24>>\c_space_tl @pdf.obj39\c_space_tl <</Type /MCR /Pg @page1/MCID 26>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpb_tl=PDF object of Refs: @pdf.obj67.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 25 is @pdf.obj39.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_25_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Link}
+>  {rolemap}  =>  {{Link}{}}
+>  {parentrole}  =>  {{Link}{}}
+>  {P}  =>  {@pdf.obj38}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 25>>\c_space_tl @pdf.obj40]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 26 is @pdf.obj41.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_26_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnotemark.2},}
+>  {S}  =>  {/endnotemark}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj12}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 27>>\c_space_tl @pdf.obj42\c_space_tl <</Type /MCR /Pg @page1/MCID 29>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpb_tl=PDF object of Refs: @pdf.obj32.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 27 is @pdf.obj42.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_27_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Link}
+>  {rolemap}  =>  {{Link}{}}
+>  {parentrole}  =>  {{Link}{}}
+>  {P}  =>  {@pdf.obj41}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 28>>\c_space_tl @pdf.obj43]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 28 is @pdf.obj44.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_28_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnotemark.2},}
+>  {S}  =>  {/endnotemark}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj12}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 30>>\c_space_tl @pdf.obj45\c_space_tl <</Type /MCR /Pg @page1/MCID 32>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpb_tl=PDF object of Refs: @pdf.obj32.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 29 is @pdf.obj45.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_29_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Link}
+>  {rolemap}  =>  {{Link}{}}
+>  {parentrole}  =>  {{Link}{}}
+>  {P}  =>  {@pdf.obj44}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 31>>\c_space_tl @pdf.obj46]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 30 is @pdf.obj47.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_30_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnote.3},}
+>  {S}  =>  {/endnotemark}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj12}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 33>>\c_space_tl @pdf.obj48\c_space_tl <</Type /MCR /Pg @page1/MCID 35>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpb_tl=PDF object of Refs: @pdf.obj75.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 31 is @pdf.obj48.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_31_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Link}
+>  {rolemap}  =>  {{Link}{}}
+>  {parentrole}  =>  {{Link}{}}
+>  {P}  =>  {@pdf.obj47}
+>  {K}  =>  {[<</Type /MCR /Pg @page1/MCID 34>>\c_space_tl @pdf.obj49]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 32 is @pdf.obj50.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_32_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Sect}
+>  {rolemap}  =>  {{Sect}{}}
+>  {parentrole}  =>  {{Sect}{}}
+>  {P}  =>  {@pdf.obj9}
+>  {K}  =>  {[@pdf.obj51\c_space_tl @pdf.obj52]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 33 is @pdf.obj51.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_33_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {C}  =>  {/justify}
+>  {S}  =>  {/section}
+>  {rolemap}  =>  {{H1}{}}
+>  {parentrole}  =>  {{H1}{}}
+>  {P}  =>  {@pdf.obj50}
+>  {K}  =>  {<</Type /MCR /Pg @page2/MCID 0>>}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 34 is @pdf.obj52.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_34_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/text-unit}
+>  {rolemap}  =>  {{Part}{}}
+>  {parentrole}  =>  {{Sect}{}}
+>  {P}  =>  {@pdf.obj50}
+>  {K}  =>  {@pdf.obj53}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 35 is @pdf.obj53.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_35_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {C}  =>  {/enumerate}
+>  {S}  =>  {/L}
+>  {rolemap}  =>  {{L}{}}
+>  {parentrole}  =>  {{L}{}}
+>  {P}  =>  {@pdf.obj52}
+>  {K}  =>  {[@pdf.obj54\c_space_tl @pdf.obj62\c_space_tl @pdf.obj70]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 36 is @pdf.obj54.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_36_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/LI}
+>  {rolemap}  =>  {{LI}{}}
+>  {parentrole}  =>  {{LI}{}}
+>  {P}  =>  {@pdf.obj53}
+>  {K}  =>  {[@pdf.obj55\c_space_tl @pdf.obj58]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 37 is @pdf.obj55.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_37_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Lbl}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj54}
+>  {K}  =>  {[<</Type /MCR /Pg @page2/MCID 1>>\c_space_tl @pdf.obj56\c_space_tl <</Type /MCR /Pg @page2/MCID 3>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 38 is @pdf.obj56.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_38_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Link}
+>  {rolemap}  =>  {{Link}{}}
+>  {parentrole}  =>  {{Link}{}}
+>  {P}  =>  {@pdf.obj55}
+>  {K}  =>  {[<</Type /MCR /Pg @page2/MCID 2>>\c_space_tl @pdf.obj57]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 39 is @pdf.obj58.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_39_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/LBody}
+>  {rolemap}  =>  {{LBody}{}}
+>  {parentrole}  =>  {{LBody}{}}
+>  {P}  =>  {@pdf.obj54}
+>  {K}  =>  {@pdf.obj59}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 40 is @pdf.obj59.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_40_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {C}  =>  {/EndnoteType}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnotemark.1},\__tag_struct_Ref_obj:nN {@pdf.obj20},\__tag_struct_Ref_obj:nN {@pdf.obj23},}
+>  {S}  =>  {/endnote}
+>  {rolemap}  =>  {{Note}{}}
+>  {parentrole}  =>  {{Note}{}}
+>  {P}  =>  {@pdf.obj58}
+>  {K}  =>  {@pdf.obj60}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpb_tl=PDF object of Refs: @pdf.obj17, @pdf.obj20, @pdf.obj23.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 41 is @pdf.obj60.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_41_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/text-unit}
+>  {rolemap}  =>  {{Part}{}}
+>  {parentrole}  =>  {{Note}{}}
+>  {P}  =>  {@pdf.obj59}
+>  {K}  =>  {@pdf.obj61}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 42 is @pdf.obj61.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_42_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/text}
+>  {rolemap}  =>  {{P}{}}
+>  {parentrole}  =>  {{P}{}}
+>  {P}  =>  {@pdf.obj60}
+>  {K}  =>  {<</Type /MCR /Pg @page2/MCID 4>>}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 43 is @pdf.obj62.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_43_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/LI}
+>  {rolemap}  =>  {{LI}{}}
+>  {parentrole}  =>  {{LI}{}}
+>  {P}  =>  {@pdf.obj53}
+>  {K}  =>  {[@pdf.obj63\c_space_tl @pdf.obj66]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 44 is @pdf.obj63.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_44_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Lbl}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj62}
+>  {K}  =>  {[<</Type /MCR /Pg @page2/MCID 5>>\c_space_tl @pdf.obj64\c_space_tl <</Type /MCR /Pg @page2/MCID 7>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 45 is @pdf.obj64.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_45_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Link}
+>  {rolemap}  =>  {{Link}{}}
+>  {parentrole}  =>  {{Link}{}}
+>  {P}  =>  {@pdf.obj63}
+>  {K}  =>  {[<</Type /MCR /Pg @page2/MCID 6>>\c_space_tl @pdf.obj65]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 46 is @pdf.obj66.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_46_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/LBody}
+>  {rolemap}  =>  {{LBody}{}}
+>  {parentrole}  =>  {{LBody}{}}
+>  {P}  =>  {@pdf.obj62}
+>  {K}  =>  {@pdf.obj67}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 47 is @pdf.obj67.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_47_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {C}  =>  {/EndnoteType}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnotemark.2},\__tag_struct_Ref_obj:nN {@pdf.obj35},\__tag_struct_Ref_obj:nN {@pdf.obj38},}
+>  {S}  =>  {/endnote}
+>  {rolemap}  =>  {{Note}{}}
+>  {parentrole}  =>  {{Note}{}}
+>  {P}  =>  {@pdf.obj66}
+>  {K}  =>  {@pdf.obj68}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpb_tl=PDF object of Refs: @pdf.obj32, @pdf.obj35, @pdf.obj38.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 48 is @pdf.obj68.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_48_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/text-unit}
+>  {rolemap}  =>  {{Part}{}}
+>  {parentrole}  =>  {{Note}{}}
+>  {P}  =>  {@pdf.obj67}
+>  {K}  =>  {@pdf.obj69}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 49 is @pdf.obj69.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_49_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/text}
+>  {rolemap}  =>  {{P}{}}
+>  {parentrole}  =>  {{P}{}}
+>  {P}  =>  {@pdf.obj68}
+>  {K}  =>  {<</Type /MCR /Pg @page2/MCID 8>>}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 50 is @pdf.obj70.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_50_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/LI}
+>  {rolemap}  =>  {{LI}{}}
+>  {parentrole}  =>  {{LI}{}}
+>  {P}  =>  {@pdf.obj53}
+>  {K}  =>  {[@pdf.obj71\c_space_tl @pdf.obj74]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 51 is @pdf.obj71.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_51_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Lbl}
+>  {rolemap}  =>  {{Lbl}{}}
+>  {parentrole}  =>  {{Lbl}{}}
+>  {P}  =>  {@pdf.obj70}
+>  {K}  =>  {[<</Type /MCR /Pg @page2/MCID 9>>\c_space_tl @pdf.obj72\c_space_tl <</Type /MCR /Pg @page2/MCID 11>>]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 52 is @pdf.obj72.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_52_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/Link}
+>  {rolemap}  =>  {{Link}{}}
+>  {parentrole}  =>  {{Link}{}}
+>  {P}  =>  {@pdf.obj71}
+>  {K}  =>  {[<</Type /MCR /Pg @page2/MCID 10>>\c_space_tl @pdf.obj73]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 53 is @pdf.obj74.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_53_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/LBody}
+>  {rolemap}  =>  {{LBody}{}}
+>  {parentrole}  =>  {{LBody}{}}
+>  {P}  =>  {@pdf.obj70}
+>  {K}  =>  {@pdf.obj75}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 54 is @pdf.obj75.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_54_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {C}  =>  {/EndnoteType}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnotemark.3},}
+>  {S}  =>  {/endnote}
+>  {rolemap}  =>  {{Note}{}}
+>  {parentrole}  =>  {{Note}{}}
+>  {P}  =>  {@pdf.obj74}
+>  {K}  =>  {[@pdf.obj76\c_space_tl @pdf.obj78\c_space_tl @pdf.obj80]}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpb_tl=PDF object of Refs: @pdf.obj47.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 55 is @pdf.obj76.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_55_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/text-unit}
+>  {rolemap}  =>  {{Part}{}}
+>  {parentrole}  =>  {{Note}{}}
+>  {P}  =>  {@pdf.obj75}
+>  {K}  =>  {@pdf.obj77}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 56 is @pdf.obj77.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_56_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/text}
+>  {rolemap}  =>  {{P}{}}
+>  {parentrole}  =>  {{P}{}}
+>  {P}  =>  {@pdf.obj76}
+>  {K}  =>  {<</Type /MCR /Pg @page2/MCID 12>>}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 57 is @pdf.obj78.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_57_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/text-unit}
+>  {rolemap}  =>  {{Part}{}}
+>  {parentrole}  =>  {{Note}{}}
+>  {P}  =>  {@pdf.obj75}
+>  {K}  =>  {@pdf.obj79}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 58 is @pdf.obj79.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_58_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {C}  =>  {/justify}
+>  {S}  =>  {/text}
+>  {rolemap}  =>  {{P}{}}
+>  {parentrole}  =>  {{P}{}}
+>  {P}  =>  {@pdf.obj78}
+>  {K}  =>  {<</Type /MCR /Pg @page2/MCID 13>>}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 59 is @pdf.obj80.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_59_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {S}  =>  {/text-unit}
+>  {rolemap}  =>  {{Part}{}}
+>  {parentrole}  =>  {{Note}{}}
+>  {P}  =>  {@pdf.obj75}
+>  {K}  =>  {@pdf.obj81}.
+<recently read> }
+l. ...\end{document}
+> \l_tmpa_tl=PDF object of structnum 60 is @pdf.obj81.
+<recently read> }
+l. ...\end{document}
+The property list \g__tag_struct_60_prop contains the pairs (without outer braces):
+>  {Type}  =>  {/StructElem}
+>  {C}  =>  {/justify}
+>  {S}  =>  {/text}
+>  {rolemap}  =>  {{P}{}}
+>  {parentrole}  =>  {{P}{}}
+>  {P}  =>  {@pdf.obj80}
+>  {K}  =>  {<</Type /MCR /Pg @page3/MCID 0>>}.
+<recently read> }
+l. ...\end{document}
+============================================================

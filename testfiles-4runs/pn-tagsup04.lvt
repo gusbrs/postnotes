@@ -107,6 +107,61 @@
 \newpage
 \ENDTEST
 
+% There must be a better/cleaner way to do this, but I can't seem to get
+% tagpdf to report on the Refs numbers, which is critical from our point of
+% view.  So we go for tagpdf's raw data.  Just a test file, it won't blow in
+% anyone's hands but mine.
+\ExplSyntaxOn
+\cs_new:Npn \__postnotes_test_tagsup_object_from_Ref_label:n #1
+  {
+    \tag_struct_object_ref:e
+      { \prop_item:Nn \g__tag_struct_label_num_prop {#1} }
+  }
+\AddToHook { enddocument/end }
+  {
+    \TIMO
+    \BEGINTEST{Check~references}
+    \int_step_inline:nn { \tag_get:n { struct_counter } }
+      {
+        \prop_if_exist:cT { g__tag_struct_#1_prop }
+          {
+            \tl_set:Ne \l_tmpa_tl
+              { PDF~object~of~structnum~#1~is~\tag_struct_object_ref:n {#1} }
+            \tl_show:N \l_tmpa_tl
+            \prop_show:c { g__tag_struct_#1_prop }
+            \prop_get:cnNT { g__tag_struct_#1_prop } { S } \l_tmpa_tl
+              {
+                \bool_lazy_any:nT
+                  {
+                    { \str_if_eq_p:Vn \l_tmpa_tl { /endnote } }
+                    { \str_if_eq_p:Vn \l_tmpa_tl { /endnotemark } }
+                  }
+                  {
+                    \group_begin:
+                    \seq_clear:N \l_tmpa_seq
+                    \cs_set_eq:NN \__tag_struct_Ref_label:nN
+                      \__postnotes_test_tagsup_object_from_Ref_label:n
+                    \cs_set_eq:NN \__tag_struct_Ref_obj:nN \use:n
+                    \prop_get:cnNT { g__tag_struct_#1_prop } { Ref }
+                      \l_tmpb_tl
+                      {
+                        \clist_set:NV \l_tmpa_clist \l_tmpb_tl
+                        \clist_map_inline:Nn \l_tmpa_clist
+                          { \seq_put_right:Ne \l_tmpa_seq {##1} }
+                        \tl_set:Ne \l_tmpb_tl
+                          { PDF~object~of~Refs:~\seq_use:Nn \l_tmpa_seq {,~} }
+                        \tl_show:N \l_tmpb_tl
+                      }
+                    \group_end:
+                  }
+              }
+          }
+      }
+    \ENDTEST
+    \OMIT
+  }
+\ExplSyntaxOff
+
 \OMIT
 
 \end{document}
