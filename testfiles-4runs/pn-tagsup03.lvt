@@ -25,7 +25,7 @@
 \renewcommand\sfdefault{cmss}
 \renewcommand\ttdefault{cmtt}
 
-% same test as pn-tagsup04, but with listenv=none
+% same test as pn-tagsup01, but with listenv=none
 
 \usepackage{postnotes}
 \postnotesetup{listenv=none}

@@ -25,7 +25,7 @@
 \renewcommand\sfdefault{cmss}
 \renewcommand\ttdefault{cmtt}
 
-% same test as pn-tagsup04, but with pdfversion 1.7
+% same test as pn-tagsup01, but with pdfversion 1.7
 
 \usepackage{postnotes}
 
