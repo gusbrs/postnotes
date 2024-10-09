@@ -921,7 +921,8 @@
         \MakeLinkTarget* { postnote. \l_postnotes_note_id_tl .mark }
         \@@_set_mark_page_label:e { \l_postnotes_note_id_tl }
         \@@_set_user_labels:
-        \bool_if:NF \l_@@_nomark_bool
+        \bool_if:NTF \l_@@_nomark_bool
+          { \tag_socket_use:n { postnotes/mark/nomark } }
           {
             \@@_typeset_mark:eV
               { \l_postnotes_note_id_tl } \l_@@_mark_tl
@@ -2749,6 +2750,7 @@
 %    \begin{macrocode}
 \socket_new:nn { tagsupport/postnotes/mark/begin }{ 0 }
 \socket_new:nn { tagsupport/postnotes/mark/end }{ 0 }
+\socket_new:nn { tagsupport/postnotes/mark/nomark }{ 0 }
 \socket_new:nn { tagsupport/postnotes/printlist/begin }{ 0 }
 \socket_new:nn { tagsupport/postnotes/printlist/end }{ 0 }
 \socket_new:nn { tagsupport/postnotes/printnote/begin }{ 0 }
@@ -2794,8 +2796,19 @@
         \tag_struct_end: % endnotemark
         \tag_mc_begin_pop:n{}
       }
+    \socket_new_plug:nnn { tagsupport/postnotes/mark/nomark } { default }
+      {
+        \tag_struct_begin:n
+          {
+            tag = NonStruct ,
+            label = { postnotemark. \l_postnotes_note_id_tl } ,
+            ref = { postnote. \l_postnotes_note_id_tl } ,
+          }
+        \tag_struct_end: % NonStruct
+      }
     \socket_assign_plug:nn { tagsupport/postnotes/mark/begin } { default }
     \socket_assign_plug:nn { tagsupport/postnotes/mark/end } { default }
+    \socket_assign_plug:nn { tagsupport/postnotes/mark/nomark } { default }
 %    \end{macrocode}
 % \cs{printpostnotes}
 %    \begin{macrocode}
