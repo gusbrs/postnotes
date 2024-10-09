@@ -2784,12 +2784,6 @@
   { \cs_if_exist_p:N \tag_if_active_p: }
   { \tag_if_active_p: }
   {
-%    \end{macrocode}
-% CHECK As far as I can tell, we don't ``own'' these tags in the relevant
-% namespaces, not even in the ``user'' namespace (I guess?, since it is just
-% one shared one).  What happens if someone else creates them before us?  Is
-% there some ``provide-tag''?
-%    \begin{macrocode}
     \tagpdfsetup
       {
         add-new-tag = { tag=endnote, role=FENote } ,
