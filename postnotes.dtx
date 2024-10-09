@@ -2913,12 +2913,12 @@
 %    \begin{macrocode}
     \cs_new:Npn \@@_tagsup_print_block_begin:
       { \tag_struct_begin:n { tag=L, attribute-class=enumerate } }
-    \AddToHook { postnotes/print/begin } [ postnotes ]
+    \AddToHook { postnotes/print/begin } [ postnotes/tagsup ]
       {
         \bool_if:NT \l_@@_print_as_list_bool
           {
             \exp_args:Ne \AddToHookNext
-              { env / \l_@@_print_env_tl / begin}
+              { env / \l_@@_print_env_tl / begin }
               {
                 \tag_if_active:T
                   { \tag_tool:n { para=false } }
@@ -2931,7 +2931,7 @@
 % Setup for \cs{label} and \cs{zlabel} inside the note.
 %    \begin{macrocode}
     \bool_new:N \l_@@_inside_note_bool
-    \AddToHookWithArguments { label } [ postnotes ]
+    \AddToHookWithArguments { label } [ postnotes/tagsup ]
       {
         \bool_if:NT \l_@@_inside_note_bool
           {
@@ -2939,21 +2939,21 @@
               { postnotes/tagsup@noteid }
           }
       }
-    \AddToHook { postnotes/print/note/begin } [ postnotes ]
+    \AddToHook { postnotes/print/note/begin } [ postnotes/tagsup ]
       { \bool_set_true:N \l_@@_inside_note_bool }
     \property_new:nnnn { postnotes/tagsup@noteid } { now } { 0 }
       { \l_postnotes_print_note_id_tl }
-    \AddToHook { package/zref-user/after } [ postnotes ]
+    \AddToHook { package/zref-user/after } [ postnotes/tagsup ]
       {
         \zref@newprop { postnotes@tagsup@noteid } [ 0 ]
           { \l_postnotes_print_note_id_tl }
-        \AddToHook { postnotes/print/note/begin } [ postnotes ]
+        \AddToHook { postnotes/print/note/begin } [ postnotes/tagsup ]
           { \zref@localaddprop { main } { postnotes@tagsup@noteid } }
       }
 %    \end{macrocode}
 % Setup for \opt{label} and \opt{zlabel} options.
 %    \begin{macrocode}
-    \AddToHook { postnotes/note/store } [ postnotes ]
+    \AddToHook { postnotes/note/store } [ postnotes/tagsup ]
       {
         \tl_if_empty:NF \l_@@_note_label_tl
           {
@@ -2961,9 +2961,9 @@
               { label } \l_@@_note_label_tl
           }
       }
-    \AddToHook { package/zref-user/after } [ postnotes ]
+    \AddToHook { package/zref-user/after } [ postnotes/tagsup ]
       {
-        \AddToHook { postnotes/note/store } [ postnotes ]
+        \AddToHook { postnotes/note/store } [ postnotes/tagsup ]
           {
             \tl_if_empty:NF \l_@@_note_zlabel_tl
               {
@@ -2972,7 +2972,7 @@
               }
           }
       }
-    \AddToHook { postnotes/print/note/begin } [ postnotes ]
+    \AddToHook { postnotes/print/note/begin } [ postnotes/tagsup ]
       {
         \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
           { label } \l_@@_restore_tmp_tl
@@ -3035,7 +3035,7 @@
 % immediately and a \cs{posnoteref} is made before \cs{printposnotes}, and
 % also so that the ``main'' reference always comes first at the list.
 %    \begin{macrocode}
-    \AddToHook { tagpdf/finish/before } [ postnotes ]
+    \AddToHook { tagpdf/finish/before } [ postnotes/tagsup ]
       {
         \prop_map_inline:Nn \g_@@_tagsup_crossrefs_prop
           { \@@_tagsup_gput_ref:nn {#2} {#1} }
@@ -3104,7 +3104,7 @@
 %    \end{macrocode}
 % \cs{postnotezref}
 %    \begin{macrocode}
-    \AddToHook { package/zref-user/after } [ postnotes ]
+    \AddToHook { package/zref-user/after } [ postnotes/tagsup ]
       {
         \socket_new_plug:nnn { tagsupport/postnotes/postnotezref/begin } { default }
           {
