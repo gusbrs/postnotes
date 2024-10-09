@@ -2,6 +2,9 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.8...HEAD)
 
+### Added
+- Provide (experimental) support for PDF tagging.
+
 ## [v0.2.8](https://github.com/gusbrs/postnotes/compare/v0.2.7...v0.2.8) (2023-12-12)
 
 ## Fixed
