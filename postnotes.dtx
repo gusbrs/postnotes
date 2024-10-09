@@ -3011,7 +3011,12 @@
 % \cs{footref}s.  I don't see anything stating something of the sort in the
 % standards, the backref of the original mark is already a stretch.  I also
 % fail to see why this is needed, and how it could be used.  But\dots{} I
-% trust Ulrike knows better than me.
+% trust Ulrike knows better than me.  Note that the label we are referring to
+% here, and the corresponding \texttt{tagstruct} property, are set by the
+% \opt{label} option in \cs{tag_struct_begin:n}, hence its definition and
+% label name format come from \pkg{tagpdf}.  The name of the label is a
+% combination of how that name is constructed in \pkg{tagpdf} and of how we
+% constructed the \opt{label} arguments here.
 % \begin{macro}{\@@_tagsup_store_crossref:nN}
 %   \begin{syntax}
 %     \cs{@@_tagsup_store_crossref:nN} \Arg{ref type} \Arg{ID number of note}
@@ -3024,7 +3029,7 @@
       {
         \prop_gput:Nee \g_@@_tagsup_crossrefs_prop
           { \tag_get:n { struct_num } }
-          { \property_ref:ee { tagpdfstruct-#1. #2 } { tagstruct } }
+          { \property_ref:ee { tagpdfstruct-#1.#2 } { tagstruct } }
       }
 %    \end{macrocode}
 % \end{macro}
