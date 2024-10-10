@@ -1056,9 +1056,9 @@
               { \hyper@linkend }
           }
           { \@@_make_mark:nnn {#2} { } { } }
-        }
-        { \tag_socket_use:n { postnotes/mark/begin } }
-        { \tag_socket_use:n { postnotes/mark/end }   }
+      }
+      { \tag_socket_use:n { postnotes/mark/begin } }
+      { \tag_socket_use:n { postnotes/mark/end }   }
   }
 \cs_generate_variant:Nn \@@_typeset_mark:nn { eV }
 \tl_new:N \l_@@_saved_spacefactor_tl
@@ -1089,7 +1089,7 @@
   {
     \tl_if_empty:NF \l_@@_note_label_tl
       { \exp_args:NV \label \l_@@_note_label_tl }
-   \tl_if_empty:NF \l_@@_note_zlabel_tl
+    \tl_if_empty:NF \l_@@_note_zlabel_tl
       { \exp_args:NV \zlabel \l_@@_note_zlabel_tl }
   }
 %    \end{macrocode}
