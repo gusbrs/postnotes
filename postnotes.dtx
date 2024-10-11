@@ -629,6 +629,72 @@
 %
 % \subsection*{\opt{multiple}, \opt{multisep} options}
 %
+% As far as I can tell, the \opt{multiple} option has its origins in the
+% \pkg{footmisc} package, which offers this feature for footnotes.  About this
+% option, \file{footmisc.dtx} observes:
+%
+% \begin{quote}
+%   This (revised) code derives from a suggestion by Alexander Rozhenko (the
+%   author of the \pkg{manyfoot} package): the intention is that
+%   \pkg{footmisc} and \pkg{manyfoot} should be able to `interwork', in the
+%   sense that each would recognize the other's footnote marks and behave
+%   appropriately.  The trick is that both \cs{footnote} and \cs{footnotemark}
+%   insert a marker (a cancelling pair of kerns of \cs{multiplefootnotemarker}
+%   (of opposite signs), which is detected in following \cs{footnote} or
+%   \cs{footnotemark} commands.
+% \end{quote}
+%
+% About the same option, \file{manyfoot.dtx} notes:
+%
+% \begin{quote}
+%   To support \opt{multiple} option from \pkg{footmisc} we add the
+%   \cs{FN@mf@prepare} command from \pkg{footmisc} (suggested by Frank
+%   Mittelbach).
+% \end{quote}
+%
+% Whatever the exact origin of this feature, the fact is that it has spread
+% throughout the ecosystem, using not only the same basic mechanism but,
+% typically, using \emph{the same variables}: \cs{multiplefootnotemarker} and
+% \cs{multfootsep}.  With the intention, naturally, that different classes and
+% packages can ``interwork'' with regard to this feature.  And this became a
+% sort of ``shared feature'' in the ecosystem (the list includes
+% \pkg{footmisc}, \texttt{KOMA-Script}, \pkg{eledmac}, \pkg{reledmac},
+% \cls{tufte}, \cls{memoir}, \pkg{parnotes}, \pkg{sidenotes}, and now also
+% \pkg{postnotes}, see discussion at
+% \url{https://chat.stackexchange.com/transcript/message/66421777#66421777}).
+% What is crucial for this interplay, however, is not quite the variables
+% themselves, but \emph{the value of the canceling pair of kerns}, stored in
+% \cs{multiplefootnotemarker}.  The fact that the same variables are used by
+% most of the classes and packages which provide the feature speaks for
+% convenience, in that a change in one of them reflects in all participating
+% in the ``pool''.
+%
+% Convenient as it is, this shared use of the same variables can only work as
+% long as the community agrees in what these variables contain to some degree.
+% As far as \cs{multiplefootnotemarker} goes, I see no divergence, and
+% everybody uses the value of \texttt{3sp} for the canceling kerns from
+% \cs{FN@mf@prepare}.  \file{latex-lab-footnotes.dtx} even documents this
+% value for this purpose in its list of ``use of kerns to mark h-mode
+% positions'' (see
+% \url{https://chat.stackexchange.com/transcript/message/66421893#66421893}).
+% Things are not as smooth with regard to \cs{multfootsep} though.
+% \pkg{footmisc} stores a plain comma in \cs{multfootsep} and applies
+% formatting around it in \cs{FN@mf@check} (hard-coded as
+% \cs{textsuperscript}).  \texttt{KOMA-Script} also stores plain content in
+% \cs{multfootsep} and applies the formatting in the check function.
+% \cls{memoir}, however, stores the formatting directly \cs{multfootsep} and
+% applies no formatting later.  Also, \file{latex-lab-footmisc.ltx}, in adding
+% PDF tagging support for \pkg{footmisc} stores the tagging code directly in
+% \cs{multfootsep}.  I don't know if there are others, but these cases are
+% already relevant enough to spoil things.  The problem is not that they
+% disagree on the value of \cs{multfootsep}, but on the function(s) this macro
+% is supposed to perform.  That given, any other parties trying to partake in
+% this feature have to handle things differently depending on the value of
+% \cs{multfootsep}.  All in all, \pkg{postnotes} takes the cautious stance of
+% using internal variables, instead of the shared ones, to implement the
+% \opt{multiple} option.  The only thing that really needs to be common is the
+% value of the canceling kerns of \texttt{3sp} in \cs{@@_multiple_prepare:}.
+%
 %    \begin{macrocode}
 \cs_new_eq:NN \@@_multiple_prepare: \prg_do_nothing:
 \cs_new_eq:NN \@@_multiple_check: \prg_do_nothing:
@@ -646,7 +712,7 @@
 %    \end{macrocode}
 % I'm using the definitions in \pkg{latex-lab-footmisc.ltx} as base, see
 % \texttt{texdoc latex-lab-footnotes}.  For the formatting of the separator,
-% though, I take inspiration from \texttt{KOMAScript} and use
+% though, I take inspiration from \texttt{KOMA-Script} and use
 % \cs{@@_make_mark:nnn}, instead of hard-coding \cs{textsuperscript}.
 %    \begin{macrocode}
         \cs_set_protected:Npn \@@_multiple_prepare:
@@ -688,7 +754,7 @@
 %    \end{macrocode}
 % \cs{postnote} does quite a lot of stuff before actually calling
 % \cs{@@_typeset_mark:eV} which results in \cs{lastkern} set by the previous
-% \cs{@@_multiple_prepare:} being lost (why?), so we need to store it.
+% \cs{@@_multiple_prepare:} being lost (why?), so we need to store it earlier.
 %    \begin{macrocode}
         \cs_set_protected:Npn \@@_multiple_store_lastkern:
           {

@@ -385,6 +385,16 @@ maketextmark = {#2#1.#3} ,
 At the point \opt{maketextmark} gets typeset, the \cs{pnthepage} variable
 contains the value of \cs{thepage} where its corresponding note was set.
 
+\DescribeMacro{multiple} %
+\DescribeMacro{multisep} %
+Just as for footnotes, when two or more \cs{postnote}s are called in imediate
+sequence, the marks typeset in superscript give impression of being one large
+number, instead of the sequence of smaller ones they were supposed to convey.
+Enabling the \opt{multiple} option makes \pkg{postnotes} typeset a separator
+between marks occurring in sequence.  The separator can be configured with the
+\opt{multisep} option, which has a comma as initial value.  \opt{multiple} is
+a boolean option, and has \texttt{false} as initial value.
+
 \DescribeOption{pretextmark} %
 \DescribeOption{posttextmark} %
 \DescribeOption{postprintnote} %
