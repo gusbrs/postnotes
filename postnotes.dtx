@@ -542,6 +542,7 @@
     maketextmark .value_required:n = true ,
     maketextmark .initial:n = { #2 #1 . #3 } ,
   }
+\cs_generate_variant:Nn \@@_make_mark:nnn { Vnn }
 %    \end{macrocode}
 %
 %
@@ -685,7 +686,7 @@
                 % \unkern
                 % \unkern
                 \tag_socket_use:n { postnotes/multsep/begin }
-                \@@_make_mark:nnn { \l_@@_multisep_tl } { } { }
+                \@@_make_mark:Vnn \l_@@_multisep_tl { } { }
                 \tag_socket_use:n { postnotes/multsep/end }
                 \spacefactor \l_@@_saved_spacefactor_multi_tl
                 \scan_stop:
@@ -1113,7 +1114,7 @@
         \socket_assign_plug:nn { tagsupport/postnotes/multsep/begin } { noop }
         \socket_assign_plug:nn { tagsupport/postnotes/multsep/end } { noop }
         \@@_typeset_mark_wrapper:nnn
-          { \@@_make_mark:nnn { \l_@@_mark_tl } { } { } }
+          { \@@_make_mark:Vnn \l_@@_mark_tl { } { } }
           { } { }
         \group_end:
       }
