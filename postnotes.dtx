@@ -1012,13 +1012,13 @@
         \MakeLinkTarget* { postnote. \l_postnotes_note_id_tl .mark }
         \@@_set_mark_page_label:e { \l_postnotes_note_id_tl }
         \@@_set_user_labels:
+        \@@_store:nn { \l_postnotes_note_id_tl } {#2}
         \bool_if:NTF \l_@@_nomark_bool
           { \tag_socket_use:n { postnotes/mark/nomark } }
           {
             \@@_typeset_mark:eV
               { \l_postnotes_note_id_tl } \l_@@_mark_tl
           }
-        \@@_store:nn { \l_postnotes_note_id_tl } {#2}
       }
     \group_end:
   }
