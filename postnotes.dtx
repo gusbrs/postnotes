@@ -630,42 +630,32 @@
 % \subsection*{\opt{multiple}, \opt{multisep} options}
 %
 %    \begin{macrocode}
-\bool_new:N \l_@@_multiple_bool
 \tl_new:N \l_@@_multisep_tl
+\tl_const:Nn \c_postnotes_multi_notemarker_tl { 3sp }
+\dim_new:N \l_@@_multi_lastkern_dim
+\bool_new:N \l_@@_multi_stored_lastkern_bool
+\tl_new:N \l_@@_saved_spacefactor_multi_tl
 \keys_define:nn { postnotes/setup }
   {
-    multiple .bool_set:N = \l_@@_multiple_bool ,
-    multiple .initial:n = false ,
-    multiple .default:n = true ,
-    multisep .tl_set:N = \l_@@_multisep_tl ,
-    multisep .initial:n = {,} ,
-  }
-%    \end{macrocode}
-%
-%    \begin{macrocode}
-\cs_new_eq:NN \@@_multiple_prepare: \prg_do_nothing:
-\cs_new_eq:NN \@@_multiple_check: \prg_do_nothing:
-\cs_new_eq:NN \@@_multiple_store_lastkern: \prg_do_nothing:
-\AddToHook { begindocument }
-  {
-    \bool_if:NT \l_@@_multiple_bool
+    multiple .choice: ,
+    multiple / true .code:n =
       {
-        \providecommand*{\multiplefootnotemarker}{3sp}
-        \tl_new:N \l_@@_saved_spacefactor_multi_tl
 %    \end{macrocode}
 % I'm using the definitions in \pkg{latex-lab-footmisc.ltx} as base, see
 % \texttt{texdoc latex-lab-footnotes}.  For the formatting of the separator,
 % though, I take inspiration from \texttt{KOMAScript} and use
-% \cs{@@_make_mark:nnn}, instead of hardcoding \cs{textsuperscript}.
+% \cs{@@_make_mark:nnn}, instead of hard-coding \cs{textsuperscript}.
 %    \begin{macrocode}
         \cs_set_protected:Npn \@@_multiple_prepare:
           {
-            \kern-\multiplefootnotemarker
-            \kern\multiplefootnotemarker\scan_stop:
+            \kern -\c_postnotes_multi_notemarker_tl
+            \kern  \c_postnotes_multi_notemarker_tl
+            \scan_stop:
           }
         \cs_set_protected:Npn \@@_multiple_check:
           {
-            \dim_compare:nNnT { \multiplefootnotemarker } =
+            \dim_compare:nNnT
+              { \c_postnotes_multi_notemarker_tl } =
               {
                 \bool_if:NTF \l_@@_multi_stored_lastkern_bool
                   { \l_@@_multi_lastkern_dim }
@@ -673,7 +663,7 @@
               }
               {
                 \tl_set:Ne \l_@@_saved_spacefactor_multi_tl
-                  { \the\spacefactor }
+                  { \int_use:N \spacefactor }
 %    \end{macrocode}
 % \pkg{latex-lab-footmisc.ltx} comments at this point ``shouldn't that be 2
 % unkerns?? (none would also be ok)'' and goes on to add a second \cs{unkern}.
@@ -694,27 +684,33 @@
           }
 %    \end{macrocode}
 % \cs{postnote} does quite a lot of stuff before actually calling
-% \cs{@@_typeset_mark:eV} which results in \cs{lastkern} set by
+% \cs{@@_typeset_mark:eV} which results in \cs{lastkern} set by the previous
 % \cs{@@_multiple_prepare:} being lost (why?), so we need to store it.
 %    \begin{macrocode}
-        \dim_new:N \l_@@_multi_lastkern_dim
-        \bool_new:N \l_@@_multi_stored_lastkern_bool
         \cs_set_protected:Npn \@@_multiple_store_lastkern:
           {
             \dim_set_eq:NN \l_@@_multi_lastkern_dim \lastkern
             \bool_set_true:N \l_@@_multi_stored_lastkern_bool
           }
-      }
-    \keys_define:nn { postnotes/setup }
+      } ,
+    multiple / false .code:n =
       {
-        multiple .code:n =
-          {
-            \msg_warning:nnn { postnotes }
-              { option-preamble-only } { multiple }
-          } ,
-      }
+        \cs_new_eq:NN \@@_multiple_prepare: \prg_do_nothing:
+        \cs_new_eq:NN \@@_multiple_check: \prg_do_nothing:
+        \cs_new_eq:NN \@@_multiple_store_lastkern: \prg_do_nothing:
+      } ,
+    multiple / unknown .code:n =
+      { \msg_error:nnn { postnotes } { boolean-values-only } { multiple } } ,
+    multiple .initial:n = false ,
+    multiple .default:n = true ,
+    multisep .tl_set:N = \l_@@_multisep_tl ,
+    multisep .initial:n = {,} ,
   }
+\msg_new:nnnn { postnotes } { boolean-values-only }
+  { Key~'#1'~accepts~boolean~values~only. }
+  { The~key~'#1'~only~accepts~the~values~'true'~and~'false'. }
 %    \end{macrocode}
+%
 %
 % \subsection*{\opt{sort} option}
 %
@@ -1162,7 +1158,8 @@
     \mode_leave_vertical:
     \mode_if_horizontal:T
       {
-        \tl_set:Ne \l_@@_saved_spacefactor_tl { \the\spacefactor }
+        \tl_set:Ne \l_@@_saved_spacefactor_tl
+          { \int_use:N \spacefactor }
         \@@_multiple_check:
         \nobreak
       }
