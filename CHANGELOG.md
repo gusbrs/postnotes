@@ -3,7 +3,8 @@
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.8...HEAD)
 
 ### Added
-- Provide (experimental) support for PDF tagging.
+- Provide (experimental) support for PDF tagging. For this, the required LaTeX
+  kernel version was bumped to 2024-06-01.
 
 ## [v0.2.8](https://github.com/gusbrs/postnotes/compare/v0.2.7...v0.2.8) (2023-12-12)
 
