@@ -2997,7 +2997,8 @@
 %    \begin{macrocode}
     \socket_new_plug:nnn { tagsupport/postnotes/printlist/begin } { default }
       {
-        \bool_if:NF \l_@@_print_as_list_bool
+        \bool_if:NTF \l_@@_print_as_list_bool
+          { \tag_tool:n { para/tagging=false } }
           {
             \tag_tool:n { para/tagging=false }
             \mode_leave_vertical:
@@ -3116,8 +3117,6 @@
             \exp_args:Ne \AddToHookNext
               { env / \l_@@_print_env_tl / begin }
               {
-                \tag_if_active:T
-                  { \tag_tool:n { para/tagging=false } }
                 \cs_set_eq:NN \__block_list_begin:
                   \@@_tagsup_print_block_begin:
               }
