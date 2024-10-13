@@ -2999,7 +2999,7 @@
       {
         \bool_if:NF \l_@@_print_as_list_bool
           {
-            \tag_tool:n { para=false }
+            \tag_tool:n { para/tagging=false }
             \mode_leave_vertical:
             \tag_struct_begin:n { tag=L, attribute-class=enumerate }
           }
@@ -3062,7 +3062,7 @@
               }
             \tag_struct_begin:n { tag=text-unit }
             \tag_struct_begin:n { tag=text }
-            \tag_tool:n { para=true }
+            \tag_tool:n { para/tagging=true }
             \tag_mc_begin:n{}
           }
           {
@@ -3076,7 +3076,7 @@
               }
             \tag_struct_begin:n { tag=text-unit }
             \tag_struct_begin:n { tag=text }
-            \tag_tool:n { para=true }
+            \tag_tool:n { para/tagging=true }
             \tag_mc_begin:n{}
           }
       }
@@ -3085,14 +3085,14 @@
         \bool_if:NTF \l_@@_print_as_list_bool
           {
             \tag_mc_end:
-            \tag_tool:n { para=false }
+            \tag_tool:n { para/tagging=false }
             \tag_struct_end: % text
             \tag_struct_end: % text-unit
             \tag_struct_end: % endnote
           }
           {
             \tag_mc_end:
-            \tag_tool:n { para=false }
+            \tag_tool:n { para/tagging=false }
             \tag_struct_end: % text
             \tag_struct_end: % text-unit
             \tag_struct_end: % endnote
@@ -3117,7 +3117,7 @@
               { env / \l_@@_print_env_tl / begin }
               {
                 \tag_if_active:T
-                  { \tag_tool:n { para=false } }
+                  { \tag_tool:n { para/tagging=false } }
                 \cs_set_eq:NN \__block_list_begin:
                   \@@_tagsup_print_block_begin:
               }
