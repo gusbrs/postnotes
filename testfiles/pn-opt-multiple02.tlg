@@ -1,0 +1,270 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: postnote + footnote
+============================================================
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line ....
+> \box...=
+\hbox(8.14003+0.0)x18.98615
+.\hbox(0.0+0.0)x0.0
+.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+..\mathoff
+.\kern -0.00005
+.\mathon
+.\hbox(0.80556+1.3611)x2.7639, shifted -3.62892
+..\OT1/cmr/m/n/7 ,
+.\mathoff
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+..\mathoff
+.\kern -0.00005
+.\kern 0.00005
+.\insert253, natural size 9.54001; split(6.65,2.85002); float cost 20000
+..\hbox(6.68999+2.85002)x345.0, glue set 322.7499fil
+...\hbox(6.68999+0.0)x18.00005, glue set 13.83344fil
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\hbox(6.68999+0.0)x4.16661
+.....\mathon
+.....\hbox(3.86665+0.0)x4.16661, shifted -2.82333
+......\OT1/cmr/m/n/6 1
+.....\mathoff
+...\hbox(6.65+0.0)x0.0
+....\rule(6.65+0.0)x0.0
+...\OT1/cmr/m/n/8 1
+...\write1{\newlabel{fn:2}{{1}{\thepage }{}{}{}}}
+...\write1{\zref@newlabel{fn:2}{\default{1}\page{\Z@C@page }}}
+...\penalty 10000
+...\rule(0.0+2.85002)x0.0
+...\penalty 10000
+...\glue(\parfillskip) 0.0 plus 1.0fil
+...\glue(\rightskip) 0.0
+.\kern -0.00005
+.\kern 0.00005
+.\hbox(0.0+0.0)x0.0
+.\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
+.\hbox(4.43448+0.0)x2.7639
+..\mathon
+..\hbox(0.80556+1.3611)x2.7639, shifted -3.62892
+...\OT1/cmr/m/n/7 ,
+..\mathoff
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 2
+..\mathoff
+.\kern -0.00005
+.\kern 0.00005
+! OK.
+l. ...\showbox0
+============================================================
+============================================================
+TEST 2: footnote + postnoteref
+============================================================
+> \box...=
+\hbox(8.14003+0.0)x18.98615
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 2
+..\mathoff
+.\kern -0.00005
+.\kern 0.00005
+.\insert253, natural size 9.54001; split(6.65,2.85002); float cost 20000
+..\hbox(6.68999+2.85002)x345.0, glue set 322.7499fil
+...\hbox(6.68999+0.0)x18.00005, glue set 13.83344fil
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\hbox(6.68999+0.0)x4.16661
+.....\mathon
+.....\hbox(3.86665+0.0)x4.16661, shifted -2.82333
+......\OT1/cmr/m/n/6 2
+.....\mathoff
+...\hbox(6.65+0.0)x0.0
+....\rule(6.65+0.0)x0.0
+...\OT1/cmr/m/n/8 2
+...\penalty 10000
+...\rule(0.0+2.85002)x0.0
+...\penalty 10000
+...\glue(\parfillskip) 0.0 plus 1.0fil
+...\glue(\rightskip) 0.0
+.\kern -0.00005
+.\kern 0.00005
+.\hbox(4.43448+0.0)x2.7639
+..\mathon
+..\hbox(0.80556+1.3611)x2.7639, shifted -3.62892
+...\OT1/cmr/m/n/7 ,
+..\mathoff
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+...\hbox(0.0+0.0)x0.0
+..\mathoff
+.\kern -0.00005
+.\mathon
+.\hbox(0.80556+1.3611)x2.7639, shifted -3.62892
+..\OT1/cmr/m/n/7 ,
+.\mathoff
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 3
+..\mathoff
+.\kern -0.00005
+.\kern 0.00005
+.\insert253, natural size 9.54001; split(6.65,2.85002); float cost 20000
+..\hbox(6.68999+2.85002)x345.0, glue set 322.7499fil
+...\hbox(6.68999+0.0)x18.00005, glue set 13.83344fil
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\hbox(6.68999+0.0)x4.16661
+.....\mathon
+.....\hbox(3.86665+0.0)x4.16661, shifted -2.82333
+......\OT1/cmr/m/n/6 3
+.....\mathoff
+...\hbox(6.65+0.0)x0.0
+....\rule(6.65+0.0)x0.0
+...\OT1/cmr/m/n/8 3
+...\penalty 10000
+...\rule(0.0+2.85002)x0.0
+...\penalty 10000
+...\glue(\parfillskip) 0.0 plus 1.0fil
+...\glue(\rightskip) 0.0
+.\kern -0.00005
+.\kern 0.00005
+! OK.
+l. ...\showbox0
+============================================================
+============================================================
+TEST 3: footnote + postnotezref
+============================================================
+> \box...=
+\hbox(8.14003+0.0)x18.98615
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 4
+..\mathoff
+.\kern -0.00005
+.\kern 0.00005
+.\insert253, natural size 9.54001; split(6.65,2.85002); float cost 20000
+..\hbox(6.68999+2.85002)x345.0, glue set 322.7499fil
+...\hbox(6.68999+0.0)x18.00005, glue set 13.83344fil
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\hbox(6.68999+0.0)x4.16661
+.....\mathon
+.....\hbox(3.86665+0.0)x4.16661, shifted -2.82333
+......\OT1/cmr/m/n/6 4
+.....\mathoff
+...\hbox(6.65+0.0)x0.0
+....\rule(6.65+0.0)x0.0
+...\OT1/cmr/m/n/8 4
+...\penalty 10000
+...\rule(0.0+2.85002)x0.0
+...\penalty 10000
+...\glue(\parfillskip) 0.0 plus 1.0fil
+...\glue(\rightskip) 0.0
+.\kern -0.00005
+.\kern 0.00005
+.\hbox(4.43448+0.0)x2.7639
+..\mathon
+..\hbox(0.80556+1.3611)x2.7639, shifted -3.62892
+...\OT1/cmr/m/n/7 ,
+..\mathoff
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 1
+..\mathoff
+.\kern -0.00005
+.\mathon
+.\hbox(0.80556+1.3611)x2.7639, shifted -3.62892
+..\OT1/cmr/m/n/7 ,
+.\mathoff
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 5
+..\mathoff
+.\kern -0.00005
+.\kern 0.00005
+.\insert253, natural size 9.54001; split(6.65,2.85002); float cost 20000
+..\hbox(6.68999+2.85002)x345.0, glue set 322.7499fil
+...\hbox(6.68999+0.0)x18.00005, glue set 13.83344fil
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\hbox(6.68999+0.0)x4.16661
+.....\mathon
+.....\hbox(3.86665+0.0)x4.16661, shifted -2.82333
+......\OT1/cmr/m/n/6 5
+.....\mathoff
+...\hbox(6.65+0.0)x0.0
+....\rule(6.65+0.0)x0.0
+...\OT1/cmr/m/n/8 5
+...\penalty 10000
+...\rule(0.0+2.85002)x0.0
+...\penalty 10000
+...\glue(\parfillskip) 0.0 plus 1.0fil
+...\glue(\rightskip) 0.0
+.\kern -0.00005
+.\kern 0.00005
+! OK.
+l. ...\showbox0
+============================================================
+============================================================
+TEST 4: footnotemark + postnote
+============================================================
+> \box...=
+\hbox(8.14003+0.0)x18.98615
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 6
+..\mathoff
+.\kern -0.00005
+.\kern 0.00005
+.\hbox(0.0+0.0)x0.0
+.\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
+.\hbox(4.43448+0.0)x2.7639
+..\mathon
+..\hbox(0.80556+1.3611)x2.7639, shifted -3.62892
+...\OT1/cmr/m/n/7 ,
+..\mathoff
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 3
+..\mathoff
+.\kern -0.00005
+.\mathon
+.\hbox(0.80556+1.3611)x2.7639, shifted -3.62892
+..\OT1/cmr/m/n/7 ,
+.\mathoff
+.\penalty 10000
+.\hbox(8.14003+0.0)x4.48613
+..\mathon
+..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...\OT1/cmr/m/n/7 7
+..\mathoff
+.\kern -0.00005
+.\kern 0.00005
+! OK.
+l. ...\showbox0
+============================================================

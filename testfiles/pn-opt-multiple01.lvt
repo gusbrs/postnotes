@@ -1,0 +1,84 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+% Ensure the same font across check engines
+\usepackage[OT1]{fontenc}
+\renewcommand\rmdefault{cmr}
+\renewcommand\sfdefault{cmss}
+\renewcommand\ttdefault{cmtt}
+
+\usepackage{postnotes}
+\postnotesetup{multiple}
+
+\usepackage{zref-user}
+\usepackage{zref-hyperref}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\begin{document}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{postnote}
+\setbox0=\hbox{\postnote{1\label{fn:1}\zlabel{fn:1}}%
+  \postnote{2\label{fn:2}\zlabel{fn:2}}}%
+\showbox0
+\box0
+\ENDTEST
+
+\BEGINTEST{multiple=false}
+\postnotesetup{multiple=false}
+\setbox0=\hbox{\postnote{3}\postnote{4}}%
+\showbox0
+\box0
+\ENDTEST
+
+\BEGINTEST{multisep}
+\postnotesetup{multisep={--}}
+\setbox0=\hbox{\postnote{5}\postnote{6}}%
+\showbox0
+\box0
+\ENDTEST
+
+\BEGINTEST{postnoteref}
+\setbox0=\hbox{\postnoteref{fn:1}\postnoteref{fn:2}}%
+\showbox0
+\box0
+\ENDTEST
+
+\BEGINTEST{postnotezref}
+\setbox0=\hbox{\postnotezref{fn:1}\postnotezref{fn:2}}%
+\showbox0
+\box0
+\ENDTEST
+
+\BEGINTEST{postnote + postnoteref}
+\setbox0=\hbox{\postnote{7}\postnoteref{fn:1}\postnote{8}}%
+\showbox0
+\box0
+\ENDTEST
+
+\BEGINTEST{postnote + postnotezref}
+\setbox0=\hbox{\postnote{9}\postnotezref{fn:1}\postnote{10}}%
+\showbox0
+\box0
+\ENDTEST
+
+\BEGINTEST{postnoteref + postnotezref}
+\setbox0=\hbox{\postnoteref{fn:1}\postnotezref{fn:1}\postnoteref{fn:2}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\printpostnotes
+
+\end{document}

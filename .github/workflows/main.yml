@@ -65,6 +65,7 @@ env:
     epstopdf-pkg
     etexcmds
     fancyvrb
+    footmisc
     geometry
     graphics
     hologo

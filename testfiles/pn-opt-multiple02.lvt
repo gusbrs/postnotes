@@ -1,0 +1,65 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+% Ensure the same font across check engines
+\usepackage[OT1]{fontenc}
+\renewcommand\rmdefault{cmr}
+\renewcommand\sfdefault{cmss}
+\renewcommand\ttdefault{cmtt}
+
+\usepackage{postnotes}
+\postnotesetup{multiple}
+
+% testing interaction with footmisc multiple option
+\usepackage[multiple]{footmisc}
+
+\usepackage{zref-user}
+
+% footmisc multiple option does not work with hyperref
+% \usepackage{zref-hyperref}
+% \usepackage{hyperref}
+% \hypersetup{hidelinks}
+
+\begin{document}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{postnote + footnote}
+\setbox0=\hbox{\postnote{1\label{fn:1}\zlabel{fn:1}}%
+  \footnote{1\label{fn:2}\zlabel{fn:2}}%
+  \postnote{2\label{fn:3}\zlabel{fn:3}}}%
+\showbox0
+\box0
+\ENDTEST
+
+\BEGINTEST{footnote + postnoteref}
+\setbox0=\hbox{\footnote{2}\postnoteref{fn:1}\footnote{3}}%
+\showbox0
+\box0
+\ENDTEST
+
+\BEGINTEST{footnote + postnotezref}
+\setbox0=\hbox{\footnote{4}\postnotezref{fn:1}\footnote{5}}%
+\showbox0
+\box0
+\ENDTEST
+
+\BEGINTEST{footnotemark + postnote}
+\setbox0=\hbox{\footnotemark\postnote{3}\footnotemark}%
+\showbox0
+\box0
+\ENDTEST
+
+
+\OMIT
+
+\printpostnotes
+
+\end{document}
