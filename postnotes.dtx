@@ -3109,25 +3109,65 @@
     \socket_assign_plug:nn { tagsupport/postnotes/printtext/begin } { default }
     \socket_assign_plug:nn { tagsupport/postnotes/printtext/end } { default }
 %    \end{macrocode}
-% As far as I can tell, there is no (public) interface to control/tweak the
-% default tagging of lists (see \url{https://tex.stackexchange.com/q/703083}).
-% So I could only make things work by tampering with
-% \pkg{latex-lab-testphase-block}'s internals.
+% Provide \pkg{xtemplate} based redefinitions of \env{postnoteslist} and
+% \pkg{postnoteslisthang}.  This is needed because, as far as I can tell, it
+% is the only way to set \opt{tag} and \opt{attribute-class} for the list
+% struct without tampering with \pkg{latex-lab-testphase-block}'s internals.
 %    \begin{macrocode}
-    \cs_new:Npn \@@_tagsup_print_block_begin:
-      { \tag_struct_begin:n { tag=L, attribute-class=EndnotesList } }
-    \AddToHook { postnotes/print/begin } [ postnotes/tagsup ]
+    \DeclareInstance { blockenv } { postnoteslist } { display }
       {
-        \bool_if:NT \l_@@_print_as_list_bool
+        env-name       = postnoteslist ,
+        tag-name       = L ,
+        tag-class      = EndnotesList ,
+        tagging-recipe = list ,
+        inner-level-counter = ,
+        level-increase = true ,
+        setup-code     = ,
+        block-instance = list ,
+        inner-instance = postnoteslist ,
+      }
+    \DeclareInstanceCopy { blockenv } { postnoteslisthang } { postnoteslist }
+    \EditInstance { blockenv } { postnoteslisthang }
+      { env-name = postnoteslisthang }
+    \DeclareInstance { list } { postnoteslist } { std }
+      { item-instance = postnoteslist }
+    \DeclareInstance { item } { postnoteslist } { std }
+      {
+        label-format = { \hspace { \labelsep } \normalfont ~ #1 } ,
+        label-align = left ,
+      }
+    \RenewDocumentEnvironment { postnoteslist } { }
+      {
+        \UseInstance { blockenv } { postnoteslist }
           {
-            \exp_args:Ne \AddToHookNext
-              { env / \l_@@_print_env_tl / begin }
-              {
-                \cs_set_eq:NN \__block_list_begin:
-                  \@@_tagsup_print_block_begin:
-              }
+            leftmargin     = 0pt ,
+            label-width    = 0pt ,
+            item-indent    = .5\parindent ,
+            rightmargin    = 0pt ,
+            parindent      = \parindent ,
+            par-skip       = \parskip ,
+            item-skip      = 0pt ,
+            beginsep       = .5\topsep ,
+            begin-par-skip = .5\partopsep ,
           }
       }
+      { \endblockenv }
+    \RenewDocumentEnvironment { postnoteslisthang } { }
+      {
+        \UseInstance { blockenv } { postnoteslisthang }
+          {
+            leftmargin     = 1em ,
+            label-width    = -\leftmargin ,
+            item-indent    = -2\leftmargin ,
+            rightmargin    = 0pt ,
+            parindent      = \parindent ,
+            par-skip       = \parskip ,
+            item-skip      = 0pt ,
+            beginsep       = .5\topsep ,
+            begin-par-skip = .5\partopsep ,
+          }
+      }
+      { \endblockenv }
 %    \end{macrocode}
 % Setup for \cs{label} and \cs{zlabel} inside the note.
 %    \begin{macrocode}
