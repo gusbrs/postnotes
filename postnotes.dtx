@@ -2962,6 +2962,8 @@
             label = { postnotemark. \l_postnotes_note_id_tl } ,
             ref = { postnote. \l_postnotes_note_id_tl } ,
           }
+        \@@_tagsup_store_sctructnum:nN
+          { postnotemark } \l_postnotes_note_id_tl
         \tag_mc_begin:n{}
       }
     \socket_new_plug:nnn { tagsupport/postnotes/mark/end } { default }
@@ -2978,6 +2980,8 @@
             label = { postnotemark. \l_postnotes_note_id_tl } ,
             ref = { postnote. \l_postnotes_note_id_tl } ,
           }
+        \@@_tagsup_store_sctructnum:nN
+          { postnotemark } \l_postnotes_note_id_tl
         \tag_struct_end: % NonStruct
       }
     \socket_assign_plug:nn { tagsupport/postnotes/mark/begin } { default }
@@ -3067,6 +3071,8 @@
 %    \begin{macrocode}
                 ref = { postnotemark. \l_postnotes_print_note_id_tl } ,
               }
+            \@@_tagsup_store_sctructnum:nN
+              { postnote } \l_postnotes_print_note_id_tl
             \tag_struct_begin:n { tag=text-unit }
             \tag_struct_begin:n { tag=text }
             \tag_tool:n { para/tagging=true }
@@ -3081,6 +3087,8 @@
                 label = { postnote. \l_postnotes_print_note_id_tl } ,
                 ref = { postnotemark. \l_postnotes_print_note_id_tl } ,
               }
+            \@@_tagsup_store_sctructnum:nN
+              { postnote } \l_postnotes_print_note_id_tl
             \tag_struct_begin:n { tag=text-unit }
             \tag_struct_begin:n { tag=text }
             \tag_tool:n { para/tagging=true }
@@ -3239,25 +3247,30 @@
 % \cs{footref}s.  I don't see anything stating something of the sort in the
 % standards, the backref of the original mark is already a stretch.  I also
 % fail to see why this is needed, and how it could be used.  But\dots{} I
-% trust Ulrike knows better than me.  Note that the label we are referring to
-% here, and the corresponding \texttt{tagstruct} property, are set by the
-% \opt{label} option in \cs{tag_struct_begin:n}, hence its definition and
-% label name format come from \pkg{tagpdf}.  The name of the label is a
-% combination of how that name is constructed in \pkg{tagpdf} and of how we
-% constructed the \opt{label} arguments here.
-% \begin{macro}{\@@_tagsup_store_crossref:nN}
+% trust Ulrike knows better than me.
+% \begin{macro}
+%   {
+%     \@@_tagsup_store_sctructnum:nN
+%     \@@_tagsup_store_crossref:nN
+%   }
 %   \begin{syntax}
+%     \cs{@@_tagsup_store_sctructnum:nN} \Arg{ref type} \Arg{ID number of note}
 %     \cs{@@_tagsup_store_crossref:nN} \Arg{ref type} \Arg{ID number of note}
 %   \end{syntax}
 %   \meta{ref type} is either ``\texttt{postnote}'' or
 %   ``\texttt{postnotemark}''.
 %    \begin{macrocode}
+    \prop_new:N \g_@@_tagsup_structnums_prop
+    \cs_new_protected:Npn \@@_tagsup_store_sctructnum:nN #1#2
+      {
+        \prop_gput:Nee \g_@@_tagsup_structnums_prop
+          { #1 . #2 } { \tag_get:n { struct_num } }
+      }
     \prop_new:N \g_@@_tagsup_crossrefs_prop
     \cs_new_protected:Npn \@@_tagsup_store_crossref:nN #1#2
       {
         \prop_gput:Nee \g_@@_tagsup_crossrefs_prop
-          { \tag_get:n { struct_num } }
-          { \property_ref:ee { tagpdfstruct-#1.#2 } { tagstruct } }
+          { \tag_get:n { struct_num } } { #1 . #2 }
       }
 %    \end{macrocode}
 % \end{macro}
@@ -3271,7 +3284,7 @@
     \cs_new_protected:Npn \@@_tagsup_gput_ref:nn #1#2
       {
         \tag_if_active:T
-          { \tag_struct_gput:nne {#1} {ref} { \tag_struct_object_ref:e {#2} } }
+          { \tag_struct_gput:ene {#1} {ref} { \tag_struct_object_ref:e {#2} } }
       }
 %    \end{macrocode}
 % \end{macro}
@@ -3284,7 +3297,11 @@
     \AddToHook { tagpdf/finish/before } [ postnotes/tagsup ]
       {
         \prop_map_inline:Nn \g_@@_tagsup_crossrefs_prop
-          { \@@_tagsup_gput_ref:nn {#2} {#1} }
+          {
+            \@@_tagsup_gput_ref:nn
+              { \prop_item:Nn \g_@@_tagsup_structnums_prop {#2} }
+              {#1}
+          }
       }
 %    \end{macrocode}
 % \cs{postnoteref}
