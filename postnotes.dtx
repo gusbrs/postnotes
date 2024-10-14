@@ -2800,7 +2800,7 @@
 % an endnote a child of the text surrounding its mark leaves an empty
 % ``skeleton'' of the endnotes section: the heading, the list structure, etc.
 % Technically, we could clean that too, but from experience that is an uphill
-% battle against the tagging performed by the \texttt{latex-lab}/\pkg{tagpdf}.
+% battle against the tagging performed by \pkg{latex-lab}/\pkg{tagpdf}.
 %
 % Finally, the parent-child relation is not required by \texttt{PDF} standards
 % for the relevant structure types.  The \texttt{PDF} 2.0 standard
@@ -2843,28 +2843,33 @@
 %
 % Another smaller but related issue is how to treat the list structure in
 % \cs{printpostnotes} when \opt{listenv} is used.  The natural thing here
-% would be to use an \texttt{enumerate} type list, where the mark is used as
-% the item's label.  The problem here is that the PDF 2.0 standards determine
-% that the \texttt{FENote} structure element cannot be a child of a
-% \texttt{LI} (list item).  However, at least in principle, we also would like
-% to have the \texttt{endnotelabel} element to be a child of the
-% \texttt{endnote} element.  Thus, we have a conflict, the mc-chunk can only
-% be used once, and can be either the \texttt{Lbl} of the \texttt{LI}, or the
-% \texttt{endnotelabel} for the \texttt{endnote}.  Currently, I'm using an
-% \texttt{enumerate} type list with the mark as \texttt{Lbl} for \texttt{LI},
-% and letting \texttt{endnote} be a child of \texttt{LBody}.  In a way, the
-% possibility of exporting the tagged content to different formats makes me
-% think that this is the most appropriate for the list case.  For the case of
-% \texttt{listenv=none}, I built a list structure so that the endnotes are
-% tagged exactly the same as if there was a list environment in the \LaTeX{}
-% side.  This eliminates inconsistencies on the resulting tagged PDF between
-% the two cases and improves machine readability.  The structure is always the
-% same.  All in all, it should be viable to adjust these choices (modulo the
-% usual battle with the default tagging code), but it is just very hard to
-% reach a decision without knowledge of applications and use cases (including
-% standards and practices, relevant software which consume the resulting PDF,
-% providing accessibility or other byproducts, etc.).  So, a call to be
-% revisited in the future, pending users' feedback.
+% would be to use an \env{enumerate} type list (or, in PDF lingo, for the
+% \texttt{ListNumbering} attribute to be \texttt{Ordered}), where the mark is
+% used as the item's label (even if, technically, we use the list like a
+% \env{description} in that we feed the label of every \cs{item} and though
+% there is an implicit underlying counter, the list itself has no bearing upon
+% it).  The problem here is that the PDF 2.0 standards determine that the
+% \texttt{FENote} structure element cannot be a child of a \texttt{LI} (list
+% item).  However, at least in principle, we also would like to have the
+% \texttt{endnotelabel} element to be a child of the \texttt{endnote} element.
+% Thus, we have a conflict, the mc-chunk can only be used once, and can be
+% either the \texttt{Lbl} of the \texttt{LI}, or the \texttt{endnotelabel} for
+% the \texttt{endnote}.  Currently, I'm using an \texttt{EndnotesList} class,
+% which we define to have \texttt{ListNumbering} as \texttt{Ordered}, with the
+% mark as \texttt{Lbl} for \texttt{LI}, and letting \texttt{endnote} be a
+% child of \texttt{LBody}.  In a way, the possibility of exporting the tagged
+% content to different formats makes me think that this is the most
+% appropriate for the list case.  For the case of \texttt{listenv=none}, I
+% built a list structure so that the endnotes are tagged exactly the same as
+% if there was a list environment in the \LaTeX{} side.  This eliminates
+% inconsistencies on the resulting tagged PDF between the two cases and
+% improves machine readability.  The structure is always the same.  All in
+% all, it should be viable to adjust these choices (modulo the usual battle
+% with the default tagging code), but it is just very hard to reach a decision
+% without knowledge of applications and use cases (including standards and
+% practices, relevant software which consume the resulting PDF, providing
+% accessibility or other byproducts, etc.).  So, a call to be revisited in the
+% future, pending users' feedback.
 %
 %
 % On the \LaTeX{} side of things, adding support for tagging entails two basic
@@ -2943,6 +2948,7 @@
         role/new-tag = { tag=endnote, role=FENote } ,
         role/new-tag = { tag=endnotemark, role=Lbl } ,
         role/new-attribute = { EndnoteType } { /O /FENote /NoteType /Endnote } ,
+        role/new-attribute = { EndnotesList } { /O /List /ListNumbering /Ordered } ,
       }
 %    \end{macrocode}
 % \cs{postnote}
@@ -3002,7 +3008,7 @@
           {
             \tag_tool:n { para/tagging=false }
             \mode_leave_vertical:
-            \tag_struct_begin:n { tag=L, attribute-class=enumerate }
+            \tag_struct_begin:n { tag=L, attribute-class=EndnotesList }
           }
       }
     \socket_new_plug:nnn { tagsupport/postnotes/printlist/end } { default }
@@ -3109,7 +3115,7 @@
 % \pkg{latex-lab-testphase-block}'s internals.
 %    \begin{macrocode}
     \cs_new:Npn \@@_tagsup_print_block_begin:
-      { \tag_struct_begin:n { tag=L, attribute-class=enumerate } }
+      { \tag_struct_begin:n { tag=L, attribute-class=EndnotesList } }
     \AddToHook { postnotes/print/begin } [ postnotes/tagsup ]
       {
         \bool_if:NT \l_@@_print_as_list_bool

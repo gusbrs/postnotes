@@ -205,7 +205,7 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 Package tagpdf Info: Parent-Child 'Sect' --> 'L'.
 (tagpdf)             Relation is 1 (='0..n')
 (tagpdf)             Rolemapped from 'Sect/pdf2' --> 'L/pdf2' on line ...
-tagpdf DEBUG Info: Struct 18 begin inserted with options: tag=L,attribute-class=enumerate 
+tagpdf DEBUG Info: Struct 18 begin inserted with options: tag=L,attribute-class=EndnotesList 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
 >  {{L}{L}}
@@ -798,7 +798,7 @@ l. ...\end{document}
 l. ...\end{document}
 The property list \g__tag_struct_18_prop contains the pairs (without outer braces):
 >  {Type}  =>  {/StructElem}
->  {C}  =>  {/enumerate}
+>  {C}  =>  {/EndnotesList}
 >  {S}  =>  {/L}
 >  {NS}  =>  {11 0 R }
 >  {rolemap}  =>  {{L}{pdf2}}

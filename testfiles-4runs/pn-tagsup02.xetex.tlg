@@ -1030,7 +1030,7 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 Package tagpdf Info: Parent-Child 'Sect' --> 'L'.
 (tagpdf)             Relation is 1 (='0..n')
 (tagpdf)             Rolemapped from: 'Sect' --> 'L' on line ...
-tagpdf DEBUG Info: Struct 35 begin inserted with options: tag=L,attribute-class=enumerate 
+tagpdf DEBUG Info: Struct 35 begin inserted with options: tag=L,attribute-class=EndnotesList 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
 >  {{L}{L}}
@@ -2229,7 +2229,7 @@ Completed box being shipped out [3]
 ..\special{pdf:obj @pdf.obj84 << /Kids [@pdf.obj82 @pdf.obj83] >>}
 ..\special{pdf:obj @pdf.obj7 << /Artifact /NonStruct /DocumentFragment /Art /Aside /Note /H7 /H6 /H8 /H6 /H9 /H6 /H10 /H6 /Title /P /FENote /Note /Sub /Span /Em /Span /Strong /Span /title /P /part /P /section /H1 /subsection /H2 /subsubsection /H3 /paragraph /H4 /subparagraph /H5 /list /L /itemize /L /enumerate /L /description /L /quote /BlockQuote /quotation /BlockQuote /verbatim /P /item /LI /itemlabel /Lbl /itembody /LBody /footnote /Note /footnotemark /Lbl /footnotelabel /Lbl /text-unit /Part /text /P /theorem-like /Sect /codeline /Span /float /Note /figures /Sect /tables /Sect /endnote /Note /endnotemark /Lbl  >>}
 ..\special{pdf:obj @pdf.obj85 << /justify <</O/Layout/TextAlign/Justify>>
-/enumerate <</O/List/ListNumbering/Ordered>>
+/EndnotesList <</O/List/ListNumbering/Ordered>>
 /EndnoteType <</O/FENote/NoteType/Endnote>>
  >>}
 ..\special{pdf:obj @pdf.obj9 <<  /Type /StructElem /S /Document /P @pdf.obj5 /K [@pdf.obj12 @pdf.obj50] /ID (ID.002) >>}
@@ -2265,7 +2265,7 @@ Completed box being shipped out [3]
 ..\special{pdf:obj @pdf.obj50 <<  /Type /StructElem /S /Sect /P @pdf.obj9 /K [@pdf.obj51 @pdf.obj52] /ID (ID.032) >>}
 ..\special{pdf:obj @pdf.obj51 <<  /Type /StructElem /C /justify /S /section /P @pdf.obj50 /K <</Type /MCR /Pg @page2/MCID 0>> /ID (ID.033) >>}
 ..\special{pdf:obj @pdf.obj52 <<  /Type /StructElem /S /text-unit /P @pdf.obj50 /K @pdf.obj53 /ID (ID.034) >>}
-..\special{pdf:obj @pdf.obj53 <<  /Type /StructElem /C /enumerate /S /L /P @pdf.obj52 /K [@pdf.obj54 @pdf.obj62 @pdf.obj70] /ID (ID.035) >>}
+..\special{pdf:obj @pdf.obj53 <<  /Type /StructElem /C /EndnotesList /S /L /P @pdf.obj52 /K [@pdf.obj54 @pdf.obj62 @pdf.obj70] /ID (ID.035) >>}
 ..\special{pdf:obj @pdf.obj54 <<  /Type /StructElem /S /LI /P @pdf.obj53 /K [@pdf.obj55 @pdf.obj58] /ID (ID.036) >>}
 ..\special{pdf:obj @pdf.obj55 <<  /Type /StructElem /S /Lbl /P @pdf.obj54 /K [<</Type /MCR /Pg @page2/MCID 1>> @pdf.obj56 <</Type /MCR /Pg @page2/MCID 3>>] /ID (ID.037) >>}
 ..\special{pdf:obj @pdf.obj56 <<  /Type /StructElem /S /Link /P @pdf.obj55 /K [<</Type /MCR /Pg @page2/MCID 2>> @pdf.obj57] /ID (ID.038) >>}
@@ -2766,7 +2766,7 @@ l. ...\end{document}
 l. ...\end{document}
 The property list \g__tag_struct_35_prop contains the pairs (without outer braces):
 >  {Type}  =>  {/StructElem}
->  {C}  =>  {/enumerate}
+>  {C}  =>  {/EndnotesList}
 >  {S}  =>  {/L}
 >  {rolemap}  =>  {{L}{}}
 >  {parentrole}  =>  {{L}{}}
