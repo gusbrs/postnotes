@@ -764,9 +764,9 @@
       } ,
     multiple / false .code:n =
       {
-        \cs_new_eq:NN \@@_multiple_prepare: \prg_do_nothing:
-        \cs_new_eq:NN \@@_multiple_check: \prg_do_nothing:
-        \cs_new_eq:NN \@@_multiple_store_lastkern: \prg_do_nothing:
+        \cs_set_eq:NN \@@_multiple_prepare: \prg_do_nothing:
+        \cs_set_eq:NN \@@_multiple_check: \prg_do_nothing:
+        \cs_set_eq:NN \@@_multiple_store_lastkern: \prg_do_nothing:
       } ,
     multiple / unknown .code:n =
       { \msg_error:nnn { postnotes } { boolean-values-only } { multiple } } ,
