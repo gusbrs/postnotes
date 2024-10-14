@@ -3,6 +3,8 @@
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.8...HEAD)
 
 ### Added
+- Provide `multiple` option, with functionality akin the the same named option
+  from `footmisc`.
 - Provide (experimental) support for PDF tagging. For this, the required LaTeX
   kernel version was bumped to 2024-06-01.
 
