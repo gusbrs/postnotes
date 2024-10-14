@@ -6,7 +6,8 @@
 - Provide `multiple` option, with functionality akin the the same named option
   from `footmisc`.
 - Provide (experimental) support for PDF tagging. For this, the required LaTeX
-  kernel version was bumped to 2024-06-01.
+  kernel version was bumped to 2024-06-01. Tagging support requires
+  `testphase=phase-III`.
 
 ## [v0.2.8](https://github.com/gusbrs/postnotes/compare/v0.2.7...v0.2.8) (2023-12-12)
 
