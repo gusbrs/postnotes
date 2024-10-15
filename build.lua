@@ -32,7 +32,7 @@ asciiengines = {}
 
 -- CTAN upload settings
 uploadconfig = {
-  version = "0.2.8", -- first line for tagging
+  version = "0.3.0", -- first line for tagging
   pkg = "postnotes",
   author = "gusbrs",
   uploader = "gusbrs",

@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.2.8...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.3.0...HEAD)
+
+## [v0.3.0](https://github.com/gusbrs/postnotes/compare/v0.2.8...v0.3.0) (2024-10-15)
 
 ### Added
 - Provide `multiple` option, with functionality akin the the same named option
