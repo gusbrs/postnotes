@@ -3122,60 +3122,63 @@
 % is the only way to set \opt{tag} and \opt{attribute-class} for the list
 % struct without tampering with \pkg{latex-lab-testphase-block}'s internals.
 %    \begin{macrocode}
-    \DeclareInstance { blockenv } { postnoteslist } { display }
+    \IfInstanceExistsT { blockenv } { list }
       {
-        env-name       = postnoteslist ,
-        tag-name       = L ,
-        tag-class      = EndnotesList ,
-        tagging-recipe = list ,
-        inner-level-counter = ,
-        level-increase = true ,
-        setup-code     = ,
-        block-instance = list ,
-        inner-instance = postnoteslist ,
-      }
-    \DeclareInstanceCopy { blockenv } { postnoteslisthang } { postnoteslist }
-    \EditInstance { blockenv } { postnoteslisthang }
-      { env-name = postnoteslisthang }
-    \DeclareInstance { list } { postnoteslist } { std }
-      { item-instance = postnoteslist }
-    \DeclareInstance { item } { postnoteslist } { std }
-      {
-        label-format = { \hspace { \labelsep } \normalfont ~ #1 } ,
-        label-align = left ,
-      }
-    \RenewDocumentEnvironment { postnoteslist } { }
-      {
-        \UseInstance { blockenv } { postnoteslist }
+        \DeclareInstance { blockenv } { postnoteslist } { display }
           {
-            leftmargin     = 0pt ,
-            label-width    = 0pt ,
-            item-indent    = .5\parindent ,
-            rightmargin    = 0pt ,
-            parindent      = \parindent ,
-            par-skip       = \parskip ,
-            item-skip      = 0pt ,
-            beginsep       = .5\topsep ,
-            begin-par-skip = .5\partopsep ,
+            env-name       = postnoteslist ,
+            tag-name       = L ,
+            tag-class      = EndnotesList ,
+            tagging-recipe = list ,
+            inner-level-counter = ,
+            level-increase = true ,
+            setup-code     = ,
+            block-instance = list ,
+            inner-instance = postnoteslist ,
           }
-      }
-      { \endblockenv }
-    \RenewDocumentEnvironment { postnoteslisthang } { }
-      {
-        \UseInstance { blockenv } { postnoteslisthang }
+        \DeclareInstanceCopy { blockenv } { postnoteslisthang } { postnoteslist }
+        \EditInstance { blockenv } { postnoteslisthang }
+          { env-name = postnoteslisthang }
+        \DeclareInstance { list } { postnoteslist } { std }
+          { item-instance = postnoteslist }
+        \DeclareInstance { item } { postnoteslist } { std }
           {
-            leftmargin     = 1em ,
-            label-width    = -\leftmargin ,
-            item-indent    = -2\leftmargin ,
-            rightmargin    = 0pt ,
-            parindent      = \parindent ,
-            par-skip       = \parskip ,
-            item-skip      = 0pt ,
-            beginsep       = .5\topsep ,
-            begin-par-skip = .5\partopsep ,
+            label-format = { \hspace { \labelsep } \normalfont ~ #1 } ,
+            label-align = left ,
           }
+        \RenewDocumentEnvironment { postnoteslist } { }
+          {
+            \UseInstance { blockenv } { postnoteslist }
+              {
+                leftmargin     = 0pt ,
+                label-width    = 0pt ,
+                item-indent    = .5\parindent ,
+                rightmargin    = 0pt ,
+                parindent      = \parindent ,
+                par-skip       = \parskip ,
+                item-skip      = 0pt ,
+                beginsep       = .5\topsep ,
+                begin-par-skip = .5\partopsep ,
+              }
+          }
+          { \endblockenv }
+        \RenewDocumentEnvironment { postnoteslisthang } { }
+          {
+            \UseInstance { blockenv } { postnoteslisthang }
+              {
+                leftmargin     = 1em ,
+                label-width    = -\leftmargin ,
+                item-indent    = -2\leftmargin ,
+                rightmargin    = 0pt ,
+                parindent      = \parindent ,
+                par-skip       = \parskip ,
+                item-skip      = 0pt ,
+                beginsep       = .5\topsep ,
+                begin-par-skip = .5\partopsep ,
+              }
+          }
+          { \endblockenv }
       }
-      { \endblockenv }
 %    \end{macrocode}
 % Setup for \cs{label} and \cs{zlabel} inside the note.
 %    \begin{macrocode}
