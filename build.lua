@@ -13,14 +13,9 @@ checkruns = 2
 checkconfigs = {"build","build-3runs","build-4runs"}
 
 -- Use dev formats for regression tests
--- See https://tex.stackexchange.com/q/611424
--- Uncomment these lines to test default results against the current state of
+-- Uncomment this line to test default results against the current state of
 -- latex-dev formats.  For manual use only, when needed.
--- specialformats = specialformats or {}
--- specialformats.latex = specialformats.latex or { }
--- specialformats.latex.pdftex = { binary = "pdflatex-dev" , format = "" }
--- specialformats.latex.luatex = { binary = "lualatex-dev" , format = "" }
--- specialformats.latex.xetex  = { binary = "xelatex-dev"  , format = "" }
+-- checkformat = "latex-dev"
 
 -- Run biber for biblatex related tests
 -- See https://github.com/moewew/biblatex-ext/blob/dev/build.lua
