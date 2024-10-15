@@ -681,7 +681,7 @@ Completed box being shipped out [2]
 ] >>}
 ..\special{pdf:obj @pdf.obj48 << /Limits [(ID.002) (ID.025)]/Names [(ID.002) @pdf.obj21 (ID.003) @pdf.obj22 (ID.004) @pdf.obj23 (ID.005) @pdf.obj24 (ID.006) @pdf.obj25 (ID.007) @pdf.obj26 (ID.008) @pdf.obj27 (ID.009) @pdf.obj28 (ID.010) @pdf.obj29 (ID.011) @pdf.obj30 (ID.012) @pdf.obj31 (ID.013) @pdf.obj33 (ID.014) @pdf.obj34 (ID.015) @pdf.obj36 (ID.016) @pdf.obj37 (ID.017) @pdf.obj38 (ID.018) @pdf.obj39 (ID.019) @pdf.obj40 (ID.020) @pdf.obj41 (ID.021) @pdf.obj42 (ID.022) @pdf.obj44 (ID.023) @pdf.obj45 (ID.024) @pdf.obj46 (ID.025) @pdf.obj47 ] >>}
 ..\special{pdf:obj @pdf.obj49 << /Kids [@pdf.obj48] >>}
-..\special{pdf:obj @pdf.obj7 << /Artifact /NonStruct /DocumentFragment /Art /Aside /Note /H7 /H6 /H8 /H6 /H9 /H6 /H10 /H6 /Title /P /FENote /Note /Sub /Span /Em /Span /Strong /Span /title /P /part /P /section /H1 /subsection /H2 /subsubsection /H3 /paragraph /H4 /subparagraph /H5 /list /L /itemize /L /enumerate /L /description /L /quote /BlockQuote /quotation /BlockQuote /verbatim /P /item /LI /itemlabel /Lbl /itembody /LBody /footnote /Note /footnotemark /Lbl /footnotelabel /Lbl /text-unit /Part /text /P /theorem-like /Sect /codeline /Span /float /Note /figures /Sect /tables /Sect /endnote /Note /endnotemark /Lbl  >>}
+..\special{pdf:obj @pdf.obj7 << /Artifact /NonStruct /DocumentFragment /Art /Aside /Note /H7 /H6 /H8 /H6 /H9 /H6 /H10 /H6 /Title /P /FENote /Note /Sub /Span /Em /Span /Strong /Span /title /P /part /P /section /H1 /subsection /H2 /subsubsection /H3 /paragraph /H4 /subparagraph /H5 /list /L /itemize /L /enumerate /L /description /L /quote /BlockQuote /quotation /BlockQuote /verbatim /P /item /LI /itemlabel /Lbl /itembody /LBody /footnote /Note /footnotemark /Lbl /footnotelabel /Lbl /text-unit /Part /text /P /theorem-like /Sect /codeline /Span /float /Note /figures /Sect /tables /Sect /endnote /Note /endnotemark /Lbl /endnotelabel /Lbl  >>}
 ..\special{pdf:obj @pdf.obj50 << /justify <</O/Layout/TextAlign/Justify>>
 /EndnotesList <</O/List/ListNumbering/Ordered>>
 /EndnoteType <</O/FENote/NoteType/Endnote>>
@@ -693,7 +693,7 @@ Completed box being shipped out [2]
 ..\special{pdf:obj @pdf.obj15 << /Type /Namespace /NS (https://www.latex-project.org/ns/dflt/2022) /RoleMapNS @pdf.obj16  >>}
 ..\special{pdf:obj @pdf.obj18 << /chapter [/H1 @pdf.obj11] /section [/H2 @pdf.obj11] /subsection [/H3 @pdf.obj11] /subsubsection [/H4 @pdf.obj11] /paragraph [/H5 @pdf.obj11] /subparagraph [/H6 @pdf.obj11]  >>}
 ..\special{pdf:obj @pdf.obj17 << /Type /Namespace /NS (https://www.latex-project.org/ns/book/2022) /RoleMapNS @pdf.obj18  >>}
-..\special{pdf:obj @pdf.obj20 << /endnote [/FENote @pdf.obj11] /endnotemark [/Lbl @pdf.obj11]  >>}
+..\special{pdf:obj @pdf.obj20 << /endnote [/FENote @pdf.obj11] /endnotemark [/Lbl @pdf.obj11] /endnotelabel [/Lbl @pdf.obj11]  >>}
 ..\special{pdf:obj @pdf.obj19 << /Type /Namespace /NS (data:,A63761E-9D7-4FBB-9B27-C3BC8D9BFB06) /RoleMapNS @pdf.obj20  >>}
 ..\special{pdf:obj @pdf.obj8 [ @pdf.obj9 @pdf.obj11 @pdf.obj13 @pdf.obj15 @pdf.obj17 @pdf.obj19  ]}
 ..\special{pdf:obj @pdf.obj21 <<  /Type /StructElem /S /Document /NS @pdf.obj11  /P @pdf.obj5 /K [@pdf.obj24 @pdf.obj36] /ID (ID.002) >>}

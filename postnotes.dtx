@@ -2773,9 +2773,10 @@
 %
 % \subsection*{PDF Tagging (experimental)}
 %
-% Note: All of this presumes
-% \texttt{\cs{DocumentMetadata}\{testphase=phase-III\}} and was only tested
-% with it.
+% Note: All of this mostly presumes
+% \texttt{\cs{DocumentMetadata}\{testphase=phase-III\}} and was tested with
+% it.  For \opt{listenv=none}, I'd expect things to work with
+% \texttt{phase-II}, but this is only lightly tested.
 %
 % A first thing to consider in tagging endnotes is how we want to represent
 % them in the PDF structure.  My first thought, for lack of another, was:
@@ -2799,8 +2800,8 @@
 % an issue: they have a natural place to be plugged into.  Furthermore, making
 % an endnote a child of the text surrounding its mark leaves an empty
 % ``skeleton'' of the endnotes section: the heading, the list structure, etc.
-% Technically, we could clean that too, but from experience that is an uphill
-% battle against the tagging performed by \pkg{latex-lab}/\pkg{tagpdf}.
+% Technically, we could clean that too, but clearly that's not the way to
+% go\dots{}.
 %
 % Finally, the parent-child relation is not required by \texttt{PDF} standards
 % for the relevant structure types.  The \texttt{PDF} 2.0 standard
@@ -2854,22 +2855,20 @@
 % \texttt{endnotelabel} element to be a child of the \texttt{endnote} element.
 % Thus, we have a conflict, the mc-chunk can only be used once, and can be
 % either the \texttt{Lbl} of the \texttt{LI}, or the \texttt{endnotelabel} for
-% the \texttt{endnote}.  Currently, I'm using an \texttt{EndnotesList} class,
-% which we define to have \texttt{ListNumbering} as \texttt{Ordered}, with the
-% mark as \texttt{Lbl} for \texttt{LI}, and letting \texttt{endnote} be a
-% child of \texttt{LBody}.  In a way, the possibility of exporting the tagged
-% content to different formats makes me think that this is the most
-% appropriate for the list case.  For the case of \texttt{listenv=none}, I
-% built a list structure so that the endnotes are tagged exactly the same as
-% if there was a list environment in the \LaTeX{} side.  This eliminates
-% inconsistencies on the resulting tagged PDF between the two cases and
-% improves machine readability.  The structure is always the same.  All in
-% all, it should be viable to adjust these choices (modulo the usual battle
-% with the default tagging code), but it is just very hard to reach a decision
-% without knowledge of applications and use cases (including standards and
-% practices, relevant software which consume the resulting PDF, providing
-% accessibility or other byproducts, etc.).  So, a call to be revisited in the
-% future, pending users' feedback.
+% the \texttt{endnote}.  Currently, for the list case, I'm using an
+% \texttt{EndnotesList} class, which we define to have \texttt{ListNumbering}
+% as \texttt{Ordered}, with the mark as \texttt{Lbl} for \texttt{LI}, and
+% letting \texttt{endnote} be a child of \texttt{LBody}.  In a way, the
+% possibility of exporting the tagged content to different formats makes me
+% think that this is the most appropriate for the this case.  For the case of
+% \texttt{listenv=none}, the \texttt{endnote}s were made child of the
+% \texttt{Sect} in which they occur.  The \texttt{endnotelabel} was then
+% included as part (child) of the \texttt{endnote}.  In this, this treatment
+% emulates the one given for footnotes in the kernel.  But, at the same time,
+% it is less than ideal for machine readability purposes, since whether the
+% \texttt{endnotelabel} is part of \texttt{endnote} or not depends on if there
+% is a list environment involved.  Alas, I see no easy way around the PDF
+% standard restriction for the list case.
 %
 %
 % On the \LaTeX{} side of things, adding support for tagging entails two basic
@@ -2947,8 +2946,11 @@
       {
         role/new-tag = { tag=endnote, role=FENote } ,
         role/new-tag = { tag=endnotemark, role=Lbl } ,
-        role/new-attribute = { EndnoteType } { /O /FENote /NoteType /Endnote } ,
-        role/new-attribute = { EndnotesList } { /O /List /ListNumbering /Ordered } ,
+        role/new-tag = { tag=endnotelabel, role=Lbl } ,
+        role/new-attribute =
+          { EndnoteType } { /O /FENote /NoteType /Endnote } ,
+        role/new-attribute =
+          { EndnotesList } { /O /List /ListNumbering /Ordered } ,
       }
 %    \end{macrocode}
 % \cs{postnote}
@@ -3006,58 +3008,14 @@
 % \cs{printpostnotes}
 %    \begin{macrocode}
     \socket_new_plug:nnn { tagsupport/postnotes/printlist/begin } { default }
-      {
-        \bool_if:NTF \l_@@_print_as_list_bool
-          { \tag_tool:n { para/tagging=false } }
-          {
-            \tag_tool:n { para/tagging=false }
-            \mode_leave_vertical:
-            \tag_struct_begin:n { tag=L, attribute-class=EndnotesList }
-          }
-      }
+      { \tag_tool:n { para/tagging=false } }
     \socket_new_plug:nnn { tagsupport/postnotes/printlist/end } { default }
-      {
-        \bool_if:NF \l_@@_print_as_list_bool
-          { \tag_struct_end: } % L
-      }
+      { }
     \socket_assign_plug:nn { tagsupport/postnotes/printlist/begin } { default }
     \socket_assign_plug:nn { tagsupport/postnotes/printlist/end } { default }
     \socket_new_plug:nnn { tagsupport/postnotes/printnote/begin } { default }
       {
         \bool_if:NF \l_@@_print_as_list_bool
-          {
-            \mode_leave_vertical:
-            \tag_struct_begin:n { tag=LI }
-          }
-      }
-    \socket_new_plug:nnn { tagsupport/postnotes/printnote/end } { default }
-      {
-        \bool_if:NF \l_@@_print_as_list_bool
-          { \tag_struct_end: } % LI
-      }
-    \socket_assign_plug:nn { tagsupport/postnotes/printnote/begin } { default }
-    \socket_assign_plug:nn { tagsupport/postnotes/printnote/end } { default }
-    \socket_new_plug:nnn { tagsupport/postnotes/printmark/begin } { default }
-      {
-        \bool_if:NF \l_@@_print_as_list_bool
-         {
-           \tag_struct_begin:n { tag=Lbl }
-           \tag_mc_begin:n{ tag=Lbl }
-         }
-      }
-    \socket_new_plug:nnn { tagsupport/postnotes/printmark/end } { default }
-      {
-        \bool_if:NF \l_@@_print_as_list_bool
-         {
-           \tag_mc_end:
-           \tag_struct_end: % Lbl
-         }
-      }
-    \socket_assign_plug:nn { tagsupport/postnotes/printmark/begin } { default }
-    \socket_assign_plug:nn { tagsupport/postnotes/printmark/end } { default }
-    \socket_new_plug:nnn { tagsupport/postnotes/printtext/begin } { default }
-      {
-        \bool_if:NTF \l_@@_print_as_list_bool
           {
             \tag_struct_begin:n
               {
@@ -3073,22 +3031,55 @@
               }
             \@@_tagsup_store_sctructnum:nN
               { postnote } \l_postnotes_print_note_id_tl
+         }
+      }
+    \socket_new_plug:nnn { tagsupport/postnotes/printnote/end } { default }
+      {
+        \bool_if:NF \l_@@_print_as_list_bool
+          { \tag_struct_end: }  % endnote
+      }
+    \socket_assign_plug:nn { tagsupport/postnotes/printnote/begin } { default }
+    \socket_assign_plug:nn { tagsupport/postnotes/printnote/end } { default }
+    \socket_new_plug:nnn { tagsupport/postnotes/printmark/begin } { default }
+      {
+        \bool_if:NF \l_@@_print_as_list_bool
+         {
+           \tag_struct_begin:n { tag=endnotelabel }
+           \tag_mc_begin:n{ tag=Lbl }
+         }
+      }
+    \socket_new_plug:nnn { tagsupport/postnotes/printmark/end } { default }
+      {
+        \bool_if:NF \l_@@_print_as_list_bool
+         {
+           \tag_mc_end:
+           \tag_struct_end: % endnotelabel
+         }
+      }
+    \socket_assign_plug:nn { tagsupport/postnotes/printmark/begin } { default }
+    \socket_assign_plug:nn { tagsupport/postnotes/printmark/end } { default }
+    \socket_new_plug:nnn { tagsupport/postnotes/printtext/begin } { default }
+      {
+        \bool_if:NTF \l_@@_print_as_list_bool
+          {
+            \tag_struct_begin:n
+              {
+                tag = endnote ,
+                attribute-class = EndnoteType ,
+                label = { postnote. \l_postnotes_print_note_id_tl } ,
+%    \end{macrocode}
+% CHECK Ditto.
+%    \begin{macrocode}
+                ref = { postnotemark. \l_postnotes_print_note_id_tl } ,
+              }
+            \@@_tagsup_store_sctructnum:nN
+              { postnote } \l_postnotes_print_note_id_tl
             \tag_struct_begin:n { tag=text-unit }
             \tag_struct_begin:n { tag=text }
             \tag_tool:n { para/tagging=true }
             \tag_mc_begin:n{}
           }
           {
-            \tag_struct_begin:n { tag=LBody }
-            \tag_struct_begin:n
-              {
-                tag = endnote ,
-                attribute-class = EndnoteType ,
-                label = { postnote. \l_postnotes_print_note_id_tl } ,
-                ref = { postnotemark. \l_postnotes_print_note_id_tl } ,
-              }
-            \@@_tagsup_store_sctructnum:nN
-              { postnote } \l_postnotes_print_note_id_tl
             \tag_struct_begin:n { tag=text-unit }
             \tag_struct_begin:n { tag=text }
             \tag_tool:n { para/tagging=true }
@@ -3110,8 +3101,6 @@
             \tag_tool:n { para/tagging=false }
             \tag_struct_end: % text
             \tag_struct_end: % text-unit
-            \tag_struct_end: % endnote
-            \tag_struct_end: % LBody
           }
       }
     \socket_assign_plug:nn { tagsupport/postnotes/printtext/begin } { default }
@@ -3210,7 +3199,8 @@
       {
         \tl_if_empty:NF \l_@@_note_label_tl
           {
-            \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
+            \prop_gput:cnV
+              { \@@_data_name:e { \l_postnotes_note_id_tl } }
               { label } \l_@@_note_label_tl
           }
       }
@@ -3220,7 +3210,8 @@
           {
             \tl_if_empty:NF \l_@@_note_zlabel_tl
               {
-                \prop_gput:cnV { \@@_data_name:e { \l_postnotes_note_id_tl } }
+                \prop_gput:cnV
+                  { \@@_data_name:e { \l_postnotes_note_id_tl } }
                   { zlabel } \l_@@_note_zlabel_tl
               }
           }
@@ -3245,7 +3236,7 @@
           }
       }
 %    \end{macrocode}
-% \pkg{latex-lab-footnotes} creates the footnote structure element
+% CHECK \pkg{latex-lab-footnotes} creates the footnote structure element
 % (\texttt{FENote} tag) and adds to it a \texttt{/Ref} entry pointing to the
 % structures of \emph{all} marks related to the note, and that includes
 % \cs{footref}s.  I don't see anything stating something of the sort in the
