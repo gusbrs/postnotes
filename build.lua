@@ -12,11 +12,6 @@ checkruns = 2
 -- But, depending on the case (multipass check, biblatex, etc.), 3.
 checkconfigs = {"build","build-3runs","build-4runs"}
 
--- Use dev formats for regression tests
--- Uncomment this line to test default results against the current state of
--- latex-dev formats.  For manual use only, when needed.
--- checkformat = "latex-dev"
-
 -- Run biber for biblatex related tests
 -- See https://github.com/moewew/biblatex-ext/blob/dev/build.lua
 function runtest_tasks(name, run)
