@@ -2966,7 +2966,7 @@
           }
         \@@_tagsup_store_sctructnum:nN
           { postnotemark } \l_postnotes_note_id_tl
-        \tag_mc_begin:n{}
+        \tag_mc_begin:n { }
       }
     \socket_new_plug:nnn { tagsupport/postnotes/mark/end } { default }
       {
@@ -3043,18 +3043,18 @@
     \socket_new_plug:nnn { tagsupport/postnotes/printmark/begin } { default }
       {
         \bool_if:NF \l_@@_print_as_list_bool
-         {
-           \tag_struct_begin:n { tag=endnotelabel }
-           \tag_mc_begin:n{ tag=Lbl }
-         }
+          {
+            \tag_struct_begin:n { tag=endnotelabel }
+            \tag_mc_begin:n { tag=Lbl }
+          }
       }
     \socket_new_plug:nnn { tagsupport/postnotes/printmark/end } { default }
       {
         \bool_if:NF \l_@@_print_as_list_bool
-         {
-           \tag_mc_end:
-           \tag_struct_end: % endnotelabel
-         }
+          {
+            \tag_mc_end:
+            \tag_struct_end: % endnotelabel
+          }
       }
     \socket_assign_plug:nn { tagsupport/postnotes/printmark/begin } { default }
     \socket_assign_plug:nn { tagsupport/postnotes/printmark/end } { default }
@@ -3077,13 +3077,13 @@
             \tag_struct_begin:n { tag=text-unit }
             \tag_struct_begin:n { tag=text }
             \tag_tool:n { para/tagging=true }
-            \tag_mc_begin:n{}
+            \tag_mc_begin:n { }
           }
           {
             \tag_struct_begin:n { tag=text-unit }
             \tag_struct_begin:n { tag=text }
             \tag_tool:n { para/tagging=true }
-            \tag_mc_begin:n{}
+            \tag_mc_begin:n { }
           }
       }
     \socket_new_plug:nnn { tagsupport/postnotes/printtext/end } { default }
@@ -3349,7 +3349,7 @@
               }
               { \tag_struct_begin:n { tag = endnotemark } }
           }
-        \tag_mc_begin:n{}
+        \tag_mc_begin:n { }
       }
     \socket_new_plug:nnn { tagsupport/postnotes/postnoteref/end } { default }
       {
@@ -3413,7 +3413,7 @@
                   }
                   { \tag_struct_begin:n { tag = endnotemark } }
               }
-            \tag_mc_begin:n{}
+            \tag_mc_begin:n { }
           }
         \socket_new_plug:nnn { tagsupport/postnotes/postnotezref/end } { default }
           {
