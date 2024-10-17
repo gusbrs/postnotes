@@ -1051,7 +1051,16 @@ way is to use the pairing between a \opt{nomark} \cs{postnote} and
 \cs{postnoteref}: place a note outside the caption (but close to it, since its
 position will determine the anchor for the backlink) with the \opt{nomark}
 option, set a label inside it and, inside the caption make a \cs{postnoteref}
-to the label.  In practice:
+to the label.  Yet a third method is to call \cs{refstepcounter} on
+\texttt{postnote} and set an auxiliary label right before the caption, then
+set a \cs{postnote} setting the \opt{mark} option to a reference to that
+label.  In this case, it must be an expandable reference command, since
+\opt{mark} also sets \opt{sortnum}, which must be a number.  Here we use
+\cs{getrefnumber} from \pkg{refcount} (loaded by \pkg{hyperref}), but we could
+just as well replace that with equivalent ones from \pkg{ltproperties}.
+Arguably, this third method is the more robust, since it does not require that
+we know the length of the caption, and results in no offset in the note's
+anchor.  In practice:
 
 \begin{pnexample}[caption={Long caption},label={ex:x:caption}]
 \documentclass{article}
@@ -1071,9 +1080,32 @@ to the label.  In practice:
   \caption[Caption for LOF]{A long caption, long enough to require two
     lines\postnoteref{en:1}}
 \end{figure}
+\begin{figure}
+Figure.
+\refstepcounter{postnote}\label{aux}
+\caption[Caption for LOF]{A long caption, long enough to require two
+lines\postnote[mark=\getrefnumber{aux}]{A note.}}
+\end{figure}
+\clearpage
 \printpostnotes
 \end{document}
 \end{pnexample}
+
+These techniques demonstrated in \zcref{ex:x:caption} assume the floats do not
+disturb the order of the notes, otherwise we are back to the case discussed in
+\zcref{ex:x:float}.\footnote{The third technique in \zcref{ex:x:caption} might
+  be applied to improve \zcref{ex:x:float} a little.  Indeed, instead of
+  calling \cs{stepcounter}\texttt{\{postnote\}} after note 5, we could call
+  \cs{refstepcounter}\texttt{\{postnote\}}\cs{label}\texttt{\{aux\}} and use
+  \cs{getrefnumber}\texttt{\{aux\}} to set the \opt{mark} of the note on the
+  table.  However, for that situation, this does not change things that
+  significantly, because you still have to know were to call
+  \cs{refstepcounter}, depending on the place the float actually ends up, and
+  that requires being in the ``finishing touches'' fase of your document
+  anyway.  In which case, you \emph{know} the number is ``5''.}  Still,
+floating behavior aside, they show some alternatives to deal with the general
+problem of setting \cs{postnote}s in places which perform multiple passes of
+the content, and for which \pkg{postnotes} does not, or cannot, account for.
 
 
 \section{Acknowledgments}

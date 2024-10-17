@@ -49,6 +49,18 @@
 \end{figure}
 \ENDTEST
 
+\BEGINTEST{caption 3}
+\begin{figure}
+  Figure.
+  \refstepcounter{postnote}\label{aux}
+  \caption[Caption for LOF]{A long caption, long enough to require two
+    lines%
+\setbox0=\hbox{\postnote[mark=\getrefnumber{aux}]{A note.}}%
+\showbox0%
+\box0}
+\end{figure}
+\ENDTEST
+
 \OMIT
 
 \cleardoublepage{}
