@@ -1039,28 +1039,21 @@ correctly ordered printed notes (as a result of sorting):
 
 \zcref{ex:x:caption} illustrates a couple of techniques to handle long
 captions.  Captions pose a problem to \cs{postnote} because, if you set a
-\cs{postnote} inside a standard caption, whose text is long enough to require
+\cs{postnote} inside a standard caption whose text is long enough to require
 two lines, the content of the caption ends up being typeset twice: once to
 check if it would have fitted in a single line, the second to typeset the two
-lines since it didn't fit in one.  This triggers the \texttt{postnote} counter
-to be stepped twice (and any other counter that happens to be there too).  One
-way to handle the situation is, if you know(!) that the caption takes two
-lines, you can decrement the counter just before it, and place the note
-directly in the caption, this will get you a correctly numbered note.  Another
-way is to use the pairing between a \opt{nomark} \cs{postnote} and
-\cs{postnoteref}: place a note outside the caption (but close to it, since its
-position will determine the anchor for the backlink) with the \opt{nomark}
-option, set a label inside it and, inside the caption make a \cs{postnoteref}
-to the label.  Yet a third method is to call \cs{refstepcounter} on
-\texttt{postnote} and set an auxiliary label right before the caption, then
-set a \cs{postnote} setting the \opt{mark} option to a reference to that
-label.  In this case, it must be an expandable reference command, since
-\opt{mark} also sets \opt{sortnum}, which must be a number.  Here we use
-\cs{getrefnumber} from \pkg{refcount} (loaded by \pkg{hyperref}), but we could
-just as well replace that with equivalent ones from \pkg{ltproperties}.
-Arguably, this third method is the more robust, since it does not require that
-we know the length of the caption, and results in no offset in the note's
-anchor.  In practice:
+lines since it didn't fit in one.\footnote{This is the case for the
+  \cs{caption} command provided by the kernel, but it may be different
+  depending on the document class, packages and options in use.}  This
+triggers the \texttt{postnote} counter to be stepped twice (and any other
+counter that happens to be there too).  One way to handle the situation is to
+use the pairing between a \opt{nomark} \cs{postnote} and \cs{postnoteref}:
+place a note outside the caption (but close to it, since its position will
+determine the anchor for the backlink) with the \opt{nomark} option, set a
+label inside it and, inside the caption make a \cs{postnoteref} to the label.
+Another method is to call \cs{stepcounter}\texttt{\{postnote\}} before the
+caption, then place a \cs{postnote} setting the \opt{mark} option with
+\cs{arabic}\texttt{\{postnote\}}.  In practice:
 
 \begin{pnexample}[caption={Long caption},label={ex:x:caption}]
 \documentclass{article}
@@ -1069,43 +1062,31 @@ anchor.  In practice:
 \usepackage{hyperref}
 \begin{document}
 \begin{figure}
-  Figure.
-  \addtocounter{postnote}{-1}
-  \caption[Caption for LOF]{A long caption, long enough to require two
-    lines\postnote{A note.}}
-\end{figure}
-\begin{figure}
-  Figure.
-  \postnote[nomark]{\label{en:1}A note.}%
-  \caption[Caption for LOF]{A long caption, long enough to require two
-    lines\postnoteref{en:1}}
+Figure.
+\postnote[nomark]{\label{en:1}A note.}%
+\caption[Short caption]{A long caption, long enough to require two
+lines\postnoteref{en:1}}
 \end{figure}
 \begin{figure}
 Figure.
-\refstepcounter{postnote}\label{aux}
-\caption[Caption for LOF]{A long caption, long enough to require two
-lines\postnote[mark=\getrefnumber{aux}]{A note.}}
+\stepcounter{postnote}
+\caption[Short caption]{A long caption, long enough to require two
+lines\postnote[mark=\arabic{postnote}]{A note.}}
 \end{figure}
-\clearpage
 \printpostnotes
 \end{document}
 \end{pnexample}
 
-These techniques demonstrated in \zcref{ex:x:caption} assume the floats do not
-disturb the order of the notes, otherwise we are back to the case discussed in
-\zcref{ex:x:float}.\footnote{The third technique in \zcref{ex:x:caption} might
-  be applied to improve \zcref{ex:x:float} a little.  Indeed, instead of
-  calling \cs{stepcounter}\texttt{\{postnote\}} after note 5, we could call
-  \cs{refstepcounter}\texttt{\{postnote\}}\cs{label}\texttt{\{aux\}} and use
-  \cs{getrefnumber}\texttt{\{aux\}} to set the \opt{mark} of the note on the
-  table.  However, for that situation, this does not change things that
-  significantly, because you still have to know were to call
-  \cs{refstepcounter}, depending on the place the float actually ends up, and
-  that requires being in the ``finishing touches'' fase of your document
-  anyway.  In which case, you \emph{know} the number is ``5''.}  Still,
-floating behavior aside, they show some alternatives to deal with the general
-problem of setting \cs{postnote}s in places which perform multiple passes of
-the content, and for which \pkg{postnotes} does not, or cannot, account for.
+Arguably, the second method is more interesting for normal cases, since it
+does not offset the note's anchor.  The first one would work for multiple
+notes as well\footnote{The second one could be made do work with multiple
+  notes too with a suitable arrangement of \cs{refstepcounter}, \cs{label},
+  and \cs{getrefnumber}.}, and it is also more robust to multiple passes of
+the content.  \pkg{postnotes} controls for this in a number of known cases to
+avoid notes in duplicity, but obviously cannot cover every possibility, in
+which case \opt{nomark} with \cs{postnoteref} has you covered.  Caveat, these
+techniques assume the floats do not disturb the order of the notes, otherwise
+we are back to the case discussed in \zcref{ex:x:float}.
 
 
 \section{Acknowledgments}
@@ -1125,6 +1106,7 @@ provided by (in chronological order):
   % 2024-10-09: https://chat.stackexchange.com/transcript/message/66415504#66415504 (discussion)
   % 2024-10-10: https://chat.stackexchange.com/transcript/message/66421777#66421777 (discussion)
   % 2024-10-15: https://chat.stackexchange.com/transcript/message/66444011#66444011 (discussion)
+  % 2024-10-17: https://chat.stackexchange.com/transcript/message/66456022#66456022
   David Carlisle,
   % 2022-03-28: https://chat.stackexchange.com/transcript/message/60754383#60754383
   % 2022-04-08: https://tex.stackexchange.com/a/640035 (comments)

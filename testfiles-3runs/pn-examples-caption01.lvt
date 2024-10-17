@@ -25,23 +25,11 @@
 
 \BEGINTEST{caption 1}
 \begin{figure}
-  Figure.
-  \addtocounter{postnote}{-1}
-  \caption[Caption for LOF]{A long caption, long enough to require two
-    lines%
-\setbox0=\hbox{\postnote{A note.}}%
-\showbox0%
-\box0}
-\end{figure}
-\ENDTEST
-
-\BEGINTEST{caption 2}
-\begin{figure}
   Figure.%
   \setbox0=\hbox{\postnote[nomark]{\label{en:1}A note.}}
   \showbox0
   \box0
-  \caption[Caption for LOF]{A long caption, long enough to require two
+  \caption[Short caption]{A long caption, long enough to require two
     lines%
 \setbox0=\hbox{\postnoteref{en:1}}%
 \showbox0%
@@ -49,13 +37,13 @@
 \end{figure}
 \ENDTEST
 
-\BEGINTEST{caption 3}
+\BEGINTEST{caption 2}
 \begin{figure}
   Figure.
-  \refstepcounter{postnote}\label{aux}
-  \caption[Caption for LOF]{A long caption, long enough to require two
+  \stepcounter{postnote}
+  \caption[Short caption]{A long caption, long enough to require two
     lines%
-\setbox0=\hbox{\postnote[mark=\getrefnumber{aux}]{A note.}}%
+\setbox0=\hbox{\postnote[mark=\arabic{postnote}]{A note.}}%
 \showbox0%
 \box0}
 \end{figure}
