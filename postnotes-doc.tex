@@ -154,7 +154,7 @@
   \zcsetup{countertype={lstlisting=example}}%
   \lstset{#1}%
   \stepcounter{pnexample}%
-  \setcounter{lstlisting}{\value{pnexample}}%
+  \setcounter{lstlisting}{\value{pnexample}-1}%
 }{}
 \lstnewenvironment{pnsnippet}[1][]{%
   \renewcommand{\lstlistingname}{Example}%
