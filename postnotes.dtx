@@ -1576,7 +1576,7 @@
                 \tl_if_eq:NnF \l_@@_print_type_prev_tl { note }
                   {
                     \bool_if:NTF \l_@@_print_as_list_bool
-                      { \exp_args:Ne \begin { \l_@@_print_env_tl } }
+                      { \exp_args:NV \begin \l_@@_print_env_tl }
                       { \group_begin: }
                     \tag_socket_use:n { postnotes/printlist/begin }
                     \l_@@_print_format_tl
@@ -1638,7 +1638,7 @@
                   {
                     \tag_socket_use:n { postnotes/printlist/end }
                     \bool_if:NTF \l_@@_print_as_list_bool
-                      { \exp_args:Ne \end { \l_@@_print_env_tl } }
+                      { \exp_args:NV \end \l_@@_print_env_tl }
                       { \group_end: }
 %    \end{macrocode}
 % Ensure \cs{par} at the end of \cs{printopostnotes} (see
