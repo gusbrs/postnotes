@@ -1058,32 +1058,32 @@
 \cs_new_protected:Npn \@@_note:nn #1#2
   {
     \group_begin:
-    \@@_multiple_store_lastkern:
-    \keys_set:nn { postnotes/note } {#1}
-    \@@_inhibit_note:F
-      {
-        \int_gincr:N \g_@@_note_id_int
-        \tl_if_empty:NT \l_@@_mark_tl
-          {
-            \stepcounter { postnote }
-            \tl_set:Ne \l_@@_mark_tl { \thepostnote }
-          }
-        \seq_gput_right:Ne \g_@@_queue_seq
-          { \l_postnotes_note_id_tl }
-        \UseHook { postnotes/note/begin }
-        \cs_set:Npn \@currentcounter { postnote }
-        \cs_set:Npe \@currentlabel { \p@postnote \l_@@_mark_tl }
-        \MakeLinkTarget* { postnote. \l_postnotes_note_id_tl .mark }
-        \@@_set_mark_page_label:e { \l_postnotes_note_id_tl }
-        \@@_set_user_labels:
-        \@@_store:nn { \l_postnotes_note_id_tl } {#2}
-        \bool_if:NTF \l_@@_nomark_bool
-          { \tag_socket_use:n { postnotes/mark/nomark } }
-          {
-            \@@_typeset_mark:eV
-              { \l_postnotes_note_id_tl } \l_@@_mark_tl
-          }
-      }
+      \@@_multiple_store_lastkern:
+      \keys_set:nn { postnotes/note } {#1}
+      \@@_inhibit_note:F
+        {
+          \int_gincr:N \g_@@_note_id_int
+          \tl_if_empty:NT \l_@@_mark_tl
+            {
+              \stepcounter { postnote }
+              \tl_set:Ne \l_@@_mark_tl { \thepostnote }
+            }
+          \seq_gput_right:Ne \g_@@_queue_seq
+            { \l_postnotes_note_id_tl }
+          \UseHook { postnotes/note/begin }
+          \cs_set:Npn \@currentcounter { postnote }
+          \cs_set:Npe \@currentlabel { \p@postnote \l_@@_mark_tl }
+          \MakeLinkTarget* { postnote. \l_postnotes_note_id_tl .mark }
+          \@@_set_mark_page_label:e { \l_postnotes_note_id_tl }
+          \@@_set_user_labels:
+          \@@_store:nn { \l_postnotes_note_id_tl } {#2}
+          \bool_if:NTF \l_@@_nomark_bool
+            { \tag_socket_use:n { postnotes/mark/nomark } }
+            {
+              \@@_typeset_mark:eV
+                { \l_postnotes_note_id_tl } \l_@@_mark_tl
+            }
+        }
     \group_end:
   }
 %    \end{macrocode}
@@ -1168,18 +1168,18 @@
               }
               {
                 \group_begin:
-                \int_incr:N \c@postnote
-                \exp_args:NNNe
-                  \group_end:
-                  \tl_set:Nn \l_@@_mark_tl { \thepostnote }
+                  \int_incr:N \c@postnote
+                  \exp_args:NNNe
+                    \group_end:
+                    \tl_set:Nn \l_@@_mark_tl { \thepostnote }
               }
           }
         \group_begin:
-        \socket_assign_plug:nn { tagsupport/postnotes/multsep/begin } { noop }
-        \socket_assign_plug:nn { tagsupport/postnotes/multsep/end } { noop }
-        \@@_typeset_mark_wrapper:nnn
-          { \@@_make_mark:Vnn \l_@@_mark_tl { } { } }
-          { } { }
+          \socket_assign_plug:nn { tagsupport/postnotes/multsep/begin } { noop }
+          \socket_assign_plug:nn { tagsupport/postnotes/multsep/end } { noop }
+          \@@_typeset_mark_wrapper:nnn
+            { \@@_make_mark:Vnn \l_@@_mark_tl { } { } }
+            { } { }
         \group_end:
       }
     \bool_if:NTF \l_@@_inhibit_note_bool
@@ -1281,20 +1281,20 @@
 \cs_new_protected:Npn \@@_note_ref:nn #1#2
   {
     \group_begin:
-    \tl_set:Nn \l_@@_note_ref_label_tl {#2}
-    \@@_typeset_mark_wrapper:nnn
-      {
-        \bool_lazy_and:nnTF
-          { ! #1 }
-          { \l_@@_hyperlink_bool }
-          {
-            \hyperref [#2]
-              { \@@_make_mark:nnn { \ref*{#2} } { } { } }
-          }
-          { \@@_make_mark:nnn { \ref*{#2} } { } { } }
-      }
-      { \tag_socket_use:n { postnotes/postnoteref/begin } }
-      { \tag_socket_use:n { postnotes/postnoteref/end }   }
+      \tl_set:Nn \l_@@_note_ref_label_tl {#2}
+      \@@_typeset_mark_wrapper:nnn
+        {
+          \bool_lazy_and:nnTF
+            { ! #1 }
+            { \l_@@_hyperlink_bool }
+            {
+              \hyperref [#2]
+                { \@@_make_mark:nnn { \ref*{#2} } { } { } }
+            }
+            { \@@_make_mark:nnn { \ref*{#2} } { } { } }
+        }
+        { \tag_socket_use:n { postnotes/postnoteref/begin } }
+        { \tag_socket_use:n { postnotes/postnoteref/end }   }
     \group_end:
   }
 %    \end{macrocode}
@@ -1340,14 +1340,14 @@
 \cs_new_protected:Npn \@@_section:nn #1#2
   {
     \group_begin:
-    \int_gincr:N \g_@@_sectid_int
-    \int_gincr:N \g_@@_note_id_int
-    \seq_gput_right:Ne \g_@@_queue_seq { \l_postnotes_note_id_tl }
-    \tl_gclear:N \g_@@_section_name_tl
-    \keys_set:nn { postnotes/section } {#1}
-    \bool_if:NTF \l_@@_section_exp_bool
-      { \@@_store_section:ne { \l_postnotes_note_id_tl } {#2} }
-      { \@@_store_section:nn { \l_postnotes_note_id_tl } {#2} }
+      \int_gincr:N \g_@@_sectid_int
+      \int_gincr:N \g_@@_note_id_int
+      \seq_gput_right:Ne \g_@@_queue_seq { \l_postnotes_note_id_tl }
+      \tl_gclear:N \g_@@_section_name_tl
+      \keys_set:nn { postnotes/section } {#1}
+      \bool_if:NTF \l_@@_section_exp_bool
+        { \@@_store_section:ne { \l_postnotes_note_id_tl } {#2} }
+        { \@@_store_section:nn { \l_postnotes_note_id_tl } {#2} }
     \group_end:
   }
 %    \end{macrocode}
@@ -1491,20 +1491,20 @@
 \cs_new_protected:Npn \@@_print_notes:
   {
     \group_begin:
-    \int_gincr:N \g_@@_print_postnotes_int
-    \seq_if_empty:NTF \g_@@_queue_seq
-      { \msg_warning:nn { postnotes } { empty-printpostnotes } }
-      {
-        \pnheading
-        \UseHook { postnotes/print/begin }
-        \tl_set:Nn \l_@@_print_type_prev_tl { open }
-        \seq_set_eq:NN \l_@@_clear_queue_seq \g_@@_queue_seq
-        \@@_verify_multipass:N \g_@@_queue_seq
-        \bool_if:NT \l_@@_sort_bool
-          { \@@_sort_queue:N \g_@@_queue_seq }
-        \bool_gset_true:N \g_@@_header_vars_next_bool
-        \@@_get_headers_data:N \g_@@_queue_seq
-        \@@_set_headers_vars_first:
+      \int_gincr:N \g_@@_print_postnotes_int
+      \seq_if_empty:NTF \g_@@_queue_seq
+        { \msg_warning:nn { postnotes } { empty-printpostnotes } }
+        {
+          \pnheading
+          \UseHook { postnotes/print/begin }
+          \tl_set:Nn \l_@@_print_type_prev_tl { open }
+          \seq_set_eq:NN \l_@@_clear_queue_seq \g_@@_queue_seq
+          \@@_verify_multipass:N \g_@@_queue_seq
+          \bool_if:NT \l_@@_sort_bool
+            { \@@_sort_queue:N \g_@@_queue_seq }
+          \bool_gset_true:N \g_@@_header_vars_next_bool
+          \@@_get_headers_data:N \g_@@_queue_seq
+          \@@_set_headers_vars_first:
 %    \end{macrocode}
 % Ensure the first note after a heading has paragraph indentation when
 % \opt{listenv} is \texttt{none}.  \pkg{endnotes} uses a workaroundish
@@ -1514,157 +1514,157 @@
 % suggests the use of \cs{@afterindenttrue}, which is what \pkg{indentfirst}
 % does (we do the same, just locally).
 %    \begin{macrocode}
-        \bool_if:NF \l_@@_print_as_list_bool
-          {
-            \cs_set_eq:NN \@afterindentfalse \@afterindenttrue
-            \@afterindenttrue
-          }
-        \bool_until_do:nn { \seq_if_empty_p:N \g_@@_queue_seq }
-          {
-            \seq_gpop_left:NN \g_@@_queue_seq
-              \l_postnotes_print_note_id_tl
-            \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
-              { type } \l_@@_print_type_curr_tl
-            \tl_if_eq:NnTF \l_@@_print_type_curr_tl { section }
-              { % type_curr = `section'
-                \seq_if_empty:NTF \g_@@_queue_seq
-                  {
-                    \tl_set:Nn \l_@@_print_note_id_next_tl { noid }
-                    \tl_set:Nn \l_@@_print_type_next_tl { close }
-                  }
-                  {
-                    \seq_get_left:NN \g_@@_queue_seq
-                      \l_@@_print_note_id_next_tl
-                    \@@_prop_get:nnN
-                      { \l_@@_print_note_id_next_tl }
-                      { type } \l_@@_print_type_next_tl
-                  }
+          \bool_if:NF \l_@@_print_as_list_bool
+            {
+              \cs_set_eq:NN \@afterindentfalse \@afterindenttrue
+              \@afterindenttrue
+            }
+          \bool_until_do:nn { \seq_if_empty_p:N \g_@@_queue_seq }
+            {
+              \seq_gpop_left:NN \g_@@_queue_seq
+                \l_postnotes_print_note_id_tl
+              \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
+                { type } \l_@@_print_type_curr_tl
+              \tl_if_eq:NnTF \l_@@_print_type_curr_tl { section }
+                { % type_curr = `section'
+                  \seq_if_empty:NTF \g_@@_queue_seq
+                    {
+                      \tl_set:Nn \l_@@_print_note_id_next_tl { noid }
+                      \tl_set:Nn \l_@@_print_type_next_tl { close }
+                    }
+                    {
+                      \seq_get_left:NN \g_@@_queue_seq
+                        \l_@@_print_note_id_next_tl
+                      \@@_prop_get:nnN
+                        { \l_@@_print_note_id_next_tl }
+                        { type } \l_@@_print_type_next_tl
+                    }
 %    \end{macrocode}
 % We only process the entry if \texttt{type_next} is \texttt{note}: here are
 % skipped empty sections.
 %    \begin{macrocode}
-                \tl_if_eq:NnT \l_@@_print_type_next_tl { note }
-                  {
-                    \stepcounter { postnotesection }
-                    \group_begin:
-                    \@@_prop_get:nnN
-                      { \l_postnotes_print_note_id_tl }
-                      { thechapter } \pnthechapter
-                    \@@_prop_get:nnN
-                      { \l_postnotes_print_note_id_tl }
-                      { thesection } \pnthesection
-                    \tl_set:NV \pnidnextnote \l_@@_print_note_id_next_tl
-                    \@@_prop_get:nnN
-                      { \l_@@_print_note_id_next_tl }
-                      { thechapter } \pnthechapternextnote
-                    \@@_prop_get:nnN
-                      { \l_@@_print_note_id_next_tl }
-                      { thesection } \pnthesectionnextnote
-                    \@@_prop_get:nnN
-                      { \l_postnotes_print_note_id_tl }
-                      { content } \l_@@_print_content_tl
-                    \l_@@_print_content_tl
-                    \group_end:
+                  \tl_if_eq:NnT \l_@@_print_type_next_tl { note }
+                    {
+                      \stepcounter { postnotesection }
+                      \group_begin:
+                        \@@_prop_get:nnN
+                          { \l_postnotes_print_note_id_tl }
+                          { thechapter } \pnthechapter
+                        \@@_prop_get:nnN
+                          { \l_postnotes_print_note_id_tl }
+                          { thesection } \pnthesection
+                        \tl_set:NV \pnidnextnote \l_@@_print_note_id_next_tl
+                        \@@_prop_get:nnN
+                          { \l_@@_print_note_id_next_tl }
+                          { thechapter } \pnthechapternextnote
+                        \@@_prop_get:nnN
+                          { \l_@@_print_note_id_next_tl }
+                          { thesection } \pnthesectionnextnote
+                        \@@_prop_get:nnN
+                          { \l_postnotes_print_note_id_tl }
+                          { content } \l_@@_print_content_tl
+                        \l_@@_print_content_tl
+                      \group_end:
 %    \end{macrocode}
 % Set \texttt{type_prev} for the next iteration.
 %    \begin{macrocode}
-                    \tl_set:NV \l_@@_print_type_prev_tl
-                      \l_@@_print_type_curr_tl
-                  }
-              }
-              { % type_curr = `note'
-                \tl_if_eq:NnF \l_@@_print_type_prev_tl { note }
-                  {
-                    \bool_if:NTF \l_@@_print_as_list_bool
-                      { \exp_args:NV \begin \l_@@_print_env_tl }
-                      { \group_begin: }
-                    \tag_socket_use:n { postnotes/printlist/begin }
-                    \l_@@_print_format_tl
-                  }
-                \group_begin:
-                \UseHook { postnotes/print/note/begin }
-                \@@_get_pageref:Ne \pnthepage
-                  { mark@ \l_postnotes_print_note_id_tl }
-                \@@_prop_get:nnN
-                  { \l_postnotes_print_note_id_tl }
-                  { mark } \l_@@_print_mark_tl
-                \@@_prop_get:nnN
-                  { \l_postnotes_print_note_id_tl }
-                  { counter } \l_@@_print_counter_tl
-                \@@_prop_get:nnN
-                  { \l_postnotes_print_note_id_tl }
-                  { content } \l_@@_print_content_tl
-                \cs_set:Npn \@currentcounter { postnotetext }
-                \int_set:Nn \c@postnotetext
-                  { \l_@@_print_counter_tl }
-                \cs_set:Npe \@currentlabel
-                  { \p@postnote \l_@@_print_mark_tl }
-                \tag_socket_use:n { postnotes/printnote/begin }
-                \@@_text_mark_wrapper:n
-                  {
-                    \MakeLinkTarget*
-                      { postnote. \l_postnotes_print_note_id_tl .text }
-                    \@@_set_text_page_label:e
+                      \tl_set:NV \l_@@_print_type_prev_tl
+                        \l_@@_print_type_curr_tl
+                    }
+                }
+                { % type_curr = `note'
+                  \tl_if_eq:NnF \l_@@_print_type_prev_tl { note }
+                    {
+                      \bool_if:NTF \l_@@_print_as_list_bool
+                        { \exp_args:NV \begin \l_@@_print_env_tl }
+                        { \group_begin: }
+                      \tag_socket_use:n { postnotes/printlist/begin }
+                      \l_@@_print_format_tl
+                    }
+                  \group_begin:
+                    \UseHook { postnotes/print/note/begin }
+                    \@@_get_pageref:Ne \pnthepage
+                      { mark@ \l_postnotes_print_note_id_tl }
+                    \@@_prop_get:nnN
                       { \l_postnotes_print_note_id_tl }
-                    \@@_typeset_text_mark:eV
+                      { mark } \l_@@_print_mark_tl
+                    \@@_prop_get:nnN
                       { \l_postnotes_print_note_id_tl }
-                      \l_@@_print_mark_tl
-                  }
-                \tag_socket_use:n { postnotes/printtext/begin }
-                \l_@@_print_content_tl
-                \tag_socket_use:n { postnotes/printtext/end }
-                \tag_socket_use:n { postnotes/printnote/end }
-                \l_@@_post_printnote_tl
-                \group_end:
+                      { counter } \l_@@_print_counter_tl
+                    \@@_prop_get:nnN
+                      { \l_postnotes_print_note_id_tl }
+                      { content } \l_@@_print_content_tl
+                    \cs_set:Npn \@currentcounter { postnotetext }
+                    \int_set:Nn \c@postnotetext
+                      { \l_@@_print_counter_tl }
+                    \cs_set:Npe \@currentlabel
+                      { \p@postnote \l_@@_print_mark_tl }
+                    \tag_socket_use:n { postnotes/printnote/begin }
+                    \@@_text_mark_wrapper:n
+                      {
+                        \MakeLinkTarget*
+                          { postnote. \l_postnotes_print_note_id_tl .text }
+                        \@@_set_text_page_label:e
+                          { \l_postnotes_print_note_id_tl }
+                        \@@_typeset_text_mark:eV
+                          { \l_postnotes_print_note_id_tl }
+                          \l_@@_print_mark_tl
+                      }
+                    \tag_socket_use:n { postnotes/printtext/begin }
+                    \l_@@_print_content_tl
+                    \tag_socket_use:n { postnotes/printtext/end }
+                    \tag_socket_use:n { postnotes/printnote/end }
+                    \l_@@_post_printnote_tl
+                  \group_end:
 %    \end{macrocode}
 % For notes, query for next note's type \texttt{after} the current note was
 % typeset, to handle possible nesting.  Even if nesting is not a feature, this
 % should avoid hard crashes related to ``lonely \cs{item}'' or ``extra
 % \cs{endgroup}'' errors, in case it occurs.
 %    \begin{macrocode}
-                \seq_if_empty:NTF \g_@@_queue_seq
-                  {
-                    \tl_set:Nn \l_@@_print_note_id_next_tl { noid }
-                    \tl_set:Nn \l_@@_print_type_next_tl { close }
-                  }
-                  {
-                    \seq_get_left:NN \g_@@_queue_seq
-                      \l_@@_print_note_id_next_tl
-                    \@@_prop_get:nnN
-                      { \l_@@_print_note_id_next_tl }
-                      { type } \l_@@_print_type_next_tl
-                  }
-                \tl_if_eq:NnF \l_@@_print_type_next_tl { note }
-                  {
-                    \tag_socket_use:n { postnotes/printlist/end }
-                    \bool_if:NTF \l_@@_print_as_list_bool
-                      { \exp_args:NV \end \l_@@_print_env_tl }
-                      { \group_end: }
+                  \seq_if_empty:NTF \g_@@_queue_seq
+                    {
+                      \tl_set:Nn \l_@@_print_note_id_next_tl { noid }
+                      \tl_set:Nn \l_@@_print_type_next_tl { close }
+                    }
+                    {
+                      \seq_get_left:NN \g_@@_queue_seq
+                        \l_@@_print_note_id_next_tl
+                      \@@_prop_get:nnN
+                        { \l_@@_print_note_id_next_tl }
+                        { type } \l_@@_print_type_next_tl
+                    }
+                  \tl_if_eq:NnF \l_@@_print_type_next_tl { note }
+                    {
+                      \tag_socket_use:n { postnotes/printlist/end }
+                      \bool_if:NTF \l_@@_print_as_list_bool
+                        { \exp_args:NV \end \l_@@_print_env_tl }
+                        { \group_end: }
 %    \end{macrocode}
 % Ensure \cs{par} at the end of \cs{printopostnotes} (see
 % \url{https://github.com/u-fischer/tagpdf/issues/68#issuecomment-1587343876},
 % thanks \contributor{Ulrike Fischer}).
 %    \begin{macrocode}
-                    \par
-                  }
+                      \par
+                    }
 %    \end{macrocode}
 % Set \texttt{type_prev} for the next iteration.
 %    \begin{macrocode}
-                \tl_set:NV \l_@@_print_type_prev_tl
-                  \l_@@_print_type_curr_tl
-              }
-          }
-        \AddToHookNext { shipout/after }
-          { \bool_gset_false:N \g_@@_header_vars_next_bool }
+                  \tl_set:NV \l_@@_print_type_prev_tl
+                    \l_@@_print_type_curr_tl
+                }
+            }
+          \AddToHookNext { shipout/after }
+            { \bool_gset_false:N \g_@@_header_vars_next_bool }
 %    \end{macrocode}
 % We won't use the variables anymore, clear them to reduce memory usage.
 % Given how we populated \cs{l_@@_clear_queue_seq}, this won't catch nested
 % notes.  But it's not worth to conditionally add new items along the way
 % (testing it every iteration) for this.  Again, not a feature.
 %    \begin{macrocode}
-        \seq_map_inline:Nn \l_@@_clear_queue_seq
-          { \@@_prop_gclear:n { ##1 } }
-      }
+          \seq_map_inline:Nn \l_@@_clear_queue_seq
+            { \@@_prop_gclear:n { ##1 } }
+        }
     \group_end:
   }
 %    \end{macrocode}
@@ -1757,19 +1757,19 @@
 \cs_new_protected:Npn \@@_verify_multipass:N #1
   {
     \group_begin:
-    \seq_clear:N \l_@@_tmpa_seq
-    \seq_map_inline:Nn #1
-      {
-        \@@_prop_get:nnN {##1} { multibool } \l_@@_tmpa_tl
-        \str_if_eq:VnTF \l_@@_tmpa_tl { true }
-          {
-            \cs_if_exist:cT
-              { \c_@@_ref_prefix_tl @ mark@ ##1 }
-              { \seq_put_right:Nn \l_@@_tmpa_seq {##1} }
-          }
-          { \seq_put_right:Nn \l_@@_tmpa_seq {##1} }
-      }
-    \seq_gset_eq:NN #1 \l_@@_tmpa_seq
+      \seq_clear:N \l_@@_tmpa_seq
+      \seq_map_inline:Nn #1
+        {
+          \@@_prop_get:nnN {##1} { multibool } \l_@@_tmpa_tl
+          \str_if_eq:VnTF \l_@@_tmpa_tl { true }
+            {
+              \cs_if_exist:cT
+                { \c_@@_ref_prefix_tl @ mark@ ##1 }
+                { \seq_put_right:Nn \l_@@_tmpa_seq {##1} }
+            }
+            { \seq_put_right:Nn \l_@@_tmpa_seq {##1} }
+        }
+      \seq_gset_eq:NN #1 \l_@@_tmpa_seq
     \group_end:
   }
 %    \end{macrocode}
@@ -1785,29 +1785,29 @@
 \cs_new_protected:Npn \@@_sort_queue:N #1
   {
     \group_begin:
-    \seq_gsort:Nn #1
-      {
-        \@@_prop_get:nnN {##1} { pnsectid } \l_@@_tmpa_tl
-        \@@_prop_get:nnN {##2} { pnsectid } \l_@@_tmpb_tl
-        \tl_if_eq:NNTF \l_@@_tmpa_tl \l_@@_tmpb_tl
-          {
-            \@@_prop_get:nnN {##1} { type } \l_@@_tmpa_tl
-            \@@_prop_get:nnN {##2} { type } \l_@@_tmpb_tl
-            \bool_lazy_and:nnTF
-              { \str_if_eq_p:Vn \l_@@_tmpa_tl { note } }
-              { \str_if_eq_p:Vn \l_@@_tmpb_tl { note } }
-              {
-                \@@_prop_get:nnN {##1} { sortnum } \l_@@_tmpa_tl
-                \@@_prop_get:nnN {##2} { sortnum } \l_@@_tmpb_tl
-                \fp_compare:nNnTF
-                  { \l_@@_tmpa_tl } > { \l_@@_tmpb_tl }
-                  { \sort_return_swapped: }
-                  { \sort_return_same:    }
-              }
-              { \sort_return_same: }
-          }
-          { \sort_return_same: }
-      }
+      \seq_gsort:Nn #1
+        {
+          \@@_prop_get:nnN {##1} { pnsectid } \l_@@_tmpa_tl
+          \@@_prop_get:nnN {##2} { pnsectid } \l_@@_tmpb_tl
+          \tl_if_eq:NNTF \l_@@_tmpa_tl \l_@@_tmpb_tl
+            {
+              \@@_prop_get:nnN {##1} { type } \l_@@_tmpa_tl
+              \@@_prop_get:nnN {##2} { type } \l_@@_tmpb_tl
+              \bool_lazy_and:nnTF
+                { \str_if_eq_p:Vn \l_@@_tmpa_tl { note } }
+                { \str_if_eq_p:Vn \l_@@_tmpb_tl { note } }
+                {
+                  \@@_prop_get:nnN {##1} { sortnum } \l_@@_tmpa_tl
+                  \@@_prop_get:nnN {##2} { sortnum } \l_@@_tmpb_tl
+                  \fp_compare:nNnTF
+                    { \l_@@_tmpa_tl } > { \l_@@_tmpb_tl }
+                    { \sort_return_swapped: }
+                    { \sort_return_same:    }
+                }
+                { \sort_return_same: }
+            }
+            { \sort_return_same: }
+        }
     \group_end:
   }
 %    \end{macrocode}
@@ -1945,60 +1945,60 @@
 \cs_new_protected:Npn \@@_get_headers_data:N #1
   {
     \group_begin:
-    \tl_gclear:N \pnhdpagefirst
-    \tl_gclear:N \pnhdpagelast
-    \tl_gclear:N \pnhdchapfirst
-    \tl_gclear:N \pnhdchaplast
-    \tl_gclear:N \pnhdsectfirst
-    \tl_gclear:N \pnhdsectlast
-    \tl_gclear:N \pnhdnamefirst
-    \tl_gclear:N \pnhdnamelast
-    \prop_gclear:N \g_@@_header_page_first_prop
-    \prop_gclear:N \g_@@_header_page_last_prop
-    \prop_gclear:N \g_@@_header_chap_first_prop
-    \prop_gclear:N \g_@@_header_chap_last_prop
-    \prop_gclear:N \g_@@_header_sect_first_prop
-    \prop_gclear:N \g_@@_header_sect_last_prop
-    \prop_gclear:N \g_@@_header_name_first_prop
-    \prop_gclear:N \g_@@_header_name_last_prop
-    \tl_gclear:N \g_@@_header_prev_last_page_tl
-    \tl_gclear:N \g_@@_header_prev_last_chap_tl
-    \tl_gclear:N \g_@@_header_prev_last_sect_tl
-    \tl_gclear:N \g_@@_header_prev_last_name_tl
-    \tl_clear:N \l_@@_prev_text_page_tl
-    \tl_clear:N \l_@@_curr_text_page_tl
-    \tl_clear:N \l_@@_prev_mark_page_tl
-    \tl_clear:N \l_@@_prev_mark_chap_tl
-    \tl_clear:N \l_@@_prev_mark_sect_tl
-    \tl_clear:N \l_@@_prev_mark_name_tl
-    \seq_map_inline:Nn #1
-      {
-        \exp_args:Ne \tl_if_eq:nnT
-          { \@@_prop_item:nn {##1} { type } }
-          { note }
-          {
-            \@@_get_pageref:Nn
-              \l_@@_curr_text_page_tl { text@ ##1 }
-            \tl_if_empty:NF \l_@@_curr_text_page_tl
-              {
-                \tl_if_eq:NNTF
-                  \l_@@_prev_text_page_tl
-                  \l_@@_curr_text_page_tl
-                  {
+      \tl_gclear:N \pnhdpagefirst
+      \tl_gclear:N \pnhdpagelast
+      \tl_gclear:N \pnhdchapfirst
+      \tl_gclear:N \pnhdchaplast
+      \tl_gclear:N \pnhdsectfirst
+      \tl_gclear:N \pnhdsectlast
+      \tl_gclear:N \pnhdnamefirst
+      \tl_gclear:N \pnhdnamelast
+      \prop_gclear:N \g_@@_header_page_first_prop
+      \prop_gclear:N \g_@@_header_page_last_prop
+      \prop_gclear:N \g_@@_header_chap_first_prop
+      \prop_gclear:N \g_@@_header_chap_last_prop
+      \prop_gclear:N \g_@@_header_sect_first_prop
+      \prop_gclear:N \g_@@_header_sect_last_prop
+      \prop_gclear:N \g_@@_header_name_first_prop
+      \prop_gclear:N \g_@@_header_name_last_prop
+      \tl_gclear:N \g_@@_header_prev_last_page_tl
+      \tl_gclear:N \g_@@_header_prev_last_chap_tl
+      \tl_gclear:N \g_@@_header_prev_last_sect_tl
+      \tl_gclear:N \g_@@_header_prev_last_name_tl
+      \tl_clear:N \l_@@_prev_text_page_tl
+      \tl_clear:N \l_@@_curr_text_page_tl
+      \tl_clear:N \l_@@_prev_mark_page_tl
+      \tl_clear:N \l_@@_prev_mark_chap_tl
+      \tl_clear:N \l_@@_prev_mark_sect_tl
+      \tl_clear:N \l_@@_prev_mark_name_tl
+      \seq_map_inline:Nn #1
+        {
+          \exp_args:Ne \tl_if_eq:nnT
+            { \@@_prop_item:nn {##1} { type } }
+            { note }
+            {
+              \@@_get_pageref:Nn
+                \l_@@_curr_text_page_tl { text@ ##1 }
+              \tl_if_empty:NF \l_@@_curr_text_page_tl
+                {
+                  \tl_if_eq:NNTF
+                    \l_@@_prev_text_page_tl
+                    \l_@@_curr_text_page_tl
+                    {
 %    \end{macrocode}
 % We are on the same page as the previous note, just update the
 % \texttt{prev_mark} data.
 %    \begin{macrocode}
-                    \@@_get_pageref:Nn
-                      \l_@@_prev_mark_page_tl { mark@ ##1 }
-                    \@@_prop_get:nnN {##1} { thechapter }
-                      \l_@@_prev_mark_chap_tl
-                    \@@_prop_get:nnN {##1} { thesection }
-                      \l_@@_prev_mark_sect_tl
-                    \@@_prop_get:nnN {##1} { pnsectname }
-                      \l_@@_prev_mark_name_tl
-                  }
-                  {
+                      \@@_get_pageref:Nn
+                        \l_@@_prev_mark_page_tl { mark@ ##1 }
+                      \@@_prop_get:nnN {##1} { thechapter }
+                        \l_@@_prev_mark_chap_tl
+                      \@@_prop_get:nnN {##1} { thesection }
+                        \l_@@_prev_mark_sect_tl
+                      \@@_prop_get:nnN {##1} { pnsectname }
+                        \l_@@_prev_mark_name_tl
+                    }
+                    {
 %    \end{macrocode}
 % We are on the transition between two pages, current ID is the first note of
 % the new page (or on the very first note of \cs{printpostnotes}, given
@@ -2010,82 +2010,82 @@
 % on \cs{l_@@_prev_text_page_tl} being empty, which only occurs on the first
 % note).
 %    \begin{macrocode}
-                    \tl_if_empty:NF \l_@@_prev_text_page_tl
-                      {
-                        \prop_gput:Nee \g_@@_header_page_last_prop
-                          { \l_@@_prev_text_page_tl }
-                          { \l_@@_prev_mark_page_tl }
-                        \prop_gput:Nee \g_@@_header_chap_last_prop
-                          { \l_@@_prev_text_page_tl }
-                          { \l_@@_prev_mark_chap_tl }
-                        \prop_gput:Nee \g_@@_header_sect_last_prop
-                          { \l_@@_prev_text_page_tl }
-                          { \l_@@_prev_mark_sect_tl }
-                        \prop_gput:Nee \g_@@_header_name_last_prop
-                          { \l_@@_prev_text_page_tl }
-                          { \l_@@_prev_mark_name_tl }
-                      }
+                      \tl_if_empty:NF \l_@@_prev_text_page_tl
+                        {
+                          \prop_gput:Nee \g_@@_header_page_last_prop
+                            { \l_@@_prev_text_page_tl }
+                            { \l_@@_prev_mark_page_tl }
+                          \prop_gput:Nee \g_@@_header_chap_last_prop
+                            { \l_@@_prev_text_page_tl }
+                            { \l_@@_prev_mark_chap_tl }
+                          \prop_gput:Nee \g_@@_header_sect_last_prop
+                            { \l_@@_prev_text_page_tl }
+                            { \l_@@_prev_mark_sect_tl }
+                          \prop_gput:Nee \g_@@_header_name_last_prop
+                            { \l_@@_prev_text_page_tl }
+                            { \l_@@_prev_mark_name_tl }
+                        }
 %    \end{macrocode}
 %
 % Set `first' values for current page, based on the current note ID.
 %    \begin{macrocode}
-                    \prop_gput:Nee \g_@@_header_page_first_prop
-                      { \l_@@_curr_text_page_tl }
-                      { \@@_extract_pageref:n { mark@ ##1 } }
-                    \prop_gput:Nee \g_@@_header_chap_first_prop
-                      { \l_@@_curr_text_page_tl }
-                      { \@@_prop_item:nn {##1} { thechapter } }
-                    \prop_gput:Nee \g_@@_header_sect_first_prop
-                      { \l_@@_curr_text_page_tl }
-                      { \@@_prop_item:nn {##1} { thesection } }
-                    \prop_gput:Nee \g_@@_header_name_first_prop
-                      { \l_@@_curr_text_page_tl }
-                      { \@@_prop_item:nn {##1} { pnsectname } }
+                      \prop_gput:Nee \g_@@_header_page_first_prop
+                        { \l_@@_curr_text_page_tl }
+                        { \@@_extract_pageref:n { mark@ ##1 } }
+                      \prop_gput:Nee \g_@@_header_chap_first_prop
+                        { \l_@@_curr_text_page_tl }
+                        { \@@_prop_item:nn {##1} { thechapter } }
+                      \prop_gput:Nee \g_@@_header_sect_first_prop
+                        { \l_@@_curr_text_page_tl }
+                        { \@@_prop_item:nn {##1} { thesection } }
+                      \prop_gput:Nee \g_@@_header_name_first_prop
+                        { \l_@@_curr_text_page_tl }
+                        { \@@_prop_item:nn {##1} { pnsectname } }
 %    \end{macrocode}
 %
 % Store \texttt{prev_mark} data for the first note on the page.
 %    \begin{macrocode}
-                    \@@_get_pageref:Nn
-                      \l_@@_prev_mark_page_tl { mark@ ##1 }
-                    \@@_prop_get:nnN {##1} { thechapter }
-                      \l_@@_prev_mark_chap_tl
-                    \@@_prop_get:nnN {##1} { thesection }
-                      \l_@@_prev_mark_sect_tl
-                    \@@_prop_get:nnN {##1} { pnsectname }
-                      \l_@@_prev_mark_name_tl
+                      \@@_get_pageref:Nn
+                        \l_@@_prev_mark_page_tl { mark@ ##1 }
+                      \@@_prop_get:nnN {##1} { thechapter }
+                        \l_@@_prev_mark_chap_tl
+                      \@@_prop_get:nnN {##1} { thesection }
+                        \l_@@_prev_mark_sect_tl
+                      \@@_prop_get:nnN {##1} { pnsectname }
+                        \l_@@_prev_mark_name_tl
 %    \end{macrocode}
 %
 % Set \cs{l_@@_prev_text_page_tl} for the next page
 % (\cs{l_@@_curr_text_page_tl} is never empty at this point, since we
 % conditioned to it).
 %    \begin{macrocode}
-                    \tl_set:NV \l_@@_prev_text_page_tl
-                      \l_@@_curr_text_page_tl
-                  }
-              }
-          }
-      }
+                      \tl_set:NV \l_@@_prev_text_page_tl
+                        \l_@@_curr_text_page_tl
+                    }
+                }
+            }
+        }
 %    \end{macrocode}
 % We can't catch the transition from the last page of \cs{printpostnotes} to
 % the following one through the mapping above, but the \texttt{prev_mark}
 % values of the last note in the loop are the ones we want, so we set `last'
 % values for the last page based on them.
 %    \begin{macrocode}
-    \tl_if_empty:NF \l_@@_prev_text_page_tl
-      {
-        \prop_gput:Nee \g_@@_header_page_last_prop
-          { \l_@@_prev_text_page_tl }
-          { \l_@@_prev_mark_page_tl }
-        \prop_gput:Nee \g_@@_header_chap_last_prop
-          { \l_@@_prev_text_page_tl }
-          { \l_@@_prev_mark_chap_tl }
-        \prop_gput:Nee \g_@@_header_sect_last_prop
-          { \l_@@_prev_text_page_tl }
-          { \l_@@_prev_mark_sect_tl }
-        \prop_gput:Nee \g_@@_header_name_last_prop
-          { \l_@@_prev_text_page_tl }
-          { \l_@@_prev_mark_name_tl }
-      }
+      \tl_if_empty:NF \l_@@_prev_text_page_tl
+        {
+          \prop_gput:Nee \g_@@_header_page_last_prop
+            { \l_@@_prev_text_page_tl }
+            { \l_@@_prev_mark_page_tl }
+          \prop_gput:Nee \g_@@_header_chap_last_prop
+            { \l_@@_prev_text_page_tl }
+            { \l_@@_prev_mark_chap_tl }
+          \prop_gput:Nee \g_@@_header_sect_last_prop
+            { \l_@@_prev_text_page_tl }
+            { \l_@@_prev_mark_sect_tl }
+          \prop_gput:Nee \g_@@_header_name_last_prop
+            { \l_@@_prev_text_page_tl }
+            { \l_@@_prev_mark_name_tl }
+        }
     \group_end:
   }
 %    \end{macrocode}
@@ -2114,54 +2114,54 @@
 \cs_new_protected:Npn \@@_set_headers_vars:n #1
   {
     \group_begin:
-    \prop_get:NnNTF \g_@@_header_page_first_prop
-      {#1} \l_@@_tmpa_tl
-      { \tl_gset:NV \pnhdpagefirst \l_@@_tmpa_tl }
-      { \tl_gset:NV \pnhdpagefirst \g_@@_header_prev_last_page_tl }
-    \prop_get:NnNTF \g_@@_header_page_last_prop
-      {#1} \l_@@_tmpa_tl
-      {
-        \tl_gset:NV \pnhdpagelast \l_@@_tmpa_tl
-        \tl_gset:NV \g_@@_header_prev_last_page_tl
-          \l_@@_tmpa_tl
-      }
-      { \tl_gset:NV \pnhdpagelast \g_@@_header_prev_last_page_tl }
-    \prop_get:NnNTF \g_@@_header_chap_first_prop
-      {#1} \l_@@_tmpa_tl
-      { \tl_gset:NV \pnhdchapfirst \l_@@_tmpa_tl }
-      { \tl_gset:NV \pnhdchapfirst \g_@@_header_prev_last_chap_tl }
-    \prop_get:NnNTF \g_@@_header_chap_last_prop
-      {#1} \l_@@_tmpa_tl
-      {
-        \tl_gset:NV \pnhdchaplast \l_@@_tmpa_tl
-        \tl_gset:NV \g_@@_header_prev_last_chap_tl
-          \l_@@_tmpa_tl
-      }
-      { \tl_gset:NV \pnhdchaplast \g_@@_header_prev_last_chap_tl }
-    \prop_get:NnNTF \g_@@_header_sect_first_prop
-      {#1} \l_@@_tmpa_tl
-      { \tl_gset:NV \pnhdsectfirst \l_@@_tmpa_tl }
-      { \tl_gset:NV \pnhdsectfirst \g_@@_header_prev_last_sect_tl }
-    \prop_get:NnNTF \g_@@_header_sect_last_prop
-      {#1} \l_@@_tmpa_tl
-      {
-        \tl_gset:NV \pnhdsectlast \l_@@_tmpa_tl
-        \tl_gset:NV \g_@@_header_prev_last_sect_tl
-          \l_@@_tmpa_tl
-      }
-      { \tl_gset:NV \pnhdsectlast \g_@@_header_prev_last_sect_tl }
-    \prop_get:NnNTF \g_@@_header_name_first_prop
-      {#1} \l_@@_tmpa_tl
-      { \tl_gset:NV \pnhdnamefirst \l_@@_tmpa_tl }
-      { \tl_gset:NV \pnhdnamefirst \g_@@_header_prev_last_name_tl }
-    \prop_get:NnNTF \g_@@_header_name_last_prop
-      {#1} \l_@@_tmpa_tl
-      {
-        \tl_gset:NV \pnhdnamelast \l_@@_tmpa_tl
-        \tl_gset:NV \g_@@_header_prev_last_name_tl
-          \l_@@_tmpa_tl
-      }
-      { \tl_gset:NV \pnhdnamelast \g_@@_header_prev_last_name_tl }
+      \prop_get:NnNTF \g_@@_header_page_first_prop
+        {#1} \l_@@_tmpa_tl
+        { \tl_gset:NV \pnhdpagefirst \l_@@_tmpa_tl }
+        { \tl_gset:NV \pnhdpagefirst \g_@@_header_prev_last_page_tl }
+      \prop_get:NnNTF \g_@@_header_page_last_prop
+        {#1} \l_@@_tmpa_tl
+        {
+          \tl_gset:NV \pnhdpagelast \l_@@_tmpa_tl
+          \tl_gset:NV \g_@@_header_prev_last_page_tl
+            \l_@@_tmpa_tl
+        }
+        { \tl_gset:NV \pnhdpagelast \g_@@_header_prev_last_page_tl }
+      \prop_get:NnNTF \g_@@_header_chap_first_prop
+        {#1} \l_@@_tmpa_tl
+        { \tl_gset:NV \pnhdchapfirst \l_@@_tmpa_tl }
+        { \tl_gset:NV \pnhdchapfirst \g_@@_header_prev_last_chap_tl }
+      \prop_get:NnNTF \g_@@_header_chap_last_prop
+        {#1} \l_@@_tmpa_tl
+        {
+          \tl_gset:NV \pnhdchaplast \l_@@_tmpa_tl
+          \tl_gset:NV \g_@@_header_prev_last_chap_tl
+            \l_@@_tmpa_tl
+        }
+        { \tl_gset:NV \pnhdchaplast \g_@@_header_prev_last_chap_tl }
+      \prop_get:NnNTF \g_@@_header_sect_first_prop
+        {#1} \l_@@_tmpa_tl
+        { \tl_gset:NV \pnhdsectfirst \l_@@_tmpa_tl }
+        { \tl_gset:NV \pnhdsectfirst \g_@@_header_prev_last_sect_tl }
+      \prop_get:NnNTF \g_@@_header_sect_last_prop
+        {#1} \l_@@_tmpa_tl
+        {
+          \tl_gset:NV \pnhdsectlast \l_@@_tmpa_tl
+          \tl_gset:NV \g_@@_header_prev_last_sect_tl
+            \l_@@_tmpa_tl
+        }
+        { \tl_gset:NV \pnhdsectlast \g_@@_header_prev_last_sect_tl }
+      \prop_get:NnNTF \g_@@_header_name_first_prop
+        {#1} \l_@@_tmpa_tl
+        { \tl_gset:NV \pnhdnamefirst \l_@@_tmpa_tl }
+        { \tl_gset:NV \pnhdnamefirst \g_@@_header_prev_last_name_tl }
+      \prop_get:NnNTF \g_@@_header_name_last_prop
+        {#1} \l_@@_tmpa_tl
+        {
+          \tl_gset:NV \pnhdnamelast \l_@@_tmpa_tl
+          \tl_gset:NV \g_@@_header_prev_last_name_tl
+            \l_@@_tmpa_tl
+        }
+        { \tl_gset:NV \pnhdnamelast \g_@@_header_prev_last_name_tl }
     \group_end:
   }
 \cs_generate_variant:Nn \@@_set_headers_vars:n { e }
@@ -2477,10 +2477,10 @@
             \tl_gset_eq:NN \g_@@_biblatex_prev_refsection_tl
               \l_@@_restore_tmp_tl
             \group_begin:
-            \cs_set_eq:NN \label \use_none:n
-            \cs_set_eq:NN \blx@info \use_none:n
-            \blx@endrefsection
-            \refsection
+              \cs_set_eq:NN \label \use_none:n
+              \cs_set_eq:NN \blx@info \use_none:n
+              \blx@endrefsection
+              \refsection
             \group_end:
           }
       }
@@ -2537,24 +2537,24 @@
     \cs_new_protected:Npn \@@_note_zref:nn #1#2
       {
         \group_begin:
-        \tl_set:Nn \l_@@_note_zref_zlabel_tl {#2}
-        \@@_typeset_mark_wrapper:nnn
-          {
-            \bool_lazy_all:nTF
-              {
-                { ! #1 }
-                { \l_@@_hyperlink_bool }
-                { \l_@@_zrefhyperref_bool }
-              }
-              {
-                \hyperlink
-                  { \zref@extractdefault {#2} { anchor } { } }
-                  { \@@_make_mark:nnn { \zref{#2} } { } { } }
-              }
-              { \@@_make_mark:nnn { \zref{#2} } { } { } }
-          }
-          { \tag_socket_use:n { postnotes/postnotezref/begin } }
-          { \tag_socket_use:n { postnotes/postnotezref/end }   }
+          \tl_set:Nn \l_@@_note_zref_zlabel_tl {#2}
+          \@@_typeset_mark_wrapper:nnn
+            {
+              \bool_lazy_all:nTF
+                {
+                  { ! #1 }
+                  { \l_@@_hyperlink_bool }
+                  { \l_@@_zrefhyperref_bool }
+                }
+                {
+                  \hyperlink
+                    { \zref@extractdefault {#2} { anchor } { } }
+                    { \@@_make_mark:nnn { \zref{#2} } { } { } }
+                }
+                { \@@_make_mark:nnn { \zref{#2} } { } { } }
+            }
+            { \tag_socket_use:n { postnotes/postnotezref/begin } }
+            { \tag_socket_use:n { postnotes/postnotezref/end }   }
         \group_end:
       }
 %    \end{macrocode}
