@@ -809,7 +809,6 @@
             \setlength { \leftskip  } { 0pt   }
             \setlength { \parindent } { 1.8em }
           } ,
-        pretextmark = { \par } ,
 %    \end{macrocode}
 % \pkg{endnotes} uses a zero width box to get the desired alignment to the
 % right, but that does not play well with the backlinks, so we have a little
@@ -827,7 +826,7 @@
       {
         listenv = none ,
         format = { } ,
-        pretextmark = { \par\noindent } ,
+        pretextmark = { \noindent } ,
         maketextmark = { { \normalfont ##2 ##1 . ##3 } } ,
         posttextmark = { ~ } ,
       } ,
@@ -1414,6 +1413,7 @@
 %     \l_@@_print_note_id_next_tl ,
 %     \l_@@_print_counter_tl ,
 %     \l_@@_print_mark_tl ,
+%     \l_@@_print_typeset_mark_tl ,
 %     \l_@@_print_type_curr_tl ,
 %     \l_@@_print_type_next_tl ,
 %     \l_@@_print_type_prev_tl ,
@@ -1427,6 +1427,7 @@
 \tl_new:N \l_@@_print_note_id_next_tl
 \tl_new:N \l_@@_print_counter_tl
 \tl_new:N \l_@@_print_mark_tl
+\tl_new:N \l_@@_print_typeset_mark_tl
 \tl_new:N \l_@@_print_type_curr_tl
 \tl_new:N \l_@@_print_type_next_tl
 \tl_new:N \l_@@_print_type_prev_tl
@@ -1599,16 +1600,45 @@
                       { \l_@@_print_counter_tl }
                     \cs_set:Npe \@currentlabel
                       { \p@postnote \l_@@_print_mark_tl }
-                    \tag_socket_use:n { postnotes/printnote/begin }
-                    \@@_text_mark_wrapper:n
+                    \tl_set:Nn \l_@@_print_typeset_mark_tl
                       {
+                        \tag_socket_use:n { postnotes/printmark/begin }
                         \MakeLinkTarget*
                           { postnote. \l_postnotes_print_note_id_tl .text }
                         \@@_set_text_page_label:e
                           { \l_postnotes_print_note_id_tl }
+                        \l_@@_pre_textmark_tl
                         \@@_typeset_text_mark:eV
                           { \l_postnotes_print_note_id_tl }
                           \l_@@_print_mark_tl
+                        \l_@@_post_textmark_tl
+                        \tag_socket_use:n { postnotes/printmark/end }
+                      }
+%    \end{macrocode}
+% Note that the placement of the tagging socket for the list case may depend
+% on the tagging structure, in other words, on the content of the socket.  It
+% currently does nothing for the list case, so I've placed it in the
+% ``potentially most useful place''.  Review this if the content changes.
+% Leave vertical mode after \cs{item} for the list case to avoid ``perhaps a
+% missing \cs{item}'' error for empty notes (see
+% \file{pn-bug-empty-postnote01.lvt}).  And leave vertical mode before the
+% note (and the tagging socket) for \opt{listenv=none} (see
+% \url{https://github.com/gusbrs/postnotes/issues/8#issuecomment-2429501962},
+% thanks \contributor{Ulrike Fischer}).
+%    \begin{macrocode}
+                    \bool_if:NTF \l_@@_print_as_list_bool
+                      {
+                        \item
+                          [
+                            \tag_socket_use:n { postnotes/printnote/begin }
+                            \l_@@_print_typeset_mark_tl
+                          ]
+                        \mode_leave_vertical:
+                      }
+                      {
+                        \mode_leave_vertical:
+                        \tag_socket_use:n { postnotes/printnote/begin }
+                        \l_@@_print_typeset_mark_tl
                       }
                     \tag_socket_use:n { postnotes/printtext/begin }
                     \l_@@_print_content_tl
@@ -1637,15 +1667,20 @@
                   \tl_if_eq:NnF \l_@@_print_type_next_tl { note }
                     {
                       \tag_socket_use:n { postnotes/printlist/end }
-                      \bool_if:NTF \l_@@_print_as_list_bool
-                        { \exp_args:NV \end \l_@@_print_env_tl }
-                        { \group_end: }
 %    \end{macrocode}
 % Ensure \cs{par} at the end of \cs{printopostnotes} (see
 % \url{https://github.com/u-fischer/tagpdf/issues/68#issuecomment-1587343876},
 % thanks \contributor{Ulrike Fischer}).
 %    \begin{macrocode}
-                      \par
+                      \bool_if:NTF \l_@@_print_as_list_bool
+                        {
+                          \exp_args:NV \end \l_@@_print_env_tl
+                          \par
+                        }
+                        {
+                          \par
+                          \group_end:
+                        }
                     }
 %    \end{macrocode}
 % Set \texttt{type_prev} for the next iteration.
@@ -1679,12 +1714,10 @@
 % \begin{macro}
 %   {
 %     \@@_typeset_text_mark:nn ,
-%     \@@_text_mark_wrapper:n ,
 %   }
-%   Auxiliary functions for mark typesetting in \cs{@@_print_notes:}.
+%   Auxiliary function for mark typesetting in \cs{@@_print_notes:}.
 %   \begin{syntax}
 %     \cs{@@_typeset_text_mark:nn} \Arg{note id} \Arg{mark}
-%     \cs{@@_text_mark_wrapper:n} \Arg{mark}
 %   \end{syntax}
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_typeset_text_mark:nn #1#2
@@ -1700,28 +1733,6 @@
       { \@@_make_text_mark:nnn {#2} { } { } }
   }
 \cs_generate_variant:Nn \@@_typeset_text_mark:nn { eV }
-\cs_new_protected:Npn \@@_text_mark_wrapper:n #1
-  {
-    \bool_if:NTF \l_@@_print_as_list_bool
-      {
-        \item
-          [
-            \tag_socket_use:n { postnotes/printmark/begin }
-            \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl
-            \tag_socket_use:n { postnotes/printmark/end }
-          ]
-%    \end{macrocode}
-% Leave vertical mode to avoid ``perhaps a missing \cs{item}'' error for empty
-% notes.
-%    \begin{macrocode}
-        \mode_leave_vertical:
-      }
-      {
-        \tag_socket_use:n { postnotes/printmark/begin }
-        \l_@@_pre_textmark_tl #1 \l_@@_post_textmark_tl
-        \tag_socket_use:n { postnotes/printmark/end }
-      }
-  }
 %    \end{macrocode}
 % \end{macro}
 %

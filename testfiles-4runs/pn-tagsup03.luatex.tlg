@@ -1152,15 +1152,6 @@ Completed box being shipped out [2]
 ....\penalty 10000
 ....\write1{\new@label@record{postnote@zlabel@option.zen:mark:1}{{postnotes/tagsup@noteid}{1}}}
 ....\penalty 10000
-....\write1{\new@label@record{tagpdfstruct-postnote.1}{{tagstruct}{34}{tagstructobj}{102 0 R}}}
-....\penalty 10000
-....\penalty 10000
-....\pdfliteral page <lua data reference ...>
-....\pdfliteral page <lua data reference ...>
-....\pdfdest name{postnote.1.text} xyz
-....\pdfdest name{postnote.1.text} xyz
-....\penalty 10000
-....\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.20001
@@ -1171,6 +1162,16 @@ Completed box being shipped out [2]
 ......\localleftbox=null
 ......\localrightbox=null
 .....\hbox(0.0+0.0)x15.0, direction TLT
+.....\write1{\new@label@record{tagpdfstruct-postnote.1}{{tagstruct}{34}{tagstructobj}{102 0 R}}}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.......\pdfliteral page <lua data reference ...>
+.......\pdfliteral page <lua data reference ...>
+.......\pdfdest name{postnote.1.text} xyz
+.......\pdfdest name{postnote.1.text} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 14 } action struct name{postnote.1.mark} goto name{postnote.1.mark}
@@ -1191,13 +1192,6 @@ Completed box being shipped out [2]
 ....\pdfliteral page <lua data reference ...>
 ....\write1{\new@label@record{postnote@label@option.en:mark:2}{{postnotes/tagsup@noteid}{2}}}
 ....\write1{\new@label@record{postnote@zlabel@option.zen:mark:2}{{postnotes/tagsup@noteid}{2}}}
-....\write1{\new@label@record{tagpdfstruct-postnote.2}{{tagstruct}{39}{tagstructobj}{110 0 R}}}
-....\pdfliteral page <lua data reference ...>
-....\pdfliteral page <lua data reference ...>
-....\pdfdest name{postnote.2.text} xyz
-....\pdfdest name{postnote.2.text} xyz
-....\penalty 10000
-....\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.20001
@@ -1208,6 +1202,16 @@ Completed box being shipped out [2]
 ......\localleftbox=null
 ......\localrightbox=null
 .....\hbox(0.0+0.0)x15.0, direction TLT
+.....\write1{\new@label@record{tagpdfstruct-postnote.2}{{tagstruct}{39}{tagstructobj}{110 0 R}}}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.......\pdfliteral page <lua data reference ...>
+.......\pdfliteral page <lua data reference ...>
+.......\pdfdest name{postnote.2.text} xyz
+.......\pdfdest name{postnote.2.text} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 15 } action struct name{postnote.2.mark} goto name{postnote.2.mark}
@@ -1224,15 +1228,6 @@ Completed box being shipped out [2]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\pdfliteral page <lua data reference ...>
-....\pdfliteral page <lua data reference ...>
-....\write1{\new@label@record{tagpdfstruct-postnote.3}{{tagstruct}{44}{tagstructobj}{117 0 R}}}
-....\pdfliteral page <lua data reference ...>
-....\pdfliteral page <lua data reference ...>
-....\pdfdest name{postnote.3.text} xyz
-....\pdfdest name{postnote.3.text} xyz
-....\penalty 10000
-....\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.75
@@ -1243,6 +1238,18 @@ Completed box being shipped out [2]
 ......\localleftbox=null
 ......\localrightbox=null
 .....\hbox(0.0+0.0)x15.0, direction TLT
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\write1{\new@label@record{tagpdfstruct-postnote.3}{{tagstruct}{44}{tagstructobj}{117 0 R}}}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.......\pdfliteral page <lua data reference ...>
+.......\pdfliteral page <lua data reference ...>
+.......\pdfdest name{postnote.3.text} xyz
+.......\pdfdest name{postnote.3.text} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 16 } action struct name{postnote.3.mark} goto name{postnote.3.mark}

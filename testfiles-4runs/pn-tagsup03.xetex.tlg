@@ -1496,24 +1496,21 @@ Completed box being shipped out [2]
 ....\penalty 10000
 ....\write1{\new@label@record{postnote@zlabel@option.zen:mark:1}{{postnotes/tagsup@noteid}{1}}}
 ....\penalty 10000
-....\write1{\new@label@record{tagpdfstruct-postnote.1}{{tagstruct}{34}{tagstructobj}{@pdf.obj64}}}
-....\penalty 10000
-....\penalty 10000
-....\write1{\new@label@record{mcid-40}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{40}{tagmcid}{\__property_code_tagmcid: }}}
-....\penalty 10000
-....\penalty 10000
-....\special shipout{pdf:code /Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
-....\marks4{b-,40,35,Lbl,,,}
-....\marks4{b+,40,35,Lbl,,,}
-....\special{pdf:dest (postnote.1.text)[@thispage/XYZ @xpos @ypos null]}
-....\special{pdf:obj @pdf.SDest.postnote.1.text[@pdf.obj65/XYZ @xpos @ypos null]}
-....\penalty 10000
-....\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 318.18063fil
 .....\hbox(0.0+0.0)x15.0
+.....\write1{\new@label@record{tagpdfstruct-postnote.1}{{tagstruct}{34}{tagstructobj}{@pdf.obj64}}}
+.....\write1{\new@label@record{mcid-40}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{40}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -11.0
+.......\special{pdf:dest (postnote.1.text)[@thispage/XYZ @xpos @ypos null]}
+.......\special{pdf:obj @pdf.SDest.postnote.1.text[@pdf.obj65/XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .....\special{pdf:code EMC}
 .....\write1{\new@label@record{mcid-41}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{41}{tagmcid}{\__property_code_tagmcid: }}}
 .....\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
@@ -1537,6 +1534,8 @@ Completed box being shipped out [2]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{b-,40,35,Lbl,,,}
+....\marks4{b+,40,35,Lbl,,,}
 ....\marks4{e-,40,35,}
 ....\marks4{e+,40,35,}
 ....\marks4{b-,41,36,Link,,,}
@@ -1553,20 +1552,21 @@ Completed box being shipped out [2]
 ....\marks4{e+,43,38,}
 ....\write1{\new@label@record{postnote@label@option.en:mark:2}{{postnotes/tagsup@noteid}{2}}}
 ....\write1{\new@label@record{postnote@zlabel@option.zen:mark:2}{{postnotes/tagsup@noteid}{2}}}
-....\write1{\new@label@record{tagpdfstruct-postnote.2}{{tagstruct}{39}{tagstructobj}{@pdf.obj70}}}
-....\write1{\new@label@record{mcid-44}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{44}{tagmcid}{\__property_code_tagmcid: }}}
-....\special shipout{pdf:code /Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
-....\marks4{b-,44,40,Lbl,,,}
-....\marks4{b+,44,40,Lbl,,,}
-....\special{pdf:dest (postnote.2.text)[@thispage/XYZ @xpos @ypos null]}
-....\special{pdf:obj @pdf.SDest.postnote.2.text[@pdf.obj71/XYZ @xpos @ypos null]}
-....\penalty 10000
-....\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 318.18063fil
 .....\hbox(0.0+0.0)x15.0
+.....\write1{\new@label@record{tagpdfstruct-postnote.2}{{tagstruct}{39}{tagstructobj}{@pdf.obj70}}}
+.....\write1{\new@label@record{mcid-44}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{44}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -11.0
+.......\special{pdf:dest (postnote.2.text)[@thispage/XYZ @xpos @ypos null]}
+.......\special{pdf:obj @pdf.SDest.postnote.2.text[@pdf.obj71/XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .....\special{pdf:code EMC}
 .....\write1{\new@label@record{mcid-45}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{45}{tagmcid}{\__property_code_tagmcid: }}}
 .....\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
@@ -1590,6 +1590,8 @@ Completed box being shipped out [2]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{b-,44,40,Lbl,,,}
+....\marks4{b+,44,40,Lbl,,,}
 ....\marks4{e-,44,40,}
 ....\marks4{e+,44,40,}
 ....\marks4{b-,45,41,Link,,,}
@@ -1604,20 +1606,21 @@ Completed box being shipped out [2]
 ....\marks4{b+,47,43,text,,,}
 ....\marks4{e-,47,43,}
 ....\marks4{e+,47,43,}
-....\write1{\new@label@record{tagpdfstruct-postnote.3}{{tagstruct}{44}{tagstructobj}{@pdf.obj76}}}
-....\write1{\new@label@record{mcid-48}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{48}{tagmcid}{\__property_code_tagmcid: }}}
-....\special shipout{pdf:code /Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
-....\marks4{b-,48,45,Lbl,,,}
-....\marks4{b+,48,45,Lbl,,,}
-....\special{pdf:dest (postnote.3.text)[@thispage/XYZ @xpos @ypos null]}
-....\special{pdf:obj @pdf.SDest.postnote.3.text[@pdf.obj77/XYZ @xpos @ypos null]}
-....\penalty 10000
-....\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.75
 ....\hbox(6.25+1.75)x345.0, glue set 290.33777fil
 .....\hbox(0.0+0.0)x15.0
+.....\write1{\new@label@record{tagpdfstruct-postnote.3}{{tagstruct}{44}{tagstructobj}{@pdf.obj76}}}
+.....\write1{\new@label@record{mcid-48}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{48}{tagmcid}{\__property_code_tagmcid: }}}
+.....\special shipout{pdf:code /Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -11.0
+.......\special{pdf:dest (postnote.3.text)[@thispage/XYZ @xpos @ypos null]}
+.......\special{pdf:obj @pdf.SDest.postnote.3.text[@pdf.obj77/XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
 .....\special{pdf:code EMC}
 .....\write1{\new@label@record{mcid-49}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{49}{tagmcid}{\__property_code_tagmcid: }}}
 .....\special shipout{pdf:code /Link <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
@@ -1645,6 +1648,8 @@ Completed box being shipped out [2]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{b-,48,45,Lbl,,,}
+....\marks4{b+,48,45,Lbl,,,}
 ....\marks4{e-,48,45,}
 ....\marks4{e+,48,45,}
 ....\marks4{b-,49,46,Link,,,}

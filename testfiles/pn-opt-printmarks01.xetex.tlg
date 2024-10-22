@@ -67,6 +67,12 @@ Completed box being shipped out [3]
 ......\glue -5.0
 ......\hbox(6.75+2.25)x94.27647
 .......\glue 5.0
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0
+........\hbox(0.0+0.0)x0.0, shifted -11.0
+.........\special{pdf:dest (postnote.1.text) [@thispage /XYZ @xpos @ypos null]}
+.........\penalty 10000
+.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\OT1/cmr/m/n/9 [
 .......\OT1/cmr/m/n/9 p
 .......\OT1/cmr/m/n/9 r
@@ -76,12 +82,6 @@ Completed box being shipped out [3]
 .......\OT1/cmr/m/n/9 r
 .......\OT1/cmr/m/n/9 k
 .......\OT1/cmr/m/n/9 ]
-.......\penalty 10000
-.......\hbox(0.0+0.0)x0.0
-........\hbox(0.0+0.0)x0.0, shifted -11.0
-.........\special{pdf:dest (postnote.1.text) [@thispage /XYZ @xpos @ypos null]}
-.........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.1.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .

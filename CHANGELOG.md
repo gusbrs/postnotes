@@ -2,6 +2,10 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.3.0...HEAD)
 
+### Fixed
+- Fixed `style=endnotes` tagging error (see issue
+  [#8](https://github.com/gusbrs/postnotes/issues/8))
+
 ## [v0.3.0](https://github.com/gusbrs/postnotes/compare/v0.2.8...v0.3.0) (2024-10-15)
 
 ### Added

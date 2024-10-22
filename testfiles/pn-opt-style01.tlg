@@ -60,14 +60,17 @@ Completed box being shipped out [3]
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
-....\pdfdest name{postnote.1.text} xyz
-....\penalty 10000
-....\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 2.81001
 ....\hbox(6.68999+0.0)x345.0, glue set 293.33813fil
 .....\hbox(0.0+0.0)x15.30023
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -9.5
+.......\pdfdest name{postnote.1.text} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
 .....\glue -4.16661
 .....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.mark}
 .....\hbox(6.68999+0.0)x4.16661
@@ -89,13 +92,17 @@ Completed box being shipped out [3]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\pdfdest name{postnote.2.text} xyz
-....\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 2.81001
 ....\hbox(6.68999+0.0)x345.0, glue set 294.87704fil
 .....\hbox(0.0+0.0)x15.30023
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -9.5
+.......\pdfdest name{postnote.2.text} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
 .....\glue -4.16661
 .....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.mark}
 .....\hbox(6.68999+0.0)x4.16661
@@ -187,7 +194,8 @@ Completed box being shipped out [5]
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.05556
-....\hbox(6.94444+0.0)x345.0, glue set 289.99988fil
+....\hbox(6.94444+0.0)x345.0, glue set 274.99988fil
+.....\hbox(0.0+0.0)x15.0
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0
 ......\hbox(0.0+0.0)x0.0, shifted -12.0
@@ -215,7 +223,8 @@ Completed box being shipped out [5]
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.16669
-....\hbox(6.83331+0.0)x345.0, glue set 291.77766fil
+....\hbox(6.83331+0.0)x345.0, glue set 276.77766fil
+.....\hbox(0.0+0.0)x15.0
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0
 ......\hbox(0.0+0.0)x0.0, shifted -12.0

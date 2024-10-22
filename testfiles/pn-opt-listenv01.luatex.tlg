@@ -557,9 +557,6 @@ Completed box being shipped out [9]
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@4}{\int_use:N \c@page }}
-....\pdfdest name{postnote.7.text} xyz
-....\penalty 10000
-....\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.75
@@ -570,6 +567,12 @@ Completed box being shipped out [9]
 ......\localleftbox=null
 ......\localrightbox=null
 .....\hbox(0.0+0.0)x15.0, direction TLT
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.......\pdfdest name{postnote.7.text} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
 .....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.7.mark}
 .....\OT1/cmr/m/n/9 7
 .....\OT1/cmr/m/n/9 .
@@ -592,8 +595,6 @@ Completed box being shipped out [9]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\pdfdest name{postnote.8.text} xyz
-....\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.85002
@@ -604,6 +605,12 @@ Completed box being shipped out [9]
 ......\localleftbox=null
 ......\localrightbox=null
 .....\hbox(0.0+0.0)x15.0, direction TLT
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
+.......\pdfdest name{postnote.8.text} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
 .....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.8.mark}
 .....\OT1/cmr/m/n/9 8
 .....\OT1/cmr/m/n/9 .

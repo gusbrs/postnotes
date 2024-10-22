@@ -495,14 +495,17 @@ Completed box being shipped out [9]
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print@4}{\int_use:N \c@page }}
-....\special{pdf:dest (postnote.7.text) [@thispage /XYZ @xpos @ypos null]}
-....\penalty 10000
-....\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.75
 ....\hbox(6.25+0.0)x345.0, glue set 279.12187fil
 .....\hbox(0.0+0.0)x15.0
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -11.0
+.......\special{pdf:dest (postnote.7.text) [@thispage /XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
 .....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.7.mark)>>>>}
 .....\OT1/cmr/m/n/9 7
 .....\OT1/cmr/m/n/9 .
@@ -521,13 +524,17 @@ Completed box being shipped out [9]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\special{pdf:dest (postnote.8.text) [@thispage /XYZ @xpos @ypos null]}
-....\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.85002
 ....\hbox(6.14998+0.0)x345.0, glue set 280.27882fil
 .....\hbox(0.0+0.0)x15.0
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -11.0
+.......\special{pdf:dest (postnote.8.text) [@thispage /XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
 .....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.8.mark)>>>>}
 .....\OT1/cmr/m/n/9 8
 .....\OT1/cmr/m/n/9 .
