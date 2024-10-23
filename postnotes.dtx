@@ -163,6 +163,7 @@
 %      \l_@@_tmpa_tl ,
 %      \l_@@_tmpb_tl ,
 %      \l_@@_tmpa_seq ,
+%      \l_@@_tmpb_seq ,
 %      \l_@@_tmpa_box ,
 %   }
 %   Temporary scratch variables.
@@ -170,6 +171,7 @@
 \tl_new:N \l_@@_tmpa_tl
 \tl_new:N \l_@@_tmpb_tl
 \seq_new:N \l_@@_tmpa_seq
+\seq_new:N \l_@@_tmpb_seq
 \box_new:N \l_@@_tmpa_box
 %    \end{macrocode}
 % \end{macro}
@@ -797,6 +799,72 @@
     sort .bool_set:N = \l_@@_sort_bool ,
     sort .initial:n = true ,
     sort .default:n = true ,
+  }
+%    \end{macrocode}
+%
+%
+% \subsection*{\opt{warn} option}
+%
+%    \begin{macrocode}
+\bool_new:N \l_@@_warn_float_bool
+\bool_new:N \l_@@_warn_multi_bool
+\seq_new:N \g_@@_labelseq_seq
+\keys_define:nn { postnotes/setup }
+  {
+    warn .choice: ,
+    warn / false .code:n =
+      {
+        \bool_set_false:N \l_@@_warn_float_bool
+        \bool_set_false:N \l_@@_warn_multi_bool
+      } ,
+    warn / float .code:n =
+      {
+        \bool_set_true:N \l_@@_warn_float_bool
+        \bool_set_false:N \l_@@_warn_multi_bool
+      } ,
+    warn / multi .code:n =
+      {
+        \bool_set_false:N \l_@@_warn_float_bool
+        \bool_set_true:N \l_@@_warn_multi_bool
+      } ,
+    warn / true .code:n =
+      {
+        \bool_set_true:N \l_@@_warn_float_bool
+        \bool_set_true:N \l_@@_warn_multi_bool
+      } ,
+    warn .initial:n = true ,
+    warn .default:n = true ,
+  }
+%    \end{macrocode}
+%
+%
+% There is only one possibility why a note may be present in
+% \texttt{labelseq}, but not in the \texttt{queue} (at the point the checks
+% are done), and that's if it is it's nested.  Once again, nesting is not
+% supported by \pkg{postnotes}, but their presence complicates things for this
+% feature, so we go through the trouble of cleaning them from
+% \texttt{labelseq}.  Needless to say, no warnings are issued for them.
+%
+%    \begin{macrocode}
+\cs_new_protected:Npn \@@_labelseq_drop_past:
+  {
+    \group_begin:
+      \seq_set_eq:NN \l_@@_tmpa_seq \g_@@_labelseq_seq
+      \seq_gset_filter:NNn \g_@@_labelseq_seq \l_@@_tmpa_seq
+        { \int_compare_p:nNn { ##1 } > { \g_@@_note_id_int } }
+    \group_end:
+  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\cs_new_protected:Npn \@@_maybe_warn:N #1 % the queue
+  {
+    \group_begin:
+      \seq_set_eq:NN \l_@@_tmpa_seq #1
+      \seq_gset_filter:NNn \l_@@_tmpb_seq \g_@@_labelseq_seq
+        { ! \int_compare_p:nNn { ##1 } > { \g_@@_note_id_int } }
+
+    \group_end:
   }
 %    \end{macrocode}
 %
@@ -1511,6 +1579,7 @@
           \@@_verify_multipass:N \g_@@_queue_seq
           \bool_if:NT \l_@@_sort_bool
             { \@@_sort_queue:N \g_@@_queue_seq }
+          \@@_maybe_warn:N \g_@@_queue_seq
           \bool_gset_true:N \g_@@_header_vars_next_bool
           \@@_get_headers_data:N \g_@@_queue_seq
           \@@_set_headers_vars_first:
@@ -1699,6 +1768,7 @@
             }
           \AddToHookNext { shipout/after }
             { \bool_gset_false:N \g_@@_header_vars_next_bool }
+          \@@_labelseq_drop_past:
 %    \end{macrocode}
 % We won't use the variables anymore, clear them to reduce memory usage.
 % Given how we populated \cs{l_@@_clear_queue_seq}, this won't catch nested
