@@ -10,7 +10,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 > \box...=
 \hbox(8.14003+0.0)x18.98615
 .\hbox(0.0+0.0)x0.0
-.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }}
 .\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -52,7 +52,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 .\kern -0.00005
 .\kern 0.00005
 .\hbox(0.0+0.0)x0.0
-.\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }}
 .\hbox(4.43448+0.0)x2.7639
 ..\mathon
 ..\hbox(0.80556+1.3611)x2.7639, shifted -3.62892
@@ -240,7 +240,7 @@ TEST 4: footnotemark + postnote
 .\kern -0.00005
 .\kern 0.00005
 .\hbox(0.0+0.0)x0.0
-.\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{3}{\thepage }}
 .\hbox(4.43448+0.0)x2.7639
 ..\mathon
 ..\hbox(0.80556+1.3611)x2.7639, shifted -3.62892

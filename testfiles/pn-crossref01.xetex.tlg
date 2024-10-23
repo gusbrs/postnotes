@@ -10,7 +10,7 @@ TEST 1: cross-ref
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.1.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }}
 .\write1{\zref@newlabel{en:1}{\default{1}\page{\Z@C@page }\abspage{\Z@C@abspage }\zc@counter{postnote}\thecounter{1}\zc@type{endnote}\zc@cntval{1}\zc@pgval{\Z@C@zc@pgval }\zc@enclval{}\zc@pgfmt{\Z@C@zc@pgfmt }\anchor{postnote.1.mark}}}
 .\write1{\newlabel{en:1}{{1}{\thepage }{First chapter}{postnote.1.mark}{}}}
 .\penalty 10000
@@ -132,7 +132,7 @@ Completed box being shipped out [3]
 ....\marks3{\__mark_id:n {5}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
-....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -149,7 +149,7 @@ Completed box being shipped out [3]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.1.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.1.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .

@@ -32,7 +32,7 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .\marks3{\__mark_id:n {7}\mypnheader }
 .\mark{{\mypnheader }{\mypnheader }}
 .\penalty 10000
-.\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
+.\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }}
 .\glue(\parskip) 0.0 plus 1.0
 .\glue(\parskip) 0.0
 .\glue(\baselineskip) 8.00002
@@ -94,7 +94,7 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.3.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{3}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.3.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 .
@@ -123,7 +123,7 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.4.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{4}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.4.mark)>>>>}
 ....\OT1/cmr/m/n/9 2
 ....\OT1/cmr/m/n/9 .
@@ -152,7 +152,7 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.5.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@5}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{5}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.5.mark)>>>>}
 ....\OT1/cmr/m/n/9 3
 ....\OT1/cmr/m/n/9 .
@@ -181,7 +181,7 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.6.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{6}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.6.mark)>>>>}
 ....\OT1/cmr/m/n/9 4
 ....\OT1/cmr/m/n/9 .
@@ -210,7 +210,7 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.7.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{7}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.7.mark)>>>>}
 ....\OT1/cmr/m/n/9 5
 ....\OT1/cmr/m/n/9 .
@@ -239,7 +239,7 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.8.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{8}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.8.mark)>>>>}
 ....\OT1/cmr/m/n/9 6
 ....\OT1/cmr/m/n/9 .
@@ -268,7 +268,7 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.9.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{9}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.9.mark)>>>>}
 ....\OT1/cmr/m/n/9 7
 ....\OT1/cmr/m/n/9 .
@@ -369,7 +369,7 @@ Completed box being shipped out [11]
 ....\marks3{\__mark_id:n {7}\mypnheader }
 ....\mark{{\mypnheader }{\mypnheader }}
 ....\penalty 10000
-....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 8.00002
@@ -431,7 +431,7 @@ Completed box being shipped out [11]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.3.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{3}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.3.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
@@ -460,7 +460,7 @@ Completed box being shipped out [11]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.4.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{4}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.4.mark)>>>>}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 .
@@ -489,7 +489,7 @@ Completed box being shipped out [11]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.5.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@5}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{5}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.5.mark)>>>>}
 .......\OT1/cmr/m/n/9 3
 .......\OT1/cmr/m/n/9 .
@@ -518,7 +518,7 @@ Completed box being shipped out [11]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.6.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@6}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{6}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.6.mark)>>>>}
 .......\OT1/cmr/m/n/9 4
 .......\OT1/cmr/m/n/9 .
@@ -547,7 +547,7 @@ Completed box being shipped out [11]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.7.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@7}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{7}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.7.mark)>>>>}
 .......\OT1/cmr/m/n/9 5
 .......\OT1/cmr/m/n/9 .
@@ -576,7 +576,7 @@ Completed box being shipped out [11]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.8.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@8}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{8}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.8.mark)>>>>}
 .......\OT1/cmr/m/n/9 6
 .......\OT1/cmr/m/n/9 .
@@ -605,7 +605,7 @@ Completed box being shipped out [11]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.9.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@9}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{9}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.9.mark)>>>>}
 .......\OT1/cmr/m/n/9 7
 .......\OT1/cmr/m/n/9 .
@@ -634,7 +634,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.10.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@10}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{10}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.10.mark)>>>>}
 ....\OT1/cmr/m/n/9 8
 ....\OT1/cmr/m/n/9 .
@@ -663,7 +663,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.11.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{11}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.11.mark)>>>>}
 ....\OT1/cmr/m/n/9 9
 ....\OT1/cmr/m/n/9 .
@@ -692,7 +692,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.12.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{12}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.12.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 0
@@ -722,7 +722,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.13.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@13}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{13}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.13.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 1
@@ -752,7 +752,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.14.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{14}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.14.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 2
@@ -825,7 +825,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.16.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@16}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{16}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.16.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 .
@@ -854,7 +854,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.17.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@17}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{17}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.17.mark)>>>>}
 ....\OT1/cmr/m/n/9 2
 ....\OT1/cmr/m/n/9 .
@@ -883,7 +883,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.18.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@18}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{18}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.18.mark)>>>>}
 ....\OT1/cmr/m/n/9 3
 ....\OT1/cmr/m/n/9 .
@@ -912,7 +912,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.19.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@19}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{19}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.19.mark)>>>>}
 ....\OT1/cmr/m/n/9 4
 ....\OT1/cmr/m/n/9 .
@@ -1017,7 +1017,7 @@ Completed box being shipped out [12]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.10.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@10}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{10}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.10.mark)>>>>}
 .......\OT1/cmr/m/n/9 8
 .......\OT1/cmr/m/n/9 .
@@ -1046,7 +1046,7 @@ Completed box being shipped out [12]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.11.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{11}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.11.mark)>>>>}
 .......\OT1/cmr/m/n/9 9
 .......\OT1/cmr/m/n/9 .
@@ -1075,7 +1075,7 @@ Completed box being shipped out [12]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.12.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{12}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.12.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 0
@@ -1105,7 +1105,7 @@ Completed box being shipped out [12]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.13.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@13}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{13}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.13.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 1
@@ -1135,7 +1135,7 @@ Completed box being shipped out [12]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.14.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@14}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{14}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.14.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 2
@@ -1208,7 +1208,7 @@ Completed box being shipped out [12]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.16.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@16}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{16}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.16.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
@@ -1237,7 +1237,7 @@ Completed box being shipped out [12]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.17.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@17}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{17}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.17.mark)>>>>}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 .
@@ -1266,7 +1266,7 @@ Completed box being shipped out [12]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.18.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@18}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{18}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.18.mark)>>>>}
 .......\OT1/cmr/m/n/9 3
 .......\OT1/cmr/m/n/9 .
@@ -1295,7 +1295,7 @@ Completed box being shipped out [12]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.19.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@19}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{19}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.19.mark)>>>>}
 .......\OT1/cmr/m/n/9 4
 .......\OT1/cmr/m/n/9 .
@@ -1324,7 +1324,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.20.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@20}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{20}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.20.mark)>>>>}
 ....\OT1/cmr/m/n/9 5
 ....\OT1/cmr/m/n/9 .
@@ -1353,7 +1353,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.21.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@21}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{21}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.21.mark)>>>>}
 ....\OT1/cmr/m/n/9 6
 ....\OT1/cmr/m/n/9 .
@@ -1382,7 +1382,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.22.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@22}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{22}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.22.mark)>>>>}
 ....\OT1/cmr/m/n/9 7
 ....\OT1/cmr/m/n/9 .
@@ -1411,7 +1411,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.23.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@23}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{23}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.23.mark)>>>>}
 ....\OT1/cmr/m/n/9 8
 ....\OT1/cmr/m/n/9 .
@@ -1440,7 +1440,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.24.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@24}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{24}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.24.mark)>>>>}
 ....\OT1/cmr/m/n/9 9
 ....\OT1/cmr/m/n/9 .
@@ -1469,7 +1469,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.25.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@25}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{25}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.25.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 0
@@ -1499,7 +1499,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.26.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@26}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{26}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.26.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 1
@@ -1529,7 +1529,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.27.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@27}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{27}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.27.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 2
@@ -1559,7 +1559,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.28.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@28}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{28}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.28.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 3
@@ -1589,7 +1589,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.29.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@29}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{29}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.29.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 4
@@ -1672,7 +1672,7 @@ Completed box being shipped out [13]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.20.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@20}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{20}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.20.mark)>>>>}
 .......\OT1/cmr/m/n/9 5
 .......\OT1/cmr/m/n/9 .
@@ -1701,7 +1701,7 @@ Completed box being shipped out [13]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.21.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@21}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{21}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.21.mark)>>>>}
 .......\OT1/cmr/m/n/9 6
 .......\OT1/cmr/m/n/9 .
@@ -1730,7 +1730,7 @@ Completed box being shipped out [13]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.22.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@22}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{22}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.22.mark)>>>>}
 .......\OT1/cmr/m/n/9 7
 .......\OT1/cmr/m/n/9 .
@@ -1759,7 +1759,7 @@ Completed box being shipped out [13]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.23.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@23}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{23}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.23.mark)>>>>}
 .......\OT1/cmr/m/n/9 8
 .......\OT1/cmr/m/n/9 .
@@ -1788,7 +1788,7 @@ Completed box being shipped out [13]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.24.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@24}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{24}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.24.mark)>>>>}
 .......\OT1/cmr/m/n/9 9
 .......\OT1/cmr/m/n/9 .
@@ -1817,7 +1817,7 @@ Completed box being shipped out [13]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.25.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@25}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{25}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.25.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 0
@@ -1847,7 +1847,7 @@ Completed box being shipped out [13]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.26.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@26}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{26}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.26.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 1
@@ -1877,7 +1877,7 @@ Completed box being shipped out [13]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.27.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@27}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{27}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.27.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 2
@@ -1907,7 +1907,7 @@ Completed box being shipped out [13]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.28.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@28}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{28}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.28.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 3
@@ -1937,7 +1937,7 @@ Completed box being shipped out [13]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.29.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@29}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{29}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.29.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 4
@@ -1967,7 +1967,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.30.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@30}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{30}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.30.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 5
@@ -1997,7 +1997,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.31.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@31}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{31}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.31.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 6
@@ -2027,7 +2027,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.32.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@32}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{32}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.32.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 7
@@ -2057,7 +2057,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.33.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@33}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{33}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.33.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 8
@@ -2087,7 +2087,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.34.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@34}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{34}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.34.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 9
@@ -2117,7 +2117,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.35.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@35}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{35}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.35.mark)>>>>}
 ....\OT1/cmr/m/n/9 2
 ....\OT1/cmr/m/n/9 0
@@ -2190,7 +2190,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.37.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@37}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{37}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.37.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 .
@@ -2219,7 +2219,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.38.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@38}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{38}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.38.mark)>>>>}
 ....\OT1/cmr/m/n/9 2
 ....\OT1/cmr/m/n/9 .
@@ -2248,7 +2248,7 @@ Underfull \vbox (badness 2088) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.39.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@39}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{39}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.39.mark)>>>>}
 ....\OT1/cmr/m/n/9 3
 ....\OT1/cmr/m/n/9 .
@@ -2333,7 +2333,7 @@ Completed box being shipped out [14]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.30.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@30}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{30}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.30.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 5
@@ -2363,7 +2363,7 @@ Completed box being shipped out [14]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.31.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@31}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{31}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.31.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 6
@@ -2393,7 +2393,7 @@ Completed box being shipped out [14]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.32.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@32}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{32}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.32.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 7
@@ -2423,7 +2423,7 @@ Completed box being shipped out [14]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.33.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@33}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{33}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.33.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 8
@@ -2453,7 +2453,7 @@ Completed box being shipped out [14]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.34.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@34}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{34}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.34.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 9
@@ -2483,7 +2483,7 @@ Completed box being shipped out [14]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.35.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@35}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{35}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.35.mark)>>>>}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 0
@@ -2556,7 +2556,7 @@ Completed box being shipped out [14]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.37.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@37}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{37}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.37.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
@@ -2585,7 +2585,7 @@ Completed box being shipped out [14]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.38.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@38}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{38}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.38.mark)>>>>}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 .
@@ -2614,7 +2614,7 @@ Completed box being shipped out [14]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.39.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@39}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{39}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.39.mark)>>>>}
 .......\OT1/cmr/m/n/9 3
 .......\OT1/cmr/m/n/9 .
@@ -2643,7 +2643,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.40.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@40}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{40}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.40.mark)>>>>}
 ....\OT1/cmr/m/n/9 4
 ....\OT1/cmr/m/n/9 .
@@ -2672,7 +2672,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.41.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@41}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{41}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.41.mark)>>>>}
 ....\OT1/cmr/m/n/9 5
 ....\OT1/cmr/m/n/9 .
@@ -2701,7 +2701,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.42.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@42}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{42}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.42.mark)>>>>}
 ....\OT1/cmr/m/n/9 6
 ....\OT1/cmr/m/n/9 .
@@ -2730,7 +2730,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.43.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@43}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{43}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.43.mark)>>>>}
 ....\OT1/cmr/m/n/9 7
 ....\OT1/cmr/m/n/9 .
@@ -2759,7 +2759,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.44.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@44}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{44}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.44.mark)>>>>}
 ....\OT1/cmr/m/n/9 8
 ....\OT1/cmr/m/n/9 .
@@ -2788,7 +2788,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.45.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@45}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{45}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.45.mark)>>>>}
 ....\OT1/cmr/m/n/9 9
 ....\OT1/cmr/m/n/9 .
@@ -2817,7 +2817,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.46.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@46}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{46}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.46.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 0
@@ -2847,7 +2847,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.47.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@47}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{47}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.47.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 1
@@ -2877,7 +2877,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.48.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@48}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{48}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.48.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 2
@@ -2907,7 +2907,7 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.49.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\token_to_str:N \post@note {text@49}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {text}{49}{\int_use:N \c@page }}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.49.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 3
@@ -2990,7 +2990,7 @@ Completed box being shipped out [15]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.40.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@40}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{40}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.40.mark)>>>>}
 .......\OT1/cmr/m/n/9 4
 .......\OT1/cmr/m/n/9 .
@@ -3019,7 +3019,7 @@ Completed box being shipped out [15]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.41.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@41}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{41}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.41.mark)>>>>}
 .......\OT1/cmr/m/n/9 5
 .......\OT1/cmr/m/n/9 .
@@ -3048,7 +3048,7 @@ Completed box being shipped out [15]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.42.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@42}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{42}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.42.mark)>>>>}
 .......\OT1/cmr/m/n/9 6
 .......\OT1/cmr/m/n/9 .
@@ -3077,7 +3077,7 @@ Completed box being shipped out [15]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.43.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@43}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{43}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.43.mark)>>>>}
 .......\OT1/cmr/m/n/9 7
 .......\OT1/cmr/m/n/9 .
@@ -3106,7 +3106,7 @@ Completed box being shipped out [15]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.44.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@44}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{44}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.44.mark)>>>>}
 .......\OT1/cmr/m/n/9 8
 .......\OT1/cmr/m/n/9 .
@@ -3135,7 +3135,7 @@ Completed box being shipped out [15]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.45.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@45}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{45}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.45.mark)>>>>}
 .......\OT1/cmr/m/n/9 9
 .......\OT1/cmr/m/n/9 .
@@ -3164,7 +3164,7 @@ Completed box being shipped out [15]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.46.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@46}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{46}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.46.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 0
@@ -3194,7 +3194,7 @@ Completed box being shipped out [15]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.47.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@47}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{47}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.47.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 1
@@ -3224,7 +3224,7 @@ Completed box being shipped out [15]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.48.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@48}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{48}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.48.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 2
@@ -3254,7 +3254,7 @@ Completed box being shipped out [15]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.49.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@49}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{49}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.49.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 3
@@ -3340,7 +3340,7 @@ Completed box being shipped out [16]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.50.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@50}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{50}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.50.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 4
@@ -3370,7 +3370,7 @@ Completed box being shipped out [16]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.51.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@51}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{51}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.51.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 5
@@ -3400,7 +3400,7 @@ Completed box being shipped out [16]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.52.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@52}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{52}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.52.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 6
@@ -3430,7 +3430,7 @@ Completed box being shipped out [16]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.53.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@53}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{53}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.53.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 7
@@ -3460,7 +3460,7 @@ Completed box being shipped out [16]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.54.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@54}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{54}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.54.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 8
@@ -3490,7 +3490,7 @@ Completed box being shipped out [16]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.55.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@55}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{55}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.55.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 9
@@ -3520,7 +3520,7 @@ Completed box being shipped out [16]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.56.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@56}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{56}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.56.mark)>>>>}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 0

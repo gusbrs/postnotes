@@ -22,7 +22,7 @@ l. ...\end{align}
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.1.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark@1}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.text}
 .\hbox(8.14003+0.0)x4.48613
@@ -42,7 +42,7 @@ l. ...\end{align}
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.2.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark@2}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.text}
 .\hbox(8.14003+0.0)x4.48613
@@ -135,7 +135,7 @@ l. ...\end{align}
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.3.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark@3}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{3}{\thepage }}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.text}
 .\hbox(8.64003+0.0)x4.48613
@@ -149,7 +149,7 @@ l. ...\end{align}
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.4.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark@4}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{4}{\thepage }}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.text}
 .\hbox(8.64003+0.0)x4.48613
@@ -169,7 +169,7 @@ l. ...\end{align}
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.5.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark@5}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{5}{\thepage }}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.5.text}
 .\hbox(8.14003+0.0)x4.48613
@@ -183,7 +183,7 @@ l. ...\end{align}
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.6.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark@6}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{6}{\thepage }}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.6.text}
 .\hbox(8.14003+0.0)x4.48613
@@ -203,7 +203,7 @@ l. ...\end{align}
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.7.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark@7}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{7}{\thepage }}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.7.text}
 .\hbox(6.24+0.0)x3.90283
@@ -217,7 +217,7 @@ l. ...\end{align}
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.8.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark@8}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{8}{\thepage }}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.8.text}
 .\hbox(6.24+0.0)x3.90283
@@ -237,7 +237,7 @@ l. ...\end{align}
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.9.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark@9}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{9}{\thepage }}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.text}
 .\hbox(5.23997+0.0)x3.90283
@@ -251,7 +251,7 @@ l. ...\end{align}
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.10.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark@10}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{10}{\thepage }}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.10.text}
 .\hbox(5.23997+0.0)x3.90283
@@ -307,7 +307,7 @@ l. ...\end{gather}
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.11.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark@11}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{11}{\thepage }}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.11.text}
 .\hbox(8.14003+0.0)x4.48613
@@ -327,7 +327,7 @@ l. ...\end{gather}
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.12.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark@12}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{12}{\thepage }}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.12.text}
 .\hbox(8.14003+0.0)x4.48613
@@ -347,7 +347,7 @@ l. ...\end{gather}
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.13.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark@13}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{13}{\thepage }}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.13.text}
 .\hbox(8.14003+0.0)x4.48613
@@ -412,7 +412,7 @@ Completed box being shipped out [2]
 .....\glue(\rightskip) 0.0
 ....\penalty 10000
 ....\glue 9.90276 plus 0.86108
-....\write1{\token_to_str:N \post@note {print@1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -429,7 +429,7 @@ Completed box being shipped out [2]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.1.text} xyz
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@1}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
@@ -461,7 +461,7 @@ Completed box being shipped out [2]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.2.text} xyz
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@2}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{2}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.mark}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 .
@@ -496,7 +496,7 @@ Completed box being shipped out [2]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.3.text} xyz
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@3}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{3}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.mark}
 .......\OT1/cmr/m/n/9 3
 .......\OT1/cmr/m/n/9 .
@@ -529,7 +529,7 @@ Completed box being shipped out [2]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.4.text} xyz
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@4}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{4}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.mark}
 .......\OT1/cmr/m/n/9 4
 .......\OT1/cmr/m/n/9 .
@@ -562,7 +562,7 @@ Completed box being shipped out [2]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.11.text} xyz
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@11}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{11}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.11.mark}
 .......\OT1/cmr/m/n/9 5
 .......\OT1/cmr/m/n/9 .
@@ -597,7 +597,7 @@ Completed box being shipped out [2]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.12.text} xyz
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@12}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{12}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.12.mark}
 .......\OT1/cmr/m/n/9 6
 .......\OT1/cmr/m/n/9 .
@@ -632,7 +632,7 @@ Completed box being shipped out [2]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.13.text} xyz
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text@13}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{13}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.13.mark}
 .......\OT1/cmr/m/n/9 7
 .......\OT1/cmr/m/n/9 .
