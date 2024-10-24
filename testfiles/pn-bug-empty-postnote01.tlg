@@ -6,7 +6,7 @@ TEST 1: empty postnote not first
 > \box...=
 \hbox(8.14003+0.0)x4.48613
 .\hbox(0.0+0.0)x0.0
-.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }}
+.\write1{\token_to_str:N \postnote@page {mark}{1}{\thepage }}
 .\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -18,7 +18,7 @@ l. ...\showbox0
 > \box...=
 \hbox(8.14003+0.0)x4.48613
 .\hbox(0.0+0.0)x0.0
-.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }}
+.\write1{\token_to_str:N \postnote@page {mark}{2}{\thepage }}
 .\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -30,7 +30,7 @@ l. ...\showbox0
 > \box...=
 \hbox(8.14003+0.0)x4.48613
 .\hbox(0.0+0.0)x0.0
-.\write1{\token_to_str:N \post@note {mark}{3}{\thepage }}
+.\write1{\token_to_str:N \postnote@page {mark}{3}{\thepage }}
 .\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -80,7 +80,7 @@ Completed box being shipped out [3]
 ...\marks3{\__mark_id:n {3}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
-...\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }}
+...\write1{\token_to_str:N \postnote@page {print}{1}{\int_use:N \c@page }}
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
@@ -93,7 +93,7 @@ Completed box being shipped out [3]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }}
+......\write1{\token_to_str:N \postnote@page {text}{1}{\int_use:N \c@page }}
 ......\OT1/cmr/m/n/9 1
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -115,7 +115,7 @@ Completed box being shipped out [3]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\token_to_str:N \post@note {text}{2}{\int_use:N \c@page }}
+......\write1{\token_to_str:N \postnote@page {text}{2}{\int_use:N \c@page }}
 ......\OT1/cmr/m/n/9 2
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -136,7 +136,7 @@ Completed box being shipped out [3]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\token_to_str:N \post@note {text}{3}{\int_use:N \c@page }}
+......\write1{\token_to_str:N \postnote@page {text}{3}{\int_use:N \c@page }}
 ......\OT1/cmr/m/n/9 3
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -162,7 +162,7 @@ TEST 3: empty postnote first
 > \box...=
 \hbox(8.14003+0.0)x4.48613
 .\hbox(0.0+0.0)x0.0
-.\write1{\token_to_str:N \post@note {mark}{4}{\thepage }}
+.\write1{\token_to_str:N \postnote@page {mark}{4}{\thepage }}
 .\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -174,7 +174,7 @@ l. ...\showbox0
 > \box...=
 \hbox(8.14003+0.0)x4.48613
 .\hbox(0.0+0.0)x0.0
-.\write1{\token_to_str:N \post@note {mark}{5}{\thepage }}
+.\write1{\token_to_str:N \postnote@page {mark}{5}{\thepage }}
 .\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -186,7 +186,7 @@ l. ...\showbox0
 > \box...=
 \hbox(8.14003+0.0)x4.48613
 .\hbox(0.0+0.0)x0.0
-.\write1{\token_to_str:N \post@note {mark}{6}{\thepage }}
+.\write1{\token_to_str:N \postnote@page {mark}{6}{\thepage }}
 .\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -236,7 +236,7 @@ Completed box being shipped out [7]
 ...\marks3{\__mark_id:n {6}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
-...\write1{\token_to_str:N \post@note {print}{2}{\int_use:N \c@page }}
+...\write1{\token_to_str:N \postnote@page {print}{2}{\int_use:N \c@page }}
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
@@ -249,7 +249,7 @@ Completed box being shipped out [7]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\token_to_str:N \post@note {text}{4}{\int_use:N \c@page }}
+......\write1{\token_to_str:N \postnote@page {text}{4}{\int_use:N \c@page }}
 ......\OT1/cmr/m/n/9 4
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -270,7 +270,7 @@ Completed box being shipped out [7]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\token_to_str:N \post@note {text}{5}{\int_use:N \c@page }}
+......\write1{\token_to_str:N \postnote@page {text}{5}{\int_use:N \c@page }}
 ......\OT1/cmr/m/n/9 5
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -292,7 +292,7 @@ Completed box being shipped out [7]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\token_to_str:N \post@note {text}{6}{\int_use:N \c@page }}
+......\write1{\token_to_str:N \postnote@page {text}{6}{\int_use:N \c@page }}
 ......\OT1/cmr/m/n/9 6
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0

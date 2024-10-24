@@ -73,7 +73,7 @@ Completed box being shipped out [3]
 ....\marks3{\__mark_id:n {5}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
-....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \postnote@page {print}{1}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -90,7 +90,7 @@ Completed box being shipped out [3]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.1.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \postnote@page {text}{1}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.1.mark)>>>>}
 .......\T1/lmr/m/n/9 1
 .......\T1/lmr/m/n/9 .
@@ -338,7 +338,7 @@ Completed box being shipped out [5]
 ....\marks3{\__mark_id:n {8}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
-....\write1{\token_to_str:N \post@note {print}{2}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \postnote@page {print}{2}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -355,7 +355,7 @@ Completed box being shipped out [5]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.2.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{2}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \postnote@page {text}{2}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.2.mark)>>>>}
 .......\T1/lmr/m/n/9 2
 .......\T1/lmr/m/n/9 .
@@ -475,7 +475,7 @@ Completed box being shipped out [9]
 ....\marks3{\__mark_id:n {13}\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
-....\write1{\token_to_str:N \post@note {print}{3}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \postnote@page {print}{3}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -492,7 +492,7 @@ Completed box being shipped out [9]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.3.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{3}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \postnote@page {text}{3}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.3.mark)>>>>}
 .......\T1/lmr/m/n/9 3
 .......\T1/lmr/m/n/9 .
@@ -663,7 +663,7 @@ Completed box being shipped out [13]
 ....\marks3{\__mark_id:n {18}\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
-....\write1{\token_to_str:N \post@note {print}{4}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \postnote@page {print}{4}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -680,7 +680,7 @@ Completed box being shipped out [13]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.4.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{4}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \postnote@page {text}{4}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.4.mark)>>>>}
 .......\T1/lmr/m/n/9 4
 .......\T1/lmr/m/n/9 .
@@ -823,7 +823,7 @@ Completed box being shipped out [17]
 ....\marks3{\__mark_id:n {23}\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
-....\write1{\token_to_str:N \post@note {print}{5}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \postnote@page {print}{5}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -840,7 +840,7 @@ Completed box being shipped out [17]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.5.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{5}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \postnote@page {text}{5}{\int_use:N \c@page }}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.5.mark)>>>>}
 .......\T1/lmr/m/n/9 5
 .......\T1/lmr/m/n/9 .

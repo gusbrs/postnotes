@@ -27,7 +27,7 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 ...\pdfdest name{postnote.1.mark} xyz
 ...\pdfdest struct25 name{postnote.1.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }}
+.\write1{\token_to_str:N \postnote@page {mark}{1}{\thepage }}
 .\write1{\newlabel{en:mark:1}{{1}{\thepage }{Section 1}{postnote.1.mark}{}}}
 .\write1{\zref@newlabel{zen:mark:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}}}
 .\write1{\new@label@record{tagpdfstruct-postnotemark.1}{{tagstruct}{10}{tagstructobj}{30 0 R}}}
@@ -561,7 +561,7 @@ Completed box being shipped out [2]
 ....\marks4{e+,12,16,}
 ....\penalty 10000
 ....\glue 9.90276 plus 0.86108
-....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \postnote@page {print}{1}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\write1{\new@label@record{postnote@label@option.en:mark:1}{{postnotes/tagsup@noteid}{1}}}
 ....\penalty 10000
@@ -585,7 +585,7 @@ Completed box being shipped out [2]
 .........\pdfdest name{postnote.1.text} xyz
 .........\pdfdest struct60 name{postnote.1.text} xyz
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \postnote@page {text}{1}{\int_use:N \c@page }}
 .......\pdfliteral page{EMC}
 .......\marks4{e-,13,20,}
 .......\marks4{e+,13,20,}

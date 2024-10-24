@@ -297,15 +297,15 @@
 % \end{macro}
 %
 %
-% \begin{macro}[int]{\post@note}
+% \begin{macro}[int]{\postnote@page}
 %   The \cs{newlabel} equivalent for \pkg{postnotes}.  Based on the kernel's
 %   \cs{@newl@bel} so that we get \LaTeX{} checks for multiple and changed
-%   references for free (procedure learnt from \pkg{zref}).  \cs{post@note},
-%   when the \file{.aux} file is read, defines macros named
-%   \texttt{\textbackslash{}postnote@r@\meta{label type}@\meta{id}}, according
-%   to the prefix set by \cs{c_@@_ref_prefix_tl}.
+%   references for free (procedure learnt from \pkg{zref}).
+%   \cs{postnote@page}, when the \file{.aux} file is read, defines macros
+%   named \texttt{\textbackslash{}postnote@r@\meta{label type}@\meta{id}},
+%   according to the prefix set by \cs{c_@@_ref_prefix_tl}.
 %     \begin{syntax}
-%       \cs{post@note} \Arg{label name} \Arg{label content}
+%       \cs{postnote@page} \Arg{label type} \Arg{id} \Arg{label content}
 %     \end{syntax}
 %    \begin{macrocode}
 \tl_const:Nn \c_@@_ref_prefix_tl { postnote@r }
@@ -314,7 +314,7 @@
     \tl_if_eq:nnT { #1 } { mark }
       { \seq_gput_right:Ne \g_@@_labelseq_seq { #2 } }
   }
-\cs_new_protected:Npe \post@note #1#2#3
+\cs_new_protected:Npe \postnote@page #1#2#3
   {
     \@@_store_labelseq:nn { #1 } { #2 }
     \exp_not:N \@newl@bel { \c_@@_ref_prefix_tl } { #1 @ #2 } { #3 }
@@ -322,8 +322,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% And ensure \cs{post@note} is defined in the \file{.aux} file.  The hooks are
-% the same used by \pkg{hyperref} for similar purpose.
+% And ensure \cs{postnote@page} is defined in the \file{.aux} file.  The hooks
+% are the same used by \pkg{hyperref} for similar purpose.
 %
 %    \begin{macrocode}
 \AddToHook { begindocument }
@@ -331,7 +331,7 @@
     \legacy_if:nT { @filesw }
       {
         \iow_now:Ne \@mainaux
-          { \token_to_str:N \providecommand \token_to_str:N \post@note [3]{} }
+          { \token_to_str:N \providecommand \token_to_str:N \postnote@page[3]{} }
       }
   }
 \AddToHook { include/before }
@@ -339,7 +339,7 @@
     \legacy_if:nT { @filesw }
       {
         \iow_now:Ne \@partaux
-          { \token_to_str:N \providecommand \token_to_str:N \post@note [3]{} }
+          { \token_to_str:N \providecommand \token_to_str:N \postnote@page[3]{} }
       }
   }
 %    \end{macrocode}
@@ -367,7 +367,7 @@
     \legacy_if:nT { @filesw }
       {
         \iow_shipout_e:Nn \@auxout
-          { \token_to_str:N \post@note { #1 } { #2 } { #3 } }
+          { \token_to_str:N \postnote@page { #1 } { #2 } { #3 } }
       }
   }
 \cs_new_protected:Npn \@@_set_mark_page_label:n #1
