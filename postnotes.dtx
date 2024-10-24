@@ -353,7 +353,7 @@
 %     \@@_set_print_page_label:n ,
 %   }
 %   Label setting functions for each pertinent context.  They must use
-%   \cs{iow_shipout_x:Nn}, since the main information we are interested in is
+%   \cs{iow_shipout_e:Nn}, since the main information we are interested in is
 %   the \texttt{page}.
 %     \begin{syntax}
 %       \cs{@@_set_label:nnn} \Arg{label type} \Arg{note id} \Arg{value}
@@ -366,7 +366,7 @@
   {
     \legacy_if:nT { @filesw }
       {
-        \iow_shipout_x:Nn \@auxout
+        \iow_shipout_e:Nn \@auxout
           { \token_to_str:N \post@note { #1 } { #2 } { #3 } }
       }
   }
