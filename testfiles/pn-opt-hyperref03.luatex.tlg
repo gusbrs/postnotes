@@ -32,7 +32,7 @@ TEST 2: Note hyperref
 > \box...=
 \hbox(8.14003+0.0)x4.48613, direction TLT
 .\hbox(0.0+0.0)x0.0, direction TLT
-.\write1{\token_to_str:N \postnote@page {mark}{1}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }}
 .\penalty 10000
 .\hbox(8.14003+0.0)x4.48613, direction TLT
 ..\mathon
@@ -88,7 +88,7 @@ Completed box being shipped out [3]
 ...\marks3{\__mark_id:n {5}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
-...\write1{\token_to_str:N \postnote@page {print}{1}{\int_use:N \c@page }}
+...\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }}
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
@@ -106,7 +106,7 @@ Completed box being shipped out [3]
 .....\hbox(5.79999+0.0)x12.1944, direction TLT
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0, direction TLT
-......\write1{\token_to_str:N \postnote@page {text}{1}{\int_use:N \c@page }}
+......\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }}
 ......\OT1/cmr/m/n/9 1
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0

@@ -55,7 +55,7 @@ Completed box being shipped out [3]
 ....\marks3{\__mark_id:n {5}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
-....\write1{\token_to_str:N \postnote@page {print}{1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -72,7 +72,7 @@ Completed box being shipped out [3]
 ........\hbox(0.0+0.0)x0.0, shifted -9.5
 .........\pdfdest name{postnote.1.text} xyz
 .........\penalty 10000
-.......\write1{\token_to_str:N \postnote@page {text}{1}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.mark}
 .......\OT1/cmr/m/n/8 1
 .......\OT1/cmr/m/n/8 .
@@ -160,7 +160,7 @@ Completed box being shipped out [5]
 ....\marks3{\__mark_id:n {8}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
-....\write1{\token_to_str:N \postnote@page {print}{2}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print}{2}{\int_use:N \c@page }}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -177,7 +177,7 @@ Completed box being shipped out [5]
 ........\hbox(0.0+0.0)x0.0, shifted -12.0
 .........\pdfdest name{postnote.2.text} xyz
 .........\penalty 10000
-.......\write1{\token_to_str:N \postnote@page {text}{2}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{2}{\int_use:N \c@page }}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.mark}
 .......\OT1/cmr/m/n/10 2
 .......\OT1/cmr/m/n/10 .
