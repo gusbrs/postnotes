@@ -861,7 +861,7 @@
   {
     \group_begin:
       \seq_set_eq:NN \l_@@_tmpa_seq #1
-      \seq_gset_filter:NNn \l_@@_tmpb_seq \g_@@_labelseq_seq
+      \seq_set_filter:NNn \l_@@_tmpb_seq \g_@@_labelseq_seq
         { ! \int_compare_p:nNn { ##1 } > { \g_@@_note_id_int } }
 
     \group_end:
