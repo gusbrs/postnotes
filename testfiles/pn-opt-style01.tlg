@@ -3,7 +3,6 @@ Don't change this file in any respect.
 ============================================================
 TEST 1: Option style=endnotes
 ============================================================
-(pn-opt-style01.ent)
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line ....
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -138,7 +137,6 @@ Completed box being shipped out [3]
 ============================================================
 TEST 2: Option style=pagenote
 ============================================================
-(pn-opt-style01.ent)
 Completed box being shipped out [5]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil

@@ -762,7 +762,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ============================================================
 TEST 2: Print
 ============================================================
-(pn-basic01.ent)
 Completed box being shipped out [3]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil

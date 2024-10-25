@@ -43,7 +43,6 @@ l. ...\showbox0
 ============================================================
 TEST 2: Print: empty postnote not first
 ============================================================
-(pn-bug-empty-postnote01.ent)
 Completed box being shipped out [3]
 \vbox(627.36243+0.0)x380.0
 .\glue 22.0
@@ -200,7 +199,6 @@ l. ...\showbox0
 ============================================================
 TEST 4: Print: empty postnote first
 ============================================================
-(pn-bug-empty-postnote01.ent)
 Completed box being shipped out [7]
 \vbox(627.36243+0.0)x380.0
 .\glue 22.0

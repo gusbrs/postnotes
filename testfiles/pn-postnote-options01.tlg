@@ -51,7 +51,6 @@ l. ...\showbox0
 ============================================================
 TEST 2: Print markstr
 ============================================================
-(pn-postnote-options01.ent)
 Completed box being shipped out [3]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
@@ -242,7 +241,6 @@ l. ...\showbox0
 ============================================================
 TEST 4: Print sortnum
 ============================================================
-(pn-postnote-options01.ent)
 Completed box being shipped out [5]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
@@ -428,7 +426,6 @@ l. ...\showbox0
 ============================================================
 TEST 6: Print mark
 ============================================================
-(pn-postnote-options01.ent)
 Completed box being shipped out [7]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
@@ -596,7 +593,6 @@ l. ...\showbox0
 ============================================================
 TEST 8: Print nomark
 ============================================================
-(pn-postnote-options01.ent)
 Completed box being shipped out [9]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil

@@ -194,7 +194,6 @@ l. ...\showbox0
 ============================================================
 TEST 2: Print zref-clever
 ============================================================
-(pn-compat-zref-clever01.ent)
 Completed box being shipped out [5]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
@@ -286,7 +285,7 @@ Completed box being shipped out [5]
 ....\marks3{\__mark_id:n {9}\MakeUppercase    []{2.1. \ Notes to chapter 1}}
 ....\mark{{\pnheaderdefault }{\MakeUppercase    []{2.1. \ Notes to chapter 1}}}
 ....\penalty 10000
-....\write4{\protect \BOOKMARK [1][-]{section.2.1}{\376\377\000N\000o\000t\000e\000s\000\040\000t\000o\000\040\000c\000h\000a\000p\000t\000e\000r\000\040\0001}{chapter.2}% 3}
+....\write3{\protect \BOOKMARK [1][-]{section.2.1}{\376\377\000N\000o\000t\000e\000s\000\040\000t\000o\000\040\000c\000h\000a\000p\000t\000e\000r\000\040\0001}{chapter.2}% 3}
 ....\penalty 10000
 ....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {2.1}Notes to chapter 1}{\thepage }{section.2.1}\protected@file@percent }}
 ....\penalty 10000
@@ -453,7 +452,7 @@ Completed box being shipped out [5]
 ....\marks2{\__mark_id:n {10}\MakeUppercase    []{2.2. \ Notes to chapter 2}}
 ....\marks3{\__mark_id:n {11}\MakeUppercase    []{2.2. \ Notes to chapter 2}}
 ....\mark{{\pnheaderdefault }{\MakeUppercase    []{2.2. \ Notes to chapter 2}}}
-....\write4{\protect \BOOKMARK [1][-]{section.2.2}{\376\377\000N\000o\000t\000e\000s\000\040\000t\000o\000\040\000c\000h\000a\000p\000t\000e\000r\000\040\0002}{chapter.2}% 4}
+....\write3{\protect \BOOKMARK [1][-]{section.2.2}{\376\377\000N\000o\000t\000e\000s\000\040\000t\000o\000\040\000c\000h\000a\000p\000t\000e\000r\000\040\0002}{chapter.2}% 4}
 ....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {2.2}Notes to chapter 2}{\thepage }{section.2.2}\protected@file@percent }}
 ....\penalty 10000
 ....\glue 9.90276 plus 0.86108

@@ -75,7 +75,6 @@ l. ...        note.}}\showbox0\box0}}
 ============================================================
 TEST 2: Print csquotes
 ============================================================
-(pn-compat-csquotes01.ent)
 Completed box being shipped out [2]
 \vbox(633.0+0.0)x407.0
 .\vbox(0.0+0.0)x0.0, glue set - 14.99626fil

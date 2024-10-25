@@ -3,7 +3,6 @@ Don't change this file in any respect.
 ============================================================
 TEST 1: Headers fancy
 ============================================================
-(pn-headers-fancy03.ent)
 Underfull \vbox (badness 5533) has occurred while \output is active
 \vbox(550.0+0.0)x345.0, glue set 3.81288
 .\write-{}
