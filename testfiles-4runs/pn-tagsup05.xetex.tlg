@@ -979,6 +979,7 @@ l. ...\showbox0
 ============================================================
 TEST 6: Print postnotes
 ============================================================
+(pn-tagsup05.ent)
 Package tagpdf Info: closing structure 5 tagged /Sect
 tagpdf DEBUG Info: Struct end inserted [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):

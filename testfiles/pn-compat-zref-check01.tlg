@@ -88,6 +88,7 @@ Package zref-check Warning: Check failed on line .... Failed check 'nextchap' fo
 ============================================================
 TEST 10: Print zref-check
 ============================================================
+(pn-compat-zref-check01.ent)
 [9
 ]
 Package zref-check Warning: Check failed on line .... Failed check 'thischap' for label 'txt:target-0' on page 10.

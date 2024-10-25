@@ -3,6 +3,7 @@ Don't change this file in any respect.
 ============================================================
 TEST 1: Option format
 ============================================================
+(pn-opt-format01.ent)
 Completed box being shipped out [3]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
@@ -107,6 +108,7 @@ Completed box being shipped out [3]
 ============================================================
 TEST 2: Option format 2
 ============================================================
+(pn-opt-format01.ent)
 Completed box being shipped out [5]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil

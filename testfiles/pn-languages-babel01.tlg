@@ -3,6 +3,7 @@ Don't change this file in any respect.
 ============================================================
 TEST 1: Print english
 ============================================================
+(pn-languages-babel01.ent)
 Completed box being shipped out [3]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
@@ -250,6 +251,7 @@ l. ...\show\pnhdtopages
 ============================================================
 TEST 10: Print english user config
 ============================================================
+(pn-languages-babel01.ent)
 Completed box being shipped out [5]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
@@ -403,6 +405,7 @@ l. ...\show\pnhdtopages
 ============================================================
 TEST 12: Print portuguese
 ============================================================
+(pn-languages-babel01.ent)
 Completed box being shipped out [9]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
@@ -588,6 +591,7 @@ l. ...\show\pnhdtopages
 ============================================================
 TEST 17: Print french
 ============================================================
+(pn-languages-babel01.ent)
 Completed box being shipped out [13]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
@@ -744,6 +748,7 @@ l. ...\show\pnhdtopages
 ============================================================
 TEST 20: Print ngerman
 ============================================================
+(pn-languages-babel01.ent)
 Completed box being shipped out [17]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil

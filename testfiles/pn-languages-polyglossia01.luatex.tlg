@@ -3,6 +3,7 @@ Don't change this file in any respect.
 ============================================================
 TEST 1: Print english
 ============================================================
+(pn-languages-polyglossia01.ent)
 Completed box being shipped out [3]
 \vbox(627.36243+0.0)x380.0, direction TLT
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil, direction TLT
@@ -149,6 +150,7 @@ l. ...\show\pnhdtopages
 ============================================================
 TEST 3: Print english user config
 ============================================================
+(pn-languages-polyglossia01.ent)
 Completed box being shipped out [5]
 \vbox(627.36243+0.0)x380.0, direction TLT
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil, direction TLT
@@ -315,6 +317,7 @@ l. ...\show\pnhdtopages
 ============================================================
 TEST 5: Print portuguese
 ============================================================
+(pn-languages-polyglossia01.ent)
 Completed box being shipped out [9]
 \vbox(627.36243+0.0)x380.0, direction TLT
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil, direction TLT
@@ -469,6 +472,7 @@ l. ...\show\pnhdtopages
 ============================================================
 TEST 7: Print french
 ============================================================
+(pn-languages-polyglossia01.ent)
 Completed box being shipped out [13]
 \vbox(627.36243+0.0)x380.0, direction TLT
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil, direction TLT
@@ -620,6 +624,7 @@ l. ...\show\pnhdtopages
 ============================================================
 TEST 9: Print german
 ============================================================
+(pn-languages-polyglossia01.ent)
 Completed box being shipped out [17]
 \vbox(627.36243+0.0)x380.0, direction TLT
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil, direction TLT

@@ -49,6 +49,7 @@ l. ...\showbox0
 ============================================================
 TEST 3: maketextmark
 ============================================================
+(pn-opt-makemark01.ent)
 Completed box being shipped out [3]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil
@@ -211,6 +212,7 @@ Completed box being shipped out [3]
 ============================================================
 TEST 4: maketextmark 2
 ============================================================
+(pn-opt-makemark01.ent)
 Completed box being shipped out [5]
 \vbox(627.36243+0.0)x380.0
 .\vbox(0.0+0.0)x0.0, glue set - 20.99626fil

@@ -297,27 +297,35 @@
 % \end{macro}
 %
 %
-% \begin{macro}[int]{\postnote@page}
-%   The \cs{newlabel} equivalent for \pkg{postnotes}.  Based on the kernel's
-%   \cs{@newl@bel} so that we get \LaTeX{} checks for multiple and changed
-%   references for free (procedure learnt from \pkg{zref}).
-%   \cs{postnote@page}, when the \file{.aux} file is read, defines macros
-%   named \texttt{\textbackslash{}postnote@r@\meta{label type}@\meta{id}},
-%   according to the prefix set by \cs{c_@@_ref_prefix_tl}.
+% \begin{macro}[int]
+%   {
+%     \postnote@page ,
+%     \@@_store_labelseq:nn ,
+%   }
+%   \cs{postnote@page} is the \cs{newlabel} equivalent for \pkg{postnotes}.
+%   Based on the kernel's \cs{@newl@bel} so that we get \LaTeX{} checks for
+%   multiple and changed references for free (procedure learnt from
+%   \pkg{zref}).  \cs{postnote@page}, when the \file{.aux} file is read,
+%   defines macros named \texttt{\textbackslash{}postnote@r@\meta{label
+%   type}@\meta{id}}, according to the prefix set by \cs{c_@@_ref_prefix_tl}.
+%   \cs{@@_store_labelseq:nn} is an auxiliary function to store the sequence
+%   of the labels in the \file{.aux} file, used to check for possible sorting
+%   problems due to floats.
 %     \begin{syntax}
-%       \cs{postnote@page} \Arg{label type} \Arg{id} \Arg{label content}
+%       \cs{postnote@page} \Arg{label type} \Arg{id} \Arg{label content (page)}
+%       \cs{@@_store_labelseq:nn} \Arg{label type} \Arg{id}
 %     \end{syntax}
 %    \begin{macrocode}
 \tl_const:Nn \c_@@_ref_prefix_tl { postnote@r }
+\cs_new_protected:Npe \postnote@page #1#2#3
+  {
+    \exp_not:N \@@_store_labelseq:nn { #1 } { #2 }
+    \exp_not:N \@newl@bel { \c_@@_ref_prefix_tl } { #1 @ #2 } { #3 }
+  }
 \cs_new_protected:Npn \@@_store_labelseq:nn #1#2
   {
     \tl_if_eq:nnT { #1 } { mark }
       { \seq_gput_right:Ne \g_@@_labelseq_seq { #2 } }
-  }
-\cs_new_protected:Npe \postnote@page #1#2#3
-  {
-    \@@_store_labelseq:nn { #1 } { #2 }
-    \exp_not:N \@newl@bel { \c_@@_ref_prefix_tl } { #1 @ #2 } { #3 }
   }
 %    \end{macrocode}
 % \end{macro}
@@ -410,6 +418,135 @@
 \cs_generate_variant:Nn \@@_extract_pageref:n { e }
 %    \end{macrocode}
 % \end{macro}
+%
+%
+%
+% Given \pkg{postnotes} stores (most) of its data in variables, we might
+% consider refraining from using an external notes file at all.  Indeed, the
+% initial design of the package took that approach.  However, it turned out to
+% be an uphill battle to reliably avoid duplicates resulting from
+% measuring/trial passes, which inevitably occur here and there.  Traditional
+% endnotes packages don't suffer from this problem because of the way writing
+% to files work in \TeX{}: \cs{write} calls are either delayed (by default)
+% and added to whatsits, or they are \cs{immediate} and generate no whatsit,
+% in either case, it only occurs once.  Initially, while refraining from using
+% an external file, I did the check based on the existence of the (page)
+% labels each note sets, which naturally exhibit the same property.  However,
+% I didn't want to do this wholesale, otherwise a new note would only be
+% included to the list on the second run.  A fresh compilation would result in
+% large swings in the content of \cs{printpostnotes} and spurious warnings,
+% since the labels are not available on the first run.  So I did that
+% selectively, signaling ``eligible'' notes for this check by flagging notes
+% set in places known to perform multiple passes, but this was error prone,
+% and complex.  Exploiting the mentioned property of \cs{write}, while it does
+% require an external file, is simple and reliable enough.  In sum, the sole
+% purpose of this procedure for \pkg{postnotes} is generating a reliable queue
+% for \cs{printpostnotes} without duplicates resulting from measuring passes.
+%
+% Note that it would be tempting to use \cs{iow_shipout_e:Nn} for writing the
+% notes to the file, and already generating a ``sorted'' queue, but that does
+% not work because if the last note(s) occur in the same page as
+% \cs{printpostnotes} is called, the corresponding \cs{write}s may not have
+% been carried out when we close the stream.  Hence, for this purpose, the
+% writing must be \cs{immediate}, with \cs{iow_now:Ne} that is.
+%
+%
+% \begin{macro}
+%   {
+%     \g_@@_notes_iow ,
+%     \g_@@_stream_open_bool ,
+%     \g_@@_notes_filename_tl ,
+%     \l_@@_notes_filename_suffix_tl ,
+%   }
+%   Auxiliary variables for \file{.ent} notes file management.
+%    \begin{macrocode}
+\iow_new:N \g_@@_notes_iow
+\bool_new:N \g_@@_stream_open_bool
+\tl_new:N \g_@@_notes_filename_tl
+\tl_new:N \l_@@_notes_filename_suffix_tl
+\tl_gset:Nn \g_@@_notes_filename_tl
+  { \c_sys_jobname_str \l_@@_notes_filename_suffix_tl .ent }
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}[int]
+%   {
+%     \postnote@note ,
+%     \@@_write_note:n ,
+%     \@@_read_notes_file: ,
+%   }
+%   Infrastructure functions to write to and read from the external
+%   \file{.ent} file.  The notes file itself is just a sequence of
+%   \cs{postnote@note}\texttt{\{\meta{id}\}} calls, each of which just adds
+%   the \meta{id} to \cs{g_@@_queue_seq}, which is then consumed by
+%   \cs{printposnotes}.
+%     \begin{syntax}
+%       \cs{postnote@note} \Arg{id}
+%       \cs{@@_write_note:n} \Arg{id}
+%       \cs{@@_read_notes_file:} \Arg{id}
+%     \end{syntax}
+%    \begin{macrocode}
+\cs_new_protected:Npn \postnote@note #1
+  { \seq_gput_right:Nn \g_@@_queue_seq { #1 } }
+\cs_new_protected:Npn \@@_write_note:n #1
+  {
+    \bool_lazy_and:nnT
+      { \g_@@_notes_file_open_bool }
+      { \legacy_if_p:n { @filesw } }
+      {
+        \bool_if:NF \g_@@_stream_open_bool
+          {
+            \iow_open:NV \g_@@_notes_iow \g_@@_notes_filename_tl
+            \bool_gset_true:N \g_@@_stream_open_bool
+          }
+        \iow_now:Ne \g_@@_notes_iow
+          { \token_to_str:N \postnote@note { #1 } }
+      }
+  }
+\cs_generate_variant:Nn \@@_write_note:n { e }
+\cs_new_protected:Npn \@@_read_notes_file:
+  {
+    \iow_close:N \g_@@_notes_iow
+    \bool_gset_false:N \g_@@_stream_open_bool
+    \seq_gclear:N \g_@@_queue_seq % CHECK redundant?
+    \group_begin:
+      \makeatletter
+      \ExplSyntaxOn
+      \file_if_exist_input:V \g_@@_notes_filename_tl
+    \group_end:
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% Clear previously existing \file{.ent} notes file, since if all notes were
+% removed and \cs{printposnotes} kept, the file would not be cleared,
+% resulting in errors, given that the corresponding variables don't exist.
+% \cs{g_@@_notes_file_open_bool} is just to ensure nothing weird occurs if
+% someone is wild enough to deem acceptable calling \cs{postnote} in the
+% preamble.
+%
+%    \begin{macrocode}
+\bool_new:N \g_@@_notes_file_open_bool
+\AddToHook { begindocument }
+  {
+    \@@_clear_notes_file:
+    \bool_gset_true:N \g_@@_notes_file_open_bool
+  }
+\cs_new_protected:Npn \@@_clear_notes_file:
+  {
+    \bool_lazy_and:nnT
+      { \legacy_if_p:n { @filesw } }
+      { \file_if_exist_p:V \g_@@_notes_filename_tl }
+      {
+        \iow_open:NV \g_@@_notes_iow \g_@@_notes_filename_tl
+        \iow_close:N \g_@@_notes_iow
+        \bool_gset_false:N \g_@@_stream_open_bool
+      }
+  }
+%    \end{macrocode}
+%
 %
 %
 % \section{Options}
@@ -861,7 +998,7 @@
   {
     \group_begin:
       \seq_set_eq:NN \l_@@_tmpa_seq #1
-      \seq_gset_filter:NNn \l_@@_tmpb_seq \g_@@_labelseq_seq
+      \seq_set_filter:NNn \l_@@_tmpb_seq \g_@@_labelseq_seq
         { ! \int_compare_p:nNn { ##1 } > { \g_@@_note_id_int } }
 
     \group_end:
@@ -1143,8 +1280,7 @@
               \stepcounter { postnote }
               \tl_set:Ne \l_@@_mark_tl { \thepostnote }
             }
-          \seq_gput_right:Ne \g_@@_queue_seq
-            { \l_postnotes_note_id_tl }
+          \@@_write_note:e { \l_postnotes_note_id_tl }
           \UseHook { postnotes/note/begin }
           \cs_set:Npn \@currentcounter { postnote }
           \cs_set:Npe \@currentlabel { \p@postnote \l_@@_mark_tl }
@@ -1417,7 +1553,7 @@
     \group_begin:
       \int_gincr:N \g_@@_sectid_int
       \int_gincr:N \g_@@_note_id_int
-      \seq_gput_right:Ne \g_@@_queue_seq { \l_postnotes_note_id_tl }
+      \@@_write_note:e { \l_postnotes_note_id_tl }
       \tl_gclear:N \g_@@_section_name_tl
       \keys_set:nn { postnotes/section } {#1}
       \bool_if:NTF \l_@@_section_exp_bool
@@ -1569,6 +1705,7 @@
   {
     \group_begin:
       \int_gincr:N \g_@@_print_postnotes_int
+      \@@_read_notes_file:
       \seq_if_empty:NTF \g_@@_queue_seq
         { \msg_warning:nn { postnotes } { empty-printpostnotes } }
         {

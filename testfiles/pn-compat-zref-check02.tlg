@@ -88,6 +88,7 @@ Package zref-check Warning: Check failed on line .... Failed check 'nextsec' for
 ============================================================
 TEST 10: Print zref-check
 ============================================================
+(pn-compat-zref-check02.ent)
 [4
 ]
 Package zref-check Warning: Check failed on line .... Failed check 'thissec' for label 'txt:target-0' on page 5.
