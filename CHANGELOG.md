@@ -17,7 +17,7 @@
 
 ## [v0.2.8](https://github.com/gusbrs/postnotes/compare/v0.2.7...v0.2.8) (2023-12-12)
 
-## Fixed
+### Fixed
 - Fixed `multibool` test in `\__postnotes_verify_multipass:N`.
 
 ## [v0.2.7](https://github.com/gusbrs/postnotes/compare/v0.2.6...v0.2.7) (2023-11-14)
