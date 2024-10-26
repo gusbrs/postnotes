@@ -57,6 +57,7 @@ Completed box being shipped out [9]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 381.09724fil
+....\write1{\token_to_str:N \post@note {section}{23}{\thepage }}
 ....\write-{}
 ....\pdfdest name{chapter*.1} xyz
 ....\glue(\topskip) 10.0

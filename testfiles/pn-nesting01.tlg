@@ -148,6 +148,7 @@ Completed box being shipped out [5]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 169.15294fil
+....\write1{\token_to_str:N \post@note {section}{9}{\thepage }}
 ....\write-{}
 ....\pdfdest name{chapter*.1} xyz
 ....\glue(\topskip) 10.0
@@ -175,6 +176,7 @@ Completed box being shipped out [5]
 ....\marks3{\__mark_id:n {7}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
+....\write1{\token_to_str:N \post@note {section}{10}{\thepage }}
 ....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0

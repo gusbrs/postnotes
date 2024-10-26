@@ -357,6 +357,7 @@
 %   {
 %     \@@_set_label:nnn ,
 %     \@@_set_mark_page_label:n ,
+%     \@@_set_section_page_label:n ,
 %     \@@_set_text_page_label:n ,
 %     \@@_set_print_page_label:n ,
 %   }
@@ -366,6 +367,7 @@
 %     \begin{syntax}
 %       \cs{@@_set_label:nnn} \Arg{label type} \Arg{note id} \Arg{value}
 %       \cs{@@_set_mark_page_label:n} \Arg{note id}
+%       \cs{@@_set_section_page_label:n} \Arg{note id}
 %       \cs{@@_set_text_page_label:n} \Arg{note id}
 %       \cs{@@_set_print_page_label:n} \Arg{note id}
 %     \end{syntax}
@@ -381,6 +383,9 @@
 \cs_new_protected:Npn \@@_set_mark_page_label:n #1
   { \@@_set_label:nnn { mark } { #1 } { \thepage } }
 \cs_generate_variant:Nn \@@_set_mark_page_label:n { e }
+\cs_new_protected:Npn \@@_set_section_page_label:n #1
+  { \@@_set_label:nnn { section } { #1 } { \thepage } }
+\cs_generate_variant:Nn \@@_set_section_page_label:n { e }
 \cs_new_protected:Npn \@@_set_text_page_label:n #1
   { \@@_set_label:nnn { text } { #1 } { \int_use:N \c@page } }
 \cs_generate_variant:Nn \@@_set_text_page_label:n { e }
@@ -1422,6 +1427,7 @@
       \seq_gput_right:Ne \g_@@_queue_seq { \l_postnotes_note_id_tl }
       \tl_gclear:N \g_@@_section_name_tl
       \keys_set:nn { postnotes/section } {#1}
+      \@@_set_section_page_label:e { \l_postnotes_note_id_tl }
       \bool_if:NTF \l_@@_section_exp_bool
         { \@@_store_section:ne { \l_postnotes_note_id_tl } {#2} }
         { \@@_store_section:nn { \l_postnotes_note_id_tl } {#2} }
