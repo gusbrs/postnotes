@@ -818,7 +818,7 @@
 %    \end{macrocode}
 %
 %
-% \subsection*{\opt{checkduplicates}, \opt{checkfloats} options}
+% \subsection*{\opt{checkduplicates} and \opt{checkfloats} options}
 %
 %    \begin{macrocode}
 \bool_new:N \l_@@_check_dupli_bool
@@ -831,11 +831,12 @@
     checkfloats .bool_set:N = \l_@@_check_float_bool ,
     checkfloats .default:n = true ,
     checkfloats .initial:n = false ,
-    checkall .meta:n =
+    check .meta:n =
       {
         checkduplicates = {#1} ,
         checkfloats = {#1} ,
       } ,
+    check .default:n = true ,
   }
 %    \end{macrocode}
 %
