@@ -1860,14 +1860,21 @@
         {
           \bool_lazy_or:nnTF
             { \cs_if_exist_p:c { \c_@@_ref_prefix_tl @ mark @ ##1 } }
-            { \cs_if_exist_p:c { \c_@@_ref_prefix_tl @ section @ ##1 } }
+%    \end{macrocode}
+% Always keep sections.  Empty sections are discarded anyway, and they are
+% unlikely to occur in places performing multiple passes.
+%    \begin{macrocode}
+            {
+              \str_if_eq_p:ee
+                { \@@_prop_item:nn {##1} { type } } { section }
+            }
             { \seq_put_right:Nn \l_@@_tmpa_seq {##1} }
             {
 %    \end{macrocode}
-% If \texttt{multibool} is true for the note (or section), we drop it
-% silently, otherwise we include it, but warn of possible duplicate.  If
-% \cs{g_@@_labelseq_seq} is empty, we assume this is a first run and also
-% refrain from warning, since it would be spurious anyway.
+% If \texttt{multibool} is true for the note, we drop it silently, otherwise
+% we include it, but warn of possible duplicate.  If \cs{g_@@_labelseq_seq} is
+% empty, we assume this is a first run and also refrain from warning, since it
+% would be spurious anyway.
 %    \begin{macrocode}
               \str_if_eq:eeF
                 { \@@_prop_item:nn {##1} { multibool } }
