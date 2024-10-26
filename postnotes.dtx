@@ -321,12 +321,7 @@
 \seq_new:N \g_@@_labelseq_seq
 \cs_new_protected:Npn \@@_store_labelseq:nn #1#2
   {
-    \bool_lazy_any:nT
-      {
-        { \str_if_eq_p:nn {#1} { mark } }
-        { \str_if_eq_p:nn {#1} { section } }
-        { \str_if_eq_p:nn {#1} { print } }
-      }
+    \str_if_eq:nnF {#1} { text }
       { \seq_gput_right:Nn \g_@@_labelseq_seq { {#1} {#2} } }
   }
 \cs_new_protected:Npe \post@note #1#2#3
