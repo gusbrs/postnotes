@@ -263,6 +263,8 @@
       }
     \prop_gput:cne { \@@_data_name:e {#1} } { thesection }
       { \thesection }
+    \prop_gput:cne { \@@_data_name:e {#1} } { multibool }
+      { \bool_to_str:N \l_@@_maybe_multi_bool }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
   }
 \cs_generate_variant:Nn \@@_store_section:nn { ne }
@@ -1855,33 +1857,30 @@
       \seq_clear:N \l_@@_tmpa_seq
       \seq_map_inline:Nn #1
         {
-          \cs_if_exist:cTF
-            { \c_@@_ref_prefix_tl @ mark @ ##1 }
+          \bool_lazy_or:nnTF
+            { \cs_if_exist_p:c { \c_@@_ref_prefix_tl @ mark @ ##1 } }
+            { \cs_if_exist_p:c { \c_@@_ref_prefix_tl @ section @ ##1 } }
             { \seq_put_right:Nn \l_@@_tmpa_seq {##1} }
             {
 %    \end{macrocode}
-% If \texttt{multibool} is true for the note (and only notes, not sections),
-% we drop it silently, otherwise we include it, but warn of possible
-% duplicate.  If \cs{g_@@_labelseq_seq} is empty, we assume this is a first
-% run and also refrain from warning, since it would be spurious anyway.
+% If \texttt{multibool} is true for the note (or section), we drop it
+% silently, otherwise we include it, but warn of possible duplicate.  If
+% \cs{g_@@_labelseq_seq} is empty, we assume this is a first run and also
+% refrain from warning, since it would be spurious anyway.
 %    \begin{macrocode}
-              \str_if_eq:eeTF
-                { \@@_prop_item:nn {##1} { type } } { note }
+              \str_if_eq:eeF
+                { \@@_prop_item:nn {##1} { multibool } }
+                { true }
                 {
-                  \str_if_eq:eeF
-                    { \@@_prop_item:nn {##1} { multibool } } { true }
+                  \seq_put_right:Nn \l_@@_tmpa_seq {##1}
+                  \bool_lazy_and:nnT
+                    { \l_@@_check_dupli_bool }
+                    { ! \seq_if_empty_p:N \g_@@_labelseq_seq }
                     {
-                      \seq_put_right:Nn \l_@@_tmpa_seq {##1}
-                      \bool_lazy_and:nnT
-                        { \l_@@_check_dupli_bool }
-                        { ! \seq_if_empty_p:N \g_@@_labelseq_seq }
-                        {
-                          \msg_warning:nne { postnotes } { possible-duplicate }
-                            { \@@_prop_item:nn {##1} { mark } }
-                        }
+                      \msg_warning:nne { postnotes } { possible-duplicate }
+                        { \@@_prop_item:nn {##1} { mark } }
                     }
                 }
-                { \seq_put_right:Nn \l_@@_tmpa_seq {##1} }
             }
         }
       \seq_gset_eq:NN #1 \l_@@_tmpa_seq
