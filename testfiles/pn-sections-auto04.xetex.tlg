@@ -148,6 +148,7 @@ Completed box being shipped out [2]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 380.69562fil
 ....\write-{}
+....\write1{\token_to_str:N \post@note {preprint}{1}{}}
 ....\write1{\token_to_str:N \post@note {section}{10}{\thepage }}
 ....\glue(\topskip) 0.12001
 ....\hbox(9.87999+0.0)x345.0, glue set 304.15167fil
