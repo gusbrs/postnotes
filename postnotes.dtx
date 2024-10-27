@@ -1496,6 +1496,7 @@
 % \begin{macro}
 %   {
 %     \g_@@_print_postnotes_int ,
+%     \g_@@_print_queue_seq ,
 %     \l_postnotes_print_note_id_tl ,
 %     \l_@@_print_note_id_next_tl ,
 %     \l_@@_print_counter_tl ,
@@ -1510,6 +1511,7 @@
 %   Auxiliary variables for \cs{@@_print_notes:}.
 %    \begin{macrocode}
 \int_new:N \g_@@_print_postnotes_int
+\seq_new:N \g_@@_print_queue_seq
 \tl_new:N \l_postnotes_print_note_id_tl
 \tl_new:N \l_@@_print_note_id_next_tl
 \tl_new:N \l_@@_print_counter_tl
@@ -1580,18 +1582,24 @@
   {
     \group_begin:
       \int_gincr:N \g_@@_print_postnotes_int
-      \seq_if_empty:NTF \g_@@_queue_seq
+      \seq_set_eq:NN \l_@@_clear_queue_seq \g_@@_queue_seq
+%    \end{macrocode}
+% We make the cut at this point.  Any notes added to the queue from this point
+% on belong to the next call of \cs{printpostnotes}.
+%    \begin{macrocode}
+      \seq_gset_eq:NN \g_@@_print_queue_seq \g_@@_queue_seq
+      \seq_gclear:N \g_@@_queue_seq
+      \seq_if_empty:NTF \g_@@_print_queue_seq
         { \msg_warning:nn { postnotes } { empty-printpostnotes } }
         {
           \pnheading
           \UseHook { postnotes/print/begin }
           \tl_set:Nn \l_@@_print_type_prev_tl { open }
-          \seq_set_eq:NN \l_@@_clear_queue_seq \g_@@_queue_seq
-          \@@_verify_multipass:N \g_@@_queue_seq
+          \@@_verify_multipass:N \g_@@_print_queue_seq
           \bool_if:NT \l_@@_sort_bool
-            { \@@_sort_queue:N \g_@@_queue_seq }
+            { \@@_sort_queue:N \g_@@_print_queue_seq }
           \bool_gset_true:N \g_@@_header_vars_next_bool
-          \@@_get_headers_data:N \g_@@_queue_seq
+          \@@_get_headers_data:N \g_@@_print_queue_seq
           \@@_set_headers_vars_first:
 %    \end{macrocode}
 % Ensure the first note after a heading has paragraph indentation when
@@ -1607,21 +1615,21 @@
               \cs_set_eq:NN \@afterindentfalse \@afterindenttrue
               \@afterindenttrue
             }
-          \bool_until_do:nn { \seq_if_empty_p:N \g_@@_queue_seq }
+          \bool_until_do:nn { \seq_if_empty_p:N \g_@@_print_queue_seq }
             {
-              \seq_gpop_left:NN \g_@@_queue_seq
+              \seq_gpop_left:NN \g_@@_print_queue_seq
                 \l_postnotes_print_note_id_tl
               \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
                 { type } \l_@@_print_type_curr_tl
               \tl_if_eq:NnTF \l_@@_print_type_curr_tl { section }
                 { % type_curr = `section'
-                  \seq_if_empty:NTF \g_@@_queue_seq
+                  \seq_if_empty:NTF \g_@@_print_queue_seq
                     {
                       \tl_set:Nn \l_@@_print_note_id_next_tl { noid }
                       \tl_set:Nn \l_@@_print_type_next_tl { close }
                     }
                     {
-                      \seq_get_left:NN \g_@@_queue_seq
+                      \seq_get_left:NN \g_@@_print_queue_seq
                         \l_@@_print_note_id_next_tl
                       \@@_prop_get:nnN
                         { \l_@@_print_note_id_next_tl }
@@ -1739,13 +1747,13 @@
 % should avoid hard crashes related to ``lonely \cs{item}'' or ``extra
 % \cs{endgroup}'' errors, in case it occurs.
 %    \begin{macrocode}
-                  \seq_if_empty:NTF \g_@@_queue_seq
+                  \seq_if_empty:NTF \g_@@_print_queue_seq
                     {
                       \tl_set:Nn \l_@@_print_note_id_next_tl { noid }
                       \tl_set:Nn \l_@@_print_type_next_tl { close }
                     }
                     {
-                      \seq_get_left:NN \g_@@_queue_seq
+                      \seq_get_left:NN \g_@@_print_queue_seq
                         \l_@@_print_note_id_next_tl
                       \@@_prop_get:nnN
                         { \l_@@_print_note_id_next_tl }
@@ -1849,7 +1857,7 @@
 %
 % \begin{macro}{\@@_verify_multipass:N}
 %   \begin{syntax}
-%     \cs{@@_verify_multipass:N} \meta{\cs{g_@@_queue_seq}}
+%     \cs{@@_verify_multipass:N} \meta{\cs{g_@@_print_queue_seq}}
 %   \end{syntax}
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_verify_multipass:N #1
@@ -1901,7 +1909,7 @@
 % \begin{macro}{\@@_sort_queue:N}
 %   Sorting function for \cs{@@_print_notes:}.
 %   \begin{syntax}
-%     \cs{@@_sort_queue:N} \meta{\cs{g_@@_queue_seq}}
+%     \cs{@@_sort_queue:N} \meta{\cs{g_@@_print_queue_seq}}
 %   \end{syntax}
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_sort_queue:N #1
@@ -2061,7 +2069,7 @@
 % \begin{macro}{\@@_get_headers_data:N}
 %   Process header data for \cs{@@_set_headers_vars:n}.
 %   \begin{syntax}
-%     \cs{@@_get_headers_data:N} \meta{\cs{g_@@_queue_seq}}
+%     \cs{@@_get_headers_data:N} \meta{\cs{g_@@_print_queue_seq}}
 %   \end{syntax}
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_get_headers_data:N #1
