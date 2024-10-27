@@ -846,12 +846,6 @@
 %    \end{macrocode}
 %
 %
-%    \begin{macrocode}
-\msg_new:nnn { postnotes } { possible-duplicate }
-  { Possible~duplicate~*around*~note~'#1'~\msg_line_context:. }
-%    \end{macrocode}
-%
-%
 %
 % \subsection*{\opt{style} option}
 %
@@ -1891,6 +1885,11 @@
   }
 %    \end{macrocode}
 % \end{macro}
+%
+%    \begin{macrocode}
+\msg_new:nnn { postnotes } { possible-duplicate }
+  { Possible~duplicate~*around*~note~'#1'~\msg_line_context:. }
+%    \end{macrocode}
 %
 %
 % \begin{macro}{\@@_sort_queue:N}
