@@ -40,7 +40,7 @@ Bar.%
 
 Nest.%
 \setbox0=\hbox{\postnote{A note.\postnote{A nested note.\postnote{A double
-        nested note.\postnote{A triple nested note.}}}}}%
+        nested note.}}}}%
 \showbox0
 \box0
 \ENDTEST
@@ -64,7 +64,7 @@ Boo.%
 
 Nest.%
 \setbox0=\hbox{\postnote{B note.\postnote{B nested note.\postnote{B double
-        nested note.\postnote{B triple nested note.}}}}}%
+        nested note.}}}}%
 \showbox0
 \box0
 \ENDTEST
@@ -79,6 +79,24 @@ Nest.%
 \showoutput
 \AddToHookNext{postnotes/print/begin}{\postnotesection{\section*{Nested notes}}}
 \setcounter{postnote}{0}
+\renewcommand{\thepostnote}{\Alph{postnote}}
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{Print nested}
+\showoutput
+\AddToHookNext{postnotes/print/begin}{\postnotesection{\section*{Double nested notes}}}
+\setcounter{postnote}{0}
+\renewcommand{\thepostnote}{\roman{postnote}}
+\renewcommand{\pntitle}{Nested notes}
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{Print double nested}
+\showoutput
+\renewcommand{\pntitle}{Double nested notes}
 \printpostnotes
 \newpage
 \ENDTEST
