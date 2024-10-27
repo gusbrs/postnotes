@@ -1153,9 +1153,9 @@
               \stepcounter { postnote }
               \tl_set:Ne \l_@@_mark_tl { \thepostnote }
             }
+          \UseHook { postnotes/note/begin }
           \seq_gput_right:Ne \g_@@_queue_seq
             { \l_postnotes_note_id_tl }
-          \UseHook { postnotes/note/begin }
           \cs_set:Npn \@currentcounter { postnote }
           \cs_set:Npe \@currentlabel { \p@postnote \l_@@_mark_tl }
           \MakeLinkTarget* { postnote. \l_postnotes_note_id_tl .mark }
