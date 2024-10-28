@@ -450,6 +450,35 @@ restriction for cases in which floats cross sections' boundaries, but it's the
 only reasonable thing to do.  \opt{sort} is a boolean option, and defaults to
 \texttt{true}.
 
+\DescribeOption{checkduplicates} %
+\DescribeOption{checkfloats} %
+\DescribeOption{check} %
+Depending on where one places a \cs{postnote}, some undesirable side-effects
+may ensue.  A note set somewhere which is subject to measuring/trial passes
+may be stored multiple times, thus appearing in duplicity at
+\cs{printpostnotes}.\footnote{That would normally be the case, but
+  \pkg{postnotes} already handles some known instances of this, avoiding the
+  duplicates.  It doesn't mean there are not places unknown to the package
+  which do the same.}  Also, a note placed within a float may result in the
+sequence of notes being disturbed, depending on where the float ends up being
+typeset.  These problems are usually not too frequent, but they can be a pain.
+Hence the \opt{checkduplicates} and \opt{checkfloats} options, which issue
+warnings for these cases.  The basis for these checks are the page labels each
+\cs{postnote} sets internally.  These labels are non-immediate writes
+(whatsits, in the jargon), as they must be, since we are interest in the page
+number.  As a result, measuring passes don't get written, and they are also
+written in the order the document elements get shipped out.  Hence, the labels
+set in the \file{.aux} file are free of duplicates resulting from measuring
+passes, and are ordered the same as the typeset order of the document, floats
+considered.  Note that these checks are only expected to be meaningful in a
+document for which the compilation has stabilized: with labels and floats
+already in place.  Also note that the \opt{checkfloats} option does not test
+``if the marks of my notes are in numeric order'', but rather whether the
+order the marks are typeset along the document and the order the notes are
+printed in \cs{printposnotes} are the same.  The \opt{check} option is a
+convenience alias to set both checks at the same time.  These options are
+booleans and are initially disabled.
+
 
 \subsection*{Note options}
 \label{sec:note-options}

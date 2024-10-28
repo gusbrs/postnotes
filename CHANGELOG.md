@@ -2,6 +2,11 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.3.0...HEAD)
 
+### Added
+- Provide options `checkduplicates` and `checkfloats`, which issue warnings in
+  case of duplicate notes from measuring passes and of notes order mismatch
+  resulting from float placement.
+
 ### Fixed
 - Fixed `style=endnotes` tagging error (see issue
   [#8](https://github.com/gusbrs/postnotes/issues/8))
