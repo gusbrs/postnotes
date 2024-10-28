@@ -318,6 +318,8 @@
 %    \begin{macrocode}
 \tl_const:Nn \c_@@_ref_prefix_tl { postnote@r }
 \seq_new:N \g_@@_labelseq_seq
+\bool_new:N \g_@@_firstrun_bool
+\bool_gset_true:N \g_@@_firstrun_bool
 \cs_new_protected:Npn \@@_store_labelseq:nn #1#2
   {
     \bool_lazy_any:nT
@@ -330,6 +332,7 @@
   }
 \cs_new_protected:Npe \post@note #1#2#3
   {
+    \exp_not:N \bool_gset_false:N \exp_not:N \g_@@_firstrun_bool
     \exp_not:N \@@_store_labelseq:nn { #1 } { #2 }
     \exp_not:N \@newl@bel { \c_@@_ref_prefix_tl } { #1 @ #2 } { #3 }
   }
@@ -1858,9 +1861,8 @@
             {
 %    \end{macrocode}
 % If \texttt{multibool} is true for the note, we drop it silently, otherwise
-% we include it, but warn of possible duplicate.  If \cs{g_@@_labelseq_seq} is
-% empty, we assume this is a first run and also refrain from warning, since it
-% would be spurious anyway.
+% we include it, but warn of possible duplicate.  If this is a first run and
+% also refrain from warning, since it would be spurious anyway.
 %    \begin{macrocode}
               \str_if_eq:eeF
                 { \@@_prop_item:nn {##1} { multibool } }
@@ -1869,7 +1871,7 @@
                   \seq_put_right:Nn \l_@@_tmpa_seq {##1}
                   \bool_lazy_and:nnT
                     { \l_@@_check_dupli_bool }
-                    { ! \seq_if_empty_p:N \g_@@_labelseq_seq }
+                    { ! \g_@@_firstrun_bool }
                     {
                       \msg_warning:nne { postnotes } { possible-duplicate }
                         { \@@_prop_item:nn {##1} { mark } }
@@ -1930,9 +1932,6 @@
 % \begin{macro}{\@@_split_labelseq:}
 %    \begin{macrocode}
 \seq_new:N \g_@@_print_labelseq_queue_seq
-\seq_new:N \g_@@_labelseq_next_seq
-\AddToHook { begindocument }
-  { \seq_gset_eq:NN \g_@@_labelseq_next_seq \g_@@_labelseq_seq }
 \cs_new_protected:Npn \@@_split_labelseq:
   {
     \group_begin:
@@ -1941,17 +1940,17 @@
         { { preprint } { \int_use:N \g_@@_print_postnotes_int } }
 %    \end{macrocode}
 % If the preprint label corresponding to this \cs{printpostnotes} is not in
-% the sequence, we just pass \cs{g_@@_labelseq_next_seq} intact and leave
+% the sequence, we just pass \cs{g_@@_labelseq_seq} intact and leave
 % \cs{g_@@_print_labelseq_queue_seq} empty.  Trying to split by other means
 % would likely be messy, and the effect is transitory, since the label will be
 % here on the next run anyway.
 %    \begin{macrocode}
-      \seq_if_in:NVT \g_@@_labelseq_next_seq \l_@@_tmpa_tl
+      \seq_if_in:NVT \g_@@_labelseq_seq \l_@@_tmpa_tl
         {
           \bool_do_until:nn
             { \tl_if_eq_p:NN \l_@@_tmpb_tl \l_@@_tmpa_tl }
             {
-              \seq_gpop_left:NN \g_@@_labelseq_next_seq \l_@@_tmpb_tl
+              \seq_gpop_left:NN \g_@@_labelseq_seq \l_@@_tmpb_tl
               \str_case:enT
                 { \exp_last_unbraced:NV \use_i:nn \l_@@_tmpb_tl }
                 {
