@@ -834,13 +834,13 @@
 %
 %    \begin{macrocode}
 \bool_new:N \l_@@_check_dupli_bool
-\bool_new:N \l_@@_check_float_bool
+\bool_new:N \l_@@_check_floats_bool
 \keys_define:nn { postnotes/setup }
   {
     checkduplicates .bool_set:N = \l_@@_check_dupli_bool ,
     checkduplicates .default:n = true ,
     checkduplicates .initial:n = false ,
-    checkfloats .bool_set:N = \l_@@_check_float_bool ,
+    checkfloats .bool_set:N = \l_@@_check_floats_bool ,
     checkfloats .default:n = true ,
     checkfloats .initial:n = false ,
     check .meta:n =
@@ -1588,6 +1588,7 @@
           \@@_check_duplicates:N \g_@@_print_queue_seq
           \bool_if:NT \l_@@_sort_bool
             { \@@_sort_queue:N \g_@@_print_queue_seq }
+          \@@_check_floats:N \g_@@_print_queue_seq
           \bool_gset_true:N \g_@@_header_vars_next_bool
           \@@_get_headers_data:N \g_@@_print_queue_seq
           \@@_set_headers_vars_first:
@@ -1892,6 +1893,51 @@
 %    \end{macrocode}
 %
 %
+%
+% \begin{macro}{\@@_check_floats:N}
+%   \begin{syntax}
+%     \cs{@@_check_floats:N} \meta{\cs{g_@@_print_queue_seq}}
+%   \end{syntax}
+%    \begin{macrocode}
+\cs_new_protected:Npn \@@_check_floats:N #1
+  {
+    \bool_lazy_and:nnT
+      { \l_@@_check_floats_bool }
+%    \end{macrocode}
+% Ditto.  In this case, the queue is not touched, but it would still be a
+% spurious warning.
+%    \begin{macrocode}
+      { ! \g_@@_firstrun_bool }
+      {
+        \group_begin:
+%    \end{macrocode}
+% Only compare sequence net of non-existing labels.
+%    \begin{macrocode}
+          \seq_set_filter:NNn \l_@@_tmpa_seq #1
+            {
+              \bool_lazy_or_p:nn
+                { \cs_if_exist_p:c { \c_@@_ref_prefix_tl @ mark @ ##1 } }
+                { \cs_if_exist_p:c { \c_@@_ref_prefix_tl @ section @ ##1 } }
+            }
+%    \end{macrocode}
+% Not very \texttt{expl3}-y, I know.  But I don't see a \cs{seq_if_eq:NNTF}
+% available and, technically, sequences are just structured token lists.
+%    \begin{macrocode}
+          \tl_if_eq:NNF \g_@@_print_labelseq_queue_seq \l_@@_tmpa_seq
+            { \msg_warning:nn { postnotes } { possible-shuffle } }
+        \group_end:
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+%    \begin{macrocode}
+\msg_new:nnn { postnotes } { possible-shuffle }
+  { Possible~out~of~sequence~notes~due~to~floats~\msg_line_context:. }
+%    \end{macrocode}
+%
+%
+%
 % \begin{macro}{\@@_sort_queue:N}
 %   Sorting function for \cs{@@_print_notes:}.
 %   \begin{syntax}
@@ -1928,6 +1974,7 @@
   }
 %    \end{macrocode}
 % \end{macro}
+%
 %
 %
 % \begin{macro}{\@@_split_labelseq:}
