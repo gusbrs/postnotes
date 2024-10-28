@@ -2931,7 +2931,7 @@
 % and \url{https://github.com/lvjr/tabularray/issues/179} (thanks
 % \contributor{Ulrike Fischer}).
 %    \begin{macrocode}
-    \bool_if_exist:NTF \lTblrMeasuringBool
+    \bool_if_exist:NT \lTblrMeasuringBool
       {
 %    \end{macrocode}
 % I'd be inclined to restrict the inhibition effect to known \pkg{tabularray}
@@ -2954,21 +2954,6 @@
                 \bool_set_true:N \l_@@_print_plain_mark_bool
                 \bool_set_true:N \l_@@_print_plain_mark_stepcounter_bool
               }
-          }
-      }
-      {
-%    \end{macrocode}
-% If the new boolean is not yet available, we use \cs{@@_check_duplicates:N}
-% to distinguish a trial/measure pass from the final one.
-%    \begin{macrocode}
-        \clist_map_inline:nn
-          {
-            tblr , longtblr , talltblr , booktabs ,
-            longtabs , talltabs , +array
-          }
-          {
-            \AddToHook { env/#1/begin } [ postnotes ]
-              { \bool_set_true:N \l_@@_maybe_multi_bool }
           }
       }
   }
