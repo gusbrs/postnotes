@@ -1585,7 +1585,7 @@
           \pnheading
           \UseHook { postnotes/print/begin }
           \tl_set:Nn \l_@@_print_type_prev_tl { open }
-          \@@_verify_multipass:N \g_@@_print_queue_seq
+          \@@_check_duplicates:N \g_@@_print_queue_seq
           \bool_if:NT \l_@@_sort_bool
             { \@@_sort_queue:N \g_@@_print_queue_seq }
           \bool_gset_true:N \g_@@_header_vars_next_bool
@@ -1815,19 +1815,15 @@
 %
 % \subsection*{Print auxiliary}
 %
-% \cs{@@_verify_multipass:N} provides a general procedure for handling cases
+% \cs{@@_check_duplicates:N} provides a general procedure for handling cases
 % of multiple passes of content.  Ideally, the job should be done at
 % \cs{@@_inhibit_note:F}, if at all possible.  But, failing that, we can rely
-% on the fact that \cs{postnote}s of measuring/trial passes don't end up being
-% output and hence don't generate labels in the \file{.aux} file.  This is the
-% equivalent for \pkg{postnotes} to the effect of write restrictions for the
-% packages based on external files, which is how they actually handle these
-% cases.  However, despite this being a general test, and a reasonable one,
-% I'd like to restrain it's use to the minimum possible.  First, using this
-% criterion across the board would result in large swings on the content of
-% \cs{printpostnotes} and spurious warnings in an initial compilation since
-% the labels are not available on the first run.  Second, I'd prefer not to
-% interfere with the queue, unless we really need to.  Hence, we only apply
+% on the fact that the labels of \cs{postnote}s of measuring/trial passes,
+% being delayed \cs{write}s (whatsits), don't end up being written to the
+% \file{.aux} file.  However, despite this being a general test, and a
+% reasonable one, I'd like to restrain it's use to the minimum possible.
+% Using this criterion across the board could result in large swings on the
+% content of \cs{printpostnotes} and spurious warnings.  Hence, we only apply
 % this check for ``eligible'' items.  For signaling this eligibility, the note
 % must have been stored with the \cs{l_@@_maybe_multi_bool} set to
 % \texttt{true}, which is then saved in the \texttt{multibool} property.  One
@@ -1836,51 +1832,56 @@
 % labels of the printed notes will be written only on the second run and the
 % document will thus require a third one to stabilize.
 %
-% \begin{macro}{\@@_verify_multipass:N}
+% \begin{macro}{\@@_check_duplicates:N}
 %   \begin{syntax}
-%     \cs{@@_verify_multipass:N} \meta{\cs{g_@@_print_queue_seq}}
+%     \cs{@@_check_duplicates:N} \meta{\cs{g_@@_print_queue_seq}}
 %   \end{syntax}
 %    \begin{macrocode}
-\cs_new_protected:Npn \@@_verify_multipass:N #1
+\cs_new_protected:Npn \@@_check_duplicates:N #1
   {
-    \group_begin:
-      \seq_clear:N \l_@@_tmpa_seq
-      \seq_map_inline:Nn #1
-        {
-          \bool_lazy_or:nnTF
-            { \cs_if_exist_p:c { \c_@@_ref_prefix_tl @ mark @ ##1 } }
+%    \end{macrocode}
+% On a first run, don't even try to check for duplicates.  Better
+% \texttt{transitorily} let some duplicates pass than to drop every legitimate
+% note.
+%    \begin{macrocode}
+    \bool_if:NF \g_@@_firstrun_bool
+      {
+        \group_begin:
+          \seq_clear:N \l_@@_tmpa_seq
+          \seq_map_inline:Nn #1
+            {
+              \bool_lazy_or:nnTF
+                { \cs_if_exist_p:c { \c_@@_ref_prefix_tl @ mark @ ##1 } }
 %    \end{macrocode}
 % Always keep sections.  Empty sections are discarded anyway, and they are
 % unlikely to occur in places performing multiple passes.
 %    \begin{macrocode}
-            {
-              \str_if_eq_p:ee
-                { \@@_prop_item:nn {##1} { type } } { section }
-            }
-            { \seq_put_right:Nn \l_@@_tmpa_seq {##1} }
-            {
+                {
+                  \str_if_eq_p:ee
+                    { \@@_prop_item:nn {##1} { type } } { section }
+                }
+                { \seq_put_right:Nn \l_@@_tmpa_seq {##1} }
+                {
 %    \end{macrocode}
 % If \texttt{multibool} is true for the note, we drop it silently, otherwise
-% we include it, but warn of possible duplicate.  If this is a first run and
-% also refrain from warning, since it would be spurious anyway.
+% we include it, but warn of possible duplicate.
 %    \begin{macrocode}
-              \str_if_eq:eeF
-                { \@@_prop_item:nn {##1} { multibool } }
-                { true }
-                {
-                  \seq_put_right:Nn \l_@@_tmpa_seq {##1}
-                  \bool_lazy_and:nnT
-                    { \l_@@_check_dupli_bool }
-                    { ! \g_@@_firstrun_bool }
+                  \str_if_eq:eeF
+                    { \@@_prop_item:nn {##1} { multibool } }
+                    { true }
                     {
-                      \msg_warning:nne { postnotes } { possible-duplicate }
-                        { \@@_prop_item:nn {##1} { mark } }
+                      \seq_put_right:Nn \l_@@_tmpa_seq {##1}
+                      \bool_if:NT \l_@@_check_dupli_bool
+                        {
+                          \msg_warning:nne { postnotes } { possible-duplicate }
+                            { \@@_prop_item:nn {##1} { mark } }
+                        }
                     }
                 }
             }
-        }
-      \seq_gset_eq:NN #1 \l_@@_tmpa_seq
-    \group_end:
+          \seq_gset_eq:NN #1 \l_@@_tmpa_seq
+        \group_end:
+      }
   }
 %    \end{macrocode}
 % \end{macro}
@@ -2910,7 +2911,7 @@
       }
       {
 %    \end{macrocode}
-% If the new boolean is not yet available, we use \cs{@@_verify_multipass:N}
+% If the new boolean is not yet available, we use \cs{@@_check_duplicates:N}
 % to distinguish a trial/measure pass from the final one.
 %    \begin{macrocode}
         \clist_map_inline:nn
