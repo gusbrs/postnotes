@@ -1769,7 +1769,7 @@
                     \l_@@_print_type_curr_tl
                 }
             }
-          \AddToHookNext { shipout/after }
+          \AddToHookNext { shipout/after } [ postnotes/header ]
             { \bool_gset_false:N \g_@@_header_vars_next_bool }
 %    \end{macrocode}
 % We won't use the variables anymore, clear them to reduce memory usage.
@@ -2449,7 +2449,7 @@
 % then use \texttt{\textbackslash{}postnoteref\{mynote\}} inside the caption.
 %
 %    \begin{macrocode}
-\AddToHook { postnotes/note/begin } [ postnotes ]
+\AddToHook { postnotes/note/begin } [ ./compat/caption ]
   {
     \cs_if_exist:NT \@captype
       { \bool_set_true:N \l_@@_maybe_multi_bool }
@@ -2464,13 +2464,13 @@
 %
 %
 %    \begin{macrocode}
-\AddToHook { package/biblatex/after }
+\AddToHook { package/biblatex/after } [ ./compat/biblatex ]
   {
 %    \end{macrocode}
 % Let \pkg{biblatex} know we are in a ``notes'' context.  See
 % \url{https://tex.stackexchange.com/a/304464}, including comments.
 %    \begin{macrocode}
-    \AddToHook { postnotes/print/begin } [ postnotes ]
+    \AddToHook { postnotes/print/begin } [ postnotes/compat/biblatex ]
       { \toggletrue { blx@footnote } }
 %    \end{macrocode}
 % Make \pkg{biblatex}'s \cs{mkbibendnote} use \cs{postnote}.  This is very
@@ -2479,7 +2479,7 @@
 % \texttt{\textbackslash{}RemoveFromHook\{begindocument/before\}[postnotes/mkbibendnote]}
 % in the preamble.
 %    \begin{macrocode}
-    \AddToHook { begindocument/before } [ postnotes/mkbibendnote ]
+    \AddToHook { begindocument/before } [ postnotes/compat/biblatex ]
       {
         \cs_set:Npn \blx@theendnote { \postnote }
         \cs_set:Npn \blx@theendnotetext { \blx@err@endnote \footnotetext }
@@ -2512,12 +2512,12 @@
 % The attempt was the following (currently ``gobbled'' from the package):
 %
 %    \begin{macrocode}
-\AddToHook { package/biblatex/after }
+\AddToHook { package/biblatex/after } [ ./compat/biblatex ]
   {
 %    \end{macrocode}
 % Store \pkg{biblatex} variables for each note.
 %    \begin{macrocode}
-    \AddToHook { postnotes/note/store } [ postnotes ]
+    \AddToHook { postnotes/note/store } [ postnotes/compat/biblatex ]
       {
         \prop_gput:cne { \@@_data_name:e { \l_postnotes_note_id_tl } }
           { biblatex@refsection } { \int_use:N \c@refsection }
@@ -2532,7 +2532,7 @@
 %    \end{macrocode}
 % \pkg{biblatex} setup, once for \cs{printpostnotes} call.
 %    \begin{macrocode}
-    \AddToHook { postnotes/print/begin } [ postnotes ]
+    \AddToHook { postnotes/print/begin } [ postnotes/compat/biblatex ]
       {
         \@@_biblatex_endrefcontext_local:
         \@@_biblatex_citereset_local:
@@ -2540,7 +2540,7 @@
 %    \end{macrocode}
 % Restore \pkg{biblatex} variables for each note.
 %    \begin{macrocode}
-    \AddToHook { postnotes/print/note/begin } [ postnotes ]
+    \AddToHook { postnotes/print/note/begin } [ postnotes/compat/biblatex ]
       {
         \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
           { biblatex@refsection } \l_@@_restore_tmp_tl
@@ -2658,18 +2658,18 @@
 % \cs{l_@@_biblatex_orig_refsection_tl}.
 %
 %    \begin{macrocode}
-\AddToHook { package/biblatex/after }
+\AddToHook { package/biblatex/after } [ ./compat/biblatex ]
   {
     \tl_new:N \l_@@_biblatex_orig_refsection_tl
     \tl_new:N \g_@@_biblatex_prev_refsection_tl
-    \AddToHook { postnotes/print/begin } [ postnotes ]
+    \AddToHook { postnotes/print/begin } [ postnotes/compat/biblatex ]
       {
         \tl_set:Ne \l_@@_biblatex_orig_refsection_tl
           { \int_use:N \c@refsection }
         \tl_gset:Ne \g_@@_biblatex_prev_refsection_tl
           { \l_@@_biblatex_orig_refsection_tl }
      }
-    \AddToHook { postnotes/print/note/begin } [ postnotes ]
+    \AddToHook { postnotes/print/note/begin } [ postnotes/compat/biblatex ]
       {
         \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
           { biblatex@refsection } \l_@@_restore_tmp_tl
@@ -2709,7 +2709,7 @@
 % \end{macro}
 %
 %    \begin{macrocode}
-\AddToHook { package/zref-user/after }
+\AddToHook { package/zref-user/after } [ ./compat/zref-user ]
   {
 %    \end{macrocode}
 % Provide \opt{zlabel} option.
@@ -2771,7 +2771,7 @@
 %
 %    \begin{macrocode}
 \bool_new:N \l_@@_zrefhyperref_bool
-\AddToHook { package/zref-hyperref/after }
+\AddToHook { package/zref-hyperref/after } [ ./compat/zref-hyperref ]
   { \bool_set_true:N \l_@@_zrefhyperref_bool }
 %    \end{macrocode}
 %
@@ -2779,14 +2779,14 @@
 % \subsection*{\pkg{zref-clever}}
 %
 %    \begin{macrocode}
-\AddToHook { package/zref-clever/after }
+\AddToHook { package/zref-clever/after } [ ./compat/zref-clever ]
   {
     \zcsetup
       {
         countertype = { postnote = endnote } ,
         countertype = { postnotetext = endnote } ,
       }
-    \AddToHook { postnotes/print/begin } [ postnotes ]
+    \AddToHook { postnotes/print/begin } [ postnotes/compat/zref-clever ]
       { \zcsetup { counterresetby = { postnotetext = postnotesection } } }
   }
 %    \end{macrocode}
@@ -2795,18 +2795,18 @@
 % \subsection*{\pkg{zref-check}}
 %
 %    \begin{macrocode}
-\AddToHook { package/zref-check/after }
+\AddToHook { package/zref-check/after } [ ./compat/zref-check ]
   {
     \IfPackageAtLeastTF { zref-check } { 2022-07-05 }
       {
-        \AddToHook { postnotes/note/store } [ postnotes ]
+        \AddToHook { postnotes/note/store } [ postnotes/compat/zref-check ]
           {
             \prop_gput:cne { \@@_data_name:e { \l_postnotes_note_id_tl } }
               { zref-check@abschap } { \int_use:N \c@zc@abschap }
             \prop_gput:cne { \@@_data_name:e { \l_postnotes_note_id_tl } }
               { zref-check@abssec } { \int_use:N \c@zc@abssec }
           }
-        \AddToHook { postnotes/print/note/begin } [ postnotes ]
+        \AddToHook { postnotes/print/note/begin } [ postnotes/compat/zref-check ]
           {
             \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
               { zref-check@abschap } \l_@@_restore_tmp_tl
@@ -2824,13 +2824,13 @@
 % \subsection*{\pkg{amsmath}}
 %
 %    \begin{macrocode}
-\AddToHook { package/amsmath/after }
+\AddToHook { package/amsmath/after } [ ./compat/amsmath ]
   {
 %    \end{macrocode}
 % Testing for \cs{ifmeasuring@} is sufficient to get things right for the
 % measuring passes in math environments.
 %    \begin{macrocode}
-    \AddToHook { postnotes/note/inhibit } [ postnotes ]
+    \AddToHook { postnotes/note/inhibit } [ postnotes/compat/amsmath ]
       {
         \legacy_if:nT { measuring@ }
           {
@@ -2857,7 +2857,7 @@
 % multi-line display facilities.  (The answer will almost certainly be "no".
 % We agree with Kopka \& Daly.)''
 %    \begin{macrocode}
-    \AddToHook { postnotes/note/begin } [ postnotes ]
+    \AddToHook { postnotes/note/begin } [ postnotes/compat/amsmath ]
       {
         \legacy_if:nF { firstchoice@ }
           { \bool_set_true:N \l_@@_maybe_multi_bool }
@@ -2869,12 +2869,12 @@
 % \subsection*{\pkg{csquotes}}
 %
 %    \begin{macrocode}
-\AddToHook { package/csquotes/after }
+\AddToHook { package/csquotes/after } [ ./compat/csquotes ]
   {
     \bool_new:N \l_@@_csquotes_measuring_bool
     \BlockquoteDisable
       { \bool_set_true:N \l_@@_csquotes_measuring_bool }
-    \AddToHook { postnotes/note/inhibit } [ postnotes ]
+    \AddToHook { postnotes/note/inhibit } [ postnotes/compat/csquotes ]
       {
         \bool_if:NT \l_@@_csquotes_measuring_bool
           {
@@ -2896,15 +2896,15 @@
 % \url{https://tex.stackexchange.com/a/352134}.
 %
 %    \begin{macrocode}
-\AddToHook { package/tabularx/after }
+\AddToHook { package/tabularx/after } [ ./compat/tabularx ]
   {
     \bool_new:N \l_@@_tabularx_inside_env_bool
-    \AddToHook { env/tabularx/begin } [ postnotes ]
+    \AddToHook { env/tabularx/begin } [ postnotes/compat/tabularx ]
       {
         \bool_set_true:N \l_@@_tabularx_inside_env_bool
         \cs_set_eq:NN \@@_tabularx_saved_write:Nn \write
       }
-    \AddToHook { postnotes/note/inhibit } [ postnotes ]
+    \AddToHook { postnotes/note/inhibit } [ postnotes/compat/tabularx ]
       {
         \bool_lazy_and:nnT
           { \l_@@_tabularx_inside_env_bool }
@@ -2922,7 +2922,7 @@
 % \subsection*{\pkg{tabularray}}
 %
 %    \begin{macrocode}
-\AddToHook { package/tabularray/after }
+\AddToHook { package/tabularray/after } [ ./compat/tabularray ]
   {
 %    \end{macrocode}
 % Since version \texttt{2023A}, from 2023-03-01, \pkg{tabularray} offers the
@@ -2946,7 +2946,7 @@
 % than one \cs{postnote} inside a given table, pkg{postnotes} expects and
 % requires the \texttt{counter} module.
 %    \begin{macrocode}
-        \AddToHook { postnotes/note/inhibit } [ postnotes ]
+        \AddToHook { postnotes/note/inhibit } [ postnotes/compat/tabularray ]
           {
             \bool_if:NT \lTblrMeasuringBool
               {
