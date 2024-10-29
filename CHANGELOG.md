@@ -6,6 +6,7 @@
 - Provide options `checkduplicates` and `checkfloats`, which issue warnings in
   case of duplicate notes from measuring passes and of notes order mismatch
   resulting from float placement.
+  - WARNING: You may need to clear your .aux files after the upgrade.
 - Warning at `enddocument` for stray `\postnote`s left after the last
   `\printpostnotes`.
 
