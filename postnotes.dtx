@@ -1769,7 +1769,7 @@
                     \l_@@_print_type_curr_tl
                 }
             }
-          \AddToHookNext { shipout/after } [ postnotes/header ]
+          \AddToHookNext { shipout/after }
             { \bool_gset_false:N \g_@@_header_vars_next_bool }
 %    \end{macrocode}
 % We won't use the variables anymore, clear them to reduce memory usage.
@@ -2387,7 +2387,7 @@
 %   \cs{@@_set_headers_vars_first:} must set a label and retrieve its value to
 %   be able to have a reliable value of its own page.
 %    \begin{macrocode}
-\AddToHook { shipout/before } [ postnotes/header ]
+\AddToHook { shipout/before } [ ./header ]
   { \@@_set_headers_vars_next: }
 \bool_new:N \g_@@_header_vars_next_bool
 \cs_new_protected:Npn \@@_set_headers_vars_next:
