@@ -1,0 +1,75 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+% Ensure the same font across check engines
+\usepackage[OT1]{fontenc}
+\renewcommand\rmdefault{cmr}
+\renewcommand\sfdefault{cmss}
+\renewcommand\ttdefault{cmtt}
+
+\usepackage{postnotes}
+
+\usepackage[textwidth=8cm]{geometry}
+
+% A cheap way to get duplicates for a known case.
+\RemoveFromHook{postnotes/note/begin}[postnotes/compat/caption]
+
+\begin{document}
+
+\chapter{Chapter 1}
+
+\textsuperscript{avoid font warning}
+
+\postnote{1}
+
+\begin{figure}
+  Figure.
+  \caption{A long caption, long enough to require two lines\postnote{2}}%
+\end{figure}
+
+\postnote{3}
+
+\cleardoublepage{}
+
+\START
+
+\BEGINTEST{Print checkduplicates=true}
+\postnotesetup{checkduplicates}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\chapter{Chapter 2}
+\setcounter{postnote}{0}
+
+\postnote{1}
+
+\begin{figure}
+  Figure.
+  \caption{A long caption, long enough to require two lines\postnote{2}}%
+\end{figure}
+
+\postnote{3}
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print checkduplicates=false}
+\postnotesetup{checkduplicates=false}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}
