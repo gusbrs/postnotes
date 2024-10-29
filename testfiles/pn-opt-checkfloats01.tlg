@@ -1,0 +1,929 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: sort=true, no counter juggling (default)
+============================================================
+Package postnotes Warning: Possible out of sequence notes due to floats on line ....
+Completed box being shipped out [5]
+\vbox(627.36243+0.0)x380.0
+.\glue 22.0
+.\vbox(605.36243+0.0)x345.0, shifted 35.0
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+..\glue 18.06749
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 349.0fil
+...\write1{\token_to_str:N \post@note {preprint}{1}{}}
+...\write-{}
+...\glue(\topskip) 10.0
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 50.0
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 12.92955
+...\hbox(17.07045+0.0)x345.0, glue set 137.21155fil
+....\hbox(0.0+0.0)x0.0
+....\OT1/cmr/bx/n/24.88 N
+....\OT1/cmr/bx/n/24.88 o
+....\OT1/cmr/bx/n/24.88 t
+....\OT1/cmr/bx/n/24.88 e
+....\OT1/cmr/bx/n/24.88 s
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\penalty 10000
+...\glue 40.0
+...\marks1{\__mark_id:n {3}\pnheaderdefault }
+...\marks2{\__mark_id:n {4}\pnheaderdefault }
+...\marks3{\__mark_id:n {5}\pnheaderdefault }
+...\mark{{\pnheaderdefault }{\pnheaderdefault }}
+...\penalty 10000
+...\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }}
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 1
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 1
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{2}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 2
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 2
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{3}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 3
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 3
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{4}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 4
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 4
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{5}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 5
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 5
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{6}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 6
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 6
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 5.0
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+..\glue(\baselineskip) 18.8505
+..\hbox(6.44444+0.0)x345.0
+...\hbox(6.44444+0.0)x345.0, glue set 170.0fil
+....\glue 0.0 plus 1.0fil
+....\OT1/cmr/m/n/10 5
+....\glue 0.0 plus 1.0fil
+============================================================
+============================================================
+TEST 2: sort=true, counter juggling (correct)
+============================================================
+Completed box being shipped out [11]
+\vbox(627.36243+0.0)x380.0
+.\glue 22.0
+.\vbox(605.36243+0.0)x345.0, shifted 35.0
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+..\glue 18.06749
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 349.0fil
+...\write1{\token_to_str:N \post@note {preprint}{2}{}}
+...\write-{}
+...\glue(\topskip) 10.0
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 50.0
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 12.92955
+...\hbox(17.07045+0.0)x345.0, glue set 137.21155fil
+....\hbox(0.0+0.0)x0.0
+....\OT1/cmr/bx/n/24.88 N
+....\OT1/cmr/bx/n/24.88 o
+....\OT1/cmr/bx/n/24.88 t
+....\OT1/cmr/bx/n/24.88 e
+....\OT1/cmr/bx/n/24.88 s
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\penalty 10000
+...\glue 40.0
+...\marks1{\__mark_id:n {8}\pnheaderdefault }
+...\marks2{\__mark_id:n {9}\pnheaderdefault }
+...\marks3{\__mark_id:n {10}\pnheaderdefault }
+...\mark{{\pnheaderdefault }{\pnheaderdefault }}
+...\penalty 10000
+...\write1{\token_to_str:N \post@note {print}{2}{\int_use:N \c@page }}
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{7}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 1
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 1
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{8}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 2
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 2
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{10}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 3
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 4
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{11}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 4
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 5
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{9}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 5
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 3
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{12}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 6
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 6
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 5.0
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+..\glue(\baselineskip) 18.8505
+..\hbox(6.44444+0.0)x345.0
+...\hbox(6.44444+0.0)x345.0, glue set 167.49998fil
+....\glue 0.0 plus 1.0fil
+....\OT1/cmr/m/n/10 1
+....\OT1/cmr/m/n/10 1
+....\glue 0.0 plus 1.0fil
+============================================================
+============================================================
+TEST 3: sort=false, counter juggling
+============================================================
+Package postnotes Warning: Possible out of sequence notes due to floats on line ....
+Completed box being shipped out [17]
+\vbox(627.36243+0.0)x380.0
+.\glue 22.0
+.\vbox(605.36243+0.0)x345.0, shifted 35.0
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+..\glue 18.06749
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 349.0fil
+...\write1{\token_to_str:N \post@note {preprint}{3}{}}
+...\write-{}
+...\glue(\topskip) 10.0
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 50.0
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 12.92955
+...\hbox(17.07045+0.0)x345.0, glue set 137.21155fil
+....\hbox(0.0+0.0)x0.0
+....\OT1/cmr/bx/n/24.88 N
+....\OT1/cmr/bx/n/24.88 o
+....\OT1/cmr/bx/n/24.88 t
+....\OT1/cmr/bx/n/24.88 e
+....\OT1/cmr/bx/n/24.88 s
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\penalty 10000
+...\glue 40.0
+...\marks1{\__mark_id:n {13}\pnheaderdefault }
+...\marks2{\__mark_id:n {14}\pnheaderdefault }
+...\marks3{\__mark_id:n {15}\pnheaderdefault }
+...\mark{{\pnheaderdefault }{\pnheaderdefault }}
+...\penalty 10000
+...\write1{\token_to_str:N \post@note {print}{3}{\int_use:N \c@page }}
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{13}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 1
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 1
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{14}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 2
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 2
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{15}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 5
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 3
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{16}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 3
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 4
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{17}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 4
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 5
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{18}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 6
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 6
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 5.0
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+..\glue(\baselineskip) 18.8505
+..\hbox(6.44444+0.0)x345.0
+...\hbox(6.44444+0.0)x345.0, glue set 167.49998fil
+....\glue 0.0 plus 1.0fil
+....\OT1/cmr/m/n/10 1
+....\OT1/cmr/m/n/10 7
+....\glue 0.0 plus 1.0fil
+============================================================
+============================================================
+TEST 4: sort=true, wrong counter juggling
+============================================================
+Package postnotes Warning: Possible out of sequence notes due to floats on line ....
+Completed box being shipped out [23]
+\vbox(627.36243+0.0)x380.0
+.\glue 22.0
+.\vbox(605.36243+0.0)x345.0, shifted 35.0
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+..\glue 18.06749
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 349.0fil
+...\write1{\token_to_str:N \post@note {preprint}{4}{}}
+...\write-{}
+...\glue(\topskip) 10.0
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 50.0
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 12.92955
+...\hbox(17.07045+0.0)x345.0, glue set 137.21155fil
+....\hbox(0.0+0.0)x0.0
+....\OT1/cmr/bx/n/24.88 N
+....\OT1/cmr/bx/n/24.88 o
+....\OT1/cmr/bx/n/24.88 t
+....\OT1/cmr/bx/n/24.88 e
+....\OT1/cmr/bx/n/24.88 s
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\penalty 10000
+...\glue 40.0
+...\marks1{\__mark_id:n {18}\pnheaderdefault }
+...\marks2{\__mark_id:n {19}\pnheaderdefault }
+...\marks3{\__mark_id:n {20}\pnheaderdefault }
+...\mark{{\pnheaderdefault }{\pnheaderdefault }}
+...\penalty 10000
+...\write1{\token_to_str:N \post@note {print}{4}{\int_use:N \c@page }}
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{19}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 1
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 1
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{20}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 2
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 2
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{22}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 3
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 4
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{21}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 5
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 3
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{23}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 5
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 5
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{24}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 6
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 6
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 5.0
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+..\glue(\baselineskip) 18.8505
+..\hbox(6.44444+0.0)x345.0
+...\hbox(6.44444+0.0)x345.0, glue set 167.49998fil
+....\glue 0.0 plus 1.0fil
+....\OT1/cmr/m/n/10 2
+....\OT1/cmr/m/n/10 3
+....\glue 0.0 plus 1.0fil
+============================================================
+============================================================
+TEST 5: sort=true, no counter juggling, checkfloats=false
+============================================================
+Completed box being shipped out [29]
+\vbox(627.36243+0.0)x380.0
+.\glue 22.0
+.\vbox(605.36243+0.0)x345.0, shifted 35.0
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+..\glue 18.06749
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 349.0fil
+...\write1{\token_to_str:N \post@note {preprint}{5}{}}
+...\write-{}
+...\glue(\topskip) 10.0
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 50.0
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 12.92955
+...\hbox(17.07045+0.0)x345.0, glue set 137.21155fil
+....\hbox(0.0+0.0)x0.0
+....\OT1/cmr/bx/n/24.88 N
+....\OT1/cmr/bx/n/24.88 o
+....\OT1/cmr/bx/n/24.88 t
+....\OT1/cmr/bx/n/24.88 e
+....\OT1/cmr/bx/n/24.88 s
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\penalty 10000
+...\glue 40.0
+...\marks1{\__mark_id:n {23}\pnheaderdefault }
+...\marks2{\__mark_id:n {24}\pnheaderdefault }
+...\marks3{\__mark_id:n {25}\pnheaderdefault }
+...\mark{{\pnheaderdefault }{\pnheaderdefault }}
+...\penalty 10000
+...\write1{\token_to_str:N \post@note {print}{5}{\int_use:N \c@page }}
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{25}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 1
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 1
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{26}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 2
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 2
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{27}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 3
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 3
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{28}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 4
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 4
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{29}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 5
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 5
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.20001
+...\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
+....\hbox(5.79999+0.0)x19.6944
+.....\glue 7.5
+.....\glue 0.0
+.....\glue -5.0
+.....\hbox(5.79999+0.0)x12.1944
+......\glue 5.0
+......\hbox(0.0+0.0)x0.0
+......\write1{\token_to_str:N \post@note {text}{30}{\int_use:N \c@page }}
+......\OT1/cmr/m/n/9 6
+......\OT1/cmr/m/n/9 .
+.....\glue 5.0
+....\penalty 0
+....\OT1/cmr/m/n/9 6
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 5.0
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+..\glue(\baselineskip) 18.8505
+..\hbox(6.44444+0.0)x345.0
+...\hbox(6.44444+0.0)x345.0, glue set 167.49998fil
+....\glue 0.0 plus 1.0fil
+....\OT1/cmr/m/n/10 2
+....\OT1/cmr/m/n/10 9
+....\glue 0.0 plus 1.0fil
+============================================================
