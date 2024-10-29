@@ -2016,6 +2016,27 @@
 % \end{macro}
 %
 %
+%    \begin{macrocode}
+\AddToHook { enddocument }
+  {
+    \group_begin:
+      \seq_set_filter:NNn \l_@@_tmpa_seq \g_@@_queue_seq
+        { \str_if_eq_p:ee { \@@_prop_item:nn {#1} { type } } { note } }
+      \seq_if_empty:NF \l_@@_tmpa_seq
+        {
+          \msg_warning:nne { postnotes } { stray-notes }
+            { \seq_count:N \l_@@_tmpa_seq }
+        }
+    \group_end:
+  }
+\msg_new:nnn { postnotes } { stray-notes }
+  {
+    There~are~'#1'~stray~notes~after~the~last~'\iow_char:N\\printpostnotes'~
+    \msg_line_context:.~At~this~point,~they~are~lost.
+  }
+%    \end{macrocode}
+%
+%
 %
 % \section{Headers}
 %

@@ -6,6 +6,8 @@
 - Provide options `checkduplicates` and `checkfloats`, which issue warnings in
   case of duplicate notes from measuring passes and of notes order mismatch
   resulting from float placement.
+- Warning at `enddocument` for stray `\postnote`s left after the last
+  `\printpostnotes`.
 
 ### Fixed
 - Fixed `style=endnotes` tagging error (see issue
