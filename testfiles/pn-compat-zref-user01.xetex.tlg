@@ -10,7 +10,7 @@ TEST 1: zref-user
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.1.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
 .\write1{\zref@newlabel{en:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}}}
 .\penalty 10000
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.1.text)>>>>}
@@ -105,7 +105,7 @@ Completed box being shipped out [3]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil
-....\write1{\token_to_str:N \post@note {preprint}{1}{}}
+....\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
 ....\write-{}
 ....\special{pdf:dest (chapter*.1) [@thispage /XYZ @xpos @ypos null]}
 ....\glue(\topskip) 10.0
@@ -133,7 +133,7 @@ Completed box being shipped out [3]
 ....\marks3{\__mark_id:n {5}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
-....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }{}}
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -150,7 +150,7 @@ Completed box being shipped out [3]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.1.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.1.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .

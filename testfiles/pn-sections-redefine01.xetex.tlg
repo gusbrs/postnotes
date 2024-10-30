@@ -10,7 +10,7 @@ TEST 1: Notes: Introduction
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.2.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }{1}}
 .\penalty 10000
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.2.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
@@ -32,7 +32,7 @@ TEST 2: Notes: First chapter
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.4.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{4}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{4}{\thepage }{1}}
 .\penalty 10000
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.4.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
@@ -50,7 +50,7 @@ l. ...\showbox0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.5.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{5}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{5}{\thepage }{1}}
 .\penalty 10000
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.5.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
@@ -72,7 +72,7 @@ TEST 3: Notes: Second chapter
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.7.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{7}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{7}{\thepage }{1}}
 .\penalty 10000
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.7.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
@@ -90,7 +90,7 @@ l. ...\showbox0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.8.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{8}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{8}{\thepage }{1}}
 .\penalty 10000
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.8.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
@@ -130,7 +130,7 @@ Completed box being shipped out [7]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 246.15294fil
-....\write1{\token_to_str:N \post@note {preprint}{1}{}}
+....\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
 ....\write-{}
 ....\special{pdf:dest (chapter*.2) [@thispage /XYZ @xpos @ypos null]}
 ....\glue(\topskip) 10.0
@@ -153,13 +153,13 @@ Completed box being shipped out [7]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\write1{\token_to_str:N \post@note {section}{9}{\thepage }}
+....\write1{\token_to_str:N \post@note {section}{9}{\thepage }{}}
 ....\marks1{\__mark_id:n {5}\pnheaderdefault }
 ....\marks2{\__mark_id:n {6}\pnheaderdefault }
 ....\marks3{\__mark_id:n {7}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
-....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }{}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 8.00002
@@ -219,7 +219,7 @@ Completed box being shipped out [7]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.2.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{2}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{2}{\int_use:N \c@page }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.2.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
@@ -301,7 +301,7 @@ Completed box being shipped out [7]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.4.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{4}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{4}{\int_use:N \c@page }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.4.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
@@ -339,7 +339,7 @@ Completed box being shipped out [7]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.5.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{5}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{5}{\int_use:N \c@page }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.5.mark)>>>>}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 .
@@ -418,7 +418,7 @@ Completed box being shipped out [7]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.7.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{7}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{7}{\int_use:N \c@page }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.7.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
@@ -454,7 +454,7 @@ Completed box being shipped out [7]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.8.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{8}{\int_use:N \c@page }}
+.......\write1{\token_to_str:N \post@note {text}{8}{\int_use:N \c@page }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.8.mark)>>>>}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 .

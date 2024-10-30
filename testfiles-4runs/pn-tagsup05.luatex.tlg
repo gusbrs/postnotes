@@ -54,7 +54,7 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 ...\pdfdest name{postnote.1.mark} xyz
 ...\pdfdest name{postnote.1.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
 .\write1{\newlabel{en:mark:1}{{1}{\thepage }{Section 1}{postnote.1.mark}{}}}
 .\write1{\zref@newlabel{zen:mark:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}}}
 .\penalty 10000
@@ -359,7 +359,7 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 ...\pdfdest name{postnote.2.mark} xyz
 ...\pdfdest name{postnote.2.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }{1}}
 .\write1{\newlabel{en:mark:2}{{2}{\thepage }{Section 1}{postnote.2.mark}{}}}
 .\write1{\zref@newlabel{zen:mark:2}{\default{2}\page{\Z@C@page }\anchor{postnote.2.mark}}}
 .\penalty 10000
@@ -664,7 +664,7 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 ...\pdfdest name{postnote.3.mark} xyz
 ...\pdfdest name{postnote.3.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{3}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{3}{\thepage }{1}}
 .\penalty 10000
 .\write1{\new@label@record{tagpdfstruct-postnotemark.3}{{tagstruct}{30}{tagstructobj}{70 0 R}}}
 .\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 13 } action struct name{postnote.3.text} goto name{postnote.3.text}
@@ -1115,7 +1115,7 @@ Completed box being shipped out [2]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 508.04297fil, direction TLT
 ....\write-{}
-....\write1{\token_to_str:N \post@note {preprint}{1}{}}
+....\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
 ....\glue(\topskip) 0.12001
 ....\hbox(9.87999+0.0)x345.0, glue set 304.15167fil, direction TLT
 .....\localpar
@@ -1148,7 +1148,7 @@ Completed box being shipped out [2]
 ....\glue 9.90276 plus 0.86108
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
-....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }}
+....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }{}}
 ....\write1{\new@label@record{postnote@label@option.en:mark:1}{{postnotes/tagsup@noteid}{1}}}
 ....\penalty 10000
 ....\write1{\new@label@record{postnote@zlabel@option.zen:mark:1}{{postnotes/tagsup@noteid}{1}}}
@@ -1172,7 +1172,7 @@ Completed box being shipped out [2]
 .......\pdfdest name{postnote.1.text} xyz
 .......\pdfdest name{postnote.1.text} xyz
 .......\penalty 10000
-.....\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }}
+.....\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }{}}
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 14 } action struct name{postnote.1.mark} goto name{postnote.1.mark}
@@ -1199,7 +1199,7 @@ Completed box being shipped out [2]
 .......\pdfdest name{postnote.2.text} xyz
 .......\pdfdest name{postnote.2.text} xyz
 .......\penalty 10000
-.....\write1{\token_to_str:N \post@note {text}{2}{\int_use:N \c@page }}
+.....\write1{\token_to_str:N \post@note {text}{2}{\int_use:N \c@page }{}}
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 15 } action struct name{postnote.2.mark} goto name{postnote.2.mark}
@@ -1224,7 +1224,7 @@ Completed box being shipped out [2]
 .......\pdfdest name{postnote.3.text} xyz
 .......\pdfdest name{postnote.3.text} xyz
 .......\penalty 10000
-.....\write1{\token_to_str:N \post@note {text}{3}{\int_use:N \c@page }}
+.....\write1{\token_to_str:N \post@note {text}{3}{\int_use:N \c@page }{}}
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 16 } action struct name{postnote.3.mark} goto name{postnote.3.mark}

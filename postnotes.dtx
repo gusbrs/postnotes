@@ -299,6 +299,7 @@
 %   {
 %     \post@note ,
 %     \@@_store_labelseq:nn ,
+%     \@@_step_counteraux:nnn ,
 %   }
 %   \cs{post@note} is the \cs{newlabel} equivalent for \pkg{postnotes}.
 %   Based on the kernel's \cs{@newl@bel} so that we get \LaTeX{} checks for
@@ -311,11 +312,16 @@
 %   problems due to floats.
 %     \begin{syntax}
 %       \cs{post@note} \Arg{label type} \Arg{id} \Arg{label content (page)}
+%       ~~\Arg{counteraux step}
 %       \cs{@@_store_labelseq:nn} \Arg{label type} \Arg{id}
+%       \cs{@@_step_counteraux:nnn} \Arg{label type} \Arg{id}
+%       ~~\Arg{counteraux step}
 %     \end{syntax}
 %    \begin{macrocode}
 \tl_const:Nn \c_@@_ref_prefix_tl { postnote@r }
 \seq_new:N \g_@@_labelseq_seq
+\int_new:N \g_@@_postnote_counteraux_int
+\prop_new:N \g_@@_counteraux_prop
 \bool_new:N \g_@@_firstrun_bool
 \bool_gset_true:N \g_@@_firstrun_bool
 \cs_new_protected:Npn \@@_store_labelseq:nn #1#2
@@ -328,10 +334,22 @@
       }
       { \seq_gput_right:Nn \g_@@_labelseq_seq { {#1} {#2} } }
   }
-\cs_new_protected:Npe \post@note #1#2#3
+\cs_new_protected:Npn \@@_step_counteraux:nnn #1#2#3
+  {
+    \bool_lazy_and:nnT
+      { \g_@@_counteraux_bool }
+      { \str_if_eq_p:nn {#1} { mark } }
+      {
+        \int_gadd:Nn \g_@@_postnote_counteraux_int { #3 }
+        \prop_gput:Nne \g_@@_counteraux_prop { #2 }
+          { \int_use:N \g_@@_postnote_counteraux_int }
+      }
+  }
+\cs_new_protected:Npe \post@note #1#2#3#4
   {
     \exp_not:N \bool_gset_false:N \exp_not:N \g_@@_firstrun_bool
     \exp_not:N \@@_store_labelseq:nn { #1 } { #2 }
+    \exp_not:N \@@_step_counteraux:nnn { #1 } { #2 } { #4 }
     \exp_not:N \@newl@bel { \c_@@_ref_prefix_tl } { #1 @ #2 } { #3 }
   }
 %    \end{macrocode}
@@ -346,7 +364,7 @@
     \legacy_if:nT { @filesw }
       {
         \iow_now:Ne \@mainaux
-          { \token_to_str:N \providecommand \token_to_str:N \post@note [3]{} }
+          { \token_to_str:N \providecommand \token_to_str:N \post@note[4]{} }
       }
   }
 \AddToHook { include/before }
@@ -354,7 +372,7 @@
     \legacy_if:nT { @filesw }
       {
         \iow_now:Ne \@partaux
-          { \token_to_str:N \providecommand \token_to_str:N \post@note [3]{} }
+          { \token_to_str:N \providecommand \token_to_str:N \post@note[4]{} }
       }
   }
 %    \end{macrocode}
@@ -362,8 +380,8 @@
 %
 % \begin{macro}
 %   {
-%     \@@_set_label:nnn ,
-%     \@@_set_mark_page_label:n ,
+%     \@@_set_label:nnnn ,
+%     \@@_set_mark_page_label:nn ,
 %     \@@_set_section_page_label:n ,
 %     \@@_set_text_page_label:n ,
 %     \@@_set_print_page_label:n ,
@@ -373,36 +391,37 @@
 %   \cs{iow_shipout_e:Nn}, since the main information we are interested in is
 %   the \texttt{page}.
 %     \begin{syntax}
-%       \cs{@@_set_label:nnn} \Arg{label type} \Arg{note id} \Arg{value}
-%       \cs{@@_set_mark_page_label:n} \Arg{note id}
+%       \cs{@@_set_label:nnnn} \Arg{label type} \Arg{note id} \Arg{value}
+%       ~~\Arg{counteraux step}
+%       \cs{@@_set_mark_page_label:nn} \Arg{note id} \Arg{counteraux step}
 %       \cs{@@_set_section_page_label:n} \Arg{note id}
 %       \cs{@@_set_text_page_label:n} \Arg{note id}
 %       \cs{@@_set_print_page_label:n} \Arg{note id}
 %       \cs{@@_set_pre_print_label:n} \Arg{note id}
 %     \end{syntax}
 %    \begin{macrocode}
-\cs_new_protected:Npn \@@_set_label:nnn #1#2#3
+\cs_new_protected:Npn \@@_set_label:nnnn #1#2#3#4
   {
     \legacy_if:nT { @filesw }
       {
         \iow_shipout_e:Nn \@auxout
-          { \token_to_str:N \post@note { #1 } { #2 } { #3 } }
+          { \token_to_str:N \post@note { #1 } { #2 } { #3 } { #4 } }
       }
   }
-\cs_new_protected:Npn \@@_set_mark_page_label:n #1
-  { \@@_set_label:nnn { mark } { #1 } { \thepage } }
-\cs_generate_variant:Nn \@@_set_mark_page_label:n { e }
+\cs_new_protected:Npn \@@_set_mark_page_label:nn #1#2
+  { \@@_set_label:nnnn { mark } { #1 } { \thepage } { #2 } }
+\cs_generate_variant:Nn \@@_set_mark_page_label:nn { ee }
 \cs_new_protected:Npn \@@_set_section_page_label:n #1
-  { \@@_set_label:nnn { section } { #1 } { \thepage } }
+  { \@@_set_label:nnnn { section } { #1 } { \thepage } { } }
 \cs_generate_variant:Nn \@@_set_section_page_label:n { e }
 \cs_new_protected:Npn \@@_set_text_page_label:n #1
-  { \@@_set_label:nnn { text } { #1 } { \int_use:N \c@page } }
+  { \@@_set_label:nnnn { text } { #1 } { \int_use:N \c@page } { } }
 \cs_generate_variant:Nn \@@_set_text_page_label:n { e }
 \cs_new_protected:Npn \@@_set_print_page_label:n #1
-  { \@@_set_label:nnn { print } { #1 } { \int_use:N \c@page } }
+  { \@@_set_label:nnnn { print } { #1 } { \int_use:N \c@page } { } }
 \cs_generate_variant:Nn \@@_set_print_page_label:n { e }
 \cs_new_protected:Npn \@@_set_pre_print_label:n #1
-  { \@@_set_label:nnn { preprint } { #1 } { } }
+  { \@@_set_label:nnnn { preprint } { #1 } { } { } }
 \cs_generate_variant:Nn \@@_set_pre_print_label:n { e }
 %    \end{macrocode}
 % \end{macro}
@@ -896,17 +915,36 @@
 %    \end{macrocode}
 %
 %
-% \subsection*{\opt{labelqueue} option}
+% \subsection*{\opt{counteraux} option}
 %
 %    \begin{macrocode}
-\bool_new:N \l_@@_label_queue_bool
+\bool_new:N \g_@@_counteraux_bool
 \keys_define:nn { postnotes/setup }
   {
-    labelqueue .bool_set:N = \l_@@_label_queue_bool ,
-    labelqueue .default:n = true ,
-    labelqueue .initial:n = false ,
+    counteraux .bool_gset:N = \g_@@_counteraux_bool ,
+    counteraux .default:n = true ,
+    counteraux .initial:n = false ,
   }
 %    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+\AddToHook { begindocument/before }
+  {
+    \bool_if:NT \g_@@_counteraux_bool
+      { \postnotesetup { sort=false } }
+    \keys_define:nn { postnotes/setup }
+      {
+        counteraux .code:n =
+          {
+            \msg_warning:nnn { postnotes }
+              { option-preamble-only } { counteraux }
+          } ,
+      }
+  }
+%    \end{macrocode}
+%
+%
 %
 %
 % \subsection*{\cs{postnotesetup}}
@@ -1089,6 +1127,7 @@
 %     \g_@@_note_id_int ,
 %     \l_postnotes_note_id_tl ,
 %     \g_@@_queue_seq ,
+%     \l_@@_counteraux_step_int ,
 %   }
 %   \cs{g_@@_note_id_int} is the internal, unique counter which provides the
 %   ID number of each note.  It ties ``mark'' and ``text'' together, is also
@@ -1102,6 +1141,7 @@
 \tl_new:N \l_postnotes_note_id_tl
 \tl_set:Nn \l_postnotes_note_id_tl { \int_use:N \g_@@_note_id_int }
 \seq_new:N \g_@@_queue_seq
+\int_new:N \l_@@_counteraux_step_int
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1137,11 +1177,20 @@
       \@@_inhibit_note:F
         {
           \int_gincr:N \g_@@_note_id_int
-          \tl_if_empty:NT \l_@@_mark_tl
+          \tl_if_empty:NTF \l_@@_mark_tl
             {
               \stepcounter { postnote }
+              \int_set:Nn \l_@@_counteraux_step_int { 1 }
+              \bool_if:NT \g_@@_counteraux_bool
+                {
+                  \exp_args:NNe \prop_gpop:NnNT \g_@@_counteraux_prop
+                    { \l_postnotes_note_id_tl } \l_@@_tmpa_tl
+                    { \int_set:Nn \c@postnote { \l_@@_tmpa_tl } }
+                  \tl_clear:N \l_@@_tmpa_tl
+                }
               \tl_set:Ne \l_@@_mark_tl { \thepostnote }
             }
+            { \int_set:Nn \l_@@_counteraux_step_int { 0 } }
           \mode_leave_vertical:
           \UseHook { postnotes/note/begin }
           \seq_gput_right:Ne \g_@@_queue_seq
@@ -1149,7 +1198,8 @@
           \cs_set:Npn \@currentcounter { postnote }
           \cs_set:Npe \@currentlabel { \p@postnote \l_@@_mark_tl }
           \MakeLinkTarget* { postnote. \l_postnotes_note_id_tl .mark }
-          \@@_set_mark_page_label:e { \l_postnotes_note_id_tl }
+          \@@_set_mark_page_label:ee { \l_postnotes_note_id_tl }
+            { \int_use:N \l_@@_counteraux_step_int }
           \@@_set_user_labels:
           \@@_store:nn { \l_postnotes_note_id_tl } {#2}
           \bool_if:NTF \l_@@_nomark_bool
@@ -1582,7 +1632,7 @@
 % \cs{printpostnotes}.
 %    \begin{macrocode}
       \bool_lazy_and:nnTF
-        { \l_@@_label_queue_bool }
+        { \g_@@_counteraux_bool }
         { ! \g_@@_firstrun_bool }
         {
           \seq_gset_eq:NN \g_@@_print_queue_seq
@@ -1915,7 +1965,7 @@
 %    \begin{macrocode}
     \bool_lazy_and:nnT
       { ! \g_@@_firstrun_bool }
-      { ! \l_@@_label_queue_bool }
+      { ! \g_@@_counteraux_bool }
       {
         \group_begin:
           \seq_clear:N \l_@@_tmpa_seq
@@ -2082,7 +2132,7 @@
 %   since we want the printed representation of it for typesetting purposes,
 %   the latter ones store the value of the \texttt{page} counter, since we
 %   don't need to typeset it, but do need to perform algebraic operations with
-%   it.  These labels are set by \cs{@@_set_mark_page_label:n},
+%   it.  These labels are set by \cs{@@_set_mark_page_label:nn},
 %   \cs{@@_set_text_page_label:n}, and \cs{@@_set_print_page_label:n} at the
 %   appropriate places.  The set of these labels provides a mapping from each
 %   note's ``mark'' and ``text'' to the page where it occurs.

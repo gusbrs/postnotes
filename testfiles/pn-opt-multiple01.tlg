@@ -10,7 +10,7 @@ TEST 1: postnote
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.1.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 0]/H/I/C[1 0 0]} action goto name{postnote.1.text}
 .\hbox(8.14003+0.0)x4.48613
@@ -26,7 +26,7 @@ TEST 1: postnote
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.2.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }{1}}
 .\hbox(4.43448+0.0)x2.7639
 ..\mathon
 ..\hbox(0.80556+1.3611)x2.7639, shifted -3.62892
@@ -55,7 +55,7 @@ TEST 2: multiple=false
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.3.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{3}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{3}{\thepage }{1}}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 0]/H/I/C[1 0 0]} action goto name{postnote.3.text}
 .\hbox(8.14003+0.0)x4.48613
@@ -69,7 +69,7 @@ TEST 2: multiple=false
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.4.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{4}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{4}{\thepage }{1}}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 0]/H/I/C[1 0 0]} action goto name{postnote.4.text}
 .\hbox(8.14003+0.0)x4.48613
@@ -91,7 +91,7 @@ TEST 3: multisep
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.5.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{5}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{5}{\thepage }{1}}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 0]/H/I/C[1 0 0]} action goto name{postnote.5.text}
 .\hbox(8.14003+0.0)x4.48613
@@ -107,7 +107,7 @@ TEST 3: multisep
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.6.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{6}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{6}{\thepage }{1}}
 .\hbox(6.6428+0.0)x4.48613
 ..\mathon
 ..\hbox(3.01389+0.0)x4.48613, shifted -3.62892
@@ -204,7 +204,7 @@ TEST 6: postnote + postnoteref
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.7.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{7}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{7}{\thepage }{1}}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 0]/H/I/C[1 0 0]} action goto name{postnote.7.text}
 .\hbox(8.14003+0.0)x4.48613
@@ -236,7 +236,7 @@ TEST 6: postnote + postnoteref
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.8.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{8}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{8}{\thepage }{1}}
 .\hbox(4.43448+0.0)x2.7639
 ..\mathon
 ..\hbox(0.80556+1.3611)x2.7639, shifted -3.62892
@@ -265,7 +265,7 @@ TEST 7: postnote + postnotezref
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.9.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{9}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{9}{\thepage }{1}}
 .\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 0]/H/I/C[1 0 0]} action goto name{postnote.9.text}
 .\hbox(8.14003+0.0)x4.48613
@@ -296,7 +296,7 @@ TEST 7: postnote + postnotezref
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.10.mark} xyz
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{10}{\thepage }}
+.\write1{\token_to_str:N \post@note {mark}{10}{\thepage }{1}}
 .\hbox(4.43448+0.0)x2.7639
 ..\mathon
 ..\hbox(0.80556+1.3611)x2.7639, shifted -3.62892
