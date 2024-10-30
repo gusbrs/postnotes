@@ -472,18 +472,18 @@ passes, and are ordered the same as the typeset order of the document, floats
 considered.  Note that these checks are only expected to be meaningful in a
 document for which the compilation has stabilized: with labels and floats
 already in place.  Also note that the \opt{checkfloats} option does not test
-``if the marks of my notes are in numeric order'', but rather whether the
-order the marks are typeset along the document and the order the notes are
-printed in \cs{printposnotes} are the same.  These options are booleans.
-\opt{checkduplicates} is initially enabled, since whether a place performs
-measuring passes does not really change, and it is easy to deal with a note in
-this situation with the \opt{maybemulti} option. \opt{checkfloats}, on the
-other hand, is initially disabled.  Float placement (and its implications for
-\pkg{postnotes}) is something one should not worry about until the very last
-stages of the document.  At that time, I expect it to be useful, but during
-the writing phase, such a warning would only be distracting.  Think of if as
-something to use like you would use the \pkg{widows-and-orphans} package, for
-example.
+``if my notes are in numeric order'' (that's the job of \opt{sort}), but
+rather whether the order the marks are typeset along the document and the
+order the notes are printed in \cs{printposnotes} are the same.  These options
+are booleans.  \opt{checkduplicates} is initially enabled, since whether a
+place performs measuring passes does not really change, and it is easy to deal
+with a note in this situation with the \opt{maybemulti}
+option. \opt{checkfloats}, on the other hand, is initially disabled.  Float
+placement (and its implications for \pkg{postnotes}) is something one should
+not worry about until the very last stages of the document.  At that time, I
+expect it to be useful, but during the writing phase, such a warning would
+only be distracting.  Think of if as something to use like you would use the
+\pkg{widows-and-orphans} package, for example.
 
 \DescribeOption{maybemulti} %
 A \cs{postnote} set while \opt{maybemulti} is true is checked at
