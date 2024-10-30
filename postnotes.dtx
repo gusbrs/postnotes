@@ -772,43 +772,52 @@
 % value of the canceling kerns of \texttt{3sp} in \cs{@@_multiple_prepare:}.
 %
 %    \begin{macrocode}
-\cs_new_eq:NN \@@_multiple_prepare: \prg_do_nothing:
-\cs_new_eq:NN \@@_multiple_check: \prg_do_nothing:
-\cs_new_eq:NN \@@_multiple_store_lastkern: \prg_do_nothing:
 \tl_new:N \l_@@_multisep_tl
 \tl_const:Nn \c_postnotes_multi_notemarker_tl { 3sp }
+\bool_new:N \l_@@_multiple_bool
 \dim_new:N \l_@@_multi_lastkern_dim
 \bool_new:N \l_@@_multi_stored_lastkern_bool
 \tl_new:N \l_@@_saved_spacefactor_multi_tl
 \keys_define:nn { postnotes/setup }
   {
-    multiple .choice: ,
-    multiple / true .code:n =
-      {
+    multiple .bool_set:N = \l_@@_multiple_bool ,
+    multiple .default:n = true ,
+    multiple .initial:n = false ,
+    multisep .tl_set:N = \l_@@_multisep_tl ,
+    multisep .value_required:n = true ,
+    multisep .initial:n = {,} ,
+  }
+%    \end{macrocode}
+%
 %    \end{macrocode}
 % I'm using the definitions in \pkg{latex-lab-footmisc.ltx} as base, see
 % \texttt{texdoc latex-lab-footnotes}.  For the formatting of the separator,
 % though, I take inspiration from \texttt{KOMA-Script} and use
 % \cs{@@_make_mark:nnn}, instead of hard-coding \cs{textsuperscript}.
 %    \begin{macrocode}
-        \cs_set_protected:Npn \@@_multiple_prepare:
+\cs_new_protected:Npn \@@_multiple_prepare:
+  {
+    \bool_if:NT \l_@@_multiple_bool
+      {
+        \kern -\c_postnotes_multi_notemarker_tl
+        \kern  \c_postnotes_multi_notemarker_tl
+        \scan_stop:
+      }
+  }
+\cs_new_protected:Npn \@@_multiple_check:
+  {
+    \bool_if:NT \l_@@_multiple_bool
+      {
+        \dim_compare:nNnT
+          { \c_postnotes_multi_notemarker_tl } =
           {
-            \kern -\c_postnotes_multi_notemarker_tl
-            \kern  \c_postnotes_multi_notemarker_tl
-            \scan_stop:
+            \bool_if:NTF \l_@@_multi_stored_lastkern_bool
+              { \l_@@_multi_lastkern_dim }
+              { \lastkern }
           }
-        \cs_set_protected:Npn \@@_multiple_check:
           {
-            \dim_compare:nNnT
-              { \c_postnotes_multi_notemarker_tl } =
-              {
-                \bool_if:NTF \l_@@_multi_stored_lastkern_bool
-                  { \l_@@_multi_lastkern_dim }
-                  { \lastkern }
-              }
-              {
-                \tl_set:Ne \l_@@_saved_spacefactor_multi_tl
-                  { \int_use:N \spacefactor }
+            \tl_set:Ne \l_@@_saved_spacefactor_multi_tl
+              { \int_use:N \spacefactor }
 %    \end{macrocode}
 % \pkg{latex-lab-footmisc.ltx} comments at this point ``shouldn't that be 2
 % unkerns?? (none would also be ok)'' and goes on to add a second \cs{unkern}.
@@ -818,41 +827,29 @@
 % \cs{posnote} (see below).  So, we might as well go with ``none'', since
 % otherwise we might be removing from the list a kern we didn't intend to.
 %    \begin{macrocode}
-                % \unkern
-                % \unkern
-                \tag_socket_use:n { postnotes/multsep/begin }
-                \@@_make_mark:Vnn \l_@@_multisep_tl { } { }
-                \tag_socket_use:n { postnotes/multsep/end }
-                \spacefactor \l_@@_saved_spacefactor_multi_tl
-                \scan_stop:
-              }
+            % \unkern
+            % \unkern
+            \tag_socket_use:n { postnotes/multsep/begin }
+            \@@_make_mark:Vnn \l_@@_multisep_tl { } { }
+            \tag_socket_use:n { postnotes/multsep/end }
+            \spacefactor \l_@@_saved_spacefactor_multi_tl
+            \scan_stop:
           }
+      }
+  }
 %    \end{macrocode}
 % \cs{postnote} does quite a lot of stuff before actually calling
 % \cs{@@_typeset_mark:eV} which results in \cs{lastkern} set by the previous
 % \cs{@@_multiple_prepare:} being lost (why?), so we need to store it earlier.
 %    \begin{macrocode}
-        \cs_set_protected:Npn \@@_multiple_store_lastkern:
-          {
-            \dim_set_eq:NN \l_@@_multi_lastkern_dim \lastkern
-            \bool_set_true:N \l_@@_multi_stored_lastkern_bool
-          }
-      } ,
-    multiple / false .code:n =
+\cs_new_protected:Npn \@@_multiple_store_lastkern:
+  {
+    \bool_if:NT \l_@@_multiple_bool
       {
-        \cs_set_eq:NN \@@_multiple_prepare: \prg_do_nothing:
-        \cs_set_eq:NN \@@_multiple_check: \prg_do_nothing:
-        \cs_set_eq:NN \@@_multiple_store_lastkern: \prg_do_nothing:
-      } ,
-    multiple / unknown .code:n =
-      { \msg_error:nnn { postnotes } { boolean-values-only } { multiple } } ,
-    multiple .default:n = true ,
-    multisep .tl_set:N = \l_@@_multisep_tl ,
-    multisep .initial:n = {,} ,
+        \dim_set_eq:NN \l_@@_multi_lastkern_dim \lastkern
+        \bool_set_true:N \l_@@_multi_stored_lastkern_bool
+      }
   }
-\msg_new:nnnn { postnotes } { boolean-values-only }
-  { Key~'#1'~accepts~boolean~values~only. }
-  { The~key~'#1'~only~accepts~the~values~'true'~and~'false'. }
 %    \end{macrocode}
 %
 %
