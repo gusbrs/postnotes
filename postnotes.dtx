@@ -899,6 +899,19 @@
 %    \end{macrocode}
 %
 %
+% \subsection*{\opt{labelqueue} option}
+%
+%    \begin{macrocode}
+\bool_new:N \l_@@_label_queue_bool
+\keys_define:nn { postnotes/setup }
+  {
+    labelqueue .bool_set:N = \l_@@_label_queue_bool ,
+    labelqueue .default:n = true ,
+    labelqueue .initial:n = false ,
+  }
+%    \end{macrocode}
+%
+%
 % \subsection*{\cs{postnotesetup}}
 %
 %
@@ -1566,10 +1579,22 @@
       \seq_set_eq:NN \l_@@_clear_queue_seq \g_@@_queue_seq
       \@@_split_labelseq:
 %    \end{macrocode}
-% We make the cut at this point.  Any notes added to the queue from this point
-% on belong to the next call of \cs{printpostnotes}.
+% We make the cut at this point.  \cs{g_@@_print_queue_seq} is stored won't
+% receive any more notes for the duration of this call of \cs{printpostnotes},
+% any notes added to the queue from this point on belong to the next call of
+% \cs{printpostnotes}.
 %    \begin{macrocode}
-      \seq_gset_eq:NN \g_@@_print_queue_seq \g_@@_queue_seq
+      \bool_lazy_and:nnTF
+        { \l_@@_label_queue_bool }
+        { ! \g_@@_firstrun_bool }
+        {
+          \seq_gset_eq:NN \g_@@_print_queue_seq
+            \g_@@_print_labelseq_queue_seq
+        }
+        {
+          \seq_gset_eq:NN \g_@@_print_queue_seq
+            \g_@@_queue_seq
+        }
       \seq_gclear:N \g_@@_queue_seq
 %    \end{macrocode}
 % I know, setting a whatsit in vertical mode\dots{}, I should have learned by
@@ -1591,8 +1616,7 @@
           \UseHook { postnotes/print/begin }
           \tl_set:Nn \l_@@_print_type_prev_tl { open }
           \@@_check_duplicates:N \g_@@_print_queue_seq
-          \bool_if:NT \l_@@_sort_bool
-            { \@@_sort_queue:N \g_@@_print_queue_seq }
+          \@@_sort_queue:N \g_@@_print_queue_seq
           \@@_check_floats:N \g_@@_print_queue_seq
           \bool_gset_true:N \g_@@_header_vars_next_bool
           \@@_get_headers_data:N \g_@@_print_queue_seq
@@ -1892,7 +1916,9 @@
 % \texttt{transitorily} let some duplicates pass than to drop every legitimate
 % note.
 %    \begin{macrocode}
-    \bool_if:NF \g_@@_firstrun_bool
+    \bool_lazy_and:nnT
+      { ! \g_@@_firstrun_bool }
+      { ! \l_@@_label_queue_bool }
       {
         \group_begin:
           \seq_clear:N \l_@@_tmpa_seq
@@ -1947,13 +1973,16 @@
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_check_floats:N #1
   {
-    \bool_lazy_and:nnT
-      { \l_@@_check_floats_bool }
+    \bool_lazy_all:nT
+      {
+        { \l_@@_check_floats_bool }
 %    \end{macrocode}
 % Ditto.  In this case, the queue is not touched, but it would still be a
 % spurious warning.
 %    \begin{macrocode}
-      { ! \g_@@_firstrun_bool }
+        { ! \g_@@_firstrun_bool }
+        { ! \l_@@_label_queue_bool }
+      }
       {
         \group_begin:
 %    \end{macrocode}
@@ -1991,31 +2020,34 @@
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_sort_queue:N #1
   {
-    \group_begin:
-      \seq_gsort:Nn #1
-        {
-          \@@_prop_get:nnN {##1} { pnsectid } \l_@@_tmpa_tl
-          \@@_prop_get:nnN {##2} { pnsectid } \l_@@_tmpb_tl
-          \tl_if_eq:NNTF \l_@@_tmpa_tl \l_@@_tmpb_tl
+    \bool_if:NT \l_@@_sort_bool
+      {
+        \group_begin:
+          \seq_gsort:Nn #1
             {
-              \@@_prop_get:nnN {##1} { type } \l_@@_tmpa_tl
-              \@@_prop_get:nnN {##2} { type } \l_@@_tmpb_tl
-              \bool_lazy_and:nnTF
-                { \str_if_eq_p:Vn \l_@@_tmpa_tl { note } }
-                { \str_if_eq_p:Vn \l_@@_tmpb_tl { note } }
+              \@@_prop_get:nnN {##1} { pnsectid } \l_@@_tmpa_tl
+              \@@_prop_get:nnN {##2} { pnsectid } \l_@@_tmpb_tl
+              \tl_if_eq:NNTF \l_@@_tmpa_tl \l_@@_tmpb_tl
                 {
-                  \@@_prop_get:nnN {##1} { sortnum } \l_@@_tmpa_tl
-                  \@@_prop_get:nnN {##2} { sortnum } \l_@@_tmpb_tl
-                  \fp_compare:nNnTF
-                    { \l_@@_tmpa_tl } > { \l_@@_tmpb_tl }
-                    { \sort_return_swapped: }
-                    { \sort_return_same:    }
+                  \@@_prop_get:nnN {##1} { type } \l_@@_tmpa_tl
+                  \@@_prop_get:nnN {##2} { type } \l_@@_tmpb_tl
+                  \bool_lazy_and:nnTF
+                    { \str_if_eq_p:Vn \l_@@_tmpa_tl { note } }
+                    { \str_if_eq_p:Vn \l_@@_tmpb_tl { note } }
+                    {
+                      \@@_prop_get:nnN {##1} { sortnum } \l_@@_tmpa_tl
+                      \@@_prop_get:nnN {##2} { sortnum } \l_@@_tmpb_tl
+                      \fp_compare:nNnTF
+                        { \l_@@_tmpa_tl } > { \l_@@_tmpb_tl }
+                        { \sort_return_swapped: }
+                        { \sort_return_same:    }
+                    }
+                    { \sort_return_same: }
                 }
                 { \sort_return_same: }
             }
-            { \sort_return_same: }
-        }
-    \group_end:
+        \group_end:
+      }
   }
 %    \end{macrocode}
 % \end{macro}
