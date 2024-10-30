@@ -837,16 +837,10 @@
   {
     checkduplicates .bool_set:N = \l_@@_check_dupli_bool ,
     checkduplicates .default:n = true ,
-    checkduplicates .initial:n = false ,
+    checkduplicates .initial:n = true ,
     checkfloats .bool_set:N = \l_@@_check_floats_bool ,
     checkfloats .default:n = true ,
     checkfloats .initial:n = false ,
-    check .meta:n =
-      {
-        checkduplicates = {#1} ,
-        checkfloats = {#1} ,
-      } ,
-    check .default:n = true ,
   }
 %    \end{macrocode}
 %

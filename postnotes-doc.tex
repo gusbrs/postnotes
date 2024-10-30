@@ -452,7 +452,6 @@ only reasonable thing to do.  \opt{sort} is a boolean option, and defaults to
 
 \DescribeOption{checkduplicates} %
 \DescribeOption{checkfloats} %
-\DescribeOption{check} %
 Depending on where one places a \cs{postnote}, some undesirable side-effects
 may ensue.  A note set somewhere which is subject to measuring/trial passes
 may be stored multiple times, thus appearing in duplicity at
@@ -475,9 +474,16 @@ document for which the compilation has stabilized: with labels and floats
 already in place.  Also note that the \opt{checkfloats} option does not test
 ``if the marks of my notes are in numeric order'', but rather whether the
 order the marks are typeset along the document and the order the notes are
-printed in \cs{printposnotes} are the same.  The \opt{check} option is a
-convenience alias to set both checks at the same time.  These options are
-booleans and are initially disabled.
+printed in \cs{printposnotes} are the same.  These options are booleans.
+\opt{checkduplicates} is initially enabled, since whether a place performs
+measuring passes does not really change, and it is easy to deal with a note in
+this situation with the \opt{maybemulti} option. \opt{checkfloats}, on the
+other hand, is initially disabled.  Float placement (and its implications for
+\pkg{postnotes}) is something one should not worry about until the very last
+stages of the document.  At that time, I expect it to be useful, but during
+the writing phase, such a warning would only be distracting.  Think of if as
+something to use like you would use the \pkg{widows-and-orphans} package, for
+example.
 
 \DescribeOption{maybemulti} %
 A \cs{postnote} set while \opt{maybemulti} is true is checked at
