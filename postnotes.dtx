@@ -1970,16 +1970,13 @@
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_check_floats:N #1
   {
-    \bool_lazy_all:nT
-      {
-        { \l_@@_check_floats_bool }
+    \bool_lazy_and:nnT
+      { \l_@@_check_floats_bool }
 %    \end{macrocode}
 % Ditto.  In this case, the queue is not touched, but it would still be a
 % spurious warning.
 %    \begin{macrocode}
-        { ! \g_@@_firstrun_bool }
-        { ! \l_@@_label_queue_bool }
-      }
+      { ! \g_@@_firstrun_bool }
       {
         \group_begin:
 %    \end{macrocode}
