@@ -479,6 +479,16 @@ printed in \cs{printposnotes} are the same.  The \opt{check} option is a
 convenience alias to set both checks at the same time.  These options are
 booleans and are initially disabled.
 
+\DescribeOption{maybemulti} %
+A \cs{postnote} set while \opt{maybemulti} is true is checked at
+\cs{printposnotes} and only kept in the printing queue if its corresponding
+(internal) page label exists.  It's the same principle used for
+\opt{checkduplicates}, but instead of getting the warning, here you flag the
+duplicate for potential dropping.  The drawback is that, since it requires the
+label for the check, a new note set with \opt{maybemulti} will need one more
+compilation run than otherwise.  This is a boolean option, and the initial
+value is false.
+
 
 \subsection*{Note options}
 \label{sec:note-options}
@@ -526,6 +536,10 @@ The \opt{label} option sets a standard \cs{label} named with the value given
 to the option.  When the \pkg{zref-user} package is loaded, a corresponding
 \opt{zlabel} option is also provided.  See \zcref{sec:cross-references} for
 details about cross-referencing.
+
+\DescribeOption{maybemulti} %
+Does the same thing as the corresponding package option, but is applied for a
+particular \cs{postnote}.
 
 
 \subsection*{Section options}

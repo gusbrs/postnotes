@@ -261,8 +261,6 @@
       }
     \prop_gput:cne { \@@_data_name:e {#1} } { thesection }
       { \thesection }
-    \prop_gput:cne { \@@_data_name:e {#1} } { multibool }
-      { \bool_to_str:N \l_@@_maybe_multi_bool }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
   }
 \cs_generate_variant:Nn \@@_store_section:nn { ne }
@@ -853,6 +851,18 @@
 %    \end{macrocode}
 %
 %
+% \subsection*{\opt{maybemulti} option}
+%
+%    \begin{macrocode}
+\bool_new:N \l_@@_maybe_multi_bool
+\keys_define:nn { postnotes/setup }
+  {
+    maybemulti .bool_set:N = \l_@@_maybe_multi_bool ,
+    maybemulti .default:n = true ,
+    maybemulti .initial:n = false ,
+  }
+%    \end{macrocode}
+%
 %
 % \subsection*{\opt{style} option}
 %
@@ -1159,7 +1169,6 @@
 \fp_new:N \l_@@_sort_num_fp
 \tl_new:N \l_@@_note_label_tl
 \bool_new:N \l_@@_manual_sortnum_bool
-\bool_new:N \l_@@_maybe_multi_bool
 \keys_define:nn { postnotes/note }
   {
     markstr .tl_set:N = \l_@@_mark_tl ,
@@ -1180,6 +1189,8 @@
     nomark .default:n = true ,
     label .tl_set:N = \l_@@_note_label_tl ,
     label .value_required:n = true ,
+    maybemulti .bool_set:N = \l_@@_maybe_multi_bool ,
+    maybemulti .default:n = true ,
   }
 %    \end{macrocode}
 %
@@ -2460,19 +2471,16 @@
 % captions, of course, but is not overkill.
 %
 % From the user's perspective, one-line captions will just work.  For two-line
-% captions, there are two alternatives: i) decrement the counter by 1
-% \texttt{\textbackslash{}addtocounter\{postnote\}\{-1\}} before the caption,
-% then call \cs{postnote} inside the caption; or ii) right before the caption,
-% call
+% captions, there are two alternatives: i)
+% \texttt{\textbackslash{}stepcounter\{postnote\}} before the caption, then
+% call \cs{postnote} with \texttt{mark=\textbackslash{}arabic\{postnote\}}; or
+% ii) right before the caption, call
 % \texttt{\textbackslash{}postnote[nomark]\{\textbackslash{}label\{mynote\}...\}},
 % then use \texttt{\textbackslash{}postnoteref\{mynote\}} inside the caption.
 %
 %    \begin{macrocode}
 \AddToHook { postnotes/note/begin } [ ./compat/caption ]
-  {
-    \cs_if_exist:NT \@captype
-      { \bool_set_true:N \l_@@_maybe_multi_bool }
-  }
+  { \cs_if_exist:NT \@captype { \postnotesetup { maybemulti } } }
 %    \end{macrocode}
 %
 %
@@ -2863,24 +2871,21 @@
 % \pkg{amsmath}), poses problems if its own.  Despite my best efforts, I could
 % not salvage things from the use of \cs{mathchoice} and the redefinitions of
 % \cs{setcounter} and \cs{addtocounter} performed by \pkg{amstext}.  Setting
-% \cs{l_@@_maybe_multi_bool} when \texttt{firstchoice@} is \texttt{false}
-% grants us a working situation for display style.  But the use of
-% \cs{postnote} inside \cs{text} (and, if \pkg{amsmath} is loaded,
-% \cs{textnormal}, \cs{textup}, etc.) in inline math environments is not
-% supported.  If a note really needs to be there, one can use the \opt{nomark}
-% option and \cs{postnoteref}.  Things should work in text mode and in display
-% style.  For some related discussion with regard to footnotes,
-% see \url{https://tex.stackexchange.com/a/82820} and, in particular, Barbara
+% \opt{maybemulti} when \texttt{firstchoice@} is \texttt{false} grants us a
+% working situation for display style.  But the use of \cs{postnote} inside
+% \cs{text} (and, if \pkg{amsmath} is loaded, \cs{textnormal}, \cs{textup},
+% etc.) in inline math environments is not supported.  If a note really needs
+% to be there, one can use the \opt{nomark} option and \cs{postnoteref}.
+% Things should work in text mode and in display style.  For some related
+% discussion with regard to footnotes, see
+% \url{https://tex.stackexchange.com/a/82820} and, in particular, Barbara
 % Beeton's comment: ``This is certainly bravura code.  I do hope it doesn't
 % result in a request to add \cs{footnote} capabilities to \pkg{amsmath}'s
 % multi-line display facilities.  (The answer will almost certainly be "no".
 % We agree with Kopka \& Daly.)''
 %    \begin{macrocode}
     \AddToHook { postnotes/note/begin } [ postnotes/compat/amsmath ]
-      {
-        \legacy_if:nF { firstchoice@ }
-          { \bool_set_true:N \l_@@_maybe_multi_bool }
-      }
+      { \legacy_if:nF { firstchoice@ } { \postnotesetup { maybemulti } } }
   }
 %    \end{macrocode}
 %

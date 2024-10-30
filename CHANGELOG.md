@@ -2,11 +2,17 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.3.0...HEAD)
 
+*WARNING*: You may need to clear your .aux files after this update.
+- (Internally, the macro used in the .aux file, `\post@note`, now takes more
+  arguments then it used to.)
+
 ### Added
 - Provide options `checkduplicates` and `checkfloats`, which issue warnings in
   case of duplicate notes from measuring passes and of notes order mismatch
   resulting from float placement.
-  - WARNING: You may need to clear your .aux files after the upgrade.
+- Provide option `maybemulti`, exposing to users a simple method to handle
+  cases of duplicate notes resulting from measuring passes which was already
+  used internally.
 - Warning at `enddocument` for stray `\postnote`s left after the last
   `\printpostnotes`.
 
