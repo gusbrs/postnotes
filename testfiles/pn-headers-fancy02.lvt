@@ -23,6 +23,7 @@
 \makeatother
 \pagestyle{headings}
 \AddToHook{cmd/section/before}{%
+  \pnsetcounteraux{0}%
   \postnotesection{\subsection*{Notes to section \pnthesectionnextnote}}}
 \counterwithin*{postnote}{section}
 

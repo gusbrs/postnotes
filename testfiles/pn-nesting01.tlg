@@ -149,6 +149,7 @@ Completed box being shipped out [5]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 278.12509fil
 ....\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
+....\write1{\token_to_str:N \postnote@setcounteraux {0}}
 ....\write1{\token_to_str:N \post@note {section}{9}{\thepage }{}}
 ....\write-{}
 ....\pdfdest name{chapter*.1} xyz
@@ -178,6 +179,7 @@ Completed box being shipped out [5]
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {section}{10}{\thepage }{}}
+....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }{}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -558,6 +560,7 @@ Completed box being shipped out [6]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x0.0, glue set 540.0fil
 ....\write1{\token_to_str:N \post@note {preprint}{2}{}{}}
+....\write1{\token_to_str:N \postnote@setcounteraux {0}}
 ....\write1{\token_to_str:N \post@note {section}{13}{\thepage }{}}
 ....\write-{}
 ....\glue(\topskip) 10.0
@@ -626,6 +629,7 @@ Completed box being shipped out [7]
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
 ....\write1{\token_to_str:N \post@note {section}{14}{\thepage }{}}
+....\penalty 10000
 ....\write1{\token_to_str:N \post@note {print}{2}{\int_use:N \c@page }{}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -824,6 +828,7 @@ Completed box being shipped out [8]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x0.0, glue set 540.0fil
 ....\write1{\token_to_str:N \post@note {preprint}{3}{}{}}
+....\write1{\token_to_str:N \postnote@setcounteraux {0}}
 ....\write1{\token_to_str:N \post@note {section}{17}{\thepage }{}}
 ....\write-{}
 ....\glue(\topskip) 10.0

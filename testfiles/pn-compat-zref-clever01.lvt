@@ -22,6 +22,7 @@
 \begin{document}
 
 \chapter{First chapter}
+\pnsetcounteraux{0}
 \postnotesection{\section{Notes to chapter 1}}
 
 \textsuperscript{avoid font warning}
@@ -33,6 +34,7 @@
 \postnote[zlabel={en:m:3}]{\zlabel{en:t:3}Foo note.}
 
 \chapter{Second chapter}
+\pnsetcounteraux{0}
 \postnotesection{\section{Notes to chapter 2}}
 
 \postnote[zlabel={en:m:4}]{\zlabel{en:t:4}Foo note.}

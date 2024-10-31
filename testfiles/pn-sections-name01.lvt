@@ -22,8 +22,9 @@
 \AddToHook{postnotes/note/store}{
   \prop_gput:NeV \g_my_names_prop
     { \l_postnotes_note_id_tl } \g_my_currentname_tl }
-\AddToHook{cmd/chapter/before}{
-  \postnotesection{
+\AddToHook{cmd/chapter/before}{%
+  \pnsetcounteraux{0}%
+  \postnotesection{%
     \section*{Notes~to~\prop_item:NV \g_my_names_prop \pnidnextnote}}}
 \ExplSyntaxOff
 \counterwithin*{postnote}{chapter}

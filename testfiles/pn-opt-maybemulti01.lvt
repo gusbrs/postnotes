@@ -13,7 +13,10 @@
 \renewcommand\ttdefault{cmtt}
 
 \usepackage{postnotes}
+% Default for the file, mention only if disabled.
 \postnotesetup{checkduplicates}
+% Default, but so that this file can also be tested with counteraux.
+\postnotesetup{counteraux=false}
 
 \usepackage[textwidth=8cm]{geometry}
 

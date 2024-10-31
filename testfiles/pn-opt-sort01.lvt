@@ -45,6 +45,7 @@
 
 \OMIT
 \setcounter{postnote}{0}
+\pnsetcounteraux{0}
 
 1.\postnote[sortnum=2]{1.}\par
 2.\postnote[sortnum=5]{2.}\par

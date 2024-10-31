@@ -42,6 +42,7 @@ Bar.%
 \chapter{Second chapter}
 \postnotesection{\section*{Notes to chapter \pnthechapter}}
 \setcounter{postnote}{0}
+\pnsetcounteraux{0}
 
 \TIMO
 

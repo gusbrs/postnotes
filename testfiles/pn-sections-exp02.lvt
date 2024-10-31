@@ -43,6 +43,7 @@ Bar.%
 \section{Second section}
 \postnotesection[exp]{\noexpand\subsection*{Notes to section \thesection}}
 \setcounter{postnote}{0}
+\pnsetcounteraux{0}
 
 \TIMO
 

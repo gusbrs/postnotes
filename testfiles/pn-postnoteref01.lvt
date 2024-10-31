@@ -13,6 +13,8 @@
 \renewcommand\ttdefault{cmtt}
 
 \usepackage{postnotes}
+% Default, but so that this file can also be tested with counteraux.
+\AddToHook{begindocument}{\postnotesetup{sort}}
 
 \usepackage{hyperref}
 
@@ -79,6 +81,7 @@ Baz.%
 
 
 \setcounter{postnote}{5}
+\pnsetcounteraux{5}
 
 \BEGINTEST{Notes: No mark}
 Foo.%

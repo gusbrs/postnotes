@@ -19,6 +19,7 @@
   \IfBooleanTF{#1}{%
     \origlatexchapter*{#3}%
     \setcounter{postnote}{0}%
+    \pnsetcounteraux{0}%
     \postnotesection{\section*{Notes to ``#3''}}%
   }{%
     \IfNoValueTF{#2}{%
@@ -26,6 +27,7 @@
     }{%
       \origlatexchapter[#2]{#3}%
     }%
+    \pnsetcounteraux{0}%
     \postnotesection{\section*{Notes to chapter \pnthechapter}}%
   }%
 }

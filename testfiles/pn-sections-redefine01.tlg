@@ -153,7 +153,10 @@ Completed box being shipped out [7]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
+....\write1{\token_to_str:N \postnote@setcounteraux {0}}
+....\penalty 10000
 ....\write1{\token_to_str:N \post@note {section}{9}{\thepage }{}}
+....\penalty 10000
 ....\marks1{\__mark_id:n {5}\pnheaderdefault }
 ....\marks2{\__mark_id:n {6}\pnheaderdefault }
 ....\marks3{\__mark_id:n {7}\pnheaderdefault }

@@ -13,8 +13,10 @@
 \renewcommand\ttdefault{cmtt}
 
 \usepackage{postnotes}
-% default for the file, mention only if disabled
+% Default for the file, mention only if disabled.
 \postnotesetup{checkfloats}
+% Default, but so that this file can also be tested with counteraux.
+\postnotesetup{counteraux=false}
 
 \begin{document}
 

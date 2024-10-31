@@ -13,6 +13,8 @@
 \renewcommand\ttdefault{cmtt}
 
 \usepackage{postnotes}
+% Default, but so that this file can also be tested with counteraux.
+\AddToHook{begindocument}{\postnotesetup{sort}}
 
 \usepackage{hyperref}
 
@@ -50,6 +52,7 @@
 \box0
 
 \stepcounter{postnote}
+\pnaddtocounteraux{1}
 
 \OMIT
 \clearpage{}

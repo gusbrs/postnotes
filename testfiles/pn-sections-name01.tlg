@@ -131,6 +131,7 @@ Completed box being shipped out [7]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 246.15294fil
 ....\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
+....\write1{\token_to_str:N \postnote@setcounteraux {0}}
 ....\write1{\token_to_str:N \post@note {section}{9}{\thepage }{}}
 ....\write-{}
 ....\pdfdest name{chapter*.2} xyz

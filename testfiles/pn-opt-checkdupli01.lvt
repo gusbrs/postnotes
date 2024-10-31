@@ -13,6 +13,8 @@
 \renewcommand\ttdefault{cmtt}
 
 \usepackage{postnotes}
+% Default, but so that this file can also be tested with counteraux.
+\postnotesetup{counteraux=false}
 
 \usepackage[textwidth=8cm]{geometry}
 

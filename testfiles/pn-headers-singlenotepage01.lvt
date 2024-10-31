@@ -23,6 +23,7 @@
 }
 \makeatother
 \AddToHook{cmd/chapter/before}{%
+  \pnsetcounteraux{0}%
   \postnotesection{\section*{Notes to chapter \pnthechapternextnote}}}
 \counterwithin*{postnote}{chapter}
 
