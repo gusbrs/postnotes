@@ -1495,7 +1495,11 @@
 %   \end{syntax}
 %    \begin{macrocode}
 \NewDocumentCommand \postnotesection { O { } +m }
-  { \@@_section:nn {#1} {#2} }
+  {
+    \@bsphack
+    \@@_section:nn {#1} {#2}
+    \@esphack
+  }
 \NewDocumentCommand \postnotesectionx { O { } +m }
   {
     % NOTE Command deprecated in 2022-12-27 for v0.2.0.
