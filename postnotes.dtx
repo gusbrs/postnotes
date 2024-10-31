@@ -1275,7 +1275,7 @@
 \tl_new:N \l_@@_mark_tl
 \bool_new:N \l_@@_nomark_bool
 \fp_new:N \l_@@_sort_num_fp
-\tl_new:N \l_@@_note_label_tl
+\str_new:N \l_@@_note_label_str
 \bool_new:N \l_@@_manual_sortnum_bool
 \keys_define:nn { postnotes/note }
   {
@@ -1295,7 +1295,7 @@
     mark .value_required:n = true ,
     nomark .bool_set:N = \l_@@_nomark_bool ,
     nomark .default:n = true ,
-    label .tl_set:N = \l_@@_note_label_tl ,
+    label .str_set:N = \l_@@_note_label_str ,
     label .value_required:n = true ,
     maybemulti .bool_set:N = \l_@@_maybe_multi_bool ,
     maybemulti .default:n = true ,
@@ -1429,10 +1429,10 @@
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_set_user_labels:
   {
-    \tl_if_empty:NF \l_@@_note_label_tl
-      { \exp_args:NV \label \l_@@_note_label_tl }
-    \tl_if_empty:NF \l_@@_note_zlabel_tl
-      { \exp_args:NV \zlabel \l_@@_note_zlabel_tl }
+    \str_if_empty:NF \l_@@_note_label_str
+      { \exp_args:NV \label \l_@@_note_label_str }
+    \str_if_empty:NF \l_@@_note_zlabel_str
+      { \exp_args:NV \zlabel \l_@@_note_zlabel_str }
   }
 %    \end{macrocode}
 % \end{macro}
@@ -2854,12 +2854,12 @@
 %
 % \subsection*{\pkg{zref-user}}
 %
-% \begin{macro}{\l_@@_note_zlabel_tl}
+% \begin{macro}{\l_@@_note_zlabel_str}
 %   Even though the \opt{zlabel} option is provided only when \pkg{zref-user}
-%   is loaded, \cs{l_@@_note_zlabel_tl} must be unconditionally defined, since
-%   it is presumed to exist by \cs{@@_set_user_labels:}.
+%   is loaded, \cs{l_@@_note_zlabel_str} must be unconditionally defined,
+%   since it is presumed to exist by \cs{@@_set_user_labels:} and elsewhere.
 %    \begin{macrocode}
-\tl_new:N \l_@@_note_zlabel_tl
+\str_new:N \l_@@_note_zlabel_str
 %    \end{macrocode}
 % \end{macro}
 %
@@ -2871,7 +2871,7 @@
 %    \begin{macrocode}
     \keys_define:nn { postnotes/note }
       {
-        zlabel .tl_set:N = \l_@@_note_zlabel_tl ,
+        zlabel .str_set:N = \l_@@_note_zlabel_str ,
         zlabel .value_required:n = true ,
       }
 %    \end{macrocode}
@@ -3538,22 +3538,22 @@
 %    \begin{macrocode}
     \AddToHook { postnotes/note/store } [ postnotes/tagsup ]
       {
-        \tl_if_empty:NF \l_@@_note_label_tl
+        \str_if_empty:NF \l_@@_note_label_str
           {
             \prop_gput:cnV
               { \@@_data_name:e { \l_postnotes_note_id_tl } }
-              { label } \l_@@_note_label_tl
+              { label } \l_@@_note_label_str
           }
       }
     \AddToHook { package/zref-user/after } [ postnotes/tagsup ]
       {
         \AddToHook { postnotes/note/store } [ postnotes/tagsup ]
           {
-            \tl_if_empty:NF \l_@@_note_zlabel_tl
+            \str_if_empty:NF \l_@@_note_zlabel_str
               {
                 \prop_gput:cnV
                   { \@@_data_name:e { \l_postnotes_note_id_tl } }
-                  { zlabel } \l_@@_note_zlabel_tl
+                  { zlabel } \l_@@_note_zlabel_str
               }
           }
       }
