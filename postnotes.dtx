@@ -355,8 +355,9 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% And ensure \cs{post@note} is defined in the \file{.aux} file.  The hooks are
-% the same used by \pkg{hyperref} for similar purpose.
+% And ensure \cs{post@note}, \cs{postnote@setcounteraux}, and
+% \cs{postnote@addtocounteraux} are defined in the \file{.aux} file.  The
+% hooks are the same used by \pkg{hyperref} for similar purpose.
 %
 %    \begin{macrocode}
 \AddToHook { begindocument }
@@ -364,15 +365,41 @@
     \legacy_if:nT { @filesw }
       {
         \iow_now:Ne \@mainaux
-          { \token_to_str:N \providecommand \token_to_str:N \post@note[4]{} }
+          {
+            \token_to_str:N \providecommand
+            \token_to_str:N \post@note [4] { }
+          }
+        \iow_now:Ne \@mainaux
+          {
+            \token_to_str:N \providecommand
+            \token_to_str:N \postnote@setcounteraux [1] { }
+          }
+        \iow_now:Ne \@mainaux
+          {
+            \token_to_str:N \providecommand
+            \token_to_str:N \postnote@addtocounteraux [1] { }
+          }
       }
   }
 \AddToHook { include/before }
   {
     \legacy_if:nT { @filesw }
       {
-        \iow_now:Ne \@partaux
-          { \token_to_str:N \providecommand \token_to_str:N \post@note[4]{} }
+        \iow_now:Ne \@mainaux
+          {
+            \token_to_str:N \providecommand
+            \token_to_str:N \post@note [4] { }
+          }
+        \iow_now:Ne \@mainaux
+          {
+            \token_to_str:N \providecommand
+            \token_to_str:N \postnote@setcounteraux [1] { }
+          }
+        \iow_now:Ne \@mainaux
+          {
+            \token_to_str:N \providecommand
+            \token_to_str:N \postnote@addtocounteraux [1] { }
+          }
       }
   }
 %    \end{macrocode}
@@ -944,6 +971,33 @@
   }
 %    \end{macrocode}
 %
+%
+%    \begin{macrocode}
+\cs_new_protected:Npn \postnote@setcounteraux #1
+  { \int_gset:Nn \g_@@_postnote_counteraux_int { #1 } }
+\cs_new_protected:Npn \postnote@addtocounteraux #1
+  { \int_gadd:Nn \g_@@_postnote_counteraux_int { #1 } }
+\NewDocumentCommand \pnsetcounteraux { m }
+  {
+    \@bsphack
+    \legacy_if:nT { @filesw }
+      {
+        \iow_shipout_e:Nn \@auxout
+          { \token_to_str:N \postnote@setcounteraux { #1 } }
+      }
+    \@esphack
+  }
+\NewDocumentCommand \pnaddtocounteraux { m }
+  {
+    \@bsphack
+    \legacy_if:nT { @filesw }
+      {
+        \iow_shipout_e:Nn \@auxout
+          { \token_to_str:N \postnote@addtocounteraux { #1 } }
+      }
+    \@esphack
+  }
+%    \end{macrocode}
 %
 %
 %
