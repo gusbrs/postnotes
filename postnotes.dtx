@@ -311,11 +311,8 @@
 %   type}@\meta{id}}, according to the prefix set by \cs{c_@@_ref_prefix_tl}.
 %   \cs{@@_store_labelseq:nn} is an auxiliary function to store the sequence
 %   of the labels in the \file{.aux} file, used to check for possible sorting
-%   problems due to floats.  Note that only ``mark'' and ``section'' (those
-%   that step \cs{g_@@_note_id_int}) should go in the labelseq, othewise
-%   \cs{@@_split_labelseq:} will fail in its task.
-%   \cs{@@_step_counteraux:nnn} handles counter stepping and storing for the
-%   \opt{counteraux} option.
+%   problems due to floats. \cs{@@_step_counteraux:nnn} handles counter
+%   stepping and storing for the \opt{counteraux} option.
 %     \begin{syntax}
 %       \cs{post@note} \Arg{label type} \Arg{id} \Arg{label content (page)}
 %       ~~\Arg{counteraux step}
@@ -332,10 +329,13 @@
 \bool_gset_true:N \g_@@_firstrun_bool
 \cs_new_protected:Npn \@@_store_labelseq:nn #1#2
   {
-    \bool_lazy_or:nnT
-      { \str_if_eq_p:nn {#1} { mark } }
-      { \str_if_eq_p:nn {#1} { section } }
-      { \seq_gput_right:Nn \g_@@_labelseq_seq {#2} }
+    \bool_lazy_any:nT
+      {
+        { \str_if_eq_p:nn {#1} { mark } }
+        { \str_if_eq_p:nn {#1} { section } }
+        { \str_if_eq_p:nn {#1} { preprint } }
+      }
+      { \seq_gput_right:Nn \g_@@_labelseq_seq { {#1} {#2} } }
   }
 \cs_new_protected:Npn \@@_step_counteraux:nnn #1#2#3
   {
@@ -1762,7 +1762,6 @@
   {
     \group_begin:
       \int_gincr:N \g_@@_print_postnotes_int
-      \seq_set_eq:NN \l_@@_clear_queue_seq \g_@@_queue_seq
       \@@_split_labelseq:
 %    \end{macrocode}
 % We make the cut at this point.  \cs{g_@@_print_queue_seq} is stored won't
@@ -1781,6 +1780,7 @@
           \seq_gset_eq:NN \g_@@_print_queue_seq
             \g_@@_queue_seq
         }
+      \seq_set_eq:NN \l_@@_clear_queue_seq \g_@@_print_queue_seq
       \seq_gclear:N \g_@@_queue_seq
 %    \end{macrocode}
 % I know, setting a whatsit in vertical mode\dots{}, I should have learned by
@@ -2031,6 +2031,21 @@
 %
 % \subsection*{Print auxiliary}
 %
+% The conditions used to split \cs{g_@@_labelseq_seq} is subtly different
+% depending on whether we are using \cs{g_@@_counteraux_bool} or not.  In the
+% standard case, the numbering of the floats are set at ``expansion time'', so
+% they belong where they are set.  With \opt{counteraux}, the numbering of
+% floats are set at ``shipout time'', so they belong where they are typeset.
+% In other words, with \opt{counteraux} notes on floats can cross the
+% boundaries of \cs{printpostnotes}, while without it, they must not.
+% Furthermore, the purpose of \cs{g_@@_labelseq_seq} is different in each
+% case.  With \opt{counteraux} it is used to build the actual print queue,
+% while in the standard case it is only used in \cs{@@_check_floats:N}.
+% Therefore, with \opt{counteraux} the cut is made at the place the preprint
+% label for the current \cs{printpostnotes} is found, while in the standard
+% case, \cs{g_@@_note_id_int} is used directly to distribute the elements
+% between the current \cs{printpostnotes} and future ones.
+%
 %
 % \begin{macro}{\@@_split_labelseq:}
 %    \begin{macrocode}
@@ -2040,28 +2055,93 @@
     \group_begin:
       \seq_clear:N \l_@@_tmpa_seq
       \seq_clear:N \l_@@_tmpb_seq
-      \seq_map_inline:Nn \g_@@_labelseq_seq
+      \bool_if:NTF \g_@@_counteraux_bool
         {
+          \tl_set:Ne \l_@@_tmpa_tl
+            { { preprint } { \int_use:N \g_@@_print_postnotes_int } }
 %    \end{macrocode}
-% We use \cs{g_@@_note_id_int} to split \cs{g_@@_labelseq_seq}.  It might seem
-% a tad contradictory to use the integer set at ``expansion time'' to split
-% the sequence generated from the \file{.aux} file.  The thing is, both things
-% should converge on a document compiled to stability.  Well, usually\dots{},
-% in theory a float may float past the whole \cs{printpostnotes}, in which
-% case it will be included in this call nevertheless.  Also, and most
-% importantly, at this point in the document, only the notes up to
-% \cs{g_@@_note_id_int} have any stored data that could be printed.  Hence,
-% trying to generate a split criterion from the \file{.aux} file only gets us
-% some transitory errors of property variables not found.  A limitation, if
-% you will, of not storing the whole data in the \file{.aux} file, but which
-% also applies to the traditional external file approach.
+% The preprint label of a \cs{printpostnotes} at the end of the document may
+% not have been written: if it's empty, it may not be shipped out at all.
+% But, since it's a counter, stepped sequentially and not floating, even if it
+% is transitorily missing, it will be at the end.  In other words, if this one
+% is not found, there will be no subsequent preprints in the sequence.
 %    \begin{macrocode}
-          \int_compare:nNnTF { ##1 } > { \g_@@_note_id_int }
-            { \seq_put_right:Nn \l_@@_tmpb_seq { ##1 } }
-            { \seq_put_right:Nn \l_@@_tmpa_seq { ##1 } }
+          \seq_if_in:NVF \g_@@_labelseq_seq \l_@@_tmpa_tl
+            { \seq_gput_right:NV \g_@@_labelseq_seq \l_@@_tmpa_tl }
+          \bool_do_until:nn
+            { \tl_if_eq_p:NN \l_@@_tmpb_tl \l_@@_tmpa_tl }
+            {
+              \seq_gpop_left:NN \g_@@_labelseq_seq \l_@@_tmpb_tl
+              \str_case:enT
+                { \tl_item:Nn \l_@@_tmpb_tl { 1 } }
+                {
+                  { mark }    { }
+                  { section } { }
+                }
+                {
+%    \end{macrocode}
+% If the id of the labelseq item is larger than the current note id, we don't
+% have data for the note at this point, and cannot print it.  Period.  Now,
+% usually this will occur due to transitory effects.  But it is theoretically
+% possible that a float is sent to the top of the page and gets typeset before
+% a ``future \cs{printpostnotes}''.  So what we cannot print, we give back to
+% the label sequence of the next \cs{printpostnotes}.  If they are transitory,
+% they will eventually go away.  If they are not, better to keep them with the
+% wrong numbering than dropping it altogether.  Alas, there's nothing else we
+% could do, short of writing the whole data to the \file{.aux} file, which is
+% clearly not worth this corner case.
+%    \begin{macrocode}
+                  \int_compare:nNnTF
+                    { \tl_item:Nn \l_@@_tmpb_tl { 2 } }
+                    >
+                    { \g_@@_note_id_int }
+                    { \seq_put_right:Ne \l_@@_tmpb_seq \l_@@_tmpb_tl }
+                    {
+                      \seq_put_right:Ne \l_@@_tmpa_seq
+                        { \tl_item:Nn \l_@@_tmpb_tl { 2 } }
+                    }
+                }
+%    \end{macrocode}
+% No need for the \texttt{F} branch of \cs{str_case:enT}, at this point the
+% preprint of past \cs{printpostnotes} can no longer be here, and we don't go
+% further than the current one.  In theory, we could even go without
+% \cs{str_case:enT}, but let's play safe and keep the function robust against
+% future changes of the code.
+%    \begin{macrocode}
+            }
+          \seq_gset_eq:NN \g_@@_print_labelseq_queue_seq \l_@@_tmpa_seq
+          \seq_concat:NNN \l_@@_tmpa_seq \l_@@_tmpb_seq \g_@@_labelseq_seq
+          \seq_gset_eq:NN \g_@@_labelseq_seq \l_@@_tmpa_seq
         }
-      \seq_gset_eq:NN \g_@@_print_labelseq_queue_seq \l_@@_tmpa_seq
-      \seq_gset_eq:NN \g_@@_labelseq_seq \l_@@_tmpb_seq
+        {
+          \seq_map_inline:Nn \g_@@_labelseq_seq
+            {
+              \str_case:enT
+                { \tl_item:nn { ##1 } { 1 } }
+                {
+                  { mark }    { }
+                  { section } { }
+                }
+                {
+                  \int_compare:nNnTF
+                    { \tl_item:nn { ##1 } { 2 } }
+                    >
+                    { \g_@@_note_id_int }
+                    { \seq_put_right:Nn \l_@@_tmpb_seq { ##1 } }
+                    {
+                      \seq_put_right:Ne \l_@@_tmpa_seq
+                        { \tl_item:nn { ##1 } { 2 } }
+                    }
+                }
+%    \end{macrocode}
+% Also no need for the \texttt{F} branch here, but for a different reason.
+% The preprint label plays no role whatsoever if \opt{couteraux=false}, so we
+% just drop them altogether if found.
+%    \begin{macrocode}
+            }
+          \seq_gset_eq:NN \g_@@_print_labelseq_queue_seq \l_@@_tmpa_seq
+          \seq_gset_eq:NN \g_@@_labelseq_seq \l_@@_tmpb_seq
+        }
     \group_end:
   }
 %    \end{macrocode}
