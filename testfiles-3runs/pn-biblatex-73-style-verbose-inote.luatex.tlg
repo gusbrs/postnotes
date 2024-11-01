@@ -29,6 +29,7 @@ Completed box being shipped out [3]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.05408fil, direction TLT
 ....\write-{}
+....\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
 ....\glue(\topskip) 0.12001
 ....\hbox(9.87999+0.0)x345.0, glue set 304.15167fil, direction TLT
 .....\localpar

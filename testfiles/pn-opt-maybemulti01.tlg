@@ -14,6 +14,7 @@ Completed box being shipped out [3]
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
 ..\vbox(556.47656+0.0)x227.62204, glue set 388.47656fil
+...\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
@@ -131,6 +132,7 @@ Completed box being shipped out [7]
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
 ..\vbox(556.47656+0.0)x227.62204, glue set 388.47656fil
+...\write1{\token_to_str:N \post@note {preprint}{2}{}{}}
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
@@ -249,6 +251,7 @@ Completed box being shipped out [11]
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
 ..\vbox(556.47656+0.0)x227.62204, glue set 377.47656fil
+...\write1{\token_to_str:N \post@note {preprint}{3}{}{}}
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*

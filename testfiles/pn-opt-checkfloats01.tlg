@@ -15,6 +15,7 @@ Completed box being shipped out [5]
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
 ..\vbox(550.0+0.0)x345.0, glue set 349.0fil
+...\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
@@ -198,6 +199,7 @@ Completed box being shipped out [11]
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
 ..\vbox(550.0+0.0)x345.0, glue set 349.0fil
+...\write1{\token_to_str:N \post@note {preprint}{2}{}{}}
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
@@ -383,6 +385,7 @@ Completed box being shipped out [17]
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
 ..\vbox(550.0+0.0)x345.0, glue set 349.0fil
+...\write1{\token_to_str:N \post@note {preprint}{3}{}{}}
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
@@ -568,6 +571,7 @@ Completed box being shipped out [23]
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
 ..\vbox(550.0+0.0)x345.0, glue set 349.0fil
+...\write1{\token_to_str:N \post@note {preprint}{4}{}{}}
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
@@ -752,6 +756,7 @@ Completed box being shipped out [29]
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
 ..\vbox(550.0+0.0)x345.0, glue set 349.0fil
+...\write1{\token_to_str:N \post@note {preprint}{5}{}{}}
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*

@@ -52,6 +52,7 @@ Completed box being shipped out [3]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 312.7503fil
+....\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
 ....\marks2{\__mark_id:n {3}Foo \pnheaderdefault }
 ....\marks3{\__mark_id:n {4}Foo \pnheaderdefault }
 ....\mark{{\MakeUppercase    []{Chapter\ 1. \ First chapter}}{Foo \pnheaderdefault }}
@@ -199,6 +200,7 @@ Completed box being shipped out [5]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 312.7503fil
 ....\write-{}
+....\write1{\token_to_str:N \post@note {preprint}{2}{}{}}
 ....\marks2{\__mark_id:n {10}Bar \pnheaderdefault }
 ....\marks3{\__mark_id:n {11}Bar \pnheaderdefault }
 ....\mark{{Foo \pnheaderdefault }{Bar \pnheaderdefault }}
