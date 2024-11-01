@@ -1413,12 +1413,12 @@
               { }
               {
                 \exp_args:NV \zref@ifrefcontainsprop \l_@@_note_zlabel_str
-                  { default }
+                  { postnote@mark }
                   {
                     \exp_args:NNNo \exp_args:NNo \tl_set:Nn #1
                       {
                         \zref@extract
-                          { \l_@@_note_zlabel_str } { default }
+                          { \l_@@_note_zlabel_str } { postnote@mark }
                       }
                   }
                   { }
@@ -1426,10 +1426,14 @@
           }
       }
       {
-        \cs_if_exist:cT { r@ \l_@@_note_label_str }
+        \property_if_recorded:eeT
+          { postnotes@ \l_@@_note_label_str } { postnotes/mark }
           {
             \tl_set:Ne #1
-              { \tl_item:cn { r@ \l_@@_note_label_str } { 1 } }
+              {
+                \property_ref:ee
+                  { postnotes@ \l_@@_note_label_str } { postnotes/mark }
+              }
           }
       }
   }
@@ -1497,10 +1501,15 @@
 \cs_new_protected:Npn \@@_set_user_labels:
   {
     \str_if_empty:NF \l_@@_note_label_str
-      { \exp_args:NV \label \l_@@_note_label_str }
+      {
+        \exp_args:NV \label \l_@@_note_label_str
+        \property_record:ee { postnotes@ \l_@@_note_label_str }
+          { postnotes/mark }
+      }
     \str_if_empty:NF \l_@@_note_zlabel_str
       { \exp_args:NV \zlabel \l_@@_note_zlabel_str }
   }
+\property_new:nnnn { postnotes/mark } { now } { } { \l_@@_mark_tl }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -2923,6 +2932,12 @@
         zlabel .str_set:N = \l_@@_note_zlabel_str ,
         zlabel .value_required:n = true ,
       }
+%    \end{macrocode}
+% Provide property to store the mark for measuring passes.
+%    \begin{macrocode}
+    \zref@newprop { postnote@mark } [] { \l_@@_mark_tl }
+    \AddToHook { postnotes/note/begin }  [ postnotes/compat/zref-user ]
+      { \zref@localaddprop { main } { postnote@mark } }
 %    \end{macrocode}
 %
 % \begin{macro}[int]{\postnotezref}
