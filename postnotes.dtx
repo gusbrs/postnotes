@@ -2019,14 +2019,15 @@
 % We use \cs{g_@@_note_id_int} to split \cs{g_@@_labelseq_seq}.  It might seem
 % a tad contradictory to use the integer set at ``expansion time'' to split
 % the sequence generated from the \file{.aux} file.  The thing is, both things
-% should converge on a compilation brought to stability (well, usually\dots{},
+% should converge on a document compiled to stability.  Well, usually\dots{},
 % in theory a float may float past the whole \cs{printpostnotes}, in which
-% case it will be included at this call nevertheless, besides that would mess
-% up things regardless of method).  Also, and most importantly, at this point
-% in the document, only the notes up to \cs{g_@@_note_id_int} have any stored
-% data that could be printed.  Hence, trying to generate a cut test from the
-% \file{.aux} file only gets us some transitory errors of property variables
-% not found.
+% case it will be included in this call nevertheless.  Also, and most
+% importantly, at this point in the document, only the notes up to
+% \cs{g_@@_note_id_int} have any stored data that could be printed.  Hence,
+% trying to generate a split criterion from the \file{.aux} file only gets us
+% some transitory errors of property variables not found.  A limitation, if
+% you will, of not storing the whole data in the \file{.aux} file, but which
+% also applies to the traditional external file approach.
 %    \begin{macrocode}
           \int_compare:nNnTF { ##1 } > { \g_@@_note_id_int }
             { \seq_put_right:Nn \l_@@_tmpb_seq { ##1 } }
