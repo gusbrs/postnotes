@@ -56,7 +56,8 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
 .\write1{\newlabel{en:mark:1}{{1}{\thepage }{Section 1}{postnote.1.mark}{}}}
-.\write1{\zref@newlabel{zen:mark:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}}}
+.\write1{\new@label@record{postnotes@en:mark:1}{{postnotes/mark}{1}}}
+.\write1{\zref@newlabel{zen:mark:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}\postnote@mark{1}}}
 .\penalty 10000
 .\write1{\new@label@record{tagpdfstruct-postnotemark.1}{{tagstruct}{10}{tagstructobj}{30 0 R}}}
 .\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 3 } action struct name{postnote.1.text} goto name{postnote.1.text}
@@ -361,7 +362,8 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark}{2}{\thepage }{1}}
 .\write1{\newlabel{en:mark:2}{{2}{\thepage }{Section 1}{postnote.2.mark}{}}}
-.\write1{\zref@newlabel{zen:mark:2}{\default{2}\page{\Z@C@page }\anchor{postnote.2.mark}}}
+.\write1{\new@label@record{postnotes@en:mark:2}{{postnotes/mark}{2}}}
+.\write1{\zref@newlabel{zen:mark:2}{\default{2}\page{\Z@C@page }\anchor{postnote.2.mark}\postnote@mark{2}}}
 .\penalty 10000
 .\write1{\new@label@record{tagpdfstruct-postnotemark.2}{{tagstruct}{20}{tagstructobj}{50 0 R}}}
 .\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 8 } action struct name{postnote.2.text} goto name{postnote.2.text}

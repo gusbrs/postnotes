@@ -62,7 +62,8 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
 .\write1{\newlabel{en:mark:1}{{1}{\thepage }{Section 1}{postnote.1.mark}{}}}
-.\write1{\zref@newlabel{zen:mark:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}}}
+.\write1{\new@label@record{postnotes@en:mark:1}{{postnotes/mark}{1}}}
+.\write1{\zref@newlabel{zen:mark:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}\postnote@mark{1}}}
 .\penalty 10000
 .\write1{\new@label@record{tagpdfstruct-postnotemark.1}{{tagstruct}{10}{tagstructobj}{@pdf.obj29}}}
 .\write1{\new@label@record{mcid-4}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{4}{tagmcid}{\__property_code_tagmcid: }}}
@@ -502,7 +503,8 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark}{2}{\thepage }{1}}
 .\write1{\newlabel{en:mark:2}{{2}{\thepage }{Section 1}{postnote.2.mark}{}}}
-.\write1{\zref@newlabel{zen:mark:2}{\default{2}\page{\Z@C@page }\anchor{postnote.2.mark}}}
+.\write1{\new@label@record{postnotes@en:mark:2}{{postnotes/mark}{2}}}
+.\write1{\zref@newlabel{zen:mark:2}{\default{2}\page{\Z@C@page }\anchor{postnote.2.mark}\postnote@mark{2}}}
 .\penalty 10000
 .\write1{\new@label@record{tagpdfstruct-postnotemark.2}{{tagstruct}{20}{tagstructobj}{@pdf.obj44}}}
 .\write1{\new@label@record{mcid-19}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{19}{tagmcid}{\__property_code_tagmcid: }}}
