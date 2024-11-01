@@ -5,7 +5,6 @@ TEST 1: Headers fancy
 ============================================================
 Underfull \vbox (badness 5533) has occurred while \output is active
 \vbox(550.0+0.0)x345.0, glue set 3.81288
-.\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
 .\write1{\token_to_str:N \postnote@setcounteraux {0}}
 .\write1{\token_to_str:N \post@note {section}{57}{\thepage }{}}
 .\write-{}
@@ -345,7 +344,6 @@ Completed box being shipped out [11]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 3.81288
-....\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
 ....\write1{\token_to_str:N \postnote@setcounteraux {0}}
 ....\write1{\token_to_str:N \post@note {section}{57}{\thepage }{}}
 ....\write-{}

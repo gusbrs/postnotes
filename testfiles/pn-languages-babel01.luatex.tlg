@@ -46,7 +46,6 @@ Completed box being shipped out [3]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil, direction TLT
 ....\write1{\babel@aux{english}{}}
-....\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
 ....\write-{}
 ....\pdfdest name{chapter*.1} xyz
 ....\glue(\topskip) 10.0
@@ -319,7 +318,6 @@ Completed box being shipped out [5]
 ...\vbox(550.0+0.0)x345.0, glue set 402.96225fil, direction TLT
 ....\write-{}
 ....\write1{\babel@aux{english}{}}
-....\write1{\token_to_str:N \post@note {preprint}{2}{}{}}
 ....\write-{}
 ....\pdfdest name{chapter*.2} xyz
 ....\glue(\topskip) 10.0
@@ -474,7 +472,6 @@ Completed box being shipped out [9]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil, direction TLT
 ....\write1{\babel@aux{portuguese}{}}
-....\write1{\token_to_str:N \post@note {preprint}{3}{}{}}
 ....\write-{}
 ....\pdfdest name{chapter*.3} xyz
 ....\glue(\topskip) 10.0
@@ -675,7 +672,6 @@ Completed box being shipped out [13]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil, direction TLT
 ....\write1{\babel@aux{french}{}}
-....\write1{\token_to_str:N \post@note {preprint}{4}{}{}}
 ....\write-{}
 ....\pdfdest name{chapter*.4} xyz
 ....\glue(\topskip) 10.0
@@ -849,7 +845,6 @@ Completed box being shipped out [17]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 404.0fil, direction TLT
 ....\write1{\babel@aux{ngerman}{}}
-....\write1{\token_to_str:N \post@note {preprint}{5}{}{}}
 ....\write-{}
 ....\pdfdest name{chapter*.5} xyz
 ....\glue(\topskip) 10.0

@@ -415,7 +415,6 @@
 %     \@@_set_section_page_label:n ,
 %     \@@_set_text_page_label:n ,
 %     \@@_set_print_page_label:n ,
-%     \@@_set_pre_print_label:n ,
 %   }
 %   Label setting functions for each pertinent context.  They must use
 %   \cs{iow_shipout_e:Nn}, since the main information we are interested in is
@@ -427,7 +426,6 @@
 %       \cs{@@_set_section_page_label:n} \Arg{note id}
 %       \cs{@@_set_text_page_label:n} \Arg{note id}
 %       \cs{@@_set_print_page_label:n} \Arg{note id}
-%       \cs{@@_set_pre_print_label:n} \Arg{note id}
 %     \end{syntax}
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_set_label:nnnn #1#2#3#4
@@ -450,9 +448,6 @@
 \cs_new_protected:Npn \@@_set_print_page_label:n #1
   { \@@_set_label:nnnn { print } { #1 } { \int_use:N \c@page } { } }
 \cs_generate_variant:Nn \@@_set_print_page_label:n { e }
-\cs_new_protected:Npn \@@_set_pre_print_label:n #1
-  { \@@_set_label:nnnn { preprint } { #1 } { } { } }
-\cs_generate_variant:Nn \@@_set_pre_print_label:n { e }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1774,19 +1769,6 @@
             \g_@@_queue_seq
         }
       \seq_gclear:N \g_@@_queue_seq
-%    \end{macrocode}
-% I know, setting a whatsit in vertical mode\dots{}, I should have learned by
-% now \texttt{;-)}.  It is what we need here though.  The sole purpose of this
-% label is to provide a point for splitting the labelseq.  It only needs to
-% exist, it doesn't even store the page value.  The
-% \cs{@@_set_print_page_label:e} done at \cs{@@_set_headers_vars_first:} right
-% below does not suffice for this purpose for two reasons.  It won't be set if
-% the queue is empty (or not yet populated), and also it comes after the
-% heading (as it must), which means \cs{postnotesections} added through hooks
-% to it will come before it.
-%    \begin{macrocode}
-      \@@_set_pre_print_label:e
-        { \int_use:N \g_@@_print_postnotes_int }
       \seq_if_empty:NTF \g_@@_print_queue_seq
         { \msg_warning:nn { postnotes } { empty-printpostnotes } }
         {
