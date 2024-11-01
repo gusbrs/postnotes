@@ -2312,11 +2312,18 @@
 %
 %
 %    \begin{macrocode}
-\AddToHook { enddocument }
+\AddToHook { enddocument/afterlastpage }
   {
     \group_begin:
-      \seq_set_filter:NNn \l_@@_tmpa_seq \g_@@_queue_seq
-        { \str_if_eq_p:ee { \@@_prop_item:nn {#1} { type } } { note } }
+      \bool_if:NTF \g_@@_counteraux_bool
+        {
+          \seq_set_filter:NNn \l_@@_tmpa_seq \g_@@_labelseq_seq
+            { \str_if_eq_p:ee { \tl_item:nn {#1} { 1 } } { mark } }
+        }
+        {
+          \seq_set_filter:NNn \l_@@_tmpa_seq \g_@@_queue_seq
+            { \str_if_eq_p:ee { \@@_prop_item:nn {#1} { type } } { note } }
+        }
       \seq_if_empty:NF \l_@@_tmpa_seq
         {
           \msg_warning:nne { postnotes } { stray-notes }
