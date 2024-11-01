@@ -452,48 +452,52 @@ only reasonable thing to do.  \opt{sort} is a boolean option, and defaults to
 
 \DescribeOption{checkduplicates} %
 \DescribeOption{checkfloats} %
-Depending on where one places a \cs{postnote}, some undesirable side-effects
-may ensue.  A note set somewhere which is subject to measuring/trial passes
-may be stored multiple times, thus appearing in duplicity at
-\cs{printpostnotes}.\footnote{That would normally be the case, but
-  \pkg{postnotes} already handles some known instances of this, avoiding the
-  duplicates.  It doesn't mean there are not places unknown to the package
-  which do the same.}  Also, a note placed within a float may result in the
-sequence of notes being disturbed, depending on where the float ends up being
-typeset.  These problems are usually not too frequent, but they can be a pain.
-Hence the \opt{checkduplicates} and \opt{checkfloats} options, which issue
-warnings for these cases.  The basis for these checks are the page labels each
-\cs{postnote} sets internally.  These labels are non-immediate writes
-(whatsits, in the jargon), as they must be, since we are interest in the page
-number.  As a result, measuring passes don't get written, and they are also
-written in the order the document elements get shipped out.  Hence, the labels
-set in the \file{.aux} file are free of duplicates resulting from measuring
-passes, and are ordered the same as the typeset order of the document, floats
-considered.  Note that these checks are only expected to be meaningful in a
-document for which the compilation has stabilized: with labels and floats
-already in place.  Also note that the \opt{checkfloats} option does not test
-``if my notes are in numeric order'' (that's the job of \opt{sort}), but
-rather whether the order the marks are typeset along the document and the
-order the notes are printed in \cs{printposnotes} are the same.  These options
-are booleans.  \opt{checkduplicates} is initially enabled, since whether a
-place performs measuring passes does not really change, and it is easy to deal
-with a note in this situation with the \opt{maybemulti}
-option. \opt{checkfloats}, on the other hand, is initially disabled.  Float
-placement (and its implications for \pkg{postnotes}) is something one should
-not worry about until the very last stages of the document.  At that time, I
-expect it to be useful, but during the writing phase, such a warning would
-only be distracting.  Think of if as something to use like you would use the
-\pkg{widows-and-orphans} package, for example.
+Issue warnings in case of duplicate notes resulting from measuring/trial
+passes and from mismatches in the sequence of notes resulting from floats,
+respectively.  These checks are only expected to be meaningful in a document
+for which the compilation has stabilized: with labels and floats already in
+place.  See \zcref{sec:thorns} for discussion.  Note that the
+\opt{checkfloats} option does not test ``if my notes are in numeric order''
+(that's the job of \opt{sort}), but rather whether the order the marks are
+typeset along the document and the order the notes are printed in
+\cs{printposnotes} are the same.  These options are booleans.
+\opt{checkduplicates} is initially enabled, since whether a place performs
+measuring passes does not really change, and it is easy to deal with a note in
+this situation with the \opt{maybemulti} option. \opt{checkfloats}, on the
+other hand, is initially disabled.  Float placement (and its implications for
+\pkg{postnotes}) is something one should not worry about until the very last
+stages of the document.  At that time, I expect it to be useful, but during
+the writing phase, such a warning would only be distracting.  Think of if as
+something to use like you would use the \pkg{widows-and-orphans} package, for
+example.
 
 \DescribeOption{maybemulti} %
 A \cs{postnote} set while \opt{maybemulti} is true is checked at
 \cs{printposnotes} and only kept in the printing queue if its corresponding
-(internal) page label exists.  It's the same principle used for
-\opt{checkduplicates}, but instead of getting the warning, here you flag the
-duplicate for potential dropping.  The drawback is that, since it requires the
-label for the check, a new note set with \opt{maybemulti} will need one more
-compilation run than otherwise.  This is a boolean option, and the initial
-value is false.
+(internal) page label exists.  See \zcref{sec:thorns} for discussion.  The
+drawback is that, since it requires the label for the check, a new note set
+with \opt{maybemulti} will need one more compilation run than otherwise.  This
+is a boolean option, and the initial value is false.
+
+\DescribeOption{counteraux} %
+\DescribeMacro{\pnsetcounteraux\marg{int}} %
+\DescribeMacro{\pnaddtocounteraux\marg{int}} %
+(Experimental) Build the printing queue based on the (internal) page labels
+set in the \file{.aux} file, and also handle the counter stepping at the same
+time.  This should provide us with a fully automated sequence of notes which
+is both exempt from duplicates resulting from measuring passes and from notes
+order issues caused by floats.  See \zcref{sec:thorns} for discussion.  Since
+the counter sequence is determined during the input of the \file{.aux} file,
+the regular counter commands will not work as intended.  \cs{pnsetcounteraux}
+and \cs{pnaddtocounteraux} take an integer number as argument, and do what
+their names imply, but at the time they can actually affect the sequence used
+by \opt{counteraux}.  The option is a boolean, is initially disabled, and is
+preamble only.  Enabling \opt{counteraux} also disables \opt{sort} at
+\texttt{begindocument/before}.\footnote{The truth is, I have not yet thought
+  it through how these options may interact.  So, this is done out of caution.
+  I don't expect them to clash but, in principle, with \opt{counteraux},
+  \opt{sort} is not needed.  You are not blocked from re-enabling it later
+  but, if you do, be mindful of possible interactions.}
 
 
 \subsection*{Note options}
@@ -1136,6 +1140,112 @@ avoid notes in duplicity, but obviously cannot cover every possibility, in
 which case \opt{nomark} with \cs{postnoteref} has you covered.  Caveat, these
 techniques assume the floats do not disturb the order of the notes, otherwise
 we are back to the case discussed in \zcref{ex:x:float}.
+
+
+\section{Thorny cases}
+\label{sec:thorns}
+
+Depending on where one places a \cs{postnote}, some undesirable side-effects
+may ensue.  A note set somewhere which is subject to measuring/trial passes
+may be stored multiple times, thus appearing in duplicity at
+\cs{printpostnotes}.\footnote{That would normally be the case, but
+  \pkg{postnotes} already handles some known instances of this, avoiding the
+  duplicates.  It doesn't mean there are not places unknown to the package
+  which do the same.}  Also, a note placed within a float may result in the
+sequence of notes being disturbed, depending on where the float ends up being
+typeset.  These problems are usually not too frequent, but they come up
+occasionally and, when they do, they can be a pain.
+
+\pkg{postnotes} offers some ways to deal with these issues.  And what it does
+offer is, ultimately, based on the page labels each \cs{postnote} sets
+internally, the \cs{post@note}s in the \file{.aux} file.  These labels are
+non-immediate writes (whatsits, in the jargon), as they must be, since we are
+interested in the page number.  As a result, measuring passes don't get
+written, and they are also written in the order the document elements get
+shipped out.  Hence, the labels set in the \file{.aux} file are free of
+duplicates resulting from measuring passes, and are also ordered the same as
+the typeset order of the document, floats considered.  Based on the
+information gathered from these labels, we have a number of options.
+
+For known cases of measuring/trial passes where it's possible to distinguish
+the measuring from the final pass, \pkg{postnotes} uses that information to
+inhibit the note and also handles the counter appropriately so that the
+measuring pass has the correct value to measure.  Currently, such support is
+provided for \pkg{amsmath} display math environments, \pkg{csquotes}'
+\cs{blockcquote}s, \pkg{tabularx}, and \pkg{tabularray}.  For cases where it
+is not possible to distinguish the trial from the final pass, \pkg{postnotes}
+uses the page labels mentioned above, and for \cs{postnote}s flagged as
+potential duplicates, it checks whether the page label exists, and drops the
+(duplicate) note if it doesn't.  Prominent example here is the kernel's
+\cs{caption}.  This mechanism is exposed to users through the \opt{maybemulti}
+option.  Important distinction here between this method and the more
+controlled inhibition above is that there's little we can do about the
+counter.  The counter itself can be adjusted manually if need be, to restore
+the sequence.  But the value the measuring pass receives is out of our hands,
+hence it may be off.  Of course, the expected difference should normally be
+small.  But if the measuring is presumed to be exact, some mysterious slightly
+overfull hboxes may occur.
+
+\pkg{postnotes} also offers some checks, to issue warnings for cases of
+duplicates or sequence problems: the \opt{checkduplicates} and
+\opt{checkfloats} options.  They use the information generated by the page
+labels to perform some consistency checks, and report problems.  I expect them
+to be useful, since this is the kind of issue that may trick even a competent
+proofreader.
+
+Finally, \pkg{postnotes} also provides the (experimental) \opt{counteraux}
+option, which is an attempt to fully ``automate away'' these issues.  The
+basic idea is that, since we are already using the data generated by the page
+labels to handle some of the issues and perform some checks, why not use that
+information directly?  The page labels are already net of duplicates and in
+the order the document elements are typeset.  Indeed, why not use them?
+That's what \opt{counteraux} does: the queue which feeds \cs{printpostnotes}
+is built from the calls of \cs{post@note} in the \file{.aux} file and the
+counter is also stepped, as appropriate, at the same time.  Technically, I
+should say ``a counter'', which is then used to locally set the value of the
+user facing counter, \texttt{postnote}, at the moment \cs{postnote} is called,
+with a cross-reference of sorts.
+
+Some differences.  In the standard behavior, a \cs{postnote} inside a float
+belongs where the float environment was set, because that's where the
+numbering of the note is defined.  With \opt{counteraux}, a \cs{postnote}
+inside a float belongs where the float ends up being typeset, and for the same
+reason.  This means a note inside a float may float past a subsequent call of
+\cs{printpostnotes}, and will belong to the next call.  That's actually neat,
+and I'd call it a feature.  But you should be mindful of the warning for
+``stray notes'' issued at \texttt{enddocument} by the package, and make sure
+to extinguish your floats before a final \cs{printpostnotes}.  A limitation of
+the package's design is that the opposite cannot occur, if a note inside a
+float goes to the top of the page and happens to be typeset before a
+\cs{printpostnotes} which actually precedes it, the information to print the
+note is not available, so it's still left for the next call, but the numbering
+will be off.
+
+Some inconveniences.  You cannot set the counter directly, as you normally
+would.  Also \cs{counterwithin} will not affect the counter being stepped in
+the \file{.aux} file.  \pkg{postnotes} offers \cs{pnsetcounteraux} and
+\cs{pnaddtocounteraux} for the purpose.  But, normally, all you should ever
+need is a \texttt{\textbackslash{}pnsetcounteraux\{0\}} when splitting
+sections for your notes.  Also, the heavy reliance on labels will normally
+require one additional compilation run, and some possible transitory content
+swings.
+
+Some caveats.  I mentioned above that, in the case of multiple passes handled
+with the \opt{maybemulti} method, it is hard to ensure the value of the
+counter is correct for the measuring pass(es).  \opt{counteraux} makes this
+issue worse, because even in the cases where we can identify the measuring
+pass, we can't ensure the correct value, since the sequence of the passes is
+lost in the \file{.aux} file.  Indeed, the measuring passes do not even exist
+there, and we cannot, in general, reestablish the connection the original
+sequence offered.  Fortunately, there is a reasonable way around it.  If a
+\cs{postnote} sets a label (through the \opt{label} option of the note, not
+inside the content), the connection can be reestablished.  ``Connection'' is
+perhaps too much of a word for this, it's simpler.  With the label, a
+cross-reference to the mark is available, which can then be fed to the
+measuring pass.  And we know that value to be correct, because the label
+belongs to the pass which is actually typeset.  In sum, if some measuring
+problems do occur, set a label for the note, even if you do not refer to it
+\pkg{postnotes} will use it.
 
 
 \section{Acknowledgments}
