@@ -3235,6 +3235,14 @@
             \bool_set_true:N \l_@@_print_plain_mark_stepcounter_bool
           }
       }
+    \AddToHook { package/xltabular/after } [ postnotes/compat/xltabular ]
+      {
+        \AddToHook { env/xltabular/begin } [ postnotes/compat/xltabular ]
+          {
+            \bool_set_true:N \l_@@_tabularx_inside_env_bool
+            \cs_set_eq:NN \@@_tabularx_saved_write:Nn \write
+          }
+      }
   }
 %    \end{macrocode}
 %

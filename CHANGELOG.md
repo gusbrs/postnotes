@@ -20,6 +20,7 @@
   used internally.
 - Warning at `enddocument` for stray `\postnote`s left after the last
   `\printpostnotes`.
+- Support for `xltabular` package.
 
 ### Fixed
 - Fixed `style=endnotes` tagging error (see issue

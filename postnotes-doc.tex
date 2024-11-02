@@ -1249,19 +1249,19 @@ the measuring from the final pass, \pkg{postnotes} uses that information to
 inhibit the note and also handles the counter appropriately so that the
 measuring pass has the correct value to measure.  Currently, such support is
 provided for \pkg{amsmath} display math environments, \pkg{csquotes}'
-\cs{blockcquote}s, \pkg{tabularx}, and \pkg{tabularray}.  For cases where it
-is not possible to distinguish the trial from the final pass, \pkg{postnotes}
-uses the page labels mentioned above, and for \cs{postnote}s flagged as
-potential duplicates, it checks whether the page label exists, and drops the
-(duplicate) note if it doesn't.  Prominent example here is the kernel's
-\cs{caption}.  This mechanism is exposed to users through the \opt{maybemulti}
-option.  Important distinction here between this method and the more
-controlled inhibition above is that there's little we can do about the
-counter.  The counter itself can be adjusted manually if need be, to restore
-the sequence.  But the value the measuring pass receives is out of our hands,
-hence it may be off.  Of course, the expected difference should normally be
-small.  But if the measuring is presumed to be exact, some mysterious slightly
-overfull hboxes may occur.
+\cs{blockcquote}s, \pkg{tabularx}, \pkg{tabularray}, and \pkg{xltabular}.  For
+cases where it is not possible to distinguish the trial from the final pass,
+\pkg{postnotes} uses the page labels mentioned above, and for \cs{postnote}s
+flagged as potential duplicates, it checks whether the page label exists, and
+drops the (duplicate) note if it doesn't.  Prominent example here is the
+kernel's \cs{caption}.  This mechanism is exposed to users through the
+\opt{maybemulti} option.  Important distinction here between this method and
+the more controlled inhibition above is that there's little we can do about
+the counter.  The counter itself can be adjusted manually if need be, to
+restore the sequence.  But the value the measuring pass receives is out of our
+hands, hence it may be off.  Of course, the expected difference should
+normally be small.  But if the measuring is presumed to be exact, some
+mysterious slightly overfull hboxes may occur.
 
 \pkg{postnotes} also offers some checks, to issue warnings for cases of
 duplicates or sequence problems: the \opt{checkduplicates} and
