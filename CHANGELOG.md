@@ -3,14 +3,19 @@
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.3.0...HEAD)
 
 *WARNING*: You may need to clear your .aux files after this update.
-- (Internally, the macro used in the .aux file, `\post@note`, now takes more
-  arguments then it used to.)
+- (Internally, the macro used in the .aux file, `\post@note`, used to take two
+  arguments, but now it takes four.)
 
 ### Added
+- Provide (experimental) `counteraux` option: full automation of notes
+  numbering and sequence capable of handling both multiple passes from
+  measuring operations and floats shuffling the sequence of notes.
+  `\postnote`s set inside floats may float past `\printpostnotes` and belong
+  to the section where they are actually typeset.
 - Provide options `checkduplicates` and `checkfloats`, which issue warnings in
   case of duplicate notes from measuring passes and of notes order mismatch
   resulting from float placement.
-- Provide option `maybemulti`, exposing to users a simple method to handle
+- Provide `maybemulti` option, exposing to users a simple method to handle
   cases of duplicate notes resulting from measuring passes which was already
   used internally.
 - Warning at `enddocument` for stray `\postnote`s left after the last
