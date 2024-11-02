@@ -2758,8 +2758,7 @@
 %
 % \subsection*{\cs{caption}}
 %
-% For \cs{caption}'s possible two passes.  This catches more than just
-% captions, of course, but is not overkill.
+% For \cs{caption}'s possible two passes.
 %
 % From the user's perspective, one-line captions will just work.  For two-line
 % captions, there are two alternatives: i)
@@ -2770,8 +2769,8 @@
 % then use \texttt{\textbackslash{}postnoteref\{mynote\}} inside the caption.
 %
 %    \begin{macrocode}
-\AddToHook { postnotes/note/begin } [ ./compat/caption ]
-  { \cs_if_exist:NT \@captype { \postnotesetup { maybemulti } } }
+\AddToHook { cmd/@makecaption/before } [ ./compat/caption ]
+  { \postnotesetup { maybemulti } }
 %    \end{macrocode}
 %
 %

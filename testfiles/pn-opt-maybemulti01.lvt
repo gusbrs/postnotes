@@ -21,7 +21,7 @@
 \usepackage[textwidth=8cm]{geometry}
 
 % A cheap way to get duplicates for a known case.
-\RemoveFromHook{postnotes/note/begin}[postnotes/compat/caption]
+\RemoveFromHook{cmd/@makecaption/before}[postnotes/compat/caption]
 
 \begin{document}
 
