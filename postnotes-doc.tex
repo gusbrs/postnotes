@@ -130,6 +130,7 @@
     \pnhdnamefirst ,
     \pnhdnamelast ,
     \mypnheader ,
+    \thepostnote ,
     \demochapter ,
     \origlatexchapter ,
     \l_postnotes_note_id_tl ,
@@ -1139,6 +1140,34 @@ duplicity, but obviously cannot cover every possibility, in which case
 assume the floats do not disturb the order of the notes, otherwise we are back
 to the case discussed in \zcref{ex:x:float}.
 
+The (experimental) \opt{counteraux} option, shown in \zcref{ex:x:counteraux},
+is an attempt to fully ``automate away'' the issues illustrated in
+\zcref{ex:x:float,ex:x:caption}, so that there's no need to manipulate either
+the counter or the mark.  See \zcref{sec:thorns} for discussion.
+
+\begin{pnexample}[caption={\opt{counteraux} option},label={ex:x:counteraux}]
+\documentclass{book}
+\usepackage[textwidth=8cm]{geometry}
+\usepackage{postnotes}
+\postnotesetup{counteraux}
+\usepackage{hyperref}
+\begin{document}
+\chapter{First chapter}
+\postnote{one}
+\postnote{two}
+\begin{figure}
+Figure.%
+\caption[Short caption]{A long caption, long enough to require two
+lines\postnote{three}}
+\end{figure}
+\postnote{four}
+\postnote{five}
+\clearpage
+\postnote{six}
+\printpostnotes
+\end{document}
+\end{pnexample}
+
 Nested notes.  To be honest, the design of the package was not made with this
 use case in mind.  However, since \pkg{postnotes} does not use the method of
 writing the notes' contents to an external file and printing the notes by
@@ -1292,7 +1321,7 @@ perhaps too much of a word for this, it's simpler.  With the label, a
 cross-reference to the mark is available, which can then be fed to the
 measuring pass.  And we know that value to be correct, because the label
 belongs to the pass which is actually typeset.  In sum, if some measuring
-problems do occur, set a label for the note, even if you do not refer to it
+problems do occur, set a label for the note, even if you do not refer to it,
 \pkg{postnotes} will use it.
 
 
