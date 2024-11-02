@@ -1132,14 +1132,56 @@ lines\postnote[mark=\arabic{postnote}]{A note.}}
 
 Arguably, the second method is more interesting for normal cases, since it
 does not offset the note's anchor.  The first one would work for multiple
-notes as well\footnote{The second one could be made do work with multiple
-  notes too with a suitable arrangement of \cs{refstepcounter}, \cs{label},
-  and \cs{getrefnumber}.}, and it is also more robust to multiple passes of
-the content.  \pkg{postnotes} controls for this in a number of known cases to
-avoid notes in duplicity, but obviously cannot cover every possibility, in
-which case \opt{nomark} with \cs{postnoteref} has you covered.  Caveat, these
-techniques assume the floats do not disturb the order of the notes, otherwise
-we are back to the case discussed in \zcref{ex:x:float}.
+notes as well, and it is also more robust to multiple passes of the content.
+\pkg{postnotes} controls for this in a number of known cases to avoid notes in
+duplicity, but obviously cannot cover every possibility, in which case
+\opt{nomark} with \cs{postnoteref} has you covered.  Caveat, these techniques
+assume the floats do not disturb the order of the notes, otherwise we are back
+to the case discussed in \zcref{ex:x:float}.
+
+Nested notes.  To be honest, the design of the package was not made with this
+use case in mind.  However, since \pkg{postnotes} does not use the method of
+writing the notes' contents to an external file and printing the notes by
+inputting it, the technical restriction of the traditional method does not
+apply.  Hence, it mostly works.  However, nested notes are not included in the
+ongoing \cs{printpostnotes}, but are left for the next call.  So, if nesting,
+call \cs{printpostnotes} again to print the nested ones.  Which is actually
+convenient, since different settings may be applied to each set.  Also, expect
+limitations, particularly with regard to the context variables stored by the
+package: the context of a nested note is the notes section, not the one to
+which the parent note belongs to.  Finally, be watchful of results, because
+what works does so more by luck than by design.  Still, it is not too bad that
+\pkg{postnotes} can handle not only nesting but even split sections of nested
+notes as shown in \zcref{ex:x:nesting}.
+
+\begin{pnexample}[caption={Nested notes},label={ex:x:nesting}]
+\documentclass{book}
+\usepackage{postnotes}
+\usepackage{hyperref}
+\counterwithin*{postnote}{chapter}
+\begin{document}
+\chapter{First chapter}
+\postnotesection{\section*{Notes to chapter 1}%
+  \setcounter{postnote}{0}%
+  \postnotesection{\section*{Editor's notes to chapter 1}}}
+Foo.\postnote{Foo note.}\par
+Bar.\postnote{Bar note.\postnote{Editor's note bar.}}\par
+Baz.\postnote{A note.\postnote{Editor's note baz.}}
+\chapter{Second chapter}
+\postnotesection{\section*{Notes to chapter 2}%
+  \setcounter{postnote}{0}%
+  \postnotesection{\section*{Editor's notes to chapter 2}}}
+Foo.\postnote{Foo note.}\par
+Bar.\postnote{Bar note.\postnote{Editor's note bar.}}\par
+Baz.\postnote{A note.\postnote{Editor's note baz.}}
+\begingroup
+\renewcommand*{\thepostnote}{\roman{postnote}}
+\printpostnotes
+\renewcommand*{\pntitle}{Editor's notes}
+\printpostnotes
+\endgroup
+\end{document}
+\end{pnexample}
 
 
 \section{Thorny cases}

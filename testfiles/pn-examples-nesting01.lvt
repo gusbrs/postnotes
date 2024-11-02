@@ -1,0 +1,96 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+% Ensure the same font across check engines
+\usepackage[OT1]{fontenc}
+\renewcommand\rmdefault{cmr}
+\renewcommand\sfdefault{cmss}
+\renewcommand\ttdefault{cmtt}
+
+\usepackage{postnotes}
+\counterwithin*{postnote}{chapter}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+\postnotesection{\section*{Notes to chapter 1}%
+  \setcounter{postnote}{0}%
+  \postnotesection{\section*{Editor's notes to chapter 1}}}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{Notes: First chapter}
+Foo.%
+\setbox0=\hbox{\postnote{Foo note.}}%
+\showbox0
+\box0
+
+Bar.%
+\setbox0=\hbox{\postnote{Bar note.\postnote{Editor's note bar.}}}%
+\showbox0
+\box0
+
+Baz.%
+\setbox0=\hbox{\postnote{Baz note.\postnote{Editor's note baz.}}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\chapter{Second chapter}
+\postnotesection{\section*{Notes to chapter 2}%
+  \setcounter{postnote}{0}%
+  \postnotesection{\section*{Editor's notes to chapter 2}}}
+
+\TIMO
+
+\BEGINTEST{Notes: Second chapter}
+Foo.%
+\setbox0=\hbox{\postnote{Foo note.}}%
+\showbox0
+\box0
+
+Bar.%
+\setbox0=\hbox{\postnote{Bar note.\postnote{Editor's note bar.}}}%
+\showbox0
+\box0
+
+Baz.%
+\setbox0=\hbox{\postnote{Baz note.\postnote{Editor's note baz.}}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\cleardoublepage{}
+
+\TIMO
+
+\BEGINTEST{Print}
+\showoutput
+\renewcommand*{\thepostnote}{\roman{postnote}}
+\printpostnotes
+\newpage
+\ENDTEST
+
+\BEGINTEST{Print nested}
+\showoutput
+\renewcommand*{\pntitle}{Editor's notes}
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}
