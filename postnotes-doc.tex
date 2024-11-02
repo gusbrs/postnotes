@@ -1156,16 +1156,22 @@ sequence of notes being disturbed, depending on where the float ends up being
 typeset.  These problems are usually not too frequent, but they come up
 occasionally and, when they do, they can be a pain.
 
-\pkg{postnotes} offers some ways to deal with these issues.  And what it does
-offer is, ultimately, based on the page labels each \cs{postnote} sets
-internally, the \cs{post@note}s in the \file{.aux} file.  These labels are
-non-immediate writes (whatsits, in the jargon), as they must be, since we are
-interested in the page number.  As a result, measuring passes don't get
-written, and they are also written in the order the document elements get
-shipped out.  Hence, the labels set in the \file{.aux} file are free of
-duplicates resulting from measuring passes, and are also ordered the same as
-the typeset order of the document, floats considered.  Based on the
-information gathered from these labels, we have a number of options.
+\pkg{postnotes} offers some ways to deal with these issues.  Sorting falls
+into this category.  The traditional ``counter juggling'' around a float which
+disrupted the sequence of the notes could always be used to fix the sequence
+the marks got typeset (see \zcref{ex:x:float}), and the \opt{sort} option
+handles the sequence at \cs{printpostnotes}.
+
+Besides sorting, what the package does offer is, ultimately, based on the page
+labels each \cs{postnote} sets internally, the \cs{post@note}s in the
+\file{.aux} file.  These labels are non-immediate writes (whatsits, in the
+jargon), as they must be, since we are interested in the page number.  As a
+result, measuring passes don't get written, and they are also written in the
+order the document elements get shipped out.  Hence, the labels set in the
+\file{.aux} file are free of duplicates resulting from measuring passes, and
+are also ordered the same as the typeset order of the document, floats
+considered.  Based on the information gathered from these labels, we have a
+number of options.
 
 For known cases of measuring/trial passes where it's possible to distinguish
 the measuring from the final pass, \pkg{postnotes} uses that information to
