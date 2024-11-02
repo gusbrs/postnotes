@@ -51,7 +51,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ...\hbox(6.65+0.0)x0.0, direction TLT
 ....\rule(6.65+0.0)x0.0
 ...\OT1/cmr/m/n/8 1
-...\write1{\newlabel{fn:2}{{1}{\thepage }{}{}{}}}
+...\write1{\newlabel{fn:2}{{1}{\thepage }{}{postnote.1.mark}{}}}
 ...\write1{\zref@newlabel{fn:2}{\default{1}\page{\Z@C@page }}}
 ...\penalty 10000
 ...\rule(0.0+2.85002)x0.0

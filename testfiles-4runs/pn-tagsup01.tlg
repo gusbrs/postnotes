@@ -1728,15 +1728,15 @@ Completed box being shipped out [2]
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.20001
-....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
-.....\hbox(5.79999+0.0)x19.6944
-......\glue 2.5
-......\hbox(5.79999+0.0)x12.1944
+....\hbox(5.79999+0.0)x345.0, glue set 320.68185fil
+.....\hbox(5.79999+0.0)x19.69318
+......\glue 2.50122
+......\hbox(5.79999+0.0)x12.19318
 .......\write1{\new@label@record{mcid-40}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{40}{tagmcid}{\__property_code_tagmcid: }}}
 .......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 .......\marks4{b-,40,37,Lbl,,,}
 .......\marks4{b+,40,37,Lbl,,,}
-.......\glue 5.0
+.......\glue 4.99878
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -1766,7 +1766,7 @@ Completed box being shipped out [2]
 .......\pdfliteral page{EMC}
 .......\marks4{e-,42,37,}
 .......\marks4{e+,42,37,}
-......\glue 5.0
+......\glue 4.99878
 .....\penalty 0
 .....\write1{\new@label@record{tagpdfstruct-postnote.1}{{tagstruct}{40}{tagstructobj}{110 0 R}}}
 .....\write1{\new@label@record{mcid-43}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{43}{tagmcid}{\__property_code_tagmcid: }}}
@@ -1790,15 +1790,15 @@ Completed box being shipped out [2]
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.20001
-....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
-.....\hbox(5.79999+0.0)x19.6944
-......\glue 2.5
-......\hbox(5.79999+0.0)x12.1944
+....\hbox(5.79999+0.0)x345.0, glue set 320.68185fil
+.....\hbox(5.79999+0.0)x19.69318
+......\glue 2.50122
+......\hbox(5.79999+0.0)x12.19318
 .......\write1{\new@label@record{mcid-44}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{44}{tagmcid}{\__property_code_tagmcid: }}}
 .......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 .......\marks4{b-,44,44,Lbl,,,}
 .......\marks4{b+,44,44,Lbl,,,}
-.......\glue 5.0
+.......\glue 4.99878
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -1828,7 +1828,7 @@ Completed box being shipped out [2]
 .......\pdfliteral page{EMC}
 .......\marks4{e-,46,44,}
 .......\marks4{e+,46,44,}
-......\glue 5.0
+......\glue 4.99878
 .....\penalty 0
 .....\write1{\new@label@record{tagpdfstruct-postnote.2}{{tagstruct}{47}{tagstructobj}{119 0 R}}}
 .....\write1{\new@label@record{mcid-47}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{47}{tagmcid}{\__property_code_tagmcid: }}}
@@ -1850,15 +1850,15 @@ Completed box being shipped out [2]
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.75
-....\hbox(6.25+1.75)x345.0, glue set 292.83777fil
-.....\hbox(5.79999+0.0)x19.6944
-......\glue 2.5
-......\hbox(5.79999+0.0)x12.1944
+....\hbox(6.25+1.75)x345.0, glue set 292.83899fil
+.....\hbox(5.79999+0.0)x19.69318
+......\glue 2.50122
+......\hbox(5.79999+0.0)x12.19318
 .......\write1{\new@label@record{mcid-48}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{48}{tagmcid}{\__property_code_tagmcid: }}}
 .......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 .......\marks4{b-,48,51,Lbl,,,}
 .......\marks4{b+,48,51,Lbl,,,}
-.......\glue 5.0
+.......\glue 4.99878
 .......\penalty 10000
 .......\hbox(0.0+0.0)x0.0
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
@@ -1888,7 +1888,7 @@ Completed box being shipped out [2]
 .......\pdfliteral page{EMC}
 .......\marks4{e-,50,51,}
 .......\marks4{e+,50,51,}
-......\glue 5.0
+......\glue 4.99878
 .....\penalty 0
 .....\write1{\new@label@record{tagpdfstruct-postnote.3}{{tagstruct}{54}{tagstructobj}{128 0 R}}}
 .....\write1{\new@label@record{mcid-51}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{51}{tagmcid}{\__property_code_tagmcid: }}}

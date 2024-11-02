@@ -190,7 +190,7 @@ Completed box being shipped out [3]
 .....\OT1/cmr/m/n/9 -
 .....\discretionary (penalty 50)
 .....\glue(\rightskip) 0.0
-....\penalty 10250
+....\penalty 400
 ....\glue(\baselineskip) 3.10002
 ....\hbox(6.14998+1.75)x345.0, glue set 267.07275fil, direction TLT
 .....\OT1/cmr/m/n/9 v
@@ -367,7 +367,7 @@ Completed box being shipped out [3]
 .....\OT1/cmr/m/it/9 c
 .....\OT1/cmr/m/it/9 t
 .....\glue(\rightskip) 0.0
-....\penalty 10000
+....\penalty 150
 ....\glue(\baselineskip) 3.0
 ....\hbox(6.25+1.75)x345.0, glue set 0.12524, direction TLT
 .....\OT1/cmr/m/it/9 b
@@ -1042,7 +1042,7 @@ Completed box being shipped out [3]
 .....\OT1/cmr/m/n/9 k
 .....\OT1/cmr/m/n/9 :
 .....\glue(\rightskip) 0.0
-....\penalty 10150
+....\penalty 300
 ....\glue(\baselineskip) 3.10002
 ....\hbox(6.14998+1.75)x345.0, glue set 261.68808fil, direction TLT
 .....\OT1/cmr/m/n/9 G
