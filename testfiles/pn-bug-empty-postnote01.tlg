@@ -5,9 +5,9 @@ TEST 1: empty postnote not first
 ============================================================
 > \box...=
 \hbox(8.14003+0.0)x4.48613
+.\penalty 10000
 .\hbox(0.0+0.0)x0.0
 .\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
-.\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
 ..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
@@ -17,9 +17,9 @@ TEST 1: empty postnote not first
 l. ...\showbox0
 > \box...=
 \hbox(8.14003+0.0)x4.48613
+.\penalty 10000
 .\hbox(0.0+0.0)x0.0
 .\write1{\token_to_str:N \post@note {mark}{2}{\thepage }{1}}
-.\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
 ..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
@@ -29,9 +29,9 @@ l. ...\showbox0
 l. ...\showbox0
 > \box...=
 \hbox(8.14003+0.0)x4.48613
+.\penalty 10000
 .\hbox(0.0+0.0)x0.0
 .\write1{\token_to_str:N \post@note {mark}{3}{\thepage }{1}}
-.\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
 ..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
@@ -162,9 +162,9 @@ TEST 3: empty postnote first
 ============================================================
 > \box...=
 \hbox(8.14003+0.0)x4.48613
+.\penalty 10000
 .\hbox(0.0+0.0)x0.0
 .\write1{\token_to_str:N \post@note {mark}{4}{\thepage }{1}}
-.\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
 ..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
@@ -174,9 +174,9 @@ TEST 3: empty postnote first
 l. ...\showbox0
 > \box...=
 \hbox(8.14003+0.0)x4.48613
+.\penalty 10000
 .\hbox(0.0+0.0)x0.0
 .\write1{\token_to_str:N \post@note {mark}{5}{\thepage }{1}}
-.\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
 ..\hbox(4.51111+0.0)x4.48613, shifted -3.62892
@@ -186,9 +186,9 @@ l. ...\showbox0
 l. ...\showbox0
 > \box...=
 \hbox(8.14003+0.0)x4.48613
+.\penalty 10000
 .\hbox(0.0+0.0)x0.0
 .\write1{\token_to_str:N \post@note {mark}{6}{\thepage }{1}}
-.\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
 ..\hbox(4.51111+0.0)x4.48613, shifted -3.62892

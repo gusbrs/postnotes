@@ -21,6 +21,7 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Root}{StructTreeRoot}}.
 > \box...=
 \hbox(0.0+0.0)x0.0, direction TLT
+.\write1{\new@label@record{tagpdfstruct-postnotemark.1}{{tagstruct}{10}{tagstructobj}{30 0 R}}}
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
 ..\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
@@ -31,7 +32,6 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 .\write1{\newlabel{en:mark:1}{{1}{\thepage }{Section 1}{postnote.1.mark}{}}}
 .\write1{\new@label@record{postnotes@en:mark:1}{{postnotes/mark}{1}}}
 .\write1{\zref@newlabel{zen:mark:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}\postnote@mark{1}}}
-.\write1{\new@label@record{tagpdfstruct-postnotemark.1}{{tagstruct}{10}{tagstructobj}{30 0 R}}}
 ! OK.
 l. ...\showbox0
 ============================================================

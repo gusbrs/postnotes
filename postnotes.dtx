@@ -824,8 +824,6 @@
 \tl_new:N \l_@@_multisep_tl
 \tl_const:Nn \c_postnotes_multi_notemarker_tl { 3sp }
 \bool_new:N \l_@@_multiple_bool
-\dim_new:N \l_@@_multi_lastkern_dim
-\bool_new:N \l_@@_multi_stored_lastkern_bool
 \tl_new:N \l_@@_saved_spacefactor_multi_tl
 \keys_define:nn { postnotes/setup }
   {
@@ -852,17 +850,18 @@
         \scan_stop:
       }
   }
+%    \end{macrocode}
+% Note that \cs{@@_multiple_check:} has to be called before any whatsits
+% (labels, anchors, etc.) are placed, since they destroy \cs{lastkern} (see
+% \url{https://chat.stackexchange.com/transcript/message/66554870#66554870},
+% thanks \contributor{Ulrike Fischer})
+%    \begin{macrocode}
 \cs_new_protected:Npn \@@_multiple_check:
   {
     \bool_if:NT \l_@@_multiple_bool
       {
         \dim_compare:nNnT
-          { \c_postnotes_multi_notemarker_tl } =
-          {
-            \bool_if:NTF \l_@@_multi_stored_lastkern_bool
-              { \l_@@_multi_lastkern_dim }
-              { \lastkern }
-          }
+          { \c_postnotes_multi_notemarker_tl } = { \lastkern }
           {
             \tl_set:Ne \l_@@_saved_spacefactor_multi_tl
               { \int_use:N \spacefactor }
@@ -877,28 +876,12 @@
 %    \begin{macrocode}
             % \unkern
             % \unkern
-            \tag_socket_use:n { postnotes/multsep/begin }
+            \tag_socket_use:n { postnotes/multisep/begin }
             \@@_make_mark:Vnn \l_@@_multisep_tl { } { }
-            \tag_socket_use:n { postnotes/multsep/end }
+            \tag_socket_use:n { postnotes/multisep/end }
             \spacefactor \l_@@_saved_spacefactor_multi_tl
             \scan_stop:
           }
-      }
-  }
-%    \end{macrocode}
-% \cs{postnote} does quite a lot of stuff before actually calling
-% \cs{@@_typeset_mark:eV} which results in \cs{lastkern} set by the previous
-% \cs{@@_multiple_prepare:} being lost, so we need to store it earlier.  Some
-% bisecting shows the reason for \cs{lastkern} being lost is
-% \cs{MakeLinkTarget}.  I suppose there's a reason but, since we need
-% \cs{MakeLinkTarget}, there's little we can do about it but store it.
-%    \begin{macrocode}
-\cs_new_protected:Npn \@@_multiple_store_lastkern:
-  {
-    \bool_if:NT \l_@@_multiple_bool
-      {
-        \dim_set_eq:NN \l_@@_multi_lastkern_dim \lastkern
-        \bool_set_true:N \l_@@_multi_stored_lastkern_bool
       }
   }
 %    \end{macrocode}
@@ -1187,6 +1170,8 @@
 %     \l_postnotes_note_id_tl ,
 %     \g_@@_queue_seq ,
 %     \l_@@_counteraux_step_int ,
+%     \l_@@_mark_typeset_tl ,
+%     \l_@@_note_set_labels_tl ,
 %   }
 %   \cs{g_@@_note_id_int} is the internal, unique counter which provides the
 %   ID number of each note.  It ties ``mark'' and ``text'' together, is also
@@ -1201,6 +1186,8 @@
 \tl_set:Nn \l_postnotes_note_id_tl { \int_use:N \g_@@_note_id_int }
 \seq_new:N \g_@@_queue_seq
 \int_new:N \l_@@_counteraux_step_int
+\tl_new:N \l_@@_mark_typeset_tl
+\tl_new:N \l_@@_note_set_labels_tl
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1233,7 +1220,6 @@
     \group_begin:
       \keys_set:nn { postnotes/note } {#1}
       \bool_if:NT \l_@@_nomark_bool { \@bsphack }
-      \@@_multiple_store_lastkern:
       \@@_inhibit_note:F
         {
           \int_gincr:N \g_@@_note_id_int
@@ -1251,23 +1237,16 @@
               \tl_set:Ne \l_@@_mark_tl { \thepostnote }
             }
             { \int_set:Nn \l_@@_counteraux_step_int { 0 } }
-          \bool_if:NF \l_@@_nomark_bool
-            { \mode_leave_vertical: }
           \UseHook { postnotes/note/begin }
           \seq_gput_right:Ne \g_@@_queue_seq
             { \l_postnotes_note_id_tl }
           \cs_set:Npn \@currentcounter { postnote }
           \cs_set:Npe \@currentlabel { \p@postnote \l_@@_mark_tl }
-          \MakeLinkTarget* { postnote. \l_postnotes_note_id_tl .mark }
-          \@@_set_mark_page_label:ee { \l_postnotes_note_id_tl }
-            { \int_use:N \l_@@_counteraux_step_int }
-          \@@_set_user_labels:
           \@@_store:nn { \l_postnotes_note_id_tl } {#2}
+          \tl_set_eq:NN \l_@@_mark_typeset_tl \l_@@_mark_tl
 %    \end{macrocode}
-% Prefer \opt{label} for measuring passes, if available, see comments at
-% \cs{@@_inhibit_note:F}.  Done right before typesetting the mark, so that it
-% does not affect the note's data and, specially, the label itself set at
-% \cs{@@_set_user_labels:}.
+% Prefer \opt{label} for typesetting measuring passes, if available, see
+% comments at \cs{@@_inhibit_note:F}.
 %    \begin{macrocode}
           \bool_lazy_or:nnT
             { \g_@@_counteraux_bool }
@@ -1279,13 +1258,25 @@
                   ! \cs_if_exist_p:c
                     { \c_@@_ref_prefix_tl @ mark @ \l_postnotes_note_id_tl }
                 }
-                { \@@_get_label_if_exist:N \l_@@_mark_tl }
+                { \@@_get_label_if_exist:N \l_@@_mark_typeset_tl }
+            }
+          \tl_set:Nn \l_@@_note_set_labels_tl
+            {
+              \MakeLinkTarget* { postnote. \l_postnotes_note_id_tl .mark }
+              \@@_set_mark_page_label:ee { \l_postnotes_note_id_tl }
+                { \int_use:N \l_@@_counteraux_step_int }
+              \@@_set_user_labels:
             }
           \bool_if:NTF \l_@@_nomark_bool
-            { \tag_socket_use:n { postnotes/mark/nomark } }
             {
-              \@@_typeset_mark:eV
-                { \l_postnotes_note_id_tl } \l_@@_mark_tl
+              \tag_socket_use:n { postnotes/nomark/begin }
+              \l_@@_note_set_labels_tl
+              \tag_socket_use:n { postnotes/nomark/end }
+            }
+            {
+              \@@_typeset_mark:eVN
+                { \l_postnotes_note_id_tl } \l_@@_mark_typeset_tl
+                \l_@@_note_set_labels_tl
             }
         }
       \bool_if:NT \l_@@_nomark_bool { \@esphack }
@@ -1375,14 +1366,14 @@
             \bool_if:NTF \l_@@_print_plain_mark_stepcounter_bool
               {
                 \stepcounter { postnote }
-                \tl_set:Ne \l_@@_mark_tl { \thepostnote }
+                \tl_set:Ne \l_@@_mark_typeset_tl { \thepostnote }
               }
               {
                 \group_begin:
                   \int_incr:N \c@postnote
                   \exp_args:NNNe
                     \group_end:
-                    \tl_set:Nn \l_@@_mark_tl { \thepostnote }
+                    \tl_set:Nn \l_@@_mark_typeset_tl { \thepostnote }
               }
 %    \end{macrocode}
 % If the note has a \opt{label}, use a cross-reference to that as the mark
@@ -1400,10 +1391,10 @@
             \@@_get_label_if_exist:N \l_@@_mark_tl
           }
         \group_begin:
-          \socket_assign_plug:nn { tagsupport/postnotes/multsep/begin } { noop }
-          \socket_assign_plug:nn { tagsupport/postnotes/multsep/end } { noop }
+          \socket_assign_plug:nn { tagsupport/postnotes/multisep/begin } { noop }
+          \socket_assign_plug:nn { tagsupport/postnotes/multisep/end } { noop }
           \@@_typeset_mark_wrapper:nnn
-            { \@@_make_mark:Vnn \l_@@_mark_tl { } { } }
+            { \@@_make_mark:Vnn \l_@@_mark_typeset_tl { } { } }
             { } { }
         \group_end:
       }
@@ -1459,22 +1450,23 @@
 %
 % \begin{macro}
 %   {
-%     \@@_typeset_mark:nn ,
+%     \@@_typeset_mark:nnN ,
 %     \@@_typeset_mark_wrapper:nnn ,
 %   }
 %   Auxiliary functions for mark typesetting in \cs{@@_note:nn}.
 %   \cs{@@_typeset_mark_wrapper:nnn} is based on the definition of
 %   \cs{@footnotemark} in the kernel.
 %   \begin{syntax}
-%     \cs{@@_typeset_mark:nn} \Arg{note id} \Arg{mark}
+%     \cs{@@_typeset_mark:nnN} \Arg{note id} \Arg{mark} \Arg{labels}
 %     \cs{@@_typeset_mark_wrapper:nnn}
 %       \Arg{mark} \Arg{begin tagging} \Arg{end tagging}
 %   \end{syntax}
 %    \begin{macrocode}
-\cs_new_protected:Npn \@@_typeset_mark:nn #1#2
+\cs_new_protected:Npn \@@_typeset_mark:nnN #1#2#3
   {
     \@@_typeset_mark_wrapper:nnn
       {
+        #3
         \bool_if:NTF \l_@@_hyperlink_bool
           {
             \@@_make_mark:nnn {#2}
@@ -1486,7 +1478,7 @@
       { \tag_socket_use:n { postnotes/mark/begin } }
       { \tag_socket_use:n { postnotes/mark/end }   }
   }
-\cs_generate_variant:Nn \@@_typeset_mark:nn { eV }
+\cs_generate_variant:Nn \@@_typeset_mark:nnN { eVN }
 \tl_new:N \l_@@_saved_spacefactor_tl
 \cs_new_protected:Npn \@@_typeset_mark_wrapper:nnn #1#2#3
   {
@@ -3441,9 +3433,10 @@
 %    \begin{macrocode}
 \socket_new:nn { tagsupport/postnotes/mark/begin }{ 0 }
 \socket_new:nn { tagsupport/postnotes/mark/end }{ 0 }
-\socket_new:nn { tagsupport/postnotes/mark/nomark }{ 0 }
-\socket_new:nn { tagsupport/postnotes/multsep/begin }{ 0 }
-\socket_new:nn { tagsupport/postnotes/multsep/end }{ 0 }
+\socket_new:nn { tagsupport/postnotes/nomark/begin }{ 0 }
+\socket_new:nn { tagsupport/postnotes/nomark/end }{ 0 }
+\socket_new:nn { tagsupport/postnotes/multisep/begin }{ 0 }
+\socket_new:nn { tagsupport/postnotes/multisep/end }{ 0 }
 \socket_new:nn { tagsupport/postnotes/printlist/begin }{ 0 }
 \socket_new:nn { tagsupport/postnotes/printlist/end }{ 0 }
 \socket_new:nn { tagsupport/postnotes/printnote/begin }{ 0 }
@@ -3499,7 +3492,7 @@
         \tag_struct_end: % endnotemark
         \tag_mc_begin_pop:n { }
       }
-    \socket_new_plug:nnn { tagsupport/postnotes/mark/nomark } { default }
+    \socket_new_plug:nnn { tagsupport/postnotes/nomark/begin } { default }
       {
         \tag_struct_begin:n
           {
@@ -3509,26 +3502,28 @@
           }
         \@@_tagsup_store_sctructnum:nN
           { postnotemark } \l_postnotes_note_id_tl
-        \tag_struct_end: % NonStruct
       }
+    \socket_new_plug:nnn { tagsupport/postnotes/nomark/end } { default }
+      { \tag_struct_end: } % NonStruct
     \socket_assign_plug:nn { tagsupport/postnotes/mark/begin } { default }
     \socket_assign_plug:nn { tagsupport/postnotes/mark/end } { default }
-    \socket_assign_plug:nn { tagsupport/postnotes/mark/nomark } { default }
+    \socket_assign_plug:nn { tagsupport/postnotes/nomark/begin } { default }
+    \socket_assign_plug:nn { tagsupport/postnotes/nomark/end } { default }
 %    \end{macrocode}
 % \opt{multiple}
 %    \begin{macrocode}
-    \socket_new_plug:nnn { tagsupport/postnotes/multsep/begin } { default }
+    \socket_new_plug:nnn { tagsupport/postnotes/multisep/begin } { default }
       {
         \tag_mc_end_push:
         \tag_mc_begin:n { artifact }
       }
-    \socket_new_plug:nnn { tagsupport/postnotes/multsep/end } { default }
+    \socket_new_plug:nnn { tagsupport/postnotes/multisep/end } { default }
       {
         \tag_mc_end:
         \tag_mc_begin_pop:n { }
       }
-    \socket_assign_plug:nn { tagsupport/postnotes/multsep/begin } { default }
-    \socket_assign_plug:nn { tagsupport/postnotes/multsep/end } { default }
+    \socket_assign_plug:nn { tagsupport/postnotes/multisep/begin } { default }
+    \socket_assign_plug:nn { tagsupport/postnotes/multisep/end } { default }
 %    \end{macrocode}
 % \cs{printpostnotes}
 %    \begin{macrocode}
@@ -4179,7 +4174,6 @@
 % \PrintIndex
 %
 %
-
 % Local Variables:
 % jinx-local-words: "endnote endnotes"
 % End:

@@ -16,12 +16,12 @@ TEST 2: Note backlink
 > \box...=
 \hbox(8.14003+0.0)x4.48613
 .\penalty 10000
+.\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\pdfdest name{postnote.1.mark} xyz
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
-.\penalty 10000
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.text}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon

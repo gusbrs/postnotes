@@ -6,12 +6,12 @@ TEST 1: makemark
 > \box...=
 \hbox(6.44444+0.0)x5.00002
 .\penalty 10000
+.\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.1.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
-.\penalty 10000
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.1.text)>>>>}
 .\hbox(6.44444+0.0)x5.00002
 ..\OT1/cmr/m/n/10 1
@@ -25,12 +25,12 @@ TEST 2: makemark 2
 > \box...=
 \hbox(8.49002+0.0)x23.98622
 .\penalty 10000
+.\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.2.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark}{2}{\thepage }{1}}
-.\penalty 10000
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.2.text)>>>>}
 .\mathon
 .\hbox(4.8611+1.3611)x23.98622, shifted -3.62892

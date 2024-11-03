@@ -28,9 +28,9 @@ TEST 2: Note hyperref
 ============================================================
 > \box...=
 \hbox(8.14003+0.0)x4.48613
+.\penalty 10000
 .\hbox(0.0+0.0)x0.0
 .\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
-.\penalty 10000
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
 ..\hbox(4.51111+0.0)x4.48613, shifted -3.62892

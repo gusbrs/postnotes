@@ -9,9 +9,9 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line ....
 > \box...=
 \hbox(8.14003+0.0)x18.98615, direction TLT
+.\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
 .\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
-.\penalty 10000
 .\hbox(8.14003+0.0)x4.48613, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -60,8 +60,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ...\glue(\rightskip) 0.0
 .\kern-0.00005
 .\kern0.00005
-.\hbox(0.0+0.0)x0.0, direction TLT
-.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }{1}}
 .\hbox(4.43448+0.0)x2.7639, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -69,6 +67,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ...\OT1/cmr/m/n/7 ,
 ..\mathoff
 .\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }{1}}
 .\hbox(8.14003+0.0)x4.48613, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -285,8 +285,6 @@ TEST 4: footnotemark + postnote
 ..\mathoff
 .\kern-0.00005
 .\kern0.00005
-.\hbox(0.0+0.0)x0.0, direction TLT
-.\write1{\token_to_str:N \post@note {mark}{3}{\thepage }{1}}
 .\hbox(4.43448+0.0)x2.7639, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -294,6 +292,8 @@ TEST 4: footnotemark + postnote
 ...\OT1/cmr/m/n/7 ,
 ..\mathoff
 .\penalty 10000
+.\hbox(0.0+0.0)x0.0, direction TLT
+.\write1{\token_to_str:N \post@note {mark}{3}{\thepage }{1}}
 .\hbox(8.14003+0.0)x4.48613, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT

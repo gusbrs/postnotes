@@ -55,21 +55,21 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 > \box...=
 \hbox(8.14003+0.0)x4.48613
 .\penalty 10000
-.\hbox(0.0+0.0)x0.0
-..\hbox(0.0+0.0)x0.0, shifted -12.0
-...\special{pdf:dest (postnote.1.mark)[@thispage/XYZ @xpos @ypos null]}
-...\special{pdf:obj @pdf.SDest.postnote.1.mark[@pdf.obj24/XYZ @xpos @ypos null]}
-...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
-.\write1{\newlabel{en:mark:1}{{1}{\thepage }{Section 1}{postnote.1.mark}{}}}
-.\write1{\new@label@record{postnotes@en:mark:1}{{postnotes/mark}{1}}}
-.\write1{\zref@newlabel{zen:mark:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}\postnote@mark{1}}}
-.\penalty 10000
 .\write1{\new@label@record{tagpdfstruct-postnotemark.1}{{tagstruct}{10}{tagstructobj}{@pdf.obj29}}}
 .\write1{\new@label@record{mcid-4}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{4}{tagmcid}{\__property_code_tagmcid: }}}
 .\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 .\marks4{b-,4,10,endnotemark,,,}
 .\marks4{b+,4,10,endnotemark,,,}
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0
+..\hbox(0.0+0.0)x0.0, shifted -12.0
+...\special{pdf:dest (postnote.1.mark)[@thispage/XYZ @xpos @ypos null]}
+...\special{pdf:obj @pdf.SDest.postnote.1.mark[@pdf.obj29/XYZ @xpos @ypos null]}
+...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
+.\write1{\newlabel{en:mark:1}{{1}{\thepage }{Section 1}{postnote.1.mark}{}}}
+.\write1{\new@label@record{postnotes@en:mark:1}{{postnotes/mark}{1}}}
+.\write1{\zref@newlabel{zen:mark:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}\postnote@mark{1}}}
 .\special{pdf:code EMC}
 .\marks4{e-,4,10,}
 .\marks4{e+,4,10,}
@@ -496,21 +496,21 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 > \box...=
 \hbox(8.14003+0.0)x4.48613
 .\penalty 10000
-.\hbox(0.0+0.0)x0.0
-..\hbox(0.0+0.0)x0.0, shifted -12.0
-...\special{pdf:dest (postnote.2.mark)[@thispage/XYZ @xpos @ypos null]}
-...\special{pdf:obj @pdf.SDest.postnote.2.mark[@pdf.obj24/XYZ @xpos @ypos null]}
-...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }{1}}
-.\write1{\newlabel{en:mark:2}{{2}{\thepage }{Section 1}{postnote.2.mark}{}}}
-.\write1{\new@label@record{postnotes@en:mark:2}{{postnotes/mark}{2}}}
-.\write1{\zref@newlabel{zen:mark:2}{\default{2}\page{\Z@C@page }\anchor{postnote.2.mark}\postnote@mark{2}}}
-.\penalty 10000
 .\write1{\new@label@record{tagpdfstruct-postnotemark.2}{{tagstruct}{20}{tagstructobj}{@pdf.obj44}}}
 .\write1{\new@label@record{mcid-19}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{19}{tagmcid}{\__property_code_tagmcid: }}}
 .\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 .\marks4{b-,19,20,endnotemark,,,}
 .\marks4{b+,19,20,endnotemark,,,}
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0
+..\hbox(0.0+0.0)x0.0, shifted -12.0
+...\special{pdf:dest (postnote.2.mark)[@thispage/XYZ @xpos @ypos null]}
+...\special{pdf:obj @pdf.SDest.postnote.2.mark[@pdf.obj44/XYZ @xpos @ypos null]}
+...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }{1}}
+.\write1{\newlabel{en:mark:2}{{2}{\thepage }{Section 1}{postnote.2.mark}{}}}
+.\write1{\new@label@record{postnotes@en:mark:2}{{postnotes/mark}{2}}}
+.\write1{\zref@newlabel{zen:mark:2}{\default{2}\page{\Z@C@page }\anchor{postnote.2.mark}\postnote@mark{2}}}
 .\special{pdf:code EMC}
 .\marks4{e-,19,20,}
 .\marks4{e+,19,20,}
@@ -937,18 +937,18 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 > \box...=
 \hbox(8.14003+0.0)x4.48613
 .\penalty 10000
-.\hbox(0.0+0.0)x0.0
-..\hbox(0.0+0.0)x0.0, shifted -12.0
-...\special{pdf:dest (postnote.3.mark)[@thispage/XYZ @xpos @ypos null]}
-...\special{pdf:obj @pdf.SDest.postnote.3.mark[@pdf.obj24/XYZ @xpos @ypos null]}
-...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{3}{\thepage }{1}}
-.\penalty 10000
 .\write1{\new@label@record{tagpdfstruct-postnotemark.3}{{tagstruct}{30}{tagstructobj}{@pdf.obj59}}}
 .\write1{\new@label@record{mcid-34}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{34}{tagmcid}{\__property_code_tagmcid: }}}
 .\special shipout{pdf:code /endnotemark <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 .\marks4{b-,34,30,endnotemark,,,}
 .\marks4{b+,34,30,endnotemark,,,}
+.\penalty 10000
+.\hbox(0.0+0.0)x0.0
+..\hbox(0.0+0.0)x0.0, shifted -12.0
+...\special{pdf:dest (postnote.3.mark)[@thispage/XYZ @xpos @ypos null]}
+...\special{pdf:obj @pdf.SDest.postnote.3.mark[@pdf.obj59/XYZ @xpos @ypos null]}
+...\penalty 10000
+.\write1{\token_to_str:N \post@note {mark}{3}{\thepage }{1}}
 .\special{pdf:code EMC}
 .\marks4{e-,34,30,}
 .\marks4{e+,34,30,}

@@ -21,17 +21,17 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Root}{StructTreeRoot}}.
 > \box...=
 \hbox(0.0+0.0)x0.0
+.\write1{\new@label@record{tagpdfstruct-postnotemark.1}{{tagstruct}{10}{tagstructobj}{@pdf.obj29}}}
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.1.mark)[@thispage/XYZ @xpos @ypos null]}
-...\special{pdf:obj @pdf.SDest.postnote.1.mark[@pdf.obj24/XYZ @xpos @ypos null]}
+...\special{pdf:obj @pdf.SDest.postnote.1.mark[@pdf.obj29/XYZ @xpos @ypos null]}
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
 .\write1{\newlabel{en:mark:1}{{1}{\thepage }{Section 1}{postnote.1.mark}{}}}
 .\write1{\new@label@record{postnotes@en:mark:1}{{postnotes/mark}{1}}}
 .\write1{\zref@newlabel{zen:mark:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}\postnote@mark{1}}}
-.\write1{\new@label@record{tagpdfstruct-postnotemark.1}{{tagstruct}{10}{tagstructobj}{@pdf.obj29}}}
 ! OK.
 l. ...\showbox0
 ============================================================
