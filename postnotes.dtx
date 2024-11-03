@@ -1388,13 +1388,18 @@
 %    \begin{macrocode}
             \@@_get_label_if_exist:N \l_@@_mark_tl
           }
-        \group_begin:
-          \socket_assign_plug:nn { tagsupport/postnotes/multsep/begin } { noop }
-          \socket_assign_plug:nn { tagsupport/postnotes/multsep/end } { noop }
-          \@@_typeset_mark_wrapper:nnn
-            { \@@_make_mark:Vnn \l_@@_mark_tl { } { } }
-            { } { }
-        \group_end:
+        \bool_if:NF \l_@@_nomark_bool
+          {
+            \group_begin:
+              \socket_assign_plug:nn
+                { tagsupport/postnotes/multsep/begin } { noop }
+              \socket_assign_plug:nn
+                { tagsupport/postnotes/multsep/end } { noop }
+              \@@_typeset_mark_wrapper:nnn
+                { \@@_make_mark:Vnn \l_@@_mark_tl { } { } }
+                { } { }
+            \group_end:
+          }
       }
     \bool_if:NTF \l_@@_inhibit_note_bool
       { \prg_return_true:  }
