@@ -1,0 +1,103 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+% Ensure the same font across check engines
+\usepackage[OT1]{fontenc}
+\renewcommand\rmdefault{cmr}
+\renewcommand\sfdefault{cmss}
+\renewcommand\ttdefault{cmtt}
+
+\usepackage{postnotes}
+\postnotesetup{counteraux}
+% This file is the limitation of the package of getting wrong numbering if a
+% float happens to be placed before a \printpostnotes call which precedes it.
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\section{Section 1}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{Notes: First block}
+\setbox0=\hbox{\postnote{one}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnote{two}}%
+\showbox0
+\box0
+
+\begin{table}[t]
+Table.%
+\setbox0=\hbox{\postnote{three}}%
+\showbox0%
+\box0
+\setbox0=\hbox{\postnote{four}}%
+\showbox0%
+\box0
+\end{table}
+\ENDTEST
+
+\OMIT
+\clearpage{}
+\TIMO
+
+% FIXME I cannot seem to be able to send this output to the log in a way that
+% does not affect the output.
+\BEGINTEST{Print first block}
+\showoutput
+\printpostnotes
+\ENDTEST
+
+\pnsetcounteraux{0}
+
+\BEGINTEST{Notes: Second block}
+
+\setbox0=\hbox{\postnote{five}}%
+\showbox0%
+\box0
+
+\begin{table}[t]
+Table.%
+\setbox0=\hbox{\postnote{six}}%
+\showbox0%
+\box0
+\setbox0=\hbox{\postnote{seven}}%
+\showbox0%
+\box0
+\setbox0=\hbox{\postnote{eight}}%
+\showbox0%
+\box0
+\end{table}
+
+\setbox0=\hbox{\postnote{nine}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnote{ten}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+\clearpage
+\TIMO
+
+\BEGINTEST{Print second block}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

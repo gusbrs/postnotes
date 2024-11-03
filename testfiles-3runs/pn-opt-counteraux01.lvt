@@ -1,0 +1,121 @@
+\documentclass{book}
+
+\input{regression-test}
+
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+% Ensure the same font across check engines
+\usepackage[OT1]{fontenc}
+\renewcommand\rmdefault{cmr}
+\renewcommand\sfdefault{cmss}
+\renewcommand\ttdefault{cmtt}
+
+\usepackage{postnotes}
+\postnotesetup{counteraux}
+\AddToHook{cmd/chapter/before}{%
+  \pnsetcounteraux{0}%
+  \postnotesection{\section*{Notes to chapter \pnthechapternextnote}}}
+\counterwithin*{postnote}{chapter}
+
+\usepackage[textwidth=8cm]{geometry}
+\usepackage{hyperref}
+
+\begin{document}
+
+\chapter{First chapter}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{Notes: First chapter}
+\setbox0=\hbox{\postnote{one}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnote{two}}%
+\showbox0
+\box0
+
+\begin{figure}[p]
+  Figure.
+  \caption[Short caption]{A long caption, long enough to require two
+    lines%
+\setbox0=\hbox{\postnote{three}}%
+\showbox0%
+\box0}
+\end{figure}
+
+\setbox0=\hbox{\postnote{four}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnote{five}}%
+\showbox0
+\box0
+
+\OMIT
+\clearpage{}
+\TIMO
+
+\setbox0=\hbox{\postnote{six}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+
+\chapter{Second chapter}
+
+\TIMO
+
+\BEGINTEST{Notes: Second chapter}
+\setbox0=\hbox{\postnote{one}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnote{two}}%
+\showbox0
+\box0
+
+\begin{figure}[p]
+  Figure.
+  \caption[Short caption]{A long caption, long enough to require two
+    lines%
+\setbox0=\hbox{\postnote{three}}%
+\showbox0%
+\box0}
+\end{figure}
+
+\setbox0=\hbox{\postnote{four}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnote{five}}%
+\showbox0
+\box0
+
+\OMIT
+\clearpage{}
+\TIMO
+
+\setbox0=\hbox{\postnote{six}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+\cleardoublepage{}
+\TIMO
+
+\BEGINTEST{Print}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}

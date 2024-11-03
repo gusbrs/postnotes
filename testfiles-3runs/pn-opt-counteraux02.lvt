@@ -1,0 +1,89 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\ExplSyntaxOn
+\debug_on:n { check-declarations , deprecation }
+\ExplSyntaxOff
+
+% Ensure the same font across check engines
+\usepackage[OT1]{fontenc}
+\renewcommand\rmdefault{cmr}
+\renewcommand\sfdefault{cmss}
+\renewcommand\ttdefault{cmtt}
+
+\usepackage{postnotes}
+\postnotesetup{counteraux}
+% This file is meant to test a note within a float floating past a
+% \printpostnotes.
+
+\usepackage[textwidth=8cm]{geometry}
+\usepackage{hyperref}
+
+\begin{document}
+
+\section{Section 1}
+
+\textsuperscript{avoid font warning}
+
+\START
+
+\BEGINTEST{Notes: First section}
+\setbox0=\hbox{\postnote{one}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnote{two}}%
+\showbox0
+\box0
+
+\begin{figure}[b]
+  Figure.
+  \caption[Short caption]{A long caption, long enough to require two
+    lines%
+\setbox0=\hbox{\postnote{three}}%
+\showbox0%
+\box0}
+\end{figure}
+\ENDTEST
+
+% FIXME I cannot seem to be able to send this output to the log in a way that
+% does not affect the output, though this is not really what we are most
+% interested in for this test.
+\BEGINTEST{Print first section}
+\showoutput
+\printpostnotes
+\ENDTEST
+
+\OMIT
+\section{Section 2}
+\pnsetcounteraux{0}
+\TIMO
+
+\BEGINTEST{Notes: Second section}
+\setbox0=\hbox{\postnote{four}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnote{five}}%
+\showbox0
+\box0
+
+\setbox0=\hbox{\postnote{six}}%
+\showbox0
+\box0
+\ENDTEST
+
+\OMIT
+\clearpage
+\TIMO
+
+\BEGINTEST{Print second section}
+\showoutput
+\printpostnotes
+\newpage
+\ENDTEST
+
+\OMIT
+
+\end{document}
