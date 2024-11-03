@@ -888,7 +888,10 @@
 %    \end{macrocode}
 % \cs{postnote} does quite a lot of stuff before actually calling
 % \cs{@@_typeset_mark:eV} which results in \cs{lastkern} set by the previous
-% \cs{@@_multiple_prepare:} being lost (why?), so we need to store it earlier.
+% \cs{@@_multiple_prepare:} being lost, so we need to store it earlier.  Some
+% bisecting shows the reason for \cs{lastkern} being lost is
+% \cs{MakeLinkTarget}.  I suppose there's a reason but, since we need
+% \cs{MakeLinkTarget}, there's little we can do about it but store it.
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_multiple_store_lastkern:
   {
@@ -1228,8 +1231,9 @@
 \cs_new_protected:Npn \@@_note:nn #1#2
   {
     \group_begin:
-      \@@_multiple_store_lastkern:
       \keys_set:nn { postnotes/note } {#1}
+      \bool_if:NT \l_@@_nomark_bool { \@bsphack }
+      \@@_multiple_store_lastkern:
       \@@_inhibit_note:F
         {
           \int_gincr:N \g_@@_note_id_int
@@ -1247,7 +1251,8 @@
               \tl_set:Ne \l_@@_mark_tl { \thepostnote }
             }
             { \int_set:Nn \l_@@_counteraux_step_int { 0 } }
-          \mode_leave_vertical:
+          \bool_if:NF \l_@@_nomark_bool
+            { \mode_leave_vertical: }
           \UseHook { postnotes/note/begin }
           \seq_gput_right:Ne \g_@@_queue_seq
             { \l_postnotes_note_id_tl }
@@ -1283,6 +1288,7 @@
                 { \l_postnotes_note_id_tl } \l_@@_mark_tl
             }
         }
+      \bool_if:NT \l_@@_nomark_bool { \@esphack }
     \group_end:
   }
 %    \end{macrocode}
@@ -1357,7 +1363,12 @@
 % counter had been stepped, we increment \cs{c@postnote} locally and grouped,
 % and smuggle \cs{thepostnote} out of the group.
 %    \begin{macrocode}
-    \bool_if:NT \l_@@_print_plain_mark_bool
+    \bool_lazy_all:nT
+      {
+        { \l_@@_inhibit_note_bool }
+        { \l_@@_print_plain_mark_bool }
+        { ! \l_@@_nomark_bool }
+      }
       {
         \tl_if_empty:NT \l_@@_mark_tl
           {
@@ -1388,18 +1399,13 @@
 %    \begin{macrocode}
             \@@_get_label_if_exist:N \l_@@_mark_tl
           }
-        \bool_if:NF \l_@@_nomark_bool
-          {
-            \group_begin:
-              \socket_assign_plug:nn
-                { tagsupport/postnotes/multsep/begin } { noop }
-              \socket_assign_plug:nn
-                { tagsupport/postnotes/multsep/end } { noop }
-              \@@_typeset_mark_wrapper:nnn
-                { \@@_make_mark:Vnn \l_@@_mark_tl { } { } }
-                { } { }
-            \group_end:
-          }
+        \group_begin:
+          \socket_assign_plug:nn { tagsupport/postnotes/multsep/begin } { noop }
+          \socket_assign_plug:nn { tagsupport/postnotes/multsep/end } { noop }
+          \@@_typeset_mark_wrapper:nnn
+            { \@@_make_mark:Vnn \l_@@_mark_tl { } { } }
+            { } { }
+        \group_end:
       }
     \bool_if:NTF \l_@@_inhibit_note_bool
       { \prg_return_true:  }
