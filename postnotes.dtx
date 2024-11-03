@@ -1567,15 +1567,10 @@
 %
 % \section{\cs{postnotesection}}
 %
-% \begin{macro}[int]
-%   {
-%     \postnotesection ,
-%     \postnotesectionx ,
-%   }
-%   Provide \cs{postnotesection} and \cs{postnotesectionx}.
+% \begin{macro}[int]{\postnotesection}
+%   Provide \cs{postnotesection}.
 %   \begin{syntax}
 %     \cs{postnotesection}\oarg{options}\marg{section content}
-%     \cs{postnotesectionx}\oarg{options}\marg{section content}
 %   \end{syntax}
 %    \begin{macrocode}
 \NewDocumentCommand \postnotesection { O { } +m }
@@ -1583,17 +1578,6 @@
     \@bsphack
     \@@_section:nn {#1} {#2}
     \@esphack
-  }
-\NewDocumentCommand \postnotesectionx { O { } +m }
-  {
-    % NOTE Command deprecated in 2022-12-27 for v0.2.0.
-    \msg_warning:nn { postnotes } { postnotesectionx-deprecated }
-    \postnotesection [ #1 , exp ] {#2}
-  }
-\msg_new:nnn { postnotes } { postnotesectionx-deprecated }
-  {
-    '\iow_char:N\\postnotesectionx'~is~deprecated~\msg_line_context:.~
-    Use~the~'exp'~option~of~'\iow_char:N\\postnotesection'~instead.
   }
 %    \end{macrocode}
 % \end{macro}

@@ -29,6 +29,10 @@
 ### Changed
 - Improved handling of nested notes, example added to the User manual.
 
+### Removed
+- Command `\postnotesectionx`, which had been deprecated since v0.2.0 from
+  2022-12-28, has been removed.
+
 ## [v0.3.0](https://github.com/gusbrs/postnotes/compare/v0.2.8...v0.3.0) (2024-10-15)
 
 ### Added
