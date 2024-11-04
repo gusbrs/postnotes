@@ -1361,7 +1361,7 @@
         { ! \l_@@_nomark_bool }
       }
       {
-        \tl_if_empty:NT \l_@@_mark_tl
+        \tl_if_empty:NTF \l_@@_mark_tl
           {
             \bool_if:NTF \l_@@_print_plain_mark_stepcounter_bool
               {
@@ -1388,8 +1388,9 @@
 % belongs to the pass which actually gets typeset.  Hence, if we have a label,
 % it is more general and more reliable: use it.
 %    \begin{macrocode}
-            \@@_get_label_if_exist:N \l_@@_mark_tl
+            \@@_get_label_if_exist:N \l_@@_mark_typeset_tl
           }
+          { \tl_set_eq:NN \l_@@_mark_typeset_tl \l_@@_mark_tl }
         \group_begin:
           \socket_assign_plug:nn { tagsupport/postnotes/multisep/begin } { noop }
           \socket_assign_plug:nn { tagsupport/postnotes/multisep/end } { noop }
