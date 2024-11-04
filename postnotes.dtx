@@ -670,12 +670,12 @@
 % more work to do to get this right.
 %    \begin{macrocode}
         maketextmark =
-         {
-           \hbox_set:Nn \l_@@_tmpa_box
-             { \@textsuperscript { \normalfont ##1 } }
-           \skip_horizontal:n { - \box_wd:N \l_@@_tmpa_box }
-           ##2 \box_use:N \l_@@_tmpa_box ##3
-         } ,
+          {
+            \hbox_set:Nn \l_@@_tmpa_box
+              { \@textsuperscript { \normalfont ##1 } }
+            \skip_horizontal:n { - \box_wd:N \l_@@_tmpa_box }
+            ##2 \box_use:N \l_@@_tmpa_box ##3
+          } ,
       } ,
     style / pagenote .meta:n =
       {
@@ -1420,7 +1420,8 @@
             \exp_args:NV \zref@ifrefundefined \l_@@_note_zlabel_str
               { }
               {
-                \exp_args:NV \zref@ifrefcontainsprop \l_@@_note_zlabel_str
+                \exp_args:NV \zref@ifrefcontainsprop
+                  \l_@@_note_zlabel_str
                   { postnote@mark }
                   {
                     \exp_args:NNNo \exp_args:NNo \tl_set:Nn #1
@@ -1435,7 +1436,8 @@
       }
       {
         \exp_args:Ne \property_if_recorded:nnT
-          { postnotes@ \l_@@_note_label_str } { postnotes/mark }
+          { postnotes@ \l_@@_note_label_str }
+          { postnotes/mark }
           {
             \tl_set:Ne #1
               {
@@ -1843,7 +1845,8 @@
                         \@@_prop_get:nnN
                           { \l_postnotes_print_note_id_tl }
                           { thesection } \pnthesection
-                        \tl_set:NV \pnidnextnote \l_@@_print_note_id_next_tl
+                        \tl_set:NV \pnidnextnote
+                          \l_@@_print_note_id_next_tl
                         \@@_prop_get:nnN
                           { \l_@@_print_note_id_next_tl }
                           { thechapter } \pnthechapternextnote
@@ -2080,7 +2083,10 @@
                     { \tl_item:Nn \l_@@_tmpb_tl { 2 } }
                     >
                     { \g_@@_note_id_int }
-                    { \seq_put_right:Ne \l_@@_tmpb_seq \l_@@_tmpb_tl }
+                    {
+                      \seq_put_right:Ne \l_@@_tmpb_seq
+                        \l_@@_tmpb_tl
+                    }
                     {
                       \seq_put_right:Ne \l_@@_tmpa_seq
                         { \tl_item:Nn \l_@@_tmpb_tl { 2 } }
@@ -2094,8 +2100,10 @@
 % future changes of the code.
 %    \begin{macrocode}
             }
-          \seq_gset_eq:NN \g_@@_print_labelseq_queue_seq \l_@@_tmpa_seq
-          \seq_concat:NNN \l_@@_tmpa_seq \l_@@_tmpb_seq \g_@@_labelseq_seq
+          \seq_gset_eq:NN \g_@@_print_labelseq_queue_seq
+            \l_@@_tmpa_seq
+          \seq_concat:NNN \l_@@_tmpa_seq \l_@@_tmpb_seq
+            \g_@@_labelseq_seq
           \seq_gset_eq:NN \g_@@_labelseq_seq \l_@@_tmpa_seq
         }
         {
@@ -2124,7 +2132,8 @@
 % just drop them altogether if found.
 %    \begin{macrocode}
             }
-          \seq_gset_eq:NN \g_@@_print_labelseq_queue_seq \l_@@_tmpa_seq
+          \seq_gset_eq:NN \g_@@_print_labelseq_queue_seq
+            \l_@@_tmpa_seq
           \seq_gset_eq:NN \g_@@_labelseq_seq \l_@@_tmpb_seq
         }
     \group_end:
@@ -2241,7 +2250,8 @@
 % Not very \texttt{expl3}-y, I know.  But I don't see a \cs{seq_if_eq:NNTF}
 % available and, technically, sequences are just structured token lists.
 %    \begin{macrocode}
-          \tl_if_eq:NNF \g_@@_print_labelseq_queue_seq \l_@@_tmpa_seq
+          \tl_if_eq:NNF
+            \g_@@_print_labelseq_queue_seq \l_@@_tmpa_seq
             { \msg_warning:nn { postnotes } { possible-shuffle } }
         \group_end:
       }
@@ -2278,8 +2288,10 @@
                     { \str_if_eq_p:Vn \l_@@_tmpa_tl { note } }
                     { \str_if_eq_p:Vn \l_@@_tmpb_tl { note } }
                     {
-                      \@@_prop_get:nnN {##1} { sortnum } \l_@@_tmpa_tl
-                      \@@_prop_get:nnN {##2} { sortnum } \l_@@_tmpb_tl
+                      \@@_prop_get:nnN {##1}
+                        { sortnum } \l_@@_tmpa_tl
+                      \@@_prop_get:nnN {##2}
+                        { sortnum } \l_@@_tmpb_tl
                       \fp_compare:nNnTF
                         { \l_@@_tmpa_tl } > { \l_@@_tmpb_tl }
                         { \sort_return_swapped: }
