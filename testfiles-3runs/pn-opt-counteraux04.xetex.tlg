@@ -1018,7 +1018,7 @@ Completed box being shipped out [3]
 .............\penalty 10000
 ...........\write1{\token_to_str:N \post@note {mark}{24}{\thepage }{1}}
 ...........\write1{\newlabel{foo}{{20}{\thepage }{Section 2}{postnote.24.mark}{}}}
-...........\write1{\new@label@record{postnotes@foo}{{postnotes/mark}{20}}}
+...........\write1{\new@label@record{__postnotes_foo}{{postnotes/mark}{20}}}
 ...........\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.24.text)>>>>}
 ...........\OT1/cmr/m/n/24.88 2
 ...........\OT1/cmr/m/n/24.88 0

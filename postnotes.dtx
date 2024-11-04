@@ -1440,7 +1440,7 @@
             \tl_set:Ne #1
               {
                 \property_ref:ee
-                  { postnotes@ \l_@@_note_label_str } { postnotes/mark }
+                  { __postnotes_ \l_@@_note_label_str } { postnotes/mark }
               }
           }
       }
@@ -1512,7 +1512,7 @@
     \str_if_empty:NF \l_@@_note_label_str
       {
         \exp_args:NV \label \l_@@_note_label_str
-        \property_record:ee { postnotes@ \l_@@_note_label_str }
+        \property_record:ee { __postnotes_ \l_@@_note_label_str }
           { postnotes/mark }
       }
     \str_if_empty:NF \l_@@_note_zlabel_str

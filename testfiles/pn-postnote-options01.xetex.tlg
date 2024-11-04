@@ -748,7 +748,7 @@ TEST 9: label
 ...\penalty 10000
 .\write1{\token_to_str:N \post@note {mark}{9}{\thepage }{1}}
 .\write1{\newlabel{en:1}{{3}{\thepage }{First chapter}{postnote.9.mark}{}}}
-.\write1{\new@label@record{postnotes@en:1}{{postnotes/mark}{3}}}
+.\write1{\new@label@record{__postnotes_en:1}{{postnotes/mark}{3}}}
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.9.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon

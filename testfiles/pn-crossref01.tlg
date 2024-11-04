@@ -14,7 +14,7 @@ TEST 1: cross-ref
 .\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
 .\write1{\zref@newlabel{en:1}{\default{1}\page{\Z@C@page }\abspage{\Z@C@abspage }\zc@counter{postnote}\thecounter{1}\zc@type{endnote}\zc@cntval{1}\zc@pgval{\Z@C@zc@pgval }\zc@enclval{}\zc@pgfmt{\Z@C@zc@pgfmt }\anchor{postnote.1.mark}\postnote@mark{1}}}
 .\write1{\newlabel{en:1}{{1}{\thepage }{First chapter}{postnote.1.mark}{}}}
-.\write1{\new@label@record{postnotes@en:1}{{postnotes/mark}{1}}}
+.\write1{\new@label@record{__postnotes_en:1}{{postnotes/mark}{1}}}
 .\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.text}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
