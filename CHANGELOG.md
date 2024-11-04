@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.3.0...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.4.0...HEAD)
+
+## [v0.4.0](https://github.com/gusbrs/postnotes/compare/v0.3.0...v0.4.0) (2024-11-04)
 
 *WARNING*: You may need to clear your .aux files after this update.
 - (Internally, the macro used in the .aux file, `\post@note`, used to take two
