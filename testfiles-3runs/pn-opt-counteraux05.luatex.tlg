@@ -1,0 +1,2019 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: Wrong measurement in tabularx
+============================================================
+Overfull \hbox (11.41042pt too wide) in alignment at lines 62--62
+[][][][]
+\hbox(0.0+0.0)x350.0, direction TLT
+.\glue(\tabskip) 0.0
+.\unsetbox(0.0+0.0)x50.62086
+.\glue(\tabskip) 0.0
+.\unsetbox(0.0+0.0)x131.34752
+.\glue(\tabskip) 0.0
+.\unsetbox(0.0+0.0)x48.09451
+.\glue(\tabskip) 0.0
+.\unsetbox(0.0+0.0)x131.34752
+.\glue(\tabskip) 0.0
+Completed box being shipped out [1]
+\vbox(609.60394+0.0)x409.8775, direction TLT
+.\hbox(0.0+0.0)x0.0, direction TLT
+.\vbox(0.0+0.0)x0.0, glue set 14.87636fil, direction TLT
+..\kern0.0
+..\kern-13.87262
+..\kern-1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 58.87376fil, direction TLT
+...\kern0.0
+...\kern59.8775
+...\kern-1.00374
+...\pdfdest name{page.1} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(609.60394+0.0)x409.8775, direction TLT
+..\glue -13.87262
+..\vbox(623.47656+0.0)x350.0, shifted 59.8775, direction TLT
+...\vbox(12.0+0.0)x350.0, glue set 12.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x350.0, direction TLT
+.....\hbox(0.0+0.0)x350.0, direction TLT
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(556.47656+0.0)x350.0, glue set 401.59677fil, direction TLT
+....\write-{}
+....\pdfdest name{Doc-Start} xyz
+....\pdfdest name{section.1} xyz
+....\glue(\topskip) 0.00002
+....\hbox(9.99998+0.0)x350.0, glue set 260.70844fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(9.27998+0.0)x24.29997, direction TLT
+......\glue 0.0
+......\OT1/cmr/bx/n/14.4 1
+......\glue 16.19998
+.....\OT1/cmr/bx/n/14.4 S
+.....\OT1/cmr/bx/n/14.4 e
+.....\OT1/cmr/bx/n/14.4 c
+.....\discretionary (penalty 50)
+......< \OT1/cmr/bx/n/14.4 -
+.....\OT1/cmr/bx/n/14.4 t
+.....\OT1/cmr/bx/n/14.4 i
+.....\OT1/cmr/bx/n/14.4 o
+.....\OT1/cmr/bx/n/14.4 n
+.....\glue(\spaceskip) 5.4 plus 2.7 minus 1.79999
+.....\OT1/cmr/bx/n/14.4 1
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\write3{\protect \BOOKMARK [1][-]{section.1}{\376\377\000S\000e\000c\000t\000i\000o\000n\000\040\0001}{}% 1}
+....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {1}Section 1}{\thepage }{section.1}\protected@file@percent }}
+....\penalty 10000
+....\glue 9.90276 plus 0.86108
+....\penalty 10000
+....\penalty 10000
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\lineskip) 1.0
+....\hbox(16.03793+0.0)x350.0, glue set 0.42773, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.7.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{7}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.7.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.8.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{8}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.8.text}
+.....\OT1/cmr/m/n/24.88 2
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.9.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{9}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.text}
+.....\OT1/cmr/m/n/24.88 3
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.10.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{10}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.10.text}
+.....\OT1/cmr/m/n/24.88 4
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.11.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{11}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.11.text}
+.....\OT1/cmr/m/n/24.88 5
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.12.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{12}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.12.text}
+.....\OT1/cmr/m/n/24.88 6
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.13.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{13}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.13.text}
+.....\OT1/cmr/m/n/24.88 7
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.14.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{14}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.14.text}
+.....\OT1/cmr/m/n/24.88 8
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.15.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{15}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.15.text}
+.....\OT1/cmr/m/n/24.88 9
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.16.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{16}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.16.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 0
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.17.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{17}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.17.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 1
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.18.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{18}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.18.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 2
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.19.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{19}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.19.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 3
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.20.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{20}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.20.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 4
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.21.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{21}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.21.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 5
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.22.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{22}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.22.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 6
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.23.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{23}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.23.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 7
+.....\pdfendlink
+.....\glue(\rightskip) 0.0
+....\penalty 300
+....\glue(\lineskip) 1.0
+....\hbox(16.03793+0.0)x350.0, glue set 327.17917fil, direction TLT
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.24.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{24}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.24.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 8
+.....\pdfendlink
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\lineskip) 1.0
+....\hbox(16.03793+0.0)x350.0, glue set 312.17917fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(0.0+0.0)x15.0, direction TLT
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.25.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{25}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.25.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 9
+.....\pdfendlink
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\glue 0.0 plus 1.0fil
+....\glue 20.0 plus 2.0 minus 4.0
+....\vbox(63.82033+0.0)x350.0, direction TLT
+.....\vbox(63.82033+0.0)x350.0, direction TLT
+......\hbox(34.41017+29.41016)x350.0, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(34.41017+29.41016)x350.0, direction TLT
+........\mathon
+........\vbox(34.41017+29.41016)x350.0, direction TLT
+.........\rule(0.4+0.0)x350.0
+.........\hbox(8.39996+3.60004)x350.0, direction TLT
+..........\glue(\tabskip) 0.0
+..........\hbox(8.39996+3.60004)x50.62086, glue set 42.20909fil, direction TLT
+...........\rule(8.39996+3.60004)x0.0
+...........\rule(*+*)x0.4
+...........\glue 6.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 0.00002
+...........\OT1/cmr/m/n/10 M
+...........\OT1/cmr/m/n/10 u
+...........\OT1/cmr/m/n/10 l
+...........\discretionary (penalty 50)
+............< \OT1/cmr/m/n/10 -
+...........\OT1/cmr/m/n/10 t
+...........\OT1/cmr/m/n/10 i
+...........\discretionary (penalty 50)
+............< \OT1/cmr/m/n/10 -
+...........\OT1/cmr/m/n/10 c
+...........\OT1/cmr/m/n/10 o
+...........\OT1/cmr/m/n/10 l
+...........\discretionary (penalty 50)
+............< \OT1/cmr/m/n/10 -
+...........\OT1/cmr/m/n/10 u
+...........\OT1/cmr/m/n/10 m
+...........\OT1/cmr/m/n/10 n
+...........\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+...........\OT1/cmr/m/n/10 e
+...........\OT1/cmr/m/n/10 n
+...........\discretionary (penalty 50)
+............< \OT1/cmr/m/n/10 -
+............= \kern-0.27779 (font)
+...........\OT1/cmr/m/n/10 t
+...........\OT1/cmr/m/n/10 r
+...........\OT1/cmr/m/n/10 y
+...........\OT1/cmr/m/n/10 !
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+...........\hbox(0.0+0.0)x0.0, direction TLT
+..........\glue(\tabskip) 0.0
+..........\hbox(0.0+0.0)x131.34752, direction TLT
+..........\glue(\tabskip) 0.0
+..........\hbox(8.39996+3.60004)x48.09451, direction TLT
+...........\glue 6.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 0.00002
+...........\OT1/cmr/m/n/10 T
+...........\OT1/cmr/m/n/10 H
+...........\OT1/cmr/m/n/10 R
+...........\OT1/cmr/m/n/10 E
+...........\OT1/cmr/m/n/10 E
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+..........\hbox(8.39996+3.60004)x131.34752, direction TLT
+...........\glue 6.0
+...........\vbox(8.39996+3.60004)x118.94753, direction TLT
+............\hbox(8.39996+3.60004)x118.94753, glue set 90.05858fil, direction TLT
+.............\localpar
+..............\localinterlinepenalty=0
+..............\localbrokenpenalty=0
+..............\localleftbox=null
+..............\localrightbox=null
+.............\hbox(0.0+0.0)x0.0, direction TLT
+.............\rule(8.39996+*)x0.0
+.............\OT1/cmr/m/n/10 F
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 O
+.............\OT1/cmr/m/n/10 U
+.............\OT1/cmr/m/n/10 R
+.............\penalty 10000
+.............\rule(0.0+3.60004)x0.0
+.............\penalty 10000
+.............\glue(\parfillskip) 0.0 plus 1.0fil
+.............\glue(\rightskip) 0.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+.........\rule(0.4+0.0)x350.0
+.........\hbox(16.03793+34.58241)x350.0, direction TLT
+..........\glue(\tabskip) 0.0
+..........\hbox(16.03793+34.58241)x50.62086, direction TLT
+...........\rule(8.39996+3.60004)x0.0
+...........\rule(*+*)x0.4
+...........\glue 6.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 0.00002
+...........\OT1/cmr/m/n/10 o
+...........\OT1/cmr/m/n/10 n
+...........\OT1/cmr/m/n/10 e
+...........\penalty 10000
+...........\penalty 10000
+...........\hbox(0.0+0.0)x0.0, direction TLT
+............\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.............\pdfdest name{postnote.5.mark} xyz
+.............\penalty 10000
+...........\write1{\token_to_str:N \post@note {mark}{5}{\thepage }{1}}
+...........\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.5.text}
+...........\OT1/cmr/m/n/24.88 2
+...........\OT1/cmr/m/n/24.88 0
+...........\pdfendlink
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+..........\hbox(16.03793+34.58241)x131.34752, direction TLT
+...........\glue 6.0
+...........\vbox(8.39996+34.58241)x118.94753, direction TLT
+............\hbox(8.39996+0.0)x118.94753, glue set 7.50287fil, direction TLT
+.............\localpar
+..............\localinterlinepenalty=0
+..............\localbrokenpenalty=0
+..............\localleftbox=null
+..............\localrightbox=null
+.............\hbox(0.0+0.0)x0.0, direction TLT
+.............\rule(8.39996+*)x0.0
+.............\OT1/cmr/m/n/10 T
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 f
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 s
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 c
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 l
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 u
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 n
+.............\glue(\rightskip) 0.0 plus 1.0fil
+............\penalty 150
+............\glue(\baselineskip) 5.05556
+............\hbox(6.94444+1.94444)x118.94753, glue set 12.78065fil, direction TLT
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 e
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 p
+.............\kern0.27779 (font)
+.............\OT1/cmr/m/n/10 e
+.............\OT1/cmr/m/n/10 n
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 s
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 n
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 f
+.............\glue(\rightskip) 0.0 plus 1.0fil
+............\penalty 150
+............\glue(\lineskip) 1.0
+............\hbox(16.03793+3.60004)x118.94753, glue set 27.22998fil, direction TLT
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 a
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 b
+.............\OT1/cmr/m/n/10 l
+.............\OT1/cmr/m/n/10 e
+.............\OT1/cmr/m/n/10 .
+.............\penalty 10000
+.............\penalty 10000
+.............\hbox(0.0+0.0)x0.0, direction TLT
+..............\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+...............\pdfdest name{postnote.6.mark} xyz
+...............\penalty 10000
+.............\write1{\token_to_str:N \post@note {mark}{6}{\thepage }{1}}
+.............\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.6.text}
+.............\OT1/cmr/m/n/24.88 2
+.............\OT1/cmr/m/n/24.88 1
+.............\pdfendlink
+.............\penalty 10000
+.............\rule(0.0+3.60004)x0.0
+.............\penalty 10000
+.............\glue(\parfillskip) 0.0 plus 1.0fil
+.............\glue(\rightskip) 0.0 plus 1.0fil
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+..........\hbox(16.03793+34.58241)x48.09451, glue set 6.72224fil, direction TLT
+...........\glue 6.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 0.00002
+...........\OT1/cmr/m/n/10 t
+...........\OT1/cmr/m/n/10 h
+...........\OT1/cmr/m/n/10 r
+...........\OT1/cmr/m/n/10 e
+...........\OT1/cmr/m/n/10 e
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+..........\hbox(16.03793+34.58241)x131.34752, direction TLT
+...........\glue 6.0
+...........\vbox(8.39996+27.60004)x118.94753, direction TLT
+............\hbox(8.39996+0.0)x118.94753, glue set - 0.14449, direction TLT
+.............\localpar
+..............\localinterlinepenalty=0
+..............\localbrokenpenalty=0
+..............\localleftbox=null
+..............\localrightbox=null
+.............\hbox(0.0+0.0)x0.0, direction TLT
+.............\rule(8.39996+*)x0.0
+.............\OT1/cmr/m/n/10 C
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 l
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 u
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 n
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 f
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 u
+.............\OT1/cmr/m/n/10 r
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 l
+.............\OT1/cmr/m/n/10 l
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 a
+.............\OT1/cmr/m/n/10 c
+.............\OT1/cmr/m/n/10 t
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 n
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\rightskip) 0.0 plus 1.0fil
+............\penalty 150
+............\glue(\baselineskip) 5.05556
+............\hbox(6.94444+1.94444)x118.94753, glue set 8.00291fil, direction TLT
+.............\OT1/cmr/m/n/10 s
+.............\OT1/cmr/m/n/10 a
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 a
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 y
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 a
+.............\OT1/cmr/m/n/10 s
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 c
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 l
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 u
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 n
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 t
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 w
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 ,
+.............\glue(\rightskip) 0.0 plus 1.0fil
+............\penalty 150
+............\glue(\baselineskip) 3.11111
+............\hbox(6.94444+3.60004)x118.94753, glue set 13.05702fil, direction TLT
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 s
+.............\OT1/cmr/m/n/10 a
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 .
+.............\penalty 10000
+.............\rule(0.0+3.60004)x0.0
+.............\penalty 10000
+.............\glue(\parfillskip) 0.0 plus 1.0fil
+.............\glue(\rightskip) 0.0 plus 1.0fil
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+.........\rule(0.4+0.0)x350.0
+........\mathoff
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+......\glue 0.0
+....\glue 12.0 plus 2.0 minus 2.0
+....\glue -12.0 plus -2.0 minus -2.0
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\glue(\baselineskip) 23.55556
+...\hbox(6.44444+0.0)x350.0, direction TLT
+....\hbox(6.44444+0.0)x350.0, glue set 172.5fil, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\OT1/cmr/m/n/10 1
+.....\glue 0.0 plus 1.0fil
+.\kern0.0
+============================================================
+============================================================
+TEST 2: Proper measurement with label
+============================================================
+Completed box being shipped out [3]
+\vbox(609.60394+0.0)x409.8775, direction TLT
+.\vbox(0.0+0.0)x0.0, glue set 14.87636fil, direction TLT
+..\kern0.0
+..\kern-13.87262
+..\kern-1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 58.87376fil, direction TLT
+...\kern0.0
+...\kern59.8775
+...\kern-1.00374
+...\pdfdest name{page.3} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(609.60394+0.0)x409.8775, direction TLT
+..\glue -13.87262
+..\vbox(623.47656+0.0)x350.0, shifted 59.8775, direction TLT
+...\vbox(12.0+0.0)x350.0, glue set 12.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x350.0, direction TLT
+.....\hbox(0.0+0.0)x350.0, direction TLT
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(556.47656+0.0)x350.0, glue set 401.59677fil, direction TLT
+....\write-{}
+....\pdfdest name{section.2} xyz
+....\glue(\topskip) 0.00002
+....\hbox(9.99998+0.0)x350.0, glue set 260.70844fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(9.27998+0.0)x24.29997, direction TLT
+......\glue 0.0
+......\OT1/cmr/bx/n/14.4 2
+......\glue 16.19998
+.....\OT1/cmr/bx/n/14.4 S
+.....\OT1/cmr/bx/n/14.4 e
+.....\OT1/cmr/bx/n/14.4 c
+.....\discretionary (penalty 50)
+......< \OT1/cmr/bx/n/14.4 -
+.....\OT1/cmr/bx/n/14.4 t
+.....\OT1/cmr/bx/n/14.4 i
+.....\OT1/cmr/bx/n/14.4 o
+.....\OT1/cmr/bx/n/14.4 n
+.....\glue(\spaceskip) 5.4 plus 2.7 minus 1.79999
+.....\OT1/cmr/bx/n/14.4 2
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\write3{\protect \BOOKMARK [1][-]{section.2}{\376\377\000S\000e\000c\000t\000i\000o\000n\000\040\0002}{}% 2}
+....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {2}Section 2}{\thepage }{section.2}\protected@file@percent }}
+....\penalty 10000
+....\glue 9.90276 plus 0.86108
+....\write1{\token_to_str:N \postnote@setcounteraux {0}}
+....\penalty 10000
+....\penalty 10000
+....\penalty 10000
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\lineskip) 1.0
+....\hbox(16.03793+0.0)x350.0, glue set 0.42773, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.34.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{34}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.34.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.35.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{35}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.35.text}
+.....\OT1/cmr/m/n/24.88 2
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.36.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{36}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.36.text}
+.....\OT1/cmr/m/n/24.88 3
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.37.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{37}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.37.text}
+.....\OT1/cmr/m/n/24.88 4
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.38.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{38}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.38.text}
+.....\OT1/cmr/m/n/24.88 5
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.39.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{39}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.39.text}
+.....\OT1/cmr/m/n/24.88 6
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.40.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{40}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.40.text}
+.....\OT1/cmr/m/n/24.88 7
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.41.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{41}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.41.text}
+.....\OT1/cmr/m/n/24.88 8
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.42.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{42}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.42.text}
+.....\OT1/cmr/m/n/24.88 9
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.43.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{43}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.43.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 0
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.44.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{44}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.44.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 1
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.45.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{45}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.45.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 2
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.46.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{46}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.46.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 3
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.47.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{47}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.47.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 4
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.48.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{48}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.48.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 5
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.49.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{49}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.49.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 6
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.50.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{50}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.50.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 7
+.....\pdfendlink
+.....\glue(\rightskip) 0.0
+....\penalty 300
+....\glue(\lineskip) 1.0
+....\hbox(16.03793+0.0)x350.0, glue set 327.17917fil, direction TLT
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.51.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{51}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.51.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 8
+.....\pdfendlink
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\lineskip) 1.0
+....\hbox(16.03793+0.0)x350.0, glue set 312.17917fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(0.0+0.0)x15.0, direction TLT
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.52.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{52}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.52.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 9
+.....\pdfendlink
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\glue 0.0 plus 1.0fil
+....\glue 20.0 plus 2.0 minus 4.0
+....\vbox(63.82033+0.0)x350.0, direction TLT
+.....\vbox(63.82033+0.0)x350.0, direction TLT
+......\hbox(34.41017+29.41016)x350.0, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(34.41017+29.41016)x350.0, direction TLT
+........\mathon
+........\vbox(34.41017+29.41016)x350.0, direction TLT
+.........\rule(0.4+0.0)x350.0
+.........\hbox(8.39996+3.60004)x350.0, direction TLT
+..........\glue(\tabskip) 0.0
+..........\hbox(8.39996+3.60004)x50.62086, glue set 39.35649fil, direction TLT
+...........\rule(8.39996+3.60004)x0.0
+...........\rule(*+*)x0.4
+...........\glue 6.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 0.00002
+...........\OT1/cmr/m/n/10 M
+...........\OT1/cmr/m/n/10 u
+...........\OT1/cmr/m/n/10 l
+...........\discretionary (penalty 50)
+............< \OT1/cmr/m/n/10 -
+...........\OT1/cmr/m/n/10 t
+...........\OT1/cmr/m/n/10 i
+...........\discretionary (penalty 50)
+............< \OT1/cmr/m/n/10 -
+...........\OT1/cmr/m/n/10 c
+...........\OT1/cmr/m/n/10 o
+...........\OT1/cmr/m/n/10 l
+...........\discretionary (penalty 50)
+............< \OT1/cmr/m/n/10 -
+...........\OT1/cmr/m/n/10 u
+...........\OT1/cmr/m/n/10 m
+...........\OT1/cmr/m/n/10 n
+...........\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+...........\OT1/cmr/m/n/10 e
+...........\OT1/cmr/m/n/10 n
+...........\discretionary (penalty 50)
+............< \OT1/cmr/m/n/10 -
+............= \kern-0.27779 (font)
+...........\OT1/cmr/m/n/10 t
+...........\OT1/cmr/m/n/10 r
+...........\OT1/cmr/m/n/10 y
+...........\OT1/cmr/m/n/10 !
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+...........\hbox(0.0+0.0)x0.0, direction TLT
+..........\glue(\tabskip) 0.0
+..........\hbox(0.0+0.0)x125.64232, direction TLT
+..........\glue(\tabskip) 0.0
+..........\hbox(8.39996+3.60004)x48.09451, direction TLT
+...........\glue 6.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 0.00002
+...........\OT1/cmr/m/n/10 T
+...........\OT1/cmr/m/n/10 H
+...........\OT1/cmr/m/n/10 R
+...........\OT1/cmr/m/n/10 E
+...........\OT1/cmr/m/n/10 E
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+..........\hbox(8.39996+3.60004)x125.64232, direction TLT
+...........\glue 6.0
+...........\vbox(8.39996+3.60004)x113.24232, direction TLT
+............\hbox(8.39996+3.60004)x113.24232, glue set 84.35338fil, direction TLT
+.............\localpar
+..............\localinterlinepenalty=0
+..............\localbrokenpenalty=0
+..............\localleftbox=null
+..............\localrightbox=null
+.............\hbox(0.0+0.0)x0.0, direction TLT
+.............\rule(8.39996+*)x0.0
+.............\OT1/cmr/m/n/10 F
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 O
+.............\OT1/cmr/m/n/10 U
+.............\OT1/cmr/m/n/10 R
+.............\penalty 10000
+.............\rule(0.0+3.60004)x0.0
+.............\penalty 10000
+.............\glue(\parfillskip) 0.0 plus 1.0fil
+.............\glue(\rightskip) 0.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+.........\rule(0.4+0.0)x350.0
+.........\hbox(16.03793+34.58241)x350.0, direction TLT
+..........\glue(\tabskip) 0.0
+..........\hbox(16.03793+34.58241)x50.62086, direction TLT
+...........\rule(8.39996+3.60004)x0.0
+...........\rule(*+*)x0.4
+...........\glue 6.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 0.00002
+...........\OT1/cmr/m/n/10 o
+...........\OT1/cmr/m/n/10 n
+...........\OT1/cmr/m/n/10 e
+...........\penalty 10000
+...........\penalty 10000
+...........\hbox(0.0+0.0)x0.0, direction TLT
+............\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.............\pdfdest name{postnote.32.mark} xyz
+.............\penalty 10000
+...........\write1{\token_to_str:N \post@note {mark}{32}{\thepage }{1}}
+...........\write1{\newlabel{foo}{{20}{\thepage }{Section 2}{postnote.32.mark}{}}}
+...........\write1{\new@label@record{postnotes@foo}{{postnotes/mark}{20}}}
+...........\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.32.text}
+...........\OT1/cmr/m/n/24.88 2
+...........\OT1/cmr/m/n/24.88 0
+...........\pdfendlink
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+..........\hbox(16.03793+34.58241)x125.64232, direction TLT
+...........\glue 6.0
+...........\vbox(8.39996+34.58241)x113.24232, direction TLT
+............\hbox(8.39996+0.0)x113.24232, glue set 1.79767fil, direction TLT
+.............\localpar
+..............\localinterlinepenalty=0
+..............\localbrokenpenalty=0
+..............\localleftbox=null
+..............\localrightbox=null
+.............\hbox(0.0+0.0)x0.0, direction TLT
+.............\rule(8.39996+*)x0.0
+.............\OT1/cmr/m/n/10 T
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 f
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 s
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 c
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 l
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 u
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 n
+.............\glue(\rightskip) 0.0 plus 1.0fil
+............\penalty 150
+............\glue(\baselineskip) 5.05556
+............\hbox(6.94444+1.94444)x113.24232, glue set 7.07545fil, direction TLT
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 e
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 p
+.............\kern0.27779 (font)
+.............\OT1/cmr/m/n/10 e
+.............\OT1/cmr/m/n/10 n
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 s
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 n
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 f
+.............\glue(\rightskip) 0.0 plus 1.0fil
+............\penalty 150
+............\glue(\lineskip) 1.0
+............\hbox(16.03793+3.60004)x113.24232, glue set 24.37738fil, direction TLT
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 a
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 b
+.............\OT1/cmr/m/n/10 l
+.............\OT1/cmr/m/n/10 e
+.............\OT1/cmr/m/n/10 .
+.............\penalty 10000
+.............\penalty 10000
+.............\hbox(0.0+0.0)x0.0, direction TLT
+..............\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+...............\pdfdest name{postnote.33.mark} xyz
+...............\penalty 10000
+.............\write1{\token_to_str:N \post@note {mark}{33}{\thepage }{1}}
+.............\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.33.text}
+.............\OT1/cmr/m/n/24.88 2
+.............\OT1/cmr/m/n/24.88 1
+.............\pdfendlink
+.............\penalty 10000
+.............\rule(0.0+3.60004)x0.0
+.............\penalty 10000
+.............\glue(\parfillskip) 0.0 plus 1.0fil
+.............\glue(\rightskip) 0.0 plus 1.0fil
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+..........\hbox(16.03793+34.58241)x48.09451, glue set 6.72224fil, direction TLT
+...........\glue 6.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 0.00002
+...........\OT1/cmr/m/n/10 t
+...........\OT1/cmr/m/n/10 h
+...........\OT1/cmr/m/n/10 r
+...........\OT1/cmr/m/n/10 e
+...........\OT1/cmr/m/n/10 e
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+..........\hbox(16.03793+34.58241)x125.64232, direction TLT
+...........\glue 6.0
+...........\vbox(8.39996+27.60004)x113.24232, direction TLT
+............\hbox(8.39996+0.0)x113.24232, glue set 10.71434fil, direction TLT
+.............\localpar
+..............\localinterlinepenalty=0
+..............\localbrokenpenalty=0
+..............\localleftbox=null
+..............\localrightbox=null
+.............\hbox(0.0+0.0)x0.0, direction TLT
+.............\rule(8.39996+*)x0.0
+.............\OT1/cmr/m/n/10 C
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 l
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 u
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 n
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 f
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 u
+.............\OT1/cmr/m/n/10 r
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 l
+.............\OT1/cmr/m/n/10 l
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 a
+.............\OT1/cmr/m/n/10 c
+.............\OT1/cmr/m/n/10 t
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 n
+.............\glue(\rightskip) 0.0 plus 1.0fil
+............\penalty 150
+............\glue(\baselineskip) 5.05556
+............\hbox(6.94444+1.94444)x113.24232, glue set 6.74216fil, direction TLT
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 s
+.............\OT1/cmr/m/n/10 a
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 a
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 y
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 a
+.............\OT1/cmr/m/n/10 s
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 c
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 l
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 u
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 n
+.............\glue(\rightskip) 0.0 plus 1.0fil
+............\penalty 150
+............\glue(\baselineskip) 3.11111
+............\hbox(6.94444+3.60004)x113.24232, glue set - 0.29791, direction TLT
+.............\OT1/cmr/m/n/10 t
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 w
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 ,
+.............\glue(\spaceskip) 3.33333 plus 2.08331 minus 0.88889
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 s
+.............\OT1/cmr/m/n/10 a
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 .
+.............\penalty 10000
+.............\rule(0.0+3.60004)x0.0
+.............\penalty 10000
+.............\glue(\parfillskip) 0.0 plus 1.0fil
+.............\glue(\rightskip) 0.0 plus 1.0fil
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+.........\rule(0.4+0.0)x350.0
+........\mathoff
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+......\glue 0.0
+....\glue 12.0 plus 2.0 minus 2.0
+....\glue -12.0 plus -2.0 minus -2.0
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\glue(\baselineskip) 23.55556
+...\hbox(6.44444+0.0)x350.0, direction TLT
+....\hbox(6.44444+0.0)x350.0, glue set 172.5fil, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\OT1/cmr/m/n/10 3
+.....\glue 0.0 plus 1.0fil
+============================================================
+============================================================
+TEST 3: Proper measurement with label
+============================================================
+Completed box being shipped out [5]
+\vbox(609.60394+0.0)x409.8775, direction TLT
+.\vbox(0.0+0.0)x0.0, glue set 14.87636fil, direction TLT
+..\kern0.0
+..\kern-13.87262
+..\kern-1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 58.87376fil, direction TLT
+...\kern0.0
+...\kern59.8775
+...\kern-1.00374
+...\pdfdest name{page.5} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(609.60394+0.0)x409.8775, direction TLT
+..\glue -13.87262
+..\vbox(623.47656+0.0)x350.0, shifted 59.8775, direction TLT
+...\vbox(12.0+0.0)x350.0, glue set 12.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x350.0, direction TLT
+.....\hbox(0.0+0.0)x350.0, direction TLT
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(556.47656+0.0)x350.0, glue set 401.59677fil, direction TLT
+....\write-{}
+....\pdfdest name{section.3} xyz
+....\glue(\topskip) 0.00002
+....\hbox(9.99998+0.0)x350.0, glue set 260.70844fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(9.27998+0.0)x24.29997, direction TLT
+......\glue 0.0
+......\OT1/cmr/bx/n/14.4 3
+......\glue 16.19998
+.....\OT1/cmr/bx/n/14.4 S
+.....\OT1/cmr/bx/n/14.4 e
+.....\OT1/cmr/bx/n/14.4 c
+.....\discretionary (penalty 50)
+......< \OT1/cmr/bx/n/14.4 -
+.....\OT1/cmr/bx/n/14.4 t
+.....\OT1/cmr/bx/n/14.4 i
+.....\OT1/cmr/bx/n/14.4 o
+.....\OT1/cmr/bx/n/14.4 n
+.....\glue(\spaceskip) 5.4 plus 2.7 minus 1.79999
+.....\OT1/cmr/bx/n/14.4 3
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\write3{\protect \BOOKMARK [1][-]{section.3}{\376\377\000S\000e\000c\000t\000i\000o\000n\000\040\0003}{}% 3}
+....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {3}Section 3}{\thepage }{section.3}\protected@file@percent }}
+....\penalty 10000
+....\glue 9.90276 plus 0.86108
+....\write1{\token_to_str:N \postnote@setcounteraux {0}}
+....\penalty 10000
+....\penalty 10000
+....\penalty 10000
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\lineskip) 1.0
+....\hbox(16.03793+0.0)x350.0, glue set 0.42773, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.61.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{61}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.61.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.62.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{62}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.62.text}
+.....\OT1/cmr/m/n/24.88 2
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.63.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{63}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.63.text}
+.....\OT1/cmr/m/n/24.88 3
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.64.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{64}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.64.text}
+.....\OT1/cmr/m/n/24.88 4
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.65.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{65}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.65.text}
+.....\OT1/cmr/m/n/24.88 5
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.66.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{66}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.66.text}
+.....\OT1/cmr/m/n/24.88 6
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.67.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{67}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.67.text}
+.....\OT1/cmr/m/n/24.88 7
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.68.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{68}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.68.text}
+.....\OT1/cmr/m/n/24.88 8
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.69.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{69}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.69.text}
+.....\OT1/cmr/m/n/24.88 9
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.70.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{70}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.70.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 0
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.71.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{71}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.71.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 1
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.72.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{72}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.72.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 2
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.73.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{73}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.73.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 3
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.74.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{74}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.74.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 4
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.75.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{75}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.75.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 5
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.76.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{76}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.76.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 6
+.....\pdfendlink
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.77.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{77}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.77.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 7
+.....\pdfendlink
+.....\glue(\rightskip) 0.0
+....\penalty 300
+....\glue(\lineskip) 1.0
+....\hbox(16.03793+0.0)x350.0, glue set 327.17917fil, direction TLT
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.78.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{78}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.78.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 8
+.....\pdfendlink
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\lineskip) 1.0
+....\hbox(16.03793+0.0)x350.0, glue set 312.17917fil, direction TLT
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(0.0+0.0)x15.0, direction TLT
+.....\penalty 10000
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.......\pdfdest name{postnote.79.mark} xyz
+.......\penalty 10000
+.....\write1{\token_to_str:N \post@note {mark}{79}{\thepage }{1}}
+.....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.79.text}
+.....\OT1/cmr/m/n/24.88 1
+.....\OT1/cmr/m/n/24.88 9
+.....\pdfendlink
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\glue 0.0 plus 1.0fil
+....\glue 20.0 plus 2.0 minus 4.0
+....\vbox(63.82033+0.0)x350.0, direction TLT
+.....\vbox(63.82033+0.0)x350.0, direction TLT
+......\hbox(34.41017+29.41016)x350.0, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(34.41017+29.41016)x350.0, direction TLT
+........\mathon
+........\vbox(34.41017+29.41016)x350.0, direction TLT
+.........\rule(0.4+0.0)x350.0
+.........\hbox(8.39996+3.60004)x350.0, direction TLT
+..........\glue(\tabskip) 0.0
+..........\hbox(8.39996+3.60004)x50.62086, glue set 39.35649fil, direction TLT
+...........\rule(8.39996+3.60004)x0.0
+...........\rule(*+*)x0.4
+...........\glue 6.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 0.00002
+...........\OT1/cmr/m/n/10 M
+...........\OT1/cmr/m/n/10 u
+...........\OT1/cmr/m/n/10 l
+...........\discretionary (penalty 50)
+............< \OT1/cmr/m/n/10 -
+...........\OT1/cmr/m/n/10 t
+...........\OT1/cmr/m/n/10 i
+...........\discretionary (penalty 50)
+............< \OT1/cmr/m/n/10 -
+...........\OT1/cmr/m/n/10 c
+...........\OT1/cmr/m/n/10 o
+...........\OT1/cmr/m/n/10 l
+...........\discretionary (penalty 50)
+............< \OT1/cmr/m/n/10 -
+...........\OT1/cmr/m/n/10 u
+...........\OT1/cmr/m/n/10 m
+...........\OT1/cmr/m/n/10 n
+...........\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+...........\OT1/cmr/m/n/10 e
+...........\OT1/cmr/m/n/10 n
+...........\discretionary (penalty 50)
+............< \OT1/cmr/m/n/10 -
+............= \kern-0.27779 (font)
+...........\OT1/cmr/m/n/10 t
+...........\OT1/cmr/m/n/10 r
+...........\OT1/cmr/m/n/10 y
+...........\OT1/cmr/m/n/10 !
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+...........\hbox(0.0+0.0)x0.0, direction TLT
+..........\glue(\tabskip) 0.0
+..........\hbox(0.0+0.0)x125.64232, direction TLT
+..........\glue(\tabskip) 0.0
+..........\hbox(8.39996+3.60004)x48.09451, direction TLT
+...........\glue 6.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 0.00002
+...........\OT1/cmr/m/n/10 T
+...........\OT1/cmr/m/n/10 H
+...........\OT1/cmr/m/n/10 R
+...........\OT1/cmr/m/n/10 E
+...........\OT1/cmr/m/n/10 E
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+..........\hbox(8.39996+3.60004)x125.64232, direction TLT
+...........\glue 6.0
+...........\vbox(8.39996+3.60004)x113.24232, direction TLT
+............\hbox(8.39996+3.60004)x113.24232, glue set 84.35338fil, direction TLT
+.............\localpar
+..............\localinterlinepenalty=0
+..............\localbrokenpenalty=0
+..............\localleftbox=null
+..............\localrightbox=null
+.............\hbox(0.0+0.0)x0.0, direction TLT
+.............\rule(8.39996+*)x0.0
+.............\OT1/cmr/m/n/10 F
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 O
+.............\OT1/cmr/m/n/10 U
+.............\OT1/cmr/m/n/10 R
+.............\penalty 10000
+.............\rule(0.0+3.60004)x0.0
+.............\penalty 10000
+.............\glue(\parfillskip) 0.0 plus 1.0fil
+.............\glue(\rightskip) 0.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+.........\rule(0.4+0.0)x350.0
+.........\hbox(16.03793+34.58241)x350.0, direction TLT
+..........\glue(\tabskip) 0.0
+..........\hbox(16.03793+34.58241)x50.62086, direction TLT
+...........\rule(8.39996+3.60004)x0.0
+...........\rule(*+*)x0.4
+...........\glue 6.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 0.00002
+...........\OT1/cmr/m/n/10 o
+...........\OT1/cmr/m/n/10 n
+...........\OT1/cmr/m/n/10 e
+...........\penalty 10000
+...........\penalty 10000
+...........\hbox(0.0+0.0)x0.0, direction TLT
+............\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+.............\pdfdest name{postnote.59.mark} xyz
+.............\penalty 10000
+...........\write1{\token_to_str:N \post@note {mark}{59}{\thepage }{1}}
+...........\write1{\zref@newlabel{bar}{\default{20}\page{\Z@C@page }\postnote@mark{20}}}
+...........\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.59.text}
+...........\OT1/cmr/m/n/24.88 2
+...........\OT1/cmr/m/n/24.88 0
+...........\pdfendlink
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+..........\hbox(16.03793+34.58241)x125.64232, direction TLT
+...........\glue 6.0
+...........\vbox(8.39996+34.58241)x113.24232, direction TLT
+............\hbox(8.39996+0.0)x113.24232, glue set 1.79767fil, direction TLT
+.............\localpar
+..............\localinterlinepenalty=0
+..............\localbrokenpenalty=0
+..............\localleftbox=null
+..............\localrightbox=null
+.............\hbox(0.0+0.0)x0.0, direction TLT
+.............\rule(8.39996+*)x0.0
+.............\OT1/cmr/m/n/10 T
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 f
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 s
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 c
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 l
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 u
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 n
+.............\glue(\rightskip) 0.0 plus 1.0fil
+............\penalty 150
+............\glue(\baselineskip) 5.05556
+............\hbox(6.94444+1.94444)x113.24232, glue set 7.07545fil, direction TLT
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 e
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 p
+.............\kern0.27779 (font)
+.............\OT1/cmr/m/n/10 e
+.............\OT1/cmr/m/n/10 n
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 s
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 n
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 f
+.............\glue(\rightskip) 0.0 plus 1.0fil
+............\penalty 150
+............\glue(\lineskip) 1.0
+............\hbox(16.03793+3.60004)x113.24232, glue set 24.37738fil, direction TLT
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 a
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 b
+.............\OT1/cmr/m/n/10 l
+.............\OT1/cmr/m/n/10 e
+.............\OT1/cmr/m/n/10 .
+.............\penalty 10000
+.............\penalty 10000
+.............\hbox(0.0+0.0)x0.0, direction TLT
+..............\hbox(0.0+0.0)x0.0, shifted -12.0, direction TLT
+...............\pdfdest name{postnote.60.mark} xyz
+...............\penalty 10000
+.............\write1{\token_to_str:N \post@note {mark}{60}{\thepage }{1}}
+.............\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.60.text}
+.............\OT1/cmr/m/n/24.88 2
+.............\OT1/cmr/m/n/24.88 1
+.............\pdfendlink
+.............\penalty 10000
+.............\rule(0.0+3.60004)x0.0
+.............\penalty 10000
+.............\glue(\parfillskip) 0.0 plus 1.0fil
+.............\glue(\rightskip) 0.0 plus 1.0fil
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+..........\hbox(16.03793+34.58241)x48.09451, glue set 6.72224fil, direction TLT
+...........\glue 6.0
+...........\glue 0.0 plus 1.0fil
+...........\glue 0.00002
+...........\OT1/cmr/m/n/10 t
+...........\OT1/cmr/m/n/10 h
+...........\OT1/cmr/m/n/10 r
+...........\OT1/cmr/m/n/10 e
+...........\OT1/cmr/m/n/10 e
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+..........\hbox(16.03793+34.58241)x125.64232, direction TLT
+...........\glue 6.0
+...........\vbox(8.39996+27.60004)x113.24232, direction TLT
+............\hbox(8.39996+0.0)x113.24232, glue set 10.71434fil, direction TLT
+.............\localpar
+..............\localinterlinepenalty=0
+..............\localbrokenpenalty=0
+..............\localleftbox=null
+..............\localrightbox=null
+.............\hbox(0.0+0.0)x0.0, direction TLT
+.............\rule(8.39996+*)x0.0
+.............\OT1/cmr/m/n/10 C
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 l
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 u
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 n
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 f
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 u
+.............\OT1/cmr/m/n/10 r
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 l
+.............\OT1/cmr/m/n/10 l
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 a
+.............\OT1/cmr/m/n/10 c
+.............\OT1/cmr/m/n/10 t
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 n
+.............\glue(\rightskip) 0.0 plus 1.0fil
+............\penalty 150
+............\glue(\baselineskip) 5.05556
+............\hbox(6.94444+1.94444)x113.24232, glue set 6.74216fil, direction TLT
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 s
+.............\OT1/cmr/m/n/10 a
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 a
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 y
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 a
+.............\OT1/cmr/m/n/10 s
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 c
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 l
+.............\discretionary (penalty 50)
+..............< \OT1/cmr/m/n/10 -
+.............\OT1/cmr/m/n/10 u
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 n
+.............\glue(\rightskip) 0.0 plus 1.0fil
+............\penalty 150
+............\glue(\baselineskip) 3.11111
+............\hbox(6.94444+3.60004)x113.24232, glue set - 0.29791, direction TLT
+.............\OT1/cmr/m/n/10 t
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 w
+.............\kern-0.27779 (font)
+.............\OT1/cmr/m/n/10 o
+.............\OT1/cmr/m/n/10 ,
+.............\glue(\spaceskip) 3.33333 plus 2.08331 minus 0.88889
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 s
+.............\OT1/cmr/m/n/10 a
+.............\OT1/cmr/m/n/10 m
+.............\OT1/cmr/m/n/10 e
+.............\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.............\OT1/cmr/m/n/10 w
+.............\OT1/cmr/m/n/10 i
+.............\OT1/cmr/m/n/10 d
+.............\OT1/cmr/m/n/10 t
+.............\OT1/cmr/m/n/10 h
+.............\OT1/cmr/m/n/10 .
+.............\penalty 10000
+.............\rule(0.0+3.60004)x0.0
+.............\penalty 10000
+.............\glue(\parfillskip) 0.0 plus 1.0fil
+.............\glue(\rightskip) 0.0 plus 1.0fil
+...........\glue 0.0 plus 1.0fil
+...........\glue 6.0
+...........\rule(*+*)x0.4
+..........\glue(\tabskip) 0.0
+.........\rule(0.4+0.0)x350.0
+........\mathoff
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+......\glue 0.0
+....\glue 12.0 plus 2.0 minus 2.0
+....\glue -12.0 plus -2.0 minus -2.0
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\glue(\baselineskip) 23.55556
+...\hbox(6.44444+0.0)x350.0, direction TLT
+....\hbox(6.44444+0.0)x350.0, glue set 172.5fil, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\OT1/cmr/m/n/10 5
+.....\glue 0.0 plus 1.0fil
+============================================================
