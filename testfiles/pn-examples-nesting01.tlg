@@ -215,6 +215,8 @@ Completed box being shipped out [5]
 .....\glue(\rightskip) 0.0
 ....\penalty 10000
 ....\glue 9.90276 plus 0.86108
+....\write1{\token_to_str:N \postnote@setcounteraux {0}}
+....\penalty 10000
 ....\write1{\token_to_str:N \post@note {section}{9}{\thepage }{}}
 ....\penalty 10000
 ....\glue 0.0
@@ -400,6 +402,8 @@ Completed box being shipped out [5]
 .....\glue(\rightskip) 0.0
 ....\penalty 10000
 ....\glue 9.90276 plus 0.86108
+....\write1{\token_to_str:N \postnote@setcounteraux {0}}
+....\penalty 10000
 ....\write1{\token_to_str:N \post@note {section}{12}{\thepage }{}}
 ....\penalty 10000
 ....\glue 0.0

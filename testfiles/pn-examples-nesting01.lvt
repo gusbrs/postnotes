@@ -22,6 +22,7 @@
 \chapter{First chapter}
 \postnotesection{\section*{Notes to chapter 1}%
   \setcounter{postnote}{0}%
+  \pnsetcounteraux{0}%
   \postnotesection{\section*{Editor's notes to chapter 1}}}
 
 \textsuperscript{avoid font warning}
@@ -50,7 +51,10 @@ Baz.%
 \chapter{Second chapter}
 \postnotesection{\section*{Notes to chapter 2}%
   \setcounter{postnote}{0}%
+  \pnsetcounteraux{0}%
   \postnotesection{\section*{Editor's notes to chapter 2}}}
+\pnsetcounteraux{0}
+
 
 \TIMO
 
