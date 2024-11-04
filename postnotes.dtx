@@ -951,6 +951,19 @@
 %    \end{macrocode}
 %
 %
+% \begin{macro}[int]
+%   {
+%     \pnsetcounteraux ,
+%     \pnaddtocounteraux ,
+%     \postnote@setcounteraux ,
+%     \postnote@addtocounteraux ,
+%   }
+%   \begin{syntax}
+%     \cs{pnsetcounteraux}\marg{int}
+%     \cs{pnaddtocounteraux}\marg{int}
+%     \cs{postnote@setcounteraux}\marg{int}
+%     \cs{postnote@addtocounteraux}\marg{int}
+%   \end{syntax}
 %    \begin{macrocode}
 \cs_new_protected:Npn \postnote@setcounteraux #1
   { \int_gset:Nn \g_@@_postnote_counteraux_int { #1 } }
@@ -977,6 +990,7 @@
     \@esphack
   }
 %    \end{macrocode}
+% \end{macro}
 %
 %
 %
@@ -1155,7 +1169,7 @@
 \newcounter { postnote }
 %    \end{macrocode}
 %
-% \begin{macro}
+% \begin{macro}[int]
 %   {
 %     \g_@@_note_id_int ,
 %     \l_postnotes_note_id_tl ,
@@ -1186,7 +1200,7 @@
 % \begin{macro}[int]{\postnote}
 %   Provide \cs{postnote}.
 %   \begin{syntax}
-%     \cs{postnote} \oarg{options} \marg{note text}
+%     \cs{postnote}\oarg{options}\marg{note text}
 %   \end{syntax}
 %    \begin{macrocode}
 \NewDocumentCommand \postnote { O { } +m }
@@ -1202,7 +1216,7 @@
 %   features/packages, but can also be used, for example, to add an extra
 %   local property for \pkg{zref}.
 %   \begin{syntax}
-%     \cs{@@_note:nn}\oarg{options}\marg{note content}
+%     \cs{@@_note:nn} \oarg{options} \marg{note content}
 %   \end{syntax}
 %    \begin{macrocode}
 \NewHook { postnotes/note/begin }
@@ -1452,8 +1466,8 @@
 %   \cs{@footnotemark} in the kernel.
 %   \begin{syntax}
 %     \cs{@@_typeset_mark:nnN} \Arg{note id} \Arg{mark} \Arg{labels}
-%     \cs{@@_typeset_mark_wrapper:nnn}
-%       \Arg{mark} \Arg{begin tagging} \Arg{end tagging}
+%     \cs{@@_typeset_mark_wrapper:nnn} \Arg{mark}
+%     ~~\Arg{begin tagging} \Arg{end tagging}
 %   \end{syntax}
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_typeset_mark:nnN #1#2#3
@@ -1654,7 +1668,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}
+% \begin{macro}[int]
 %   {
 %     \g_@@_print_postnotes_int ,
 %     \g_@@_print_queue_seq ,
@@ -1687,7 +1701,7 @@
 % \end{macro}
 %
 %
-% \cs{@@_print_notes:} hooks.  Both meant at providing points of entry for
+% \cs{@@_print_notes:}' hooks.  Both meant at providing points of entry for
 % additional setup, specially to add support to packages and features which
 % require it.  The \texttt{postnotes/print/begin} hook is run early in
 % \cs{@@_print_notes:} and only once per call, after the user options have
@@ -1764,15 +1778,13 @@
       \seq_set_eq:NN \l_@@_clear_queue_seq \g_@@_print_queue_seq
       \seq_gclear:N \g_@@_queue_seq
 %    \end{macrocode}
-% I know, setting a whatsit in vertical mode\dots{}, I should have learned by
-% now \texttt{;-)}.  It is what we need here though.  The sole purpose of this
-% label is to provide a point for splitting the labelseq.  It only needs to
-% exist, it doesn't even store the page value.  The
-% \cs{@@_set_print_page_label:e} done at \cs{@@_set_headers_vars_first:} right
-% below does not suffice for this purpose for two reasons.  It won't be set if
-% the queue is empty (or not yet populated), and also it comes after the
-% heading (as it must), which means \cs{postnotesections} added through hooks
-% to it will come before it.
+% The  purpose of this label is to provide a point for splitting the labelseq
+% with the \opt{counteraux} option.  It only needs to exist, it doesn't even
+% store the page value.  The \cs{@@_set_print_page_label:e} done at
+% \cs{@@_set_headers_vars_first:} right below does not suffice for this
+% purpose for two reasons.  It won't be set if the queue is empty (or not yet
+% populated), and also it comes after the heading (as it must), which means
+% \cs{postnotesection}s added through hooks to it will come before it.
 %    \begin{macrocode}
       \@@_set_pre_print_label:e
         { \int_use:N \g_@@_print_postnotes_int }
@@ -1945,7 +1957,7 @@
                     {
                       \tag_socket_use:n { postnotes/printlist/end }
 %    \end{macrocode}
-% Ensure \cs{par} at the end of \cs{printopostnotes} (see
+% Ensure \cs{par} at the end of \cs{printpostnotes} (see
 % \url{https://github.com/u-fischer/tagpdf/issues/68#issuecomment-1587343876},
 % thanks \contributor{Ulrike Fischer}).
 %    \begin{macrocode}
@@ -2010,7 +2022,7 @@
 %
 % \subsection*{Print auxiliary}
 %
-% The conditions used to split \cs{g_@@_labelseq_seq} is subtly different
+% The conditions used to split \cs{g_@@_labelseq_seq} are subtly different
 % depending on whether we are using \cs{g_@@_counteraux_bool} or not.  In the
 % standard case, the numbering of the floats are set at ``expansion time'', so
 % they belong where they are set.  With \opt{counteraux}, the numbering of
@@ -3259,7 +3271,7 @@
 % \cs{l_@@_print_plain_mark_stepcounter_bool} to true presumes
 % \pkg{tabularray}'s \texttt{counter} module is enabled.  But, since this is
 % the only way to get the measuring right in this context if there is more
-% than one \cs{postnote} inside a given table, pkg{postnotes} expects and
+% than one \cs{postnote} inside a given table, \pkg{postnotes} expects and
 % requires the \texttt{counter} module.
 %    \begin{macrocode}
         \AddToHook { postnotes/note/inhibit } [ postnotes/compat/tabularray ]
@@ -3391,14 +3403,14 @@
 %
 % For \cs{postnoteref}s, however labeled, the connection \emph{must} be
 % established at \cs{postnoteref}, for the simple fact that any \cs{postnote}
-% can be referenced by arbitrarily many \cs{postnotref}s.  So we need to be
+% can be referenced by arbitrarily many \cs{postnoteref}s.  So we need to be
 % able to retrieve the note ID from the ``text'' to which the reference refers
-% to at \cs{postnoteref}.  However, at \cs{postnotref} the only information we
+% to at \cs{postnoteref}.  However, at \cs{postnoteref} the only information we
 % have is the \meta{label} but, since it is unique, we can establish a
 % connection through it.
 %
 % When the label is set from inside the note, it is actually set at
-% \cs{printposntones}, at which place we have access to
+% \cs{printpostnotes}, at which place we have access to
 % \cs{l_postnotes_print_note_id_tl} so we can use the \meta{label} to pass
 % that information around to \cs{postnoteref}.  With a standard \cs{label} we
 % must set an additional \pkg{ltproperties} label, using the new
@@ -3794,7 +3806,7 @@
 % The actual inclusion of the reference has to be done at the end, since the
 % \opt{ref} option called by \cs{tag_struct_begin:n} does not check if the
 % variable to store the refs already exists, resulting in a clash if we add it
-% immediately and a \cs{posnoteref} is made before \cs{printposnotes}, and
+% immediately and a \cs{posnoteref} is made before \cs{printpostnotes}, and
 % also so that the ``main'' reference always comes first at the list.
 %    \begin{macrocode}
     \AddToHook { tagpdf/finish/before } [ postnotes/tagsup ]
@@ -4161,6 +4173,7 @@
 %
 % \PrintIndex
 %
+% \endinput
 %
 % Local Variables:
 % jinx-local-words: "endnote endnotes"
