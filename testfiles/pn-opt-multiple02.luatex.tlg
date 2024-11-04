@@ -58,8 +58,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ...\penalty 10000
 ...\glue(\parfillskip) 0.0 plus 1.0fil
 ...\glue(\rightskip) 0.0
-.\kern-0.00005
-.\kern0.00005
 .\hbox(4.43448+0.0)x2.7639, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -117,8 +115,6 @@ TEST 2: footnote + postnoteref
 ...\penalty 10000
 ...\glue(\parfillskip) 0.0 plus 1.0fil
 ...\glue(\rightskip) 0.0
-.\kern-0.00005
-.\kern0.00005
 .\hbox(4.43448+0.0)x2.7639, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -213,8 +209,6 @@ TEST 3: footnote + postnotezref
 ...\penalty 10000
 ...\glue(\parfillskip) 0.0 plus 1.0fil
 ...\glue(\rightskip) 0.0
-.\kern-0.00005
-.\kern0.00005
 .\hbox(4.43448+0.0)x2.7639, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -283,8 +277,6 @@ TEST 4: footnotemark + postnote
 ..\hbox(4.51111+0.0)x4.48613, shifted -3.62892, direction TLT
 ...\OT1/cmr/m/n/7 6
 ..\mathoff
-.\kern-0.00005
-.\kern0.00005
 .\hbox(4.43448+0.0)x2.7639, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT

@@ -854,7 +854,7 @@
 % Note that \cs{@@_multiple_check:} has to be called before any whatsits
 % (labels, anchors, etc.) are placed, since they destroy \cs{lastkern} (see
 % \url{https://chat.stackexchange.com/transcript/message/66554870#66554870},
-% thanks \contributor{Ulrike Fischer})
+% thanks \contributor{Ulrike Fischer}).
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_multiple_check:
   {
@@ -865,17 +865,8 @@
           {
             \tl_set:Ne \l_@@_saved_spacefactor_multi_tl
               { \int_use:N \spacefactor }
-%    \end{macrocode}
-% \pkg{latex-lab-footmisc.ltx} comments at this point ``shouldn't that be 2
-% unkerns?? (none would also be ok)'' and goes on to add a second \cs{unkern}.
-% If these calls are supposed to undo the \cs{kern}s in
-% \cs{@@_multiple_prepare:}, in our case we probably lost those at this point,
-% for the same reason we have to store \cs{lastkern} at the beginning of
-% \cs{posnote} (see below).  So, we might as well go with ``none'', since
-% otherwise we might be removing from the list a kern we didn't intend to.
-%    \begin{macrocode}
-            % \unkern
-            % \unkern
+            \unkern
+            \unkern
             \tag_socket_use:n { postnotes/multisep/begin }
             \@@_make_mark:Vnn \l_@@_multisep_tl { } { }
             \tag_socket_use:n { postnotes/multisep/end }
