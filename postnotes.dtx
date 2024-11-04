@@ -2759,7 +2759,9 @@
 % \subsection*{\cs{caption}}
 %
 % For \cs{caption}'s possible two passes.  This catches more than just
-% captions, of course, but is not overkill.
+% captions, of course, but is not overkill.  A hook to \cs{@makecaption} would
+% be better, but \pkg{ltcmdhooks} does not allow it, and using lower level
+% methods for this is a bad idea.
 %
 % From the user's perspective, one-line captions will just work.  For two-line
 % captions, there are two alternatives: i)
