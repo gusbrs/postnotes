@@ -1261,7 +1261,7 @@ the counter.  The counter itself can be adjusted manually if need be, to
 restore the sequence.  But the value the measuring pass receives is out of our
 hands, hence it may be off.  Of course, the expected difference should
 normally be small.  But if the measuring is presumed to be exact, some
-mysterious slightly overfull hboxes may occur.
+mysterious slightly overfull \cs{hbox}es may occur.
 
 \pkg{postnotes} also offers some checks, to issue warnings for cases of
 duplicates or sequence problems: the \opt{checkduplicates} and
@@ -1322,7 +1322,17 @@ cross-reference to the mark is available, which can then be fed to the
 measuring pass.  And we know that value to be correct, because the label
 belongs to the pass which is actually typeset.  In sum, if some measuring
 problems do occur, set a label for the note, even if you do not refer to it,
-\pkg{postnotes} will use it.
+\pkg{postnotes} will use it.  Alas, if you are unlucky enough, you may even
+find yourself stuck in an infinite loop.\footnote{In a situation similar to
+  \pkg{varioref}, but in the choice of which pass is the measuring and which
+  is the final, instead of the reference crossing page boundaries.  However,
+  given the typical width of a mark, and the even smaller variations of those
+  widths which may result from floating, I expect the likelihood of meeting
+  such case in practice to be narrow.  There is no attempt to warn about this
+  here though, as \pkg{varioref} does, and probably no way to do it either.}
+In this case, setting the label is no relief, and the alternatives I can think
+of are either using a manual mark with \cs{pnaddtocounteraux} or a
+\opt{nomark} \cs{postnote} with \cs{postnoteref}.
 
 
 \section{Acknowledgments}
