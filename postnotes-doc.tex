@@ -386,16 +386,6 @@ maketextmark = {#2#1.#3} ,
 At the point \opt{maketextmark} gets typeset, the \cs{pnthepage} variable
 contains the value of \cs{thepage} where its corresponding note was set.
 
-\DescribeOption{multiple} %
-\DescribeOption{multisep} %
-Just as for footnotes, when two or more \cs{postnote}s are called in imediate
-sequence, the marks typeset in superscript give impression of being one large
-number, instead of the sequence of smaller ones they were supposed to convey.
-Enabling the \opt{multiple} option makes \pkg{postnotes} typeset a separator
-between marks occurring in sequence.  The separator can be configured with the
-\opt{multisep} option, which has a comma as initial value.  \opt{multiple} is
-a boolean option, and has \texttt{false} as initial value.
-
 \DescribeOption{pretextmark} %
 \DescribeOption{posttextmark} %
 \DescribeOption{postprintnote} %
@@ -418,6 +408,16 @@ and when \opt{listenv} is \texttt{none}, each note is laid out in the form:
 etc.\ -- in order to emulate known styles of printing the notes.  It accepts
 the values \texttt{endnotes} or \texttt{pagenote} so that \cs{printpostnotes}
 works as its counterparts in each of these packages.
+
+\DescribeOption{multiple} %
+\DescribeOption{multisep} %
+Just as for footnotes, when two or more \cs{postnote}s are called in imediate
+sequence, the marks typeset in superscript give impression of being one large
+number, instead of the sequence of smaller ones they were supposed to convey.
+Enabling the \opt{multiple} option makes \pkg{postnotes} typeset a separator
+between marks occurring in sequence.  The separator can be configured with the
+\opt{multisep} option, which has a comma as initial value.  \opt{multiple} is
+a boolean option, and has \texttt{false} as initial value.
 
 \DescribeOption{hyperref} %
 \DescribeOption{backlink} %
@@ -583,7 +583,7 @@ boolean option, and the option given with no value is equivalent to
 
 As mentioned above, \cs{postnotesection} is the basic interface for
 subdividing the notes when printed.  For those familiar with it, this command
-is \pkg{postnotes}'s equivalent to \pkg{endnotes}' \cs{addtoendnotes}.  It has
+is \pkg{postnotes}' equivalent to \pkg{endnotes}' \cs{addtoendnotes}.  It has
 the same intended use -- to add text or commands along the notes' sequence at
 the point it is called -- and the way it works is quite similar to
 \cs{addtoendnotes}.  But there are some differences, prominently a
