@@ -132,7 +132,8 @@ pnref. %
 \box0
 \ENDTEST
 
-
 \OMIT
+
+\printpostnotes
 
 \end{document}

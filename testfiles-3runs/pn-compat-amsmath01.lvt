@@ -15,7 +15,7 @@
 \newcommand{\testtmp}{}
 
 \usepackage{postnotes}
-\counterwithin*{postnote}{chapter}
+\counterwithin*{postnote}{section}
 
 \usepackage{amsmath}
 
