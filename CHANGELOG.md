@@ -2,6 +2,9 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.4.0...HEAD)
 
+### Fixed
+- Explicitly set `\@currentHref` before storing data at `\postnote`.
+
 ## [v0.4.0](https://github.com/gusbrs/postnotes/compare/v0.3.0...v0.4.0) (2024-11-04)
 
 *WARNING*: You may need to clear your .aux files after this update.

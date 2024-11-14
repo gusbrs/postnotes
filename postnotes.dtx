@@ -1247,6 +1247,8 @@
             { \l_postnotes_note_id_tl }
           \cs_set:Npn \@currentcounter { postnote }
           \cs_set:Npe \@currentlabel { \p@postnote \l_@@_mark_tl }
+          \cs_gset:Npe \@currentHref
+            { postnote. \l_postnotes_note_id_tl .mark }
           \@@_store:nn { \l_postnotes_note_id_tl } {#2}
           \tl_set_eq:NN \l_@@_mark_typeset_tl \l_@@_mark_tl
 %    \end{macrocode}
