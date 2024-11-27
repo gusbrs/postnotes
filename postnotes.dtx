@@ -2574,18 +2574,18 @@
                       \prop_gput:NVe \g_@@_header_page_first_prop
                         \l_@@_curr_text_page_tl
                         { \@@_extract_pageref:n { mark@ ##1 } }
-                      \protected@edef \l_@@_tmpa_tl
-                        { \@@_prop_item:nn {##1} { thechapter } }
+                      \@@_prop_get:nnN {##1} { thechapter }
+                        \l_@@_tmpa_tl
                       \prop_gput:NVV \g_@@_header_chap_first_prop
                         \l_@@_curr_text_page_tl
                         \l_@@_tmpa_tl
-                      \protected@edef \l_@@_tmpa_tl
-                        { \@@_prop_item:nn {##1} { thesection } }
+                      \@@_prop_get:nnN {##1} { thesection }
+                        \l_@@_tmpa_tl
                       \prop_gput:NVV \g_@@_header_sect_first_prop
                         \l_@@_curr_text_page_tl
                         \l_@@_tmpa_tl
-                      \protected@edef \l_@@_tmpa_tl
-                        { \@@_prop_item:nn {##1} { pnsectname } }
+                      \@@_prop_get:nnN {##1} { pnsectname }
+                        \l_@@_tmpa_tl
                       \prop_gput:NVV \g_@@_header_name_first_prop
                         \l_@@_curr_text_page_tl
                         \l_@@_tmpa_tl
