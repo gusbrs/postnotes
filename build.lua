@@ -33,7 +33,7 @@ cleanfiles = {
 
 -- CTAN upload settings
 uploadconfig = {
-  version = "0.4.1", -- first line for tagging
+  version = "0.4.2", -- first line for tagging
   pkg = "postnotes",
   author = "gusbrs",
   uploader = "gusbrs",

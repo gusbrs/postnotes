@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.4.1...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.4.2...HEAD)
+
+## [v0.4.2](https://github.com/gusbrs/postnotes/compare/v0.4.1...v0.4.2) (2024-11-27)
 
 ### Fixed
 - Be more careful in expanding content.
