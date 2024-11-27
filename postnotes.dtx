@@ -215,8 +215,8 @@
   {
     \prop_new:c { \@@_data_name:e {#1} }
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { note }
-    \prop_gput:cne { \@@_data_name:e {#1} } { mark }
-      { \l_@@_mark_tl }
+    \prop_gput:cnV { \@@_data_name:e {#1} } { mark }
+      \l_@@_mark_tl
     \prop_gput:cne { \@@_data_name:e {#1} } { counter }
       { \int_use:N \c@postnote }
     \prop_gput:cne { \@@_data_name:e {#1} } { sortnum }
@@ -227,18 +227,21 @@
       }
     \cs_if_exist:cT { chapter }
       {
-        \prop_gput:cne { \@@_data_name:e {#1} }
-          { thechapter } { \thechapter }
+        \protected@edef \l_@@_tmpa_tl { \thechapter }
+        \prop_gput:cnV { \@@_data_name:e {#1} }
+          { thechapter } \l_@@_tmpa_tl
       }
-    \prop_gput:cne { \@@_data_name:e {#1} } { thesection }
-      { \thesection }
-    \prop_gput:cne { \@@_data_name:e {#1} } { pnsectname }
-      { \g_@@_section_name_tl }
+    \protected@edef \l_@@_tmpa_tl { \thesection }
+    \prop_gput:cnV { \@@_data_name:e {#1} } { thesection }
+      \l_@@_tmpa_tl
+    \prop_gput:cnV { \@@_data_name:e {#1} } { pnsectname }
+      \g_@@_section_name_tl
     \prop_gput:cne { \@@_data_name:e {#1} } { pnsectid }
       { \int_use:N \g_@@_sectid_int }
     \prop_gput:cne { \@@_data_name:e {#1} } { multibool }
       { \bool_to_str:N \l_@@_maybe_multi_bool }
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
+    \tl_clear:N \l_@@_tmpa_tl
     \UseHook { postnotes/note/store }
   }
 %    \end{macrocode}
@@ -258,14 +261,17 @@
     \prop_gput:cnn { \@@_data_name:e {#1} } { type } { section }
     \cs_if_exist:cT { chapter }
       {
-        \prop_gput:cne { \@@_data_name:e {#1} }
-          { thechapter } { \thechapter }
+        \protected@edef \l_@@_tmpa_tl { \thechapter }
+        \prop_gput:cnV { \@@_data_name:e {#1} }
+          { thechapter } \l_@@_tmpa_tl
       }
-    \prop_gput:cne { \@@_data_name:e {#1} } { thesection }
-      { \thesection }
+    \protected@edef \l_@@_tmpa_tl { \thesection }
+    \prop_gput:cnV { \@@_data_name:e {#1} } { thesection }
+      \l_@@_tmpa_tl
     \prop_gput:cnn { \@@_data_name:e {#1} } { content } {#2}
+    \tl_clear:N \l_@@_tmpa_tl
   }
-\cs_generate_variant:Nn \@@_store_section:nn { ne }
+\cs_generate_variant:Nn \@@_store_section:nn { nV }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -416,6 +422,7 @@
 %     \@@_set_text_page_label:n ,
 %     \@@_set_print_page_label:n ,
 %     \@@_set_pre_print_label:n ,
+%     \c_@@_page_counter_tl ,
 %   }
 %   Label setting functions for each pertinent context.  They must use
 %   \cs{iow_shipout_e:Nn}, since the main information we are interested in is
@@ -434,10 +441,12 @@
   {
     \legacy_if:nT { @filesw }
       {
-        \iow_shipout_e:Nn \@auxout
+        \protected@write \@auxout
+          { \cs_set_eq:NN \c_@@_page_counter_tl \scan_stop: }
           { \token_to_str:N \post@note { #1 } { #2 } { #3 } { #4 } }
       }
   }
+\tl_const:Nn \c_@@_page_counter_tl { \int_use:N \c@page }
 \cs_new_protected:Npn \@@_set_mark_page_label:nn #1#2
   { \@@_set_label:nnnn { mark } { #1 } { \thepage } { #2 } }
 \cs_generate_variant:Nn \@@_set_mark_page_label:nn { ee }
@@ -445,10 +454,10 @@
   { \@@_set_label:nnnn { section } { #1 } { \thepage } { } }
 \cs_generate_variant:Nn \@@_set_section_page_label:n { e }
 \cs_new_protected:Npn \@@_set_text_page_label:n #1
-  { \@@_set_label:nnnn { text } { #1 } { \int_use:N \c@page } { } }
+  { \@@_set_label:nnnn { text } { #1 } { \c_@@_page_counter_tl } { } }
 \cs_generate_variant:Nn \@@_set_text_page_label:n { e }
 \cs_new_protected:Npn \@@_set_print_page_label:n #1
-  { \@@_set_label:nnnn { print } { #1 } { \int_use:N \c@page } { } }
+  { \@@_set_label:nnnn { print } { #1 } { \c_@@_page_counter_tl } { } }
 \cs_generate_variant:Nn \@@_set_print_page_label:n { e }
 \cs_new_protected:Npn \@@_set_pre_print_label:n #1
   { \@@_set_label:nnnn { preprint } { #1 } { } { } }
@@ -974,7 +983,7 @@
     \@bsphack
     \legacy_if:nT { @filesw }
       {
-        \iow_shipout_e:Nn \@auxout
+        \protected@write \@auxout { }
           { \token_to_str:N \postnote@setcounteraux { #1 } }
       }
     \@esphack
@@ -984,7 +993,7 @@
     \@bsphack
     \legacy_if:nT { @filesw }
       {
-        \iow_shipout_e:Nn \@auxout
+        \protected@write \@auxout { }
           { \token_to_str:N \postnote@addtocounteraux { #1 } }
       }
     \@esphack
@@ -1239,15 +1248,15 @@
                     { \int_set:Nn \c@postnote { \l_@@_tmpa_tl } }
                   \tl_clear:N \l_@@_tmpa_tl
                 }
-              \tl_set:Ne \l_@@_mark_tl { \thepostnote }
+              \protected@edef \l_@@_mark_tl { \thepostnote }
             }
             { \int_set:Nn \l_@@_counteraux_step_int { 0 } }
           \UseHook { postnotes/note/begin }
           \seq_gput_right:Ne \g_@@_queue_seq
             { \l_postnotes_note_id_tl }
-          \cs_set:Npn \@currentcounter { postnote }
-          \cs_set:Npe \@currentlabel { \p@postnote \l_@@_mark_tl }
-          \cs_gset:Npe \@currentHref
+          \tl_set:Nn \@currentcounter { postnote }
+          \protected@edef \@currentlabel { \p@postnote \l_@@_mark_tl }
+          \tl_gset:Ne \@currentHref
             { postnote. \l_postnotes_note_id_tl .mark }
           \@@_store:nn { \l_postnotes_note_id_tl } {#2}
           \tl_set_eq:NN \l_@@_mark_typeset_tl \l_@@_mark_tl
@@ -1373,14 +1382,15 @@
             \bool_if:NTF \l_@@_print_plain_mark_stepcounter_bool
               {
                 \stepcounter { postnote }
-                \tl_set:Ne \l_@@_mark_typeset_tl { \thepostnote }
+                \protected@edef \l_@@_mark_typeset_tl { \thepostnote }
               }
               {
                 \group_begin:
                   \int_incr:N \c@postnote
-                  \exp_args:NNNe
+                  \protected@edef \l_@@_tmpa_tl { \thepostnote }
+                  \exp_args:NNNV
                     \group_end:
-                    \tl_set:Nn \l_@@_mark_typeset_tl { \thepostnote }
+                    \tl_set:Nn \l_@@_mark_typeset_tl \l_@@_tmpa_tl
               }
 %    \end{macrocode}
 % If the note has a \opt{label}, use a cross-reference to that as the mark
@@ -1446,7 +1456,7 @@
           { postnotes@ \l_@@_note_label_str }
           { postnotes/mark }
           {
-            \tl_set:Ne #1
+            \protected@edef #1
               {
                 \property_ref:ee
                   { __postnotes_ \l_@@_note_label_str } { postnotes/mark }
@@ -1551,11 +1561,11 @@
 %     \cs{@@_note_ref:nn} \Arg{star bool} \Arg{label}
 %   \end{syntax}
 %    \begin{macrocode}
-\tl_new:N \l_@@_note_ref_label_tl
+\str_new:N \l_@@_note_ref_label_str
 \cs_new_protected:Npn \@@_note_ref:nn #1#2
   {
     \group_begin:
-      \tl_set:Nn \l_@@_note_ref_label_tl {#2}
+      \str_set:Nn \l_@@_note_ref_label_str {#2}
       \@@_typeset_mark_wrapper:nnn
         {
           \bool_lazy_and:nnTF
@@ -1609,7 +1619,11 @@
       \keys_set:nn { postnotes/section } {#1}
       \@@_set_section_page_label:e { \l_postnotes_note_id_tl }
       \bool_if:NTF \l_@@_section_exp_bool
-        { \@@_store_section:ne { \l_postnotes_note_id_tl } {#2} }
+        {
+          \protected@edef \l_@@_tmpa_tl {#2}
+          \@@_store_section:nV { \l_postnotes_note_id_tl }
+            \l_@@_tmpa_tl
+        }
         { \@@_store_section:nn { \l_postnotes_note_id_tl } {#2} }
     \group_end:
   }
@@ -1904,10 +1918,10 @@
                     \@@_prop_get:nnN
                       { \l_postnotes_print_note_id_tl }
                       { content } \l_@@_print_content_tl
-                    \cs_set:Npn \@currentcounter { postnotetext }
+                    \tl_set:Nn \@currentcounter { postnotetext }
                     \int_set:Nn \c@postnotetext
                       { \l_@@_print_counter_tl }
-                    \cs_set:Npe \@currentlabel
+                    \protected@edef \@currentlabel
                       { \p@postnote \l_@@_print_mark_tl }
                     \tl_set:Nn \l_@@_print_typeset_mark_tl
                       {
@@ -2540,35 +2554,41 @@
 %    \begin{macrocode}
                       \tl_if_empty:NF \l_@@_prev_text_page_tl
                         {
-                          \prop_gput:Nee \g_@@_header_page_last_prop
-                            { \l_@@_prev_text_page_tl }
-                            { \l_@@_prev_mark_page_tl }
-                          \prop_gput:Nee \g_@@_header_chap_last_prop
-                            { \l_@@_prev_text_page_tl }
-                            { \l_@@_prev_mark_chap_tl }
-                          \prop_gput:Nee \g_@@_header_sect_last_prop
-                            { \l_@@_prev_text_page_tl }
-                            { \l_@@_prev_mark_sect_tl }
-                          \prop_gput:Nee \g_@@_header_name_last_prop
-                            { \l_@@_prev_text_page_tl }
-                            { \l_@@_prev_mark_name_tl }
+                          \prop_gput:NVV \g_@@_header_page_last_prop
+                            \l_@@_prev_text_page_tl
+                            \l_@@_prev_mark_page_tl
+                          \prop_gput:NVV \g_@@_header_chap_last_prop
+                            \l_@@_prev_text_page_tl
+                            \l_@@_prev_mark_chap_tl
+                          \prop_gput:NVV \g_@@_header_sect_last_prop
+                            \l_@@_prev_text_page_tl
+                            \l_@@_prev_mark_sect_tl
+                          \prop_gput:NVV \g_@@_header_name_last_prop
+                            \l_@@_prev_text_page_tl
+                            \l_@@_prev_mark_name_tl
                         }
 %    \end{macrocode}
 %
 % Set `first' values for current page, based on the current note ID.
 %    \begin{macrocode}
-                      \prop_gput:Nee \g_@@_header_page_first_prop
-                        { \l_@@_curr_text_page_tl }
+                      \prop_gput:NVe \g_@@_header_page_first_prop
+                        \l_@@_curr_text_page_tl
                         { \@@_extract_pageref:n { mark@ ##1 } }
-                      \prop_gput:Nee \g_@@_header_chap_first_prop
-                        { \l_@@_curr_text_page_tl }
+                      \protected@edef \l_@@_tmpa_tl
                         { \@@_prop_item:nn {##1} { thechapter } }
-                      \prop_gput:Nee \g_@@_header_sect_first_prop
-                        { \l_@@_curr_text_page_tl }
+                      \prop_gput:NVV \g_@@_header_chap_first_prop
+                        \l_@@_curr_text_page_tl
+                        \l_@@_tmpa_tl
+                      \protected@edef \l_@@_tmpa_tl
                         { \@@_prop_item:nn {##1} { thesection } }
-                      \prop_gput:Nee \g_@@_header_name_first_prop
-                        { \l_@@_curr_text_page_tl }
+                      \prop_gput:NVV \g_@@_header_sect_first_prop
+                        \l_@@_curr_text_page_tl
+                        \l_@@_tmpa_tl
+                      \protected@edef \l_@@_tmpa_tl
                         { \@@_prop_item:nn {##1} { pnsectname } }
+                      \prop_gput:NVV \g_@@_header_name_first_prop
+                        \l_@@_curr_text_page_tl
+                        \l_@@_tmpa_tl
 %    \end{macrocode}
 %
 % Store \texttt{prev_mark} data for the first note on the page.
@@ -2601,18 +2621,18 @@
 %    \begin{macrocode}
       \tl_if_empty:NF \l_@@_prev_text_page_tl
         {
-          \prop_gput:Nee \g_@@_header_page_last_prop
-            { \l_@@_prev_text_page_tl }
-            { \l_@@_prev_mark_page_tl }
-          \prop_gput:Nee \g_@@_header_chap_last_prop
-            { \l_@@_prev_text_page_tl }
-            { \l_@@_prev_mark_chap_tl }
-          \prop_gput:Nee \g_@@_header_sect_last_prop
-            { \l_@@_prev_text_page_tl }
-            { \l_@@_prev_mark_sect_tl }
-          \prop_gput:Nee \g_@@_header_name_last_prop
-            { \l_@@_prev_text_page_tl }
-            { \l_@@_prev_mark_name_tl }
+          \prop_gput:NVV \g_@@_header_page_last_prop
+            \l_@@_prev_text_page_tl
+            \l_@@_prev_mark_page_tl
+          \prop_gput:NVV \g_@@_header_chap_last_prop
+            \l_@@_prev_text_page_tl
+            \l_@@_prev_mark_chap_tl
+          \prop_gput:NVV \g_@@_header_sect_last_prop
+            \l_@@_prev_text_page_tl
+            \l_@@_prev_mark_sect_tl
+          \prop_gput:NVV \g_@@_header_name_last_prop
+            \l_@@_prev_text_page_tl
+            \l_@@_prev_mark_name_tl
         }
     \group_end:
   }
@@ -3066,11 +3086,11 @@
 %     \cs{@@_note_zref:nn} \Arg{star bool} \Arg{label}
 %   \end{syntax}
 %    \begin{macrocode}
-    \tl_new:N \l_@@_note_zref_zlabel_tl
+    \str_new:N \l_@@_note_zref_zlabel_str
     \cs_new_protected:Npn \@@_note_zref:nn #1#2
       {
         \group_begin:
-          \tl_set:Nn \l_@@_note_zref_zlabel_tl {#2}
+          \str_set:Nn \l_@@_note_zref_zlabel_str {#2}
           \@@_typeset_mark_wrapper:nnn
             {
               \bool_lazy_all:nTF
@@ -3830,7 +3850,7 @@
       {
         \tag_mc_end_push:
         \property_if_recorded:eeTF
-          { postnote@label@innote. \l_@@_note_ref_label_tl }
+          { postnote@label@innote. \l_@@_note_ref_label_str }
           { postnotes/tagsup@noteid }
           {
 %    \end{macrocode}
@@ -3839,7 +3859,7 @@
             \tl_set:Ne \l_@@_tmpa_tl
               {
                 \property_ref:ee
-                  { postnote@label@innote. \l_@@_note_ref_label_tl }
+                  { postnote@label@innote. \l_@@_note_ref_label_str }
                   { postnotes/tagsup@noteid }
               }
             \tag_struct_begin:n
@@ -3852,7 +3872,7 @@
           }
           {
             \property_if_recorded:eeTF
-              { postnote@label@option. \l_@@_note_ref_label_tl }
+              { postnote@label@option. \l_@@_note_ref_label_str }
               { postnotes/tagsup@noteid }
               {
 %    \end{macrocode}
@@ -3861,7 +3881,7 @@
                 \tl_set:Ne \l_@@_tmpa_tl
                   {
                     \property_ref:ee
-                      { postnote@label@option. \l_@@_note_ref_label_tl }
+                      { postnote@label@option. \l_@@_note_ref_label_str }
                       { postnotes/tagsup@noteid }
                   }
                 \tag_struct_begin:n
@@ -3892,7 +3912,7 @@
         \socket_new_plug:nnn { tagsupport/postnotes/postnotezref/begin } { default }
           {
             \tag_mc_end_push:
-            \zref@ifrefcontainsprop { \l_@@_note_zref_zlabel_tl }
+            \zref@ifrefcontainsprop { \l_@@_note_zref_zlabel_str }
               { postnotes@tagsup@noteid }
               {
 %    \end{macrocode}
@@ -3900,7 +3920,7 @@
 %    \begin{macrocode}
                 \tl_set:Ne \l_@@_tmpa_tl
                   {
-                    \zref@extract { \l_@@_note_zref_zlabel_tl }
+                    \zref@extract { \l_@@_note_zref_zlabel_str }
                       { postnotes@tagsup@noteid }
                   }
                 \tag_struct_begin:n
@@ -3913,7 +3933,7 @@
               }
               {
                 \property_if_recorded:eeTF
-                  { postnote@zlabel@option. \l_@@_note_zref_zlabel_tl }
+                  { postnote@zlabel@option. \l_@@_note_zref_zlabel_str }
                   { postnotes/tagsup@noteid }
                   {
 %    \end{macrocode}
@@ -3924,7 +3944,7 @@
                         \property_ref:ee
                           {
                             postnote@zlabel@option.
-                            \l_@@_note_zref_zlabel_tl
+                            \l_@@_note_zref_zlabel_str
                           }
                           { postnotes/tagsup@noteid }
                       }

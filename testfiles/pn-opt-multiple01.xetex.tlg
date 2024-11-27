@@ -11,7 +11,7 @@ TEST 1: postnote
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.1.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
+.\write1{\post@note{mark}{1}{\thepage }{1}}
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 0]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.1.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -30,7 +30,7 @@ TEST 1: postnote
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.2.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }{1}}
+.\write1{\post@note{mark}{2}{\thepage }{1}}
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 0]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.2.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -54,7 +54,7 @@ TEST 2: multiple=false
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.3.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{3}{\thepage }{1}}
+.\write1{\post@note{mark}{3}{\thepage }{1}}
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 0]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.3.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -68,7 +68,7 @@ TEST 2: multiple=false
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.4.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{4}{\thepage }{1}}
+.\write1{\post@note{mark}{4}{\thepage }{1}}
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 0]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.4.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -90,7 +90,7 @@ TEST 3: multisep
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.5.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{5}{\thepage }{1}}
+.\write1{\post@note{mark}{5}{\thepage }{1}}
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 0]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.5.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -109,7 +109,7 @@ TEST 3: multisep
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.6.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{6}{\thepage }{1}}
+.\write1{\post@note{mark}{6}{\thepage }{1}}
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 0]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.6.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -197,7 +197,7 @@ TEST 6: postnote + postnoteref
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.7.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{7}{\thepage }{1}}
+.\write1{\post@note{mark}{7}{\thepage }{1}}
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 0]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.7.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -230,7 +230,7 @@ TEST 6: postnote + postnoteref
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.8.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{8}{\thepage }{1}}
+.\write1{\post@note{mark}{8}{\thepage }{1}}
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 0]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.8.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -254,7 +254,7 @@ TEST 7: postnote + postnotezref
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.9.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{9}{\thepage }{1}}
+.\write1{\post@note{mark}{9}{\thepage }{1}}
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 0]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.9.text)>>>>}
 .\hbox(8.14003+0.0)x4.48613
 ..\mathon
@@ -286,7 +286,7 @@ TEST 7: postnote + postnotezref
 ..\hbox(0.0+0.0)x0.0, shifted -12.0
 ...\special{pdf:dest (postnote.10.mark) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{10}{\thepage }{1}}
+.\write1{\post@note{mark}{10}{\thepage }{1}}
 .\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 0]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.10.text)>>>>}
 .\hbox(8.14003+0.0)x8.47226
 ..\mathon

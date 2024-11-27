@@ -11,7 +11,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \hbox(8.14003+0.0)x18.98615, direction TLT
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
-.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
+.\write1{\post@note{mark}{1}{\thepage }{1}}
 .\hbox(8.14003+0.0)x4.48613, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -66,7 +66,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ..\mathoff
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
-.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }{1}}
+.\write1{\post@note{mark}{2}{\thepage }{1}}
 .\hbox(8.14003+0.0)x4.48613, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -285,7 +285,7 @@ TEST 4: footnotemark + postnote
 ..\mathoff
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
-.\write1{\token_to_str:N \post@note {mark}{3}{\thepage }{1}}
+.\write1{\post@note{mark}{3}{\thepage }{1}}
 .\hbox(8.14003+0.0)x4.48613, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT

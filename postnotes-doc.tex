@@ -573,8 +573,8 @@ is typeset.  For details on how to use these variables, see
 \DescribeOption{exp} %
 By default, \cs{postnotesection} stores its \meta{text} argument with ``no
 manipulation''.  The \opt{exp} option allows one to fully expand
-(\texttt{e}-type expansion) \meta{text} in place before storing it.  It is a
-boolean option, and the option given with no value is equivalent to
+(\cs{protected@edef} expansion) \meta{text} in place before storing it.  It is
+a boolean option, and the option given with no value is equivalent to
 \texttt{exp=true}.
 
 
@@ -1356,6 +1356,7 @@ provided by (in chronological order):
   % 2024-10-22: https://github.com/gusbrs/postnotes/issues/8#issuecomment-2429501962
   % 2024-10-25: https://chat.stackexchange.com/transcript/message/66510334#66510334 (discussion)
   % 2024-11-03: https://chat.stackexchange.com/transcript/message/66554870#66554870 (discussion)
+  % 2024-11-27: https://chat.stackexchange.com/transcript/message/66696438#66696438 (discussion)
   David Carlisle,
   % 2022-03-28: https://chat.stackexchange.com/transcript/message/60754383#60754383
   % 2022-04-08: https://tex.stackexchange.com/a/640035 (comments)
@@ -1364,6 +1365,7 @@ provided by (in chronological order):
   % 2023-12-12: https://chat.stackexchange.com/transcript/message/64848034#64848034 (and discussion)
   % 2024-01-28: https://chat.stackexchange.com/transcript/message/65071091#65071091 (discussion)
   % 2024-10-15: https://chat.stackexchange.com/transcript/message/66444011#66444011 (discussion)
+  % 2024-11-27: https://chat.stackexchange.com/transcript/message/66696438#66696438 (discussion)
   Moritz Wemheuer,
   % 2022-04-05: https://tex.stackexchange.com/q/597359#comment1594585_597389
   Joseph Wright,

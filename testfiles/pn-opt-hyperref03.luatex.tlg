@@ -32,7 +32,7 @@ TEST 2: Note hyperref
 \hbox(8.14003+0.0)x4.48613, direction TLT
 .\penalty 10000
 .\hbox(0.0+0.0)x0.0, direction TLT
-.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
+.\write1{\post@note{mark}{1}{\thepage }{1}}
 .\hbox(8.14003+0.0)x4.48613, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -56,7 +56,7 @@ Completed box being shipped out [3]
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
 ..\vbox(550.0+0.0)x345.0, glue set 404.0fil, direction TLT
-...\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
+...\write1{\post@note{preprint}{1}{}{}}
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
@@ -88,7 +88,8 @@ Completed box being shipped out [3]
 ...\marks3{\__mark_id:n {5}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
-...\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }{}}
+...\write1{\post@note{print}{1}{\c__postnotes_page_counter_tl }{}}
+...\penalty 10000
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
@@ -106,7 +107,7 @@ Completed box being shipped out [3]
 .....\hbox(5.79999+0.0)x12.1944, direction TLT
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0, direction TLT
-......\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }{}}
+......\write1{\post@note{text}{1}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 1
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0

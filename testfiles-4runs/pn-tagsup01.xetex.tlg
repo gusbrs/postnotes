@@ -66,7 +66,7 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 ...\special{pdf:dest (postnote.1.mark)[@thispage/XYZ @xpos @ypos null]}
 ...\special{pdf:obj @pdf.SDest.postnote.1.mark[@pdf.obj29/XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{1}{\thepage }{1}}
+.\write1{\post@note{mark}{1}{\thepage }{1}}
 .\write1{\newlabel{en:mark:1}{{1}{\thepage }{Section 1}{postnote.1.mark}{}}}
 .\write1{\new@label@record{__postnotes_en:mark:1}{{postnotes/mark}{1}}}
 .\write1{\zref@newlabel{zen:mark:1}{\default{1}\page{\Z@C@page }\anchor{postnote.1.mark}\postnote@mark{1}}}
@@ -507,7 +507,7 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 ...\special{pdf:dest (postnote.2.mark)[@thispage/XYZ @xpos @ypos null]}
 ...\special{pdf:obj @pdf.SDest.postnote.2.mark[@pdf.obj44/XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{2}{\thepage }{1}}
+.\write1{\post@note{mark}{2}{\thepage }{1}}
 .\write1{\newlabel{en:mark:2}{{2}{\thepage }{Section 1}{postnote.2.mark}{}}}
 .\write1{\new@label@record{__postnotes_en:mark:2}{{postnotes/mark}{2}}}
 .\write1{\zref@newlabel{zen:mark:2}{\default{2}\page{\Z@C@page }\anchor{postnote.2.mark}\postnote@mark{2}}}
@@ -948,7 +948,7 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 ...\special{pdf:dest (postnote.3.mark)[@thispage/XYZ @xpos @ypos null]}
 ...\special{pdf:obj @pdf.SDest.postnote.3.mark[@pdf.obj59/XYZ @xpos @ypos null]}
 ...\penalty 10000
-.\write1{\token_to_str:N \post@note {mark}{3}{\thepage }{1}}
+.\write1{\post@note{mark}{3}{\thepage }{1}}
 .\special{pdf:code EMC}
 .\marks4{e-,34,30,}
 .\marks4{e+,34,30,}
@@ -1701,7 +1701,7 @@ Completed box being shipped out [2]
 ...\vbox(550.0+0.0)x345.0, glue set 486.04533fil
 ....\hbox(0.0+0.0)x0.0
 ....\write-{}
-....\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
+....\write1{\post@note{preprint}{1}{}{}}
 ....\glue(\topskip) 0.12001
 ....\hbox(9.87999+0.0)x345.0, glue set 304.15167fil
 .....\write1{\new@label@record{mcid-39}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{39}{tagmcid}{\__property_code_tagmcid: }}}
@@ -1732,7 +1732,8 @@ Completed box being shipped out [2]
 ....\marks4{e+,39,33,}
 ....\penalty 10000
 ....\glue 9.90276 plus 0.86108
-....\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }{}}
+....\write1{\post@note{print}{1}{\c__postnotes_page_counter_tl }{}}
+....\penalty 10000
 ....\glue 0.0
 ....\write1{\new@label@record{postnote@label@option.en:mark:1}{{postnotes/tagsup@noteid}{1}}}
 ....\penalty 10000
@@ -1756,7 +1757,7 @@ Completed box being shipped out [2]
 .........\special{pdf:dest (postnote.1.text)[@thispage/XYZ @xpos @ypos null]}
 .........\special{pdf:obj @pdf.SDest.postnote.1.text[@pdf.obj67/XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }{}}
+.......\write1{\post@note{text}{1}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:code EMC}
 .......\marks4{e-,40,37,}
 .......\marks4{e+,40,37,}
@@ -1819,7 +1820,7 @@ Completed box being shipped out [2]
 .........\special{pdf:dest (postnote.2.text)[@thispage/XYZ @xpos @ypos null]}
 .........\special{pdf:obj @pdf.SDest.postnote.2.text[@pdf.obj75/XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{2}{\int_use:N \c@page }{}}
+.......\write1{\post@note{text}{2}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:code EMC}
 .......\marks4{e-,44,44,}
 .......\marks4{e+,44,44,}
@@ -1880,7 +1881,7 @@ Completed box being shipped out [2]
 .........\special{pdf:dest (postnote.3.text)[@thispage/XYZ @xpos @ypos null]}
 .........\special{pdf:obj @pdf.SDest.postnote.3.text[@pdf.obj83/XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\token_to_str:N \post@note {text}{3}{\int_use:N \c@page }{}}
+.......\write1{\post@note{text}{3}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:code EMC}
 .......\marks4{e-,48,51,}
 .......\marks4{e+,48,51,}

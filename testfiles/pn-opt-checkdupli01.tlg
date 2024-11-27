@@ -15,7 +15,7 @@ Completed box being shipped out [3]
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
 ..\vbox(556.47656+0.0)x227.62204, glue set 377.47656fil
-...\write1{\token_to_str:N \post@note {preprint}{1}{}{}}
+...\write1{\post@note{preprint}{1}{}{}}
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
@@ -42,7 +42,8 @@ Completed box being shipped out [3]
 ...\marks3{\__mark_id:n {5}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
-...\write1{\token_to_str:N \post@note {print}{1}{\int_use:N \c@page }{}}
+...\write1{\post@note{print}{1}{\c__postnotes_page_counter_tl }{}}
+...\penalty 10000
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
@@ -55,7 +56,7 @@ Completed box being shipped out [3]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\token_to_str:N \post@note {text}{1}{\int_use:N \c@page }{}}
+......\write1{\post@note{text}{1}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 1
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -77,7 +78,7 @@ Completed box being shipped out [3]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\token_to_str:N \post@note {text}{2}{\int_use:N \c@page }{}}
+......\write1{\post@note{text}{2}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 2
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -99,7 +100,7 @@ Completed box being shipped out [3]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\token_to_str:N \post@note {text}{3}{\int_use:N \c@page }{}}
+......\write1{\post@note{text}{3}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 3
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -121,7 +122,7 @@ Completed box being shipped out [3]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\token_to_str:N \post@note {text}{4}{\int_use:N \c@page }{}}
+......\write1{\post@note{text}{4}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 4
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -155,7 +156,7 @@ Completed box being shipped out [7]
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
 ..\vbox(556.47656+0.0)x227.62204, glue set 377.47656fil
-...\write1{\token_to_str:N \post@note {preprint}{2}{}{}}
+...\write1{\post@note{preprint}{2}{}{}}
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
@@ -182,7 +183,8 @@ Completed box being shipped out [7]
 ...\marks3{\__mark_id:n {10}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
-...\write1{\token_to_str:N \post@note {print}{2}{\int_use:N \c@page }{}}
+...\write1{\post@note{print}{2}{\c__postnotes_page_counter_tl }{}}
+...\penalty 10000
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
@@ -195,7 +197,7 @@ Completed box being shipped out [7]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\token_to_str:N \post@note {text}{5}{\int_use:N \c@page }{}}
+......\write1{\post@note{text}{5}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 1
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -217,7 +219,7 @@ Completed box being shipped out [7]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\token_to_str:N \post@note {text}{6}{\int_use:N \c@page }{}}
+......\write1{\post@note{text}{6}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 2
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -239,7 +241,7 @@ Completed box being shipped out [7]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\token_to_str:N \post@note {text}{7}{\int_use:N \c@page }{}}
+......\write1{\post@note{text}{7}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 3
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -261,7 +263,7 @@ Completed box being shipped out [7]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\token_to_str:N \post@note {text}{8}{\int_use:N \c@page }{}}
+......\write1{\post@note{text}{8}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 4
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
