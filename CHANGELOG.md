@@ -2,6 +2,9 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.4.1...HEAD)
 
+### Fixed
+- Be more careful in expanding content.
+
 ## [v0.4.1](https://github.com/gusbrs/postnotes/compare/v0.4.0...v0.4.1) (2024-11-14)
 
 ### Fixed
