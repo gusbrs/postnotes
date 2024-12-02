@@ -587,7 +587,7 @@ Completed box being shipped out [2]
 ....\marks4{e+,12,16,}
 ....\penalty 10000
 ....\glue 9.90276 plus 0.86108
-....\write1{\post@note{print}{1}{\c__postnotes_page_counter_tl }{}}
+....\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\penalty 10000
 ....\glue 0.0
 ....\write1{\new@label@record{postnote@label@option.en:mark:1}{{postnotes/tagsup@noteid}{1}}}
@@ -612,7 +612,6 @@ Completed box being shipped out [2]
 .........\special{pdf:dest (postnote.1.text)[@thispage/XYZ @xpos @ypos null]}
 .........\special{pdf:obj @pdf.SDest.postnote.1.text[@pdf.obj41/XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{1}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:code EMC}
 .......\marks4{e-,13,20,}
 .......\marks4{e+,13,20,}
@@ -646,6 +645,10 @@ Completed box being shipped out [2]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks5{\__mark_id:n {1}1}
+....\marks6{\__mark_id:n {2}}
+....\marks7{\__mark_id:n {3}1}
+....\marks8{\__mark_id:n {4}}
 ....\marks4{b-,16,25,text,,,}
 ....\marks4{b+,16,25,text,,,}
 ....\marks4{e-,16,25,}

@@ -42,7 +42,7 @@ Completed box being shipped out [5]
 ...\marks3{\__mark_id:n {5}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
-...\write1{\post@note{print}{1}{\c__postnotes_page_counter_tl }{}}
+...\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ...\penalty 10000
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -56,7 +56,6 @@ Completed box being shipped out [5]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{1}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 1
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -65,6 +64,10 @@ Completed box being shipped out [5]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {6}1}
+...\marks5{\__mark_id:n {7}1}
+...\marks6{\__mark_id:n {8}1.0}
+...\marks7{\__mark_id:n {9}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -78,7 +81,6 @@ Completed box being shipped out [5]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{2}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 2
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -87,6 +89,10 @@ Completed box being shipped out [5]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {10}1}
+...\marks5{\__mark_id:n {11}1}
+...\marks6{\__mark_id:n {12}1.0}
+...\marks7{\__mark_id:n {13}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -100,7 +106,6 @@ Completed box being shipped out [5]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{3}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 3
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -109,6 +114,10 @@ Completed box being shipped out [5]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {14}2}
+...\marks5{\__mark_id:n {15}1}
+...\marks6{\__mark_id:n {16}1.0}
+...\marks7{\__mark_id:n {17}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -122,7 +131,6 @@ Completed box being shipped out [5]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{4}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 4
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -131,6 +139,10 @@ Completed box being shipped out [5]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {18}1}
+...\marks5{\__mark_id:n {19}1}
+...\marks6{\__mark_id:n {20}1.0}
+...\marks7{\__mark_id:n {21}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -144,7 +156,6 @@ Completed box being shipped out [5]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{5}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 5
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -153,6 +164,10 @@ Completed box being shipped out [5]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {22}1}
+...\marks5{\__mark_id:n {23}1}
+...\marks6{\__mark_id:n {24}1.0}
+...\marks7{\__mark_id:n {25}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -166,7 +181,6 @@ Completed box being shipped out [5]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{6}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 6
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -175,6 +189,10 @@ Completed box being shipped out [5]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {26}3}
+...\marks5{\__mark_id:n {27}1}
+...\marks6{\__mark_id:n {28}1.0}
+...\marks7{\__mark_id:n {29}}
 ...\penalty -51
 ...\glue 5.0
 ...\glue 0.0 plus 1.0fil
@@ -222,12 +240,12 @@ Completed box being shipped out [11]
 ....\glue(\rightskip) 0.0 plus 1.0fil
 ...\penalty 10000
 ...\glue 40.0
-...\marks1{\__mark_id:n {8}\pnheaderdefault }
-...\marks2{\__mark_id:n {9}\pnheaderdefault }
-...\marks3{\__mark_id:n {10}\pnheaderdefault }
+...\marks1{\__mark_id:n {32}\pnheaderdefault }
+...\marks2{\__mark_id:n {33}\pnheaderdefault }
+...\marks3{\__mark_id:n {34}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
-...\write1{\post@note{print}{2}{\c__postnotes_page_counter_tl }{}}
+...\write1{\new@label@record{__postnotes_header_3}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ...\penalty 10000
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -241,7 +259,6 @@ Completed box being shipped out [11]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{7}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 1
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -250,6 +267,10 @@ Completed box being shipped out [11]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {35}7}
+...\marks5{\__mark_id:n {36}2}
+...\marks6{\__mark_id:n {37}2.0}
+...\marks7{\__mark_id:n {38}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -263,7 +284,6 @@ Completed box being shipped out [11]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{8}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 2
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -272,6 +292,10 @@ Completed box being shipped out [11]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {39}7}
+...\marks5{\__mark_id:n {40}2}
+...\marks6{\__mark_id:n {41}2.0}
+...\marks7{\__mark_id:n {42}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -285,7 +309,6 @@ Completed box being shipped out [11]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{10}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 3
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -294,6 +317,10 @@ Completed box being shipped out [11]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {43}7}
+...\marks5{\__mark_id:n {44}2}
+...\marks6{\__mark_id:n {45}2.0}
+...\marks7{\__mark_id:n {46}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -307,7 +334,6 @@ Completed box being shipped out [11]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{11}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 4
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -316,6 +342,10 @@ Completed box being shipped out [11]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {47}7}
+...\marks5{\__mark_id:n {48}2}
+...\marks6{\__mark_id:n {49}2.0}
+...\marks7{\__mark_id:n {50}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -329,7 +359,6 @@ Completed box being shipped out [11]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{9}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 5
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -338,6 +367,10 @@ Completed box being shipped out [11]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {51}8}
+...\marks5{\__mark_id:n {52}2}
+...\marks6{\__mark_id:n {53}2.0}
+...\marks7{\__mark_id:n {54}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -351,7 +384,6 @@ Completed box being shipped out [11]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{12}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 6
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -360,6 +392,10 @@ Completed box being shipped out [11]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {55}9}
+...\marks5{\__mark_id:n {56}2}
+...\marks6{\__mark_id:n {57}2.0}
+...\marks7{\__mark_id:n {58}}
 ...\penalty -51
 ...\glue 5.0
 ...\glue 0.0 plus 1.0fil
@@ -409,12 +445,12 @@ Completed box being shipped out [17]
 ....\glue(\rightskip) 0.0 plus 1.0fil
 ...\penalty 10000
 ...\glue 40.0
-...\marks1{\__mark_id:n {13}\pnheaderdefault }
-...\marks2{\__mark_id:n {14}\pnheaderdefault }
-...\marks3{\__mark_id:n {15}\pnheaderdefault }
+...\marks1{\__mark_id:n {61}\pnheaderdefault }
+...\marks2{\__mark_id:n {62}\pnheaderdefault }
+...\marks3{\__mark_id:n {63}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
-...\write1{\post@note{print}{3}{\c__postnotes_page_counter_tl }{}}
+...\write1{\new@label@record{__postnotes_header_5}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ...\penalty 10000
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -428,7 +464,6 @@ Completed box being shipped out [17]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{13}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 1
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -437,6 +472,10 @@ Completed box being shipped out [17]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {64}13}
+...\marks5{\__mark_id:n {65}3}
+...\marks6{\__mark_id:n {66}3.0}
+...\marks7{\__mark_id:n {67}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -450,7 +489,6 @@ Completed box being shipped out [17]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{14}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 2
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -459,6 +497,10 @@ Completed box being shipped out [17]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {68}13}
+...\marks5{\__mark_id:n {69}3}
+...\marks6{\__mark_id:n {70}3.0}
+...\marks7{\__mark_id:n {71}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -472,7 +514,6 @@ Completed box being shipped out [17]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{15}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 5
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -481,6 +522,10 @@ Completed box being shipped out [17]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {72}14}
+...\marks5{\__mark_id:n {73}3}
+...\marks6{\__mark_id:n {74}3.0}
+...\marks7{\__mark_id:n {75}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -494,7 +539,6 @@ Completed box being shipped out [17]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{16}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 3
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -503,6 +547,10 @@ Completed box being shipped out [17]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {76}13}
+...\marks5{\__mark_id:n {77}3}
+...\marks6{\__mark_id:n {78}3.0}
+...\marks7{\__mark_id:n {79}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -516,7 +564,6 @@ Completed box being shipped out [17]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{17}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 4
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -525,6 +572,10 @@ Completed box being shipped out [17]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {80}13}
+...\marks5{\__mark_id:n {81}3}
+...\marks6{\__mark_id:n {82}3.0}
+...\marks7{\__mark_id:n {83}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -538,7 +589,6 @@ Completed box being shipped out [17]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{18}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 6
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -547,6 +597,10 @@ Completed box being shipped out [17]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {84}15}
+...\marks5{\__mark_id:n {85}3}
+...\marks6{\__mark_id:n {86}3.0}
+...\marks7{\__mark_id:n {87}}
 ...\penalty -51
 ...\glue 5.0
 ...\glue 0.0 plus 1.0fil
@@ -596,12 +650,12 @@ Completed box being shipped out [23]
 ....\glue(\rightskip) 0.0 plus 1.0fil
 ...\penalty 10000
 ...\glue 40.0
-...\marks1{\__mark_id:n {18}\pnheaderdefault }
-...\marks2{\__mark_id:n {19}\pnheaderdefault }
-...\marks3{\__mark_id:n {20}\pnheaderdefault }
+...\marks1{\__mark_id:n {90}\pnheaderdefault }
+...\marks2{\__mark_id:n {91}\pnheaderdefault }
+...\marks3{\__mark_id:n {92}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
-...\write1{\post@note{print}{4}{\c__postnotes_page_counter_tl }{}}
+...\write1{\new@label@record{__postnotes_header_7}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ...\penalty 10000
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -615,7 +669,6 @@ Completed box being shipped out [23]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{19}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 1
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -624,6 +677,10 @@ Completed box being shipped out [23]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {93}19}
+...\marks5{\__mark_id:n {94}4}
+...\marks6{\__mark_id:n {95}4.0}
+...\marks7{\__mark_id:n {96}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -637,7 +694,6 @@ Completed box being shipped out [23]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{20}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 2
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -646,6 +702,10 @@ Completed box being shipped out [23]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {97}19}
+...\marks5{\__mark_id:n {98}4}
+...\marks6{\__mark_id:n {99}4.0}
+...\marks7{\__mark_id:n {100}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -659,7 +719,6 @@ Completed box being shipped out [23]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{22}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 3
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -668,6 +727,10 @@ Completed box being shipped out [23]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {101}19}
+...\marks5{\__mark_id:n {102}4}
+...\marks6{\__mark_id:n {103}4.0}
+...\marks7{\__mark_id:n {104}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -681,7 +744,6 @@ Completed box being shipped out [23]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{21}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 5
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -690,6 +752,10 @@ Completed box being shipped out [23]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {105}20}
+...\marks5{\__mark_id:n {106}4}
+...\marks6{\__mark_id:n {107}4.0}
+...\marks7{\__mark_id:n {108}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -703,7 +769,6 @@ Completed box being shipped out [23]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{23}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 5
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -712,6 +777,10 @@ Completed box being shipped out [23]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {109}19}
+...\marks5{\__mark_id:n {110}4}
+...\marks6{\__mark_id:n {111}4.0}
+...\marks7{\__mark_id:n {112}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -725,7 +794,6 @@ Completed box being shipped out [23]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{24}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 6
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -734,6 +802,10 @@ Completed box being shipped out [23]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {113}21}
+...\marks5{\__mark_id:n {114}4}
+...\marks6{\__mark_id:n {115}4.0}
+...\marks7{\__mark_id:n {116}}
 ...\penalty -51
 ...\glue 5.0
 ...\glue 0.0 plus 1.0fil
@@ -782,12 +854,12 @@ Completed box being shipped out [29]
 ....\glue(\rightskip) 0.0 plus 1.0fil
 ...\penalty 10000
 ...\glue 40.0
-...\marks1{\__mark_id:n {23}\pnheaderdefault }
-...\marks2{\__mark_id:n {24}\pnheaderdefault }
-...\marks3{\__mark_id:n {25}\pnheaderdefault }
+...\marks1{\__mark_id:n {119}\pnheaderdefault }
+...\marks2{\__mark_id:n {120}\pnheaderdefault }
+...\marks3{\__mark_id:n {121}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
-...\write1{\post@note{print}{5}{\c__postnotes_page_counter_tl }{}}
+...\write1{\new@label@record{__postnotes_header_9}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ...\penalty 10000
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -801,7 +873,6 @@ Completed box being shipped out [29]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{25}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 1
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -810,6 +881,10 @@ Completed box being shipped out [29]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {122}25}
+...\marks5{\__mark_id:n {123}5}
+...\marks6{\__mark_id:n {124}5.0}
+...\marks7{\__mark_id:n {125}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -823,7 +898,6 @@ Completed box being shipped out [29]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{26}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 2
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -832,6 +906,10 @@ Completed box being shipped out [29]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {126}25}
+...\marks5{\__mark_id:n {127}5}
+...\marks6{\__mark_id:n {128}5.0}
+...\marks7{\__mark_id:n {129}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -845,7 +923,6 @@ Completed box being shipped out [29]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{27}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 3
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -854,6 +931,10 @@ Completed box being shipped out [29]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {130}26}
+...\marks5{\__mark_id:n {131}5}
+...\marks6{\__mark_id:n {132}5.0}
+...\marks7{\__mark_id:n {133}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -867,7 +948,6 @@ Completed box being shipped out [29]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{28}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 4
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -876,6 +956,10 @@ Completed box being shipped out [29]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {134}25}
+...\marks5{\__mark_id:n {135}5}
+...\marks6{\__mark_id:n {136}5.0}
+...\marks7{\__mark_id:n {137}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -889,7 +973,6 @@ Completed box being shipped out [29]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{29}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 5
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -898,6 +981,10 @@ Completed box being shipped out [29]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {138}25}
+...\marks5{\__mark_id:n {139}5}
+...\marks6{\__mark_id:n {140}5.0}
+...\marks7{\__mark_id:n {141}}
 ...\penalty -51
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -911,7 +998,6 @@ Completed box being shipped out [29]
 .....\hbox(5.79999+0.0)x12.1944
 ......\glue 5.0
 ......\hbox(0.0+0.0)x0.0
-......\write1{\post@note{text}{30}{\c__postnotes_page_counter_tl }{}}
 ......\OT1/cmr/m/n/9 6
 ......\OT1/cmr/m/n/9 .
 .....\glue 5.0
@@ -920,6 +1006,10 @@ Completed box being shipped out [29]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
+...\marks4{\__mark_id:n {142}27}
+...\marks5{\__mark_id:n {143}5}
+...\marks6{\__mark_id:n {144}5.0}
+...\marks7{\__mark_id:n {145}}
 ...\penalty -51
 ...\glue 5.0
 ...\glue 0.0 plus 1.0fil

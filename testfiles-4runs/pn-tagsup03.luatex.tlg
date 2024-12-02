@@ -1150,7 +1150,7 @@ Completed box being shipped out [2]
 ....\glue 9.90276 plus 0.86108
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
-....\write1{\post@note{print}{1}{\c__postnotes_page_counter_tl }{}}
+....\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\penalty 10000
 ....\write1{\new@label@record{postnote@label@option.en:mark:1}{{postnotes/tagsup@noteid}{1}}}
 ....\penalty 10000
@@ -1175,7 +1175,6 @@ Completed box being shipped out [2]
 .......\pdfdest name{postnote.1.text} xyz
 .......\pdfdest name{postnote.1.text} xyz
 .......\penalty 10000
-.....\write1{\post@note{text}{1}{\c__postnotes_page_counter_tl }{}}
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 14 } action struct name{postnote.1.mark} goto name{postnote.1.mark}
@@ -1194,6 +1193,10 @@ Completed box being shipped out [2]
 .....\glue(\rightskip) 0.0
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
+....\marks4{\__mark_id:n {1}1}
+....\marks5{\__mark_id:n {2}}
+....\marks6{\__mark_id:n {3}1}
+....\marks7{\__mark_id:n {4}}
 ....\write1{\new@label@record{postnote@label@option.en:mark:2}{{postnotes/tagsup@noteid}{2}}}
 ....\write1{\new@label@record{postnote@zlabel@option.zen:mark:2}{{postnotes/tagsup@noteid}{2}}}
 ....\glue(\parskip) 0.0 plus 1.0
@@ -1215,7 +1218,6 @@ Completed box being shipped out [2]
 .......\pdfdest name{postnote.2.text} xyz
 .......\pdfdest name{postnote.2.text} xyz
 .......\penalty 10000
-.....\write1{\post@note{text}{2}{\c__postnotes_page_counter_tl }{}}
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 15 } action struct name{postnote.2.mark} goto name{postnote.2.mark}
@@ -1232,6 +1234,12 @@ Completed box being shipped out [2]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\marks4{\__mark_id:n {5}1}
+....\marks5{\__mark_id:n {6}}
+....\marks6{\__mark_id:n {7}1}
+....\marks7{\__mark_id:n {8}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.75
@@ -1242,8 +1250,6 @@ Completed box being shipped out [2]
 ......\localleftbox=null
 ......\localrightbox=null
 .....\hbox(0.0+0.0)x15.0, direction TLT
-.....\pdfliteral page <lua data reference ...>
-.....\pdfliteral page <lua data reference ...>
 .....\write1{\new@label@record{tagpdfstruct-postnote.3}{{tagstruct}{44}{tagstructobj}{117 0 R}}}
 .....\penalty 10000
 .....\hbox(0.0+0.0)x0.0, direction TLT
@@ -1253,7 +1259,6 @@ Completed box being shipped out [2]
 .......\pdfdest name{postnote.3.text} xyz
 .......\pdfdest name{postnote.3.text} xyz
 .......\penalty 10000
-.....\write1{\post@note{text}{3}{\c__postnotes_page_counter_tl }{}}
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 16 } action struct name{postnote.3.mark} goto name{postnote.3.mark}
@@ -1275,6 +1280,12 @@ Completed box being shipped out [2]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\marks4{\__mark_id:n {9}1}
+....\marks5{\__mark_id:n {10}}
+....\marks6{\__mark_id:n {11}1}
+....\marks7{\__mark_id:n {12}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 3.0
@@ -1419,6 +1430,7 @@ Completed box being shipped out [3]
 ...\glue 25.0
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 539.94232fil, direction TLT
+....\write1{\new@label@record{__postnotes_header_2}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\glue(\topskip) 4.4643
 ....\hbox(5.5357+1.75)x345.0, glue set 290.68085fil, direction TLT
 .....\localpar

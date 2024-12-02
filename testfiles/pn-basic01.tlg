@@ -919,7 +919,7 @@ Completed box being shipped out [5]
 ....\marks3{\__mark_id:n {3}\pnheaderdefault }
 ....\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ....\penalty 10000
-....\write1{\post@note{print}{1}{\c__postnotes_page_counter_tl }{}}
+....\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\penalty 10000
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
@@ -937,7 +937,6 @@ Completed box being shipped out [5]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.1.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{1}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
@@ -947,6 +946,10 @@ Completed box being shipped out [5]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {4}1}
+....\marks5{\__mark_id:n {5}0}
+....\marks6{\__mark_id:n {6}0.0}
+....\marks7{\__mark_id:n {7}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -966,7 +969,6 @@ Completed box being shipped out [5]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.2.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{2}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.mark}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 .
@@ -976,6 +978,10 @@ Completed box being shipped out [5]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {8}1}
+....\marks5{\__mark_id:n {9}0}
+....\marks6{\__mark_id:n {10}0.0}
+....\marks7{\__mark_id:n {11}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -995,7 +1001,6 @@ Completed box being shipped out [5]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.3.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{3}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.mark}
 .......\OT1/cmr/m/n/9 3
 .......\OT1/cmr/m/n/9 .
@@ -1005,6 +1010,10 @@ Completed box being shipped out [5]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {12}1}
+....\marks5{\__mark_id:n {13}0}
+....\marks6{\__mark_id:n {14}0.0}
+....\marks7{\__mark_id:n {15}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1024,7 +1033,6 @@ Completed box being shipped out [5]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.4.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{4}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.mark}
 .......\OT1/cmr/m/n/9 4
 .......\OT1/cmr/m/n/9 .
@@ -1034,6 +1042,10 @@ Completed box being shipped out [5]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {16}1}
+....\marks5{\__mark_id:n {17}0}
+....\marks6{\__mark_id:n {18}0.0}
+....\marks7{\__mark_id:n {19}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1053,7 +1065,6 @@ Completed box being shipped out [5]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.5.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{5}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.5.mark}
 .......\OT1/cmr/m/n/9 5
 .......\OT1/cmr/m/n/9 .
@@ -1063,6 +1074,10 @@ Completed box being shipped out [5]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {20}1}
+....\marks5{\__mark_id:n {21}0}
+....\marks6{\__mark_id:n {22}0.0}
+....\marks7{\__mark_id:n {23}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1082,7 +1097,6 @@ Completed box being shipped out [5]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.6.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{6}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.6.mark}
 .......\OT1/cmr/m/n/9 6
 .......\OT1/cmr/m/n/9 .
@@ -1092,6 +1106,10 @@ Completed box being shipped out [5]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {24}1}
+....\marks5{\__mark_id:n {25}0}
+....\marks6{\__mark_id:n {26}0.0}
+....\marks7{\__mark_id:n {27}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1111,7 +1129,6 @@ Completed box being shipped out [5]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.7.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{7}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.7.mark}
 .......\OT1/cmr/m/n/9 7
 .......\OT1/cmr/m/n/9 .
@@ -1121,6 +1138,10 @@ Completed box being shipped out [5]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {28}1}
+....\marks5{\__mark_id:n {29}0}
+....\marks6{\__mark_id:n {30}0.0}
+....\marks7{\__mark_id:n {31}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1140,7 +1161,6 @@ Completed box being shipped out [5]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.8.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{8}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.8.mark}
 .......\OT1/cmr/m/n/9 8
 .......\OT1/cmr/m/n/9 .
@@ -1150,6 +1170,10 @@ Completed box being shipped out [5]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {32}1}
+....\marks5{\__mark_id:n {33}0}
+....\marks6{\__mark_id:n {34}0.0}
+....\marks7{\__mark_id:n {35}}
 ....\glue 0.0
 ...\glue(\baselineskip) 18.8505
 ...\hbox(6.44444+0.0)x345.0
@@ -1159,6 +1183,7 @@ Completed box being shipped out [5]
 .....\glue 0.0 plus 1.0fil
 Underfull \vbox (badness 2073) has occurred while \output is active
 \vbox(550.0+0.0)x345.0, glue set 2.7503
+.\write1{\new@label@record{__postnotes_header_2}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 .\glue(\topskip) 4.20001
 .\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 ..\hbox(5.79999+0.0)x19.6944
@@ -1172,7 +1197,6 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.9.text} xyz
 ......\penalty 10000
-....\write1{\post@note{text}{9}{\c__postnotes_page_counter_tl }{}}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.mark}
 ....\OT1/cmr/m/n/9 9
 ....\OT1/cmr/m/n/9 .
@@ -1182,6 +1206,10 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {36}1}
+.\marks5{\__mark_id:n {37}0}
+.\marks6{\__mark_id:n {38}0.0}
+.\marks7{\__mark_id:n {39}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -1201,7 +1229,6 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.10.text} xyz
 ......\penalty 10000
-....\write1{\post@note{text}{10}{\c__postnotes_page_counter_tl }{}}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.10.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 0
@@ -1212,6 +1239,10 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {40}2}
+.\marks5{\__mark_id:n {41}0}
+.\marks6{\__mark_id:n {42}0.0}
+.\marks7{\__mark_id:n {43}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -1231,7 +1262,6 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.11.text} xyz
 ......\penalty 10000
-....\write1{\post@note{text}{11}{\c__postnotes_page_counter_tl }{}}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.11.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 1
@@ -1242,6 +1272,10 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {44}2}
+.\marks5{\__mark_id:n {45}0}
+.\marks6{\__mark_id:n {46}0.0}
+.\marks7{\__mark_id:n {47}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -1261,7 +1295,6 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.12.text} xyz
 ......\penalty 10000
-....\write1{\post@note{text}{12}{\c__postnotes_page_counter_tl }{}}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.12.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 2
@@ -1272,6 +1305,10 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {48}2}
+.\marks5{\__mark_id:n {49}0}
+.\marks6{\__mark_id:n {50}0.0}
+.\marks7{\__mark_id:n {51}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -1291,7 +1328,6 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.13.text} xyz
 ......\penalty 10000
-....\write1{\post@note{text}{13}{\c__postnotes_page_counter_tl }{}}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.13.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 3
@@ -1302,6 +1338,10 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {52}2}
+.\marks5{\__mark_id:n {53}0}
+.\marks6{\__mark_id:n {54}0.0}
+.\marks7{\__mark_id:n {55}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -1321,7 +1361,6 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.14.text} xyz
 ......\penalty 10000
-....\write1{\post@note{text}{14}{\c__postnotes_page_counter_tl }{}}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.14.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 4
@@ -1332,6 +1371,10 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {56}2}
+.\marks5{\__mark_id:n {57}0}
+.\marks6{\__mark_id:n {58}0.0}
+.\marks7{\__mark_id:n {59}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -1351,7 +1394,6 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.15.text} xyz
 ......\penalty 10000
-....\write1{\post@note{text}{15}{\c__postnotes_page_counter_tl }{}}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.15.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 5
@@ -1362,6 +1404,10 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {60}2}
+.\marks5{\__mark_id:n {61}0}
+.\marks6{\__mark_id:n {62}0.0}
+.\marks7{\__mark_id:n {63}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -1381,7 +1427,6 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.16.text} xyz
 ......\penalty 10000
-....\write1{\post@note{text}{16}{\c__postnotes_page_counter_tl }{}}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.16.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 6
@@ -1392,6 +1437,10 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {64}2}
+.\marks5{\__mark_id:n {65}0}
+.\marks6{\__mark_id:n {66}0.0}
+.\marks7{\__mark_id:n {67}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -1411,7 +1460,6 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.17.text} xyz
 ......\penalty 10000
-....\write1{\post@note{text}{17}{\c__postnotes_page_counter_tl }{}}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.17.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 7
@@ -1422,6 +1470,10 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {68}2}
+.\marks5{\__mark_id:n {69}0}
+.\marks6{\__mark_id:n {70}0.0}
+.\marks7{\__mark_id:n {71}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -1441,7 +1493,6 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\pdfdest name{postnote.18.text} xyz
 ......\penalty 10000
-....\write1{\post@note{text}{18}{\c__postnotes_page_counter_tl }{}}
 ....\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.18.mark}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 8
@@ -1452,6 +1503,10 @@ Underfull \vbox (badness 2073) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {72}2}
+.\marks5{\__mark_id:n {73}0}
+.\marks6{\__mark_id:n {74}0.0}
+.\marks7{\__mark_id:n {75}}
 .\glue 0.0
 Completed box being shipped out [6]
 \vbox(627.36243+0.0)x434.0
@@ -1498,6 +1553,7 @@ Completed box being shipped out [6]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 2.7503
+....\write1{\new@label@record{__postnotes_header_2}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -1511,7 +1567,6 @@ Completed box being shipped out [6]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.9.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{9}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.9.mark}
 .......\OT1/cmr/m/n/9 9
 .......\OT1/cmr/m/n/9 .
@@ -1521,6 +1576,10 @@ Completed box being shipped out [6]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {36}1}
+....\marks5{\__mark_id:n {37}0}
+....\marks6{\__mark_id:n {38}0.0}
+....\marks7{\__mark_id:n {39}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1540,7 +1599,6 @@ Completed box being shipped out [6]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.10.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{10}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.10.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 0
@@ -1551,6 +1609,10 @@ Completed box being shipped out [6]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {40}2}
+....\marks5{\__mark_id:n {41}0}
+....\marks6{\__mark_id:n {42}0.0}
+....\marks7{\__mark_id:n {43}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1570,7 +1632,6 @@ Completed box being shipped out [6]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.11.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{11}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.11.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 1
@@ -1581,6 +1642,10 @@ Completed box being shipped out [6]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {44}2}
+....\marks5{\__mark_id:n {45}0}
+....\marks6{\__mark_id:n {46}0.0}
+....\marks7{\__mark_id:n {47}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1600,7 +1665,6 @@ Completed box being shipped out [6]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.12.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{12}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.12.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 2
@@ -1611,6 +1675,10 @@ Completed box being shipped out [6]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {48}2}
+....\marks5{\__mark_id:n {49}0}
+....\marks6{\__mark_id:n {50}0.0}
+....\marks7{\__mark_id:n {51}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1630,7 +1698,6 @@ Completed box being shipped out [6]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.13.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{13}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.13.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 3
@@ -1641,6 +1708,10 @@ Completed box being shipped out [6]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {52}2}
+....\marks5{\__mark_id:n {53}0}
+....\marks6{\__mark_id:n {54}0.0}
+....\marks7{\__mark_id:n {55}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1660,7 +1731,6 @@ Completed box being shipped out [6]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.14.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{14}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.14.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 4
@@ -1671,6 +1741,10 @@ Completed box being shipped out [6]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {56}2}
+....\marks5{\__mark_id:n {57}0}
+....\marks6{\__mark_id:n {58}0.0}
+....\marks7{\__mark_id:n {59}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1690,7 +1764,6 @@ Completed box being shipped out [6]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.15.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{15}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.15.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 5
@@ -1701,6 +1774,10 @@ Completed box being shipped out [6]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {60}2}
+....\marks5{\__mark_id:n {61}0}
+....\marks6{\__mark_id:n {62}0.0}
+....\marks7{\__mark_id:n {63}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1720,7 +1797,6 @@ Completed box being shipped out [6]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.16.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{16}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.16.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 6
@@ -1731,6 +1807,10 @@ Completed box being shipped out [6]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {64}2}
+....\marks5{\__mark_id:n {65}0}
+....\marks6{\__mark_id:n {66}0.0}
+....\marks7{\__mark_id:n {67}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1750,7 +1830,6 @@ Completed box being shipped out [6]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.17.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{17}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.17.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 7
@@ -1761,6 +1840,10 @@ Completed box being shipped out [6]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {68}2}
+....\marks5{\__mark_id:n {69}0}
+....\marks6{\__mark_id:n {70}0.0}
+....\marks7{\__mark_id:n {71}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1780,7 +1863,6 @@ Completed box being shipped out [6]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.18.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{18}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.18.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 8
@@ -1791,6 +1873,10 @@ Completed box being shipped out [6]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {72}2}
+....\marks5{\__mark_id:n {73}0}
+....\marks6{\__mark_id:n {74}0.0}
+....\marks7{\__mark_id:n {75}}
 ....\glue 0.0
 ...\glue(\baselineskip) 25.29494
 ...\hbox(0.0+0.0)x345.0
@@ -1837,6 +1923,7 @@ Completed box being shipped out [7]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 431.50061fil
+....\write1{\new@label@record{__postnotes_header_3}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
 .....\hbox(5.79999+0.0)x24.31937
@@ -1850,7 +1937,6 @@ Completed box being shipped out [7]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.19.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{19}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.19.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 9
@@ -1861,6 +1947,10 @@ Completed box being shipped out [7]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {76}3}
+....\marks5{\__mark_id:n {77}0}
+....\marks6{\__mark_id:n {78}0.0}
+....\marks7{\__mark_id:n {79}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1880,7 +1970,6 @@ Completed box being shipped out [7]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\pdfdest name{postnote.20.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{20}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.20.mark}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 0
@@ -1891,6 +1980,10 @@ Completed box being shipped out [7]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {80}3}
+....\marks5{\__mark_id:n {81}0}
+....\marks6{\__mark_id:n {82}0.0}
+....\marks7{\__mark_id:n {83}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51

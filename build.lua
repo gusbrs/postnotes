@@ -8,7 +8,7 @@ module = "postnotes"
 typesetfiles = {"*.tex"}
 
 -- We need at least 2 runs for the labels.
-checkruns = 2
+checkruns = 3
 -- But, depending on the case (multipass check, biblatex, etc.), 3.
 checkconfigs = {"build","build-3runs","build-4runs"}
 

@@ -36,7 +36,7 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .\marks3{\__mark_id:n {7}\mypnheader }
 .\mark{{\mypnheader }{\mypnheader }}
 .\penalty 10000
-.\write1{\post@note{print}{1}{\c__postnotes_page_counter_tl }{}}
+.\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 .\penalty 10000
 .\glue(\parskip) 0.0 plus 1.0
 .\glue(\parskip) 0.0
@@ -91,7 +91,6 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.2.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\post@note{text}{2}{\c__postnotes_page_counter_tl }{}}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.2.mark)>>>>}
 ....\OT1/cmr/m/n/9 1
 ....\OT1/cmr/m/n/9 .
@@ -101,6 +100,10 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {8}1}
+.\marks5{\__mark_id:n {9}1}
+.\marks6{\__mark_id:n {10}1.0}
+.\marks7{\__mark_id:n {11}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -120,7 +123,6 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.3.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\post@note{text}{3}{\c__postnotes_page_counter_tl }{}}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.3.mark)>>>>}
 ....\OT1/cmr/m/n/9 2
 ....\OT1/cmr/m/n/9 .
@@ -130,6 +132,10 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {12}1}
+.\marks5{\__mark_id:n {13}1}
+.\marks6{\__mark_id:n {14}1.0}
+.\marks7{\__mark_id:n {15}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -149,7 +155,6 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.4.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\post@note{text}{4}{\c__postnotes_page_counter_tl }{}}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.4.mark)>>>>}
 ....\OT1/cmr/m/n/9 3
 ....\OT1/cmr/m/n/9 .
@@ -159,6 +164,10 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {16}1}
+.\marks5{\__mark_id:n {17}1}
+.\marks6{\__mark_id:n {18}1.0}
+.\marks7{\__mark_id:n {19}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -178,7 +187,6 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.5.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\post@note{text}{5}{\c__postnotes_page_counter_tl }{}}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.5.mark)>>>>}
 ....\OT1/cmr/m/n/9 4
 ....\OT1/cmr/m/n/9 .
@@ -188,6 +196,10 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {20}1}
+.\marks5{\__mark_id:n {21}1}
+.\marks6{\__mark_id:n {22}1.0}
+.\marks7{\__mark_id:n {23}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -207,7 +219,6 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.6.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\post@note{text}{6}{\c__postnotes_page_counter_tl }{}}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.6.mark)>>>>}
 ....\OT1/cmr/m/n/9 5
 ....\OT1/cmr/m/n/9 .
@@ -217,6 +228,10 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {24}1}
+.\marks5{\__mark_id:n {25}1}
+.\marks6{\__mark_id:n {26}1.0}
+.\marks7{\__mark_id:n {27}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -236,7 +251,6 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.7.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\post@note{text}{7}{\c__postnotes_page_counter_tl }{}}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.7.mark)>>>>}
 ....\OT1/cmr/m/n/9 6
 ....\OT1/cmr/m/n/9 .
@@ -246,6 +260,10 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {28}2}
+.\marks5{\__mark_id:n {29}1}
+.\marks6{\__mark_id:n {30}1.0}
+.\marks7{\__mark_id:n {31}}
 .\glue 46.2497
 .\glue 0.0
 .\penalty -51
@@ -265,7 +283,6 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .....\hbox(0.0+0.0)x0.0, shifted -11.0
 ......\special{pdf:dest (postnote.8.text) [@thispage /XYZ @xpos @ypos null]}
 ......\penalty 10000
-....\write1{\post@note{text}{8}{\c__postnotes_page_counter_tl }{}}
 ....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.8.mark)>>>>}
 ....\OT1/cmr/m/n/9 7
 ....\OT1/cmr/m/n/9 .
@@ -275,6 +292,10 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 ..\penalty 10000
 ..\glue(\parfillskip) 0.0 plus 1.0fil
 ..\glue(\rightskip) 0.0
+.\marks4{\__mark_id:n {32}2}
+.\marks5{\__mark_id:n {33}1}
+.\marks6{\__mark_id:n {34}1.0}
+.\marks7{\__mark_id:n {35}}
 .\glue 0.0
 Completed box being shipped out [7]
 \vbox(627.36243+0.0)x380.0
@@ -364,7 +385,7 @@ Completed box being shipped out [7]
 ....\marks3{\__mark_id:n {7}\mypnheader }
 ....\mark{{\mypnheader }{\mypnheader }}
 ....\penalty 10000
-....\write1{\post@note{print}{1}{\c__postnotes_page_counter_tl }{}}
+....\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\penalty 10000
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -419,7 +440,6 @@ Completed box being shipped out [7]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.2.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{2}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.2.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
@@ -429,6 +449,10 @@ Completed box being shipped out [7]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {8}1}
+....\marks5{\__mark_id:n {9}1}
+....\marks6{\__mark_id:n {10}1.0}
+....\marks7{\__mark_id:n {11}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -448,7 +472,6 @@ Completed box being shipped out [7]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.3.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{3}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.3.mark)>>>>}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 .
@@ -458,6 +481,10 @@ Completed box being shipped out [7]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {12}1}
+....\marks5{\__mark_id:n {13}1}
+....\marks6{\__mark_id:n {14}1.0}
+....\marks7{\__mark_id:n {15}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -477,7 +504,6 @@ Completed box being shipped out [7]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.4.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{4}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.4.mark)>>>>}
 .......\OT1/cmr/m/n/9 3
 .......\OT1/cmr/m/n/9 .
@@ -487,6 +513,10 @@ Completed box being shipped out [7]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {16}1}
+....\marks5{\__mark_id:n {17}1}
+....\marks6{\__mark_id:n {18}1.0}
+....\marks7{\__mark_id:n {19}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -506,7 +536,6 @@ Completed box being shipped out [7]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.5.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{5}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.5.mark)>>>>}
 .......\OT1/cmr/m/n/9 4
 .......\OT1/cmr/m/n/9 .
@@ -516,6 +545,10 @@ Completed box being shipped out [7]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {20}1}
+....\marks5{\__mark_id:n {21}1}
+....\marks6{\__mark_id:n {22}1.0}
+....\marks7{\__mark_id:n {23}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -535,7 +568,6 @@ Completed box being shipped out [7]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.6.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{6}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.6.mark)>>>>}
 .......\OT1/cmr/m/n/9 5
 .......\OT1/cmr/m/n/9 .
@@ -545,6 +577,10 @@ Completed box being shipped out [7]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {24}1}
+....\marks5{\__mark_id:n {25}1}
+....\marks6{\__mark_id:n {26}1.0}
+....\marks7{\__mark_id:n {27}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -564,7 +600,6 @@ Completed box being shipped out [7]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.7.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{7}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.7.mark)>>>>}
 .......\OT1/cmr/m/n/9 6
 .......\OT1/cmr/m/n/9 .
@@ -574,6 +609,10 @@ Completed box being shipped out [7]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {28}2}
+....\marks5{\__mark_id:n {29}1}
+....\marks6{\__mark_id:n {30}1.0}
+....\marks7{\__mark_id:n {31}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -593,7 +632,6 @@ Completed box being shipped out [7]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.8.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{8}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.8.mark)>>>>}
 .......\OT1/cmr/m/n/9 7
 .......\OT1/cmr/m/n/9 .
@@ -603,6 +641,10 @@ Completed box being shipped out [7]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {32}2}
+....\marks5{\__mark_id:n {33}1}
+....\marks6{\__mark_id:n {34}1.0}
+....\marks7{\__mark_id:n {35}}
 ....\glue 0.0
 ...\glue(\baselineskip) 25.29494
 ...\hbox(0.0+0.0)x345.0
@@ -664,6 +706,7 @@ Completed box being shipped out [8]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 82.00244fil
+....\write1{\new@label@record{__postnotes_header_2}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -677,7 +720,6 @@ Completed box being shipped out [8]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.9.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{9}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.9.mark)>>>>}
 .......\OT1/cmr/m/n/9 8
 .......\OT1/cmr/m/n/9 .
@@ -687,6 +729,10 @@ Completed box being shipped out [8]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {36}2}
+....\marks5{\__mark_id:n {37}1}
+....\marks6{\__mark_id:n {38}1.0}
+....\marks7{\__mark_id:n {39}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -706,7 +752,6 @@ Completed box being shipped out [8]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.10.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{10}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.10.mark)>>>>}
 .......\OT1/cmr/m/n/9 9
 .......\OT1/cmr/m/n/9 .
@@ -716,6 +761,10 @@ Completed box being shipped out [8]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {40}2}
+....\marks5{\__mark_id:n {41}1}
+....\marks6{\__mark_id:n {42}1.0}
+....\marks7{\__mark_id:n {43}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -735,7 +784,6 @@ Completed box being shipped out [8]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.11.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{11}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.11.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 0
@@ -746,6 +794,10 @@ Completed box being shipped out [8]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {44}2}
+....\marks5{\__mark_id:n {45}1}
+....\marks6{\__mark_id:n {46}1.0}
+....\marks7{\__mark_id:n {47}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -765,7 +817,6 @@ Completed box being shipped out [8]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.12.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{12}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.12.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 1
@@ -776,6 +827,10 @@ Completed box being shipped out [8]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {48}2}
+....\marks5{\__mark_id:n {49}1}
+....\marks6{\__mark_id:n {50}1.0}
+....\marks7{\__mark_id:n {51}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -795,7 +850,6 @@ Completed box being shipped out [8]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.13.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{13}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.13.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 2
@@ -806,6 +860,10 @@ Completed box being shipped out [8]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {52}2}
+....\marks5{\__mark_id:n {53}1}
+....\marks6{\__mark_id:n {54}1.0}
+....\marks7{\__mark_id:n {55}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -825,7 +883,6 @@ Completed box being shipped out [8]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.14.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{14}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.14.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 3
@@ -836,6 +893,10 @@ Completed box being shipped out [8]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {56}3}
+....\marks5{\__mark_id:n {57}1}
+....\marks6{\__mark_id:n {58}1.0}
+....\marks7{\__mark_id:n {59}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -855,7 +916,6 @@ Completed box being shipped out [8]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.15.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{15}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.15.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 4
@@ -866,6 +926,10 @@ Completed box being shipped out [8]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {60}3}
+....\marks5{\__mark_id:n {61}1}
+....\marks6{\__mark_id:n {62}1.0}
+....\marks7{\__mark_id:n {63}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -885,7 +949,6 @@ Completed box being shipped out [8]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.16.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{16}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.16.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 5
@@ -896,6 +959,10 @@ Completed box being shipped out [8]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {64}3}
+....\marks5{\__mark_id:n {65}1}
+....\marks6{\__mark_id:n {66}1.0}
+....\marks7{\__mark_id:n {67}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -915,7 +982,6 @@ Completed box being shipped out [8]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.17.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{17}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.17.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 6
@@ -932,6 +998,10 @@ Completed box being shipped out [8]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {68}3}
+....\marks5{\__mark_id:n {69}1}
+....\marks6{\__mark_id:n {70}1.0}
+....\marks7{\__mark_id:n {71}}
 ....\glue 0.0 plus 1.0fil
 ....\glue 0.0
 ...\glue(\baselineskip) 25.29494
@@ -991,6 +1061,7 @@ Completed box being shipped out [9]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
+....\write1{\new@label@record{__postnotes_header_3}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\glue(\topskip) 3.85002
 ....\hbox(6.14998+0.0)x345.0, glue set 312.63625fil
 .....\hbox(0.0+0.0)x15.0
@@ -1067,6 +1138,7 @@ Completed box being shipped out [10]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 131.52968fil
+....\write1{\new@label@record{__postnotes_header_4}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\glue(\topskip) 3.85002
 ....\hbox(6.14998+0.0)x345.0, glue set 312.14319fil
 .....\hbox(0.0+0.0)x15.0
@@ -1094,7 +1166,6 @@ Completed box being shipped out [10]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.18.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{18}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.18.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 7
@@ -1110,6 +1181,10 @@ Completed box being shipped out [10]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {72}3}
+....\marks5{\__mark_id:n {73}1}
+....\marks6{\__mark_id:n {74}1.0}
+....\marks7{\__mark_id:n {75}}
 ....\penalty -51
 ....\glue 5.0
 ....\glue -5.0
@@ -1170,7 +1245,6 @@ Completed box being shipped out [10]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.20.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{20}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.20.mark)>>>>}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
@@ -1180,6 +1254,10 @@ Completed box being shipped out [10]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {76}5}
+....\marks5{\__mark_id:n {77}2}
+....\marks6{\__mark_id:n {78}2.0}
+....\marks7{\__mark_id:n {79}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1199,7 +1277,6 @@ Completed box being shipped out [10]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.21.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{21}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.21.mark)>>>>}
 .......\OT1/cmr/m/n/9 2
 .......\OT1/cmr/m/n/9 .
@@ -1209,6 +1286,10 @@ Completed box being shipped out [10]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {80}5}
+....\marks5{\__mark_id:n {81}2}
+....\marks6{\__mark_id:n {82}2.0}
+....\marks7{\__mark_id:n {83}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1228,7 +1309,6 @@ Completed box being shipped out [10]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.22.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{22}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.22.mark)>>>>}
 .......\OT1/cmr/m/n/9 3
 .......\OT1/cmr/m/n/9 .
@@ -1238,6 +1318,10 @@ Completed box being shipped out [10]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {84}5}
+....\marks5{\__mark_id:n {85}2}
+....\marks6{\__mark_id:n {86}2.0}
+....\marks7{\__mark_id:n {87}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1257,7 +1341,6 @@ Completed box being shipped out [10]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.23.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{23}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.23.mark)>>>>}
 .......\OT1/cmr/m/n/9 4
 .......\OT1/cmr/m/n/9 .
@@ -1267,6 +1350,10 @@ Completed box being shipped out [10]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {88}5}
+....\marks5{\__mark_id:n {89}2}
+....\marks6{\__mark_id:n {90}2.0}
+....\marks7{\__mark_id:n {91}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1286,7 +1373,6 @@ Completed box being shipped out [10]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.24.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{24}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.24.mark)>>>>}
 .......\OT1/cmr/m/n/9 5
 .......\OT1/cmr/m/n/9 .
@@ -1296,6 +1382,10 @@ Completed box being shipped out [10]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {92}5}
+....\marks5{\__mark_id:n {93}2}
+....\marks6{\__mark_id:n {94}2.0}
+....\marks7{\__mark_id:n {95}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1315,7 +1405,6 @@ Completed box being shipped out [10]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.25.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{25}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.25.mark)>>>>}
 .......\OT1/cmr/m/n/9 6
 .......\OT1/cmr/m/n/9 .
@@ -1325,6 +1414,10 @@ Completed box being shipped out [10]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {96}6}
+....\marks5{\__mark_id:n {97}2}
+....\marks6{\__mark_id:n {98}2.0}
+....\marks7{\__mark_id:n {99}}
 ....\glue 46.2497
 ....\glue 0.0
 ....\penalty -51
@@ -1344,7 +1437,6 @@ Completed box being shipped out [10]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0
 .........\special{pdf:dest (postnote.26.text) [@thispage /XYZ @xpos @ypos null]}
 .........\penalty 10000
-.......\write1{\post@note{text}{26}{\c__postnotes_page_counter_tl }{}}
 .......\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 1]/H/I/C[1 0 0]/A<</S/GoTo/D(postnote.26.mark)>>>>}
 .......\OT1/cmr/m/n/9 7
 .......\OT1/cmr/m/n/9 .
@@ -1360,6 +1452,10 @@ Completed box being shipped out [10]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {100}6}
+....\marks5{\__mark_id:n {101}2}
+....\marks6{\__mark_id:n {102}2.0}
+....\marks7{\__mark_id:n {103}}
 ....\glue 0.0 plus 1.0fil
 ....\glue 0.0
 ...\glue(\baselineskip) 25.29494
@@ -1420,6 +1516,7 @@ Completed box being shipped out [11]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
+....\write1{\new@label@record{__postnotes_header_5}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\glue(\topskip) 3.85002
 ....\hbox(6.14998+0.0)x345.0, glue set 312.63625fil
 .....\hbox(0.0+0.0)x15.0
@@ -1490,6 +1587,7 @@ Completed box being shipped out [12]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 535.0fil
+....\write1{\new@label@record{__postnotes_header_6}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\glue(\topskip) 3.85002
 ....\hbox(6.14998+0.0)x345.0, glue set 312.14319fil
 .....\hbox(0.0+0.0)x15.0

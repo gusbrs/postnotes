@@ -1719,7 +1719,7 @@ Completed box being shipped out [2]
 ....\marks4{e+,39,33,}
 ....\penalty 10000
 ....\glue 9.90276 plus 0.86108
-....\write1{\post@note{print}{1}{\c__postnotes_page_counter_tl }{}}
+....\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\penalty 10000
 ....\glue 0.0
 ....\write1{\new@label@record{postnote@label@option.en:mark:1}{{postnotes/tagsup@noteid}{1}}}
@@ -1744,7 +1744,6 @@ Completed box being shipped out [2]
 .........\pdfdest name{postnote.1.text} xyz
 .........\pdfdest struct105 name{postnote.1.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{1}{\c__postnotes_page_counter_tl }{}}
 .......\pdfliteral page{EMC}
 .......\marks4{e-,40,37,}
 .......\marks4{e+,40,37,}
@@ -1782,6 +1781,10 @@ Completed box being shipped out [2]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks5{\__mark_id:n {1}1}
+....\marks6{\__mark_id:n {2}}
+....\marks7{\__mark_id:n {3}1}
+....\marks8{\__mark_id:n {4}}
 ....\marks4{b-,43,42,text,,,}
 ....\marks4{b+,43,42,text,,,}
 ....\marks4{e-,43,42,}
@@ -1806,7 +1809,6 @@ Completed box being shipped out [2]
 .........\pdfdest name{postnote.2.text} xyz
 .........\pdfdest struct114 name{postnote.2.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{2}{\c__postnotes_page_counter_tl }{}}
 .......\pdfliteral page{EMC}
 .......\marks4{e-,44,44,}
 .......\marks4{e+,44,44,}
@@ -1842,6 +1844,10 @@ Completed box being shipped out [2]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks5{\__mark_id:n {5}1}
+....\marks6{\__mark_id:n {6}}
+....\marks7{\__mark_id:n {7}1}
+....\marks8{\__mark_id:n {8}}
 ....\marks4{b-,47,49,text,,,}
 ....\marks4{b+,47,49,text,,,}
 ....\marks4{e-,47,49,}
@@ -1866,7 +1872,6 @@ Completed box being shipped out [2]
 .........\pdfdest name{postnote.3.text} xyz
 .........\pdfdest struct123 name{postnote.3.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{3}{\c__postnotes_page_counter_tl }{}}
 .......\pdfliteral page{EMC}
 .......\marks4{e-,48,51,}
 .......\marks4{e+,48,51,}
@@ -1906,6 +1911,10 @@ Completed box being shipped out [2]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks5{\__mark_id:n {9}1}
+....\marks6{\__mark_id:n {10}}
+....\marks7{\__mark_id:n {11}1}
+....\marks8{\__mark_id:n {12}}
 ....\marks4{b-,51,56,text,,,}
 ....\marks4{b+,51,56,text,,,}
 ....\marks4{e-,51,56,}
@@ -2123,6 +2132,7 @@ Completed box being shipped out [3]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 534.94286fil
 ....\hbox(0.0+0.0)x0.0
+....\write1{\new@label@record{__postnotes_header_2}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\glue(\topskip) 4.4643
 ....\hbox(5.5357+1.75)x345.0, glue set 290.68083fil
 .....\write1{\new@label@record{mcid-55}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{55}{tagmcid}{\__property_code_tagmcid: }}}

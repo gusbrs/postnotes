@@ -79,7 +79,7 @@ Completed box being shipped out [3]
 ....\marks3{\__mark_id:n {5}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
-....\write1{\post@note{print}{1}{\c__postnotes_page_counter_tl }{}}
+....\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\penalty 10000
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
@@ -102,7 +102,6 @@ Completed box being shipped out [3]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
 .........\pdfdest name{postnote.1.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{1}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.1.mark}
 .......\T1/lmr/m/n/9 1
 .......\T1/lmr/m/n/9 .
@@ -123,6 +122,10 @@ Completed box being shipped out [3]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {6}1}
+....\marks5{\__mark_id:n {7}1}
+....\marks6{\__mark_id:n {8}1.0}
+....\marks7{\__mark_id:n {9}}
 ....\penalty -51
 ....\glue 5.0
 ....\glue 0.0 plus 1.0fil
@@ -351,12 +354,12 @@ Completed box being shipped out [5]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\__mark_id:n {6}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks2{\__mark_id:n {7}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks3{\__mark_id:n {8}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks1{\__mark_id:n {10}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks2{\__mark_id:n {11}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks3{\__mark_id:n {12}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
-....\write1{\post@note{print}{2}{\c__postnotes_page_counter_tl }{}}
+....\write1{\new@label@record{__postnotes_header_3}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\penalty 10000
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
@@ -379,7 +382,6 @@ Completed box being shipped out [5]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
 .........\pdfdest name{postnote.2.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{2}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.2.mark}
 .......\T1/lmr/m/n/9 2
 .......\T1/lmr/m/n/9 .
@@ -400,6 +402,10 @@ Completed box being shipped out [5]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {13}4}
+....\marks5{\__mark_id:n {14}1}
+....\marks6{\__mark_id:n {15}1.0}
+....\marks7{\__mark_id:n {16}}
 ....\penalty -51
 ....\glue 5.0
 ....\glue 0.0 plus 1.0fil
@@ -506,12 +512,12 @@ Completed box being shipped out [9]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\__mark_id:n {11}\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks2{\__mark_id:n {12}\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks3{\__mark_id:n {13}\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks1{\__mark_id:n {19}\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks2{\__mark_id:n {20}\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks3{\__mark_id:n {21}\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
-....\write1{\post@note{print}{3}{\c__postnotes_page_counter_tl }{}}
+....\write1{\new@label@record{__postnotes_header_5}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\penalty 10000
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
@@ -534,7 +540,6 @@ Completed box being shipped out [9]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
 .........\pdfdest name{postnote.3.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{3}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.3.mark}
 .......\T1/lmr/m/n/9 3
 .......\T1/lmr/m/n/9 .
@@ -555,6 +560,10 @@ Completed box being shipped out [9]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {22}7}
+....\marks5{\__mark_id:n {23}2}
+....\marks6{\__mark_id:n {24}2.0}
+....\marks7{\__mark_id:n {25}}
 ....\penalty -51
 ....\glue 5.0
 ....\glue 0.0 plus 1.0fil
@@ -706,12 +715,12 @@ Completed box being shipped out [13]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\__mark_id:n {16}\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks2{\__mark_id:n {17}\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks3{\__mark_id:n {18}\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks1{\__mark_id:n {28}\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks2{\__mark_id:n {29}\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks3{\__mark_id:n {30}\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
-....\write1{\post@note{print}{4}{\c__postnotes_page_counter_tl }{}}
+....\write1{\new@label@record{__postnotes_header_7}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\penalty 10000
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
@@ -734,7 +743,6 @@ Completed box being shipped out [13]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
 .........\pdfdest name{postnote.4.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{4}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.4.mark}
 .......\T1/lmr/m/n/9 4
 .......\T1/lmr/m/n/9 .
@@ -755,6 +763,10 @@ Completed box being shipped out [13]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {31}11}
+....\marks5{\__mark_id:n {32}3}
+....\marks6{\__mark_id:n {33}3.0}
+....\marks7{\__mark_id:n {34}}
 ....\penalty -51
 ....\glue 5.0
 ....\glue 0.0 plus 1.0fil
@@ -888,12 +900,12 @@ Completed box being shipped out [17]
 .....\glue(\rightskip) 0.0 plus 1.0fil
 ....\penalty 10000
 ....\glue 40.0
-....\marks1{\__mark_id:n {21}\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks2{\__mark_id:n {22}\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
-....\marks3{\__mark_id:n {23}\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks1{\__mark_id:n {37}\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks2{\__mark_id:n {38}\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
+....\marks3{\__mark_id:n {39}\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
-....\write1{\post@note{print}{5}{\c__postnotes_page_counter_tl }{}}
+....\write1{\new@label@record{__postnotes_header_9}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
 ....\penalty 10000
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
@@ -916,7 +928,6 @@ Completed box being shipped out [17]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
 .........\pdfdest name{postnote.5.text} xyz
 .........\penalty 10000
-.......\write1{\post@note{text}{5}{\c__postnotes_page_counter_tl }{}}
 .......\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{postnote.5.mark}
 .......\T1/lmr/m/n/9 5
 .......\T1/lmr/m/n/9 .
@@ -939,6 +950,10 @@ Completed box being shipped out [17]
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
+....\marks4{\__mark_id:n {40}15}
+....\marks5{\__mark_id:n {41}4}
+....\marks6{\__mark_id:n {42}4.0}
+....\marks7{\__mark_id:n {43}}
 ....\penalty -51
 ....\glue 5.0
 ....\glue 0.0 plus 1.0fil

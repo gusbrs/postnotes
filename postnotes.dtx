@@ -419,8 +419,6 @@
 %     \@@_set_label:nnnn ,
 %     \@@_set_mark_page_label:nn ,
 %     \@@_set_section_page_label:n ,
-%     \@@_set_text_page_label:n ,
-%     \@@_set_print_page_label:n ,
 %     \@@_set_pre_print_label:n ,
 %     \c_@@_page_counter_tl ,
 %   }
@@ -432,8 +430,6 @@
 %       ~~\Arg{counteraux step}
 %       \cs{@@_set_mark_page_label:nn} \Arg{note id} \Arg{counteraux step}
 %       \cs{@@_set_section_page_label:n} \Arg{note id}
-%       \cs{@@_set_text_page_label:n} \Arg{note id}
-%       \cs{@@_set_print_page_label:n} \Arg{note id}
 %       \cs{@@_set_pre_print_label:n} \Arg{note id}
 %     \end{syntax}
 %    \begin{macrocode}
@@ -441,24 +437,16 @@
   {
     \legacy_if:nT { @filesw }
       {
-        \protected@write \@auxout
-          { \cs_set_eq:NN \c_@@_page_counter_tl \scan_stop: }
+        \protected@write \@auxout { }
           { \token_to_str:N \post@note { #1 } { #2 } { #3 } { #4 } }
       }
   }
-\tl_const:Nn \c_@@_page_counter_tl { \int_use:N \c@page }
 \cs_new_protected:Npn \@@_set_mark_page_label:nn #1#2
   { \@@_set_label:nnnn { mark } { #1 } { \thepage } { #2 } }
 \cs_generate_variant:Nn \@@_set_mark_page_label:nn { ee }
 \cs_new_protected:Npn \@@_set_section_page_label:n #1
   { \@@_set_label:nnnn { section } { #1 } { \thepage } { } }
 \cs_generate_variant:Nn \@@_set_section_page_label:n { e }
-\cs_new_protected:Npn \@@_set_text_page_label:n #1
-  { \@@_set_label:nnnn { text } { #1 } { \c_@@_page_counter_tl } { } }
-\cs_generate_variant:Nn \@@_set_text_page_label:n { e }
-\cs_new_protected:Npn \@@_set_print_page_label:n #1
-  { \@@_set_label:nnnn { print } { #1 } { \c_@@_page_counter_tl } { } }
-\cs_generate_variant:Nn \@@_set_print_page_label:n { e }
 \cs_new_protected:Npn \@@_set_pre_print_label:n #1
   { \@@_set_label:nnnn { preprint } { #1 } { } { } }
 \cs_generate_variant:Nn \@@_set_pre_print_label:n { e }
@@ -1697,6 +1685,10 @@
 %     \l_@@_print_type_next_tl ,
 %     \l_@@_print_type_prev_tl ,
 %     \l_@@_print_content_tl ,
+%     \l_@@_print_page_tl ,
+%     \l_@@_print_chap_tl ,
+%     \l_@@_print_sect_tl ,
+%     \l_@@_print_name_tl ,
 %     \l_@@_clear_queue_seq ,
 %   }
 %   Auxiliary variables for \cs{@@_print_notes:}.
@@ -1712,9 +1704,23 @@
 \tl_new:N \l_@@_print_type_next_tl
 \tl_new:N \l_@@_print_type_prev_tl
 \tl_new:N \l_@@_print_content_tl
+\tl_new:N \l_@@_print_page_tl
+\tl_new:N \l_@@_print_chap_tl
+\tl_new:N \l_@@_print_sect_tl
+\tl_new:N \l_@@_print_name_tl
 \seq_new:N \l_@@_clear_queue_seq
 %    \end{macrocode}
 % \end{macro}
+%
+%
+%
+%    \begin{macrocode}
+\mark_new_class:n { postnotes/page }
+\mark_new_class:n { postnotes/chapter }
+\mark_new_class:n { postnotes/section }
+\mark_new_class:n { postnotes/name }
+%    \end{macrocode}
+%
 %
 %
 % \cs{@@_print_notes:}' hooks.  Both meant at providing points of entry for
@@ -1796,11 +1802,7 @@
 %    \end{macrocode}
 % The  purpose of this label is to provide a point for splitting the labelseq
 % with the \opt{counteraux} option.  It only needs to exist, it doesn't even
-% store the page value.  The \cs{@@_set_print_page_label:e} done at
-% \cs{@@_set_headers_vars_first:} right below does not suffice for this
-% purpose for two reasons.  It won't be set if the queue is empty (or not yet
-% populated), and also it comes after the heading (as it must), which means
-% \cs{postnotesection}s added through hooks to it will come before it.
+% store the page value.
 %    \begin{macrocode}
       \@@_set_pre_print_label:e
         { \int_use:N \g_@@_print_postnotes_int }
@@ -1814,7 +1816,6 @@
           \@@_sort_queue:N \g_@@_print_queue_seq
           \@@_check_floats:N \g_@@_print_queue_seq
           \bool_gset_true:N \g_@@_header_vars_next_bool
-          \@@_get_headers_data:N \g_@@_print_queue_seq
           \@@_set_headers_vars_first:
 %    \end{macrocode}
 % Ensure the first note after a heading has paragraph indentation when
@@ -1907,8 +1908,15 @@
                     }
                   \group_begin:
                     \UseHook { postnotes/print/note/begin }
-                    \@@_get_pageref:Ne \pnthepage
+                    \@@_get_pageref:Ne \l_@@_print_page_tl
                       { mark@ \l_postnotes_print_note_id_tl }
+                    \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
+                      { thechapter } \l_@@_print_chap_tl
+                    \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
+                      { thesection } \l_@@_print_sect_tl
+                    \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
+                      { pnsectname } \l_@@_print_name_tl
+                    \tl_set_eq:NN \pnthepage \l_@@_print_page_tl
                     \@@_prop_get:nnN
                       { \l_postnotes_print_note_id_tl }
                       { mark } \l_@@_print_mark_tl
@@ -1928,8 +1936,6 @@
                         \tag_socket_use:n { postnotes/printmark/begin }
                         \MakeLinkTarget*
                           { postnote. \l_postnotes_print_note_id_tl .text }
-                        \@@_set_text_page_label:e
-                          { \l_postnotes_print_note_id_tl }
                         \l_@@_pre_textmark_tl
                         \@@_typeset_text_mark:eV
                           { \l_postnotes_print_note_id_tl }
@@ -1963,6 +1969,14 @@
                         \tag_socket_use:n { postnotes/printnote/begin }
                         \l_@@_print_typeset_mark_tl
                       }
+                    \mark_insert:nn { postnotes/page }
+                      { \l_@@_print_page_tl }
+                    \mark_insert:nn { postnotes/chapter }
+                      { \l_@@_print_chap_tl }
+                    \mark_insert:nn { postnotes/section }
+                      { \l_@@_print_sect_tl }
+                    \mark_insert:nn { postnotes/name }
+                      { \l_@@_print_name_tl }
                     \tag_socket_use:n { postnotes/printtext/begin }
                     \l_@@_print_content_tl
                     \tag_socket_use:n { postnotes/printtext/end }
@@ -2358,52 +2372,19 @@
 %
 % \section{Headers}
 %
-% The headers infrastructure of \pkg{postnotes} is comprised of three basic
-% parts:
-%
-% \begin{enumerate}
-% \item For each \cs{postnote}, labels are set storing the \texttt{page} where
-%   the note occurs.  Each note actually generates a pair of such labels, once
-%   when \cs{postnote} is called (with the mark), and another where the note
-%   is printed (in \cs{printpostnotes}).  The former ones store \cs{thepage},
-%   since we want the printed representation of it for typesetting purposes,
-%   the latter ones store the value of the \texttt{page} counter, since we
-%   don't need to typeset it, but do need to perform algebraic operations with
-%   it.  These labels are set by \cs{@@_set_mark_page_label:nn},
-%   \cs{@@_set_text_page_label:n}, and \cs{@@_set_print_page_label:n} at the
-%   appropriate places.  The set of these labels provides a mapping from each
-%   note's ``mark'' and ``text'' to the page where it occurs.
-% \item This information set is processed by \cs{@@_get_headers_data:N} at the
-%   beginning of \cs{@@_print_notes:} to identify the first and last note of
-%   each page in \cs{printpostnotes}, and to generate a mapping from these
-%   first and last notes on each page to the pages where their corresponding
-%   marks occur.  We also take the opportunity to enrich this mapping with
-%   other metadata of each note.  So we get also mappings from the first and
-%   last note on each page to \cs{thechapter}, \cs{thesection}, and the
-%   \opt{name} of the section in which they occur.  These mappings are stored
-%   in property lists \cs[no-index]{g_@@_header_\meta{info}_first_prop} and
-%   \cs[no-index]{g_@@_header_\meta{info}_last_prop} where the \texttt{key} is
-%   the page in \cs{printpostnotes} where their note's content is typeset (or
-%   rather where it starts to be typeset, it is the page where the text's mark
-%   is printed).
-% \item Based on these mappings, along the span of notes section we run
-%   \cs{@@_set_headers_vars_next:} at each \texttt{shipout/before} hook to set
-%   user facing variables for the \emph{next} page, which will be available
-%   when their heading gets typeset.  Given that at \texttt{shipout} we can
-%   rely on a correct value of the \texttt{page} counter, we use it as
-%   \texttt{key} to query the property lists generated in the previous step.
-%   These user facing variables are called \cs[no-index]{pnhd\meta{info}first}
-%   and \cs[no-index]{pnhd\meta{info}last}.  Since we cannot rely on the
-%   shipout hook for the first page of \cs{printpostnotes},
-%   \cs{@@_set_headers_vars_first:} is run at its beginning to ensure correct
-%   values are in place on the first page of the notes section.
-% \end{enumerate}
-%
 % These \cs[no-index]{pnhd\meta{info}first} and
 % \cs[no-index]{pnhd\meta{info}last} variables can then be used to build
 % simple functions which can be passed to mark commands to achieve rich
 % contextual running headers.
 %
+% NOTE The use of these variables has been deprecated in 2024-12-02 for v0.5.0.
+% The setting of values for them, now based on \pkg{ltmarks} data, is still
+% transitionally provided so that users have time to adjust to the new
+% mechanism without immediate breakage of existing documents.  These variables
+% are scheduled to be removed though, and users \emph{must} migrate.  Not only
+% that, these values have been less intensively tested, and also require one
+% compilation run more to converge.  So there's also a clear benefit in
+% migrating sooner rather than later.
 %
 % \begin{macro}[int]
 %   {
@@ -2416,10 +2397,7 @@
 %     \pnhdnamefirst ,
 %     \pnhdnamelast ,
 %   }
-%   User facing variables, aimed at making available header data for the user.
-%   Setting these variables with correct values at the moment the header gets
-%   typeset is \emph{the} objective of the whole headers infrastructure of the
-%   package.
+%   Legacy user facing header variables.
 %    \begin{macrocode}
 \tl_new:N \pnhdpagefirst
 \tl_new:N \pnhdpagelast
@@ -2433,283 +2411,31 @@
 % \end{macro}
 %
 %
-% \begin{macro}
-%   {
-%     \g_@@_header_page_first_prop ,
-%     \g_@@_header_page_last_prop ,
-%     \g_@@_header_chap_first_prop ,
-%     \g_@@_header_chap_last_prop ,
-%     \g_@@_header_sect_first_prop ,
-%     \g_@@_header_sect_last_prop ,
-%     \g_@@_header_name_first_prop ,
-%     \g_@@_header_name_last_prop ,
-%     \g_@@_header_prev_last_page_tl ,
-%     \g_@@_header_prev_last_chap_tl ,
-%     \g_@@_header_prev_last_sect_tl ,
-%     \g_@@_header_prev_last_name_tl ,
-%     \l_@@_prev_text_page_tl ,
-%     \l_@@_curr_text_page_tl ,
-%     \l_@@_prev_mark_page_tl ,
-%     \l_@@_prev_mark_chap_tl ,
-%     \l_@@_prev_mark_sect_tl ,
-%     \l_@@_prev_mark_name_tl ,
-%   }
-%   Auxiliary variables for the headers infrastructure.
-%    \begin{macrocode}
-\prop_new:N \g_@@_header_page_first_prop
-\prop_new:N \g_@@_header_page_last_prop
-\prop_new:N \g_@@_header_chap_first_prop
-\prop_new:N \g_@@_header_chap_last_prop
-\prop_new:N \g_@@_header_sect_first_prop
-\prop_new:N \g_@@_header_sect_last_prop
-\prop_new:N \g_@@_header_name_first_prop
-\prop_new:N \g_@@_header_name_last_prop
-\tl_new:N \g_@@_header_prev_last_page_tl
-\tl_new:N \g_@@_header_prev_last_chap_tl
-\tl_new:N \g_@@_header_prev_last_sect_tl
-\tl_new:N \g_@@_header_prev_last_name_tl
-\tl_new:N \l_@@_prev_text_page_tl
-\tl_new:N \l_@@_curr_text_page_tl
-\tl_new:N \l_@@_prev_mark_page_tl
-\tl_new:N \l_@@_prev_mark_chap_tl
-\tl_new:N \l_@@_prev_mark_sect_tl
-\tl_new:N \l_@@_prev_mark_name_tl
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\@@_get_headers_data:N}
-%   Process header data for \cs{@@_set_headers_vars:n}.
-%   \begin{syntax}
-%     \cs{@@_get_headers_data:N} \meta{\cs{g_@@_print_queue_seq}}
-%   \end{syntax}
-%    \begin{macrocode}
-\cs_new_protected:Npn \@@_get_headers_data:N #1
-  {
-    \group_begin:
-      \tl_gclear:N \pnhdpagefirst
-      \tl_gclear:N \pnhdpagelast
-      \tl_gclear:N \pnhdchapfirst
-      \tl_gclear:N \pnhdchaplast
-      \tl_gclear:N \pnhdsectfirst
-      \tl_gclear:N \pnhdsectlast
-      \tl_gclear:N \pnhdnamefirst
-      \tl_gclear:N \pnhdnamelast
-      \prop_gclear:N \g_@@_header_page_first_prop
-      \prop_gclear:N \g_@@_header_page_last_prop
-      \prop_gclear:N \g_@@_header_chap_first_prop
-      \prop_gclear:N \g_@@_header_chap_last_prop
-      \prop_gclear:N \g_@@_header_sect_first_prop
-      \prop_gclear:N \g_@@_header_sect_last_prop
-      \prop_gclear:N \g_@@_header_name_first_prop
-      \prop_gclear:N \g_@@_header_name_last_prop
-      \tl_gclear:N \g_@@_header_prev_last_page_tl
-      \tl_gclear:N \g_@@_header_prev_last_chap_tl
-      \tl_gclear:N \g_@@_header_prev_last_sect_tl
-      \tl_gclear:N \g_@@_header_prev_last_name_tl
-      \tl_clear:N \l_@@_prev_text_page_tl
-      \tl_clear:N \l_@@_curr_text_page_tl
-      \tl_clear:N \l_@@_prev_mark_page_tl
-      \tl_clear:N \l_@@_prev_mark_chap_tl
-      \tl_clear:N \l_@@_prev_mark_sect_tl
-      \tl_clear:N \l_@@_prev_mark_name_tl
-      \seq_map_inline:Nn #1
-        {
-          \exp_args:Ne \tl_if_eq:nnT
-            { \@@_prop_item:nn {##1} { type } }
-            { note }
-            {
-              \@@_get_pageref:Nn
-                \l_@@_curr_text_page_tl { text@ ##1 }
-              \tl_if_empty:NF \l_@@_curr_text_page_tl
-                {
-                  \tl_if_eq:NNTF
-                    \l_@@_prev_text_page_tl
-                    \l_@@_curr_text_page_tl
-                    {
-%    \end{macrocode}
-% We are on the same page as the previous note, just update the
-% \texttt{prev_mark} data.
-%    \begin{macrocode}
-                      \@@_get_pageref:Nn
-                        \l_@@_prev_mark_page_tl { mark@ ##1 }
-                      \@@_prop_get:nnN {##1} { thechapter }
-                        \l_@@_prev_mark_chap_tl
-                      \@@_prop_get:nnN {##1} { thesection }
-                        \l_@@_prev_mark_sect_tl
-                      \@@_prop_get:nnN {##1} { pnsectname }
-                        \l_@@_prev_mark_name_tl
-                    }
-                    {
-%    \end{macrocode}
-% We are on the transition between two pages, current ID is the first note of
-% the new page (or on the very first note of \cs{printpostnotes}, given
-% \cs{l_@@_prev_text_page_tl} is initialized to empty).
-%
-% Set `last' values for previous page, based on the last valid
-% \texttt{prev_mark} stored ones.  There is no previous page to the first one
-% of \cs{printpostnotes}, so we don't set `last' values for it (conditioning
-% on \cs{l_@@_prev_text_page_tl} being empty, which only occurs on the first
-% note).
-%    \begin{macrocode}
-                      \tl_if_empty:NF \l_@@_prev_text_page_tl
-                        {
-                          \prop_gput:NVV \g_@@_header_page_last_prop
-                            \l_@@_prev_text_page_tl
-                            \l_@@_prev_mark_page_tl
-                          \prop_gput:NVV \g_@@_header_chap_last_prop
-                            \l_@@_prev_text_page_tl
-                            \l_@@_prev_mark_chap_tl
-                          \prop_gput:NVV \g_@@_header_sect_last_prop
-                            \l_@@_prev_text_page_tl
-                            \l_@@_prev_mark_sect_tl
-                          \prop_gput:NVV \g_@@_header_name_last_prop
-                            \l_@@_prev_text_page_tl
-                            \l_@@_prev_mark_name_tl
-                        }
-%    \end{macrocode}
-%
-% Set `first' values for current page, based on the current note ID.
-%    \begin{macrocode}
-                      \prop_gput:NVe \g_@@_header_page_first_prop
-                        \l_@@_curr_text_page_tl
-                        { \@@_extract_pageref:n { mark@ ##1 } }
-                      \@@_prop_get:nnN {##1} { thechapter }
-                        \l_@@_tmpa_tl
-                      \prop_gput:NVV \g_@@_header_chap_first_prop
-                        \l_@@_curr_text_page_tl
-                        \l_@@_tmpa_tl
-                      \@@_prop_get:nnN {##1} { thesection }
-                        \l_@@_tmpa_tl
-                      \prop_gput:NVV \g_@@_header_sect_first_prop
-                        \l_@@_curr_text_page_tl
-                        \l_@@_tmpa_tl
-                      \@@_prop_get:nnN {##1} { pnsectname }
-                        \l_@@_tmpa_tl
-                      \prop_gput:NVV \g_@@_header_name_first_prop
-                        \l_@@_curr_text_page_tl
-                        \l_@@_tmpa_tl
-%    \end{macrocode}
-%
-% Store \texttt{prev_mark} data for the first note on the page.
-%    \begin{macrocode}
-                      \@@_get_pageref:Nn
-                        \l_@@_prev_mark_page_tl { mark@ ##1 }
-                      \@@_prop_get:nnN {##1} { thechapter }
-                        \l_@@_prev_mark_chap_tl
-                      \@@_prop_get:nnN {##1} { thesection }
-                        \l_@@_prev_mark_sect_tl
-                      \@@_prop_get:nnN {##1} { pnsectname }
-                        \l_@@_prev_mark_name_tl
-%    \end{macrocode}
-%
-% Set \cs{l_@@_prev_text_page_tl} for the next page
-% (\cs{l_@@_curr_text_page_tl} is never empty at this point, since we
-% conditioned to it).
-%    \begin{macrocode}
-                      \tl_set:NV \l_@@_prev_text_page_tl
-                        \l_@@_curr_text_page_tl
-                    }
-                }
-            }
-        }
-%    \end{macrocode}
-% We can't catch the transition from the last page of \cs{printpostnotes} to
-% the following one through the mapping above, but the \texttt{prev_mark}
-% values of the last note in the loop are the ones we want, so we set `last'
-% values for the last page based on them.
-%    \begin{macrocode}
-      \tl_if_empty:NF \l_@@_prev_text_page_tl
-        {
-          \prop_gput:NVV \g_@@_header_page_last_prop
-            \l_@@_prev_text_page_tl
-            \l_@@_prev_mark_page_tl
-          \prop_gput:NVV \g_@@_header_chap_last_prop
-            \l_@@_prev_text_page_tl
-            \l_@@_prev_mark_chap_tl
-          \prop_gput:NVV \g_@@_header_sect_last_prop
-            \l_@@_prev_text_page_tl
-            \l_@@_prev_mark_sect_tl
-          \prop_gput:NVV \g_@@_header_name_last_prop
-            \l_@@_prev_text_page_tl
-            \l_@@_prev_mark_name_tl
-        }
-    \group_end:
-  }
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% The sequence of pages processed in \cs{@@_get_headers_data:N} is not ensured
-% to be continuous, since not every page of \cs{printpostnotes} starts a note.
-% There may be notes that fill whole pages, or the last page of the notes may
-% end with a note that started on the penultimate page.  We must handle this
-% case at \cs{@@_set_headers_vars:n}.  For every page for which there is
-% information provided by \cs{@@_get_headers_data:N} we store a
-% \texttt{header_prev_last} (the last value of the previous header) for each
-% of the variables of interest.  If the next page is skipped in the sequence
-% (no notes starting on it), we can use these stored values to set both
-% `first' and `last' variables based on them for that page.
-%
-%
 % \begin{macro}{\@@_set_headers_vars:n}
-%   Set user facing variables based on data generated by
-%   \cs{@@_get_headers_data:N}.
+%   Set user facing variables.
 %   \begin{syntax}
-%     \cs{@@_set_headers_vars:n} \Arg{page number}
+%     \cs{@@_set_headers_vars:n} \Arg{label}
 %   \end{syntax}
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_set_headers_vars:n #1
   {
     \group_begin:
-      \prop_get:NnNTF \g_@@_header_page_first_prop
-        {#1} \l_@@_tmpa_tl
-        { \tl_gset:NV \pnhdpagefirst \l_@@_tmpa_tl }
-        { \tl_gset:NV \pnhdpagefirst \g_@@_header_prev_last_page_tl }
-      \prop_get:NnNTF \g_@@_header_page_last_prop
-        {#1} \l_@@_tmpa_tl
-        {
-          \tl_gset:NV \pnhdpagelast \l_@@_tmpa_tl
-          \tl_gset:NV \g_@@_header_prev_last_page_tl
-            \l_@@_tmpa_tl
-        }
-        { \tl_gset:NV \pnhdpagelast \g_@@_header_prev_last_page_tl }
-      \prop_get:NnNTF \g_@@_header_chap_first_prop
-        {#1} \l_@@_tmpa_tl
-        { \tl_gset:NV \pnhdchapfirst \l_@@_tmpa_tl }
-        { \tl_gset:NV \pnhdchapfirst \g_@@_header_prev_last_chap_tl }
-      \prop_get:NnNTF \g_@@_header_chap_last_prop
-        {#1} \l_@@_tmpa_tl
-        {
-          \tl_gset:NV \pnhdchaplast \l_@@_tmpa_tl
-          \tl_gset:NV \g_@@_header_prev_last_chap_tl
-            \l_@@_tmpa_tl
-        }
-        { \tl_gset:NV \pnhdchaplast \g_@@_header_prev_last_chap_tl }
-      \prop_get:NnNTF \g_@@_header_sect_first_prop
-        {#1} \l_@@_tmpa_tl
-        { \tl_gset:NV \pnhdsectfirst \l_@@_tmpa_tl }
-        { \tl_gset:NV \pnhdsectfirst \g_@@_header_prev_last_sect_tl }
-      \prop_get:NnNTF \g_@@_header_sect_last_prop
-        {#1} \l_@@_tmpa_tl
-        {
-          \tl_gset:NV \pnhdsectlast \l_@@_tmpa_tl
-          \tl_gset:NV \g_@@_header_prev_last_sect_tl
-            \l_@@_tmpa_tl
-        }
-        { \tl_gset:NV \pnhdsectlast \g_@@_header_prev_last_sect_tl }
-      \prop_get:NnNTF \g_@@_header_name_first_prop
-        {#1} \l_@@_tmpa_tl
-        { \tl_gset:NV \pnhdnamefirst \l_@@_tmpa_tl }
-        { \tl_gset:NV \pnhdnamefirst \g_@@_header_prev_last_name_tl }
-      \prop_get:NnNTF \g_@@_header_name_last_prop
-        {#1} \l_@@_tmpa_tl
-        {
-          \tl_gset:NV \pnhdnamelast \l_@@_tmpa_tl
-          \tl_gset:NV \g_@@_header_prev_last_name_tl
-            \l_@@_tmpa_tl
-        }
-        { \tl_gset:NV \pnhdnamelast \g_@@_header_prev_last_name_tl }
+      \protected@xdef \pnhdpagefirst
+        { \property_ref:nn { #1 } { postnotes/page/first } }
+      \protected@xdef \pnhdpagelast
+        { \property_ref:nn { #1 } { postnotes/page/last } }
+      \protected@xdef \pnhdchapfirst
+        { \property_ref:nn { #1 } { postnotes/chapter/first } }
+      \protected@xdef \pnhdchaplast
+        { \property_ref:nn { #1 } { postnotes/chapter/last } }
+      \protected@xdef \pnhdsectfirst
+        { \property_ref:nn { #1 } { postnotes/section/first } }
+      \protected@xdef \pnhdsectlast
+        { \property_ref:nn { #1 } { postnotes/section/last } }
+      \protected@xdef \pnhdnamefirst
+        { \property_ref:nn { #1 } { postnotes/name/first } }
+      \protected@xdef \pnhdnamelast
+        { \property_ref:nn { #1 } { postnotes/name/last } }
     \group_end:
   }
 \cs_generate_variant:Nn \@@_set_headers_vars:n { e }
@@ -2727,26 +2453,66 @@
 %   \cs{@@_set_headers_vars_next:} to run at every \texttt{shipout/before}
 %   hook of the document, it is made no-op by \cs{g_@@_header_vars_next_bool}
 %   which only has a \texttt{true} value inside \cs{printpostnotes}.
-%   \cs{@@_set_headers_vars_first:} must set a label and retrieve its value to
-%   be able to have a reliable value of its own page.
 %    \begin{macrocode}
+\property_new:nnnn { postnotes/page/first } { shipout } { }
+  { \FirstMark { postnotes/page } }
+\property_new:nnnn { postnotes/page/last } { shipout } { }
+  { \LastMark { postnotes/page } }
+\property_new:nnnn { postnotes/chapter/first } { shipout } { }
+  { \FirstMark { postnotes/chapter } }
+\property_new:nnnn { postnotes/chapter/last } { shipout } { }
+  { \LastMark { postnotes/chapter } }
+\property_new:nnnn { postnotes/section/first } { shipout } { }
+  { \FirstMark { postnotes/section } }
+\property_new:nnnn { postnotes/section/last } { shipout } { }
+  { \LastMark { postnotes/section } }
+\property_new:nnnn { postnotes/name/first } { shipout } { }
+  { \FirstMark { postnotes/name } }
+\property_new:nnnn { postnotes/name/last } { shipout } { }
+  { \LastMark { postnotes/name } }
+\clist_const:Nn \c_@@_header_marks_clist
+  {
+    postnotes/page/first ,
+    postnotes/page/last ,
+    postnotes/chapter/first ,
+    postnotes/chapter/last ,
+    postnotes/section/first ,
+    postnotes/section/last ,
+    postnotes/name/first ,
+    postnotes/name/last ,
+  }
 \AddToHook { shipout/before } [ ./header ]
   { \@@_set_headers_vars_next: }
 \bool_new:N \g_@@_header_vars_next_bool
+\int_new:N \g_@@_print_header_vars_int
 \cs_new_protected:Npn \@@_set_headers_vars_next:
   {
     \bool_if:NT \g_@@_header_vars_next_bool
-      { \@@_set_headers_vars:e { \int_eval:n { \c@page + 1 } } }
+      {
+        \int_gincr:N \g_@@_print_header_vars_int
+        \exp_args:Ne \property_record:nN
+          { __postnotes_header_ \int_use:N \g_@@_print_header_vars_int }
+          \c_@@_header_marks_clist
+        \@@_set_headers_vars:e
+          { __postnotes_header_ \int_use:N \g_@@_print_header_vars_int }
+      }
   }
 \cs_new_protected:Npn \@@_set_headers_vars_first:
   {
-    \@@_set_print_page_label:e
-      { \int_use:N \g_@@_print_postnotes_int }
+    \tl_gset:Nn \pnhdpagefirst { \FirstMark { postnotes/page } }
+    \tl_gset:Nn \pnhdpagelast  { \LastMark  { postnotes/page } }
+    \tl_gset:Nn \pnhdchapfirst { \FirstMark { postnotes/chapter } }
+    \tl_gset:Nn \pnhdchaplast  { \LastMark  { postnotes/chapter } }
+    \tl_gset:Nn \pnhdsectfirst { \FirstMark { postnotes/section } }
+    \tl_gset:Nn \pnhdsectlast  { \LastMark  { postnotes/section } }
+    \tl_gset:Nn \pnhdnamefirst { \FirstMark { postnotes/section } }
+    \tl_gset:Nn \pnhdnamelast  { \LastMark  { postnotes/section } }
+    \int_gincr:N \g_@@_print_header_vars_int
+    \exp_args:Ne \property_record:nN
+      { __postnotes_header_ \int_use:N \g_@@_print_header_vars_int }
+      \c_@@_header_marks_clist
     \@@_set_headers_vars:e
-      {
-        \@@_extract_pageref:e
-          { print@ \int_use:N \g_@@_print_postnotes_int }
-      }
+      { __postnotes_header_ \int_use:N \g_@@_print_header_vars_int }
   }
 %    \end{macrocode}
 % \end{macro}
