@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.4.2...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.5.0...HEAD)
+
+## [v0.5.0](https://github.com/gusbrs/postnotes/compare/v0.4.2...v0.5.0) (2024-12-03)
 
 ### Changed
 - The support for running headers in `\printpostnotes`, which previously
