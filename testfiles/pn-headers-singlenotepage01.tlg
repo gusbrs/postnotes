@@ -57,7 +57,7 @@ Completed box being shipped out [9]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 381.09724fil
-....\write1{\post@note{preprint}{1}{}{}}
+....\write1{\post@note{print}{1}{}{}}
 ....\write1{\postnote@setcounteraux{0}}
 ....\write1{\post@note{section}{23}{\thepage }{}}
 ....\write-{}
@@ -87,7 +87,7 @@ Completed box being shipped out [9]
 ....\marks3{\__mark_id:n {7}\mypnheader }
 ....\mark{{\mypnheader }{\mypnheader }}
 ....\penalty 10000
-....\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\penalty 10000
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -215,7 +215,7 @@ Completed box being shipped out [10]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_2}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_2}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -302,7 +302,7 @@ Completed box being shipped out [11]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_3}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_3}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -389,7 +389,7 @@ Completed box being shipped out [12]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_4}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_4}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -476,7 +476,7 @@ Completed box being shipped out [13]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_5}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_5}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -563,7 +563,7 @@ Completed box being shipped out [14]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_6}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_6}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -650,7 +650,7 @@ Completed box being shipped out [15]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_7}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_7}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -737,7 +737,7 @@ Completed box being shipped out [16]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_8}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_8}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -824,7 +824,7 @@ Completed box being shipped out [17]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_9}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_9}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -911,7 +911,7 @@ Completed box being shipped out [18]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_10}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_10}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
 .....\hbox(5.79999+0.0)x24.31937
@@ -999,7 +999,7 @@ Completed box being shipped out [19]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 519.09724fil
-....\write1{\new@label@record{__postnotes_header_11}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_11}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 0.00002
 ....\hbox(9.99998+2.79999)x345.0, glue set 212.51846fil
 .....\hbox(0.0+0.0)x0.0
@@ -1124,7 +1124,7 @@ Completed box being shipped out [20]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_12}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_12}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -1211,7 +1211,7 @@ Completed box being shipped out [21]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_13}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_13}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -1298,7 +1298,7 @@ Completed box being shipped out [22]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_14}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_14}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -1385,7 +1385,7 @@ Completed box being shipped out [23]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_15}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_15}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -1472,7 +1472,7 @@ Completed box being shipped out [24]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_16}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_16}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -1559,7 +1559,7 @@ Completed box being shipped out [25]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_17}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_17}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -1646,7 +1646,7 @@ Completed box being shipped out [26]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_18}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_18}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -1733,7 +1733,7 @@ Completed box being shipped out [27]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_19}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_19}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -1820,7 +1820,7 @@ Completed box being shipped out [28]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 540.0fil
-....\write1{\new@label@record{__postnotes_header_20}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_20}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
 .....\hbox(5.79999+0.0)x24.31937

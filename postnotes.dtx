@@ -334,15 +334,7 @@
 \bool_new:N \g_@@_firstrun_bool
 \bool_gset_true:N \g_@@_firstrun_bool
 \cs_new_protected:Npn \@@_store_labelseq:nn #1#2
-  {
-    \bool_lazy_any:nT
-      {
-        { \str_if_eq_p:nn {#1} { mark } }
-        { \str_if_eq_p:nn {#1} { section } }
-        { \str_if_eq_p:nn {#1} { preprint } }
-      }
-      { \seq_gput_right:Nn \g_@@_labelseq_seq { {#1} {#2} } }
-  }
+  { \seq_gput_right:Nn \g_@@_labelseq_seq { {#1} {#2} } }
 \cs_new_protected:Npn \@@_step_counteraux:nnn #1#2#3
   {
     \bool_lazy_and:nnT
@@ -419,7 +411,7 @@
 %     \@@_set_label:nnnn ,
 %     \@@_set_mark_page_label:nn ,
 %     \@@_set_section_page_label:n ,
-%     \@@_set_pre_print_label:n ,
+%     \@@_set_print_label:n ,
 %     \c_@@_page_counter_tl ,
 %   }
 %   Label setting functions for each pertinent context.  They must use
@@ -430,7 +422,7 @@
 %       ~~\Arg{counteraux step}
 %       \cs{@@_set_mark_page_label:nn} \Arg{note id} \Arg{counteraux step}
 %       \cs{@@_set_section_page_label:n} \Arg{note id}
-%       \cs{@@_set_pre_print_label:n} \Arg{note id}
+%       \cs{@@_set_print_label:n} \Arg{note id}
 %     \end{syntax}
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_set_label:nnnn #1#2#3#4
@@ -447,9 +439,9 @@
 \cs_new_protected:Npn \@@_set_section_page_label:n #1
   { \@@_set_label:nnnn { section } { #1 } { \thepage } { } }
 \cs_generate_variant:Nn \@@_set_section_page_label:n { e }
-\cs_new_protected:Npn \@@_set_pre_print_label:n #1
-  { \@@_set_label:nnnn { preprint } { #1 } { } { } }
-\cs_generate_variant:Nn \@@_set_pre_print_label:n { e }
+\cs_new_protected:Npn \@@_set_print_label:n #1
+  { \@@_set_label:nnnn { print } { #1 } { } { } }
+\cs_generate_variant:Nn \@@_set_print_label:n { e }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -512,6 +504,30 @@
         \section*{\pntitle}
         \@mkboth{\pnheaderdefault}{\pnheaderdefault}
       }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}[int]{\pnheaderdefault}
+%   A basic header function to be used as default in the \opt{heading} option.
+%   It produces a header in the form ``Notes to pages N--M'', with a text
+%   which can be localized (see Section~\ref{sec:languages}).
+%   \begin{syntax}
+%     \cs{pnheaderdefault}
+%   \end{syntax}
+%    \begin{macrocode}
+\NewDocumentCommand \pnheaderdefault {}
+  {
+    \group_begin:
+    \protected@edef \l_@@_tmpa_tl { \FirstMark{postnotes/page} }
+    \protected@edef \l_@@_tmpb_tl { \LastMark{postnotes/page}  }
+    \tl_if_eq:NNTF \l_@@_tmpa_tl \l_@@_tmpb_tl
+      { \pnhdnotes{}~\pnhdtopage{}~ \FirstMark{postnotes/page} }
+      {
+        \pnhdnotes{}~\pnhdtopages{}~
+        \FirstMark{postnotes/page}--\LastMark{postnotes/page}
+      }
+    \group_end:
   }
 %    \end{macrocode}
 % \end{macro}
@@ -1217,6 +1233,7 @@
 %   \end{syntax}
 %    \begin{macrocode}
 \NewHook { postnotes/note/begin }
+\NewHook { postnotes/note/setlabels }
 \cs_new_protected:Npn \@@_note:nn #1#2
   {
     \group_begin:
@@ -1266,6 +1283,7 @@
             }
           \tl_set:Nn \l_@@_note_set_labels_tl
             {
+              \UseHook { postnotes/note/setlabels }
               \MakeLinkTarget* { postnote. \l_postnotes_note_id_tl .mark }
               \@@_set_mark_page_label:ee { \l_postnotes_note_id_tl }
                 { \int_use:N \l_@@_counteraux_step_int }
@@ -1686,9 +1704,9 @@
 %     \l_@@_print_type_prev_tl ,
 %     \l_@@_print_content_tl ,
 %     \l_@@_print_page_tl ,
-%     \l_@@_print_chap_tl ,
-%     \l_@@_print_sect_tl ,
-%     \l_@@_print_name_tl ,
+%     \l_@@_print_chapter_tl ,
+%     \l_@@_print_section_tl ,
+%     \l_@@_print_sectname_tl ,
 %     \l_@@_clear_queue_seq ,
 %   }
 %   Auxiliary variables for \cs{@@_print_notes:}.
@@ -1705,25 +1723,25 @@
 \tl_new:N \l_@@_print_type_prev_tl
 \tl_new:N \l_@@_print_content_tl
 \tl_new:N \l_@@_print_page_tl
-\tl_new:N \l_@@_print_chap_tl
-\tl_new:N \l_@@_print_sect_tl
-\tl_new:N \l_@@_print_name_tl
+\tl_new:N \l_@@_print_chapter_tl
+\tl_new:N \l_@@_print_section_tl
+\tl_new:N \l_@@_print_sectname_tl
 \seq_new:N \l_@@_clear_queue_seq
 %    \end{macrocode}
 % \end{macro}
 %
 %
+% \pkg{ltmarks} mark classes for running header support data.
 %
 %    \begin{macrocode}
 \mark_new_class:n { postnotes/page }
 \mark_new_class:n { postnotes/chapter }
 \mark_new_class:n { postnotes/section }
-\mark_new_class:n { postnotes/name }
+\mark_new_class:n { postnotes/sectname }
 %    \end{macrocode}
 %
 %
-%
-% \cs{@@_print_notes:}' hooks.  Both meant at providing points of entry for
+% \cs{@@_print_notes:}' hooks.  Meant to provide points of entry for
 % additional setup, specially to add support to packages and features which
 % require it.  The \texttt{postnotes/print/begin} hook is run early in
 % \cs{@@_print_notes:} and only once per call, after the user options have
@@ -1735,6 +1753,8 @@
 %    \begin{macrocode}
 \NewHook { postnotes/print/begin }
 \NewHook { postnotes/print/note/begin }
+\NewHook { postnotes/print/note/typesetmark }
+\NewHook { postnotes/print/note/ltmarks }
 %    \end{macrocode}
 %
 %
@@ -1804,7 +1824,7 @@
 % with the \opt{counteraux} option.  It only needs to exist, it doesn't even
 % store the page value.
 %    \begin{macrocode}
-      \@@_set_pre_print_label:e
+      \@@_set_print_label:e
         { \int_use:N \g_@@_print_postnotes_int }
       \seq_if_empty:NTF \g_@@_print_queue_seq
         { \msg_warning:nn { postnotes } { empty-printpostnotes } }
@@ -1911,11 +1931,11 @@
                     \@@_get_pageref:Ne \l_@@_print_page_tl
                       { mark@ \l_postnotes_print_note_id_tl }
                     \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
-                      { thechapter } \l_@@_print_chap_tl
+                      { thechapter } \l_@@_print_chapter_tl
                     \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
-                      { thesection } \l_@@_print_sect_tl
+                      { thesection } \l_@@_print_section_tl
                     \@@_prop_get:nnN { \l_postnotes_print_note_id_tl }
-                      { pnsectname } \l_@@_print_name_tl
+                      { pnsectname } \l_@@_print_sectname_tl
                     \tl_set_eq:NN \pnthepage \l_@@_print_page_tl
                     \@@_prop_get:nnN
                       { \l_postnotes_print_note_id_tl }
@@ -1934,6 +1954,7 @@
                     \tl_set:Nn \l_@@_print_typeset_mark_tl
                       {
                         \tag_socket_use:n { postnotes/printmark/begin }
+                        \UseHook { postnotes/print/note/typesetmark }
                         \MakeLinkTarget*
                           { postnote. \l_postnotes_print_note_id_tl .text }
                         \l_@@_pre_textmark_tl
@@ -1969,14 +1990,25 @@
                         \tag_socket_use:n { postnotes/printnote/begin }
                         \l_@@_print_typeset_mark_tl
                       }
+%    \end{macrocode}
+% In principle, inserting the \pkg{ltmarks} marks would be best done at
+% \cs{l_@@_print_typeset_mark_tl}, immediately \emph{before} the mark,
+% alongside the anchor.  However, \cs{mark_insert:nn} is documented not to
+% work inside a box (see \url{https://tex.stackexchange.com/a/732007}) and the
+% \cs{item}'s label is typeset as a box, so that's not an option.  Before the
+% \cs{item} is also not a good idea.  As long as the mark is no longer than a
+% line, which is arguably to be expected, there shouldn't be any difference
+% though.  Either way, I don't see any other placement options.
+%    \begin{macrocode}
+                    \UseHook { postnotes/print/note/ltmarks }
                     \mark_insert:nn { postnotes/page }
                       { \l_@@_print_page_tl }
                     \mark_insert:nn { postnotes/chapter }
-                      { \l_@@_print_chap_tl }
+                      { \l_@@_print_chapter_tl }
                     \mark_insert:nn { postnotes/section }
-                      { \l_@@_print_sect_tl }
-                    \mark_insert:nn { postnotes/name }
-                      { \l_@@_print_name_tl }
+                      { \l_@@_print_section_tl }
+                    \mark_insert:nn { postnotes/sectname }
+                      { \l_@@_print_sectname_tl }
                     \tag_socket_use:n { postnotes/printtext/begin }
                     \l_@@_print_content_tl
                     \tag_socket_use:n { postnotes/printtext/end }
@@ -2062,10 +2094,10 @@
 % Furthermore, the purpose of \cs{g_@@_labelseq_seq} is different in each
 % case.  With \opt{counteraux} it is used to build the actual print queue,
 % while in the standard case it is only used in \cs{@@_check_floats:N}.
-% Therefore, with \opt{counteraux} the cut is made at the place the preprint
-% label for the current \cs{printpostnotes} is found, while in the standard
-% case, \cs{g_@@_note_id_int} is used directly to distribute the elements
-% between the current \cs{printpostnotes} and future ones.
+% Therefore, with \opt{counteraux} the cut is made at the place the
+% \texttt{print} label for the current \cs{printpostnotes} is found, while in
+% the standard case, \cs{g_@@_note_id_int} is used directly to distribute the
+% elements between the current \cs{printpostnotes} and future ones.
 %
 %
 % \begin{macro}{\@@_split_labelseq:}
@@ -2079,13 +2111,13 @@
       \bool_if:NTF \g_@@_counteraux_bool
         {
           \tl_set:Ne \l_@@_tmpa_tl
-            { { preprint } { \int_use:N \g_@@_print_postnotes_int } }
+            { { print } { \int_use:N \g_@@_print_postnotes_int } }
 %    \end{macrocode}
-% The preprint label of a \cs{printpostnotes} at the end of the document may
-% not have been written: if it's empty, it may not be shipped out at all.
+% The \texttt{print} label of a \cs{printpostnotes} at the end of the document
+% may not have been written: if it's empty, it may not be shipped out at all.
 % But, since it's a counter, stepped sequentially and not floating, even if it
 % is transitorily missing, it will be at the end.  In other words, if this one
-% is not found, there will be no subsequent preprints in the sequence.
+% is not found, there will be no subsequent \texttt{print}s in the sequence.
 %    \begin{macrocode}
           \seq_if_in:NVF \g_@@_labelseq_seq \l_@@_tmpa_tl
             { \seq_gput_right:NV \g_@@_labelseq_seq \l_@@_tmpa_tl }
@@ -2127,10 +2159,10 @@
                 }
 %    \end{macrocode}
 % No need for the \texttt{F} branch of \cs{str_case:enT}, at this point the
-% preprint of past \cs{printpostnotes} can no longer be here, and we don't go
-% further than the current one.  In theory, we could even go without
-% \cs{str_case:enT}, but let's play safe and keep the function robust against
-% future changes of the code.
+% \texttt{print} label of past \cs{printpostnotes} can no longer be here, and
+% we don't go further than the current one.  In theory, we could even go
+% without \cs{str_case:enT}, but let's play safe and keep the function robust
+% against future changes of the code.
 %    \begin{macrocode}
             }
           \seq_gset_eq:NN \g_@@_print_labelseq_queue_seq
@@ -2161,8 +2193,8 @@
                 }
 %    \end{macrocode}
 % Also no need for the \texttt{F} branch here, but for a different reason.
-% The preprint label plays no role whatsoever if \opt{couteraux=false}, so we
-% just drop them altogether if found.
+% The \texttt{print} label plays no role whatsoever if \opt{couteraux=false},
+% so we just drop them altogether if found.
 %    \begin{macrocode}
             }
           \seq_gset_eq:NN \g_@@_print_labelseq_queue_seq
@@ -2372,12 +2404,7 @@
 %
 % \section{Headers}
 %
-% These \cs[no-index]{pnhd\meta{info}first} and
-% \cs[no-index]{pnhd\meta{info}last} variables can then be used to build
-% simple functions which can be passed to mark commands to achieve rich
-% contextual running headers.
-%
-% NOTE The use of these variables has been deprecated in 2024-12-02 for v0.5.0.
+% NOTE The use of these variables has been deprecated in 2024-12-03 for v0.5.0.
 % The setting of values for them, now based on \pkg{ltmarks} data, is still
 % transitionally provided so that users have time to adjust to the new
 % mechanism without immediate breakage of existing documents.  These variables
@@ -2386,18 +2413,6 @@
 % compilation run more to converge.  So there's also a clear benefit in
 % migrating sooner rather than later.
 %
-% \begin{macro}[int]
-%   {
-%     \pnhdpagefirst ,
-%     \pnhdpagelast ,
-%     \pnhdchapfirst ,
-%     \pnhdchaplast ,
-%     \pnhdsectfirst ,
-%     \pnhdsectlast ,
-%     \pnhdnamefirst ,
-%     \pnhdnamelast ,
-%   }
-%   Legacy user facing header variables.
 %    \begin{macrocode}
 \tl_new:N \pnhdpagefirst
 \tl_new:N \pnhdpagelast
@@ -2408,14 +2423,7 @@
 \tl_new:N \pnhdnamefirst
 \tl_new:N \pnhdnamelast
 %    \end{macrocode}
-% \end{macro}
 %
-%
-% \begin{macro}{\@@_set_headers_vars:n}
-%   Set user facing variables.
-%   \begin{syntax}
-%     \cs{@@_set_headers_vars:n} \Arg{label}
-%   \end{syntax}
 %    \begin{macrocode}
 \cs_new_protected:Npn \@@_set_headers_vars:n #1
   {
@@ -2433,26 +2441,14 @@
       \protected@xdef \pnhdsectlast
         { \property_ref:nn { #1 } { postnotes/section/last } }
       \protected@xdef \pnhdnamefirst
-        { \property_ref:nn { #1 } { postnotes/name/first } }
+        { \property_ref:nn { #1 } { postnotes/sectname/first } }
       \protected@xdef \pnhdnamelast
-        { \property_ref:nn { #1 } { postnotes/name/last } }
+        { \property_ref:nn { #1 } { postnotes/sectname/last } }
     \group_end:
   }
 \cs_generate_variant:Nn \@@_set_headers_vars:n { e }
 %    \end{macrocode}
-% \end{macro}
 %
-%
-% \begin{macro}
-%   {
-%     \@@_set_headers_vars_next: ,
-%     \@@_set_headers_vars_first: ,
-%   }
-%   The functions that actually call \cs{@@_set_headers_vars:n} at the
-%   appropriate contexts with appropriate page values.  Though we set
-%   \cs{@@_set_headers_vars_next:} to run at every \texttt{shipout/before}
-%   hook of the document, it is made no-op by \cs{g_@@_header_vars_next_bool}
-%   which only has a \texttt{true} value inside \cs{printpostnotes}.
 %    \begin{macrocode}
 \property_new:nnnn { postnotes/page/first } { shipout } { }
   { \FirstMark { postnotes/page } }
@@ -2466,10 +2462,10 @@
   { \FirstMark { postnotes/section } }
 \property_new:nnnn { postnotes/section/last } { shipout } { }
   { \LastMark { postnotes/section } }
-\property_new:nnnn { postnotes/name/first } { shipout } { }
-  { \FirstMark { postnotes/name } }
-\property_new:nnnn { postnotes/name/last } { shipout } { }
-  { \LastMark { postnotes/name } }
+\property_new:nnnn { postnotes/sectname/first } { shipout } { }
+  { \FirstMark { postnotes/sectname } }
+\property_new:nnnn { postnotes/sectname/last } { shipout } { }
+  { \LastMark { postnotes/sectname } }
 \clist_const:Nn \c_@@_header_marks_clist
   {
     postnotes/page/first ,
@@ -2478,8 +2474,8 @@
     postnotes/chapter/last ,
     postnotes/section/first ,
     postnotes/section/last ,
-    postnotes/name/first ,
-    postnotes/name/last ,
+    postnotes/sectname/first ,
+    postnotes/sectname/last ,
   }
 \AddToHook { shipout/before } [ ./header ]
   { \@@_set_headers_vars_next: }
@@ -2499,14 +2495,14 @@
   }
 \cs_new_protected:Npn \@@_set_headers_vars_first:
   {
-    \tl_gset:Nn \pnhdpagefirst { \FirstMark { postnotes/page } }
-    \tl_gset:Nn \pnhdpagelast  { \LastMark  { postnotes/page } }
-    \tl_gset:Nn \pnhdchapfirst { \FirstMark { postnotes/chapter } }
-    \tl_gset:Nn \pnhdchaplast  { \LastMark  { postnotes/chapter } }
-    \tl_gset:Nn \pnhdsectfirst { \FirstMark { postnotes/section } }
-    \tl_gset:Nn \pnhdsectlast  { \LastMark  { postnotes/section } }
-    \tl_gset:Nn \pnhdnamefirst { \FirstMark { postnotes/section } }
-    \tl_gset:Nn \pnhdnamelast  { \LastMark  { postnotes/section } }
+    \tl_gset:Nn \pnhdpagefirst { \FirstMark{postnotes/page} }
+    \tl_gset:Nn \pnhdpagelast  { \LastMark{postnotes/page}  }
+    \tl_gset:Nn \pnhdchapfirst { \FirstMark{postnotes/chapter} }
+    \tl_gset:Nn \pnhdchaplast  { \LastMark{postnotes/chapter}  }
+    \tl_gset:Nn \pnhdsectfirst { \FirstMark{postnotes/section} }
+    \tl_gset:Nn \pnhdsectlast  { \LastMark{postnotes/section}  }
+    \tl_gset:Nn \pnhdnamefirst { \FirstMark{postnotes/sectname} }
+    \tl_gset:Nn \pnhdnamelast  { \LastMark{postnotes/sectname}  }
     \int_gincr:N \g_@@_print_header_vars_int
     \exp_args:Ne \property_record:nN
       { __postnotes_header_ \int_use:N \g_@@_print_header_vars_int }
@@ -2515,25 +2511,6 @@
       { __postnotes_header_ \int_use:N \g_@@_print_header_vars_int }
   }
 %    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}[int]{\pnheaderdefault}
-%   A basic header function to be used as default in the \opt{heading} option.
-%   It produces a header in the form ``Notes to pages N--M'', with a text
-%   which can be localized (see Section~\ref{sec:languages}).
-%   \begin{syntax}
-%     \cs{pnheaderdefault}
-%   \end{syntax}
-%    \begin{macrocode}
-\NewDocumentCommand \pnheaderdefault {}
-  {
-    \tl_if_eq:NNTF \pnhdpagefirst \pnhdpagelast
-      { \pnhdnotes{} ~ \pnhdtopage{} ~ \pnhdpagefirst }
-      { \pnhdnotes{} ~ \pnhdtopages{} ~ \pnhdpagefirst -- \pnhdpagelast }
-  }
-%    \end{macrocode}
-% \end{macro}
 %
 %
 % \section{Compatibility}
@@ -3556,8 +3533,8 @@
 % trust Ulrike knows better than me.
 % \begin{macro}
 %   {
-%     \@@_tagsup_store_sctructnum:nN
-%     \@@_tagsup_store_crossref:nN
+%     \@@_tagsup_store_sctructnum:nN ,
+%     \@@_tagsup_store_crossref:nN ,
 %   }
 %   \begin{syntax}
 %     \cs{@@_tagsup_store_sctructnum:nN} \Arg{ref type} \Arg{ID number of note}

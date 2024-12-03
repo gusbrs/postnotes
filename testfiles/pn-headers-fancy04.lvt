@@ -33,24 +33,31 @@
     \bool_case:nF
       {
         {
-          \str_if_eq_p:ee { \pnhdnamefirst } { intro } &&
-          \str_if_eq_p:ee { \pnhdnamelast } { intro }
+          \str_if_eq_p:ee { \FirstMark{postnotes/sectname} } { intro } &&
+          \str_if_eq_p:ee { \LastMark{postnotes/sectname} } { intro }
         }
         { Notes~to~the~introduction,~ }
         {
-          \str_if_eq_p:ee { \pnhdnamefirst } { intro } &&
-          ! \str_if_eq_p:ee { \pnhdnamelast } { intro }
+          \str_if_eq_p:ee { \FirstMark{postnotes/sectname} } { intro } &&
+          ! \str_if_eq_p:ee { \LastMark{postnotes/sectname} } { intro }
         }
-        { Notes~to~the~introduction~and~section~\pnhdsectlast{},~ }
+        { Notes~to~the~introduction~and~section~\LastMark{postnotes/section},~ }
       }
       {
-        \tl_if_eq:NNTF \pnhdsectfirst \pnhdsectlast
-          { Notes~to~section~\pnhdsectfirst{},~ }
-          { Notes~to~sections~\pnhdsectfirst{} -- \pnhdsectlast{},~ }
+        \tl_if_eq:eeTF
+          { \FirstMark{postnotes/section} }
+          { \LastMark{postnotes/section} }
+          { Notes~to~section~\FirstMark{postnotes/section},~ }
+          {
+            Notes~to~sections~
+            \FirstMark{postnotes/section}--\LastMark{postnotes/section},~
+          }
       }
-    \tl_if_eq:NNTF \pnhdpagefirst \pnhdpagelast
-      { page~\pnhdpagefirst{} }
-      { pages~\pnhdpagefirst{} -- \pnhdpagelast{} }
+    \tl_if_eq:eeTF
+      { \FirstMark{postnotes/page} }
+      { \LastMark{postnotes/page} }
+      { page~\FirstMark{postnotes/page} }
+      { pages~\FirstMark{postnotes/page}--\LastMark{postnotes/page} }
   }
 \NewDocumentCommand \testcontent { m }
   {

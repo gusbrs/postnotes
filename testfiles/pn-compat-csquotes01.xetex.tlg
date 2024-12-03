@@ -101,7 +101,7 @@ Completed box being shipped out [2]
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 503.04352fil
 ....\write-{}
-....\write1{\post@note{preprint}{1}{}{}}
+....\write1{\post@note{print}{1}{}{}}
 ....\glue(\topskip) 0.12001
 ....\hbox(9.87999+0.0)x345.0, glue set 304.15167fil
 .....\hbox(0.0+0.0)x0.0
@@ -124,7 +124,7 @@ Completed box being shipped out [2]
 .....\glue(\rightskip) 0.0
 ....\penalty 10000
 ....\glue 9.90276 plus 0.86108
-....\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+....\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\penalty 10000
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0

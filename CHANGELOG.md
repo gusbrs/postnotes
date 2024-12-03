@@ -2,6 +2,34 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.4.2...HEAD)
 
+### Changed
+- The support for running headers in `\printpostnotes`, which previously
+  generated its data by means of an internal cross-reference structure, has
+  migrated to use the generalized mark mechanism provided by the `ltmarks`
+  kernel module instead.  This was a long due change, since `ltmarks` is *the*
+  right tool for the task, but unfortunately was not available when
+  `postnotes` was originally developed and released.  In practice, we get
+  improved functionality replacing what was a complicated cross-reference
+  setup with a straightforward application of `ltmarks`.  Very neat, if I may
+  say so.  Hat tip to `ltmarks` devs.
+
+### Deprecated
+- The header support variables `\pnhdpagefirst`, `\pnhdpagelast`,
+  `\pnhdchapfirst`, `\pnhdchaplast`, `\pnhdsectfirst`, `\pnhdsectlast`,
+  `\pnhdnamefirst`, and `\pnhdnamelast` are deprecated in favor of the new
+  `ltmarks` based mark classes.
+    - For the sake of stability, the package still provides a "legacy" version
+      of these variables, set using `ltmarks` data.  This is meant to provide
+      a window of opportunity for users to migrate to the new system smoothly,
+      but *migrate you must*, since *these variables will be removed in the
+      future*.  Migrating should range somewhere between "very easy" and
+      "trivial", and intervention is only needed if you used any of these
+      variables to build custom headers.  See the User manual for updated
+      examples.
+    - Also note that this "legacy version" of the variables require one more
+      compilation run to converge, so there's also a clear benefit for you to
+      adjust sooner rather than later.
+
 ## [v0.4.2](https://github.com/gusbrs/postnotes/compare/v0.4.1...v0.4.2) (2024-11-27)
 
 ### Fixed

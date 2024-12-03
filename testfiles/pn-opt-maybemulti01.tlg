@@ -14,7 +14,7 @@ Completed box being shipped out [3]
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
 ..\vbox(556.47656+0.0)x227.62204, glue set 388.47656fil
-...\write1{\post@note{preprint}{1}{}{}}
+...\write1{\post@note{print}{1}{}{}}
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
@@ -41,7 +41,7 @@ Completed box being shipped out [3]
 ...\marks3{\__mark_id:n {5}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
-...\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+...\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ...\penalty 10000
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -142,7 +142,7 @@ Completed box being shipped out [7]
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
 ..\vbox(556.47656+0.0)x227.62204, glue set 388.47656fil
-...\write1{\post@note{preprint}{2}{}{}}
+...\write1{\post@note{print}{2}{}{}}
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
@@ -169,7 +169,7 @@ Completed box being shipped out [7]
 ...\marks3{\__mark_id:n {22}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
-...\write1{\new@label@record{__postnotes_header_3}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+...\write1{\new@label@record{__postnotes_header_3}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ...\penalty 10000
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -271,7 +271,7 @@ Completed box being shipped out [11]
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
 ..\vbox(556.47656+0.0)x227.62204, glue set 377.47656fil
-...\write1{\post@note{preprint}{3}{}{}}
+...\write1{\post@note{print}{3}{}{}}
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
@@ -298,7 +298,7 @@ Completed box being shipped out [11]
 ...\marks3{\__mark_id:n {39}\pnheaderdefault }
 ...\mark{{\pnheaderdefault }{\pnheaderdefault }}
 ...\penalty 10000
-...\write1{\new@label@record{__postnotes_header_5}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/name/first}{\__property_code_postnotes/name/first: }{postnotes/name/last}{\__property_code_postnotes/name/last: }}}
+...\write1{\new@label@record{__postnotes_header_5}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ...\penalty 10000
 ...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0

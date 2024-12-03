@@ -30,12 +30,19 @@
 \ExplSyntaxOn
 \NewDocumentCommand \mypnheader {}
   {
-    \tl_if_eq:NNTF \pnhdchapfirst \pnhdchaplast
-      { Notes~to~chapter~\pnhdchapfirst,~ }
-      { Notes~to~chapters~\pnhdchapfirst -- \pnhdchaplast,~ }
-    \tl_if_eq:NNTF \pnhdpagefirst \pnhdpagelast
-      { page~\pnhdpagefirst }
-      { pages~\pnhdpagefirst -- \pnhdpagelast }
+    \tl_if_eq:eeTF
+      { \FirstMark{postnotes/chapter} }
+      { \LastMark{postnotes/chapter} }
+      { Notes~to~chapter~\FirstMark{postnotes/chapter},~ }
+      {
+        Notes~to~chapters~
+        \FirstMark{postnotes/chapter}--\LastMark{postnotes/chapter},~
+      }
+    \tl_if_eq:eeTF
+      { \FirstMark{postnotes/page} }
+      { \LastMark{postnotes/page} }
+      { page~\FirstMark{postnotes/page} }
+      { pages~\FirstMark{postnotes/page}--\LastMark{postnotes/page} }
   }
 \NewDocumentCommand \testcontent { m }
   {
