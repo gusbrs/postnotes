@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.5.0...HEAD)
+## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.5.1...HEAD)
+
+## [v0.5.1](https://github.com/gusbrs/postnotes/compare/v0.5.0...v0.5.1) (2024-12-05)
 
 ### Changed
 - The "legacy" version of the header support variables deprecated in v0.5.0

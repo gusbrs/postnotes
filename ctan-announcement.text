@@ -1,30 +1,16 @@
-## v0.5.0 (2024-12-03)
+## v0.5.1 (2024-12-05)
 
 ### Changed
-- The support for running headers in `\printpostnotes`, which previously
-  generated its data by means of an internal cross-reference structure, has
-  migrated to use the generalized mark mechanism provided by the `ltmarks`
-  kernel module instead.  This was a long due change, since `ltmarks` is *the*
-  right tool for the task, but unfortunately was not available when
-  `postnotes` was originally developed and released.  In practice, we get
-  improved functionality replacing what was a complicated cross-reference
-  setup with a straightforward application of `ltmarks`.  Very neat, if I may
-  say so.  Hat tip to `ltmarks` devs.
-
-### Deprecated
-- The header support variables `\pnhdpagefirst`, `\pnhdpagelast`,
-  `\pnhdchapfirst`, `\pnhdchaplast`, `\pnhdsectfirst`, `\pnhdsectlast`,
-  `\pnhdnamefirst`, and `\pnhdnamelast` are deprecated in favor of the new
-  `ltmarks` based mark classes.
-    - For the sake of stability, the package still provides a "legacy" version
-      of these variables, set using `ltmarks` data.  This is meant to provide
-      a window of opportunity for users to migrate to the new system smoothly,
-      but *migrate you must*, since *these variables will be removed in the
-      future*.  Migrating should range somewhere between "very easy" and
-      "trivial", and intervention is only needed if you used any of these
-      variables to build custom headers.  See the User manual for updated
-      examples.
-    - Also note that this "legacy version" of the variables require one more
-      compilation run to converge, so there's also a clear benefit for you to
-      adjust sooner rather than later.
+- The "legacy" version of the header support variables deprecated in v0.5.0
+  (see previous release notes in the change log) have been put under the new
+  `deprecatedheadervars` option, which is opt-in, disabled by default.
+    - The affected variables are, namely, `\pnhdpagefirst`, `\pnhdpagelast`,
+      `\pnhdchapfirst`, `\pnhdchaplast`, `\pnhdsectfirst`, `\pnhdsectlast`,
+      `\pnhdnamefirst`, and `\pnhdnamelast`.
+    - Unless `deprecatedheadervars` is enabled, the use of any of these
+      variables will result in an error, but with an informative message,
+      recommending the use of the new `ltmarks` mark classes but also offering
+      the `deprecatedheadervars` option as a temporary quick fix.
+    - This option will only be offered for a transitional period and will be
+      removed in the future.
 
