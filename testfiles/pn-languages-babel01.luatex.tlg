@@ -79,8 +79,6 @@ Completed box being shipped out [3]
 ....\marks3{\__mark_id:n {5}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
-....\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
-....\penalty 10000
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -359,8 +357,6 @@ Completed box being shipped out [5]
 ....\marks3{\__mark_id:n {12}\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {english}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
-....\write1{\new@label@record{__postnotes_header_3}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
-....\penalty 10000
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -516,8 +512,6 @@ Completed box being shipped out [9]
 ....\marks2{\__mark_id:n {20}\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\marks3{\__mark_id:n {21}\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {portuguese}{\protect \bbl@restore@actives \pnheaderdefault }}}
-....\penalty 10000
-....\write1{\new@label@record{__postnotes_header_5}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\penalty 10000
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
@@ -720,8 +714,6 @@ Completed box being shipped out [13]
 ....\marks3{\__mark_id:n {30}\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {french}{\protect \bbl@restore@actives \pnheaderdefault }}}
 ....\penalty 10000
-....\write1{\new@label@record{__postnotes_header_7}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
-....\penalty 10000
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -904,8 +896,6 @@ Completed box being shipped out [17]
 ....\marks2{\__mark_id:n {38}\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\marks3{\__mark_id:n {39}\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}
 ....\mark{{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}{\protect \foreignlanguage {ngerman}{\protect \bbl@restore@actives \pnheaderdefault }}}
-....\penalty 10000
-....\write1{\new@label@record{__postnotes_header_9}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\penalty 10000
 ....\glue 0.0
 ....\glue(\parskip) 0.0 plus 1.0

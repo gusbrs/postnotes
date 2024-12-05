@@ -1834,8 +1834,7 @@
           \@@_check_duplicates:N \g_@@_print_queue_seq
           \@@_sort_queue:N \g_@@_print_queue_seq
           \@@_check_floats:N \g_@@_print_queue_seq
-          \bool_gset_true:N \g_@@_header_vars_next_bool
-          \@@_set_headers_vars_first:
+          \@@_set_header_vars_first:
 %    \end{macrocode}
 % Ensure the first note after a heading has paragraph indentation when
 % \opt{listenv} is \texttt{none}.  \pkg{endnotes} uses a workaroundish
@@ -2039,8 +2038,7 @@
                     \l_@@_print_type_curr_tl
                 }
             }
-          \AddToHookNext { shipout/after }
-            { \bool_gset_false:N \g_@@_header_vars_next_bool }
+          \@@_set_header_vars_bool:
 %    \end{macrocode}
 % We won't use the variables anymore, clear them to reduce memory usage.
 %    \begin{macrocode}
@@ -2413,6 +2411,24 @@
 % migrating sooner rather than later.
 %
 %    \begin{macrocode}
+\bool_new:N \l_@@_deprecated_headervars_bool
+\keys_define:nn { postnotes/setup }
+  {
+    deprecatedheadervars .bool_set:N = \l_@@_deprecated_headervars_bool ,
+    deprecatedheadervars .default:n = true ,
+    deprecatedheadervars .initial:n = false ,
+  }
+\AddToHook { begindocument }
+  {
+    \keys_define:nn { postnotes/setup }
+      {
+        deprecatedheadervars .code:n =
+          {
+            \msg_warning:nnn { postnotes }
+              { option-preamble-only } { deprecatedheadervars }
+          } ,
+      }
+  }
 \tl_new:N \pnhdpagefirst
 \tl_new:N \pnhdpagelast
 \tl_new:N \pnhdchapfirst
@@ -2421,93 +2437,138 @@
 \tl_new:N \pnhdsectlast
 \tl_new:N \pnhdnamefirst
 \tl_new:N \pnhdnamelast
+\tl_gset:Nn \pnhdpagefirst
+  { \msg_error:nnn { postnotes } { deprecatedheadervars } { pnhdpagefirst } }
+\tl_gset:Nn \pnhdpagelast
+  { \msg_error:nnn { postnotes } { deprecatedheadervars } { pnhdpagelast } }
+\tl_gset:Nn \pnhdchapfirst
+  { \msg_error:nnn { postnotes } { deprecatedheadervars } { pnhdchapfirst } }
+\tl_gset:Nn \pnhdchaplast
+  { \msg_error:nnn { postnotes } { deprecatedheadervars } { pnhdchaplast } }
+\tl_gset:Nn \pnhdsectfirst
+  { \msg_error:nnn { postnotes } { deprecatedheadervars } { pnhdsectfirst } }
+\tl_gset:Nn \pnhdsectlast
+  { \msg_error:nnn { postnotes } { deprecatedheadervars } { pnhdsectlast } }
+\tl_gset:Nn \pnhdnamefirst
+  { \msg_error:nnn { postnotes } { deprecatedheadervars } { pnhdnamefirst } }
+\tl_gset:Nn \pnhdnamelast
+  { \msg_error:nnn { postnotes } { deprecatedheadervars } { pnhdnamelast } }
+\msg_new:nnn { postnotes } { deprecatedheadervars }
+  {
+    '\iow_char:N\\ #1'~is~deprecated~\msg_line_context:.~
+    You~should~migrate~to~the~new~'ltmarks'~(see~User~manual),~but~for~
+    a~temporary~quick~fix~you~can~enable~the~'deprecatedheadervars'~option.
+  }
+\cs_set_eq:NN \@@_set_header_vars_first: \prg_do_nothing:
+\cs_set_eq:NN \@@_set_header_vars_bool: \prg_do_nothing:
 %    \end{macrocode}
 %
 %    \begin{macrocode}
-\cs_new_protected:Npn \@@_set_headers_vars:n #1
+\AddToHook { begindocument }
   {
-    \group_begin:
-      \protected@xdef \pnhdpagefirst
-        { \property_ref:nn { #1 } { postnotes/page/first } }
-      \protected@xdef \pnhdpagelast
-        { \property_ref:nn { #1 } { postnotes/page/last } }
-      \protected@xdef \pnhdchapfirst
-        { \property_ref:nn { #1 } { postnotes/chapter/first } }
-      \protected@xdef \pnhdchaplast
-        { \property_ref:nn { #1 } { postnotes/chapter/last } }
-      \protected@xdef \pnhdsectfirst
-        { \property_ref:nn { #1 } { postnotes/section/first } }
-      \protected@xdef \pnhdsectlast
-        { \property_ref:nn { #1 } { postnotes/section/last } }
-      \protected@xdef \pnhdnamefirst
-        { \property_ref:nn { #1 } { postnotes/sectname/first } }
-      \protected@xdef \pnhdnamelast
-        { \property_ref:nn { #1 } { postnotes/sectname/last } }
-    \group_end:
-  }
-\cs_generate_variant:Nn \@@_set_headers_vars:n { e }
-%    \end{macrocode}
-%
-%    \begin{macrocode}
-\property_new:nnnn { postnotes/page/first } { shipout } { }
-  { \FirstMark { postnotes/page } }
-\property_new:nnnn { postnotes/page/last } { shipout } { }
-  { \LastMark { postnotes/page } }
-\property_new:nnnn { postnotes/chapter/first } { shipout } { }
-  { \FirstMark { postnotes/chapter } }
-\property_new:nnnn { postnotes/chapter/last } { shipout } { }
-  { \LastMark { postnotes/chapter } }
-\property_new:nnnn { postnotes/section/first } { shipout } { }
-  { \FirstMark { postnotes/section } }
-\property_new:nnnn { postnotes/section/last } { shipout } { }
-  { \LastMark { postnotes/section } }
-\property_new:nnnn { postnotes/sectname/first } { shipout } { }
-  { \FirstMark { postnotes/sectname } }
-\property_new:nnnn { postnotes/sectname/last } { shipout } { }
-  { \LastMark { postnotes/sectname } }
-\clist_const:Nn \c_@@_header_marks_clist
-  {
-    postnotes/page/first ,
-    postnotes/page/last ,
-    postnotes/chapter/first ,
-    postnotes/chapter/last ,
-    postnotes/section/first ,
-    postnotes/section/last ,
-    postnotes/sectname/first ,
-    postnotes/sectname/last ,
-  }
-\AddToHook { shipout/before } [ ./header ]
-  { \@@_set_headers_vars_next: }
-\bool_new:N \g_@@_header_vars_next_bool
-\int_new:N \g_@@_print_header_vars_int
-\cs_new_protected:Npn \@@_set_headers_vars_next:
-  {
-    \bool_if:NT \g_@@_header_vars_next_bool
+    \bool_if:NT \l_@@_deprecated_headervars_bool
       {
-        \int_gincr:N \g_@@_print_header_vars_int
-        \exp_args:Ne \property_record:nN
-          { __postnotes_header_ \int_use:N \g_@@_print_header_vars_int }
-          \c_@@_header_marks_clist
-        \@@_set_headers_vars:e
-          { __postnotes_header_ \int_use:N \g_@@_print_header_vars_int }
+        \property_new:nnnn { postnotes/page/first } { shipout } { }
+          { \FirstMark { postnotes/page } }
+        \property_new:nnnn { postnotes/page/last } { shipout } { }
+          { \LastMark { postnotes/page } }
+        \property_new:nnnn { postnotes/chapter/first } { shipout } { }
+          { \FirstMark { postnotes/chapter } }
+        \property_new:nnnn { postnotes/chapter/last } { shipout } { }
+          { \LastMark { postnotes/chapter } }
+        \property_new:nnnn { postnotes/section/first } { shipout } { }
+          { \FirstMark { postnotes/section } }
+        \property_new:nnnn { postnotes/section/last } { shipout } { }
+          { \LastMark { postnotes/section } }
+        \property_new:nnnn { postnotes/sectname/first } { shipout } { }
+          { \FirstMark { postnotes/sectname } }
+        \property_new:nnnn { postnotes/sectname/last } { shipout } { }
+          { \LastMark { postnotes/sectname } }
+        \clist_const:Nn \c_@@_header_marks_clist
+          {
+            postnotes/page/first ,
+            postnotes/page/last ,
+            postnotes/chapter/first ,
+            postnotes/chapter/last ,
+            postnotes/section/first ,
+            postnotes/section/last ,
+            postnotes/sectname/first ,
+            postnotes/sectname/last ,
+          }
+        \cs_new_protected:Npn \@@_set_header_vars:n #1
+          {
+            \group_begin:
+              \protected@xdef \pnhdpagefirst
+                { \property_ref:nn { #1 } { postnotes/page/first } }
+              \protected@xdef \pnhdpagelast
+                { \property_ref:nn { #1 } { postnotes/page/last } }
+              \protected@xdef \pnhdchapfirst
+                { \property_ref:nn { #1 } { postnotes/chapter/first } }
+              \protected@xdef \pnhdchaplast
+                { \property_ref:nn { #1 } { postnotes/chapter/last } }
+              \protected@xdef \pnhdsectfirst
+                { \property_ref:nn { #1 } { postnotes/section/first } }
+              \protected@xdef \pnhdsectlast
+                { \property_ref:nn { #1 } { postnotes/section/last } }
+              \protected@xdef \pnhdnamefirst
+                { \property_ref:nn { #1 } { postnotes/sectname/first } }
+              \protected@xdef \pnhdnamelast
+                { \property_ref:nn { #1 } { postnotes/sectname/last } }
+            \group_end:
+          }
+        \cs_generate_variant:Nn \@@_set_header_vars:n { e }
+        \bool_new:N \g_@@_header_vars_next_bool
+        \int_new:N \g_@@_print_header_vars_int
+        \cs_new_protected:Npn \@@_set_headers_vars_next:
+          {
+            \bool_if:NT \g_@@_header_vars_next_bool
+              {
+                \int_gincr:N \g_@@_print_header_vars_int
+                \exp_args:Ne \property_record:nN
+                  {
+                    __postnotes_header_
+                    \int_use:N \g_@@_print_header_vars_int
+                  }
+                  \c_@@_header_marks_clist
+                \@@_set_header_vars:e
+                  {
+                    __postnotes_header_
+                    \int_use:N \g_@@_print_header_vars_int
+                  }
+              }
+          }
+        \AddToHook { shipout/before } [ ./header ]
+          { \@@_set_headers_vars_next: }
+        \cs_set_protected:Npn \@@_set_header_vars_first:
+          {
+            \bool_gset_true:N \g_@@_header_vars_next_bool
+            \tl_gset:Nn \pnhdpagefirst { \FirstMark{postnotes/page} }
+            \tl_gset:Nn \pnhdpagelast  { \LastMark{postnotes/page}  }
+            \tl_gset:Nn \pnhdchapfirst { \FirstMark{postnotes/chapter} }
+            \tl_gset:Nn \pnhdchaplast  { \LastMark{postnotes/chapter}  }
+            \tl_gset:Nn \pnhdsectfirst { \FirstMark{postnotes/section} }
+            \tl_gset:Nn \pnhdsectlast  { \LastMark{postnotes/section}  }
+            \tl_gset:Nn \pnhdnamefirst { \FirstMark{postnotes/sectname} }
+            \tl_gset:Nn \pnhdnamelast  { \LastMark{postnotes/sectname}  }
+            \int_gincr:N \g_@@_print_header_vars_int
+            \exp_args:Ne \property_record:nN
+              {
+                __postnotes_header_
+                \int_use:N \g_@@_print_header_vars_int
+              }
+              \c_@@_header_marks_clist
+            \@@_set_header_vars:e
+              {
+                __postnotes_header_
+                \int_use:N \g_@@_print_header_vars_int
+              }
+          }
+        \cs_set_protected:Npn \@@_set_header_vars_bool:
+          {
+            \AddToHookNext { shipout/after }
+              { \bool_gset_false:N \g_@@_header_vars_next_bool }
+          }
       }
-  }
-\cs_new_protected:Npn \@@_set_headers_vars_first:
-  {
-    \tl_gset:Nn \pnhdpagefirst { \FirstMark{postnotes/page} }
-    \tl_gset:Nn \pnhdpagelast  { \LastMark{postnotes/page}  }
-    \tl_gset:Nn \pnhdchapfirst { \FirstMark{postnotes/chapter} }
-    \tl_gset:Nn \pnhdchaplast  { \LastMark{postnotes/chapter}  }
-    \tl_gset:Nn \pnhdsectfirst { \FirstMark{postnotes/section} }
-    \tl_gset:Nn \pnhdsectlast  { \LastMark{postnotes/section}  }
-    \tl_gset:Nn \pnhdnamefirst { \FirstMark{postnotes/sectname} }
-    \tl_gset:Nn \pnhdnamelast  { \LastMark{postnotes/sectname}  }
-    \int_gincr:N \g_@@_print_header_vars_int
-    \exp_args:Ne \property_record:nN
-      { __postnotes_header_ \int_use:N \g_@@_print_header_vars_int }
-      \c_@@_header_marks_clist
-    \@@_set_headers_vars:e
-      { __postnotes_header_ \int_use:N \g_@@_print_header_vars_int }
   }
 %    \end{macrocode}
 %

@@ -35,8 +35,6 @@ Underfull \vbox (badness 5533) has occurred while \output is active
 .\marks3{\__mark_id:n {7}\mypnheader }
 .\mark{{\mypnheader }{\mypnheader }}
 .\penalty 10000
-.\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
-.\penalty 10000
 .\glue(\parskip) 0.0 plus 1.0
 .\glue(\parskip) 0.0
 .\glue(\baselineskip) 8.00002
@@ -397,8 +395,6 @@ Completed box being shipped out [11]
 ....\marks3{\__mark_id:n {7}\mypnheader }
 ....\mark{{\mypnheader }{\mypnheader }}
 ....\penalty 10000
-....\write1{\new@label@record{__postnotes_header_1}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
-....\penalty 10000
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 8.00002
@@ -671,7 +667,6 @@ Completed box being shipped out [11]
 ....\hbox(0.0+0.0)x345.0
 Underfull \vbox (badness 2088) has occurred while \output is active
 \vbox(550.0+0.0)x345.0, glue set 2.75508
-.\write1{\new@label@record{__postnotes_header_2}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 .\glue(\topskip) 4.20001
 .\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 ..\hbox(5.79999+0.0)x19.6944
@@ -1082,7 +1077,6 @@ Completed box being shipped out [12]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 2.75508
-....\write1{\new@label@record{__postnotes_header_2}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -1417,7 +1411,6 @@ Completed box being shipped out [12]
 ....\hbox(0.0+0.0)x345.0
 Underfull \vbox (badness 2073) has occurred while \output is active
 \vbox(550.0+0.0)x345.0, glue set 2.7503
-.\write1{\new@label@record{__postnotes_header_3}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 .\glue(\topskip) 4.20001
 .\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 ..\hbox(5.79999+0.0)x19.6944
@@ -1796,7 +1789,6 @@ Completed box being shipped out [13]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 2.7503
-....\write1{\new@label@record{__postnotes_header_3}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -2122,7 +2114,6 @@ Completed box being shipped out [13]
 ....\hbox(0.0+0.0)x345.0
 Underfull \vbox (badness 2088) has occurred while \output is active
 \vbox(550.0+0.0)x345.0, glue set 2.75508
-.\write1{\new@label@record{__postnotes_header_4}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 .\glue(\topskip) 4.20001
 .\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
 ..\hbox(5.79999+0.0)x24.31937
@@ -2516,7 +2507,6 @@ Completed box being shipped out [14]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 2.75508
-....\write1{\new@label@record{__postnotes_header_4}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
 .....\hbox(5.79999+0.0)x24.31937
@@ -2854,7 +2844,6 @@ Completed box being shipped out [14]
 ....\hbox(0.0+0.0)x345.0
 Underfull \vbox (badness 2073) has occurred while \output is active
 \vbox(550.0+0.0)x345.0, glue set 2.7503
-.\write1{\new@label@record{__postnotes_header_5}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 .\glue(\topskip) 4.20001
 .\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 ..\hbox(5.79999+0.0)x19.6944
@@ -3232,7 +3221,6 @@ Completed box being shipped out [15]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 2.7503
-....\write1{\new@label@record{__postnotes_header_5}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 325.3056fil
 .....\hbox(5.79999+0.0)x19.6944
@@ -3613,7 +3601,6 @@ Completed box being shipped out [16]
 ...\glue 18.06749
 ...\glue(\lineskip) 0.0
 ...\vbox(550.0+0.0)x345.0, glue set 145.25214fil
-....\write1{\new@label@record{__postnotes_header_6}{{postnotes/page/first}{\__property_code_postnotes/page/first: }{postnotes/page/last}{\__property_code_postnotes/page/last: }{postnotes/chapter/first}{\__property_code_postnotes/chapter/first: }{postnotes/chapter/last}{\__property_code_postnotes/chapter/last: }{postnotes/section/first}{\__property_code_postnotes/section/first: }{postnotes/section/last}{\__property_code_postnotes/section/last: }{postnotes/sectname/first}{\__property_code_postnotes/sectname/first: }{postnotes/sectname/last}{\__property_code_postnotes/sectname/last: }}}
 ....\glue(\topskip) 4.20001
 ....\hbox(5.79999+0.0)x345.0, glue set 320.68063fil
 .....\hbox(5.79999+0.0)x24.31937

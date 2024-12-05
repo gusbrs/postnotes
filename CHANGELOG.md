@@ -2,6 +2,20 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.5.0...HEAD)
 
+### Changed
+- The "legacy" version of the header support variables deprecated in v0.5.0
+  (see previous release notes in the change log) have been put under the new
+  `deprecatedheadervars` option, which is opt-in, disabled by default.
+    - The affected variables are, namely, `\pnhdpagefirst`, `\pnhdpagelast`,
+      `\pnhdchapfirst`, `\pnhdchaplast`, `\pnhdsectfirst`, `\pnhdsectlast`,
+      `\pnhdnamefirst`, and `\pnhdnamelast`.
+    - Unless `deprecatedheadervars` is enabled, the use of any of these
+      variables will result in an error, but with an informative message,
+      recommending the use of the new `ltmarks` mark classes but also offering
+      the `deprecatedheadervars` option as a temporary quick fix.
+    - This option will only be offered for a transitional period and will be
+      removed in the future.
+
 ## [v0.5.0](https://github.com/gusbrs/postnotes/compare/v0.4.2...v0.5.0) (2024-12-03)
 
 ### Changed
