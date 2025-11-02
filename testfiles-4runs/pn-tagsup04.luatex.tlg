@@ -3,9 +3,9 @@ Don't change this file in any respect.
 ============================================================
 TEST 1: Postnote nomark
 ============================================================
+Package tagpdf Info: Checking Parent-Child 'pdf2:Sect' --> 'pdf2:NonStruct'
 Package tagpdf Info: Parent-Child 'Sect' --> 'NonStruct'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'NonStruct/pdf2' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 tagpdf DEBUG Info: Struct 10 begin inserted with options: tag=NonStruct,label={postnotemark.\l_postnotes_note_id_tl },ref={postnote.\l_postnotes_note_id_tl }, 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -28,6 +28,7 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 ...\pdfdest name{postnote.1.mark} xyz
 ...\pdfdest name{postnote.1.mark} xyz
 ...\penalty 10000
+.\kern0.0
 .\write1{\post@note{mark}{1}{\thepage }{1}}
 .\write1{\newlabel{en:mark:1}{{1}{\thepage }{Section 1}{postnote.1.mark}{}}}
 .\write1{\new@label@record{__postnotes_en:mark:1}{{postnotes/mark}{1}}}
@@ -38,9 +39,9 @@ l. ...\showbox0
 ============================================================
 TEST 2: Postnoterefs 1
 ============================================================
+Package tagpdf Info: Checking Parent-Child 'pdf2:Sect' --> 'user:endnotemark'
 Package tagpdf Info: Parent-Child 'Sect' --> 'Lbl'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'endnotemark/user' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 tagpdf DEBUG Info: Struct 11 begin inserted with options: tag=endnotemark,ref={postnotemark.\l__postnotes_tmpa_tl }, 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -48,13 +49,13 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'user:endnotemark' --> 'MC (real content)'
 Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
+Package tagpdf Info: Checking Parent-Child 'user:endnotemark' --> 'pdf2:Link'
 Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
-tagpdf DEBUG Info: Struct 12 begin inserted with options: tag=Link 
+(tagpdf)             Relation is 1 (='0..n') on line ...
+tagpdf DEBUG Info: Struct 12 begin inserted with options: tag=\UseStructureName {link} 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
 >  {{Link}{Link}}
@@ -62,9 +63,9 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'pdf2:Link' --> 'MC (real content)'
 Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 Package tagpdf Info: closing structure 12 tagged /Link
 tagpdf DEBUG Info: Struct end inserted [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -72,9 +73,9 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'user:endnotemark' --> 'MC (real content)'
 Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 Package tagpdf Info: closing structure 11 tagged /endnotemark
 tagpdf DEBUG Info: Struct end inserted [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -84,7 +85,7 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 > \box...=
 \hbox(8.14003+0.0)x4.48613, direction TLT
 .\penalty 10000
-.\pdfstartlink(*+*)x* attr{/Contents <FEFF0047006F00200074006F002000640065007300740069006E006100740069006F006E00200070006F00730074006E006F00740065002E0031002E006D00610072006B> /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 2 } action struct name{postnote.1.mark} goto name{postnote.1.mark}
+.\pdfstartlink(*+*)x* attr{/Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /Contents <FEFF0047006F00200074006F002000640065007300740069006E006100740069006F006E00200070006F00730074006E006F00740065002E0031002E006D00610072006B> } action struct name{postnote.1.mark} goto name{postnote.1.mark}
 .\hbox(8.14003+0.0)x4.48613, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -93,12 +94,11 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 ...\hbox(0.0+0.0)x0.0, direction TLT
 ..\mathoff
 .\pdfendlink
-.\write1{\new@label@record{@tag@objr@page@2}{{tagabspage}{\__property_code_tagabspage: }}}
 ! OK.
 l. ...\showbox0
+Package tagpdf Info: Checking Parent-Child 'pdf2:Sect' --> 'user:endnotemark'
 Package tagpdf Info: Parent-Child 'Sect' --> 'Lbl'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'endnotemark/user' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 tagpdf DEBUG Info: Struct 13 begin inserted with options: tag=endnotemark,ref={postnotemark.\l__postnotes_tmpa_tl }, 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -106,13 +106,13 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'user:endnotemark' --> 'MC (real content)'
 Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
+Package tagpdf Info: Checking Parent-Child 'user:endnotemark' --> 'pdf2:Link'
 Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
-tagpdf DEBUG Info: Struct 14 begin inserted with options: tag=Link 
+(tagpdf)             Relation is 1 (='0..n') on line ...
+tagpdf DEBUG Info: Struct 14 begin inserted with options: tag=\UseStructureName {link} 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
 >  {{Link}{Link}}
@@ -120,9 +120,9 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'pdf2:Link' --> 'MC (real content)'
 Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 Package tagpdf Info: closing structure 14 tagged /Link
 tagpdf DEBUG Info: Struct end inserted [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -130,9 +130,9 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'user:endnotemark' --> 'MC (real content)'
 Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 Package tagpdf Info: closing structure 13 tagged /endnotemark
 tagpdf DEBUG Info: Struct end inserted [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -142,7 +142,7 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 > \box...=
 \hbox(8.14003+0.0)x4.48613, direction TLT
 .\penalty 10000
-.\pdfstartlink(*+*)x* attr{/Contents <FEFF0047006F00200074006F002000640065007300740069006E006100740069006F006E00200070006F00730074006E006F00740065002E0031002E006D00610072006B> /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 3 } action struct name{postnote.1.mark} goto name{postnote.1.mark}
+.\pdfstartlink(*+*)x* attr{/Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /Contents <FEFF0047006F00200074006F002000640065007300740069006E006100740069006F006E00200070006F00730074006E006F00740065002E0031002E006D00610072006B> } action struct name{postnote.1.mark} goto name{postnote.1.mark}
 .\hbox(8.14003+0.0)x4.48613, direction TLT
 ..\mathon
 ..\hbox(0.0+0.0)x0.0, direction TLT
@@ -150,7 +150,6 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 ...\OT1/cmr/m/n/7 1
 ..\mathoff
 .\pdfendlink
-.\write1{\new@label@record{@tag@objr@page@3}{{tagabspage}{\__property_code_tagabspage: }}}
 ! OK.
 l. ...\showbox0
 ============================================================
@@ -162,30 +161,28 @@ tagpdf DEBUG Info: Struct end inserted [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'pdf2:Document' --> 'pdf2:Sect'
 Package tagpdf Info: Parent-Child 'Document' --> 'Sect'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Document/pdf2' --> 'Sect/pdf2' on line ...
-tagpdf DEBUG Info: Struct 15 begin inserted with options: tag={\int_compare:nNnTF {\cs_if_exist_use:c {toclevel@section}+0}={-1}{Part}{Sect}},tag=Sect 
+(tagpdf)             Relation is 1 (='0..n') on line ...
+tagpdf DEBUG Info: Struct 15 begin inserted with options: tag=\UseStructureName {sec/1},tag=\cs_if_exist_use:cF {g_tag_role_section_tl}{Sect} 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
-==> @endpe=false on input line ...
-==> increment P on input line ...
+Package tagpdf Info: Checking Parent-Child 'pdf2:Sect' --> 'latex:section'
 Package tagpdf Info: Parent-Child 'Sect' --> 'H1'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'section/latex' on line ...
-tagpdf DEBUG Info: Struct 16 begin inserted with options: tag=\l__tag_para_tag_tl ,attribute-class=\l__tag_para_attr_class_tl  
+(tagpdf)             Relation is 1 (='0..n') on line ...
+tagpdf DEBUG Info: Struct 16 begin inserted with options: tag=\UseStructureName {sec/\@currentseclevel /title},title-o={\Sectionformat {\pntitle }{\z@ }} 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
 >  {{section}{H1}}
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'latex:section' --> 'MC (real content)'
 Package tagpdf Info: Parent-Child 'H1' --> 'MC'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'H1/pdf2' --> 'MC' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 ==> increment /P on input line ...
 Package tagpdf Info: closing structure 16 tagged /section
 tagpdf DEBUG Info: Struct end inserted [on line ...]
@@ -193,9 +190,9 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'pdf2:Sect' --> 'latex:text-unit'
 Package tagpdf Info: Parent-Child 'Sect' --> 'Part'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'text-unit/latex' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 tagpdf DEBUG Info: Struct 17 begin inserted with options: tag=\l__tag_para_main_tag_tl ,attribute-class=\l__tag_para_main_attr_class_tl , 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -203,9 +200,11 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'latex:text-unit' --> 'pdf2:L'
+Package tagpdf Info: Parent-Child 'Part' --> 'L'.
+(tagpdf)             Relation is 7 (='‡') on line ...
 Package tagpdf Info: Parent-Child 'Sect' --> 'L'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Sect/pdf2' --> 'L/pdf2' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 tagpdf DEBUG Info: Struct 18 begin inserted with options: tag=\l__tag_L_tag_tl ,attribute-class=\l__tag_L_attr_class_tl  
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -214,9 +213,9 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'pdf2:L' --> 'pdf2:LI'
 Package tagpdf Info: Parent-Child 'L' --> 'LI'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'L/pdf2' --> 'LI/pdf2' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 tagpdf DEBUG Info: Struct 19 begin inserted with options: tag=\LItag  
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -226,9 +225,9 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'pdf2:LI' --> 'pdf2:Lbl'
 Package tagpdf Info: Parent-Child 'LI' --> 'Lbl'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'LI/pdf2' --> 'Lbl/pdf2' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 tagpdf DEBUG Info: Struct 20 begin inserted with options: tag=Lbl 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -239,13 +238,13 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'pdf2:Lbl' --> 'MC (real content)'
 Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
+Package tagpdf Info: Checking Parent-Child 'pdf2:Lbl' --> 'pdf2:Link'
 Package tagpdf Info: Parent-Child 'Lbl' --> 'Link'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'Link/pdf2' on line ...
-tagpdf DEBUG Info: Struct 21 begin inserted with options: tag=Link 
+(tagpdf)             Relation is 1 (='0..n') on line ...
+tagpdf DEBUG Info: Struct 21 begin inserted with options: tag=\UseStructureName {link} 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
 >  {{Link}{Link}}
@@ -256,9 +255,9 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'pdf2:Link' --> 'MC (real content)'
 Package tagpdf Info: Parent-Child 'Link' --> 'MC'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Link/pdf2' --> 'MC' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 Package tagpdf Info: closing structure 21 tagged /Link
 tagpdf DEBUG Info: Struct end inserted [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -269,9 +268,9 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'pdf2:Lbl' --> 'MC (real content)'
 Package tagpdf Info: Parent-Child 'Lbl' --> 'MC'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'Lbl/pdf2' --> 'MC' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 Package tagpdf Info: closing structure 20 tagged /Lbl
 tagpdf DEBUG Info: Struct end inserted [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -281,9 +280,9 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'pdf2:LI' --> 'pdf2:LBody'
 Package tagpdf Info: Parent-Child 'LI' --> 'LBody'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'LI/pdf2' --> 'LBody/pdf2' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 tagpdf DEBUG Info: Struct 22 begin inserted with options: tag=\LBody  
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -294,9 +293,9 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'pdf2:LBody' --> 'user:endnote'
 Package tagpdf Info: Parent-Child 'LBody' --> 'FENote'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'LBody/pdf2' --> 'endnote/user' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 tagpdf DEBUG Info: Struct 23 begin inserted with options: tag=endnote,attribute-class=EndnoteType,label={postnote.\l_postnotes_print_note_id_tl },ref={postnotemark.\l_postnotes_print_note_id_tl }, 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -308,9 +307,9 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'user:endnote' --> 'latex:text-unit'
 Package tagpdf Info: Parent-Child 'FENote' --> 'Part'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'FENote/pdf2' --> 'text-unit/latex' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 tagpdf DEBUG Info: Struct 24 begin inserted with options: tag=text-unit 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -323,9 +322,11 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'latex:text-unit' --> 'latex:text'
+Package tagpdf Info: Parent-Child 'Part' --> 'P'.
+(tagpdf)             Relation is 7 (='‡') on line ...
 Package tagpdf Info: Parent-Child 'FENote' --> 'P'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'FENote/pdf2' --> 'text/latex' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 tagpdf DEBUG Info: Struct 25 begin inserted with options: tag=text 
 (tagpdf DEBUG)     [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -339,9 +340,9 @@ The sequence \g__tag_struct_tag_stack_seq contains the items (without outer brac
 >  {{Sect}{Sect}}
 >  {{Document}{Document}}
 >  {{Root}{StructTreeRoot}}.
+Package tagpdf Info: Checking Parent-Child 'latex:text' --> 'MC (real content)'
 Package tagpdf Info: Parent-Child 'P' --> 'MC'.
-(tagpdf)             Relation is 1 (='0..n')
-(tagpdf)             Rolemapped from 'P/pdf2' --> 'MC' on line ...
+(tagpdf)             Relation is 1 (='0..n') on line ...
 Package tagpdf Info: closing structure 25 tagged /text
 tagpdf DEBUG Info: Struct end inserted [on line ...]
 The sequence \g__tag_struct_tag_stack_seq contains the items (without outer braces):
@@ -469,6 +470,7 @@ Completed box being shipped out [2]
 .........\pdfdest name{section*.1} xyz
 .........\pdfdest name{section*.1} xyz
 .........\penalty 10000
+.......\kern0.0
 .......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
@@ -506,21 +508,28 @@ Completed box being shipped out [2]
 ........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
 .........\pdfliteral page <lua data reference ...>
 .........\pdfliteral page <lua data reference ...>
+.........\pdfdest name{postnoteslist*.2} xyz
+.........\pdfdest name{postnoteslist*.2} xyz
+.........\penalty 10000
+.......\kern0.0
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -11.0, direction TLT
 .........\pdfdest name{postnote.1.text} xyz
 .........\pdfdest name{postnote.1.text} xyz
 .........\penalty 10000
+.......\kern0.0
 .......\pdfliteral page <lua data reference ...>
 .......\pdfliteral page <lua data reference ...>
-.......\pdfstartlink(*+*)x* attr{/Contents (ref) /Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /StructParent 4 } action struct name{postnote.1.mark} goto name{postnote.1.mark}
+.......\pdfstartlink(*+*)x* attr{/Border [0 0 1] /H /I /C [0.701176 0.4 0.414118] /Contents <FEFF0047006F00200074006F002000640065007300740069006E006100740069006F006E00200070006F00730074006E006F00740065002E0031002E006D00610072006B>  /LTEX_position /isolated/StructParent 4} action struct name{postnote.1.mark} goto name{postnote.1.mark}
 .......\OT1/cmr/m/n/9 1
 .......\OT1/cmr/m/n/9 .
 .......\pdfendlink
-.......\write1{\new@label@record{@tag@objr@page@4}{{tagabspage}{\__property_code_tagabspage: }}}
 ......\glue 5.0
 .....\penalty 0
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
-.....\write1{\new@label@record{tagpdfstruct-postnote.1}{{tagstruct}{23}{tagstructobj}{66 0 R}}}
+.....\write1{\new@label@record{tagpdfstruct-postnote.1}{{tagstruct}{23}{tagstructobj}{64 0 R}}}
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\OT1/cmr/m/n/9 1
@@ -529,14 +538,12 @@ Completed box being shipped out [2]
 .....\glue(\rightskip) 0.0
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
-....\marks4{\__mark_id:n {1}1}
-....\marks5{\__mark_id:n {2}}
-....\marks6{\__mark_id:n {3}1}
-....\marks7{\__mark_id:n {4}}
+....\marks4{\__mark_value:nn {1}{1}}
+....\marks5{\__mark_value:nn {2}{}}
+....\marks6{\__mark_value:nn {3}{1}}
+....\marks7{\__mark_value:nn {4}{}}
 ....\penalty -51
 ....\glue 5.0
-....\glue 0.0 plus 1.0fil
-....\glue 0.0 plus -1.0fil
 ....\glue 0.0 plus 1.0fil
 ....\glue 0.0
 ....\glue 0.0 plus 0.0001fil
@@ -566,11 +573,12 @@ TEST 4: Check references
 l. ...\end{document}
 The property list \g__tag_struct_1_prop contains the pairs (without outer braces):
 >  {Type}  =>  {/StructTreeRoot}
+>  {tag}  =>  {{StructTreeRoot}{pdf}}
 >  {rolemap}  =>  {{StructTreeRoot}{pdf}}
 >  {parentrole}  =>  {{StructTreeRoot}{pdf}}
 >  {Namespaces}  =>  {8 0 R}
->  {IDTree}  =>  {84 0 R}
->  {ClassMap}  =>  {85 0 R}
+>  {IDTree}  =>  {91 0 R}
+>  {ClassMap}  =>  {92 0 R}
 >  {ParentTree}  =>  {6 0 R}
 >  {RoleMap}  =>  {7 0 R}
 >  {K}  =>  {22 0 R}
@@ -584,9 +592,10 @@ The property list \g__tag_struct_2_prop contains the pairs (without outer braces
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/Document}
 >  {NS}  =>  {11 0 R }
+>  {tag}  =>  {{Document}{pdf2}}
 >  {rolemap}  =>  {{Document}{pdf2}}
 >  {parentrole}  =>  {{Document}{pdf2}}
->  {P}  =>  {5 0 R}
+>  {parentnum}  =>  {1}
 >  {K}  =>  {[25 0 R\c_space_tl 55 0 R]}.
 <recently read> }
 l. ...\end{document}
@@ -597,9 +606,10 @@ The property list \g__tag_struct_3_prop contains the pairs (without outer braces
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/Artifact}
 >  {NS}  =>  {15 0 R }
+>  {tag}  =>  {{figures}{latex}}
 >  {rolemap}  =>  {{Sect}{pdf2}}
 >  {parentrole}  =>  {{Sect}{pdf2}}
->  {P}  =>  {5 0 R}.
+>  {parentnum}  =>  {1}.
 <recently read> }
 l. ...\end{document}
 > \l_tmpa_tl=PDF object of structnum 4 is 24 0 R.
@@ -609,9 +619,10 @@ The property list \g__tag_struct_4_prop contains the pairs (without outer braces
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/Artifact}
 >  {NS}  =>  {15 0 R }
+>  {tag}  =>  {{tables}{latex}}
 >  {rolemap}  =>  {{Sect}{pdf2}}
 >  {parentrole}  =>  {{Sect}{pdf2}}
->  {P}  =>  {5 0 R}.
+>  {parentnum}  =>  {1}.
 <recently read> }
 l. ...\end{document}
 > \l_tmpa_tl=PDF object of structnum 5 is 25 0 R.
@@ -621,10 +632,11 @@ The property list \g__tag_struct_5_prop contains the pairs (without outer braces
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/Sect}
 >  {NS}  =>  {11 0 R }
+>  {tag}  =>  {{Sect}{pdf2}}
 >  {rolemap}  =>  {{Sect}{pdf2}}
 >  {parentrole}  =>  {{Sect}{pdf2}}
->  {P}  =>  {22 0 R}
->  {K}  =>  {[26 0 R\c_space_tl 28 0 R\c_space_tl 30 0 R\c_space_tl 31 0 R\c_space_tl 35 0 R]}.
+>  {parentnum}  =>  {2}
+>  {K}  =>  {[26 0 R\c_space_tl 28 0 R\c_space_tl 30 0 R\c_space_tl 31 0 R\c_space_tl 34 0 R]}.
 <recently read> }
 l. ...\end{document}
 > \l_tmpa_tl=PDF object of structnum 6 is 26 0 R.
@@ -632,12 +644,14 @@ l. ...\end{document}
 l. ...\end{document}
 The property list \g__tag_struct_6_prop contains the pairs (without outer braces):
 >  {Type}  =>  {/StructElem}
+>  {T}  =>  {<FEFF00530065006300740069006F006E00200031>}
 >  {S}  =>  {/section}
 >  {NS}  =>  {15 0 R }
+>  {tag}  =>  {{section}{latex}}
 >  {rolemap}  =>  {{H1}{pdf2}}
 >  {parentrole}  =>  {{H1}{pdf2}}
->  {P}  =>  {25 0 R}
->  {K}  =>  {[27 0 R\c_space_tl \__tag_mc_insert_mcid_kids:n {3}]}.
+>  {parentnum}  =>  {5}
+>  {K}  =>  {[27 0 R\c_space_tl \__tag_mc_insert_mcid_kids:n {2}]}.
 <recently read> }
 l. ...\end{document}
 > \l_tmpa_tl=PDF object of structnum 7 is 27 0 R.
@@ -645,12 +659,13 @@ l. ...\end{document}
 l. ...\end{document}
 The property list \g__tag_struct_7_prop contains the pairs (without outer braces):
 >  {Type}  =>  {/StructElem}
->  {S}  =>  {/Lbl}
->  {NS}  =>  {11 0 R }
->  {rolemap}  =>  {{Lbl}{pdf2}}
->  {parentrole}  =>  {{Lbl}{pdf2}}
->  {P}  =>  {26 0 R}
->  {K}  =>  {[\__tag_mc_insert_mcid_kids:n {1}\c_space_tl \__tag_mc_insert_mcid_kids:n {2}]}.
+>  {S}  =>  {/section-number}
+>  {NS}  =>  {15 0 R }
+>  {tag}  =>  {{section-number}{latex}}
+>  {rolemap}  =>  {{Span}{pdf2}}
+>  {parentrole}  =>  {{Span}{pdf2}}
+>  {parentnum}  =>  {6}
+>  {K}  =>  {\__tag_mc_insert_mcid_single_kids:n {1}}.
 <recently read> }
 l. ...\end{document}
 > \l_tmpa_tl=PDF object of structnum 8 is 28 0 R.
@@ -660,9 +675,10 @@ The property list \g__tag_struct_8_prop contains the pairs (without outer braces
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/text-unit}
 >  {NS}  =>  {15 0 R }
+>  {tag}  =>  {{text-unit}{latex}}
 >  {rolemap}  =>  {{Part}{pdf2}}
 >  {parentrole}  =>  {{Sect}{pdf2}}
->  {P}  =>  {25 0 R}
+>  {parentnum}  =>  {5}
 >  {K}  =>  {29 0 R}.
 <recently read> }
 l. ...\end{document}
@@ -674,10 +690,11 @@ The property list \g__tag_struct_9_prop contains the pairs (without outer braces
 >  {C}  =>  {/justify}
 >  {S}  =>  {/text}
 >  {NS}  =>  {15 0 R }
+>  {tag}  =>  {{text}{latex}}
 >  {rolemap}  =>  {{P}{pdf2}}
 >  {parentrole}  =>  {{P}{pdf2}}
->  {P}  =>  {28 0 R}
->  {K}  =>  {\__tag_mc_insert_mcid_single_kids:n {4}}.
+>  {parentnum}  =>  {8}
+>  {K}  =>  {\__tag_mc_insert_mcid_single_kids:n {3}}.
 <recently read> }
 l. ...\end{document}
 > \l_tmpa_tl=PDF object of structnum 10 is 30 0 R.
@@ -685,15 +702,16 @@ l. ...\end{document}
 l. ...\end{document}
 The property list \g__tag_struct_10_prop contains the pairs (without outer braces):
 >  {Type}  =>  {/StructElem}
->  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnote.1},\__tag_struct_Ref_obj:nN {31 0 R},\__tag_struct_Ref_obj:nN {35 0 R},}
+>  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnote.1},\__tag_struct_Ref_obj:nN {31 0 R},\__tag_struct_Ref_obj:nN {34 0 R},}
 >  {S}  =>  {/NonStruct}
 >  {NS}  =>  {11 0 R }
+>  {tag}  =>  {{NonStruct}{pdf2}}
 >  {rolemap}  =>  {{NonStruct}{pdf2}}
 >  {parentrole}  =>  {{Sect}{pdf2}}
->  {P}  =>  {25 0 R}.
+>  {parentnum}  =>  {5}.
 <recently read> }
 l. ...\end{document}
-> \l_tmpb_tl=PDF object of Refs: 66 0 R, 31 0 R, 35 0 R.
+> \l_tmpb_tl=PDF object of Refs: 64 0 R, 31 0 R, 34 0 R.
 <recently read> }
 l. ...\end{document}
 > \l_tmpa_tl=PDF object of structnum 11 is 31 0 R.
@@ -704,10 +722,11 @@ The property list \g__tag_struct_11_prop contains the pairs (without outer brace
 >  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnotemark.1},}
 >  {S}  =>  {/endnotemark}
 >  {NS}  =>  {19 0 R }
+>  {tag}  =>  {{endnotemark}{user}}
 >  {rolemap}  =>  {{Lbl}{pdf2}}
 >  {parentrole}  =>  {{Lbl}{pdf2}}
->  {P}  =>  {25 0 R}
->  {K}  =>  {[\__tag_mc_insert_mcid_kids:n {5}\c_space_tl 32 0 R\c_space_tl \__tag_mc_insert_mcid_kids:n {7}]}.
+>  {parentnum}  =>  {5}
+>  {K}  =>  {[\__tag_mc_insert_mcid_kids:n {4}\c_space_tl 32 0 R\c_space_tl \__tag_mc_insert_mcid_kids:n {6}]}.
 <recently read> }
 l. ...\end{document}
 > \l_tmpb_tl=PDF object of Refs: 30 0 R.
@@ -720,13 +739,14 @@ The property list \g__tag_struct_12_prop contains the pairs (without outer brace
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/Link}
 >  {NS}  =>  {11 0 R }
+>  {tag}  =>  {{Link}{pdf2}}
 >  {rolemap}  =>  {{Link}{pdf2}}
 >  {parentrole}  =>  {{Link}{pdf2}}
->  {P}  =>  {31 0 R}
->  {K}  =>  {[\__tag_mc_insert_mcid_kids:n {6}\c_space_tl 34 0 R]}.
+>  {parentnum}  =>  {11}
+>  {K}  =>  {[\__tag_mc_insert_mcid_kids:n {5}\c_space_tl 37 0 R]}.
 <recently read> }
 l. ...\end{document}
-> \l_tmpa_tl=PDF object of structnum 13 is 35 0 R.
+> \l_tmpa_tl=PDF object of structnum 13 is 34 0 R.
 <recently read> }
 l. ...\end{document}
 The property list \g__tag_struct_13_prop contains the pairs (without outer braces):
@@ -734,26 +754,28 @@ The property list \g__tag_struct_13_prop contains the pairs (without outer brace
 >  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnotemark.1},}
 >  {S}  =>  {/endnotemark}
 >  {NS}  =>  {19 0 R }
+>  {tag}  =>  {{endnotemark}{user}}
 >  {rolemap}  =>  {{Lbl}{pdf2}}
 >  {parentrole}  =>  {{Lbl}{pdf2}}
->  {P}  =>  {25 0 R}
->  {K}  =>  {[\__tag_mc_insert_mcid_kids:n {8}\c_space_tl 36 0 R\c_space_tl \__tag_mc_insert_mcid_kids:n {10}]}.
+>  {parentnum}  =>  {5}
+>  {K}  =>  {[\__tag_mc_insert_mcid_kids:n {7}\c_space_tl 35 0 R\c_space_tl \__tag_mc_insert_mcid_kids:n {9}]}.
 <recently read> }
 l. ...\end{document}
 > \l_tmpb_tl=PDF object of Refs: 30 0 R.
 <recently read> }
 l. ...\end{document}
-> \l_tmpa_tl=PDF object of structnum 14 is 36 0 R.
+> \l_tmpa_tl=PDF object of structnum 14 is 35 0 R.
 <recently read> }
 l. ...\end{document}
 The property list \g__tag_struct_14_prop contains the pairs (without outer braces):
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/Link}
 >  {NS}  =>  {11 0 R }
+>  {tag}  =>  {{Link}{pdf2}}
 >  {rolemap}  =>  {{Link}{pdf2}}
 >  {parentrole}  =>  {{Link}{pdf2}}
->  {P}  =>  {35 0 R}
->  {K}  =>  {[\__tag_mc_insert_mcid_kids:n {9}\c_space_tl 38 0 R]}.
+>  {parentnum}  =>  {13}
+>  {K}  =>  {[\__tag_mc_insert_mcid_kids:n {8}\c_space_tl 38 0 R]}.
 <recently read> }
 l. ...\end{document}
 > \l_tmpa_tl=PDF object of structnum 15 is 55 0 R.
@@ -763,9 +785,10 @@ The property list \g__tag_struct_15_prop contains the pairs (without outer brace
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/Sect}
 >  {NS}  =>  {11 0 R }
+>  {tag}  =>  {{Sect}{pdf2}}
 >  {rolemap}  =>  {{Sect}{pdf2}}
 >  {parentrole}  =>  {{Sect}{pdf2}}
->  {P}  =>  {22 0 R}
+>  {parentnum}  =>  {2}
 >  {K}  =>  {[56 0 R\c_space_tl 57 0 R]}.
 <recently read> }
 l. ...\end{document}
@@ -774,13 +797,14 @@ l. ...\end{document}
 l. ...\end{document}
 The property list \g__tag_struct_16_prop contains the pairs (without outer braces):
 >  {Type}  =>  {/StructElem}
->  {C}  =>  {/justify}
+>  {T}  =>  {<FEFF005C0070006E007400690074006C00650020>}
 >  {S}  =>  {/section}
 >  {NS}  =>  {15 0 R }
+>  {tag}  =>  {{section}{latex}}
 >  {rolemap}  =>  {{H1}{pdf2}}
 >  {parentrole}  =>  {{H1}{pdf2}}
->  {P}  =>  {55 0 R}
->  {K}  =>  {\__tag_mc_insert_mcid_single_kids:n {13}}.
+>  {parentnum}  =>  {15}
+>  {K}  =>  {\__tag_mc_insert_mcid_single_kids:n {12}}.
 <recently read> }
 l. ...\end{document}
 > \l_tmpa_tl=PDF object of structnum 17 is 57 0 R.
@@ -790,9 +814,10 @@ The property list \g__tag_struct_17_prop contains the pairs (without outer brace
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/text-unit}
 >  {NS}  =>  {15 0 R }
+>  {tag}  =>  {{text-unit}{latex}}
 >  {rolemap}  =>  {{Part}{pdf2}}
 >  {parentrole}  =>  {{Sect}{pdf2}}
->  {P}  =>  {55 0 R}
+>  {parentnum}  =>  {15}
 >  {K}  =>  {58 0 R}.
 <recently read> }
 l. ...\end{document}
@@ -804,9 +829,10 @@ The property list \g__tag_struct_18_prop contains the pairs (without outer brace
 >  {C}  =>  {/EndnotesList}
 >  {S}  =>  {/L}
 >  {NS}  =>  {11 0 R }
+>  {tag}  =>  {{L}{pdf2}}
 >  {rolemap}  =>  {{L}{pdf2}}
 >  {parentrole}  =>  {{L}{pdf2}}
->  {P}  =>  {57 0 R}
+>  {parentnum}  =>  {17}
 >  {K}  =>  {59 0 R}.
 <recently read> }
 l. ...\end{document}
@@ -817,10 +843,11 @@ The property list \g__tag_struct_19_prop contains the pairs (without outer brace
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/LI}
 >  {NS}  =>  {11 0 R }
+>  {tag}  =>  {{LI}{pdf2}}
 >  {rolemap}  =>  {{LI}{pdf2}}
 >  {parentrole}  =>  {{LI}{pdf2}}
->  {P}  =>  {58 0 R}
->  {K}  =>  {[60 0 R\c_space_tl 65 0 R]}.
+>  {parentnum}  =>  {18}
+>  {K}  =>  {[60 0 R\c_space_tl 63 0 R]}.
 <recently read> }
 l. ...\end{document}
 > \l_tmpa_tl=PDF object of structnum 20 is 60 0 R.
@@ -830,10 +857,11 @@ The property list \g__tag_struct_20_prop contains the pairs (without outer brace
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/Lbl}
 >  {NS}  =>  {11 0 R }
+>  {tag}  =>  {{Lbl}{pdf2}}
 >  {rolemap}  =>  {{Lbl}{pdf2}}
 >  {parentrole}  =>  {{Lbl}{pdf2}}
->  {P}  =>  {59 0 R}
->  {K}  =>  {[\__tag_mc_insert_mcid_kids:n {14}\c_space_tl 61 0 R\c_space_tl \__tag_mc_insert_mcid_kids:n {16}]}.
+>  {parentnum}  =>  {19}
+>  {K}  =>  {[\__tag_mc_insert_mcid_kids:n {13}\c_space_tl 61 0 R\c_space_tl \__tag_mc_insert_mcid_kids:n {15}]}.
 <recently read> }
 l. ...\end{document}
 > \l_tmpa_tl=PDF object of structnum 21 is 61 0 R.
@@ -843,26 +871,28 @@ The property list \g__tag_struct_21_prop contains the pairs (without outer brace
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/Link}
 >  {NS}  =>  {11 0 R }
+>  {tag}  =>  {{Link}{pdf2}}
 >  {rolemap}  =>  {{Link}{pdf2}}
 >  {parentrole}  =>  {{Link}{pdf2}}
->  {P}  =>  {60 0 R}
->  {K}  =>  {[\__tag_mc_insert_mcid_kids:n {15}\c_space_tl 64 0 R]}.
+>  {parentnum}  =>  {20}
+>  {K}  =>  {[\__tag_mc_insert_mcid_kids:n {14}\c_space_tl 68 0 R]}.
 <recently read> }
 l. ...\end{document}
-> \l_tmpa_tl=PDF object of structnum 22 is 65 0 R.
+> \l_tmpa_tl=PDF object of structnum 22 is 63 0 R.
 <recently read> }
 l. ...\end{document}
 The property list \g__tag_struct_22_prop contains the pairs (without outer braces):
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/LBody}
 >  {NS}  =>  {11 0 R }
+>  {tag}  =>  {{LBody}{pdf2}}
 >  {rolemap}  =>  {{LBody}{pdf2}}
 >  {parentrole}  =>  {{LBody}{pdf2}}
->  {P}  =>  {59 0 R}
->  {K}  =>  {66 0 R}.
+>  {parentnum}  =>  {19}
+>  {K}  =>  {64 0 R}.
 <recently read> }
 l. ...\end{document}
-> \l_tmpa_tl=PDF object of structnum 23 is 66 0 R.
+> \l_tmpa_tl=PDF object of structnum 23 is 64 0 R.
 <recently read> }
 l. ...\end{document}
 The property list \g__tag_struct_23_prop contains the pairs (without outer braces):
@@ -871,39 +901,42 @@ The property list \g__tag_struct_23_prop contains the pairs (without outer brace
 >  {Ref}  =>  {\__tag_struct_Ref_label:nN {postnotemark.1},}
 >  {S}  =>  {/endnote}
 >  {NS}  =>  {19 0 R }
+>  {tag}  =>  {{endnote}{user}}
 >  {rolemap}  =>  {{FENote}{pdf2}}
 >  {parentrole}  =>  {{FENote}{pdf2}}
->  {P}  =>  {65 0 R}
->  {K}  =>  {67 0 R}.
+>  {parentnum}  =>  {22}
+>  {K}  =>  {65 0 R}.
 <recently read> }
 l. ...\end{document}
 > \l_tmpb_tl=PDF object of Refs: 30 0 R.
 <recently read> }
 l. ...\end{document}
-> \l_tmpa_tl=PDF object of structnum 24 is 67 0 R.
+> \l_tmpa_tl=PDF object of structnum 24 is 65 0 R.
 <recently read> }
 l. ...\end{document}
 The property list \g__tag_struct_24_prop contains the pairs (without outer braces):
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/text-unit}
 >  {NS}  =>  {15 0 R }
+>  {tag}  =>  {{text-unit}{latex}}
 >  {rolemap}  =>  {{Part}{pdf2}}
 >  {parentrole}  =>  {{FENote}{pdf2}}
->  {P}  =>  {66 0 R}
->  {K}  =>  {68 0 R}.
+>  {parentnum}  =>  {23}
+>  {K}  =>  {66 0 R}.
 <recently read> }
 l. ...\end{document}
-> \l_tmpa_tl=PDF object of structnum 25 is 68 0 R.
+> \l_tmpa_tl=PDF object of structnum 25 is 66 0 R.
 <recently read> }
 l. ...\end{document}
 The property list \g__tag_struct_25_prop contains the pairs (without outer braces):
 >  {Type}  =>  {/StructElem}
 >  {S}  =>  {/text}
 >  {NS}  =>  {15 0 R }
+>  {tag}  =>  {{text}{latex}}
 >  {rolemap}  =>  {{P}{pdf2}}
 >  {parentrole}  =>  {{P}{pdf2}}
->  {P}  =>  {67 0 R}
->  {K}  =>  {\__tag_mc_insert_mcid_single_kids:n {17}}.
+>  {parentnum}  =>  {24}
+>  {K}  =>  {\__tag_mc_insert_mcid_single_kids:n {16}}.
 <recently read> }
 l. ...\end{document}
 ============================================================
