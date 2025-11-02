@@ -2,6 +2,10 @@
 
 ## [Unreleased](https://github.com/gusbrs/postnotes/compare/v0.5.1...HEAD)
 
+### Changed
+
+- adapted block template keys to changes in latex-lab in release 2025-11-01
+
 ## [v0.5.1](https://github.com/gusbrs/postnotes/compare/v0.5.0...v0.5.1) (2024-12-05)
 
 ### Changed

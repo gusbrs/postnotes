@@ -3463,20 +3463,20 @@
       {
         \DeclareInstance { blockenv } { postnoteslist } { display }
           {
-            env-name       = postnoteslist ,
+            name       = postnoteslist ,
             tag-name       = L ,
-            tag-class      = EndnotesList ,
+            tag-attr-class      = EndnotesList ,
             tagging-recipe = list ,
             inner-level-counter = ,
-            level-increase = true ,
+            increment-level = true ,
             setup-code     = ,
-            block-instance = list ,
+            block-instance = listblock ,
             inner-instance = postnoteslist ,
           }
         \DeclareInstanceCopy { blockenv }
           { postnoteslisthang } { postnoteslist }
         \EditInstance { blockenv } { postnoteslisthang }
-          { env-name = postnoteslisthang }
+          { name = postnoteslisthang }
         \DeclareInstance { list } { postnoteslist } { std }
           { item-instance = postnoteslist }
         \DeclareInstance { item } { postnoteslist } { std }
@@ -3488,15 +3488,15 @@
           {
             \UseInstance { blockenv } { postnoteslist }
               {
-                leftmargin     = 0pt ,
+                left-margin     = 0pt ,
                 label-width    = 0pt ,
                 item-indent    = .5\parindent ,
-                rightmargin    = 0pt ,
-                parindent      = \parindent ,
-                par-skip       = \parskip ,
-                item-skip      = 0pt ,
-                beginsep       = .5\topsep ,
-                begin-par-skip = .5\partopsep ,
+                right-margin    = 0pt ,
+                para-indent      = \parindent ,
+                para-vspace     = \parskip ,
+                item-vspace      = 0pt ,
+                begin-vspace       = .5\topsep ,
+                begin-extra-vspace = .5\partopsep ,
               }
           }
           { \endblockenv }
@@ -3504,15 +3504,15 @@
           {
             \UseInstance { blockenv } { postnoteslisthang }
               {
-                leftmargin     = 1em ,
+                left-margin     = 1em ,
                 label-width    = -\leftmargin ,
                 item-indent    = -2\leftmargin ,
-                rightmargin    = 0pt ,
-                parindent      = \parindent ,
-                par-skip       = \parskip ,
-                item-skip      = 0pt ,
-                beginsep       = .5\topsep ,
-                begin-par-skip = .5\partopsep ,
+                right-margin    = 0pt ,
+                para-indent      = \parindent ,
+                para-vspace       = \parskip ,
+                item-vspace      = 0pt ,
+                begin-vspace       = .5\topsep ,
+                begin-extra-vspace = .5\partopsep ,
               }
           }
           { \endblockenv }

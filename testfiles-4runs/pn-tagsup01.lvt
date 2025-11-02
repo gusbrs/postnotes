@@ -4,7 +4,7 @@
 
 \DocumentMetadata
   {
-    testphase=phase-III,
+    tagging=on,
     pdfversion=2.0,
     xmp=false,
     debug={log=v,tagpdf},
